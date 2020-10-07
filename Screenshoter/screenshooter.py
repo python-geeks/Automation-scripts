@@ -30,8 +30,8 @@ class TwoClicksScreenShot:
                     TwoClicksScreenShot.pCords[1] = y
                 elif TwoClicksScreenShot.clickCount == 1:
                     print('Second point ({0}, {1})'.format(x, y))
-                    TwoClicksScreenShot.pCords[2] = x-TwoClicksScreenShot.pCords[0]
-                    TwoClicksScreenShot.pCords[3] = y-TwoClicksScreenShot.pCords[1]
+                    TwoClicksScreenShot.pCords[2] = x - TwoClicksScreenShot.pCords[0]
+                    TwoClicksScreenShot.pCords[3] = y - TwoClicksScreenShot.pCords[1]
                     TwoClicksScreenShot.defined = True
                     print('')
                     TwoClicksScreenShot.clickCount = 0
