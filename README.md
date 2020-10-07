@@ -8,8 +8,6 @@ Do you know anything that can help all to easy our tough life than tell that sec
 * Goal 50 - Panda stopped Running
 * Goal 100 - Panda stopped Playing outdoor games
 
-<img align="left" alt="Coding" width="400" src="https://cdn.dribbble.com/users/936407/screenshots/3400417/panda_stick.gif?vid=1">
-
 ## How to Contribute 🤔
 
 You can contribute by adding new scripts, improving current scripts or Documentation.Here are some Instructions
