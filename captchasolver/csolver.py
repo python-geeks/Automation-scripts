@@ -29,3 +29,4 @@ def solve(img):
         print(cr)
 # Run
 solve(im)
+
