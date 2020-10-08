@@ -2,13 +2,19 @@
 
 Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
 
-**Leave a star => Contribution in arranging Food for panda 😴**
+And it's okay if you're not aware of process. Kindly raise query by creating pull request (In query template). Here is the link for that how to create a pull request in other's Repo
+
+[How to create pull request](https://opensource.com/article/19/7/create-pull-request-github)
 
 ### These are my Lazy Panda Goals
+
+* Goal Achieved - 5/25
 
 * Goal 25 - Panda stopped Cycling
 * Goal 50 - Panda stopped Running
 * Goal 100 - Panda stopped Playing outdoor games
+
+**Leave a star => Contribution in arranging Food for panda 😴**
 
 ## How to Contribute 🤔
 
@@ -21,3 +27,5 @@ before making a Pull Request
 - [x] Pull latest change from upstream branch before starting the changing code.
 - [x] Add your file in proper folder(lowercase) with README.md in it. Add requirements.txt if needed.
 - [x] Please use flake8 linting in your code
+
+#### Typo fixed/ minor change in docs not marked as contribution. If you're not aware of process kindly raise a query in formal manner :)
