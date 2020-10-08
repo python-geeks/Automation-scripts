@@ -24,7 +24,7 @@ def solve(img):
     if cr != "\x0c":
         print(cr)
     else:
-        # If it cant read try to read in normal size
+        # If it can't read try to read in normal size
         cr = pytesseract.image_to_string(im)
         print(cr)
 

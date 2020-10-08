@@ -4,7 +4,7 @@ import pyshorteners
 import sys
 
 
-# url converter funtion
+# url converter function
 def make_short(url):
     shorturl = pyshorteners.Shortener().tinyurl.short(url)
     return shorturl

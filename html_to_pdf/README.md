@@ -1,4 +1,4 @@
-1.Intall Python3 on your system.
+1.Install Python3 on your system.
 2.Install pip.
 3.Install the requirements.txt.
 4.Install wkhtmltopdf ---> https://wkhtmltopdf.org/downloads.html depedning on your operating system.

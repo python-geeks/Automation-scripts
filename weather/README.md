@@ -1,6 +1,6 @@
 # Weather
 
-Cli used to gather weather informations. It is a basic wrapper around [wttr.in](http://wttr.in/)'s http interface.
+Cli used to gather weather information. It is a basic wrapper around [wttr.in](http://wttr.in/)'s http interface.
 
 ```shell
 user@computer:~$ python3 weather.py

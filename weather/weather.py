@@ -10,7 +10,7 @@ CONN_ERR = 'Error: connection not available.'
 FORECAST_HELP = 'Shows also the forecasts for today and tomorrow.'
 METRIC_HELP = 'Use the International System of Units.'
 USCS_HELP = 'Use the United States Customary Units.'
-LANG_HELP = 'Choose prefered language. ISO 639-1 code.'
+LANG_HELP = 'Choose preferred language. ISO 639-1 code.'
 COLORS_HELP = 'Keep or remove terminal sequences for colors. Default is keep.'
 ONELINE_HELP = 'Shorter summary that fits in one line and uses emojis.'
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

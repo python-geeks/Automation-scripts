@@ -29,7 +29,7 @@ We love your input! We want to make contributing to this project as easy and tra
     ```
     git remote add upstream https://github.com/python-geeks/Automation-scripts.git
     ```
-* Keep your cloned repo upto date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)
+* Keep your cloned repo up to date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)
     ```
     git pull upstream master
     ```
