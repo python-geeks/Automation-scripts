@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
-from flask import get_flashed_messages, session
+from flask import Flask, render_template, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -30,7 +29,7 @@ def hello():
             db.session.commit()
             flash('Successfully added!')
             return redirect('/')
-        except:
+        except Exception:
             flash('An error occurred')
             return redirect('/')
     else:
@@ -46,7 +45,7 @@ def delete(id):
         db.session.commit()
         flash('Successfully deleted')
         return redirect('/')
-    except:
+    except Exception:
         flash('An error occurred')
         return redirect('/')
 
@@ -60,11 +59,13 @@ def modify(id):
             db.session.commit()
             flash("Successfully updated")
             return redirect('/')
-        except:
+        except Exception:
             flash("An error occurred")
             return redirect('/')
     else:
-        return render_template("toDoListTemplate.html", tasks=tasks)
+        return render_template("toDoListTemplate.html", tasks=task)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+
