@@ -13,7 +13,7 @@ what you changed in the codebase.write here
 
 - [ ] This issue was assigned to me.
 - [x] One Change in one Pull Request
-- [x] My file is in proper folder
+- [ ] My file is in proper folder (Name of folder should be in lowercase with no space in between)
 - [x] I am following clean code and Documentation and my code is well linted with flake8.
 - [ ] I have added README.md and requirements.txt with my script
 

@@ -2,7 +2,9 @@
 
 Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
 
-#### These are my Lazy Panda Goals
+**Leave a star => Contribution in arranging Food for panda 😴**
+
+### These are my Lazy Panda Goals
 
 * Goal 25 - Panda stopped Cycling
 * Goal 50 - Panda stopped Running
