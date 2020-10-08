@@ -13,3 +13,7 @@ It checks the following things to decide the strength of a password
 **Modules used**
 - sys
 - re
+
+**HOW TO RUN IN TERMINAL**
+
+> python3 password_strength_checker.py *sample_password*
