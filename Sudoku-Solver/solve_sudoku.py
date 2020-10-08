@@ -60,6 +60,8 @@ def solve_sudoku():
     # if user presses enter then function is called again
     input("Check for more solution?")
 # takes each line of the sudoku as input with spaces between two numbers
+
+
 grid = [list(map(int, input().split()))[:9] for _ in range(9)]
 
 
