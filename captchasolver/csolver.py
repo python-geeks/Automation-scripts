@@ -2,7 +2,7 @@ import pytesseract, sys, os
 from PIL import Image
 
 #Set Tesserat location
-pytesseract.pytesseract.tesseract_cmd = # Your tesseract location
+pytesseract.pytesseract.tesseract_cmd = "" # Your tesseract location
 
 #Image 
 im =  sys.argv[1]
