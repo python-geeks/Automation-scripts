@@ -15,4 +15,4 @@ ctypes.windll.user32.SystemParametersInfoW(
     0,
     new_wallpaper,
     SPIF_SENDCHANGE
-    )
+)
