@@ -3,7 +3,9 @@ This is a basic autoclicker, you can choose the delay you want between each clic
 ## Prerequisites 
 
 **Python 3.8.x**
+
 Install the requirements:
+
 `python -m pip install -r requirements.txt --user`
 
 Then you can run the script!
