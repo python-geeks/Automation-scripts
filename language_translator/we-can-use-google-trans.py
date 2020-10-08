@@ -12,4 +12,4 @@ sourceLang = langList[sourceLang]
 # Get the translation
 translateString = translator.translate(inputSentence).text
 
-print("The language detected was: "+sourceLang + "\n" + "The translation is: "+translateString)
+print("The language detected was: " + sourceLang + "\n" + "The translation is: " + translateString)
