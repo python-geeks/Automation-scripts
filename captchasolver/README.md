@@ -11,7 +11,7 @@ A simple python script for solving simple captchas
 ## Requirements
 
 - tesseract
-`You can download tesseract from [here](https://tesseract-ocr.github.io/tessdoc/Home.html)`
+`You can download tesseract from https://tesseract-ocr.github.io/tessdoc/Home.html`
 - pytesseract
 `pip install pytesseract`
 
