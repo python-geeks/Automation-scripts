@@ -13,12 +13,12 @@ root.geometry("600x400")
 def open():
     global my_image
     root.filename = filedialog.askopenfilename(
-      initialdir='/home',
-      title="Select file",
-      filetypes=(
-        ("png files", "*.png"),
-        ("all files", "*.*")
-                )
+        initialdir='/home',
+        title="Select file",
+        filetypes=(
+            ("png files", "*.png"),
+            ("all files", "*.*")
+        )
     )
     tk.Label(root, text=root.filename).pack()
     my_image = ImageTk.PhotoImage(PIL.Image.open(root.filename))
