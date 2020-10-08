@@ -2,7 +2,6 @@ import sys
 import re
 
 password = sys.argv[1]
-#print(password)
 regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]') 
 
 t1 = len(password)>=8
