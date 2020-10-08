@@ -15,9 +15,7 @@ A simple python script for solving simple captchas
 - pytesseract
 `pip install pytesseract`
 
-- After you install tesseract replace 
-`# Your tesseract location `
-with your tesseract location in csolver.py
+- After you install tesseract replace with your tesseract location in csolver.py
 
 ## How to use
 `python csolver.py captcha_image`
