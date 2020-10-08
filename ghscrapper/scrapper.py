@@ -1,7 +1,7 @@
 import requests
 import argparse
 
-parser = argparse.ArgumentParser(description='Fetch informations about Github user.')
+parser = argparse.ArgumentParser(description='Fetch information about Github user.')
 parser.add_argument('user', type=str, nargs=1, help='User that you want to look up into.')
 parser.add_argument('--json', action='store_true', help='Output data in json format')
 

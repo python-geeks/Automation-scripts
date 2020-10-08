@@ -3,7 +3,7 @@
 ```bash
 usage: scrapper.py [-h] [--json] user
 
-Fetch informations about Github user.
+Fetch information about Github user.
 
 positional arguments:
   user        User that you want to look up into.
