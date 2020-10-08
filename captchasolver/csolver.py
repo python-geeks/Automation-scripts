@@ -27,6 +27,8 @@ def solve(img):
         # If it cant read try to read in normal size
         cr = pytesseract.image_to_string(im)
         print(cr)
+        
+        
 # Run
 solve(im)
 
