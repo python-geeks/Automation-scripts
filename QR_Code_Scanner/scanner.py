@@ -28,6 +28,10 @@ def open():
     data = " RESULT : {0}".format(data)
     fontStyle = tkFont.Font(family="Lucida Grande", size=15)
     data_label = Label(root, text=data, font=fontStyle).pack()
+    
+    
 my_btn = Button(root, text="Select QR code image", command=open).pack()
 
 root.mainloop()
+
+
