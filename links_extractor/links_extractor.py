@@ -46,10 +46,10 @@ def export_urls(urls, file_path):
 
     Arguments:
         urls {[list]} -- [extracted urls]
-        file_path {[str]} -- [result text file path it follow the same input file but with additional suffix]
+        file_path {[str]} -- [result text file path]
     """
     with open(file_path.replace(".txt", "_links.txt"), "w") as f:
-        text = f.write("\n".join(urls))
+        f.write("\n".join(urls))
 
 
 if __name__ == "__main__":
