@@ -10,3 +10,8 @@ How to Run it :  python3 scanner.py
 QR CODE SCANNER window will pop up.
 select QR code image file which you want to scan.
 Result will be displayed in  same window.
+
+DEMO:
+
+
+![alt text](demo.gif)
