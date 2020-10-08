@@ -33,5 +33,3 @@ def open():
 my_btn = Button(root, text="Select QR code image", command=open).pack()
 
 root.mainloop()
-
-
