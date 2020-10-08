@@ -31,4 +31,3 @@ def solve(img):
 
 # Run
 solve(im)
-
