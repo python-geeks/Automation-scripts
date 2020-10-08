@@ -10,12 +10,12 @@ def is_number_valid(row, col, num):
         if grid[i][col] == num:
             return False
     # makes the variables to consider the 3x3 square in the puzzle
-    col_subset = (col//3) * 3
-    row_subset = (row//3) * 3
+    col_subset = (col // 3) * 3
+    row_subset = (row // 3) * 3
     for i in range(0, 3):
         # for loop to find if the number is present in square
         for j in range(0, 3):
-            if grid[row_subset+i][col_subset+j] == num:
+            if grid[row_subset + i][col_subset + j] == num:
                 return False
     return True   # if not preent in the all the possibilities returns True
 
@@ -61,4 +61,6 @@ def solve_sudoku():
     input("Check for more solution?")
 # takes each line of the sudoku as input with spaces between two numbers
 grid = [list(map(int, input().split()))[:9] for _ in range(9)]
+
+
 solve_sudoku()  # calls the solve function
