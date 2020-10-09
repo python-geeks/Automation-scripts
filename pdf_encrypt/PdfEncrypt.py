@@ -9,10 +9,10 @@ def check_password(password):
     """
     function to check the strength of password
     """
-    regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
+    regex = re.compile('[@_!#$%^&*()<>?/\\|}{~:]')
 
     t1 = len(password) >= 8
-    t2 = not (regex.search(password) == None)
+    t2 = not (regex.search(password) is None)
     t3 = any(c.islower() for c in password)
     t4 = any(c.isupper() for c in password)
     t5 = any(c.isdigit() for c in password)
