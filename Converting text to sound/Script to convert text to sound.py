@@ -3,7 +3,7 @@ Created on Fri Oct  9 11:40:35 2020
 
 @author: Anustup
 """
-from tkinter import *
+from tkinter import tkinter
 from gtts import gTTS
 from playsound import playsound
 
