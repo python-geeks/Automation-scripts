@@ -1,5 +1,12 @@
 # Using AlarmClock script
 
+## Dependencies :
+   For Ubuntu based systems please execute the following command to install the required dependencies.
+   ```
+   sudo apt-get install -y python3-dev libasound2-dev
+   ```
+   For other Unix based distros please google the package name.
+
 ## Steps to set an alarm : 
 1. run the script `AlarmClock.py` using python3.  
     On Unix based systems the command looks like : 
