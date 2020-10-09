@@ -1,6 +1,6 @@
 # Converting Text to Speech By Python 
 
-This script involves implementation of Google text to speech API which is deployed on Deep Learning Algorithm Wavenet . The API is used for a better usability and simple architecture of the script , so that everyone can use it . It involves a visual interface as well saving audio files by using Tkinter (for GUI) and playsound (for audio files) ,this two python packages in additional . The steps how to use the script as well the visuals are shown below : 
+This script involves implementation of Google text to speech API which is deployed on Deep Learning Algorithm Wavenet . The API is used for a better usability and simple architecture of the script , so that everyone can use it . It involves playsound (for audio files) . The steps how to use the script as well the visuals are shown below : 
 
 ## Install Dependencies : 
 
@@ -13,7 +13,6 @@ If using anaconda , then follow the steps :
 Step 1 : Open Anaconda Power Shell 
 Step 2 : pip install gTTS
 Step 3 : pip install playsound
-step 4 : pip install tkinter 
 ```
 If you want to use Anaconda as a virtual environment then : 
 ```
