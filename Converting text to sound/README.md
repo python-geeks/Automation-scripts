@@ -7,7 +7,7 @@ This script involves implementation of Google text to speech API which is deploy
 ```
 python run requirements.txt (will install all dependienies in your local operating system)
 ```
-There will be some comman issues regarding Anaconda usgae it is cited below : 
+There will be some command issues regarding Anaconda usgae it is cited below : 
 ```
 If using anaconda , then follow the steps : 
 Step 1 : Open Anaconda Power Shell 
