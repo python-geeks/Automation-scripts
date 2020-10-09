@@ -1,8 +1,5 @@
-# GitHub Action to automate the identification of common misspellings in text files
-# https://github.com/codespell-project/codespell
-
 name: SpellCheck
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   codespell:
     runs-on: ubuntu-latest
