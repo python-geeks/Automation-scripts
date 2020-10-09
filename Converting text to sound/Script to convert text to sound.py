@@ -5,7 +5,7 @@ Created on Fri Oct  9 11:40:35 2020
 """
 ## import libraries
 
-from tkinter import *
+from tkinter import tkinter
 from gtts import gTTS
 from playsound import playsound
 
