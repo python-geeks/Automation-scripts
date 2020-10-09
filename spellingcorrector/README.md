@@ -14,10 +14,3 @@ Then you can run the script!
 ## Instructions to run the script
 
 `python SpellCorrector.py text_input`
-
-Example:
-`python SpellCorrector.py Hello, Thank yu for using ths scrpt`
-
-Output for above code is:
-
-`Hello, Thank you for using the script`

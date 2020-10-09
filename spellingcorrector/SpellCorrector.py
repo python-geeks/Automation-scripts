@@ -4,19 +4,16 @@
 from textblob import TextBlob
 import sys
 
-
-
-# Fuction for correcting spelling erors
+# Function for correcting spelling errors
 
 def spell_correct(text):
-    spell = TextBlob(text)
-    
+    spell = TextBlob(text)    
     # Using TextBlob.correct() method to correct spelling errors
-
     after_correction = spell.correct()
     return after_correction
 
 # Takes text input from user and call the spell_correct() function
+
 
 def main():
     after_correction = ""
@@ -25,5 +22,6 @@ def main():
     print(after_correction)
 
 # Running the main() function
+
 if __name__ == '__main__':
     main()
