@@ -1,2 +1,5 @@
 automerge:
+  - ./*.all-contributorsrc
+  - ./all-contributorsrc
   - ./.all-contributorsrc
+  - all-contributorsrc
