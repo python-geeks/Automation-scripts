@@ -14,6 +14,8 @@ Tweepy to uses sub-classes of tweepy ojects within FavRetweetListener class.
 Tweepy stream to actively watch for tweets that contain certain keywords.
 For each tweet, if you’re not the tweet author, it will mark the tweet as Liked and then retweet it.
 """
+
+
 class FavRetweetListener(tweepy.StreamListener):
     def __init__(self, api):
         self.api = api
@@ -49,10 +51,13 @@ class FavRetweetListener(tweepy.StreamListener):
     def on_error(self, status):
         logger.error(status)
 
+
 """
 The main uses a stream to filter tweets that contain the words of a list as keywords parametrs.
 Bellow we used ["Python", "Tweepy", "Hacktoberfest"]
 """
+
+
 def main(keywords):
     api = create_api()
     tweets_listener = FavRetweetListener(api)
