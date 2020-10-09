@@ -1,2 +1,2 @@
-zipfile37
+zipfile
 easygui >= 0.98.1
