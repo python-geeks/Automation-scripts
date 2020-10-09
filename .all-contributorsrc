@@ -15,6 +15,15 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "Sacrezar",
+      "name": "Thomas S.",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38185428?v=4",
+      "profile": "https://github.com/Sacrezar",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
