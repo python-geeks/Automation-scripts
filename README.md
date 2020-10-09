@@ -5,15 +5,19 @@
 
 Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
 
+## Update 1 :
+
+**Thanks for all contributors my pandas stopped cycling now 🛴
+
 And it's okay if you're not aware of process. Kindly raise query by creating pull request (In query template). Here is the link for that how to create a pull request in other's Repo
 
 [How to create pull request](https://opensource.com/article/19/7/create-pull-request-github)
 
 ### These are my Lazy Panda Goals
 
-* Goal Achieved - 23/25
+* Goal Achieved - 29/25
 
-* Goal 25 - Panda stopped Cycling
+* Goal 25 - Panda stopped Cycling (Completed)
 * Goal 50 - Panda stopped Running
 * Goal 100 - Panda stopped Playing outdoor games
 
