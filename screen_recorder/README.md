@@ -1,6 +1,6 @@
 # Screen Recorder
 
-Record your screen and save it as a 1080p 60fps .avi file. File is stored in the `screen_recorder` directory
+Record your screen and save it as a 1080p 60fps .avi file.
 
 
 ### Pre-requisites
