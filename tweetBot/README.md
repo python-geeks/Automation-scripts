@@ -4,7 +4,7 @@
 - [x] Follow Followers - followfollowers.py
 
     automatically follows anyone who follows you.
-- [x] Fave star and retweet - favretweet.py
+- [x] (F)ave star and retweet - favretweet.py
 
     automatically likes and retweets tweets that match certain criteria.
 
@@ -13,7 +13,7 @@
 
 
 ### Requirements
-* Developer's API cerdential. Pleae visit [Twitter Developer Site](https://developer.twitter.com/)
+* Developer's API cerdential. Please visit [Twitter Developer Site](https://developer.twitter.com/)
 * Python
 * Docker Engine
 

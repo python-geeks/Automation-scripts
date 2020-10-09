@@ -21,12 +21,12 @@ class FavRetweetListener(tweepy.StreamListener):
         if not tweet.favorited:
             try:
                 tweet.favorite()
-            except Exception as e:
+            except Exception:
                 logger.error("Error on fav", exc_info=True)
         if not tweet.retweeted:
             try:
                 tweet.retweet()
-            except Exception as e:
+            except Exception:
                 logger.error("Error on fav and retweet", exc_info=True)
 
     def on_error(self, status):
