@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import RIGHT, TOP, BOTTOM
-from tkinter.filedialog import *
+from tkinter import RIGHT, TOP, CENTER, X
+from tkinter.filedialog import Button, Tk
 from tkinter import filedialog
 import vlc
 
@@ -33,7 +33,7 @@ def play_music():
         p.stop()
     except Exception:
         pass
-    p = vlc.MediaPlayer(r"file:///"+music_path)
+    p = vlc.MediaPlayer(r"file:///" + music_path)
     # Start music
     p.play()
     # Change play button state to disabled
