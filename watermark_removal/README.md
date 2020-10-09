@@ -1,6 +1,6 @@
 # Script to remove watermark from images and pdfs
 ## How to use:
-1. Call the function giving two arguments, the path to the images whose watermark is to be removed and the output path (where you want to store the cleand images). (This script will remove the watermarks from all jpg images in the folder and store them into another folder "Cleaned")
+1. Call the function giving two arguments, the path to the images whose watermark is to be removed and the output path (where you want to store the cleaned images). (This script will remove the watermarks from all jpg images in the folder and store them into another folder "Cleaned")
 <br> example :-
 <br>```input_folder = "C:/User/Desktop"```
 <br>```output_folder = "C:/User/Desktop"```
