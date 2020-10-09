@@ -15,7 +15,6 @@ Step 2 : pip install gTTS
 Step 3 : pip install playsound
 step 4 : pip install tkinter 
 ```
-https://github.com/Anustup900/Automation-scripts/blob/patch-1/Converting%20text%20to%20sound/Assets/ana%201.PNG
 If you want to use Anaconda as a virtual environment then : 
 ```
 1.) Step 1 : Open Anaconda Cmd prompt 
@@ -24,3 +23,5 @@ If you want to use Anaconda as a virtual environment then :
 4.) Step 4 : conda install pip
 5.) Step 5 : Now you can use above commands
 ```
+Visuals of the code bases and the interface is there in the Assets folder , 
+Simply Run the script and the interface will open , and start converting your text to speech.
