@@ -1,4 +1,4 @@
-# Currency Covertor
+# Currency Converter
 A python script used to convert the currency of one country to that of another country.
 
 ## Modules Used
