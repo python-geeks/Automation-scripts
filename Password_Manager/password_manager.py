@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # Creted by Sam Ebison ( https://github.com/ebsa491 )
 
+import argparse
 import base64
 from Crypto.Cipher import AES
 from Crypto.Hash import SHA256
@@ -11,7 +12,13 @@ FILENAME = ".data.txt"
 
 
 def main():
-    pass
+
+    if args.password == '' or args.password is None:
+        # User didn't pass the password arguments
+        pass
+    else:
+        # We have the password
+        pass
 
 
 def encrypt(key, source, encode=True):
@@ -60,4 +67,17 @@ def decrypt(key, source, decode=True):
 
 
 if __name__ == '__main__':
+    global args
+
+    parser = argparse.ArgumentParser(description="Password Manager CLI")
+    parser.add_argument(
+        '-p',
+        '--password',
+        metavar='password',
+        type=str,
+        default='',
+        help='the program password'
+    )
+    args = parser.parse_args()
+
     main()
