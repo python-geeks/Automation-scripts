@@ -1,10 +1,10 @@
-# Currency Convertor
+# Currency Converter
 
 # Import necessary modules
 import requests
 
 
-class Currency_Convertor:
+class Currency_Converter:
     rate = {}
 
     def __init__(self, url):
@@ -26,8 +26,8 @@ class Currency_Convertor:
 # Driver Code
 if __name__ == "__main__":
     # Replace API_KEY with your own API key from fixer.io
-    url = str.__add__('http://data.fixer.io/api/latest?access_key=', API_KEY)
-    cc = Currency_Convertor(url)
+    url = 'http://data.fixer.io/api/latest?access_key=API_KEY'
+    cc = Currency_Converter(url)
     from_country = input("From: ")
     to_country = input("To: ")
     amount = int(input("Amount: "))
