@@ -15,6 +15,15 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "hpnightowl",
+      "name": "HARSH",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/48650798?v=4",
+      "profile": "http://hpnightowl.github.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
