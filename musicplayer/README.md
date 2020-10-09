@@ -17,4 +17,4 @@ A simple music player with gui written in python
 ## How to use
 `python player.py`
 
-After gui started you can pick song with "Pick Music" 
+After gui started you can pick song with "Pick Music" button
