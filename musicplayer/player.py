@@ -93,7 +93,7 @@ play_music_button = Button(
     command=play_music)
 play_music_button.pack(side=RIGHT)
 
-# Set default button satates to diabled
+# Set default button satates to disabled
 stop_music_button["state"] = "disabled"
 pause_music_button["state"] = "disabled"
 play_music_button["state"] = "disabled"
