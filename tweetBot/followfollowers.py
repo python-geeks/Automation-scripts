@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import tweepy
 import logging
@@ -7,6 +7,7 @@ import time
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
+
 
 def follow_followers(api):
     logger.info("Retrieving and following followers")
