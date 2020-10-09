@@ -55,8 +55,7 @@ pck_btn = Button(
     text="Pick Music",
     font="Rockwell",
     relief="flat",
-    command=pick_music
-    )
+    command=pick_music)
 pck_btn.pack(side=TOP)
 
 # Music name label
