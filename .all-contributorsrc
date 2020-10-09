@@ -87,6 +87,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "michalStarski",
+      "name": "Michał Starski",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/32843198?v=4",
+      "profile": "https://github.com/michalStarski",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
