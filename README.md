@@ -7,7 +7,7 @@ Do you know anything that can help all to easy our tough life than tell that sec
 
 ## Update 1 :
 
-**Thanks for all contributors my panda stopped cycling now 🛴
+**Thanks for all contributors my panda stopped cycling now 🛴** 
 
 And it's okay if you're not aware of process. Kindly raise query by creating pull request (In query template). Here is the link for that how to create a pull request in other's Repo
 
