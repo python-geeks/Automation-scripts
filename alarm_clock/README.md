@@ -15,7 +15,7 @@
     ```
     please enter the time in HH:MM format to set an alarm : 
     ```
-    Enter the time on the promt in __24 HOURS FORMAT__ as shown in the example below :  
+    Enter the time on the prompt in __24 HOURS FORMAT__ as shown in the example below :  
     ```
     please enter the time in HH:MM format to set an alarm : 14:32
     ```
