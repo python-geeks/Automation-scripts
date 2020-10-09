@@ -3,17 +3,18 @@
 # Import necessary modules
 import requests
 
+
 class Currency_Convertor:
     rate = {}
+
     def __init__(self, url):
         data = requests.get(url).json()
-        
         # Extracting rate from json
         self.rate = data["rates"]
 
     # Conversion
     def convert(self, from_country, to_country, amount):
-        initial = amount;
+        initial = amount
         if from_country != 'EUR':
             amount = amount / self.rates[from_country]
 
