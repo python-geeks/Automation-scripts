@@ -13,6 +13,6 @@
 
     *Caution*: Currently I am using Python 3.7 version in my machine, so the library named zipfile is installed
     using command "pip install zipfile37". Here 37 refers to the version. If your python version is other than
-    3.7, then I would recommand you to check the version and type the respective number there.
+    3.7, then I would recommend you to check the version and type the respective number there.
 
     **Thank you**
