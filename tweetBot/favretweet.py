@@ -8,6 +8,7 @@ from config import create_api
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
+
 class FavRetweetListener(tweepy.StreamListener):
     def __init__(self, api):
         self.api = api
@@ -27,7 +28,6 @@ class FavRetweetListener(tweepy.StreamListener):
                 tweet.retweet()
             except Exception:
                 logger.error("Error on fav and retweet", exc_info=True)
-
 
     def on_error(self, status):
         logger.error(status)
