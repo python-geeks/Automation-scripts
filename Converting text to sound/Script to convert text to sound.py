@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk
 from gtts import gTTS
 from playsound import playsound
 root = Tk()
