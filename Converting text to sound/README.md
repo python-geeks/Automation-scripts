@@ -15,6 +15,7 @@ Step 2 : pip install gTTS
 Step 3 : pip install playsound
 step 4 : pip install tkinter 
 ```
+https://github.com/Anustup900/Automation-scripts/blob/patch-1/Converting%20text%20to%20sound/Assets/ana%201.PNG
 If you want to use Anaconda as a virtual environment then : 
 ```
 1.) Step 1 : Open Anaconda Cmd prompt 
