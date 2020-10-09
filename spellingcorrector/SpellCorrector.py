@@ -6,8 +6,9 @@ import sys
 
 # Function for correcting spelling errors
 
+
 def spell_correct(text):
-    spell = TextBlob(text)    
+    spell = TextBlob(text)
     # Using TextBlob.correct() method to correct spelling errors
     after_correction = spell.correct()
     return after_correction
@@ -24,4 +25,5 @@ def main():
 # Running the main() function
 
 if __name__ == '__main__':
+
     main()
