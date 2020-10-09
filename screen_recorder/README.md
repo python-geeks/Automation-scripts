@@ -5,7 +5,6 @@ Record your screen and save it as a 1080p 60fps .avi file.
 
 ### Pre-requisites
 ```
-$ pip install datetime
 $ pip install numpy
 $ pip install opencv-python
 $ pip install pyautogui
