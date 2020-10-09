@@ -1,6 +1,6 @@
 # Automation-scripts
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
@@ -48,6 +48,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://niccolomarcon.it"><img src="https://avatars1.githubusercontent.com/u/9902267?v=4" width="100px;" alt=""/><br /><sub><b>Niccolò Marcon</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=niccolomarcon" title="Code">💻</a></td>
     <td align="center"><a href="http://hpnightowl.github.io"><img src="https://avatars1.githubusercontent.com/u/48650798?v=4" width="100px;" alt=""/><br /><sub><b>HARSH</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=hpnightowl" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/javier-marina-miranda-1a12111a0/"><img src="https://avatars1.githubusercontent.com/u/2737599?v=4" width="100px;" alt=""/><br /><sub><b>Javi Marina</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=javmarina" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/maheshschand"><img src="https://avatars0.githubusercontent.com/u/56237961?v=4" width="100px;" alt=""/><br /><sub><b>Rachakulla Mahesh Sarat Chandra</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=maheshschand" title="Code">💻</a></td>
   </tr>
 </table>
 
