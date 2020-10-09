@@ -12,7 +12,7 @@ A simple music player with gui written in python
 `pip install python-vlc`
 
 - tkinter
-`https://tkdocs.com/tutorial/install.html'
+`https://tkdocs.com/tutorial/install.html`
 
 ## How to use
 `python player.py`
