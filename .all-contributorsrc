@@ -15,6 +15,15 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "janethavi",
+      "name": "Janeth Fernando",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/35697678?v=4",
+      "profile": "http://www.linkedin.com/in/janethfernando",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
