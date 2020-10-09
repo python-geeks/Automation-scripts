@@ -33,7 +33,7 @@ while True:
         recording.write(frame)
         cv2.imshow('Preview', frame)
 
-    key = cv2.waitKey(1)  # Recieve key commands
+    key = cv2.waitKey(1)  # Receive key commands
     if key == ord('q'):
         print("Recording ended.")
         break
