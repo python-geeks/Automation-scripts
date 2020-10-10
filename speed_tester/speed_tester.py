@@ -39,7 +39,7 @@ def test_speed():
         times = re.findall("(?<=time=)\d+\.?\d*", ping)
         times = [float(time) for time in times]
         av_ping = sum(times) / len(times)
-        print(f"Average ping time for google.com is: {av_ping}")
+        print(f"Average ping time for google.com is: {av_ping}ms")
     else:
         print("Can't connect to google.com")
     print(f"Download speed is: {round(download_speed, 3)}{download_units}")
