@@ -15,7 +15,7 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 
 ### These are my Lazy Panda Goals
 
-* Goal Achieved - 29/25
+* Goal Achieved - 36/50
 
 * Goal 25 - Panda stopped Cycling (Completed)
 * Goal 50 - Panda stopped Running
