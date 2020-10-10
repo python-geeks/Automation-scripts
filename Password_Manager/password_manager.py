@@ -26,36 +26,49 @@ NO_COLOR = "\033[0m"
 
 def main():
 
-    status, is_first = check_database()
+    status, is_first = check_database()  # status{0|-1} is_first{True|False}
 
     if status == -1:
+        # ERROR
         print(f"[{RED_COLOR}-{NO_COLOR}] Error in database connection...")
         sys.exit(1)
 
     if args.password == '' or args.password is None:
+
         # User didn't enter the password (argument)
         if is_first:
+
+            # New user
             user_password = getpass("Enter a new password for the program> ")
             confirm = getpass("Confirm it> ")
+
             if user_password != confirm:
+                # ERROR
                 print(f"[{RED_COLOR}-{NO_COLOR}] Didn't match...")
                 sys.exit(1)
 
             if new(user_password, COOKIE, '-', 0) != 0:
+                # ERROR (Cookie didn't set)
                 print(f"[{RED_COLOR}-{NO_COLOR}] Error in saving...")
                 os.remove(FILENAME)
                 sys.exit(1)
+
         else:
+
             user_password = getpass("Enter your user password> ")
 
             if check_password(user_password) != 0:
+                # ERROR
                 print(f"[{RED_COLOR}-{NO_COLOR}] Wrong password...")
                 sys.exit(1)
+
     else:
+
         # We have the password here
         user_password = args.password
 
         if check_password(user_password) != 0:
+            # ERROR
             print(f"[{RED_COLOR}-{NO_COLOR}] Wrong password...")
             sys.exit(1)
 
@@ -65,6 +78,7 @@ def main():
 def check_database():
     try:
 
+        # If it was True that means the program has run for the first time
         is_first = False
 
         if not os.path.isfile(FILENAME):
@@ -79,6 +93,7 @@ def check_database():
                     password TEXT NOT NULL
                     );"""
             )
+
         return 0, is_first
     except Exception:
         return -1, False
@@ -88,15 +103,19 @@ def check_password(user_password):
     try:
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
-            rows = cursor.execute(
+            # Fetchs the cookie (canary) value
+            row = cursor.execute(
                 "SELECT * FROM passwords WHERE id=0;"
             ).fetchone()
 
             bin_user_password = str(user_password).encode('utf-8')
 
-            if decrypt(bin_user_password, rows[1]).decode('utf-8') == COOKIE:
+            if decrypt(bin_user_password, row[1]).decode('utf-8') == COOKIE:
+                # The password is correct
+                # because it can decrypt the encrypted cookie value
                 return 0
             else:
+                # The password can't decrypt the cookie value (Wrong)
                 return -1
     except Exception:
         return -1
@@ -118,9 +137,14 @@ def prompt(user_password):
         password = input("Enter the new password to save> ")
 
         if new(user_password, name, password) == 0:
+
+            # Row added
             print(f"[{GREEN_COLOR}+{NO_COLOR}] Successfully added...")
             prompt(user_password)
+
         else:
+
+            # ERROR
             print(
                 f"[{RED_COLOR}-{NO_COLOR}] Error while writing the password..."
             )
@@ -132,9 +156,12 @@ def prompt(user_password):
         confirm = input("Are you sure [Y/n]> ")
 
         if confirm.lower() == 'y':
+
             if delete(id_num) == 0:
+                # Row deleted
                 print(f"[{GREEN_COLOR}+{NO_COLOR}] Successfully deleted...")
             else:
+                # ERROR
                 print(f"[{RED_COLOR}-{NO_COLOR}] Error in deleting...")
 
         prompt(user_password)
@@ -144,15 +171,20 @@ def prompt(user_password):
         result = select_data(user_password)
 
         if result == -1:
+            # ERROR
             print(f"[{RED_COLOR}-{NO_COLOR}] Error in selecting the data...")
         else:
             show_data(result)
+
         prompt(user_password)
 
     elif cmd.lower() == 'exit':
+
         print("Bye...")
         sys.exit(0)
+
     else:
+
         print("Command not found...")
         prompt(user_password)
 
@@ -161,7 +193,10 @@ def new(user_password, name, password, id_num=-1):
     try:
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
+
             if id_num == -1:
+
+                # insert id auto-increment
                 cursor.execute(
                     """INSERT INTO passwords(name, password) VALUES (
                             ?,?
@@ -177,7 +212,10 @@ def new(user_password, name, password, id_num=-1):
                         )
                     ]
                 )
+
             else:
+
+                # insert the given id number
                 cursor.execute(
                     """INSERT INTO passwords(id, name, password) VALUES (
                             ?,?,?
@@ -194,6 +232,7 @@ def new(user_password, name, password, id_num=-1):
                         )
                     ]
                 )
+
         return 0
     except Exception:
         return -1
@@ -207,6 +246,7 @@ def delete(id_num):
                 "DELETE FROM passwords WHERE id = ? AND name != ?;",
                 [id_num, COOKIE]
             )
+
         return 0
     except Exception:
         return -1
@@ -216,8 +256,11 @@ def select_data(user_password):
     try:
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
+
+            # password => id, encrypted name and encrypted password
             passwords = cursor.execute("SELECT * FROM passwords;").fetchall()
 
+            # result => id, decrypted name and decrypted password
             result = []
 
             for (id_num, name, password) in passwords:
@@ -232,6 +275,7 @@ def select_data(user_password):
                         ).decode('utf-8')
                     )
                 )
+
             return result
     except Exception:
         return -1
@@ -239,7 +283,10 @@ def select_data(user_password):
 
 def show_data(result):
 
+    # the length of result must be more than 1
+    # because of the cookie row (0, ===PASSWORDS===, -)
     if len(result) <= 1:
+        # Empty
         print("\n\n====== Nothing ======\n\n")
     else:
 
@@ -303,7 +350,7 @@ def exit_program(sig, frame):
 
 
 if __name__ == '__main__':
-    global args
+    global args  # The program arguments
 
     parser = argparse.ArgumentParser(description="Password Manager CLI")
     # -p | --password PASSWORD
