@@ -1,0 +1,8 @@
+git add spellingcorrector && git commit -m "spellingcorrector: add makefile & update readme"
+git add text_to_sound && git commit -m "text_to_sound: add makefile & update readme"
+git add tweetBot && git commit -m "tweetBot: add makefile & update readme"
+git add video2gif && git commit -m "video2gif: add makefile & update readme"
+git add watermark_removal && git commit -m "watermark_removal: add makefile & update readme"
+git add weather && git commit -m "weather: add makefile & update readme"
+git add word_cloud && git commit -m "word_cloud: add makefile & update readme"
+git add zip_extractor && git commit -m "zip_extractor: add makefile & update readme"

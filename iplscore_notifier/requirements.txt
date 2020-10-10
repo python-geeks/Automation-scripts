@@ -1,0 +1,2 @@
+pycricbuzz==2.4
+win10toast==0.9
