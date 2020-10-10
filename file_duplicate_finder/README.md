@@ -1,5 +1,14 @@
 # Duplicate File Finder
 
+
+## Setup and activate virtual environment :
+For Unix based systems please execute the following command to create venv and install requirements.
+```
+make init
+source .venv/bin/activate
+```
+
+
 Basic script for for searching duplicate files in a folder.
 
 # No prerequisite

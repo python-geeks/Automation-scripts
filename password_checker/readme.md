@@ -10,6 +10,10 @@ It checks the following things to decide the strength of a password
 **Requirements**
 - python3
 
+**Setup virtual environment**
+
+```make init```
+
 **Modules used**
 - sys
 - re

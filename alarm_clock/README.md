@@ -7,6 +7,13 @@
    ```
    For other Unix based distros please google the package name.
 
+## Setup and activate virtual environment :
+For Unix based systems please execute the following command to create venv and install requirements.
+```
+make init
+source .venv/bin/activate
+```
+
 ## Steps to set an alarm : 
 1. run the script `AlarmClock.py` using python3.  
     On Unix based systems the command looks like : 
