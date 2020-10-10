@@ -1,6 +1,13 @@
 # TWEETBOT
 
-### Objectivs
+## Setup and activate virtual environment :
+For Unix based systems please execute the following command to create venv and install requirements.
+```
+make init
+source .venv/bin/activate
+```
+
+### Objectives
 - [x] Follow Followers - followfollowers.py
 
     automatically follows anyone who follows you.
@@ -32,7 +39,7 @@
 #### Using Local/Remote machine:
 
 ```
-$ pip install -r requirements.txt
+$ make init
 $ export CONSUMER_KEY="<Cosumer Key>"
 $ export CONSUMER_SECRET="<Consumer Secret>"
 $ export ACCESS_TOKEN="<Access Token>"
