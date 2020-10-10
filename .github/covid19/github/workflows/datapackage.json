@@ -1,0 +1,598 @@
+{
+    "licenses": [{
+        "name": "ODC-PDDL",
+        "path": "http://opendatacommons.org/licenses/pddl/",
+        "title": "Open Data Commons Public Domain Dedication and License"
+    }],
+    "name": "covid-19",
+    "resources": [{
+            "dialect": {
+                "delimiter": ",",
+                "quoteChar": "\""
+            },
+            "encoding": "ISO-8859-1",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "name": "countries-aggregated",
+            "path": "data/countries-aggregated.csv",
+            "pathType": "local",
+            "schema": {
+                "fields": [{
+                        "format": "%Y-%m-%d",
+                        "name": "Date",
+                        "type": "date"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Country",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Confirmed",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Recovered",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Deaths",
+                        "type": "integer"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        },
+        {
+            "dialect": {
+                "delimiter": ",",
+                "quoteChar": "\""
+            },
+            "encoding": "ISO-8859-1",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "name": "reference",
+            "path": "data/reference.csv",
+            "pathType": "local",
+            "schema": {
+                "fields": [{
+                        "format": "default",
+                        "name": "UID",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "iso2",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "iso3",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "code3",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "FIPS",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Admin2",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Province_State",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Country_Region",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Lat",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Long_",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Combined_Key",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Population",
+                        "type": "integer"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        },
+        {
+            "dialect": {
+                "delimiter": ",",
+                "quoteChar": "\""
+            },
+            "encoding": "ISO-8859-1",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "name": "key-countries-pivoted",
+            "path": "data/key-countries-pivoted.csv",
+            "pathType": "local",
+            "schema": {
+                "fields": [{
+                        "format": "%Y-%m-%d",
+                        "name": "Date",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "China",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "US",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "United_Kingdom",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Italy",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "France",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Germany",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Spain",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Iran",
+                        "type": "integer"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        },
+        {
+            "dialect": {
+                "delimiter": ",",
+                "quoteChar": "\""
+            },
+            "encoding": "ISO-8859-1",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "name": "time-series-19-covid-combined",
+            "path": "data/time-series-19-covid-combined.csv",
+            "pathType": "local",
+            "schema": {
+                "fields": [{
+                        "format": "%Y-%m-%d",
+                        "name": "Date",
+                        "type": "date"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Country/Region",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Province/State",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Lat",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Long",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Confirmed",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Recovered",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Deaths",
+                        "type": "integer"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        },
+        {
+            "dialect": {
+                "delimiter": ",",
+                "quoteChar": "\""
+            },
+            "encoding": "ISO-8859-9",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "name": "us_confirmed",
+            "path": "data/us_confirmed.csv",
+            "pathType": "local",
+            "schema": {
+                "fields": [{
+                        "format": "default",
+                        "name": "UID",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "iso2",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "iso3",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "code3",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "FIPS",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Admin2",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Lat",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Combined_Key",
+                        "type": "string"
+                    },
+                    {
+                        "format": "%Y-%m-%d",
+                        "name": "Date",
+                        "type": "date"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Case",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Long",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Country/Region",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Province/State",
+                        "type": "string"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        },
+        {
+            "dialect": {
+                "delimiter": ",",
+                "quoteChar": "\""
+            },
+            "encoding": "ISO-8859-9",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "name": "us_deaths",
+            "path": "data/us_deaths.csv",
+            "pathType": "local",
+            "schema": {
+                "fields": [{
+                        "format": "default",
+                        "name": "UID",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "iso2",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "iso3",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "code3",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "FIPS",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Admin2",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Lat",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Combined_Key",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Population",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "%Y-%m-%d",
+                        "name": "Date",
+                        "type": "date"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Case",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Long",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Country/Region",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Province/State",
+                        "type": "string"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        },
+        {
+            "dialect": {
+                "delimiter": ",",
+                "quoteChar": "\""
+            },
+            "encoding": "ISO-8859-9",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "name": "us_simplified",
+            "path": "data/us_simplified.csv",
+            "pathType": "local",
+            "schema": {
+                "fields": [{
+                        "format": "%Y-%m-%d",
+                        "name": "Date",
+                        "type": "date"
+                    },
+                    {
+                        "format": "default",
+                        "name": "FIPS",
+                        "type": "number"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Admin2",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Province/State",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Confirmed",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Deaths",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Population",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Country/Region",
+                        "type": "string"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        },
+        {
+            "dialect": {
+                "delimiter": ",",
+                "quoteChar": "\""
+            },
+            "encoding": "ISO-8859-2",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "name": "worldwide-aggregate",
+            "path": "data/worldwide-aggregate.csv",
+            "pathType": "local",
+            "schema": {
+                "fields": [{
+                        "format": "%Y-%m-%d",
+                        "name": "Date",
+                        "type": "string"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Confirmed",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Recovered",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Deaths",
+                        "type": "integer"
+                    },
+                    {
+                        "format": "default",
+                        "name": "Increase rate",
+                        "type": "number"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "title": "Novel Coronavirus 2019",
+    "views": [{
+            "resources": [
+                "worldwide-aggregate"
+            ],
+            "spec": {
+                "group": "Date",
+                "series": [
+                    "Confirmed",
+                    "Deaths"
+                ],
+                "type": "line"
+            },
+            "specType": "simple",
+            "title": "Total world to date"
+        },
+        {
+            "resources": [
+                "key-countries-pivoted"
+            ],
+            "spec": {
+                "group": "Date",
+                "series": [
+                    "China",
+                    "US",
+                    "United_Kingdom",
+                    "Italy",
+                    "France",
+                    "Germany",
+                    "Spain",
+                    "Iran"
+                ],
+                "type": "line"
+            },
+            "specType": "simple",
+            "title": "Number of confirmed cases in key countries"
+        },
+        {
+            "resources": [{
+                "name": "worldwide-aggregate",
+                "transform": [{
+                    "asFields": [
+                        "Mortality rate"
+                    ],
+                    "expressions": [
+                        "data['Deaths'] / data['Confirmed'] * 100 + '%'"
+                    ],
+                    "type": "formula"
+                }]
+            }],
+            "spec": {
+                "group": "Date",
+                "series": [
+                    "Mortality rate"
+                ],
+                "type": "bar"
+            },
+            "specType": "simple",
+            "title": "Mortality rate in percentage"
+        },
+        {
+            "resources": [
+                "worldwide-aggregate"
+            ],
+            "spec": {
+                "group": "Date",
+                "series": [
+                    "Increase rate"
+                ],
+                "type": "bar"
+            },
+            "specType": "simple",
+            "title": "Increase rate from previous day in confirmed cases worldwide"
+        }
+    ]
+}
