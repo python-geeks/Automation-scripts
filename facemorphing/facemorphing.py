@@ -78,8 +78,8 @@ if __name__ == '__main__':
         x = (1 - alpha) * points1[i][0] + alpha * points2[i][0]
         y = (1 - alpha) * points1[i][1] + alpha * points2[i][1]
         points.append((x, y))
-        
-        
+
+
     # Allocate space for final output
     imgMorph = np . zeros(img1 . shape, dtype=img1 . dtype)
     with open(r"C:\Users\Anustup\Desktop\Facemorph\tri.txt") as file:
