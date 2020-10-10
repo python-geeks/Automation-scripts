@@ -1,6 +1,13 @@
 # Music Player
 A simple music player with gui written in python
 
+## Setup and activate virtual environment :
+For Unix based systems please execute the following command to create venv and install requirements.
+```
+make init
+source .venv/bin/activate
+```
+
 ## Modules Used
 
 - vlc

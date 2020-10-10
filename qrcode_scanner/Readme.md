@@ -1,9 +1,12 @@
-Install following packages in before running code
+## Setup and activate virtual environment :
+For Unix based systems please execute the following command to create venv and install requirements.
+```
+make init
+source .venv/bin/activate
+```
 
-1. pip3 install pyzbar
-2. pip3 install Pillow
-3. apt-get install python-tk
-4. apt-get install zbar-tools
+1. apt-get install python-tk
+2. apt-get install zbar-tools
 
 How to Run it: 
     python3 scanner.py

@@ -1,5 +1,12 @@
 # Weather
 
+## Setup and activate virtual environment :
+For Unix based systems please execute the following command to create venv and install requirements.
+```
+make init
+source .venv/bin/activate
+```
+
 Cli used to gather weather information. It is a basic wrapper around [wttr.in](http://wttr.in/)'s http interface.
 
 ```shell
