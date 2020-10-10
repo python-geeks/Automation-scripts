@@ -231,12 +231,18 @@ def select_data(user_password):
 
 
 def show_data(result):
-    if result.count == 0:
-        print(" ====== Nothing ====== ")
+
+    if len(result) <= 1:
+        print("\n\n====== Nothing ======\n\n")
     else:
+
+        print("\n==============================\n")
+
         for (id_num, name, password) in result:
             if name != COOKIE:
-                print(f"{id_num} => [{name}] {password}")
+                print(f"({id_num}) {name} {GREEN_COLOR}{password}{NO_COLOR}")
+
+        print("\n==============================\n")
 
 
 def encrypt(key, source, encode=True):
