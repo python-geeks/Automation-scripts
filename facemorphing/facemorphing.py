@@ -94,4 +94,4 @@ if __name__ == '__main__':
             morphTriangle(img1, img2, imgMorph, t1, t2, t, alpha)
     cv2.imshow("Morphed Face", np.uint8(imgMorph))
     cv2.waitKey(0)
-    
+   
