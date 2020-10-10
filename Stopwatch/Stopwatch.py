@@ -1,12 +1,13 @@
 # importing the required libraries - tkinetr and datetime
-
 import tkinter as Tkinter
 from datetime import datetime
 
 counter = 66600
 running = False
 
+
 def counter_label(label):
+
     def count():
         if running:
             global counter
@@ -51,13 +52,14 @@ def Stop():
     reset['state'] = 'normal'
     running = False
 
+
 # Reset function of the stopwatch
 def Reset(label):
     global counter
     counter = 66600
 
-    # If rest is pressed after pressing stop.
-    if running == False:
+    # If reset is pressed after pressing stop.
+    if running is False:
         reset['state'] = 'disabled'
         label['text'] = 'Welcome!'
 
@@ -71,12 +73,12 @@ root.title("Stopwatch")
 
 # Fixing the window size.
 root.minsize(width=350, height=100)
-label = Tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold")
+label = Tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold")  # noqa
 label.pack()
 f = Tkinter.Frame(root)
 start = Tkinter.Button(f, text='START', width=10, command=lambda: Start(label))
 stop = Tkinter.Button(f, text='STOP', width=10, state='disabled', command=Stop)
-reset = Tkinter.Button(f, text='RESET', width=10, state='disabled', command=lambda: Reset(label))
+reset = Tkinter.Button(f, text='RESET', width=10, state='disabled', command=lambda: Reset(label))  # noqa
 f.pack(anchor='center', pady=5)
 start.pack(side="left")
 stop.pack(side="left")
