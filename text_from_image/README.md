@@ -11,6 +11,10 @@ opencv-python
 pytesseract
 
 ## How to use:
+```
+pip install opencv-python
+pip install tesseract
+```
 Just modify the path inside the code according to your setup and you're good to go.
 
 ## Possible error:
