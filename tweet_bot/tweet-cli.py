@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 from sys import argv
-import tweepy
-import json
-import sys
 from config import create_api
 
 usage = """
@@ -14,13 +11,12 @@ example:
 
 
 def tweet_cli(api):
-    if not len(sys.argv) == 2:
+    if not len(argv) == 2:
         print(usage)
     else:
-        api.update_status(sys.argv[1])
+        api.update_status(argv[1])
 
 
 if __name__ == "__main__":
     api = create_api()
     tweet_cli(api)
-
