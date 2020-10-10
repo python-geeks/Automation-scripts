@@ -11,9 +11,9 @@ import requests
 import socket
 import getopt
 import sys
-from datetime import datetime
 
-CSV_URL = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv"
+CSV_URL = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/\
+dpc-covid19-ita-andamento-nazionale.csv"
 data = []
 mood = ""
 
@@ -28,8 +28,8 @@ def check_connection(host="8.8.8.8", port=53):
     try:
         socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
         return True
-    except:
-        print("ERROR: Ensure you are connected to Internet.")
+    except Exception:
+        print("[ERROR] Ensure you are connected to Internet.")
         return False
 
 
@@ -109,7 +109,7 @@ def print_cmd(data):
                 s += elem + " | "
         print(s)
     # HERE THE INCREASE FROM YESTERDAY
-    titles= [
+    titles = [
         "hospitalized with symptoms",
         "intensive therapy",
         "total hospitalized",
@@ -123,7 +123,7 @@ def print_cmd(data):
         "swabs",
     ]
     print("")
-    print( " ### (Compared to Yesterday): ###")
+    print(" ### (Compared to Yesterday): ###")
     for i, title in enumerate(titles):
         print_diff(title, i + 2)
 
