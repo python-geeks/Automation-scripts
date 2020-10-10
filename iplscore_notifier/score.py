@@ -36,11 +36,13 @@ def live_score(mid):
     else:
         print("-------------------------------------------")
         print("Innings No : " + lscore["batting"]["score"][0]["inning_num"])
-        print(lscore["batting"]["team"] + " : " + lscore["batting"]["score"][0]["runs"] + "/" 
+        print(lscore["batting"]["team"] + " : " + lscore["batting"]["score"][0]["runs"] + "/"
               + lscore["batting"]["score"][0]["wickets"] + " in " + lscore["batting"]["score"][0]["overs"] + " overs")
 
-        message = (lscore["batting"]["team"] + " : " + lscore["batting"]["score"][0]["runs"] + "/" 
-                    + lscore["batting"]["score"][0]["wickets"] + " in " + lscore["batting"]["score"][0]["overs"] + " overs")
+        message = (lscore["batting"]["team"] + " : " + lscore["batting"]["score"][0]["runs"] + "/"
+                   + lscore["batting"]["score"][0]["wickets"] + " in " + lscore["batting"]["score"][0]["overs"]
+                   + " overs")
+
         n.show_toast("LIVE MATCH SCORE", message, duration=10)
 
 
