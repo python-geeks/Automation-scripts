@@ -2,6 +2,8 @@
 # Creted by Sam Ebison ( https://github.com/ebsa491 )
 
 import argparse
+import os
+from getpass import getpass
 import base64
 from Crypto.Cipher import AES
 from Crypto.Hash import SHA256
@@ -14,11 +16,47 @@ FILENAME = ".data.txt"
 def main():
 
     if args.password == '' or args.password is None:
-        # User didn't pass the password arguments
-        pass
+        # User didn't enter the password
+
+        if os.path.isfile(FILENAME):
+            # File exists (the user used the program before)
+            # Ask the password
+            # secret prompt for entering the password
+            password = getpass("Enter the password> ")
+            check_password(password)
+        else:
+            # File doesn't exist (it's the first time)
+            # Welcome
+            print("Welcome to my PASSWORD MANAGER!")
+            prompt()
     else:
-        # We have the password
-        pass
+        # We have the password here
+
+        if os.path.isfile(FILENAME):
+            # File exists (the user used the program before)
+            # Check the password
+            check_password(args.password)
+        else:
+            # File doesn't exist (it's the first time)
+            # Ignore the password and welcome
+            print("Welcome to my PASSWORD MANAGER!")
+            prompt()
+
+
+def prompt():
+    pass
+
+
+def check_password(password):
+    with open(FILENAME, 'r') as data_file:
+        data = decrypt(password, data_file.read())
+        if data[:15] == '===PASSWORDS===':
+            # Password is correct
+            prompt()
+        else:
+            # Password is wrong
+            input_password = getpass("Enter the password> ")
+            check_password(input_password)
 
 
 def encrypt(key, source, encode=True):
@@ -70,6 +108,7 @@ if __name__ == '__main__':
     global args
 
     parser = argparse.ArgumentParser(description="Password Manager CLI")
+    # -p | --password PASSWORD
     parser.add_argument(
         '-p',
         '--password',
