@@ -1,4 +1,4 @@
-# importing the required libraries - tkinetr and datetime
+# importing the required libraries
 import tkinter as Tkinter
 from datetime import datetime
 
@@ -7,12 +7,11 @@ running = False
 
 
 def counter_label(label):
-
     def count():
         if running:
             global counter
 
-            # To manage the intial delay.
+            # To manage the initial delay.
             if counter == 66600:
                 display = "Starting"
             else:
@@ -20,7 +19,8 @@ def counter_label(label):
                 string = tt.strftime("%H:%M:%S")
                 display = string
 
-            label['text'] = display
+            label['text'] = display  # Or label.config(text=display)
+
             # label.after(arg1, arg2) delays by
             # first argument given in milliseconds
             # and then calls the function given as second argument.
@@ -72,13 +72,15 @@ root = Tkinter.Tk()
 root.title("Stopwatch")
 
 # Fixing the window size.
-root.minsize(width=350, height=100)
-label = Tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold")  # noqa
+root.minsize(width=250, height=70)
+label = Tkinter.Label(root, text="Welcome!", fg="black",
+                      font="Verdana 30 bold")
 label.pack()
 f = Tkinter.Frame(root)
-start = Tkinter.Button(f, text='START', width=10, command=lambda: Start(label))
-stop = Tkinter.Button(f, text='STOP', width=10, state='disabled', command=Stop)
-reset = Tkinter.Button(f, text='RESET', width=10, state='disabled', command=lambda: Reset(label))  # noqa
+start = Tkinter.Button(f, text='Start', width=6, command=lambda: Start(label))
+stop = Tkinter.Button(f, text='Stop', width=6, state='disabled', command=Stop)
+reset = Tkinter.Button(f, text='Reset', width=6, state='disabled',
+                       command=lambda: Reset(label))
 f.pack(anchor='center', pady=5)
 start.pack(side="left")
 stop.pack(side="left")
