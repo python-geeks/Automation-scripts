@@ -1,5 +1,0 @@
-- regExp: ".*\\.docs+$"
-  labels: ["automerge"]
-
-- regExp: ".*\\.contributor+$"
-  labels: ["automerge"]
