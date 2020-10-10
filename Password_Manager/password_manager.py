@@ -69,17 +69,15 @@ def check_database():
         if not os.path.isfile(FILENAME):
             is_first = True
 
-        conn = sqlite3.connect(FILENAME)
-        cursor = conn.cursor()
-        cursor.execute(
-            """CREATE TABLE IF NOT EXISTS passwords (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                password TEXT NOT NULL
-                );"""
-        )
-        conn.commit()
-        conn.close()
+        with sqlite3.connect(FILENAME) as conn:
+            cursor = conn.cursor()
+            cursor.execute(
+                """CREATE TABLE IF NOT EXISTS passwords (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT NOT NULL,
+                    password TEXT NOT NULL
+                    );"""
+            )
         return 0, is_first
     except Exception:
         return -1, False
@@ -87,19 +85,19 @@ def check_database():
 
 def check_password(user_password):
     try:
-        conn = sqlite3.connect(FILENAME)
-        cursor = conn.cursor()
-        rows = cursor.execute(
-            "SELECT * FROM passwords WHERE name=?;",
-            encrypt(
-                str(user_password).encode('utf-8'),
-                COOKIE.encode('utf-8')
-            )
-        ).fetchall()
-        if rows.count > 0:
-            return 1
-        else:
-            return 0
+        with sqlite3.connect(FILENAME) as conn:
+            cursor = conn.cursor()
+            rows = cursor.execute(
+                "SELECT * FROM passwords WHERE name=?;",
+                encrypt(
+                    str(user_password).encode('utf-8'),
+                    COOKIE.encode('utf-8')
+                )
+            ).fetchall()
+            if rows.count > 0:
+                return 1
+            else:
+                return 0
     except Exception:
         return -1
 
@@ -147,7 +145,7 @@ def prompt(user_password):
         prompt(user_password)
 
     elif cmd.lower() == 'exit':
-        sys.exit(0)
+        pass
     else:
         print("Command not found...")
         prompt(user_password)
@@ -155,43 +153,41 @@ def prompt(user_password):
 
 def new(user_password, name, password, id_num=-1):
     try:
-        conn = sqlite3.connect(FILENAME)
-        cursor = conn.cursor()
-        if id_num == -1:
-            cursor.execute(
-                """INSERT INTO passwords(name, password) VALUES (
-                        ?,?
-                    );""",
-                [
-                    encrypt(
-                        str(user_password).encode('utf-8'),
-                        str(name).encode('utf-8')
-                    ),
-                    encrypt(
-                        str(user_password).encode('utf-8'),
-                        str(password).encode('utf-8')
-                    )
-                ]
-            )
-        else:
-            cursor.execute(
-                """INSERT INTO passwords(id, name, password) VALUES (
-                        ?,?,?
-                    );""",
-                [
-                    id_num,
-                    encrypt(
-                        str(user_password).encode('utf-8'),
-                        str(name).encode('utf-8')
-                    ),
-                    encrypt(
-                        str(user_password).encode('utf-8'),
-                        str(password).encode('utf-8')
-                    )
-                ]
-            )
-        conn.commit()
-        conn.close()
+        with sqlite3.connect(FILENAME) as conn:
+            cursor = conn.cursor()
+            if id_num == -1:
+                cursor.execute(
+                    """INSERT INTO passwords(name, password) VALUES (
+                            ?,?
+                        );""",
+                    [
+                        encrypt(
+                            str(user_password).encode('utf-8'),
+                            str(name).encode('utf-8')
+                        ),
+                        encrypt(
+                            str(user_password).encode('utf-8'),
+                            str(password).encode('utf-8')
+                        )
+                    ]
+                )
+            else:
+                cursor.execute(
+                    """INSERT INTO passwords(id, name, password) VALUES (
+                            ?,?,?
+                        );""",
+                    [
+                        id_num,
+                        encrypt(
+                            str(user_password).encode('utf-8'),
+                            str(name).encode('utf-8')
+                        ),
+                        encrypt(
+                            str(user_password).encode('utf-8'),
+                            str(password).encode('utf-8')
+                        )
+                    ]
+                )
         return 0
     except Exception:
         return -1
@@ -199,14 +195,12 @@ def new(user_password, name, password, id_num=-1):
 
 def delete(id_num):
     try:
-        conn = sqlite3.connect(FILENAME)
-        cursor = conn.cursor()
-        cursor.execute(
-            "DELETE FROM passwords WHERE id = ? AND name != ?;",
-            [id_num, COOKIE]
-        )
-        conn.commit()
-        conn.close()
+        with sqlite3.connect(FILENAME) as conn:
+            cursor = conn.cursor()
+            cursor.execute(
+                "DELETE FROM passwords WHERE id = ? AND name != ?;",
+                [id_num, COOKIE]
+            )
         return 0
     except Exception:
         return -1
@@ -214,26 +208,25 @@ def delete(id_num):
 
 def select_data(user_password):
     try:
-        conn = sqlite3.connect(FILENAME)
-        cursor = conn.cursor()
-        passwords = cursor.execute("SELECT * FROM passwords;").fetchall()
-        conn.close()
+        with sqlite3.connect(FILENAME) as conn:
+            cursor = conn.cursor()
+            passwords = cursor.execute("SELECT * FROM passwords;").fetchall()
 
-        result = []
+            result = []
 
-        for (id_num, name, password) in passwords:
-            result.append(
-                (
-                    id_num,
-                    decrypt(
-                        str(user_password).encode('utf-8'), name
-                    ).decode('utf-8'),
-                    decrypt(
-                        str(user_password).encode('utf-8'), password
-                    ).decode('utf-8')
+            for (id_num, name, password) in passwords:
+                result.append(
+                    (
+                        id_num,
+                        decrypt(
+                            str(user_password).encode('utf-8'), name
+                        ).decode('utf-8'),
+                        decrypt(
+                            str(user_password).encode('utf-8'), password
+                        ).decode('utf-8')
+                    )
                 )
-            )
-        return result
+            return result
     except Exception:
         return -1
 
