@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 # Creted by Sam Ebison ( https://github.com/ebsa491 )
+# If you have found any important bug or vulnerability,
+# contact me pls, I love learning ( email: ebsa491@gmail.com )
+
+"""
+This is a simple password manager CLI program
+based on https://github.com/python-geeks/Automation-scripts/issues/111
+"""
 
 import argparse
 import sys
@@ -25,6 +32,7 @@ NO_COLOR = "\033[0m"
 
 
 def main():
+    """The main function of the program."""
 
     status, is_first = check_database()  # status{0|-1} is_first{True|False}
 
@@ -76,6 +84,13 @@ def main():
 
 
 def check_database():
+    """
+    This function checks the database file.
+    If everything was going OK returns 0, is_first{True|False}
+    and if not returns -1, False.
+    If is_first was True that means the program has run for the first time.
+    """
+
     try:
 
         # If it was True that means the program has run for the first time
@@ -100,6 +115,12 @@ def check_database():
 
 
 def check_password(user_password):
+    """
+    This function checks the user password and will return two values {0|-1},
+    0 means the password is correct,
+    -1 means it's wrong.
+    """
+
     try:
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
@@ -122,6 +143,11 @@ def check_password(user_password):
 
 
 def prompt(user_password):
+    """
+    This function will be called after checking the password and database.
+    It gives you a prompt for entering your commands.
+    Valid commands are 'new', 'delete', 'show', 'exit'.
+    """
 
     print("Commands: [new] [delete] [show] [exit]")
 
@@ -190,6 +216,19 @@ def prompt(user_password):
 
 
 def new(user_password, name, password, id_num=-1):
+    """
+    This function used for inserting new row to the database.
+    It will return two values {0|-1},
+    0 means the row has inserted successfully,
+    -1 means there was an error.
+    parameters are (in sort) =>
+    ===================================
+    user_password: The program password,
+    name: The tag of the new password,
+    password: The new password,
+    OPTIONAL id_num: Will be used for specific id number.
+    """
+
     try:
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
@@ -239,6 +278,13 @@ def new(user_password, name, password, id_num=-1):
 
 
 def delete(id_num):
+    """
+    It gets an id number and will delete it from the database.
+    It will return two values {0|-1}
+    0 means the row has deleted successfully,
+    -1 means there was an error.
+    """
+
     try:
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
@@ -253,6 +299,12 @@ def delete(id_num):
 
 
 def select_data(user_password):
+    """
+    This function gets the program password (user_password)
+    and returns the passwords list.
+    returning -1 means there was an error
+    """
+
     try:
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
@@ -282,6 +334,10 @@ def select_data(user_password):
 
 
 def show_data(result):
+    """
+    A function for printing the passwords.
+    It gets the password list.
+    """
 
     # the length of result must be more than 1
     # because of the cookie row (0, ===PASSWORDS===, -)
@@ -300,6 +356,7 @@ def show_data(result):
 
 
 def encrypt(key, source, encode=True):
+    """A function for encryption."""
 
     # use SHA-256 over our key to get a proper-sized AES key
     key = SHA256.new(key).digest()
@@ -320,6 +377,7 @@ def encrypt(key, source, encode=True):
 
 
 def decrypt(key, source, decode=True):
+    """A function for decrypting the encrypted datum."""
 
     if decode:
         source = base64.b64decode(source.encode("utf-8"))
@@ -345,6 +403,8 @@ def decrypt(key, source, decode=True):
 
 
 def exit_program(sig, frame):
+    """For handling SIGINT signal."""
+
     print("\nBye...")
     sys.exit(0)
 
