@@ -60,8 +60,6 @@ def morphTriangle(img1, img2, img, t1, t2, t, alpha):
     img[r[1]: r[1] + r[3], r[0]: r[0] + r[2]] =
     img[r[1]: r[1] + r[3], r[0]: r[0] + r[2]] * (1 - mask) + imgRect * mask
 if __name__ == '__main__':
-
-
     filename1 = r"C:\Users\Anustup\Desktop\Facemorph\hilary_clinton.jpg"
     filename2 = r"C:\Users\Anustup\Desktop\Facemorph\ted_cruz.jpg"
     alpha = 0.5
@@ -80,6 +78,8 @@ if __name__ == '__main__':
         x = (1 - alpha) * points1[i][0] + alpha * points2[i][0]
         y = (1 - alpha) * points1[i][1] + alpha * points2[i][1]
         points.append((x, y))
+        
+        
     # Allocate space for final output
     imgMorph = np . zeros(img1 . shape, dtype=img1 . dtype)
     with open(r"C:\Users\Anustup\Desktop\Facemorph\tri.txt") as file:
