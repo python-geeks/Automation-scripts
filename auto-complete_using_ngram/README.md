@@ -19,7 +19,7 @@ I will list out a few things you definitely need to make it run locally,
 
 These are the major requirements. If you wish you can install my entire setup using this command
 
-`$ pip install -r requirements.txt`
+`$ make install`
 
 > **Note: We will be using Charles Dickens' great novel "A Tale of two cities" to train our model.**
 
