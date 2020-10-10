@@ -45,6 +45,7 @@ class Autosearch(threading.Thread):
 
         def on_press(key):
             i = 10
+            print(i)
 
         def on_release(key):
             if key == Key.f2:
