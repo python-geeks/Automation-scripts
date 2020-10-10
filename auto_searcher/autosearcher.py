@@ -64,12 +64,12 @@ class Autosearch(threading.Thread):
             parastring.replace('/n', '+')
             parastring.replace(' ', '+')
 
-            Autosearch.searchs(self, parastring)
+            Autosearch.searches(self, parastring)
 
         else:
             print('error')
 
-    def searchs(self, parastring):
+    def searches(self, parastring):
 
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
