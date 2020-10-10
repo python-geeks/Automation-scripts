@@ -6,20 +6,20 @@ For Unix based systems please execute the following command to create venv and i
 make init
 source .venv/bin/activate
 ```
-## Libraries used
-opencv-python
-pytesseract
+## Libraries used :
+opencv-python <br />
+pytesseract <br />
 
-## How to use:
+## How to use :
 ```
 pip install opencv-python
 pip install tesseract
 ```
-Just modify the path inside the code according to your setup and you're good to go.
+Just modify the path of files inside the code according to your setup and you're good to go.
 
-## Possible error:
+## Possible error :
 
-raise TesseractNotFoundError()
+raise TesseractNotFoundError() <br />
 pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your path
 
 If you get this error, please refer to: https://stackoverflow.com/questions/50655738/how-do-i-resolve-a-tesseractnotfounderror
