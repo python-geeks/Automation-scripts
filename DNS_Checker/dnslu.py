@@ -35,8 +35,8 @@ def dac(dns_val=None) -> OrderedDict:
 
 
 if __name__ == '__main__':
-    dns_val=None
-    option=None
+    dns_val = None
+    option = None
 
     if len(sys.argv) > 1:
         if '--dns' in sys.argv:
@@ -53,6 +53,6 @@ if __name__ == '__main__':
     except Exception as err:
         print(f"error: {err}")
         sys.exit(1)
-    
+
     print(json.dumps(response, indent=4))
     sys.exit(0)
