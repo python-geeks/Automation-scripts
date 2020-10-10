@@ -7,7 +7,7 @@ import hashlib
 def show_dup_files(dup_list):
     if len(dup_files) == 0:
         print('no duplicate files found')
-        return 
+        return # noqa 
     print('Duplicate files in the inputted directory : ')
     for file_name in dup_list:
         print(file_name)
@@ -57,13 +57,12 @@ if __name__ == "__main__":
                 continue
 
             path = os.path.join(dest_folder, file_name)
-            file_size = os.path.getsize(path) 
+            file_size = os.path.getsize(path)
             # searching in the dictionary
 
             if file_size in track_file_size.values():
                 '''if it exists it may be a potential dup file
-                to confirm it we will hash content of both and comapare'''
-            
+                to confirm it we will hash content of both and comapare'''# noqa           
                 # now there can be more than one files with same size so have
 
                 files_hashed_list = get_file_hashes(file_size, track_file_size, dest_folder)# noqa
@@ -78,6 +77,4 @@ if __name__ == "__main__":
     #    show_all_files(dest_folder)
         show_dup_files(dup_files)
     except Exception as err:
-        print(err)
-
-    
+        print(err)   # noqa    
