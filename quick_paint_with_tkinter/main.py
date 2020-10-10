@@ -25,13 +25,11 @@ def ButtonColor():
 
 
 buttonColor = Button(window, text="Choose Color", command=ButtonColor, width=10)
-buttonColor.pack (side="top", fill="y", expand=True, padx=0, pady=0)
+buttonColor.pack(side="top", fill="y", expand=True, padx=0, pady=0)
+
 
 def ButtonSave():
-    files = [
-        ("PNG", "*.png"),
-        ("JPG", "*.jpg")
-    ]
+    files = [("PNG", "*.png"), ("JPG", "*.jpg")]
     file_ = filedialog.asksaveasfile(filetypes=files, defaultextension=".png")
     print(file_)
     image.save(file_.name)
@@ -56,7 +54,7 @@ cursor_ = None
 
 def cursor(event):
     global cursor_
-    if not cursor_ in canvas.find_all():
+    if cursor_ not in canvas.find_all():
         cursor_ = canvas.create_oval(event.x - 10, event.y - 10, event.x + 10, event.y + 10, width=0, fill='cyan')
     canvas.coords(cursor_, event.x - 10, event.y - 10, event.x + 10, event.y + 10)
     canvas.update_idletasks()
