@@ -57,7 +57,7 @@ def morphTriangle(img1, img2, img, t1, t2, t, alpha):
     imgRect = (1.0 - alpha) * warpImage1 + alpha * warpImage2
 
     # Copy triangular region of the rectangular patch to the output image
-    img[r[1]: r[1] + r[3], r[0]: r[0] + r[2]] =
+    img[r[1]: r[1] + r[3], r[0]: r[0] + r[2]]
     img[r[1]: r[1] + r[3], r[0]: r[0] + r[2]] * (1 - mask) + imgRect * mask
 
 
