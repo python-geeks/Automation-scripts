@@ -47,14 +47,14 @@ def main():
         else:
             user_password = getpass("Enter your user password> ")
 
-            if check_password(user_password) != 1:
+            if check_password(user_password) != 0:
                 print(f"[{RED_COLOR}-{NO_COLOR}] Wrong password...")
                 sys.exit(1)
     else:
         # We have the password here
         user_password = args.password
 
-        if check_password(user_password) != 1:
+        if check_password(user_password) != 0:
             print(f"[{RED_COLOR}-{NO_COLOR}] Wrong password...")
             sys.exit(1)
 
@@ -88,16 +88,15 @@ def check_password(user_password):
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
             rows = cursor.execute(
-                "SELECT * FROM passwords WHERE name=?;",
-                encrypt(
-                    str(user_password).encode('utf-8'),
-                    COOKIE.encode('utf-8')
-                )
-            ).fetchall()
-            if rows.count > 0:
-                return 1
-            else:
+                "SELECT * FROM passwords WHERE id=0;"
+            ).fetchone()
+
+            bin_user_password = str(user_password).encode('utf-8')
+
+            if decrypt(bin_user_password, rows[1]).decode('utf-8') == COOKIE:
                 return 0
+            else:
+                return -1
     except Exception:
         return -1
 
@@ -145,7 +144,7 @@ def prompt(user_password):
         prompt(user_password)
 
     elif cmd.lower() == 'exit':
-        pass
+        sys.exit(0)
     else:
         print("Command not found...")
         prompt(user_password)
