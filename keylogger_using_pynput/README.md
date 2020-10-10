@@ -14,7 +14,7 @@ We need to install the pynput module. To install the module type the following i
 pip install pynput
 ```
 
-Recommened: Install the module after creating a virtual environment.
+Recommended: Install the module after creating a virtual environment.
 
 ## Execution
 - To run the program, type the following command into your terminal 
