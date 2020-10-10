@@ -9,7 +9,7 @@
     automatically likes and retweets tweets that match certain criteria.
 
 - [ ] Autoreply - nlp Knowledge needed
-- [ ] tweet-cli - Ongoing
+- [x] tweet-cli - Ongoing
 
 
 ### Requirements
@@ -30,15 +30,23 @@
 ### USAGE:
 
 #### Using Local/Remote machine:
-
+This is compatible with Linux and OSx 
 ```
 $ pip install -r requirements.txt
 $ export CONSUMER_KEY="<Cosumer Key>"
 $ export CONSUMER_SECRET="<Consumer Secret>"
 $ export ACCESS_TOKEN="<Access Token>"
 $ export ACCESS_TOKEN_SECRET="<Access Token Secret>"
-source .venv/bin/activate # if pyenv is in use
-python followfollowers.py # or faveretweet.py
+$ source .venv/bin/activate # if pyenv is in use
+$ python followfollowers.py # or faveretweet.py
+```
+
+###### Using tweet-cli in local machine
+
+```
+$ chomd +x tweet-cli.py
+$ ln -s tweet-cli.py /usr/local/bin/tweet-cli
+$ tweet-cli "this is my tweet from tweet-cli"
 ```
 
 #### Using Docker-Container
