@@ -1,0 +1,3 @@
+gtts
+PyPDF2
+pyttsx3

@@ -1,0 +1,2 @@
+zipfile37 == 0.1.3
+easygui >= 0.98.1

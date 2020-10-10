@@ -1,0 +1,4 @@
+pynput==1.7.1
+pytesseract==0.3.6
+selenium==3.141.0
+Pillow==7.2.0
