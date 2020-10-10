@@ -9,7 +9,8 @@ def ping_google():
         system = platform.system().lower()
         option = "n" if system == "windows" else "c"
         res = subprocess.check_output(
-            f"ping -{option} 10 google.com", shell=True, universal_newlines=True
+            f"ping -{option} 10 google.com",
+            shell=True, universal_newlines=True
         )
         if "unreachable" in res:
             return False
@@ -36,7 +37,7 @@ def test_speed():
     upload_units = units[unit_index]
     ping = ping_google()
     if ping:
-        times = re.findall("(?<=time=)\d+\.?\d*", ping)
+        times = re.findall(r"(?<=time=)\d+\.?\d*", ping)
         times = [float(time) for time in times]
         av_ping = sum(times) / len(times)
         print(f"Average ping time for google.com is: {av_ping}ms")
