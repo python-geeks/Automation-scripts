@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-#import sys
+# import sys
 # Read points from text file
 
 
