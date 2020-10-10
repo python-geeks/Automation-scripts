@@ -276,6 +276,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "fa1l",
+      "name": "fa1l",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/19634523?v=4",
+      "profile": "https://github.com/fa1l",
+      "contributions": [
+        "code",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
