@@ -1,4 +1,12 @@
 # Script to remove watermark from images and pdfs
+
+## Setup and activate virtual environment :
+For Unix based systems please execute the following command to create venv and install requirements.
+```
+make init
+source .venv/bin/activate
+```
+
 ## How to use:
 1. Call the function giving two arguments, the path to the images whose watermark is to be removed and the output path (where you want to store the cleaned images). (This script will remove the watermarks from all jpg images in the folder and store them into another folder "Cleaned")
 <br> example :-
