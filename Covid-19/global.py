@@ -12,10 +12,10 @@ from bs4 import BeautifulSoup
 
 url = "https://worldometers.info/coronavirus/"
 r = requests.get(url)
-s = BeautifulSoup(r.text,"html.parser")
-data = s.find_all("div",class_ = "maincounter-number")
+s = BeautifulSoup(r.text, "html.parser")
+data = s.find_all("div", class_="maincounter-number")
 
-for x in range(0,5):
+for x in range(0, 5):
     b = "Fetching data" + "." * x
     print(b, end="\r")
     time.sleep(0.5)
