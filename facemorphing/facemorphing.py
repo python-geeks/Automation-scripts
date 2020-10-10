@@ -26,7 +26,6 @@ def applyAffineTransform(src, srcTri, dstTri, size):
     dst = cv2.warpAffine(src, warpMat, (size[0], size[1])None, 
                          flags=cv2.INTER_LINEAR, 
                          borderMode=cv2.BORDER_REFLECT_101)
-    
     return dst
 
 
@@ -60,8 +59,7 @@ def morphTriangle(img1, img2, img, t1, t2, t, alpha):
     # Copy triangular region of the rectangular patch to the output image
     img[r[1]: r[1] + r[3], r[0]: r[0] + r[2]] =
     img[r[1]: r[1] + r[3], r[0]: r[0] + r[2]] * (1 - mask) + imgRect * mask
-    
-    
+        
 if __name__ == '__main__':
     filename1 = r"C:\Users\Anustup\Desktop\Facemorph\hilary_clinton.jpg"
     filename2 = r"C:\Users\Anustup\Desktop\Facemorph\ted_cruz.jpg"
