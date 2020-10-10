@@ -6,6 +6,7 @@ import sys
 import os
 import sqlite3
 import base64
+import signal
 from getpass import getpass
 from Crypto.Cipher import AES
 from Crypto.Hash import SHA256
@@ -104,7 +105,12 @@ def check_password(user_password):
 def prompt(user_password):
 
     print("Commands: [new] [delete] [show] [exit]")
-    cmd = input("Enter your command> ")
+
+    try:
+        cmd = input("Enter your command> ")
+    except EOFError:
+        print("\nBye...")
+        sys.exit(0)
 
     if cmd.lower() == 'new':
 
@@ -144,6 +150,7 @@ def prompt(user_password):
         prompt(user_password)
 
     elif cmd.lower() == 'exit':
+        print("Bye...")
         sys.exit(0)
     else:
         print("Command not found...")
@@ -290,6 +297,11 @@ def decrypt(key, source, decode=True):
     return data[:-padding]
 
 
+def exit_program(sig, frame):
+    print("\nBye...")
+    sys.exit(0)
+
+
 if __name__ == '__main__':
     global args
 
@@ -304,5 +316,8 @@ if __name__ == '__main__':
         help='the program password'
     )
     args = parser.parse_args()
+
+    # Handle SIGINT (same as ^C) signal
+    signal.signal(signal.SIGINT, exit_program)
 
     main()
