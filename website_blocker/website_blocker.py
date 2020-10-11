@@ -14,7 +14,7 @@ class Blocker:
     exit_blocker = False
 
     def __init__(self, path, os_num):
-        self.hosts_path = r""+path
+        self.hosts_path = r"" + path
         self.os_number = os_num
 
         print("Blocked Websites (^v^)")
@@ -45,7 +45,6 @@ class Blocker:
                 self.exit_blocker = True
             else:
                 print("Invalid Input Try Again")
-
 
     def restore_host_file(self):
         with open(self.hosts_path, 'r+') as file:
