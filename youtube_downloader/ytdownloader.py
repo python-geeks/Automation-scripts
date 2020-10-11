@@ -44,4 +44,4 @@ if args.captions:
             f"Sorry, '{args.captions}' captions are not available for this video.")
 
 if args.verbose:
-    print(f"Successfuly downloaded video: {dest}")
+    print(f"Successfully downloaded video: {dest}")
