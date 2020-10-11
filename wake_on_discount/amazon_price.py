@@ -63,10 +63,11 @@ def check_price(URL, desired_price):
             # TODO: Sends email
             pass
         if (desired_price >= current_price):
-            Client(getenv('ACCOUNT_SID'), getenv('AUTH_TOKEN')).messages.create(
-                        body='Current price for {} is {}.'.format(getenv("URL"), current_price),
-                        from_='+twilio_number',
-                        to='+user_phone_number'
+            Client(getenv(
+                'ACCOUNT_SID'), getenv('AUTH_TOKEN')).messages.create(
+                body='Current price for {} is {}.'.format(getenv("URL"), current_price),
+                from_='+twilio_number',
+                to='+user_phone_number'
             )
 
 
