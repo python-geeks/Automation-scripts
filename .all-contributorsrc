@@ -340,6 +340,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "ebsa491",
+      "name": "Sam Ebison",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23361794?v=4",
+      "profile": "http://samebison.ir",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
