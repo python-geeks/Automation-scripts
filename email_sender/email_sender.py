@@ -27,8 +27,8 @@ class EmailSender(object):
         :return: object contain the email message provided by the user
         """
         try:
-            self.logger.info(f"Enter/Paste your email. Ctrl-D or Ctrl-Z "
-                             f"to save it")
+            self.logger.info("Enter/Paste your email. Ctrl-D or Ctrl-Z "
+                             "to save it")
             contents = []
             while True:
                 try:
@@ -40,7 +40,7 @@ class EmailSender(object):
             return '\n'.join(contents)
         except Exception as e:
             self.logger.error(f"Unable to process email message input: {e}")
-            raise Exception(f"Unable to process email message input")
+            raise Exception("Unable to process email message input")
 
     def prepare_email(self, subject, from_email, to_email, body):
         """Takes the subject, from_email, to_email and message and generates
@@ -61,9 +61,9 @@ class EmailSender(object):
             msg.attach(MIMEText(body, 'plain'))
 
             return msg.as_string()
-        except Exception as e:
-            self.logger.error(f"Unable to prepare email message: {e}")
-            raise Exception(f"Unable to prepare email message")
+        except Exception as error:
+            self.logger.error(f"Unable to prepare email message: {error}")
+            raise Exception("Unable to prepare email message")
 
     def send_email(self, subject, from_email, to_email, msg,
                    host=None, port=None, username=None, password=None):
@@ -100,13 +100,13 @@ class EmailSender(object):
 
             self.logger.info(f"Sending email to: {to_email}")
             return smtp.sendmail(from_email, to_email, email)
-        except ConnectionRefusedError as e:
+        except ConnectionRefusedError:
             self.logger.error(f"Error to connect to smtp://{host}:{port}")
             raise Exception(f"Error to connect to smtp host: "
                             f"smtp://{host}:{port}")
-        except Exception as e:
-            self.logger.error(f"Unable to send email message: {e}")
-            raise Exception(f"Unable to send email message")
+        except Exception as error:
+            self.logger.error(f"Unable to send email message: {error}")
+            raise Exception("Unable to send email message")
 
 
 if __name__ == "__main__":
@@ -138,8 +138,8 @@ if __name__ == "__main__":
         if args.msg:
             msg = args.msg
         else:
-            email_sender.logger.info(f"Email message not provided, please "
-                                     f"input now!")
+            email_sender.logger.info("Email message not provided, please "
+                                     "input now!")
             msg = email_sender.email_message_input()
 
         # send the email
@@ -148,7 +148,7 @@ if __name__ == "__main__":
                                 to_email=args.to_email,
                                 msg=msg)
 
-        email_sender.logger.info(f"Email message successfully delivered")
+        email_sender.logger.info("Email message successfully delivered")
     except Exception as e:
         email_sender = EmailSender()
         email_sender.logger.error(f"Unable to execute the EmailSender "
