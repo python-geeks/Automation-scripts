@@ -23,7 +23,7 @@ def organize_junk():
         for dir in os.scandir():
             try:
                 os.rmdir(dir)
-            except Exception as e:
+            except Exception:
                 pass
 
 
