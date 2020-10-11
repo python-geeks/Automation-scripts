@@ -6,7 +6,7 @@ from datetime import datetime
 ascii_banner = pyfiglet.figlet_format("PORT SCANNER")
 print(ascii_banner)
 
-# Defining a target 
+# Defining a target
 if len(sys.argv) == 2:
 
     # translate hostname to IPv4
@@ -32,7 +32,7 @@ try:
             print("Port {} is open".format(port))
         s.close()
 
-except KeyboardIntrrupt:
+except KeyboardInterrupt:
         print("\n Exitting Program !!!!")
         sys.exit()
 except socket.gaierror:
