@@ -32,11 +32,11 @@ try:
         s.close()
 
 except KeyboardInterrupt:
-        print("\nExitting Program !!!!")
-        sys.exit()
+    print("\nExitting Program !!!!")
+    sys.exit()
 except socket.gaierror:
-        print("\nHostname Could Not Be Resolved !!!!")
-        sys.exit()
+    print("\nHostname Could Not Be Resolved !!!!")
+    sys.exit()
 except socket.error:
-        print("\nServer not responding !!!!")
-        sys.exit()
+    print("\nServer not responding !!!!")
+    sys.exit()
