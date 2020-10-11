@@ -8,8 +8,8 @@ while True:
     img = cv2.imread(img_path)
     if img is None:
         print(
-            'Directory or file is not vaild,' +
-            ' please enter a valid file directory ...')
+            'Directory or file is not valid,'
+            + ' please enter a valid file directory ...')
     else:
         break
 

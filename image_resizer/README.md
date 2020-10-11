@@ -1,6 +1,6 @@
 # Image Resizer
 
-Resize the .jpeg or .png image to prefered ratio aspect.
+Resize the .jpeg or .png image to preferred ratio aspect.
 
 ## Setup and activate virtual environment :
 For Unix based systems please execute the following command to create venv and install requirements.
