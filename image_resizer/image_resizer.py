@@ -1,14 +1,16 @@
 import cv2
 import os
 
-# std in of image path and use opencv to read image and output current image ratio
+# std in of image path and use opencv to read image
+# and output current image ratio
 while True:
     img_path = str(input('Enter the image path: '))
     img = cv2.imread(img_path)
-    try:
-        if img == None:
-            print('Directory or file is not vaild, please enter a valid file directory ...')
-    except:
+    if img is None:
+        print(
+            'Directory or file is not vaild,' +
+            ' please enter a valid file directory ...')
+    else:
         break
 
 original_width = img.shape[0]
@@ -21,7 +23,7 @@ while True:
         resized_width = int(input('Enter the new width: '))
         resized_height = int(input('Enter the new height: '))
         break
-    except:
+    except Exception:
         print('Width and height need to be inegter, please enter again ...')
 
 new_file = str(input('Enter new file name: '))
