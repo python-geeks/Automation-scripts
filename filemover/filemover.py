@@ -54,5 +54,3 @@ else:
         # sleeps for 30 seconds till it checks again
         print('sleeping for 30 seconds')
         time.sleep(30)
-
-
