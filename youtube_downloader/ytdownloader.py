@@ -9,11 +9,9 @@ def cli_parse():
     cli.add_argument("-p", "--path", type=str, help="Destination file path")
     cli.add_argument("-c", "--captions", type=str,
                      help="Captions lang to download")
-    cli.add_argument("-r", "--res", type=str,
-                     help="Resolution to download")
+    cli.add_argument("-r", "--res", type=str, help="Resolution to download")
     cli.add_argument("-v", "--verbose", type=bool, default=False,
                      help="Show information about script processing")
-
     return cli.parse_args()
 
 
