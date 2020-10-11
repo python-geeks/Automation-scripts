@@ -9,7 +9,7 @@ import time
 Scrapper: get_price() digs amazon URL and exracts the ProductID of it.
 Product ID is the very most unique part of amazon store.
 This helps to use the online portal camelcamelcamel.com.
-This approache makes this script persistance.
+This approache makes this script persistence.
 """
 
 
