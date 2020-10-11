@@ -1,7 +1,7 @@
 # Password Manager
 
 
-A simple password manager cli-base, simple, fast and useful.
+A simple password manager cli-based, simple, fast and useful.
 
 [![Python: 3.7](https://img.shields.io/badge/python-3.7-blue)](https://www.python.org/)
 [![Build Status](https://img.shields.io/badge/build-passing-success)](https://github.com/ebsa491)
