@@ -33,3 +33,11 @@ for following in following_list:
         not_following_back.append(following)
 
 print(not_following_back)
+
+choice = input("Would you like to save the people who don't follow you as a file? (y/n): ")
+if choice == "y":
+    f = open("dont_follow_back.txt", "w")
+    for person in not_following_back:
+        f.write(person + "\n")
+else:
+    exit
