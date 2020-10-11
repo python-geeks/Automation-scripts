@@ -64,10 +64,9 @@ def check_price(URL, desired_price):
             pass
         if (desired_price >= current_price):
             Client(getenv('ACCOUNT_SID'), getenv('AUTH_TOKEN')).messages.create(
-                body='Current price for {} is {}. Your deisred price is: {}'.format(
-                    getenv("URL"), current_price, desired_price,), 
-                from_='+twilio_number',
-                to='+user_phone_number'
+            body='Current price for {} is {}. Your deisred price is: {}'.format(getenv("URL"), current_price, desired_price,), 
+            from_='+twilio_number',
+            to='+user_phone_number'
             )
 
 
