@@ -2,13 +2,26 @@
 
 # Importing Libraries
 import instaloader
+import argparse
 
 # Get instance
 L = instaloader.Instaloader()
 
+# Creating an argument parser
+parser = argparse.ArgumentParser(description='Process log-in data')
+
+# Adding arguments
+parser.add_argument('-u', type=str, required=True, help="Enter a username which will be used in the app.")
+parser.add_argument('-p', type=str, required=True, help="Enter a password which will be used in the app.")
+
+# Parsing the args
+args = parser.parse_args()
+
+# Defining the args into variables
+user_name = args.u
+pass_word = args.p
+
 # Login data and load session
-user_name = ""
-pass_word = ""
 L.login(user_name, pass_word)
 
 # Obtaining profile metadata
