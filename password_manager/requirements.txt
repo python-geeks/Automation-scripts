@@ -1,0 +1,5 @@
+importlib-metadata==2.0.0
+mccabe==0.6.1
+pkg-resources==0.0.0
+pycrypto==2.6.1
+zipp==3.3.0
