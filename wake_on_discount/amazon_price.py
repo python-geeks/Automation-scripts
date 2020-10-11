@@ -52,10 +52,10 @@ def check_price(URL, desired_price):
     if isinstance(desired_price) is False:
         raise TypeError('Desired Price should be Int or Double decimal')
     else:
-        if(desired_price < get_price(URL)):
+        if(desired_price < get_price(getenv("URL"))):
             # TODO: Sends email
             pass
-        if (desired_price >= get_price(URL)):
+        if (desired_price >= get_price(getenv("URL"))):
                     Client(getenv('ACCOUNT_SID'), getenv('AUTH_TOKEN')).messages.create(
                     body='Current price for {} is {i}. Your deisred price is'.format(desired_price. get_price(URL)),
                     from_='+twilio_number',
@@ -65,5 +65,5 @@ def check_price(URL, desired_price):
 
 if __name__ == "__main__":
     while True:
-        check_price(200, getenv(URL))
+        check_price(200, getenv("URL"))
         time.sleep((60 * 60) * 12) 
