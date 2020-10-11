@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Creted by Sam Ebison ( https://github.com/ebsa491 )
+# Created by Sam Ebison ( https://github.com/ebsa491 )
 # If you have found any important bug or vulnerability,
 # contact me pls, I love learning ( email: ebsa491@gmail.com )
 
@@ -124,7 +124,7 @@ def check_password(user_password):
     try:
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
-            # Fetchs the cookie (canary) value
+            # Fetches the cookie (canary) value
             row = cursor.execute(
                 "SELECT * FROM passwords WHERE id=0;"
             ).fetchone()
