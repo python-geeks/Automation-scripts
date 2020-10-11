@@ -8,7 +8,6 @@ print(ascii_banner)
 
 # Defining a target
 if len(sys.argv) == 2:
-
     # translate hostname to IPv4
     target = socket.gethostbyname(sys.argv[1])
 else:
@@ -33,11 +32,11 @@ try:
         s.close()
 
 except KeyboardInterrupt:
-       print("\nExitting Program !!!!")
-       sys.exit()
+        print("\nExitting Program !!!!")
+        sys.exit()
 except socket.gaierror:
-       print("\nHostname Could Not Be Resolved !!!!")
-       sys.exit()
+        print("\nHostname Could Not Be Resolved !!!!")
+        sys.exit()
 except socket.error:
-       print("\nServer not responding !!!!")
-       sys.exit()
+        print("\nServer not responding !!!!")
+        sys.exit()
