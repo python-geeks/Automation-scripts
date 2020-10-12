@@ -340,6 +340,69 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "ebsa491",
+      "name": "Sam Ebison",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23361794?v=4",
+      "profile": "http://samebison.ir",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "maxily1",
+      "name": "Max Iliouchenko",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/55281456?v=4",
+      "profile": "https://github.com/maxily1",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "corleone77",
+      "name": "cor77",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/34139210?v=4",
+      "profile": "https://corleone77.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "TheFenrisLycaon",
+      "name": "Fenris Lycaon",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/54172306?v=4",
+      "profile": "https://bit.ly/2ZzPAO4",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "LucasVanHaaren",
+      "name": "vhash",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29121316?v=4",
+      "profile": "https://lucasvanhaaren.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "sculley",
+      "name": "Sam Culley",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3237705?v=4",
+      "profile": "https://www.samculley.co.uk",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "happyeric77",
+      "name": "Eric Lee",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/52155607?v=4",
+      "profile": "https://github.com/happyeric77",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
