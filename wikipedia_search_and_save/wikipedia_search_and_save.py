@@ -1,3 +1,4 @@
+import argparse
 import wikipedia
 from fpdf import FPDF
 
@@ -43,7 +44,7 @@ def wikipedia_search(user_input):
     # variable pdf
     pdf = PDF()
     # declaring our file name
-    pdf_file_name = user_input + ".pdf"
+    pdf_file_name = user_input+".pdf"
     # writing the content to a pdf file
     pdf.print_chapter(query.original_title, 'temp.txt')
     # saving the file in our computer
@@ -51,12 +52,25 @@ def wikipedia_search(user_input):
 
     # Clearing our temp file
     open("temp.txt", "w").close()
-    print("Successfully saved!")
 
 
 def main():
-    user_input = input("Input here to search: ")
-    wikipedia_search(user_input)
+    # Initialize parser
+    parser = argparse.ArgumentParser()
+    # Adding optional argument
+    parser.add_argument("-s", "--search",
+                        help="search your query")
+    # parser.add_argument("-m", "--message", help="insert your message here")
+
+    # Read arguments from command line
+    args = parser.parse_args()
+    if args.search is None:
+        print("[-] No arguments were provided.")
+        print("[x] For help: 'python wikipedia_search_and_save.py --help'")
+
+    if args.search:
+        wikipedia_search(args.search)
+        print("[+] Your file was successfully saved.")
 
 
 if __name__ == "__main__":
