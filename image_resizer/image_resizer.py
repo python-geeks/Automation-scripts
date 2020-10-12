@@ -15,7 +15,7 @@ parser.add_argument(
     type=int,
     help='The new width to be resize.\nDefault value is "640"',
     default=640
-    )
+)
 parser.add_argument(
     '-rh',
     type=int,
