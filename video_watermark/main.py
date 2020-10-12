@@ -1,7 +1,7 @@
 # Made by Maxim Iliouchenko (https://github.com/maxily1)
 
 # Importing Libraries
-from moviepy.editor import *
+from moviepy.editor import * # noqa: F403, E261
 import argparse
 
 # Creating an argument parser
@@ -25,11 +25,11 @@ color_choice = args.c
 font_size = args.s
 
 # Start of code
-clip = VideoFileClip(file_name, audio=True)
+clip = VideoFileClip(file_name, audio=True) # noqa: F405, E261
 w, h = clip.size
 
 # A clip with a text, and semi-opaque bg
-text = TextClip(
+text = TextClip( # noqa: F405, E261
     watermark_text, font=font_choice,
     color=color_choice, fontsize=font_size
     )
@@ -38,9 +38,7 @@ text_col = text.on_color(
     color=(0, 0, 0), pos=(6, 'center'), col_opacity=0.6
     )
 
-
-
 # Save the file
-final_clip = CompositeVideoClip([clip, text_col])
+final_clip = CompositeVideoClip([clip, text_col]) # noqa: F405, E261
 final_clip.duration = clip.duration
 final_clip.write_videofile("Output.mp4", fps=24, codec='libx264')
