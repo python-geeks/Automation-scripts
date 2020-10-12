@@ -8,8 +8,8 @@ parser.add_argument(
     type=str,
     help='The file path of target image. '
     + 'ex. /home/user/example.jpeg.\nDefault value is "demo.jpeg"',
-    default=os.path.dirname(__file__)+'/demo.jpeg'
-    )
+    default=os.path.dirname(__file__) + '/demo.jpeg'
+)
 parser.add_argument(
     '-rw',
     type=int,
@@ -21,13 +21,13 @@ parser.add_argument(
     type=int,
     help='The new height to be resize.\nDefault value is "480"',
     default=480
-    )
+)
 parser.add_argument(
     '-n',
     type=str,
     help='The file name.\n'
     + 'Default value is current {current file name}_{rw}x{rh}.jpeg',
-    )
+)
 
 args = parser.parse_args()
 img_path = args.f
@@ -64,12 +64,12 @@ while True:
             raise RuntimeError(
                 'Resized width must be no larger than original width'
                 + f' (< {original_width})'
-                )
+            )
         if resized_height > original_height:
             raise RuntimeError(
                 'Resized height must be no larger than original height'
                 + f' (< {original_height})'
-                )
+            )
         break
     except RuntimeError as err:
         print(err)
