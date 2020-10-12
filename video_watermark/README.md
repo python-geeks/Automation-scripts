@@ -14,7 +14,7 @@ Thirdly, run the following command in terminal:
 ```sh
 python main.py -p <path to file> -t <watermark text> -f <watermark text font> -c <text color> -s <fontsize>
 ```
-** Dont' forget to change the variables according to your requirements.
+** Don't forget to change the variables according to your requirements.
 
 ## Troubleshooting
 Here I wrote a few problems that I stalked with at the moment of building this program, and how to fix it.
