@@ -104,7 +104,6 @@ Thanks goes to these wonderful people 😊
   <tr>
     <td align="center"><a href="https://www.samculley.co.uk"><img src="https://avatars1.githubusercontent.com/u/3237705?v=4" width="100px;" alt=""/><br /><sub><b>Sam Culley</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=sculley" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/happyeric77"><img src="https://avatars2.githubusercontent.com/u/52155607?v=4" width="100px;" alt=""/><br /><sub><b>Eric Lee</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=happyeric77" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/paulopacitti"><img src="https://avatars2.githubusercontent.com/u/18006523?s=460&u=b127cf4e6a1d5d8b9b2e3f41a7871c558af02789&v=4" width="100px;" alt=""/><br /><sub><b>Paulo Pacitti</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=paulopacitti" title="Code">💻</a></td>
   </tr>
 </table>
 
