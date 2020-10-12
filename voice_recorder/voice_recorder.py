@@ -67,10 +67,11 @@ class App():
 
         if(self.state == "P"):
             self.isrecording = True
-            self.state="Res"
+            self.state = "Res"
             print("Recording Resumed")
             t = threading.Thread(target=self.record)
             t.start()
+
 
 main = tk.Tk()
 main.title('recorder')
