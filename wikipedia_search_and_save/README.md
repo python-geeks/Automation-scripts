@@ -3,6 +3,7 @@ A python script that allows the user to search for articles in Wikipedia and sav
 
 ## Modules Used
 
+- argparse
 - wikipedia
 - fpdf
 
@@ -19,15 +20,34 @@ Recommended: Install the module after creating a virtual environment.
 - To run the program, type the following command into your terminal 
 
 ```bash
-python wikipedia_search_and_save.py
+python wikipedia_search_and_save.py -s [Your search query]
 ```
-The program will run and ask you to enter the search keywords.
+Example
 ```bash
-Input here to search: Python Language
+python wikipedia_search_and_save.py -s "Computers"
 ```
-As an example, we have searched for "Python Language".
-After the search is completed successfully, the article is saved as "Python Language.pdf" and the program gives the following output.
+- Alternatively, type the following command into your terminal 
+
 ```bash
-Successfully saved!
+python wikipedia_search_and_save.py --search [Your search query]
+```
+Example
+```bash
+python wikipedia_search_and_save.py --search "Mobile Phones"
+```
+
+As an example, we have searched for "Computers" or "Mobile Phones".
+After the search is completed successfully, the article is saved as "Computers.pdf" or "Mobile Phones.pdf" (based on which topic you have searched for) and the program gives the following output on the terminal.
+```bash
+[+] Your file was successfully saved.
+```
+- For help, type the following command into your terminal 
+
+```bash
+python wikipedia_search_and_save.py --help
+```
+Or
+```bash
+python wikipedia_search_and_save.py -h
 ```
 Note: The file temp.txt saves the content of the search result temporarily. The file is emptied after the content is saved as PDF file.

@@ -44,7 +44,7 @@ def wikipedia_search(user_input):
     # variable pdf
     pdf = PDF()
     # declaring our file name
-    pdf_file_name = user_input+".pdf"
+    pdf_file_name = user_input + ".pdf"
     # writing the content to a pdf file
     pdf.print_chapter(query.original_title, 'temp.txt')
     # saving the file in our computer
