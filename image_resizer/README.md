@@ -17,23 +17,23 @@ $ pip install opencv-python
 
 ### How to Use
 ```
-$ python image_resizer.py
+$ python image_resizer.py [-h] [-f F] [-rw RW] [-rh RH] [-n N]
 ```
 
-***follow the step-by-step console guide as below:***
+If not adding any argument, the script will resize demo.jpeg and generate "demo_640x480.jpeg" as default
 
-1. Enter the image path
-    - Enter an image path. ex. /home/user/img.jpeg
-    - If the path is invalid, you will be asked to enter again.
-    - After entering the valid image path, the image ratio aspect will be shown as std out on console.
-2. Enter the new width
-    - Enter an image width to which you want to resize it.
-    - input format need to be integer. You will be asked to enter again if the input data is not an integer.
-3. Enter the new height
-    - Enter an image height to which you want to resize it.
-    - input format need to be integer. You will be asked to enter again if the input data is not an integer.
-4. Enter new file name
-    - Enter the new file name for the resized image.
+```
+optional arguments:
+  -h, --help  show this help message and exit
+  -f F        The file path of target image. ex. /home/user/example.jpeg.
+              Default value is "demo.jpeg"
+  -rw RW      The new width to be resize. Default value is "640"
+  -rh RH      The new height to be resize. Default value is "480"
+  -n N        The file name. Default value is current {current file
+              name}_{rw}x{rh}.jpeg
+```
+
+
 
 
 
