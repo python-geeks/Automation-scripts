@@ -18,7 +18,7 @@ pdfWriter.addPage(inputFirstPage)
 for pageNum in range(1, pdfReader.numPages):
     pageObj = pdfReader.getPage(pageNum)
     pdfWriter.addPage(pageObj)
-outputFile = open('output.pdf', 'wb') #outputfile name
+outputFile = open('output.pdf', 'wb')
 pdfWriter.write(outputFile)
 inputFile.close()
 outputFile.close()
