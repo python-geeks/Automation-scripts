@@ -30,13 +30,13 @@ w, h = clip.size
 
 # A clip with a text, and semi-opaque bg
 text = TextClip( # noqa: F405, E261
-    watermark_text, font=font_choice,
-    color=color_choice, fontsize=font_size
-    )
+                watermark_text, font=font_choice,
+                color=color_choice, fontsize=font_size
+               )
 text_col = text.on_color(
-    size=(clip.w+text.w, text.h-10),
-    color=(0, 0, 0), pos=(6, 'center'), col_opacity=0.6
-    )
+                        size=(clip.w+text.w, text.h-10),
+                        color=(0, 0, 0), pos=(6, 'center'), col_opacity=0.6
+                        )
 
 # Save the file
 final_clip = CompositeVideoClip([clip, text_col]) # noqa: F405, E261
