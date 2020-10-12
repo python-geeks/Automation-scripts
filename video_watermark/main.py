@@ -30,11 +30,11 @@ w, h = clip.size
 
 # A clip with a text, and semi-opaque bg
 text = TextClip( # noqa: F405, E261
-                watermark_text, font=font_choice,
-                color=color_choice, fontsize=font_size
-               ) # noqa: E123, E261
+                watermark_text, font=font_choice, # noqa: E126, E261
+                color=color_choice, fontsize=font_size # noqa: E126, E261
+               ) # noqa: E123, E261, E126
 text_col = text.on_color(
-                        size=(clip.w + text.w, text.h - 10),
+                        size=(clip.w + text.w, text.h - 10), # noqa: E126, E261
                         color=(0, 0, 0), pos=(6, 'center'), col_opacity=0.6
                         ) # noqa: E123, E261
 
