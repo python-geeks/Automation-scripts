@@ -376,6 +376,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "LucasVanHaaren",
+      "name": "vhash",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29121316?v=4",
+      "profile": "https://lucasvanhaaren.github.io/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
