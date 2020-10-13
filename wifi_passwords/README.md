@@ -6,7 +6,7 @@ A python script used to lookup all passwords of the connected wifi SSIDs.
 - platform
 
 ## Support and version
-The script requires **python3 or above** and currenlty supports Windows and Linux platforms,
+The script requires **python3 or above** and currently supports Windows and Linux platforms,
 
 ## How to use
 ```
