@@ -1,9 +1,9 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: 🐛 Bug Report
+about: If something isn't working as expected 🤔
 title: ''
 labels: bug
-assignees: codePerfectPlus
+assignees: 'pawangeek'
 
 ---
 
@@ -22,15 +22,6 @@ A clear and concise description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
-
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
-
-**Smartphone (please complete the following information):**
- - Device: 
- - OS: [e.g. debian]
- - Browser [e.g. opera, safari]
 
 **Additional context**
 Add any other context about the problem here.

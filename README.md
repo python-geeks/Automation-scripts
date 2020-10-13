@@ -1,6 +1,6 @@
 # Automation-scripts
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-44-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-49-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
@@ -17,7 +17,7 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 
 ### These are my Lazy Panda Goals
 
-* Goal Achieved - 59/75
+* Goal Achieved - 68/75
 
 * Goal 25 - Panda stopped Cycling (Completed)
 * Goal 50 - Panda stopped doing Exercise
@@ -104,6 +104,11 @@ Thanks goes to these wonderful people 😊
   <tr>
     <td align="center"><a href="https://www.samculley.co.uk"><img src="https://avatars1.githubusercontent.com/u/3237705?v=4" width="100px;" alt=""/><br /><sub><b>Sam Culley</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=sculley" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/happyeric77"><img src="https://avatars2.githubusercontent.com/u/52155607?v=4" width="100px;" alt=""/><br /><sub><b>Eric Lee</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=happyeric77" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jaypaliwal1212"><img src="https://avatars3.githubusercontent.com/u/50298189?v=4" width="100px;" alt=""/><br /><sub><b>Jay Paliwal</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=jaypaliwal1212" title="Code">💻</a></td>
+    <td align="center"><a href="https://placeonthe.net"><img src="https://avatars2.githubusercontent.com/u/54643953?v=4" width="100px;" alt=""/><br /><sub><b>Andras Marton</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=am401" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/SakshiUppoor"><img src="https://avatars2.githubusercontent.com/u/46474346?v=4" width="100px;" alt=""/><br /><sub><b>Sakshi Uppoor</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=SakshiUppoor" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ferhah"><img src="https://avatars1.githubusercontent.com/u/13720538?v=4" width="100px;" alt=""/><br /><sub><b>Ferdinand Hahmann</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=ferhah" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Ajay-Raj-S"><img src="https://avatars0.githubusercontent.com/u/29999212?v=4" width="100px;" alt=""/><br /><sub><b>Ajay Raj</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=Ajay-Raj-S" title="Code">💻</a></td>
   </tr>
 </table>
 
