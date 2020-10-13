@@ -26,7 +26,7 @@ CUDA is used if a gpu is available. To run it on CPU only, use following
 
 CUDA_VISIBLE_DEVICES='' python3 text_summarize.py [-h] [-t TEXT] [-f FILE] [-r RATIO] [-o OUTPUT]
 
-With CUDA_VISIBLE_DEVICES='', the GPUs are not visibile to python and therefore the CPU is used. 
+With CUDA_VISIBLE_DEVICES='', the GPUs are not visible to python and therefore the CPU is used. 
 
 # Languages
 Currently, only english is supported.  
