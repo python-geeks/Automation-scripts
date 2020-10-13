@@ -3,12 +3,12 @@
 ## Dependencies :
    For Ubuntu based systems please execute the following command to install the required dependencies.
    ```
-   sudo apt-get install -y python3-dev libasound2-dev
+   sudo apt-get install -y python3-dev libasound2-dev python3-venv
    ```
    For other Unix based distros please google the package name.
 
 ## Setup and activate virtual environment :
-For Unix based systems please execute the following command to create venv and install requirements.
+For Unix based systems please execute the following command in to your current directory to create venv and install requirements.
 ```
 make init
 source .venv/bin/activate
@@ -65,4 +65,4 @@ source .venv/bin/activate
     ```
 5. Press enter to stop the alarm else the alarm will stop the sound after 33 seconds.
 
-## NOTE : To change the alarm sound just __replace the alarm.wav with your choice of .wav__ file and __rename it to alarm.wav__.
+## NOTE : To change the alarm sound just __replace the file alarm.wav with your choice of .wav__ file and __rename it to alarm.wav__.

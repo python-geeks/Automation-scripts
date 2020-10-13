@@ -1,6 +1,6 @@
 # Random wallpaper
 
-Basic script for changing wallpaper on Windows.
+Basic script for changing wallpaper on your Windows.
 
 ## Setup and activate virtual environment :
 For Unix based systems please execute the following command to create venv and install requirements.
@@ -9,7 +9,9 @@ make init
 source .venv/bin/activate
 ```
 
-## No prerequisite
+## Prerequisite
+
+Python 2 or python 3 was installed on your pc/laptop
 
 ## How to use
 

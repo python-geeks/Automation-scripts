@@ -3,7 +3,7 @@ import datetime
 import simpleaudio
 
 
-set_time = input("please enter the time in HH:MM format to set an alarm : ")
+set_time = input("please enter the time in HH:MM format to set your alarm : ")
 while True:
     time.sleep(1)
     obj = simpleaudio.WaveObject.from_wave_file("./alarm.wav")
@@ -17,5 +17,5 @@ while True:
     if curr_l[0] == set_l[0] and curr_l[1] == set_l[1]:
         obj.play()
         print("Time to Wake up")
-        input("Press enter to Stop")
+        input("Press enter to Stop Alarm")
         break

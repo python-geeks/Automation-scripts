@@ -19,7 +19,7 @@ We love your input! We want to make contributing to this project as easy and tra
 * Compatible old implementations with new fixes
 * Add REQUIREMENTS.txt with the your Jupyter notebook
 
-### Making a PR
+### Making a Pull Request
 
 > - Make sure you have been assigned the issue to which you are making a PR.
 > - If you make PR before being assigned, It will be labeled `invalid` and closed without merging.
