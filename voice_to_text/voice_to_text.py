@@ -23,5 +23,6 @@ def main():
     else:
         print(r.recognize_sphinx(audio))
 
+
 if __name__ == '__main__':
     main()
