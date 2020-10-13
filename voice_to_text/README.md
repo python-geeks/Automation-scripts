@@ -1,6 +1,6 @@
 # Voice to text
 Transcribes speech from inputted audio file using PocketSphinx. 
-## Prequisites
+## Prerequisites
 - Python 3.x
 - SpeechRecognition package
 # Usage Examples
