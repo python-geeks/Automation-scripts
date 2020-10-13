@@ -4,6 +4,18 @@
 
 Get a list of all competitive programming contests happening on various sites.
 
+### Supported Sites
+- [AtCoder](https://atcoder.jp/)
+- [CodeChef](https://codechef.com/)
+- [CodeForces](https://codeforces.com/)
+- [CodeForces::Gym](https://codeforces.com/gyms)
+- [CS Academy](https://csacademy.com/)
+- [HackerEarth](https://hackerearth.com/)
+- [HackerRank](https://hackerrank.com/)
+- [Kick Start](https://codingcompetitions.withgoogle.com/kickstart)
+- [LeetCode](https://leetcode.com/)
+- [TopCoder](https://topcoder.com/)
+
 ## Setup and activate virtual environment
 
 For Unix based systems please execute the following command to create venv and install requirements.
@@ -75,7 +87,7 @@ Today (13 Oct '20):
 ```
 
 ### Credits
-Thanks to [Kontests](https://github.com/AliOsm/kontests) for their free API for fetching competitive contests details.
+Thanks to [Kontests](https://github.com/AliOsm/kontests) for their free API which fetches competitive contests details from the above listed sites.
 
 ### Contact
 Feel sure to contact [Sakshi Uppoor](https://github.com/SakshiUppoor) regarding any suggestions/bugs.
