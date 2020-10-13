@@ -1,6 +1,7 @@
 # importing the packages
 import subprocess
 
+
 # function that returns time in seconds
 def time_manipulation(time):
     if len(time) == 1:
@@ -16,6 +17,7 @@ def time_manipulation(time):
     h, m, s = time.split(':')
     time = int(h) * 3600 + int(m) * 60 + int(s)
     return time
+
 
 youtube_link = input("Enter the Youtube video link: ")
 start_time = input("Enter start time of the video clip in HH:MM:SS|H:MM:SS|MM:SS|M:SS|SS|S format: ")
@@ -33,7 +35,7 @@ if duration <= 0:
 
 # calculating the length of youtube video in seconds
 duration_of_video = subprocess.run(["youtube-dl", "--no-check-certificate", "--get-duration", youtube_link],
-        stdout=subprocess.PIPE, text=True)
+                                    stdout=subprocess.PIPE, text=True)
 video_length = duration_of_video.stdout
 video_length = video_length[:-1]
 video_length = time_manipulation(video_length)  # video length in seconds
@@ -49,10 +51,10 @@ for ch in youtube_link:
         youtube_link = youtube_link[:youtube_link.index(ch)]
 
 # getting the download link of the youtube video
-download_link = subprocess.run(["youtube-dl", "--no-check-certificate", "-f", "22", "--get-url",youtube_link],
-        stdout=subprocess.PIPE, text=True)
+download_link = subprocess.run(["youtube-dl", "--no-check-certificate", "-f", "22", "--get-url", youtube_link],
+                                stdout=subprocess.PIPE, text=True)
 link = download_link.stdout
 
 # downloading the video from start_time to end_time
 subprocess.run(["ffmpeg", "-ss", str(start_time), "-i", link, "-t", str(duration), "-c:v", "copy", "-c:a",
-        "copy", Output_file_name])
+                "copy", Output_file_name])
