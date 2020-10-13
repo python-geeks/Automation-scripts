@@ -16,8 +16,8 @@ def exec_linux():
 
     cat_cmds = 'sudo cat ' + ' '.join(list_cmds) + ' | grep psk='
 
-    print('Requires sudo permission to read the wifi passwords, ' +
-          'if you want you can see the command, [Y]', end=' ')
+    print('Requires sudo permission to read the wifi passwords, '
+        + 'if you want you can see the command, [Y]', end=' ')
     if input().lower() == 'y':
         print(f'\n{cat_cmds}\n')
 
