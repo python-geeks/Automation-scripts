@@ -19,5 +19,5 @@ query = {"authorization" : "your api key ",
 headers = {
     'cache-control' : "no-cache"
 }
-response = requests.request("GET" , url1, headers = headers, params = query)
+response = requests.request("GET", url1, headers=headers, params=query)
 print(response.text)
