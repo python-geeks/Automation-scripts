@@ -4,7 +4,7 @@
 
 Get a list of all competitive programming contests happening on various sites.
 
-## Setup and activate virtual environment :
+## Setup and activate virtual environment
 
 For Unix based systems please execute the following command to create venv and install requirements.
 ```
