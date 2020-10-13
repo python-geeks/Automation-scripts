@@ -90,7 +90,12 @@ class AutoTyper:
 
     def output(delaytime: float):
 
-        paraString = pytesseract.image_to_string(AutoTyper.pImage)
+        try:
+            paraString = pytesseract.image_to_string(AutoTyper.pImage)
+        except SystemError:
+            print('\n Error while processing your image, please retry.')
+            return False
+
         length = len(paraString)
 
         for i in range(length):
