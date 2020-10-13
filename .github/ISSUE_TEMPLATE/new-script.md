@@ -1,6 +1,6 @@
 ---
-name: Create a new script
-about: add new script to project
+name: 🚀 Create a new script
+about: I wanna add new script to project
 title: ''
 labels: good first issue, hacktoberfest, up-for-grabs
 assignees: ''
@@ -9,7 +9,7 @@ assignees: ''
 
 ## Script Title -
 
-**what will change** -
+**Brief** -
 
 ## Instructions
 
@@ -17,15 +17,8 @@ assignees: ''
 - Create a README.md in your folder for program Instructions
 - add requirements.txt if needed
 
-Please add/delete options that are not relevant.
-
-- [x] Adding New Code
-- [x] Improving Code
-- [x] Improving Documentation
-- [x] Bug Fix
-
 ### Programming Language
 
 - [x] Python
 
-Happy Coding,
+Happy Coding

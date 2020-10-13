@@ -2,9 +2,7 @@
 
 **script name** -
 
-**What have you Changed**
-
-what you changed in the codebase.write here
+**Brief about script**
 
 
 ### Issue no.(must) - #
