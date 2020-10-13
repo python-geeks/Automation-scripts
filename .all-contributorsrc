@@ -412,6 +412,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "am401",
+      "name": "Andras Marton",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/54643953?v=4",
+      "profile": "https://placeonthe.net",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
