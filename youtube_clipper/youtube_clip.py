@@ -35,7 +35,7 @@ if duration <= 0:
 
 # calculating the length of youtube video in seconds
 duration_of_video = subprocess.run(["youtube-dl", "--no-check-certificate", "--get-duration", youtube_link],
-                    stdout=subprocess.PIPE, text=True)
+                        stdout=subprocess.PIPE, text=True)
 video_length = duration_of_video.stdout
 video_length = video_length[:-1]
 video_length = time_manipulation(video_length)  # video length in seconds
@@ -52,7 +52,7 @@ for ch in youtube_link:
 
 # getting the download link of the youtube video
 download_link = subprocess.run(["youtube-dl", "--no-check-certificate", "-f", "22", "--get-url", youtube_link],
-                    stdout=subprocess.PIPE, text=True)
+                        stdout=subprocess.PIPE, text=True)
 link = download_link.stdout
 
 # downloading the video from start_time to end_time
