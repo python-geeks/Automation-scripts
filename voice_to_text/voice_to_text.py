@@ -4,9 +4,17 @@ import speech_recognition as sr
 import argparse
 
 
-parser = argparse.ArgumentParser(description="Performs voice-to-text transcription on audio files using PocketSphinx.")
-parser.add_argument('-p', '--path', type=str, required=True, help="Audio file path.")
-parser.add_argument('-o', '--output', type=str, required=False, help="Optional output to a file. By default, the recognized text is printed out. (Choose a file name.)")
+parser = argparse.ArgumentParser(description=("Performs"
+                                              "voice-to-text transcription on"
+                                              "audio files using"
+                                              "PocketSphinx."))
+parser.add_argument('-p', '--path',
+                    type=str, required=True, help="Audio file path.")
+parser.add_argument('-o', '--output', type=str,
+                    required=False, help="Optional output to a file."
+                                         "By default, the recognized"
+                                         "text is printed out."
+                                         "(Choose a file name.)")
 args = parser.parse_args()
 
 
