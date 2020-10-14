@@ -22,6 +22,6 @@ url = u.attrs['content']
 
 # saving the image the folder
 # where this file is saved
-with open(username+'.jpg', 'wb') as pic:
+with open(username + '.jpg', 'wb') as pic:
     binary = requests.get(url).content
     pic.write(binary)
