@@ -108,8 +108,8 @@ class Ui_Dialog(object):
             finalpath = '/'.join(item[:-1])
             if finalpath:
                 os.startfile(finalpath)
-        except:
-            print("Open Error Occurred")
+        except Exception as e:
+            print("Open Error Occurred",e)
 
     def ok_clicked(self):
         self.data['name'] = self.lineEdit.text()
