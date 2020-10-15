@@ -475,6 +475,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Crowfunder",
+      "name": "Crowfunder",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/52300171?v=4",
+      "profile": "https://github.com/Crowfunder",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
