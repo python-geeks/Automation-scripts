@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sqlite3
 from book import show_books, add_book, edit_book, delete_book
-import os
 from Dialog import Ui_Dialog
 from data_model import Book
 conn = sqlite3.connect("books.db")
@@ -38,8 +37,6 @@ class Ui_MainWindow(object):
             font.setWeight(50)
             newitem.setFont(font)
             self.list_1.addItem(newitem)
-            # self.list_1.addItem(f"<b>Name:</b> {item[0]}\nPath: {item[1]}\nTags: {', '.join(item[2])}\nNotes: {item[3]}\n")
-            # item.setFont(QtGui.QFont('Verdana', bold=True))
         self.list_1.itemDoubleClicked.connect(self.open_properties)
         # self.list_1.item
         self.label = QtWidgets.QLabel(self.centralwidget)

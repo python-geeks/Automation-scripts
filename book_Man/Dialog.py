@@ -105,13 +105,11 @@ class Ui_Dialog(object):
     def open_clicked(self):
         try:
             item = self.lineEdit_2.text().split('/')
-            # path=item.split('\n')[2].split(' ')[1].split('/')
             finalpath = '/'.join(item[:-1])
             if finalpath:
                 os.startfile(finalpath)
         except:
-            pass
-        # pass
+            print("Open Error Occurred")
 
     def ok_clicked(self):
         self.data['name'] = self.lineEdit.text()
