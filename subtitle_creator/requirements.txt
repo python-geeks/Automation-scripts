@@ -1,0 +1,4 @@
+moviepy
+speech_recognition
+wave
+contextlib
