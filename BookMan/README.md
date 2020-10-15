@@ -6,7 +6,7 @@ A minimalistic GUI application for managing books in local storage loaded with j
 * Minimalistic UI Design for ease of use.
 ![Img](./Screenshots/UI.png)
 * Add files from the file explorer in Windows.
-![Img](./Screenshots/Add_file.png)
+![Img](./Screenshots/Add_File.png)
 * Double click to access book properties and edit easily.
 ![Img](./Screenshots/Properties.png)
 * Easily locate to the file location from within the application itself.
