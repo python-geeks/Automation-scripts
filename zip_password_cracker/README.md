@@ -16,3 +16,5 @@ If no dictionary file is passed, it will use the passwords.txt file instead.
 
 password.txt Sources: https://github.com/danielmiessler/SecLists/
 Got from there file with 10k most common credentials.
+
+**You will get passwords.txt file [here](https://gist.github.com/pawangeek/c96476f5d7e874e888748ef73cd1a6f7)**
