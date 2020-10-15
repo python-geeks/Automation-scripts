@@ -3,7 +3,7 @@
 ## Setup and activate virtual environment
 For Unix based systems please execute the following command to create venv and install requirements.
 ```
-$ pip install -r requirments.txt
+$ pip install -r requirements.txt
 ```
 
 ### Objectives

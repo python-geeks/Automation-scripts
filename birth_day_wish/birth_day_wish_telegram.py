@@ -33,4 +33,4 @@ if __name__ == "__main__":
         if today != datetime.date(2020, 10, 15):
             time.sleep(60 * 60 * 24)
         else:
-            send_message("Happt Birth Day")
+            send_message("Happy Birth Day")
