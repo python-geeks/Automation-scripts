@@ -1,5 +1,3 @@
-from data_model import Book
-import sqlite3
 
 # conn = sqlite3.connect("books.db")
 
@@ -60,7 +58,7 @@ def search_book(conn, prop, value):
 #         name, path, notes, tags= input("Enter Book Details: ").split()
 #         add_book(Book(name, path, notes, tags))
 #     elif n==2:
-#         prop, value, name = input("Enter property,  new value and book name: ").split()
+#         prop, value, name = input("Enter property, new value and book name: ").split()
 #         edit_book(prop, value, name)
 #     elif n==3:
 #         show_books()
