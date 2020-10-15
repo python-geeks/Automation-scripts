@@ -11,15 +11,16 @@
 from PyQt5 import QtCore,  QtGui,  QtWidgets
 import os
 
+
 class Ui_Dialog(object):
     def setupUi(self,  Dialog, name='', path='', notes='', tags='', add=0):
         Dialog.setObjectName("Dialog")
         Dialog.resize(433,  310)
-        self.dialog=Dialog
-        self.add=add
-        self.data={}
-        self.data['delete']=False
-        self.data['name']=''
+        self.dialog = Dialog
+        self.add = add
+        self.data = {}
+        self.data['delete'] = False
+        self.data['name'] = ''
         self.data['path'] = ''
         self.data['tags'] = ''
         self.data['notes'] = ''
@@ -51,11 +52,13 @@ class Ui_Dialog(object):
         self.textEdit.setGeometry(QtCore.QRect(100,  130,  261,  87))
         self.textEdit.setObjectName("textEdit")
         self.textEdit.setText(notes)
-        if add==0:
+        if add == 0:
             self.pushButton_delete = QtWidgets.QPushButton(Dialog)
-            self.pushButton_delete.setGeometry(QtCore.QRect(20,  250,  93,  28))
+            self.pushButton_delete.setGeometry(
+                QtCore.QRect(20,  250,  93,  28))
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap(".\\Icons/delete.webp"),  QtGui.QIcon.Normal,  QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap(".\\Icons/delete.webp"),
+                           QtGui.QIcon.Normal,  QtGui.QIcon.Off)
             self.pushButton_delete.setIcon(icon)
             self.pushButton_delete.setObjectName("pushButton_delete")
             self.pushButton_delete.clicked.connect(self.delete_clicked)
@@ -68,7 +71,8 @@ class Ui_Dialog(object):
         self.pushButton_open.clicked.connect(self.open_clicked)
         self.pushButton_open.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(".\\Icons/open.webp"),  QtGui.QIcon.Normal,  QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(".\\Icons/open.webp"),
+                        QtGui.QIcon.Normal,  QtGui.QIcon.Off)
         self.pushButton_open.setIcon(icon1)
         self.pushButton_open.setObjectName("pushButton_open")
         self.pushButton_cancel = QtWidgets.QPushButton(Dialog)
@@ -85,13 +89,13 @@ class Ui_Dialog(object):
         self.label_2.setText(_translate("Dialog",  "Path"))
         self.label_3.setText(_translate("Dialog",  "Tags"))
         self.label_4.setText(_translate("Dialog",  "Notes"))
-        if self.add==0:
+        if self.add == 0:
             self.pushButton_delete.setText(_translate("Dialog",  "Delete"))
         self.pushButton_ok.setText(_translate("Dialog",  "OK"))
         self.pushButton_cancel.setText(_translate("Dialog",  "Cancel"))
 
     def delete_clicked(self):
-        self.data['delete']=True
+        self.data['delete'] = True
         self.dialog.accept()
 
     def cancel_clicked(self):
@@ -110,15 +114,15 @@ class Ui_Dialog(object):
         # pass
 
     def ok_clicked(self):
-        self.data['name']=self.lineEdit.text()
+        self.data['name'] = self.lineEdit.text()
         self.data['path'] = self.lineEdit_2.text()
-        self.data['tags'] = [i.strip() for i in self.lineEdit_3.text().split(', ')]
+        self.data['tags'] = [i.strip()
+                             for i in self.lineEdit_3.text().split(', ')]
         self.data['notes'] = self.textEdit.toPlainText()
         self.dialog.accept()
         # pass
 
-
-    # def checkval(self): 
+    # def checkval(self):
     #     self.data['name']=self.lineEdit.text()
     #     self.data['path'] = self.lineEdit_2.text()
     #     self.data['tags'] = self.lineEdit_3.text()
@@ -127,6 +131,7 @@ class Ui_Dialog(object):
         # print(name)
         # return name
         # Dialog.done(name)
+
 
 if __name__ == "__main__":
     import sys
