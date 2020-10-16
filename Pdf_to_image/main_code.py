@@ -23,7 +23,7 @@ with open(fileName, "wb") as fout:
 images = convert_from_path(fileName)
 
 for i, image in enumerate(images):
-    fname = 'image'+str(i)+'.png'
+    fname = 'image' + str(i) + '.png'
     image.save(fname, "PNG")
 
 print("all file converted")
