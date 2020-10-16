@@ -23,15 +23,15 @@ class LineBuilder:
 
 def __init__(self, line):
 
-        self.line = line
+# self.line = line
         self.xs = []
         self.ys = []
         self.cid = line.figure.canvas.mpl_connect('button_press_event', self)
 
 
 def __call__(self, event):
-        if event.inaxes! = self.line.axes:
-            return
+# if event.inaxes! = self.line.axes:
+# return
         self.xs.append(event.xdata)
         self.ys.append(event.ydata)
         self.poly.append([event.xdata, event.ydata])
