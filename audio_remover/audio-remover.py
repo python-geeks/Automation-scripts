@@ -29,7 +29,7 @@ while True:
     try:
         VideoFileClip(audio_path)
         break
-    except:
+    except Exception as e:
         print(
             'Directory or file is not valid,'
             + ' please enter a valid file directory ...')
@@ -42,6 +42,7 @@ if args.n:
 else:
     new_file = f'{origin_file.split(".")[0]}_noAudio.{origin_file.split(".")[1]}'
 
+
 def remove_audio(audio):
     '''
     main function to remove audio from input video
@@ -50,9 +51,10 @@ def remove_audio(audio):
     video = video.without_audio()
     video.write_videofile(os.path.join(base_dir, new_file))
 
+
 def main():
     remove_audio(audio_path)
 
+
 if __name__ == '__main__':
     main()
-
