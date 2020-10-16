@@ -1,20 +1,16 @@
-import os, sys
-from PIL import Image
+import os
+import sys
 from PyPDF2 import PdfFileMerger
-from fnmatch import fnmatch
 from pdf2image import convert_from_path
-from pdf2image.exceptions import (
- PDFInfoNotInstalledError,
- PDFPageCountError,
- PDFSyntaxError
-)
-sys.path.insert(1, 'B:/Production_Programs/Github/Automation-scripts/Pdf_to_image/sample_files')
+
+sys.path.insert(1, '''B:/Production_Programs/Github/
+        Automation-scripts/Pdf_to_image/sample_files''')
 
 fileName = "myfile.pdf"
 if os.path.exists(fileName):
     os.remove(fileName)
 
-##merge pdfs into one
+# merge pdfs into one
 x = [a for a in os.listdir() if a.endswith(".pdf")]
 merger = PdfFileMerger()
 for pdf in x:
@@ -23,7 +19,7 @@ for pdf in x:
 with open(fileName, "wb") as fout:
     merger.write(fout)
 
-##convert merged pdf to png files
+# convert merged pdf to png files
 images = convert_from_path(fileName)
 
 for i, image in enumerate(images):
@@ -31,5 +27,3 @@ for i, image in enumerate(images):
     image.save(fname, "PNG")
 
 print("all file converted")
-
-
