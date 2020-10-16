@@ -1,0 +1,4 @@
+pillow
+pypdf2
+pdf2image
+poppler
