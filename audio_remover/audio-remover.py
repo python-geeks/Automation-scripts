@@ -29,7 +29,7 @@ while True:
     try:
         VideoFileClip(audio_path)
         break
-    except Exception as e:
+    except Exception:
         print(
             'Directory or file is not valid,'
             + ' please enter a valid file directory ...')
