@@ -23,15 +23,15 @@ class LineBuilder:
 
 def __init__(self, line):
 
-# self.line = line
+        self.line = line
         self.xs = []
         self.ys = []
         self.cid = line.figure.canvas.mpl_connect('button_press_event', self)
 
 
 def __call__(self, event):
-# if event.inaxes! = self.line.axes:
-# return
+        if event.inaxes! = self.line.axes:
+            return
         self.xs.append(event.xdata)
         self.ys.append(event.ydata)
         self.poly.append([event.xdata, event.ydata])
@@ -318,7 +318,7 @@ axes[0].set_axis_off(), axes[1].set_axis_off()
 
 patches = []
 polygon = Polygon([[-1, -1], [-1, -1], [-1, -1]], True)
-patches.append(polygon)
+patches.append(polygonio,m.n
 p = PatchCollection(patches, cmap=matplotlib.cm.jet, alpha=0.4)
 axes[1].add_collection(p)
 
