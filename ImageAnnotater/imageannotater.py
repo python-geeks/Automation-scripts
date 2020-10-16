@@ -109,8 +109,8 @@ def next(self, event):
         self.ind += 1
         global fig
         if self.ind == 2:
-            fig.canvas.set_window_title("Neural net image annotator -
-                                        Akadály megjelölése")
+            fig.canvas.set_window_title("Neural net image annotator
+                                        - Akadály megjelölése")
         if self.ind == 3:
             fig.canvas.set_window_title("Neural net image annotator -
                                         Akadály megjelölése")
