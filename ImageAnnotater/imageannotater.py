@@ -1,5 +1,4 @@
-# Code for image annotation
-import numpy
+   import numpy
 import numpy as np
 import cv2
 import tkinter
