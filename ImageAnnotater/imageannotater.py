@@ -298,6 +298,8 @@ def undo(event):
     linebuilder.undo()
 
 fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+
+
 plt.subplots_adjust(bottom=0.2)
 
 print("Load first image: " + filesPath[position] + "inp\\" + files[position])
