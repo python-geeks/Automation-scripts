@@ -31,7 +31,7 @@ def __init__(self, line):
 
 def __call__(self, event):
     if event.inaxes! = self.line.axes:
-            return
+   return
         self.xs.append(event.xdata)
         self.ys.append(event.ydata)
         self.poly.append([event.xdata, event.ydata])
