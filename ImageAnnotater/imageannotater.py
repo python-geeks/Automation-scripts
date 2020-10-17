@@ -114,9 +114,7 @@ def next(self, event):
         if self.ind == 3:
             fig.canvas.set_window_title("Neural net image annotator -
                                         Akadály megjelölése")
-        if self.ind == 4:
-            fig.canvas.set_window_title("Neural net image annotator -
-                                        Akadály megjelölése")
+        
         if self.ind == 5:
             fig.canvas.set_window_title("Neural net image annotator -
                                         Határoló megjelölése")
