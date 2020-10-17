@@ -11,4 +11,4 @@ A visual output screen will be visible where we can upload any image and do the 
 
 ## Output : 
 
-![Alt_text](https://github.com/Anustup900/Automation-scripts/blob/main/ImageAnnotater/Assets/abcd.png)
+![Alt_text](https://github.com/Anustup900/Automation-scripts/blob/main/ImageAnnotater/Assets/abcd.PNG)
