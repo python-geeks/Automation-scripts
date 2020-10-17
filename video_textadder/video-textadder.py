@@ -66,9 +66,8 @@ def add_text(content, font_size):
     '''
     add text on the top of video stream
     '''
-    txt_clip = (
-        TextClip(content, fontsize=font_size,color='white'
-    ).set_position('top').set_duration(video.duration))
+    txt_clip = (TextClip(content, fontsize=font_size, color='white'
+                ).set_position('top').set_duration(video.duration))
     result = CompositeVideoClip([video, txt_clip])
     result.write_videofile(new_file)
 
