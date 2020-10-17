@@ -1,0 +1,2 @@
+telebot==0.0.3
+Telethon==1.16.4
