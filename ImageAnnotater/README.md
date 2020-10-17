@@ -1,9 +1,10 @@
 # About the script : 
 
-This Python script use deep learning neural network architecture to do annotation of images . The following script is deployed in a tkinter python GUI visual format for better script value. The annotation is done by using Matplotlib widgets and simply poly layer architecture , The following contains a visual out put of the script . 
+This Python script use deep learning neural network architecture to do annotation of images . The following script is deployed in a tkinter python GUI visual format for better script value. The annotation is done by using Matplotlib widgets and simply poly layer architecture and py package Multi label pegion  , The following contains a visual out put of the script . 
 
 ## How to Run : 
 ```
+pip install multi-label-pigeon
 python install requirements.txt
 python run imageannotater.py
 ```
