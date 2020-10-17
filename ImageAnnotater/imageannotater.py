@@ -105,18 +105,18 @@ def undo(self):
 
 
 def next(self, event):
-        self.ind += 1
+   self.ind += 1
         global fig
         if self.ind == 2:
             fig.canvas.set_window_title("Neural net image annotator
                                         - Akadály megjelölése")
         if self.ind == 3:
-            fig.canvas.set_window_title("Neural net image annotator -
-                                        Akadály megjelölése")
+            fig.canvas.set_window_title("Neural net image annotator
+                                        - Akadály megjelölése")
         
         if self.ind == 5:
-            fig.canvas.set_window_title("Neural net image annotator -
-                                        Határoló megjelölése")
+            fig.canvas.set_window_title("Neural net image annotator
+                                        - Határoló megjelölése")
 
         self.poly = []
         self.xs = []
@@ -125,24 +125,24 @@ def next(self, event):
 
 
 def prev(self, event):
-        self.ind -= 1
-        print(self.ind)
+    self.ind -= 1
+    print(self.ind)
 
 
 def save(self, event):
-        dpi = 80
-        im_data = img1
-        height, width, nbands = im_data.shape
-        figsize = width / float(dpi), height / float(dpi)
-        fig2 = plt.figure(figsize=figsize)
-        fig3 = plt.figure(figsize=figsize)
-        ax = fig2.add_axes([0, 0, 1, 1])
-        ax2 = fig3.add_axes([0, 0, 1, 1])
-        ax.axis('off')
-        ax.imshow(im_data, interpolation='nearest')
-        ax2.axis('off')
-        ax2.imshow(im_data, interpolation='nearest')
-        ax.set(xlim=[0, width], ylim=[height, 0], aspect=1)
+    dpi = 80
+    im_data = img1
+    height, width, nbands = im_data.shape
+    figsize = width / float(dpi), height / float(dpi)
+    fig2 = plt.figure(figsize=figsize)
+    fig3 = plt.figure(figsize=figsize)
+    ax = fig2.add_axes([0, 0, 1, 1])
+    ax2 = fig3.add_axes([0, 0, 1, 1])
+    ax.axis('off')
+    ax.imshow(im_data, interpolation='nearest')
+    ax2.axis('off')
+    ax2.imshow(im_data, interpolation='nearest')
+    ax.set(xlim=[0, width], ylim=[height, 0], aspect=1)
 
         if np.shape(self.xs)[0] > 1:
 
@@ -271,8 +271,8 @@ def load_next_image(event):
         global fig, axes, plt
 
         position += 1
-        print("Load next image: " + filesPath[position] +
-              "inp\\" + files[position])
+        print("Load next image: " + filesPath[position]
+              + "inp\\" + files[position])
 
         img1 = cv2.imread(filesPath[position] + "inp\\" + files[position])
         img1 = img1[:, :, ::-1]
@@ -281,8 +281,8 @@ def load_next_image(event):
         plt.setp(axes, xticks=[], yticks=[])
         axes[1].imshow(img1[:, :, 0], cmap="Purples_r",
                        interpolation='bicubic')
-        fig.canvas.set_window_title("Neural net image annotator - " +
-                                    "Út megjelölése")
+        fig.canvas.set_window_title("Neural net image annotator - " 
+                                    + "Út megjelölése")
 
         linebuilder.clear()
 
