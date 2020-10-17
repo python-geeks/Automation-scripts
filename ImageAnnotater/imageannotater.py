@@ -23,7 +23,7 @@ class LineBuilder:
 
 def __init__(self, line):
 
-                    self.line = line
+              self.line = line
                     self.xs = []
                     self.ys = []
                     self.cid = line.figure.canvas.mpl_connect('button_press_event', self)
