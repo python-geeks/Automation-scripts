@@ -1,3 +1,4 @@
+# Code for image annotation
 import numpy
 import numpy as np
 import cv2
