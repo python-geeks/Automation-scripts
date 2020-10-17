@@ -1,4 +1,4 @@
-   import numpy
+import numpy
 import numpy as np
 import cv2
 import tkinter
@@ -22,7 +22,7 @@ class LineBuilder:
     poly7 = []
 
 
-def __init__(self, line):
+ def __init__(self, line):
 
     self.line = line
     self.xs = []
@@ -30,7 +30,7 @@ def __init__(self, line):
     self.cid = line.figure.canvas.mpl_connect('button_press_event', self)
 
 
-def __call__(self, event):
+ def __call__(self, event):
     if event.inaxes! = self.line.axes:
    return
         self.xs.append(event.xdata)
