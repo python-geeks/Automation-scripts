@@ -58,10 +58,10 @@ driver = webdriver.Chrome('C:\Python\Chromedriver\chromedriver.exe')
 driver.get('https://codeforces.com/problemset/problem/' + st)
 
 
-driver.find_element_by_xpath("//*[@id='header']/div[2]/div[2]/a[1]").click();
+driver.find_element_by_xpath("//*[@id='header']/div[2]/div[2]/a[1]").click()
 driver.find_element_by_id("handleOrEmail").send_keys(username)
 driver.find_element_by_id("password").send_keys(password)
-driver.find_element_by_xpath("/html/body/div[6]/div[5]/div/div/div/form/table/tbody/tr[4]/td/div[1]/input").click();
+driver.find_element_by_xpath("/html/body/div[6]/div[5]/div/div/div/form/table/tbody/tr[4]/td/div[1]/input").click()
 
 sleep(5)
 #Language selection
@@ -72,6 +72,6 @@ driver.execute_script(js,language)
 #Enter your login credentials within 90 seconds, the solution is submitted only when you're logged in
 
 
-dropFileArea = driver.find_element_by_xpath("//input[@name='sourceFile']");
-dropFileArea.send_keys(path);
-driver.find_element_by_xpath("//input[@value='Submit']").click();
+dropFileArea = driver.find_element_by_xpath("//input[@name='sourceFile']")
+dropFileArea.send_keys(path)
+driver.find_element_by_xpath("//input[@value='Submit']").click()
