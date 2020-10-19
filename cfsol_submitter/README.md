@@ -17,14 +17,14 @@
 
 As soon as you get hold of the script, you need to make some changes according to your device to make the flow smoother everytime you run this script.
 
-1. Enter your username and Password within the `""` in the `submit.py` file.
+1. Enter your username and Password within the `""` in the `headless.py` file.
 
-2. Select your preferred language from the `language.txt` file and if required write your langauge in the `""` of the `submit.py` file. The default has been set to `GNU G++17 7.3.0`. So C++ users may skip this step :) 
+2. Select your preferred language from the `language.txt` file and if required write your langauge in the `""` of the `headless.py` file. The default has been set to `GNU G++17 7.3.0`. So C++ users may skip this step :) 
 
 3. Head to `chrome://version` and copy the path given in heading of **Profile path** and paste it in place of:
-`options.add_argument(r"C:\Users\Divyansh Mishra\AppData\Local\Google\Chrome\User Data\Default")` in the `submit.py` file. Mention your profile path in place of `C:\Users\Divyansh Mishra\AppData\Local\Google\Chrome\User Data\Default`. 
+`options.add_argument(r"C:\Users\Divyansh Mishra\AppData\Local\Google\Chrome\User Data\Default")` in the `headless.py` file. Mention your profile path in place of `C:\Users\Divyansh Mishra\AppData\Local\Google\Chrome\User Data\Default`. 
 
-4. Head towards the chromedriver path from the folder where you saved it and paste it in place of:`driver = webdriver.Chrome('C:\Python\Chromedriver\chromedriver.exe')` in your `submit.py` file. You need to make changes in `C:\Python\Chromedriver\chromedriver.exe` part of the code. Do not tamper the remaining part of the line.
+4. Head towards the chromedriver path from the folder where you saved it and paste it in place of:`driver = webdriver.Chrome('C:\Python\Chromedriver\chromedriver.exe')` in your `headless.py` file. You need to make changes in `C:\Python\Chromedriver\chromedriver.exe` part of the code. Do not tamper the remaining part of the line.
 
 
 ## Running the script
