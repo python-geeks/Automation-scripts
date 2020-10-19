@@ -1,0 +1,2 @@
+PyAudio==0.2.11
+gpiozero==1.5.1
