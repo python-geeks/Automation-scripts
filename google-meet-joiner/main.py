@@ -3,8 +3,10 @@ import webbrowser
 import schedule
 import pyautogui
 
+
 url1 = "https://meet.google.com/"
 url2 = "https://www.google.com/"
+
 
 def class1():
 	webbrowser.open(url1)
@@ -23,6 +25,7 @@ def class1():
 
 	time.sleep(3)
 	pyautogui.press('enter')
+
 
 def class2():
 	webbrowser.open(url2)
@@ -44,9 +47,9 @@ def class2():
 
 
 if __name__ == "__main__":
-    schedule.every().day.at("16:37").do(class1)
-    schedule.every().day.at("14:00").do(class2)
+	schedule.every().day.at("16:37").do(class1)
+	schedule.every().day.at("14:00").do(class2)
 
-    while True:
-        schedule.run_pending()  # check if we need to run anything
-        time.sleep(10)  # wait 10 seconds before checking each time again
+	while True:
+		schedule.run_pending()  # check if we need to run anything
+		time.sleep(10)  # wait 10 seconds before checking each time again
