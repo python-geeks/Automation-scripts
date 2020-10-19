@@ -1,4 +1,4 @@
-# CF autosubmit
+# CF autosubmit (Headless version)
 
 * This script will autmatically submit your code for the **Codeforces problems**. 
 * This version will work for **Chrome** users only (other browsers coming soon!).
@@ -24,7 +24,7 @@ As soon as you get hold of the script, you need to make some changes according t
 3. Head to `chrome://version` and copy the path given in heading of **Profile path** and paste it in place of:
 `options.add_argument(r"C:\Users\Divyansh Mishra\AppData\Local\Google\Chrome\User Data\Default")` in the `submit.py` file. Mention your profile path in place of `C:\Users\Divyansh Mishra\AppData\Local\Google\Chrome\User Data\Default`. 
 
-4. Head towards the chromedriver path from the folder where you saved it and paste it in place of:`driver = webdriver.Chrome('C:\Python\Chromedriver\chromedriver.exe')` in your `submit.py` file. You need to make changes in `C:\Python\Chromedriver\chromedriver.exe` part of the code.
+4. Head towards the chromedriver path from the folder where you saved it and paste it in place of:`driver = webdriver.Chrome('C:\Python\Chromedriver\chromedriver.exe')` in your `submit.py` file. You need to make changes in `C:\Python\Chromedriver\chromedriver.exe` part of the code. Do not tamper the remaining part of the line.
 
 
 ## Running the script
@@ -37,4 +37,7 @@ Now that you have made all changes according to your device, a few tips:
 * The script will ask you to enter your problem code: For example:- 1029C or 69D
 * Next you need to enter the saved file, for example: 1029C.py or 69D.cpp
 * Hit enter and solve the next question now :)
+* This sript will submit your code in the background and send you a screenshot of the task done.
+* The screenshot will be saved in the same folder as that of this script.
 
+### For any issues regarding this PR feel free to contact me !
