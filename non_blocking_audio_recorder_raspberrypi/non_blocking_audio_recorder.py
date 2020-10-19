@@ -21,7 +21,7 @@ class ButtonRecorder():
         """
         Initialize button and recorder
         * Connect a push button to GPIO 17 and GROUND
-        * OPeration -> 
+        * OPeration ->
           Button Pressed -> Start Recording
           Button Hold    -> Record
           Button Depressed -> Stop Recording and save the file with wave format
@@ -78,7 +78,7 @@ class ButtonRecorder():
 
     def released(self):
         """
-        Summary: On button released save recorded Clip 
+        Summary: On button released save recorded Clip
         """
         print("Button is depressed,Turning off recording")
         self.recfile.stop_recording()
