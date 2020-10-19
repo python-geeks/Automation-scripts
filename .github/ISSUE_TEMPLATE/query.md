@@ -1,6 +1,6 @@
 ---
-name: Beginner Query
-about: I am unaware of process. Kindly help me
+name: 🗣 Ask a Question, Discuss
+about: How does X work 🤔? I made this! I have an idea...
 title: ''
 labels: query
 assignees: 'pawangeek'
