@@ -24,8 +24,6 @@ colors = {'blue': (255, 0, 0), 'green': (0, 255, 0), 'red': (0, 0, 255),
 
 
 def draw_circle(event, x, y, flags, param):
-
-
     """
     Draws dots on double clicking of the left mouse button
     """
@@ -68,9 +66,8 @@ def draw_circle(event, x, y, flags, param):
         # Prompt user for another annotation
         print("Double click another pixel or press 'q' to quit...\n")
 
+
 print("Welcome to the Image Annotation Program!\n")
-
-
 print("Double click anywhere inside the image to annotate that point...\n")
 
 # We create a named window where the mouse callback will be established
