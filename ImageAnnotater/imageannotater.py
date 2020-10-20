@@ -24,6 +24,8 @@ colors = {'blue': (255, 0, 0), 'green': (0, 255, 0), 'red': (0, 0, 255),
 
 
 def draw_circle(event, x, y, flags, param):
+
+
     """
     Draws dots on double clicking of the left mouse button
     """
