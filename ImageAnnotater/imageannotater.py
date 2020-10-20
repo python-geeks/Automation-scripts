@@ -45,14 +45,14 @@ def draw_circle(event, x, y, flags, param):
         annotation_vals.append(txt)
 
         # Print the coordinates and the annotation to the console
-        print("x = " + str(x) + "  y = " + str(y) +
-              "  Annotation = " + txt + "\n")
+        print("x = " + str(x) + "  y = " + str(y)
+              + "  Annotation = " + txt + "\n")
 
         # Set the position of the text part of the annotation
         text_x_pos = None
         text_y_pos = y
 
-        if x < (width/2):
+        if x < (width/2) :
             text_x_pos = int(x + (width * 0.075))
         else:
             text_x_pos = int(x - (width * 0.075))
@@ -67,6 +67,8 @@ def draw_circle(event, x, y, flags, param):
         print("Double click another pixel or press 'q' to quit...\n")
 
 print("Welcome to the Image Annotation Program!\n")
+
+
 print("Double click anywhere inside the image to annotate that point...\n")
 
 # We create a named window where the mouse callback will be established
