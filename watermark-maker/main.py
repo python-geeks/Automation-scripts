@@ -1,14 +1,14 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter
 
 
-pdf_file = input("Please enter the name of the pdf file \
+pdf_file = input("Please enter the name of the pdf file\
 you wish to add a watermark to: ")
 watermark = input("Please enter the name of the pdf file\
 that you want to use as a watermark: ")
 merged = "finalDraft.pdf"
 
 
-with open(pdf_file, "rb") as input_file, \
+with open(pdf_file, "rb") as input_file,\
  open(watermark, "rb") as watermark_file:
     input_pdf = PdfFileReader(input_file)
     watermark_pdf = PdfFileReader(watermark_file)
