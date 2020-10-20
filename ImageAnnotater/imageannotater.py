@@ -36,9 +36,7 @@ def draw_circle(event, x, y, flags, param):
         cv2.circle(image, (x, y), 5, colors['magenta'], -1)
 
         # Annotate the image
-        txt = input("Describe this pixel using one word"
-                    (e.g. dog) and press ENTER: ")
-        
+        txt = input("Describe this pixel using one word (e.g. dog) and press ENTER: ")
 
         # Append values to the list
         x_vals.append(x)
