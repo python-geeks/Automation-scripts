@@ -26,7 +26,7 @@ def class1():
     pyautogui.press('enter')
 
 
-def class1():
+def class2():
     webbrowser.open(url2)
     time.sleep(3)
     print("Joining Class")
@@ -49,5 +49,5 @@ if __name__ == "__main__":
     schedule.every().day.at("06:00").do(class2)
 
     while True:
-        schedule.run_pending() #check if we need to run anything
-        time.sleep(10) # wait 10 second before checking again
+        schedule.run_pending()  # check if we need to run anything
+        time.sleep(10)  # wait 10 second before checking again
