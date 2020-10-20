@@ -52,7 +52,7 @@ def draw_circle(event, x, y, flags, param):
         text_x_pos = None
         text_y_pos = y
 
-        if x < (width/2) :
+        if x < (width / 2) :
             text_x_pos = int(x + (width * 0.075))
         else:
             text_x_pos = int(x - (width * 0.075))
