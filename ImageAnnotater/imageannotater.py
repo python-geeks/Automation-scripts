@@ -28,7 +28,7 @@ def draw_circle(event, x, y, flags, param):
     Draws dots on double clicking of the left mouse button
     """
     # Store the height and width of the image
-    height = image.shape[0]
+    # height = image.shape[0]
     width = image.shape[1]
 
     if event == cv2.EVENT_LBUTTONDBLCLK:
