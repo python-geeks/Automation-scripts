@@ -1,0 +1,2 @@
+pdf2docx==0.4.6
+python_docx==0.8.10
