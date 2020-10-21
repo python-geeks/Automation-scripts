@@ -20,7 +20,7 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 
 ### These are my Lazy Panda Goals
 
-* Goal Achieved - 78/100
+* Goal Achieved - 91/100
 
 * Goal 25 - Panda stopped Cycling (Completed)
 * Goal 50 - Panda stopped doing Exercise
