@@ -1,9 +1,10 @@
-# Watermark Maker
+# PDF Watermaker 
 
-### Getting started
- - This python script can add a watermark to any pdf. However you need to have the watermark image or text in a .pdf file.
- - To begin with you will have to download all the required modules for the script to run. You can do that by typing: `pip install -r requirements.txt` or `pip3 install -r requirements.txt`
- -  After executing the program it will ask you for the name of the pdf file you want to add the watermakr to and the name of the pdf file that you want to use as a watermark. 
- -  The final pdf would be saved by the name finalDraft.pdf 
- -  The script will add watermark to all the pages that the pdf contains.
-
+### Getting started: 
+- To begin with you will have to download the required modules. You can do this by doing:
+    `pip install -r requirements.txt` or `pip3 install -r requirements.txt`
+- After that make sure to keep the pdf you want to add the watermark to, is in the same directory as the python script.
+- After executing the program it will ask you for: 
+    -- The Text you want to use as a watermark
+    -- The name of the pdf file you want to add the watermark to
+- The script will save the final file by the name finalDraft.pdf
