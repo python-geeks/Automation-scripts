@@ -12,10 +12,11 @@ def getLinksFromHTML(html):
         return el["href"]
     return list(map(getLink, BeautifulSoup(html, features="html.parser").select("a[href]")))
 
+
 def find_broken_links(domainToSearch, URL, parentURL):
     if (not (URL in searched_links)) and (not URL.startswith("mailto:")) and (not ("javascript:" in URL)) and (not URL.endswith(".png")) and (not URL.endswith(".jpg")) and (not URL.endswith(".jpeg")):
         try:
-            requestObj = requests.get(URL);
+            requestObj = requests.get(URL)
             searched_links.append(URL)
             if(requestObj.status_code == 404):
                 broken_links.append("BROKEN: link " + URL + " from " + parentURL)
@@ -26,8 +27,9 @@ def find_broken_links(domainToSearch, URL, parentURL):
                     for link in getLinksFromHTML(requestObj.text):
                         find_broken_links(domainToSearch, urljoin(URL, link), URL)
         except Exception as e:
-            print("ERROR: " + str(e));
+            print("ERROR: " + str(e))
             searched_links.append(domainToSearch)
+
 
 find_broken_links(urlparse(sys.argv[1]).netloc, sys.argv[1], "")
 
