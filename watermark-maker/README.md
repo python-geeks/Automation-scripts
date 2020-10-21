@@ -8,3 +8,8 @@
     -- The Text you want to use as a watermark
     -- The name of the pdf file you want to add the watermark to
 - The script will save the final file by the name finalDraft.pdf
+
+- Example result :
+
+![Img](./images/img1.png =250x) ![Img](./images/img2.png =250x)
+
