@@ -7,10 +7,10 @@ make init
 source .venv/bin/activate
 ```
 
-Usage: 
+## Usage: 
 
     python broken_linkfinder.py <url>
 
 
-Example:
-    ![Capture.png](Capture.png)
+## Example
+    ![alt](Capture.png)
