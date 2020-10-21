@@ -1,5 +1,6 @@
 import os
 
+
 def driver_download():
     commands = [
         "wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz",
