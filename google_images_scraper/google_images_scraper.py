@@ -16,7 +16,8 @@ def driver_download():
 
 
 def google_images_scraper():
-    if os.path.isfile("$GECKO_PATH"):  # /usr/bin/geckodriver
+    GECKO_PATH = "/path/to/gecko/dir"  # /usr/bin/geckodriver
+    if os.path.isfile(GECKO_PATH):
         pass
     else:
         driver_download()
@@ -35,7 +36,7 @@ def google_images_scraper():
     print("Images will be saved to " + savePath + " directory")
     site = "https://www.google.com/search?tbm=isch&q=" + query
     # providing driver path
-    driver = webdriver.Firefox(executable_path="$GECKO_PATH")
+    driver = webdriver.Firefox(executable_path=GECKO_PATH)
     # passing site url
     driver.get(site)
     """
@@ -79,7 +80,7 @@ def google_images_scraper():
 
         except Exception:
             pass
-    print("Total images downloaded = " + count)
+    print("Total images downloaded = " + str(count))
 
 
 if __name__ == "__main__":
