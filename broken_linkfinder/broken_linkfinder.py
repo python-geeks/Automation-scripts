@@ -35,4 +35,4 @@ print("\n--- DONE! ---\n")
 print("The following links were broken:")
 
 for link in broken_links:
-    print ("\t" + link)
+    print("\t" + link)
