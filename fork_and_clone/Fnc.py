@@ -50,4 +50,4 @@ def clone(repo):
             sys.exit()
 
 if __name__ == "__main__":
-    clone("chiefonboarding/ChiefOnBoarding")
+    fork()
