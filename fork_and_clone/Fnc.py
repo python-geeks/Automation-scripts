@@ -41,7 +41,7 @@ def clone(repo):
             arr = repo.split("/")
             subprocess.run(
                 "git clone https://github.com/" + repo + ".git " + location
-                 + "\\" + arr[0] + "\\" + arr[1], shell=True, check=True)
+                + "\\" + arr[0] + "\\" + arr[1], shell=True, check=True)
         else:
             subprocess.run(
                 "git clone https://github.com/" + repo + ".git",
