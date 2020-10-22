@@ -5,12 +5,13 @@
 import math
 import re
 from collections import Counter
-import sys 
+import sys
 
 WORD = re.compile(r"\w+")
 
+
 def get_cosine(vec1, vec2):
-    ''' Function to compute Cosine Similarity between two word vectors'''
+    """ Function to compute Cosine Similarity between two word vectors"""
     intersection = set(vec1.keys()) & set(vec2.keys())
     numerator = sum([vec1[x] * vec2[x] for x in intersection])
 
@@ -25,7 +26,7 @@ def get_cosine(vec1, vec2):
 
 
 def text_to_vector(text):
-    '''Simple function to convert text to vector'''
+    """Simple function to convert text to vector"""
     words = WORD.findall(text)
     return Counter(words)
 
@@ -42,5 +43,5 @@ if __name__ == "__main__":
     vector2 = text_to_vector(text2)
 
     cosine = get_cosine(vector1, vector2)
-    
+
     print("Similarity Score:", cosine)
