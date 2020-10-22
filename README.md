@@ -125,7 +125,7 @@ Thanks goes to these wonderful people 😊
   <tr>
     <td align="center"><a href="https://github.com/Divyansh-20"><img src="https://avatars1.githubusercontent.com/u/65251493?v=4" width="100px;" alt=""/><br /><sub><b>Divyansh Mishra</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=Divyansh-20" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/JenishRudani"><img src="https://avatars3.githubusercontent.com/u/62238590?v=4" width="100px;" alt=""/><br /><sub><b>Jenish Rudani</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=JenishRudani" title="Code">💻</a></td>
-    <td align="center"><a href="http://m4dummies@gmail.com"><img src="https://avatars1.githubusercontent.com/u/67146120?v=4" width="100px;" alt=""/><br /><sub><b>m4Dummies</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=m4dummies" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/m4dummies><img src="https://avatars1.githubusercontent.com/u/67146120?v=4" width="100px;" alt=""/><br /><sub><b>Neel Patel</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=m4dummies" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Sripaad"><img src="https://avatars3.githubusercontent.com/u/27012182?v=4" width="100px;" alt=""/><br /><sub><b>Sripaad srinivasan</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=Sripaad" title="Code">💻</a></td>
   </tr>
 </table>
