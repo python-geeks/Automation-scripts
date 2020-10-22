@@ -16,7 +16,8 @@ def fork():
     try:
         g = Github(username, password)
         user = g.get_user()
-        repo = input("Name of repo you want to fork (in the form owner/repo): ")
+        repo = input(
+            "Name of repo you want to fork (in the form owner/repo): ")
         if (accOrOrg == "acc"):
             user.create_fork(g.get_repo(repo))
         else:
@@ -33,14 +34,14 @@ def fork():
 def clone(repo):
 
     location = input(
-        "Path for cloning repo into" /
+        "Path for cloning repo into"
         "(default is current directory): ")
     try:
         if len(location.strip()) != 0:
             arr = repo.split("/")
             subprocess.run(
-                "git clone https://github.com/" + repo + ".git " + location +
-                "\\" + arr[0] + "\\" + arr[1], shell=True, check=True)
+                "git clone https://github.com/" + repo + ".git " + location
+                 + "\\" + arr[0] + "\\" + arr[1], shell=True, check=True)
         else:
             subprocess.run(
                 "git clone https://github.com/" + repo + ".git",
