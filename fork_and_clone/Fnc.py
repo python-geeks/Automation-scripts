@@ -7,15 +7,12 @@ def fork():
 
     print("To quit at any point click ctrl-c")
     accOrOrg = input(
-        "Fork to your profile or an organization" \
+        "Fork to your profile or an organization"
         "(type org for organization, acc for profile): ")
-
     while (accOrOrg != "acc" and accOrOrg != "org"):
         accOrOrg = input("invalid answer: acc or org: ")
-
     username = input("Your github username: ")
     password = input("Your github password: ")
-
     try:
         g = Github(username, password)
         user = g.get_user()
@@ -26,7 +23,6 @@ def fork():
             org = input("name of your organization: ")
             org = g.get_organization(org)
             org.create_fork(g.get_repo(repo))
-
         clone(username, repo)
     except Exception as e:
         print("ERROR: " + str(e))
@@ -39,7 +35,6 @@ def clone(repo):
     location = input(
         "Path for cloning repo into" /
         "(default is current directory): ")
-
     try:
         if len(location.strip()) != 0:
             arr = repo.split("/")
