@@ -22,7 +22,8 @@ def find_broken_links(domainToSearch, URL, parentURL):
                 broken_links.append("BROKEN: link " + URL + " from " + parentURL)
                 print(broken_links[-1])
             else:
-                print("NOT BROKEN: link " + URL + " from " + parentURL) #comment this line if you want to print only broken links 
+                #comment this line if you want to print only broken links
+                print("NOT BROKEN: link " + URL + " from " + parentURL)
                 if urlparse(URL).netloc == domainToSearch:
                     for link in getLinksFromHTML(requestObj.text):
                         find_broken_links(domainToSearch, urljoin(URL, link), URL)
