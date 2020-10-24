@@ -7,7 +7,8 @@ import re
 from collections import Counter
 import sys
 
-WORD = re.compile(r"\w+")
+WORD = re.compile(r"[A-Za-z0-9]")
+SPECIAL_CHARS = re.compile(r"[^A-Za-z0-9]")
 
 
 def get_cosine(vec1, vec2):
@@ -28,7 +29,8 @@ def get_cosine(vec1, vec2):
 def text_to_vector(text):
     """Simple function to convert text to vector"""
     words = WORD.findall(text)
-    return Counter(words)
+    special = SPECIAL_CHARS.findall(text)
+    return Counter(words) + Counter(special)
 
 
 if __name__ == "__main__":
@@ -39,9 +41,14 @@ if __name__ == "__main__":
     file2 = open(sys.argv[2], "r")
     text2 = file2.read().replace("\n", " ")
 
+    if len(text1) == 0 and len(text2) == 0:
+        print(f"given text files were empty, imputing '1' as place holder")
+        text1 = '' + '1'
+        text2 = '' + '1'
+
     vector1 = text_to_vector(text1)
     vector2 = text_to_vector(text2)
-
-    cosine = get_cosine(vector1, vector2)
+    
+    cosine = round(get_cosine(vector1, vector2), 2)
 
     print("Similarity Score:", cosine)
