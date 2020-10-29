@@ -2,7 +2,7 @@
 import pandas as pd
 import os
 
-sheets_folder = r''
+sheets_folder = r'' # add your folder path
 
 for path, subdirs, files in os.walk(sheets_folder):
     for filename in files:
