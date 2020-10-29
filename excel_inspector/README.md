@@ -8,3 +8,4 @@ It provides an overview of excel spreadsheets from pandas so no need to click to
 - It opens the spreadsheet and prints the total number of sheets and their names
 - It parse the sheets one by one as dataframes and prints info
 
+### Feel free to expand on it with whatever else you would like the inspector to print out!
