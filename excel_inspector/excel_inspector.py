@@ -2,7 +2,8 @@
 import pandas as pd
 import os
 
-sheets_folder = r'' # add your folder path
+# add your folder path
+sheets_folder = r''
 
 for path, subdirs, files in os.walk(sheets_folder):
     for filename in files:
@@ -13,4 +14,4 @@ for path, subdirs, files in os.walk(sheets_folder):
             print('Sheet names:', excel.sheet_names)
             for sheet in excel.sheet_names:
                 df = excel.parse(sheet)
-                print('Sheet:', sheet, ' with the columns:', list(df.columns) )
+                print('Sheet:', sheet, ' with the columns:', list(df.columns))
