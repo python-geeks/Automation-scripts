@@ -1,4 +1,4 @@
-def generate_board(num):
+def generate_grid(num):
     base = 3
     side = base * base
 
@@ -17,6 +17,8 @@ def generate_board(num):
     # randomize baseline
     board = [[nums[pattern(r, c)] for c in cols] for r in rows]
 
+    # at this point there is a full/solved grid
+
     # remove some numbers of the grid
     squares = side * side
     # default number of empty slots if parameter is set to 0
@@ -24,9 +26,10 @@ def generate_board(num):
         empties = squares * 3 // 4
     else:
         empties = 81 - num     # calculates number of empty solots needed.
+    #removes random nubers of the grid.
     for p in sample(range(squares), empties):
         board[p // side][p % side] = 0
-
+    #return the generated board
     return board
 
 def is_number_valid(row, col, num):
@@ -92,8 +95,12 @@ def solve_sudoku():
     input("Check for more solution?")
 # takes each line of the sudoku as input with spaces between two numbers
 
+# comment out the function you want to deactivate
 
+# input a grid by hand
 grid = [list(map(int, input().split()))[:9] for _ in range(9)]
 
+# use the generate_grid function
+grid = generate_grid(0)
 
 solve_sudoku()  # calls the solve function
