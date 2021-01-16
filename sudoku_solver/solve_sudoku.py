@@ -1,3 +1,34 @@
+def generate_board(num):
+    base = 3
+    side = base * base
+
+    def pattern(r, c):
+        return (base * (r % base) + r // base + c) % side
+
+    def shuffle(s):
+        return sample(s, len(s))
+
+    # randomize rows, col, num
+    rBase = range(base)
+    rows = [g * base + r for g in shuffle(rBase) for r in shuffle(rBase)]
+    cols = [g * base + c for g in shuffle(rBase) for c in shuffle(rBase)]
+    nums = shuffle(range(1, base * base + 1))
+
+    # randomize baseline
+    board = [[nums[pattern(r, c)] for c in cols] for r in rows]
+
+    # remove some numbers of the grid
+    squares = side * side
+    # default number of empty slots if parameter is set to 0
+    if num == 0:
+        empties = squares * 3 // 4
+    else:
+        empties = 81 - num     # calculates number of empty solots needed.
+    for p in sample(range(squares), empties):
+        board[p // side][p % side] = 0
+
+    return board
+
 def is_number_valid(row, col, num):
     # function to find if the number is valid or not in the respective space
     global grid   # making grid as global variable
