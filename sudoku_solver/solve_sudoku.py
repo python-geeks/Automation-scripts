@@ -1,4 +1,7 @@
-def generate_grid(num):
+# importing sample from random to generate the grid
+from random import sample
+
+def generate_grid(num):   # function to generate a board
     base = 3
     side = base * base
 
@@ -93,14 +96,16 @@ def solve_sudoku():
     print_board()    # calls the print_board function
     # if user presses enter then function is called again
     input("Check for more solution?")
-# takes each line of the sudoku as input with spaces between two numbers
+
 
 # comment out the function you want to deactivate
-
-# input a grid by hand
-grid = [list(map(int, input().split()))[:9] for _ in range(9)]
 
 # use the generate_grid function
 grid = generate_grid(0)
 
+# input a grid by hand
+# takes each line of the sudoku as input with spaces between two numbers
+grid = [list(map(int, input().split()))[:9] for _ in range(9)]
+
+print_board()
 solve_sudoku()  # calls the solve function
