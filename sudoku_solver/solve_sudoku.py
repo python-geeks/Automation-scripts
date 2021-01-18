@@ -1,6 +1,7 @@
 # importing sample from random to generate the grid
 from random import sample
 
+
 def generate_grid(num):   # function to generate a board
     base = 3
     side = base * base
@@ -28,12 +29,13 @@ def generate_grid(num):   # function to generate a board
     if num == 0:
         empties = squares * 3 // 4
     else:
-        empties = 81 - num     # calculates number of empty solots needed.
-    #removes random nubers of the grid.
+        empties = 81 - num      # calculates number of empty solots needed.
+    # removes random nubers of the grid.
     for p in sample(range(squares), empties):
         board[p // side][p % side] = 0
-    #return the generated board
+    # return the generated board
     return board
+
 
 def is_number_valid(row, col, num):
     # function to find if the number is valid or not in the respective space
