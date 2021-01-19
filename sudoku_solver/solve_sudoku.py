@@ -1,4 +1,6 @@
 import random
+
+
 def is_number_valid(row, col, num):
     # function to find if the number is valid or not in the respective space
     global grid   # making grid as global variable
@@ -36,6 +38,7 @@ def print_board():  # function to print the puzzle after solving
             else:
                 print(str(grid[i][j]) + " ", end="")
 
+
 def fill(row, col):
     global grid
     if col >= 9 and row < 8:
@@ -56,54 +59,51 @@ def fill(row, col):
 
             if row >= 9:
                 return True
-    for i in range(1,10):
+    for i in range(1, 10):
         if is_number_valid(row, col, i):
             grid[row][col] = i
             if fill(row, col + 1):
                 return True
             grid[row][col] = 0
     return False
-   
+
+
 def generate_sudoku(visible_count):
-    #visible_count - count of visible numbers on the grid
+    # visible_count - count of visible numbers on the grid
     global grid
     grid = []
-    for g in range(0,9):
+    for g in range(0, 9):
         grid.append([0]*9)
-    #first generate for each 3x3 grid diagnolly
-    
-    for i in range(0,7,3):
+    # first generate for each 3x3 grid diagnolly
+
+    for i in range(0, 7, 3):
         k = i
-        number_list = [1,2,3,4,5,6,7,8,9]
-        for j in range(0,9):
-            
-            rand = random.randint(0,8 - j)
+        number_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        for j in range(0, 9):
+            rand = random.randint(0, 8 - j)
 
             if k % 3 == 0:
                 k = i
-            
-                
+
             grid[k][int(j/3) + i] = number_list[rand]
             k = k + 1
-            
+
             del number_list[rand]
 
-    #fill remaining
-    fill(0,3)
+    # fill remaining
+    fill(0, 3)
 
-    #remove digits
-    #please remember it does not check if sudoku is solvable while removing digits
+    # remove digits
+    # please remember it does not check if sudoku
+    # is solvable while removing digits
     hidden_count = 81 - visible_count
     while hidden_count > 0:
-        rand_cell = random.randint(1,81)
+        rand_cell = random.randint(1, 81)
         r = int(rand_cell/9) - 1
-        c = int(rand_cell%9) - 1
+        c = int(rand_cell % 9) - 1
         if not grid[r][c] == 0:
             grid[r][c] = 0
             hidden_count = hidden_count - 1
-
-            
-              
 
 
 def solve_sudoku():
