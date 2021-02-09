@@ -107,7 +107,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     # call ffmpeg with the required args
-    cmd = 'ffmpeg -i "{}" -c:a copy -filter:v "crop={}:{}:{}:{}" {}{}'
+    cmd = 'ffmpeg -hide_banner -loglevel error -i "{}" -c:a copy -filter:v "crop={}:{}:{}:{}" {}{}'
     cmd = cmd.format(
         args.input,
         width,
