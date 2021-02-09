@@ -24,38 +24,14 @@ if __name__ == '__main__':
     # set up the arguments to be parsed
     parser = argparse.ArgumentParser()
 
-    parser.add_argument(
-        '-i', '--input', type=str,
-        help='the file to crop'
-        )
-    parser.add_argument(
-        '-c', '--crop', type=str,
-        help='the amount to crop in the format "TOP,BOTTOM,LEFT,RIGHT"'
-        )
-    parser.add_argument(
-        '-t', '--top', type=str,
-        help='the amount to crop off the top of the video'
-        )
-    parser.add_argument(
-        '-b', '--bottom', type=str,
-        help='the amount to crop off the bottom of the video'
-        )
-    parser.add_argument(
-        '-l', '--left', type=str,
-        help='the amount to crop off the left of the video'
-        )
-    parser.add_argument(
-        '-r', '--right', type=str,
-        help='the amount to crop off the right of the video'
-        )
-    parser.add_argument(
-        '-o', '--output', type=str,
-        help='the file to output to (cannot be the same as input file)'
-        )
-    parser.add_argument(
-        '-y', '--yes', action='store_true',
-        help='skip the prompt to confirm overwriting a file'
-        )
+    parser.add_argument('-i', '--input', type=str, help='the file to crop')
+    parser.add_argument('-c', '--crop', type=str, help='the amount to crop in the format "TOP,BOTTOM,LEFT,RIGHT"')
+    parser.add_argument('-t', '--top', type=str, help='the amount to crop off the top of the video')
+    parser.add_argument('-b', '--bottom', type=str, help='the amount to crop off the bottom of the video')
+    parser.add_argument('-l', '--left', type=str, help='the amount to crop off the left of the video')
+    parser.add_argument('-r', '--right', type=str, help='the amount to crop off the right of the video')
+    parser.add_argument('-o', '--output', type=str, help='the file to output to (cannot be the same as input file)')
+    parser.add_argument('-y', '--yes', action='store_true', help='skip the prompt to confirm overwriting a file')
 
     args = parser.parse_args()
 
@@ -70,12 +46,12 @@ if __name__ == '__main__':
                 'bottom': args.crop[1],
                 'left': args.crop[2],
                 'right': args.crop[3]
-                }
+            }
         else:
             # if the length is not 4 then the format is not supported
             sys.stderr.write(
                 'ERROR: crop arg must be in the format "TOP,BOTTOM,LEFT,RIGHT"'
-                )
+            )
             sys.exit(1)
     else:
         # parse all of the other possible crop kwargs
@@ -119,8 +95,8 @@ if __name__ == '__main__':
     crop['right'] = to_int(crop['right'], vid_stream['width'])
 
     # calculate the new width and height of the video
-    width = vid_stream['width'] - (crop['left']+crop['right'])
-    height = vid_stream['height'] - (crop['top']+crop['bottom'])
+    width = vid_stream['width'] - (crop['left'] + crop['right'])
+    height = vid_stream['height'] - (crop['top'] + crop['bottom'])
     if width <= 0:
         # the new width cannot be less than or equal to 0
         sys.stderr.write('ERROR: resulting width must be greater than 0')
