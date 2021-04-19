@@ -12,7 +12,10 @@ Do you know anything that can help all to easy our tough life than tell that sec
 **Cheers to all, our panda removed exercise from daily schedule 🤸‍♂️**
 
 ## Update 3 :
-**Moving forward we achieve our next goal, now that panda doesn't play any outdoor game anymore  🏌️‍♂️**
+**Moving forward we achieve our next goal, now our panda doesn't play any outdoor game anymore  🏌️‍♂️**
+
+## Update 4:
+**Goals of 2020 completed, Panda now hired a maid to clean his house :)**
 
 And it's okay if you're not aware of process. Kindly raise query by creating pull request (In query template). Here is the link for that how to create a pull request in other's Repo
 
@@ -20,7 +23,7 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 
 ### These are my Lazy Panda Goals
 
-* Goal Achieved - 91/100
+* Goal Achieved - 101/100
 
 * Goal 25 - Panda stopped Cycling (Completed)
 * Goal 50 - Panda stopped doing Exercise
