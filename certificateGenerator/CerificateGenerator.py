@@ -42,7 +42,7 @@ def fromList():
             try:
                 # makeCerti(maintainThreshold(name[i]), topic[i])
                 makeCerti(maintainThreshold(name[i]))
-            except:
+            except Exception as e:
                 pass
 
     else:
