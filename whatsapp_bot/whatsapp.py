@@ -9,5 +9,4 @@ message = input('Enter Message you wanna send : ')
 hour = int(chour) + int(input('Enter hour : '))
 minute = int(input('Enter minute : '))
 
-pywhatkit.sendwhatmsg(mobile,message,hour,minute)
-
+pywhatkit.sendwhatmsg(mobile, message, hour, minute)
