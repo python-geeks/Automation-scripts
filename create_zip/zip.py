@@ -2,27 +2,33 @@ import os
 import zipfile
 import argparse
 
+
 def cli_parse():
     cli = argparse.ArgumentParser(prog='zip creator',
-                                  description='Basic automation script for creating zip file from a folder')
-    cli.add_argument("folder", metavar='Folder', type=str, help="Path to folder")
+                                  description='Basic automation script for \
+                                  creating zip file from a folder')
+    cli.add_argument("folder", metavar='Folder',
+                     type=str, help="Path to folder")
     cli.add_argument("-o", "--output", type=str, help="Output file path")
     return cli.parse_args()
+
 
 args = cli_parse()
 folder = args.folder
 output = args.output
 
+
 def zipdir(path, ziph):
     # ziph is zipfile handle
     for root, dirs, files in os.walk(path):
-        print(root,dirs,files,path)
+        print(root, dirs, files, path)
         for file in files:
-            ziph.write(os.path.join(root, file), 
-                       os.path.relpath(os.path.join(root, file), 
+            ziph.write(os.path.join(root, file),
+                       os.path.relpath(os.path.join(root, file),
                                        os.path.join(path, '..')))
 
-#print(output)
+
+# print(output)
 if not output:
     output = os.path.basename(folder)
 
@@ -33,4 +39,4 @@ zipf = zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED)
 zipdir(folder, zipf)
 zipf.close()
 
-print("File created", output) 
+print("File created", output)
