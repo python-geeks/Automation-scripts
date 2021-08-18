@@ -23,7 +23,7 @@ except:
 print('Downloading.......')
 
 if name:
-    urllib.request.urlretrieve(url[1], f"{os.path.join('Downloads', name)}.mp4")
+    urllib.request.urlretrieve(url[1], f"{os.path.join('downloaded_videos', name)}.mp4")
 else:
-    urllib.request.urlretrieve(url[1], f"{os.path.join('Downloads', link[-6:])}.mp4")
+    urllib.request.urlretrieve(url[1], f"{os.path.join('downloaded_videos', link[-6:])}.mp4")
 print('Video Downloaded Successfully')

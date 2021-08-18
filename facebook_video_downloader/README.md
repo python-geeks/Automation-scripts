@@ -15,6 +15,6 @@ python main.py
 
 3. You will be prompted for the name in which the video will be saved. You can either enter the name of the video if you want, or leave it blank.
 
-4. Navigate to the `Downloads` directory and you'll find your video!
+4. Navigate to the `downloaded_videos` directory and you'll find your video!
 
 <h4>It's that easy!!! 😁😁</h4>
