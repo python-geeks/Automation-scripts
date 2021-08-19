@@ -17,11 +17,11 @@ for i in range(0, pages):
     from_page = pdfReader.getPage(i)
     text = from_page.extractText()
     if choice == "1":
-        speak.say("Page Number:"+str(i+1))
+        speak.say("Page Number:" + str(i + 1))
         speak.say(text)
     complete_pdf += text
 speak.runAndWait()
 final_file = gTTS(text=complete_pdf, lang='en')  # store file in variable
 file_name = input("Name of the MP3 file: ")
-final_file.save(file_name+".mp3")  # Saving audio file
+final_file.save(file_name + ".mp3")  # Saving audio file
 print("Conversion is Complete")
