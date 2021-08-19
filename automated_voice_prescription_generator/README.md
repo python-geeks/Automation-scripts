@@ -22,3 +22,9 @@ Generates Prescriptions in the form of PDF Files by recognizing the voice from d
 2.      cd automated_voice_prescription_generator
 3.      pip install -r requirements.txt
 4.      python main.py
+
+## Errors:
+* Incase you face issues related to **PyAudio**, run the below commands:
+
+        pip install pipwin
+        pipwin install pyaudio
