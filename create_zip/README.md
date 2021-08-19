@@ -1,6 +1,6 @@
-### Covid-19
+### Create zip
 
-These scripts allows you to easily get data about current situation on Covid-19.
+These scripts allows you to recursively add folder to zip file.
 
 ## Setup and activate virtual environment :
 For Unix based systems please execute the following command to create venv and install requirements.
