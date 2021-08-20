@@ -19,7 +19,7 @@ def cloud_convert(app_sid, app_key):
 
     try:
         # upload source file to storage
-        filename = input("Please enter the complete and correct file path of the required pdf: ")    
+        filename = input("Please enter the complete and correct file path of the required pdf: ")
         remote_name = filename
         output_name = remote_name.split('.')[0] + "docx"
         remote_name = filename
@@ -28,7 +28,7 @@ def cloud_convert(app_sid, app_key):
         request_upload = groupdocs_conversion_cloud.UploadFileRequest(remote_name, filename)
         file_api.upload_file(request_upload)
 
-        # Extract Text from PDF document
+# Extract Text from PDF document
         settings = groupdocs_conversion_cloud.ConvertSettings()
         settings.file_path = remote_name
         settings.format = strformat
@@ -55,4 +55,3 @@ if __name__ == "__main__":
         sid = input("Enter app SID: ")
         api_key = input("Enter api key: ")
         cloud_convert(sid, api_key)
- 
