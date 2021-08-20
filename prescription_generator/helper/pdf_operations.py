@@ -55,4 +55,3 @@ def save_pdf(medicines):
 
     # save the pdf with name .pdf
     pdf.output("Prescription.pdf")
-    
