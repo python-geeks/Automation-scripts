@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+
+{% block content %}
+    <div class="container w-50">
+        <div>
+            <img src="{{url_for('static', filename='certificates/generated/' + file_name)}}" class="img-fluid rounded shadow" alt="certificate">
+        </div>
+        <div class="d-flex justify-content-evenly my-4">
+            <a href="/download_certificate?filename={{file_name}}">
+                <button type="button" class="btn btn-success">Download</button>                
+            </a>
+            <a href="/">
+                <button type="button" class="btn btn-dark">Generate again</button>                
+            </a>
+        </div>
+    </div>
+{% endblock content %}
