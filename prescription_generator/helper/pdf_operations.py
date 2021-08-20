@@ -16,34 +16,42 @@ class PDF(FPDF):
 def save_pdf(medicines):
     pdf = PDF()
 
-    try:
-        # Add a page
-        pdf.add_page()
+    # Add a page
+    pdf.add_page()
 
-        # setting style and size of font for the pdf
-        pdf.set_font("Arial", size=12)
-        pdf.set_title("Generated Prescription")
-        pdf.set_author("by Dr. Smith")
-        for medicine in medicines:
-            print(medicines[medicine]["Medicine Name"])
+    # setting style and size of font for the pdf
+    pdf.set_font("Arial", size=12)
+    pdf.cell(
+        200, 10,
+        txt="Generated Prscription",
+        ln=1, align='C'
+    )
+
+    for medic in medicines:
+        if ('Medicine Name' in medicines[medic]):
             # create a cell
             pdf.cell(
                 200, 10,
                 ln=1, align='C',
-                txt=medicine
+                txt=medic
             )
             pdf.cell(
                 200, 10,
                 ln=2,
-                txt="Medicine Name: " + medicines[medicine]["Medicine Name"],
+                txt="Medicine Name: " + medicines[medic]["Medicine Name"],
             )
-            pdf.cell(
-                200, 10,
-                ln=2,
-                txt="Instruction to use: " + medicines[medicine]["Instruction"]
-            )
+            if "Instruction" in medicines[medic]:
+                pdf.cell(
+                    200, 10,
+                    ln=2,
+                    txt="Instructions: " + medicines[medic]["Instruction"]
+                )
+            else:
+                pdf.cell(
+                    200, 10,
+                    ln=2,
+                    txt="Instructions*: No Instructions given"
+                )
 
-        # save the pdf with name .pdf
-        pdf.output("Prescription.pdf")
-    except Exception as e:
-        print("OOPS!! Error e: ", e)
+    # save the pdf with name .pdf
+    pdf.output("Prescription.pdf")

@@ -25,6 +25,7 @@ def speech_rec_for_linux():
 
             print("Medicine Name:")
             speaker.say("Medicine name")
+            # speaker.rate = 300
 
             recorded_audio = r.listen(source, timeout=6)
             print("Done")
