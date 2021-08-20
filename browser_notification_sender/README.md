@@ -7,7 +7,6 @@ This python program will send sends browser notifications to other linked device
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install following dependencies.
 
 ```bash
-pip install foobar
 pip install notify2
 pip install notify-run
 pip install tkinter
