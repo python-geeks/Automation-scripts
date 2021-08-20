@@ -125,7 +125,6 @@ if __name__ == "__main__":
         print("Please enter a valid choice!\n")
         choice = input("Press 1 for basic file conversion, 2 for advanced file conversion(GroupDocs account required)")
     if choice == '1':
-
         pdf_path = input("Please enter the complete and correct file path of the required pdf: ")
         convert_pdf2docx(pdf_path)
     elif choice == '2':
