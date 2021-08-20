@@ -1,5 +1,4 @@
-from tkinter import *
-from tkinter import messagebox
+from tkinter import messagebox, Tk, Label, Text, Button, END
 import sender
 
 
@@ -23,7 +22,8 @@ def run():
         sender.send(message)
         txt.delete("1.0", END)
 
-        messagebox.showinfo("Information", "Your message sent successfully to all linked Devices!")
+        messagebox.showinfo("Information",
+                            "Your message sent successfully to all linked Devices!")
 
     btn = Button(window, text="Send", command=clicked, bg="lightgreen", )
 
