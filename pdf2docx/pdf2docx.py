@@ -73,11 +73,7 @@ def image_to_docx_ocr(image_counter , save_file = 'out.docx'):
             try:
                 document.add_paragraph(i)
             except:
-                i = i.replace(""," ")
-                try:
-                    document.add_paragraph(i)
-                except:
-                    print("Character Not Recognised as ASCII value : " , i)
+                print("Character Not Recognised as ASCII value : " , i)
     # Finally, we save the document .
     document.save(save_file)
 
@@ -133,5 +129,5 @@ if __name__ == "__main__":
         cloud_convert(sid, api_key)
     else:
         image_counter = pdf_to_image(PDF_file)
-        image_to_docx_ocr(image_counter = image_counter )
+        image_to_docx_ocr(image_counter = image_counter)
         print('done')
