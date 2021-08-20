@@ -29,19 +29,18 @@ def save_pdf(medicines):
             # create a cell
             pdf.cell(
                 200, 10,
-                txt=medicine,
-                ln=1, align='C'
+                ln=1, align='C',
+                txt=medicine
             )
             pdf.cell(
                 200, 10,
+                ln=2,
                 txt="Medicine Name: " + medicines[medicine]["Medicine Name"],
-                ln=2,
             )
             pdf.cell(
                 200, 10,
-                txt="Instruction to use: " +
-                medicines[medicine]["Medicine Instruction"],
                 ln=2,
+                txt="Instruction to use: " + medicines[medicine]["Instruction"]
             )
 
         # save the pdf with name .pdf

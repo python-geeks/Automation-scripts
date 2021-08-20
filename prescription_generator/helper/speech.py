@@ -2,11 +2,11 @@ import speech_recognition as sr
 
 
 def speech_rec_for_linux():
-    # import espeak
-    # espeak.init()
-    # speaker = espeak.Espeak()
-    import pyttsx3
-    speaker = pyttsx3.init()
+    import espeak
+    espeak.init()
+    speaker = espeak.Espeak()
+    # import pyttsx3
+    # speaker = pyttsx3.init()
 
     r = sr.Recognizer()
     text = ""
@@ -31,9 +31,9 @@ def speech_rec_for_linux():
 
             try:
                 text = r.recognize_google(
-                        recorded_audio,
-                        language="en-US"
-                    )
+                    recorded_audio,
+                    language="en-US"
+                )
                 if 'exit' in str(text).lower():
                     print("Thanks for using our service!")
                     break
@@ -55,10 +55,10 @@ def speech_rec_for_linux():
 
             try:
                 text = r.recognize_google(
-                        recorded_audio,
-                        language="en-US"
-                    )
-                medicine_dict["Medicine Instruction"] = str(text)
+                    recorded_audio,
+                    language="en-US"
+                )
+                medicine_dict["Instruction"] = str(text)
                 print("Decoded Text : {}".format(text))
 
             except Exception as e:
@@ -99,9 +99,9 @@ def speech_rec_for_windows():
 
             try:
                 text = r.recognize_google(
-                        recorded_audio,
-                        language="en-US"
-                    )
+                    recorded_audio,
+                    language="en-US"
+                )
                 if 'exit' in str(text).lower():
                     print("Thanks for using our service!")
                     break
@@ -124,10 +124,10 @@ def speech_rec_for_windows():
 
             try:
                 text = r.recognize_google(
-                        recorded_audio,
-                        language="en-US"
-                    )
-                medicine_dict["Medicine Instruction"] = str(text)
+                    recorded_audio,
+                    language="en-US"
+                )
+                medicine_dict["Instruction"] = str(text)
                 print("Decoded Text : {}".format(text))
 
             except Exception as e:
