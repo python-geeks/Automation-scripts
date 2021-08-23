@@ -6,7 +6,8 @@ from send_email import send_email
 
 
 HEADERS = ({'User-Agent':
-            'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
+            """Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like 
+            Gecko) Chrome/41.0.2228.0 Safari/537.36""",
             'Accept-Language': 'en-US, en;q=0.5'})
 
 
@@ -16,13 +17,15 @@ def get_product_info(url):
     try:
         title = soup.find(id='productTitle').get_text().strip()
         price_str = soup.find(id="priceblock_ourprice").get_text()
-    except:
+    except Exception as e:
+        print(e)
         return None, None, None
 
     try:
         soup.select('#availability .a-color-success')[0].get_text().strip()
         available = True
-    except:
+    except Exception as e:
+        print(e)
         available = False
 
     try:
@@ -30,7 +33,8 @@ def get_product_info(url):
         price = price.replace(',', '').replace('₹', '')
         price = float(price)
 
-    except:
+    except Exception as e:
+        print(e)
         return None, None, None
 
     return title, price, available
@@ -38,7 +42,8 @@ def get_product_info(url):
 
 def createTuple(urls, limits):
     if len(urls) != len(limits):
-        print('url list and limit list are not equal --Make Sure you add "," after each url and limit')
+        print("""url list and limit list are not equal
+        --Make Sure you add "," after each url and limit""")
         return []
     return [(urls[i], limits[i]) for i in range(0, len(urls))]
 
@@ -50,7 +55,8 @@ if __name__ == '__main__':
         "url2"
     ]
     limits = [
-        # Add crossponding limit to which you want to get email (like you want get email when price below 100 so put 100 in the limit)
+        # Add crossponding limit to which you want to get email
+        # like you want get email when price below 100 so put 100 in the limit
         "limit1",
         "limit2"
     ]
@@ -59,7 +65,8 @@ if __name__ == '__main__':
     while True:
         if(len(products) == 0):
             break
-        print('Number of products left whose price is Not Dropped yet', len(products))
+        print('Number of products left whose price is Not Dropped yet',
+              len(products))
         print('checking...')
         time.sleep(10)
         products_below_limit = []

@@ -2,7 +2,8 @@
 import smtplib
 import ssl
 
-# make sure that the gmail you are using have enabled less secure app otherwise email will not be sent
+"""Make sure that the gmail you are using have enabled
+   less secure app otherwise email will not be sent"""
 
 
 def send_email(message):
@@ -16,9 +17,10 @@ def send_email(message):
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         try:
             server.login(sender_email, password)
-            res = server.sendmail(sender_email, receiver_email, message)
+            server.sendmail(sender_email, receiver_email, message)
             print('email sent!')
             return True
-        except:
+        except Exception as e:
+            print(e)
             print("could not login or send the mail.")
             return False
