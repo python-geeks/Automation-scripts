@@ -21,5 +21,5 @@ You can interact with your laptop’s microphone/console. The response generated
 ``` python script.py ```
 
 ## Version
-Python 3.9.6
+Python 3.7.4
 pip 20.2.3
