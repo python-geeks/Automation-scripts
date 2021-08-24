@@ -1,7 +1,5 @@
 # WhatsApp_automation
 
-# ONE
-
 The script name is ONE 
 This is used to extract the last text from whatsApp and sent text in the same script.
 
