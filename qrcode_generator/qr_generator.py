@@ -1,19 +1,16 @@
-from re import sub
+# from re import sub
 import tkinter
-from tkinter import constants
-from PIL import ImageTk
-from tkinter import *
-from tkinter.ttk import *
-import PIL.Image
+from tkinter import Tk, Label, StringVar, PhotoImage, HORIZONTAL
+# from tkinter.ttk import *
+import tkinter.ttk
+from tkinter.ttk import Progressbar, Button
 from tkinter import filedialog
-import tkinter.font as tkFont
 import time
-from oauthlib.oauth2.rfc6749.clients.base import BODY
+# from oauthlib.oauth2.rfc6749.clients.base import BODY
 import qrcode
-from qrcode.constants import ERROR_CORRECT_H
+# from qrcode.constants import ERROR_CORRECT_H
 from googleSourceCode_YT import Create_Service
 from googleapiclient.http import MediaFileUpload
-from googleapiclient.errors import HttpError
 import os
 
 # Create variables to store information which are passed to function required to create Google Drive API instance
@@ -24,15 +21,16 @@ SCOPES = ['https://www.googleapis.com/auth/drive']
 
 service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
-#initialize GUI and set window size
-root = Tk()          
+# initialize GUI and set window size
+root = Tk()
 root.title('QR Code Generator!')
 root.geometry("600x400")
-root.configure(background="#F6E5FE")   
+root.configure(background="#F6E5FE")
 
 # include all widgets in frame, easy to clear screen
 main = tkinter.Frame(root, padx=10, pady=10)
 main.pack(padx=10, pady=10)
+
 
 # Function to clear screen
 def clear():
@@ -41,10 +39,12 @@ def clear():
     main = tkinter.Frame(root, padx=10, pady=10)
     main.pack(padx=10, pady=10)
 
+
 # To retrieve text from entry widget, set to instance of StringVar class
 entered_text = StringVar()
 
-Label(main, text="Convert anything to a QR Code! Select what you want to convert:").grid(row=0, column=0, columnspan=4,padx=10, pady=10)
+Label(main, text="Convert anything to a QR Code! Select what you want to convert:").grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+
 
 # Function to open File explorer to upload file
 def openFE():
@@ -73,9 +73,9 @@ def openFE():
         media = MediaFileUpload(file_path.format(file_name), mimetype=mime_type)
 
         extract_filedata = service.files().create(
-            body = file_metadata,
-            media_body = media,
-            fields = 'id'
+            body=file_metadata,
+            media_body=media,
+            fields='id'
         ).execute()
 
         file_id = extract_filedata.get('id')
@@ -86,21 +86,23 @@ def openFE():
             'type': 'anyone'
         }
 
-        response_permission = service.permissions().create(
-            fileId = file_id,
-            body = request_body
+        service.permissions().create(
+            fileId=file_id,
+            body=request_body
         ).execute()
 
         response_share_link = service.files().get(
-            fileId = file_id,
-            fields = 'webViewLink'
+            fileId=file_id,
+            fields='webViewLink'
         ).execute()
 
     submit(response_share_link['webViewLink'])
 
+
 my_btn = Button(main, text="Files", command=openFE).grid(row=3, pady=10)
 
-#Retrieving text from entry field to convert to QR code
+
+# Retrieving text from entry field to convert to QR code
 def submit(anythingElse):
     qr = qrcode.QRCode(
         version=1,
@@ -115,18 +117,21 @@ def submit(anythingElse):
     img.save("text_QR.png")
     photo = PhotoImage(file="text_QR.png")
     label = Label(main, image=photo)
-    label.photo = photo         #referencing
+    label.photo = photo         # referencing
     label.grid(row=6, column=1, columnspan=2, pady=10)
+
 
 # Creating Text entry fields
 def textbox():
-    Label(main, text="Enter your text: ").grid(row=0, column=0, columnspan=4,padx=10, pady=10)
-    entryfield = tkinter.Entry(main, textvariable= entered_text, width=50, borderwidth=5, bg="#FEFFE2")
+    Label(main, text="Enter your text: ").grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+    entryfield = tkinter.Entry(main, textvariable=entered_text, width=50, borderwidth=5, bg="#FEFFE2")
     entryfield.grid(row=4, column=1, pady=20)
-    Button(main, text="Submit", command = lambda: [submit(entered_text.get())]). grid(row=5, column=2, columnspan=4)
+    Button(main, text="Submit", command=lambda: [submit(entered_text.get())]).grid(row=5, column=2, columnspan=4)
+
 
 my_btn2 = Button(main, text="Text", command=lambda: [clear(), textbox()])
 my_btn2.grid(row=3, column=1,)
+
 
 # Progress bar for file upload
 def uploadFiles():
@@ -140,6 +145,7 @@ def uploadFiles():
         time.sleep(0.02)
     progbar.destroy()
     tkinter.Label(main, text='Upload Successful!', fg='green').grid(row=5, columnspan=3, pady=10)
+
 
 my_btn3 = Button(main, text="URL", command=lambda: [clear(), textbox()]).grid(row=3, column=2)
 
