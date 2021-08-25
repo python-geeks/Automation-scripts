@@ -5,4 +5,4 @@ class Constants:
     stats_dir = "model_results"
     init_file = "ML_solver.yaml"
     post_req_data_file = "post_req_data.csv"
-    evaluation_file = "evaluation.json"
+    evaluation_file = "evaluation.json"  
