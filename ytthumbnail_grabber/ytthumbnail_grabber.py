@@ -11,7 +11,7 @@ def parser():
     )
     parse.add_argument(
         "url", metavar='URL', type=str, help="Youtube video URL"
-        )
+    )
     parse.add_argument("-n", "--name", type=str, help="Select filename.")
     return parse.parse_args()
 
