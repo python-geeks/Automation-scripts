@@ -7,3 +7,4 @@ init:
 	if [ -f $(REQUIREMENTS_FILE) ]; \
 		then $(VENV)/bin/python -m pip install -r $(REQUIREMENTS_FILE); \
     fi
+	

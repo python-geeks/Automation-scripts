@@ -6,7 +6,7 @@ from pytube import YouTube
 
 def parser():
     parse = argparse.ArgumentParser(
-        prog='ytthumbnail',
+        prog='ytthumbnail_grabber',
         description="Script for grabbing thumbnail from Youtube video"
     )
     parse.add_argument(
@@ -21,8 +21,5 @@ if __name__ == '__main__':
     args = parser()
     if args.name:
         name = args.name
-    if args.url:
-        thumbnail = YouTube(args.url).thumbnail_url
-        urllib.request.urlretrieve(thumbnail, name)
-    else:
-        print("No URL selected.")
+    thumbnail = YouTube(args.url).thumbnail_url
+    urllib.request.urlretrieve(thumbnail, name)

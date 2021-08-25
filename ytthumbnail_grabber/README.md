@@ -12,14 +12,16 @@ source .venv/bin/activate
 
 ## How to use
 ```
-$ python ytthumbnail.py [-h] [URL] [-n]
+$ python ytthumbnail_grabber.py [-h] [-n NAME] URL
 ```
 
-If no URL is selected, no new file will be created.
-
 ```
-Arguments:
-    -h      Show help message and exit
+Postional Arguments:
     URL     URL of video to grab thumbnail of
-    -n      The desired filename of the resulting thumbnail
+```
+
+```
+Optional Arguments:
+    -h, --help      Show help message and exit
+    -n NAME, --name NAME      The desired filename of the resulting thumbnail (default = 'thumbnail.jpg')
 ```
