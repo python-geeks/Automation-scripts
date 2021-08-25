@@ -76,20 +76,17 @@ def separate(y_kmeans, file_names):
     if(not os.path.exists(cluster_path)):
         os.mkdir(cluster_path)
     for c in range(0, n_clusters):
-        if not os.path.exists(cluster_path+'cluster_'+str(c)):
-            os.mkdir(cluster_path+'cluster_'+str(c))
+        if not os.path.exists(cluster_path + 'cluster_' + str(c)):
+            os.mkdir(cluster_path + 'cluster_' + str(c))
     for fn, cluster in zip(file_names, y_kmeans):
         image = cv2.imread(os.path.join(path_to_files, fn))
-        cv2.imwrite(cluster_path+'cluster_'+str(cluster)+'/'+fn, image)
+        cv2.imwrite(cluster_path + 'cluster_' + str(cluster) + '/' + fn, image)
 
 
 if __name__ == '__main__':
 
     imgs_dict = get_files(path_to_files=PATH_TO_FILES, size=(224, 224))
-
-# Create Keras NN model.
     model = get_model()
-# Feed images through the model and extract feature vectors.
     img_feature_vector = feature_vectors(imgs_dict, model)
     y_kmeans, file_names = clustering(img_feature_vector)
     separate(y_kmeans, file_names)
