@@ -701,6 +701,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "kuspia",
+      "name": "kuspia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63403330?v=4",
+      "profile": "https://github.com/kuspia",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
