@@ -683,6 +683,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "vipinkatara",
+      "name": "Vipin katara",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30955404?v=4",
+      "profile": "https://github.com/vipinkatara",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Strom-Cuzewon",
+      "name": "Strom-Cuzewon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56982586?v=4",
+      "profile": "https://github.com/Strom-Cuzewon",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
