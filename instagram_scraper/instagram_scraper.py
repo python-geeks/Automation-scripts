@@ -1,6 +1,7 @@
 # import selenium, time, urllib.request
 from selenium import webdriver
-import time, urllib.request
+import time
+import urllib.request
 
 profileUrl = input("enter profile url to scrape: ")
 # open chrome and go to the set page
@@ -33,12 +34,15 @@ download_url = ''
 for post in userPosts:
     driver.get(post)
     shortcode = driver.current_url.split("/")[-2]
-    postType = driver.find_element_by_xpath('//meta[@property="og:type"]').get_attribute('content')
+    postType = driver.find_element_by_xpath(
+        '//meta[@property="og:type"]').get_attribute('content')
     if postType == 'video':
-        download_url = driver.find_element_by_xpath("//meta[@property='og:video']").get_attribute('content')
+        download_url = driver.find_element_by_xpath(
+            "//meta[@property='og:video']").get_attribute('content')
         urllib.request.urlretrieve(download_url, '{}.mp4'.format(shortcode))
     else:
-        download_url = driver.find_element_by_xpath("//meta[@property='og:image']").get_attribute('content')
+        download_url = driver.find_element_by_xpath(
+            "//meta[@property='og:image']").get_attribute('content')
         urllib.request.urlretrieve(download_url, '{}.jpg'.format(shortcode))
     time.sleep(5)
 # close connections and chrome once all posts are downloaded
