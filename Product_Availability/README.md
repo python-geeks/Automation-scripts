@@ -7,7 +7,7 @@ Following is the Procedure to run the Script:
 In file send_email.py, enter the mail as written in the file and you need to make sure that the email you are using have less secure apps access.
 In file product_availability.py, scroll down and enter the URLs from amazon on which you want notification.
 
-Then comeback to terminal to run this python script-
+--Then comeback to terminal to run this python script-
 
     python product_availability.py
 
