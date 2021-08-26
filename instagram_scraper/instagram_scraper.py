@@ -1,6 +1,6 @@
 # import selenium, time, urllib.request
 from selenium import webdriver
-import time,urllib.request
+import time, urllib.request
 
 profileUrl = input("enter profile url to scrape: ")
 # open chrome and go to the set page
