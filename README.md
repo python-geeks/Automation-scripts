@@ -1,6 +1,6 @@
 # Automation-scripts
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-80-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-81-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
@@ -156,6 +156,7 @@ Thanks goes to these wonderful people 😊
     <td align="center"><a href="https://github.com/kuspia"><img src="https://avatars.githubusercontent.com/u/63403330?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kuspia</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=kuspia" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/AashutoshNirwal"><img src="https://avatars.githubusercontent.com/u/82330360?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aashutosh Nirwal</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=AashutoshNirwal" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/akshitasinghal4444"><img src="https://avatars.githubusercontent.com/u/56424809?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Akshita Singhal</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=akshitasinghal4444" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/singh-priyank"><img src="https://avatars.githubusercontent.com/u/43441496?v=4?s=100" width="100px;" alt=""/><br /><sub><b>singh-priyank</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=singh-priyank" title="Code">💻</a></td>
   </tr>
 </table>
 
