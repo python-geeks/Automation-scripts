@@ -37,8 +37,9 @@ def clean_data(user_name: str, data_frame: object) -> object:
     # Droping Supplemental Videos
     data = data.drop(columns='Supplemental Video Type')
     data['date_of_month'] = data['Date'].dt.day
-    data = data[['Profile Name', 'Date', 'date_of_month', 'day_of_week', 'day_name', 'Month', 'Year',
-            'Duration', 'Title', 'TV Show', 'Season', 'Episode', 'Content Type', 'Device Type']]
+    data = data[
+        ['Profile Name', 'Date', 'date_of_month', 'day_of_week', 'day_name', 'Month', 'Year',
+        'Duration', 'Title', 'TV Show', 'Season', 'Episode', 'Content Type', 'Device Type']]
 
     # Extract timestamp as a seperate column
     data['Start Time'] = data['Date'].apply(lambda x : str(x).split('+')[0].split(' ')[1])
@@ -84,13 +85,13 @@ def top_watched_TV_show(data: object) -> object:
         Extracts the TV Shows and calculate the total time spent on each TV Show
         and returns the data of only tv_shows
     '''
-    
+
     tv_shows = data[data['Content Type'] == 'TV Show']
     tv_shows[tv_shows['Episode'].isna()]
     tv_shows['Title'].nunique()
     order_tv_shows = tv_shows.groupby('TV Show')['Duration']
     most_watched = order_tv_shows.mean().reset_index().sort_values(by='Duration', ascending=False)
-    
+
     font = {'family': 'serif',
             'color': '#004466',
             'weight': 'normal',
@@ -110,7 +111,7 @@ def binge_watch(tv_shows: object) -> None:
     '''
         tv_shows: data of tv_shows
 
-        Extract top binge watched TV Shows 
+        Extract top binge watched TV Shows
     '''
 
     binge = tv_shows.groupby([tv_shows.index, 'TV Show'])
@@ -124,13 +125,13 @@ def binge_watch(tv_shows: object) -> None:
             'size': 18}
 
     plt.figure(figsize=(22, 12))
-    ax = sns.barplot(y = top_10_binge['TV Show'][:10], x=top_10_binge['Episode'][:10], orient='h', ci='None')
+    ax = sns.barplot(y=top_10_binge['TV Show'][:10], x=top_10_binge['Episode'][:10], orient='h', ci='None')
     ax.set_ylabel('TV Series', fontdict={'size': 14, 'family': 'serif'})
     ax.set_xlabel('Number of Episodes', fontdict={'size': 14, 'family': 'serif'})
     ax.set_title('Top 10 Binge Watching TV Series', fontdict=font)
     ax.tick_params(axis='both', labelsize=13)
 
- 
+
 def average_time_spent_per_month(data: object) -> None:
     '''
         data: cleaned data
