@@ -43,7 +43,8 @@ def clear():
 # To retrieve text from entry widget, set to instance of StringVar class
 entered_text = StringVar()
 
-Label(main, text="Convert anything to a QR Code! Select what you want to convert:").grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+text_intro = Label(main, text="Convert anything to a QR Code! Select what you want to convert:")
+text_intro.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
 
 # Function to open File explorer to upload file
