@@ -38,8 +38,11 @@ def clean_data(user_name: str, data_frame: object) -> object:
     data = data.drop(columns='Supplemental Video Type')
     data['date_of_month'] = data['Date'].dt.day
     data = data[
-        ['Profile Name', 'Date', 'date_of_month', 'day_of_week', 'day_name', 'Month', 'Year',
-        'Duration', 'Title', 'TV Show', 'Season', 'Episode', 'Content Type', 'Device Type']]
+            [
+                'Profile Name', 'Date', 'date_of_month', 'day_of_week', 'day_name', 'Month',
+                'Year', 'Duration', 'Title', 'TV Show', 'Season', 'Episode', 'Content Type', 'Device Type'
+            ]
+        ]
 
     # Extract timestamp as a seperate column
     data['Start Time'] = data['Date'].apply(lambda x : str(x).split('+')[0].split(' ')[1])
