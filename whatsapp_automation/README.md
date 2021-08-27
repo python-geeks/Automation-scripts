@@ -10,7 +10,7 @@ This script can be used for main complex projects namely sentiment analysis, cyb
 
 # 1. This folder contains:
 1. "wa_scrapper.py" --> to run directly in VS code
-2. "WA_scrapper-checkpoint.ipynb"--> to run in jupyter notebook
+
 
 Whatever is easy for you!
 
