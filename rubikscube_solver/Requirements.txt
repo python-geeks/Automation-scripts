@@ -1,0 +1,4 @@
+opencv-python
+kociemba
+numpy
+argparse
