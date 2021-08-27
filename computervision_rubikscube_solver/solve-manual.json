@@ -1,0 +1,22 @@
+{
+    "en": {
+        "R"  : "Turn the right side a quarter turn away from you." ,
+        "R'" : "Turn the right side a quarter turn towards you." ,
+        "R2" : "Turn the right side 180 degrees." ,
+        "L"  : "Turn the left side a quarter turn towards you." ,
+        "L'" : "Turn the left side a quarter turn away from you." ,
+        "L2" : "Turn the left side 180 degrees." ,
+        "U"  : "Turn the top layer a quarter turn to the left." ,
+        "U'" : "Turn the top layer a quarter turn to the right." ,
+        "U2" : "Turn the top layer 180 degrees.",
+        "D"  : "Turn the bottom layer a quarter turn to the right." ,
+        "D'" : "Turn the bottom layer a quarter turn to the left." ,
+        "D2" : "Turn the bottom layer 180 degrees." ,
+        "B"  : "Turn the back side a quarter turn to the left." ,
+        "B'" : "Turn the back side a quarter turn to the right." ,
+        "B2" : "Turn the back side 180 degrees." ,
+        "F"  : "Turn the front side a quarter turn to the right." ,
+        "F'" : "Turn the front side a quarter turn to the left." ,
+        "F2" : "Turn the front side 180 degrees."
+    }
+}
