@@ -40,6 +40,6 @@ To run the project, you can directly run the ```compare_img.py``` file and provi
 
 ```$ python3 compare_img.py DIR_PATH_IMG1 DIR_PATH_IMG2```
 
-Example: ```$ python3 compare_img.py ./images/img1.jpg ./images/img1.jpg ```
+Example: ```$ python3 compare_img.py ./images/img1.jpg ./images/img2.jpg ```
 
 Note that image path can be a git blob url as well.
