@@ -2,8 +2,8 @@
 ## Table of Content
 * [About](#about)
 * [Prerequisites](#prerequisites)
-* [Execution](#execution)
 * [Installation and Setup](#installation-and-setup)
+* [Execution](#execution)
 * [Results](#results)
 
 ## About
