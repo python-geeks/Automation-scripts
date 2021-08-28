@@ -1,17 +1,17 @@
 
-## Table of contents
+## Table of Content
 * [General info](#general-info)
-* [Prerequisites](#prerequisites)
 * [Dependencies](#dependencies)
-* [How to use](#how-to-use)
+* [Prerequisites](#prerequisites)
+* [Execution](#execution)
 
 ## General info
-In this project, pixel-wise comparison on two input images is performed and differences are displayed as quantised parameters. This project is basically divided into two parts (these process happen in the backend using ```image_processing.py``` file):
-1. Pre-processing - In which steps like greyscale conversion, maintaining uniform diemensions, removal of noise are perfomed.
-2. Compare function - Here the actual comparison between two images takes place, skimage's Structual Similarity Index, Mean square Error and Histogramical difference is computed.
+In this project, pixel-wise comparison between two input images is performed and differences are displayed as numerical parameters. This project is basically divided into two parts (these process happen in the backend using ```image_processing.py``` file):
+1. Pre-processing - In which steps like greyscale conversion, maintaining uniform dimensions, removal of noise are perfomed.
+2. Compare function - Here the actual comparison between two images takes place which uses skimage's Structual Similarity Index, Mean square Error and Histogramical difference.
 
 ## Dependencies
-Project is created with:
+Project is created with the help of:
 * Numpy
 * Scikit Image
 * OpenCV
@@ -24,19 +24,18 @@ To use it, you require the following:
 ```
 
 ## Installation and Setup
-Once you got the requisites on your machine, for a UNIX based system please execute the following command to install the required dependencies.
+Once you got the requisites on your machine, for a UNIX based system executing the following command to install the required libraries:
 ```
 make init
 source .venv/bin/activate
 ```
 
-OR execute the following command:
+OR executing the following command will install all the required libraries for you:
 ```
 $ pip install -r requirements.txt
 ```
-This will install all the required libraries for you.
 	
-## How to use
+## Execution
 To run the project, you can directly run the ```compare_img.py``` file and provide the directory path for both the images.
 
 ```$ python3 compare_img.py DIR_PATH_IMG1 DIR_PATH_IMG2```
