@@ -7,7 +7,7 @@
 * [Results](#results)
 
 ## About
-In this project, pixel-wise comparison between two input images is performed and differences are displayed as numerical parameters. This project is basically divided into two parts (these process happen in the backend using ```image_processing.py``` file):
+In this project, pixel-wise comparison between two input images is performed and differences are displayed as numerical parameters. This project is basically divided into two parts:
 1. Pre-processing - In which steps like greyscale conversion, maintaining uniform dimensions, removal of noise are perfomed.
 2. Compare function - Here the actual comparison between two images takes place which uses skimage's Structual Similarity Index, Mean square Error and Histogramical difference.
 
@@ -40,9 +40,16 @@ To run the project, you can directly run the ```compare_img.py``` file and provi
 
 ```$ python3 compare_img.py DIR_PATH_IMG1 DIR_PATH_IMG2```
 
-Example: ```$ python3 compare_img.py ./images/img1.jpg ./images/img2.jpg ```
+Example: 
 
-Note that image path can be a git blob url as well.
+```$ python3 compare_img.py ./images/img1.jpg ./images/img2.jpg ```
+
+Note: The image path can be a raw url as well. 
+
+Example: 
+```
+$ python3 compare_img.py https://raw.githubusercontent.com/SiddhanthNB/Automation-scripts/main/compare_img/images/img1.jpg https://raw.githubusercontent.com/SiddhanthNB/Automation-scripts/main/compare_img/images/img2.jpg 
+```
 
 ## Results
 After running the script, you will find the output as
