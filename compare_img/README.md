@@ -46,10 +46,11 @@ Note that image path can be a git blob url as well.
 
 ## Results
 After running the script, you will find the output as
-
+```
 SSI value is (some value)
 MSE value is (some value)
-Histogram difference is (some value) 
+Histogram difference is (some value)
+```
 
 * Here SSI value ranges from ```-1``` to ```1```, where ```1``` implies both images being completely same(which happens when same image is loaded twice). 
 * MSE value is the mean square difference between each pixel loaction in both the both the images, typically for same image loaded twice the value should be ```0```.
