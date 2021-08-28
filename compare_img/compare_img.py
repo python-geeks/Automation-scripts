@@ -2,13 +2,6 @@ from skimage import io
 from image_processing import ImageProc
 import sys
 
-"""
-im1 = Image.open(sys.argv[1])
-
-before = io.imread(input("Input image:"))
-
-after = io.imread(input("Input image:"))"""
-
 before = io.imread(sys.argv[1])
 after = io.imread(sys.argv[2])
 
