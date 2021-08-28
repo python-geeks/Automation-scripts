@@ -32,21 +32,20 @@ class ImageProc:
         imageA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
         imageB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
         
-        #edge detetction
+        #edge detection
         imageA = cv2.Canny(imageA, 100, 200)
         imageB = cv2.Canny(imageB, 100, 200)
-        
+
         #uniform dimensions
         imageA, imageB = uniform_dim(imageA, imageB)
         
-        """
         #sharpening the images
         kernel = np.array([ [-1,-1,-1],
                             [-1,5,-1],
                             [-1,-1,-1] ])
         imageA = cv2.filter2D(imageA, -1, kernel)
         imageB = cv2.filter2D(imageB, -1, kernel)
-        """
+        
         return (imageA, imageB)
 
     def compare(imageA, imageB):   
