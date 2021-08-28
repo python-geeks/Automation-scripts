@@ -1,17 +1,17 @@
 
 ## Table of Content
-* [General info](#general-info)
-* [Dependencies](#dependencies)
+* [About](#about)
 * [Prerequisites](#prerequisites)
 * [Execution](#execution)
+* [Installation and Setup](#installation-and-setup)
+* [Results](#results)
 
-## General info
+## About
 In this project, pixel-wise comparison between two input images is performed and differences are displayed as numerical parameters. This project is basically divided into two parts (these process happen in the backend using ```image_processing.py``` file):
 1. Pre-processing - In which steps like greyscale conversion, maintaining uniform dimensions, removal of noise are perfomed.
 2. Compare function - Here the actual comparison between two images takes place which uses skimage's Structual Similarity Index, Mean square Error and Histogramical difference.
 
-## Dependencies
-Project is created with the help of:
+This project is created with the help of:
 * Numpy
 * Scikit Image
 * OpenCV
@@ -53,4 +53,4 @@ Histogram difference is (some value)
 
 * Here SSI value ranges from ```-1``` to ```1```, where ```1``` implies both images being completely same(which happens when same image is loaded twice). 
 * MSE value is the mean square difference between each pixel loaction in both the both the images, typically for same image loaded twice the value should be ```0```.
-* Histogram difference shows the intensity-level difference between the two images. 
+* Histogram difference shows the intensity-level difference between the two images, which tends be very small, nevertheless shows the difference. 
