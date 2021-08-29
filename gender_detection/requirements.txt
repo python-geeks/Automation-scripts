@@ -1,0 +1,7 @@
+numpy
+opencv-python
+requests
+progressbar
+tensorflow
+keras
+cvlib
