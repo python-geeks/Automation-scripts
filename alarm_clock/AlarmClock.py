@@ -3,15 +3,19 @@ import datetime
 import simpleaudio
 
 t = int()
+
+
 def snooze(t):
     global set_time
     HH_MM = set_time.split(':')
     HH_MM[1] = str(int(HH_MM[1]) + t)
     set_time = ':'.join(HH_MM)
 
+
 set_time = input("please enter the time in HH:MM format to set an alarm : ")
 label = input("Alarm label: ")
-        
+
+
 def alarm(set_time):
     while True:
         time.sleep(1)
@@ -25,6 +29,7 @@ def alarm(set_time):
             print(label)
             obj.play()
             break
+
 
 while True:
     alarm(set_time)
