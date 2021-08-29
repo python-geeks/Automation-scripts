@@ -1,17 +1,21 @@
+# The code uses dash library in Python for rendering the web-app. More information can be found at https://dash.plotly.com/ 
+# importing required libraries
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
-#import webbrowser
+import webbrowser
 
+# initialisation
 app = dash.Dash(__name__)
 server = app.server
 
+# defining global variables
 global name, score
 score = 0
 
-
+# setting layout
 app.layout = html.Div(style={'textAlign': "center", "marginLeft": "50px", "marginRight": "50px"}, children=[
     html.H1(style={'color': "#1876D2", 'fontWeight': "bolder", "marginBottom": "50px", 'fontSize': "50px"},
             children='Test your personality 😁'),
@@ -34,7 +38,7 @@ app.layout = html.Div(style={'textAlign': "center", "marginLeft": "50px", "margi
     html.Div(id='result')
 ])
 
-
+# using callbacks to handle questions and answers, along with keeping a track of score
 @app.callback(
     Output('init', 'children'),
     [Input('name', 'value'), Input('submit', 'n_clicks')]
@@ -271,6 +275,7 @@ def q10(a10):
                 ]
 
 
+# displaying result according to score
 @app.callback(
     Output('result', 'children'),
     [Input('feedback', 'n_clicks')]
@@ -289,13 +294,12 @@ def result(n_clicks):
             return [html.Br(), html.H3("Score: "+str(score) + "/10 --> You are a decent fit for the company. Remember, practise makes a man perfect!", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("💯💯"), html.H3('Thanks for your time!')]
         elif score >= 8.5 and score <= 10:
             return [html.Br(), html.H3("Score: "+str(score) + "/10 --> Excellent🎉 We are proud to have you in the workforce. Congratulations!!", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("🔥🔥"), html.H3('Thanks for your time!')]
-
-
-'''
+        
 def web():
     webbrowser.open_new('http://127.0.0.1:8050/')
-'''
+
+# the main function    
 if __name__ == '__main__':
-    # web()
+    web()
     app.title = 'yourPersonality'
     app.run_server()
