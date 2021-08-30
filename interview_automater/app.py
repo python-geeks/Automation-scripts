@@ -1,6 +1,6 @@
 # The code uses dash library in Python for rendering the web-app.
 # More information can be found at https://dash.plotly.com/
-# importing required libraries
+# Importing required libraries
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
@@ -9,41 +9,51 @@ from dash.exceptions import PreventUpdate
 import webbrowser
 
 
-# initialisation
+# Initialisation
 app = dash.Dash(__name__)
 server = app.server
 
 
-# defining global variables
+# Defining global variables
 global name, score
 score = 0
 
 
-# setting layout
-app.layout = html.Div(style={'textAlign': "center", "marginLeft": "50px", "marginRight": "50px"}, children=[
-    html.H1(style={'color': "#1876D2", 'fontWeight': "bolder", "marginBottom": "50px", 'fontSize': "50px"},
+# Setting layout
+app.layout = html.Div(
+    style={'textAlign': "center", "marginLeft": "50px", "marginRight": "50px"},
+    children=[
+        html.H1(
+            style={'color': "#1876D2", 'fontWeight': "bolder",
+                   "marginBottom": "50px", 'fontSize': "50px"},
             children='Test your personality 😁'),
-    html.H3('May I know your name?'),
-    dcc.Input(id='name', type='text', style={
-              "height": "30px", "borderRadius": "20px", "textIndent": "10px", "fontSize": "20px"}),
-    html.Button('Submit', style={'backgroundColor': "#1876D2", "border": "none", "marginLeft": "10px", "outline": "none",
-                                 'fontWeight': "bolder", "padding": "10px", "borderRadius": "20px", 'color': "white"}, id='submit', n_clicks=0),
-    html.Div(id='init'),
-    html.Div(id='q1'),
-    html.Div(id='q2'),
-    html.Div(id='q3'),
-    html.Div(id='q4'),
-    html.Div(id='q5'),
-    html.Div(id='q6'),
-    html.Div(id='q7'),
-    html.Div(id='q8'),
-    html.Div(id='q9'),
-    html.Div(id='q10'),
-    html.Div(id='result')
-])
+        html.H3('May I know your name?'),
+        dcc.Input(id='name', type='text',
+                  style={"height": "30px", "borderRadius": "20px",
+                         "textIndent": "10px", "fontSize": "20px"}),
+        html.Button('Submit',
+                    style={'backgroundColor': "#1876D2", "border": "none",
+                           "marginLeft": "10px", "outline": "none",
+                           'fontWeight': "bolder", "padding": "10px",
+                           "borderRadius": "20px", 'color': "white"},
+                    id='submit', n_clicks=0),
+        html.Div(id='init'),
+        html.Div(id='q1'),
+        html.Div(id='q2'),
+        html.Div(id='q3'),
+        html.Div(id='q4'),
+        html.Div(id='q5'),
+        html.Div(id='q6'),
+        html.Div(id='q7'),
+        html.Div(id='q8'),
+        html.Div(id='q9'),
+        html.Div(id='q10'),
+        html.Div(id='result')
+        ])
 
 
-# using callbacks to handle questions and answers, along with keeping a track of score
+# Using callbacks to handle questions and answers,
+# along with keeping a track of score
 @app.callback(
     Output('init', 'children'),
     [Input('name', 'value'), Input('submit', 'n_clicks')]
@@ -52,7 +62,17 @@ def update_name(name, n_clicks):
     if n_clicks == 0:
         raise PreventUpdate
     else:
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='You like to spend your free time exploring something new or do you follow same routine'), dcc.RadioItems(id='a2', options=[{'label': 'New 💯', 'value': 'new'}, {'label': 'Same as always', 'value': 'same'}], value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''You like to spend
+                    your free time exploring something new or do you follow
+                    same routine'''),
+                dcc.RadioItems(
+                    id='a2', options=[{'label': 'New 💯',
+                                       'value': 'new'},
+                                      {'label': 'Same as always',
+                                       'value': 'same'}],
+                    value=None)]
 
 
 @app.callback(
@@ -68,7 +88,17 @@ def q1(a1):
             score = score+1
         elif a1 == 'maybe':
             score = score+0.5
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='You like to spend your free time exploring something new or do you follow same routine'), dcc.RadioItems(id='a2', options=[{'label': 'New 💯', 'value': 'new'}, {'label': 'Same as always', 'value': 'same'}], value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''You like to spend
+                    your free time exploring something new or do you follow
+                    same routine'''),
+                dcc.RadioItems(
+                    id='a2', options=[{'label': 'New 💯',
+                                       'value': 'new'},
+                                      {'label': 'Same as always',
+                                       'value': 'same'}],
+                    value=None)]
 
 
 @app.callback(
@@ -82,20 +112,21 @@ def q2(a2):
     else:
         if a2 == 'new':
             score = score+1
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='How comfortable are you while talking to new people?'),
-                # dcc.RadioItems(id='a3',options=[{'label': 'New 💯', 'value': 'new'},{'label': 'Same as always', 'value': 'same'}],value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children=''''How comfortable
+                    are you while talking to new people?'''),
                 dcc.Slider(
-            id='a3',
-            min=0,
-            max=10,
-            marks={
-                0: 'Not at all',
-                10: 'Absolutely comfortable'
-            },
-            step=1,
-            value=None
-        )
-        ]
+                    id='a3',
+                    min=0,
+                    max=10,
+                    marks={
+                        0: 'Not at all',
+                        10: 'Absolutely comfortable'
+                    },
+                    step=1,
+                    value=None
+                )]
 
 
 @app.callback(
@@ -127,8 +158,17 @@ def q3(a3):
             score = score+0.9
         elif a3 == 10:
             score = score+1
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='What do you prefer- hard work or smart work?'),
-                dcc.RadioItems(id='a4', options=[{'label': 'Hard work', 'value': 'hard'}, {'label': 'Smart work', 'value': 'smart'}, {'label': 'It depends on the situation', 'value': 'both'}], value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''What do you prefer-
+                    hard work or smart work?'''),
+                dcc.RadioItems(
+                    id='a4',
+                    options=[{'label': 'Hard work', 'value': 'hard'},
+                             {'label': 'Smart work', 'value': 'smart'},
+                             {'label': 'It depends on the situation',
+                              'value': 'both'}],
+                    value=None)]
 
 
 @app.callback(
@@ -146,8 +186,22 @@ def q4(a4):
             score = score+0.5
         elif a4 == 'both':
             score = score+1
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='You and your peer are working together. He/she is stuck in a task. Will you?'),
-                dcc.RadioItems(id='a5', options=[{'label': 'Help them instantly', 'value': 'fast'}, {'label': 'Help after completing your current work', 'value': 'curr'}, {'label': 'Help after completing all your work', 'value': 'no'}], value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''You and your peer
+                    are working together. He/she is stuck in a task.
+                    Will you?'''),
+                dcc.RadioItems(
+                    id='a5',
+                    options=[{'label': 'Help them instantly',
+                              'value': 'fast'},
+                             {'label': '''Help after completing your current
+                              work''',
+                              'value': 'curr'},
+                             {'label': '''Help after
+                              completing all your work''',
+                              'value': 'no'}],
+                    value=None)]
 
 
 @app.callback(
@@ -163,8 +217,16 @@ def q5(a5):
             score = score+0.5
         elif a5 == 'curr':
             score = score+1
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='Which category do you fit in?'),
-                dcc.RadioItems(id='a6', options=[{'label': 'Extrovert', 'value': 'ex'}, {'label': 'Introvert', 'value': 'in'}, {'label': 'Ambivert', 'value': 'am'}], value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''Which category do
+                    you fit in?'''),
+                dcc.RadioItems(
+                    id='a6',
+                    options=[{'label': 'Extrovert', 'value': 'ex'},
+                             {'label': 'Introvert', 'value': 'in'},
+                             {'label': 'Ambivert', 'value': 'am'}],
+                    value=None)]
 
 
 @app.callback(
@@ -180,7 +242,19 @@ def q6(a6):
             score = score+1
         elif a6 == 'am':
             score = score+0.5
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='Are you willing to work overtime if required?'), dcc.RadioItems(id='a7', options=[{'label': 'Yes I would be happy', 'value': 'happy'}, {'label': 'Yes, if I get paid accordingly', 'value': 'pay'}, {'label': 'No, I am not comfortable doing this', 'value': 'no'}], value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''Are you willing to
+                    work overtime if required?'''),
+                dcc.RadioItems(
+                    id='a7',
+                    options=[{'label': 'Yes I would be happy',
+                              'value': 'happy'},
+                             {'label': 'Yes, if I get paid accordingly',
+                              'value': 'pay'},
+                             {'label': 'No, I am not comfortable doing this',
+                              'value': 'no'}],
+                    value=None)]
 
 
 @app.callback(
@@ -196,8 +270,19 @@ def q7(a7):
             score = score+1
         elif a7 == 'no':
             score = score+0.5
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='How comfortable will you be if we ask you to travel for work?'),
-                dcc.RadioItems(id='a8', options=[{'label': 'No problem, I\'m ready', 'value': 'ready'}, {'label': 'Only if my safety is taken care of', 'value': 'safe'}, {'label': 'No, it is tiring for me', 'value': 'no'}], value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''How comfortable
+                    will you be if we ask you to travel for work?'''),
+                dcc.RadioItems(
+                    id='a8',
+                    options=[{'label': 'No problem, I\'m ready',
+                              'value': 'ready'},
+                             {'label': 'Only if my safety is taken care of',
+                              'value': 'safe'},
+                             {'label': 'No, it is tiring for me',
+                              'value': 'no'}],
+                    value=None)]
 
 
 @app.callback(
@@ -215,8 +300,19 @@ def q8(a8):
             score = score+1
         elif a8 == 'no':
             score = score+0.5
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='What is the salary range you expect as a fresher?'),
-                dcc.RadioItems(id='a9', options=[{'label': '<= 4 lpa', 'value': 'less'}, {'label': '> 4 lpa till < 90 lpa', 'value': 'more'}, {'label': 'Best according to my talent', 'value': 'mid'}], value=None)]
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''What is the salary
+                    range you expect as a fresher?'''),
+                dcc.RadioItems(
+                    id='a9',
+                    options=[{'label': '<= 4 lpa',
+                              'value': 'less'},
+                             {'label': '> 4 lpa till < 90 lpa',
+                              'value': 'more'},
+                             {'label': 'Best according to my talent',
+                              'value': 'mid'}],
+                    value=None)]
 
 
 @app.callback(
@@ -234,22 +330,25 @@ def q9(a9):
             score = score+1
         elif a9 == 'less':
             score = score+0.5
-        return [html.Br(), html.H3(style={'color': "#1876D2"}, children='How likely will you reveal the company policies to an outsider, either knowingly or unknowingly?'),
+        return [html.Br(),
+                html.H3(
+                    style={'color': "#1876D2"}, children='''How likely will
+                    you reveal the company policies to an outsider, either
+                    knowingly or unknowingly?'''),
                 dcc.Slider(
-            id='a10',
-            min=1,
-            max=5,
-            marks={
-                1: 'Very unlikely',
-                2: 'Somewhat unlikely',
-                3: 'I don\'t know',
-                4: 'somewhat likely',
-                5: 'Very likely'
-            },
-            step=1,
-            value=None
-        )
-        ]
+                    id='a10',
+                    min=1,
+                    max=5,
+                    marks={
+                        1: 'Very unlikely',
+                        2: 'Somewhat unlikely',
+                        3: 'I don\'t know',
+                        4: 'somewhat likely',
+                        5: 'Very likely'
+                    },
+                    step=1,
+                    value=None
+                )]
 
 
 @app.callback(
@@ -272,14 +371,22 @@ def q10(a10):
         elif a10 == 5:
             score = score-1
         return [html.Br(), html.H3('Any feedback you want to provide?'),
-                dcc.Input(id='res', type='text', style={
-                    "height": "30px", "borderRadius": "20px", "textIndent": "10px", "fontSize": "20px"}),
-                html.Button('Submit', id='feedback', n_clicks=0, style={'backgroundColor': "#1876D2", "border": "none", "marginLeft": "10px", "outline": "none",
-                                                                        'fontWeight': "bolder", "padding": "10px", "borderRadius": "20px", 'color': "white"})
+                dcc.Input(id='res', type='text',
+                          style={"height": "30px", "borderRadius": "20px",
+                                 "textIndent": "10px", "fontSize": "20px"}),
+                html.Button('Submit', id='feedback', n_clicks=0,
+                            style={'backgroundColor': "#1876D2",
+                                   "border": "none",
+                                   "marginLeft": "10px",
+                                   "outline": "none",
+                                   'fontWeight': "bolder",
+                                   "padding": "10px",
+                                   "borderRadius": "20px",
+                                   'color': "white"})
                 ]
 
 
-# displaying result according to score
+# Displaying result according to score
 @app.callback(
     Output('result', 'children'),
     [Input('feedback', 'n_clicks')]
@@ -289,22 +396,49 @@ def result(n_clicks):
         raise PreventUpdate
     else:
         if score == 0:
-            return [html.Br(), html.H3("Score: "+str(score) + "/10 --> I am sorry. You are a poor fit.", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("😔"), html.H3('Thanks for your time!')]
+            return [html.Br(),
+                    html.H3("Score: "+str(score) + '''/10 --> I am sorry.
+                            You are a poor fit.''',
+                            style={"fontSize": "25px", "color": "#1876D2"}),
+                    html.H3("😔"),
+                    html.H3('Thanks for your time!')]
         elif score < 5:
-            return [html.Br(), html.H3("Score: "+str(score) + "/10 --> You need to work more upon your personality.", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("🙂"),  html.H3('Thanks for your time!')]
+            return [html.Br(),
+                    html.H3("Score: "+str(score) + '''/10 --> You need to work
+                            more upon your personality.''',
+                            style={"fontSize": "25px", "color": "#1876D2"}),
+                    html.H3("🙂"),
+                    html.H3('Thanks for your time!')]
         elif score == 5:
-            return [html.Br(), html.H3("Score: "+str(score) + "/10 --> You are average. You can always improve.", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("😃"), html.H3('Thanks for your time!')]
+            return [html.Br(),
+                    html.H3("Score: "+str(score) + '''/10 --> You are average.
+                            You can always improve.''',
+                            style={"fontSize": "25px", "color": "#1876D2"}),
+                    html.H3("😃"),
+                    html.H3('Thanks for your time!')]
         elif score > 5 and score < 8.5:
-            return [html.Br(), html.H3("Score: "+str(score) + "/10 --> You are a decent fit for the company. Remember, practise makes a man perfect!", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("💯💯"), html.H3('Thanks for your time!')]
+            return [html.Br(),
+                    html.H3("Score: "+str(score) + '''/10 --> You are a decent
+                            fit for the company. Remember, practise makes a
+                            man perfect!''',
+                            style={"fontSize": "25px", "color": "#1876D2"}),
+                    html.H3("💯💯"),
+                    html.H3('Thanks for your time!')]
         elif score >= 8.5 and score <= 10:
-            return [html.Br(), html.H3("Score: "+str(score) + "/10 --> Excellent🎉 We are proud to have you in the workforce. Congratulations!!", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("🔥🔥"), html.H3('Thanks for your time!')]
+            return [html.Br(),
+                    html.H3("Score: "+str(score) + '''/10 --> Excellent🎉 We
+                            are proud to have you in the workforce.
+                            Congratulations!!''',
+                            style={"fontSize": "25px", "color": "#1876D2"}),
+                    html.H3("🔥🔥"),
+                    html.H3('Thanks for your time!')]
 
 
 def web():
     webbrowser.open_new('http://127.0.0.1:8050/')
 
 
-# the main function
+# The main function
 if __name__ == '__main__':
     web()
     app.title = 'yourPersonality'
