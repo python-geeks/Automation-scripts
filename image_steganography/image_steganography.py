@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 from Crypto.Cipher import AES
 import math
-import codecs
 
 image = cv2.imread('file location')
 
@@ -25,11 +24,11 @@ def correlation(M1, M2):
     lo = li + ls - 1
     wo = wi + ws - 1
     g = np.zeros([li + ls * 2 - 2, wi + ws * 2 - 2])
-    g[ls-1:li+ls-1, ws-1:wi+ws-1] = M1
+    g[ls - 1:li + ls - 1, ws - 1:wi + ws - 1] = M1
     out = np.zeros([lo, wo])
     for x in range(lo):
         for y in range(wo):
-            C = np.multiply(g[x:x+ls, y:y+ws], M2)
+            C = np.multiply(g[x:x + ls, y:y + ws], M2)
             out[x, y] = np.sum(C)
     return out
 
@@ -41,9 +40,9 @@ def gaussian_filter(dim):
     m = int((dim / 2) + 1)
     for i in range(int((dim/2) + 1)):
         for j in range(int((dim/2) + 1)):
-            fil[i, j] = np.exp(-((((m-i-1)**2)+((m-j-1)**2))/(2*sigma**2)))
-            fil[i, j] = fil[i, j]/(2*np.pi*sigma**2)
-            fil[i, k-j-1] = fil[k-i-1, j] = fil[k-i-1, k-j-1] = fil[i, j]
+            fil[i, j] = np.exp( - ((((m - i - 1)**2) + ((m - j - 1)**2))/(2 * sigma**2)))
+            fil[i, j] = fil[i, j]/(2 * np.pi * sigma**2)
+            fil[i, k - j - 1] = fil[k - i - 1, j] = fil[k - i - 1, k - j - 1] = fil[i, j]
     s = np.sum(fil)
     fil = fil/s
     return fil
@@ -70,9 +69,9 @@ def image_steg(img, mess, key):
         arr = " ".join(f"{ord(x):08b}" for x in i)
         for j in arr:
             f = np.append(f, int(j))
-    l = str(len(en_mess)*8)
-    l = l + "/"
-    arr = " ".join(f"{ord(x):08b}" for x in l)
+    l1 = str(len(en_mess) * 8)
+    l1 = l1 + "/"
+    arr = " ".join(f"{ord(x):08b}" for x in l1)
     for j in arr:
         if j != ' ':
             le = np.append(le, int(j))
@@ -82,8 +81,8 @@ def image_steg(img, mess, key):
         if (pix_val % 2 == i):
             img_gray[x, y] = img_gray[x, y]
         else:
-            img_gray[x, y] = img_gray[x, y]-1
-        n = n+1
+            img_gray[x, y] = img_gray[x, y] - 1
+        n = n + 1
     n = 82
     for i in f:
         x, y = f_points[n]
@@ -91,8 +90,8 @@ def image_steg(img, mess, key):
         if (pix_val % 2 == i):
             img_gray[x, y] = img_gray[x, y]
         else:
-            img_gray[x, y] = img_gray[x, y]-1
-        n = n+1
+            img_gray[x, y] = img_gray[x, y] - 1
+        n = n + 1
     print(n)
     return img_gray
 
