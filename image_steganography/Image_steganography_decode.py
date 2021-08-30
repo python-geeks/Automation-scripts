@@ -95,5 +95,7 @@ def image_steg_decode(orimg,gr,key):
   print(ed)
   ans = decrypt(ed,key)
   return(ans)
-
+image=cv2.imread('original image file location')
+test_image = cv2.imread('output image from the encode function')
+key = "key used in the encode function'
 decoded_message = image_steg_decode(image,test_image,key)
