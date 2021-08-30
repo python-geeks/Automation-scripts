@@ -8,7 +8,11 @@ import os
 import cvlib as cv
                      
 # load model
-model = load_model("gender_detection.model")
+dwnld_link = "https://github.com/arunponnusamy/cvlib/releases/download/v0.2.0/gender_detection.model"
+model_path = get_file("gender_detection.model", dwnld_link,
+                     cache_subdir="pre-trained", cache_dir=os.getcwd())
+
+model = load_model(model_path)
 # open webcam
 webcam = cv2.VideoCapture(0)
 
