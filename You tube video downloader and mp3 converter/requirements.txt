@@ -1,0 +1,4 @@
+Kindly write the following commands in the command prompt/CLI of your OS
+
+1)pip install pytube
+2)pip install moviepy
