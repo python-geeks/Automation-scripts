@@ -1,4 +1,5 @@
-# The code uses dash library in Python for rendering the web-app. More information can be found at https://dash.plotly.com/ 
+# The code uses dash library in Python for rendering the web-app.
+# More information can be found at https://dash.plotly.com/
 # importing required libraries
 import dash
 import dash_html_components as html
@@ -60,7 +61,7 @@ def update_name(name, n_clicks):
 )
 def q1(a1):
     global score
-    if a1 == None:
+    if a1 is None:
         raise PreventUpdate
     else:
         if a1 == 'yes':
@@ -76,7 +77,7 @@ def q1(a1):
 )
 def q2(a2):
     global score
-    if a2 == None:
+    if a2 is None:
         raise PreventUpdate
     else:
         if a2 == 'new':
@@ -103,7 +104,7 @@ def q2(a2):
 )
 def q3(a3):
     global score
-    if a3 == None:
+    if a3 is None:
         raise PreventUpdate
     else:
         if a3 == 1:
@@ -136,7 +137,7 @@ def q3(a3):
 )
 def q4(a4):
     global score
-    if a4 == None:
+    if a4 is None:
         raise PreventUpdate
     else:
         if a4 == 'hard':
@@ -155,7 +156,7 @@ def q4(a4):
 )
 def q5(a5):
     global score
-    if a5 == None:
+    if a5 is None:
         raise PreventUpdate
     else:
         if a5 == 'fast':
@@ -172,7 +173,7 @@ def q5(a5):
 )
 def q6(a6):
     global score
-    if a6 == None:
+    if a6 is None:
         raise PreventUpdate
     else:
         if a6 == 'ex':
@@ -188,7 +189,7 @@ def q6(a6):
 )
 def q7(a7):
     global score
-    if a7 == None:
+    if a7 is None:
         raise PreventUpdate
     else:
         if a7 == 'happy':
@@ -205,7 +206,7 @@ def q7(a7):
 )
 def q8(a8):
     global score
-    if a8 == None:
+    if a8 is None:
         raise PreventUpdate
     else:
         if a8 == 'ready':
@@ -224,7 +225,7 @@ def q8(a8):
 )
 def q9(a9):
     global score
-    if a9 == None:
+    if a9 is None:
         raise PreventUpdate
     else:
         if a9 == 'more':
@@ -234,7 +235,6 @@ def q9(a9):
         elif a9 == 'less':
             score = score+0.5
         return [html.Br(), html.H3(style={'color': "#1876D2"}, children='How likely will you reveal the company policies to an outsider, either knowingly or unknowingly?'),
-                #dcc.RadioItems(id='a10',options=[{'label': 'New 💯', 'value': 'new'},{'label': 'Same as always', 'value': 'same'}],value=None)
                 dcc.Slider(
             id='a10',
             min=1,
@@ -258,7 +258,7 @@ def q9(a9):
 )
 def q10(a10):
     global score
-    if a10 == None:
+    if a10 is None:
         raise PreventUpdate
     else:
         if a10 == 1:
@@ -298,13 +298,13 @@ def result(n_clicks):
             return [html.Br(), html.H3("Score: "+str(score) + "/10 --> You are a decent fit for the company. Remember, practise makes a man perfect!", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("💯💯"), html.H3('Thanks for your time!')]
         elif score >= 8.5 and score <= 10:
             return [html.Br(), html.H3("Score: "+str(score) + "/10 --> Excellent🎉 We are proud to have you in the workforce. Congratulations!!", style={"fontSize": "25px", "color": "#1876D2"}), html.H3("🔥🔥"), html.H3('Thanks for your time!')]
-        
- 
+
+
 def web():
     webbrowser.open_new('http://127.0.0.1:8050/')
 
 
-# the main function    
+# the main function
 if __name__ == '__main__':
     web()
     app.title = 'yourPersonality'
