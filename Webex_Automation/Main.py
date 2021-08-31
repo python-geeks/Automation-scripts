@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
-
+import webbrowser
+import pyautogui
+import time
 # Reading the file
-
 import datetime
 import calendar
 
@@ -13,39 +14,30 @@ def findDay(tdate):
     born = datetime.datetime.strptime(tdate, '%Y-%m-%d').weekday()
     return calendar.day_name[born]
 
-
-from datetime import date
-tdate = date.today()
+tdate = datetime.date.today()
 
 # printing todays date
 
-print ('Current date: ', tdate)
+print('Current date: ', tdate)
 
 d = findDay(str(tdate))
 print(d)
 df = pd.read_csv(str(d) + '.csv')
-from datetime import datetime
+
 
 
 # Starting the session
 
 def sign_in(url):
-    import webbrowser
 
     # url = 'https://meetingsapac15.webex.com/meet/ddpuri'
 
     try:
-        webbrowser.register('chrome', None,
-                            webbrowser.BackgroundBrowser('C://Program Files//Google//Chrome//Application//chrome.exe'
-                            ))
+        webbrowser.register('chrome', None,webbrowser.BackgroundBrowser('C://Program Files//Google//Chrome//Application//chrome.exe'))
         webbrowser.get('chrome').open(url)
     except:
-        webbrowser.register('chrome', None,
-                            webbrowser.BackgroundBrowser('C://Program Files(x86)//Google//Chrome//Application//chrome.exe'
-                            ))
+        webbrowser.register('chrome', None,webbrowser.BackgroundBrowser('C://Program Files(x86)//Google//Chrome//Application//chrome.exe'))
         webbrowser.get('chrome').open(url)
-    import pyautogui
-    import time
     time.sleep(20)
     print('we are here')
     meeting_id_btn = 'NONE'
@@ -82,13 +74,13 @@ while True:
         url = str(row.iloc[0, 1])
 
         sign_in(url)
-        time.sleep(40)
+        #time.sleep(40)
         print('signed in')
 
     if now in str(df['end']):
         row = df.loc[df['end'] == now]
         sign_out()
 
-        # time.sleep(20)
+        #time.sleep(20)
 
         print('signed out')
