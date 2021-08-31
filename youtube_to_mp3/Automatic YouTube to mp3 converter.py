@@ -5,12 +5,10 @@ import moviepy.editor as mp
 SAVE_PATH = r"C:\Users\Downloads"
 link = input("Paste the link")
 video = YouTube(link)
-stream = video.streams.filter(only_audio=True).all()
-#video.streams.filter(file_extension="mp4").first()
-#video.streams.all()  
-#stream = video.streams.all()  
+stream = video.streams.filter(only_audio=True).all() 
 for i in stream:  
     print(i)
+    
 k = int(input("Type the itag no. you want to download"))
 video.streams.get_by_itag(k).download(SAVE_PATH)
 m = video.title
@@ -22,8 +20,6 @@ s = input("Kindly paste the video title you want to convert further to .mp3 from
 
 mp4_file = SAVE_PATH + "\\" +s
 mp3_file = r"C:\Users\Downloads\newaudio.mp3"
-
-
 clip = mp.AudioFileClip(mp4_file)
 clip.write_audiofile(mp3_file)
 os.remove(mp4_file)
