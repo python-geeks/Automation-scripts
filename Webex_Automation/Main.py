@@ -14,6 +14,7 @@ def findDay(tdate):
     born = datetime.datetime.strptime(tdate, '%Y-%m-%d').weekday()
     return calendar.day_name[born]
 
+
 tdate = datetime.date.today()
 
 # printing todays date
@@ -24,19 +25,18 @@ d = findDay(str(tdate))
 print(d)
 df = pd.read_csv(str(d) + '.csv')
 
-
-
 # Starting the session
 
 def sign_in(url):
 
     # url = 'https://meetingsapac15.webex.com/meet/ddpuri'
-
     try:
-        webbrowser.register('chrome', None,webbrowser.BackgroundBrowser('C://Program Files//Google//Chrome//Application//chrome.exe'))
+		path='C://Program Files//Google//Chrome//Application//chrome.exe'
+        webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(path))
         webbrowser.get('chrome').open(url)
     except:
-        webbrowser.register('chrome', None,webbrowser.BackgroundBrowser('C://Program Files(x86)//Google//Chrome//Application//chrome.exe'))
+		path='C://Program Files(x86)//Google//Chrome//Application//chrome.exe'
+        webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(path))
         webbrowser.get('chrome').open(url)
     time.sleep(20)
     print('we are here')
@@ -74,13 +74,10 @@ while True:
         url = str(row.iloc[0, 1])
 
         sign_in(url)
-        #time.sleep(40)
         print('signed in')
 
     if now in str(df['end']):
         row = df.loc[df['end'] == now]
         sign_out()
-
-        #time.sleep(20)
 
         print('signed out')
