@@ -1,0 +1,4 @@
+person
+phone
+ipad
+paper

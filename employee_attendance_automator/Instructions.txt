@@ -1,0 +1,63 @@
+If you are on windows with anaconda it is easy for you to install all the packages.
+if yo are on linux make sure you have made aliases for python=python3 and pip=pip3 etc . Follow online guides to do that (do not skip this)
+Install packages in the same order.
+
+The packages are as follows:
+
+git clone https://github.com/armaanpriyadarshan/TensorFlow-2-Lite-Object-Detection-on-the-Raspberry-Pi.git
+
+mv TensorFlow-2-Lite-Object-Detection-on-the-Raspberry-Pi tensorflow
+
+cd tensorflow
+
+befor installing  prerequisites.sh open the file and rename pip as pip3 and python as python3. !!!!!!!
+
+bash install-prerequisites.sh
+
+sudo apt install cmake
+
+pip install cmake
+
+sudo apt-get install opencv-python
+
+pip install opencv-python
+
+pip install opencv-contrib-python
+
+pip install numpy
+
+pip install scipy
+
+pip install scikit-image
+
+pip3 install resize-image
+
+pip install dlib (OR pip install dlib -vvv)
+
+pip install face-recognition
+
+pip install imutils
+
+pip install shutils
+
+pip install pillow
+
+pip install simplejson
+
+pip install requests
+
+sudo apt-get install python-tk
+
+pip install picamera
+
+pip install RPi.GPIO
+
+pip install schedule
+
+pip install pandas
+
+pip install openpyxl
+
+pip install secure-smtplib
+
+pip install email
