@@ -22,7 +22,7 @@ tdate = date.today()
 print ('Current date: ', tdate)
 
 d = findDay(str(tdate))
-print d
+print(d)
 df = pd.read_csv(str(d) + '.csv')
 from datetime import datetime
 
@@ -47,11 +47,11 @@ def sign_in(url):
     import pyautogui
     import time
     time.sleep(20)
-    print 'we are here'
+    print('we are here')
     meeting_id_btn = 'NONE'
     while meeting_id_btn == 'NONE':
         meeting_id_btn = pyautogui.locateCenterOnScreen('1.png')
-        print meeting_id_btn
+        print(meeting_id_btn)
         pyautogui.moveTo(meeting_id_btn)
         pyautogui.click()
 
@@ -68,7 +68,7 @@ def sign_out():
             ti += 1
             break
     if ti == 0:
-        print 'Process not found!!!'
+        print('Process not found!!!')
 
 
 while True:
@@ -83,7 +83,7 @@ while True:
 
         sign_in(url)
         time.sleep(40)
-        print 'signed in'
+        print('signed in')
 
     if now in str(df['end']):
         row = df.loc[df['end'] == now]
@@ -91,4 +91,4 @@ while True:
 
         # time.sleep(20)
 
-        print 'signed out'
+        print('signed out')
