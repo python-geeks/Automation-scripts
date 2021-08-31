@@ -1,0 +1,2 @@
+PIL - python (Python Imaging Library)
+tkinter - python (Standard Python interface to the Tk GUI toolkit)
