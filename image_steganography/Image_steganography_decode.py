@@ -6,6 +6,7 @@ import codecs
 
 
 def decrypt(mess, key):
+    """Decrypt the cypher text using AES decrypt"""
     if len(key) % 16 != 0:
         a = 16 - len(key) % 16
         key = key.ljust(len(key) + a)
@@ -15,6 +16,7 @@ def decrypt(mess, key):
 
 
 def correlation(M1, M2):
+    """correlation of two matrices"""
     li, wi = M1.shape
     ls, ws = M2.shape
     lo = li + ls - 1
@@ -30,6 +32,7 @@ def correlation(M1, M2):
 
 
 def gaussian_filter(dim):
+    """Producing filter to smoothen the image"""
     sigma = math.sqrt(dim)
     fil = np.zeros((dim, dim))
     k = dim
@@ -45,6 +48,7 @@ def gaussian_filter(dim):
 
 
 def sobelfilter(s):
+    """To detect the edges of the image"""
     filter1 = gaussian_filter(3)
     s = correlation(s, filter1)
     sobelxy = cv2.Sobel(src=s, ddepth=cv2.CV_8U, dx=1, dy=1, ksize=3)
@@ -52,6 +56,7 @@ def sobelfilter(s):
 
 
 def pix_decode(pos, img):
+    """idenitify the binary code from the edge pixel"""
     x = pos[0]
     y = pos[1]
     pix_val = img[x, y]
@@ -63,6 +68,7 @@ def pix_decode(pos, img):
 
 
 def image_steg_decode(orimg, gr, key):
+    """Main function"""
     img_gray = cv2.cvtColor(orimg, cv2.COLOR_BGR2GRAY)
     edge_img = sobelfilter(img_gray)
     indices = np.where(edge_img != 0)
