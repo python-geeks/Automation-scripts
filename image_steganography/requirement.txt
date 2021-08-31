@@ -1,0 +1,4 @@
+pycrypto for python3 
+numpy = 1.21.2
+Image = preferred with more edges
+key,message = any size
