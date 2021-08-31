@@ -43,7 +43,7 @@ def gaussian_filter(dim):
     m = int((dim / 2) + 1)
     for i in range(int((dim / 2) + 1)):
         for j in range(int((dim / 2) + 1)):
-            fil[i, j] = np.exp(-((((m - i - 1)**2) + ((m - j - 1)**2))/(2 * sigma**2)))
+            fil[i, j] = np.exp(-((((m - i - 1)**2) + ((m - j - 1)**2)) / (2 * sigma**2)))
             fil[i, j] = fil[i, j] / (2 * np.pi * sigma**2)
             fil[i, k - j - 1] = fil[k - i - 1, j] = fil[k - i - 1, k - j - 1] = fil[i, j]
     s = np.sum(fil)
