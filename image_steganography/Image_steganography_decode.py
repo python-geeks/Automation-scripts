@@ -34,13 +34,13 @@ def gaussian_filter(dim):
     fil = np.zeros((dim, dim))
     k = dim
     m = int((dim / 2) + 1)
-    for i in range(int((dim/2) + 1)):
-        for j in range(int((dim/2) + 1)):
-            fil[i, j] = np.exp( - ((((m - i - 1)**2) + ((m - j - 1)**2)) / (2 * sigma ** 2)))
-            fil[i, j] = fil[i, j]/(2 * np.pi * sigma**2)
+    for i in range(int((dim / 2) + 1)):
+        for j in range(int((dim / 2) + 1)):
+            fil[i, j] = np.exp(- ((((m - i - 1)**2) + ((m - j - 1)**2)) / (2 * sigma ** 2)))
+            fil[i, j] = fil[i, j] / (2 * np.pi * sigma**2)
             fil[i, k - j - 1] = fil[k - i - 1, j] = fil[k - i - 1, k - j - 1] = fil[i, j]
     s = np.sum(fil)
-    fil = fil/s
+    fil = fil / s
     return fil
 
 
@@ -74,7 +74,7 @@ def image_steg_decode(orimg, gr, key):
         num = pix_decode(f_points[i], gr)
         f = np.append(f, num)
     ascii_string = ""
-    for i in range(int(n/8)):
+    for i in range(int(n / 8)):
         b = ' '.join(str(int(e)) for e in f[i * 8:(i * 8) + 8])
         b = b.replace(" ", "")
         an_integer = int(b, 2)
@@ -89,8 +89,8 @@ def image_steg_decode(orimg, gr, key):
         f = np.append(f, num)
         n = n + 1
     ascii_string = ""
-    for i in range(int((le + 80)/8)):
-        b = ' '.join(str(int(e)) for e in f[i*8:(i*8)+8])
+    for i in range(int((le + 80) / 8)):
+        b = ' '.join(str(int(e)) for e in f[i * 8:(i * 8) + 8])
         b = b.replace(" ", "")
         an_integer = int(b, 2)
         ascii_character = chr(an_integer)
