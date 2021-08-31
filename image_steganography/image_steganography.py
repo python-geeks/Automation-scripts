@@ -7,6 +7,7 @@ image = cv2.imread('file location')
 
 
 def encrypt(mess, key):
+    """Encrypt the plain text using AES encrypt"""
     if len(key) % 16 != 0:
         a = 16 - len(key) % 16
         key = key.ljust(len(key) + a)
@@ -19,6 +20,7 @@ def encrypt(mess, key):
 
 
 def correlation(M1, M2):
+    """Correlation of two matrices"""
     li, wi = M1.shape
     ls, ws = M2.shape
     lo = li + ls - 1
@@ -34,6 +36,7 @@ def correlation(M1, M2):
 
 
 def gaussian_filter(dim):
+    """Produce a filter to smoothen the image"""
     sigma = math.sqrt(dim)
     fil = np.zeros((dim, dim))
     k = dim
@@ -49,6 +52,7 @@ def gaussian_filter(dim):
 
 
 def sobelfilter(s):
+    """Function to detect the edges of an image"""
     filter1 = gaussian_filter(3)
     s = correlation(s, filter1)
     sobelxy = cv2.Sobel(src=s, ddepth=cv2.CV_8U, dx=1, dy=1, ksize=3)
@@ -56,6 +60,7 @@ def sobelfilter(s):
 
 
 def image_steg(img, mess, key):
+    """Main Function"""
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     edge_img = sobelfilter(img_gray)
     indices = np.where(edge_img != 0)
