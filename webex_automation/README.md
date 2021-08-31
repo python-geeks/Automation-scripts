@@ -7,5 +7,5 @@ this projecvt chooses the week day and access that days timetable which should b
 According to that time table it will join the class and leave the class as the end time reaches.
 ## Libs can be installed as follows:
 ```
-pip install -r Requirements.txt
+pip install -r requirements.txt
 ```
