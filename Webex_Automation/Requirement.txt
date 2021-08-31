@@ -1,0 +1,5 @@
+pyautogui
+subprocess
+pandas
+wmi
+webbrowser
