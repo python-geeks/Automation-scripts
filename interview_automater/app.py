@@ -49,7 +49,8 @@ app.layout = html.Div(
         html.Div(id='q9'),
         html.Div(id='q10'),
         html.Div(id='result')
-        ])
+    ]
+)
 
 
 # Using callbacks to handle questions and answers,
@@ -85,9 +86,9 @@ def q1(a1):
         raise PreventUpdate
     else:
         if a1 == 'yes':
-            score = score+1
+            score = score + 1
         elif a1 == 'maybe':
-            score = score+0.5
+            score = score + 0.5
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children='''You like to spend
@@ -111,7 +112,7 @@ def q2(a2):
         raise PreventUpdate
     else:
         if a2 == 'new':
-            score = score+1
+            score = score + 1
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children=''''How comfortable
@@ -126,7 +127,7 @@ def q2(a2):
                     },
                     step=1,
                     value=None
-                )]
+        )]
 
 
 @app.callback(
@@ -139,25 +140,25 @@ def q3(a3):
         raise PreventUpdate
     else:
         if a3 == 1:
-            score = score+0.1
+            score = score + 0.1
         elif a3 == 2:
-            score = score+0.2
+            score = score + 0.2
         elif a3 == 3:
-            score = score+0.3
+            score = score + 0.3
         elif a3 == 4:
-            score = score+0.4
+            score = score + 0.4
         elif a3 == 5:
-            score = score+0.5
+            score = score + 0.5
         elif a3 == 6:
-            score = score+0.6
+            score = score + 0.6
         elif a3 == 7:
-            score = score+0.7
+            score = score + 0.7
         elif a3 == 8:
-            score = score+0.8
+            score = score + 0.8
         elif a3 == 9:
-            score = score+0.9
+            score = score + 0.9
         elif a3 == 10:
-            score = score+1
+            score = score + 1
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children='''What do you prefer-
@@ -181,11 +182,11 @@ def q4(a4):
         raise PreventUpdate
     else:
         if a4 == 'hard':
-            score = score+0.5
+            score = score + 0.5
         elif a4 == 'smart':
-            score = score+0.5
+            score = score + 0.5
         elif a4 == 'both':
-            score = score+1
+            score = score + 1
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children='''You and your peer
@@ -214,9 +215,9 @@ def q5(a5):
         raise PreventUpdate
     else:
         if a5 == 'fast':
-            score = score+0.5
+            score = score + 0.5
         elif a5 == 'curr':
-            score = score+1
+            score = score + 1
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children='''Which category do
@@ -239,9 +240,9 @@ def q6(a6):
         raise PreventUpdate
     else:
         if a6 == 'ex':
-            score = score+1
+            score = score + 1
         elif a6 == 'am':
-            score = score+0.5
+            score = score + 0.5
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children='''Are you willing to
@@ -267,9 +268,9 @@ def q7(a7):
         raise PreventUpdate
     else:
         if a7 == 'happy':
-            score = score+1
+            score = score + 1
         elif a7 == 'no':
-            score = score+0.5
+            score = score + 0.5
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children='''How comfortable
@@ -295,11 +296,11 @@ def q8(a8):
         raise PreventUpdate
     else:
         if a8 == 'ready':
-            score = score+1
+            score = score + 1
         elif a8 == 'safe':
-            score = score+1
+            score = score + 1
         elif a8 == 'no':
-            score = score+0.5
+            score = score + 0.5
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children='''What is the salary
@@ -325,11 +326,11 @@ def q9(a9):
         raise PreventUpdate
     else:
         if a9 == 'more':
-            score = score+1
+            score = score + 1
         elif a9 == 'mid':
-            score = score+1
+            score = score + 1
         elif a9 == 'less':
-            score = score+0.5
+            score = score + 0.5
         return [html.Br(),
                 html.H3(
                     style={'color': "#1876D2"}, children='''How likely will
@@ -348,7 +349,7 @@ def q9(a9):
                     },
                     step=1,
                     value=None
-                )]
+        )]
 
 
 @app.callback(
@@ -361,15 +362,15 @@ def q10(a10):
         raise PreventUpdate
     else:
         if a10 == 1:
-            score = score+1
+            score = score + 1
         elif a10 == 2:
-            score = score+0.5
+            score = score + 0.5
         elif a10 == 3:
-            score = score+0.5
+            score = score + 0.5
         elif a10 == 4:
-            score = score-0.5
+            score = score - 0.5
         elif a10 == 5:
-            score = score-1
+            score = score - 1
         return [html.Br(), html.H3('Any feedback you want to provide?'),
                 dcc.Input(id='res', type='text',
                           style={"height": "30px", "borderRadius": "20px",
@@ -397,28 +398,28 @@ def result(n_clicks):
     else:
         if score == 0:
             return [html.Br(),
-                    html.H3("Score: "+str(score) + '''/10 --> I am sorry.
+                    html.H3("Score: " + str(score) + '''/10 --> I am sorry.
                             You are a poor fit.''',
                             style={"fontSize": "25px", "color": "#1876D2"}),
                     html.H3("😔"),
                     html.H3('Thanks for your time!')]
         elif score < 5:
             return [html.Br(),
-                    html.H3("Score: "+str(score) + '''/10 --> You need to work
+                    html.H3("Score: " + str(score) + '''/10 --> You need to work
                             more upon your personality.''',
                             style={"fontSize": "25px", "color": "#1876D2"}),
                     html.H3("🙂"),
                     html.H3('Thanks for your time!')]
         elif score == 5:
             return [html.Br(),
-                    html.H3("Score: "+str(score) + '''/10 --> You are average.
+                    html.H3("Score: " + str(score) + '''/10 --> You are average.
                             You can always improve.''',
                             style={"fontSize": "25px", "color": "#1876D2"}),
                     html.H3("😃"),
                     html.H3('Thanks for your time!')]
         elif score > 5 and score < 8.5:
             return [html.Br(),
-                    html.H3("Score: "+str(score) + '''/10 --> You are a decent
+                    html.H3("Score: " + str(score) + '''/10 --> You are a decent
                             fit for the company. Remember, practise makes a
                             man perfect!''',
                             style={"fontSize": "25px", "color": "#1876D2"}),
@@ -426,7 +427,7 @@ def result(n_clicks):
                     html.H3('Thanks for your time!')]
         elif score >= 8.5 and score <= 10:
             return [html.Br(),
-                    html.H3("Score: "+str(score) + '''/10 --> Excellent🎉 We
+                    html.H3("Score: " + str(score) + '''/10 --> Excellent🎉 We
                             are proud to have you in the workforce.
                             Congratulations!!''',
                             style={"fontSize": "25px", "color": "#1876D2"}),
