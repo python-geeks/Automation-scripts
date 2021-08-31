@@ -1,6 +1,6 @@
 # Automation-scripts
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-85-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-86-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
@@ -163,6 +163,7 @@ Thanks goes to these wonderful people 😊
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/paridhi2105"><img src="https://avatars.githubusercontent.com/u/55832462?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paridhi Gupta</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=paridhi2105" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Sandhya1708"><img src="https://avatars.githubusercontent.com/u/62831653?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sandhya1708</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=Sandhya1708" title="Code">💻</a></td>
   </tr>
 </table>
 
