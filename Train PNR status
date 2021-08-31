@@ -1,0 +1,22 @@
+Dict = {'45678910': ["PNR : 2345678910", "Name : John Doe", "Ticket Details - 987600456783 , Date of Jounery: 31th August, 2021, Station/Origin From: ABC , ABC, XYZ, Class: Sleeper, Berth: S42, Quota: General", "1500/-"], '99044751' : [ "6799044751" ,"John Doe1", "Ticket Details - 8179025768, 31th August, 2021, Station/Origin From: ABC, Boarding: ABC, Station To: XYZ, Sleeper, S56, General", "2398/-"]}
+ZonalCodes = {'01': "SCR Secunderabad PRS", '23': "NR, NCR, NWR, NER New Delhi PRS", '45': "SR, SWR, SCR Chennai PRS", '67': "NFR, ECR, ER, ECoR, SER, SECR Calcutta PRS", '89': "CR, WCR, WR Mumbai PRS"}
+
+
+number = int(input("Enter the PNR for your booking below to get the current status. You will find it on the top left corner of the ticket.\n"))
+if len(str(number))>10:
+    print("Incorrect Number. Please try again")
+lis = list(str(number))
+zones = lis[0]+lis[1]
+print(zones)
+for i in ZonalCodes.keys():
+    if i == zones:
+        Ticket_Booked = ZonalCodes[zones]
+        break
+rand_number= lis[2]+lis[3]+lis[4]+lis[5]+lis[6]+lis[7]+lis[8]+lis[9]
+if rand_number in Dict.keys():
+    print("Ticket is booked from", Ticket_Booked)
+    print(Dict[rand_number])
+else:
+    print("Check you PNR Number")
+
+    
