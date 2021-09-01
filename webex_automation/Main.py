@@ -29,13 +29,13 @@ def sign_in(url):
 
     # url = 'https://meetingsapac15.webex.com/meet/ddpuri'
     try:
-      path='C://Program Files//Google//Chrome//Application//chrome.exe'
-      webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(path))
-      webbrowser.get('chrome').open(url)
+        path = 'C://Program Files//Google//Chrome//Application//chrome.exe'
+        webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(path))
+        webbrowser.get('chrome').open(url)
     except:
-	  path='C://Program Files(x86)//Google//Chrome//Application//chrome.exe'
-      webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(path))
-      webbrowser.get('chrome').open(url)
+        path='C://Program Files(x86)//Google//Chrome//Application//chrome.exe'
+        webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(path))
+        webbrowser.get('chrome').open(url)
     time.sleep(20)
     print('we are here')
     meeting_id_btn = 'NONE'
