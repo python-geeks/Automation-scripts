@@ -68,8 +68,7 @@ btn1 = tk.Button(
     bg='#22577A',
     fg='white',
     font=('arial', 12, 'bold'),
-    command=jpg_to_png,
-    )
+    command=jpg_to_png)
 
 # coordinates of first button on output window
 
@@ -85,8 +84,7 @@ btn2 = tk.Button(
     bg='#38A3A5',
     fg='white',
     font=('arial', 12, 'bold'),
-    command=png_to_jpg,
-    )
+    command=png_to_jpg)
 
 # coordinates of second button on the output window
 
