@@ -1,4 +1,2 @@
-Kindly write the following commands in the command prompt/CLI of your OS
-
-1)pip install pytube
-2)pip install moviepy
+pytube==11.0.1
+moviepy==1.0.3
