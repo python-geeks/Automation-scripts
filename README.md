@@ -1,6 +1,6 @@
 # Automation-scripts
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-89-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-90-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
@@ -167,6 +167,7 @@ Thanks goes to these wonderful people 😊
     <td align="center"><a href="https://github.com/MiTo0o"><img src="https://avatars.githubusercontent.com/u/76019114?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MiTo0o</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=MiTo0o" title="Code">💻</a></td>
     <td align="center"><a href="http://ambuj.fetc.org.in"><img src="https://avatars.githubusercontent.com/u/30587730?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ambuj Bharati</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=Ambujbharati" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/nauman07"><img src="https://avatars.githubusercontent.com/u/49531045?v=4?s=100" width="100px;" alt=""/><br /><sub><b>nauman07</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=nauman07" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/MMM-9"><img src="https://avatars.githubusercontent.com/u/63444165?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mili Mehta</b></sub></a><br /><a href="https://github.com/python-geeks/Automation-scripts/commits?author=MMM-9" title="Code">💻</a></td>
   </tr>
 </table>
 
