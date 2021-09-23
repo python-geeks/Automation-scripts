@@ -818,6 +818,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "LetsGetStartedWithBub",
+      "name": "Mitchell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67292285?v=4",
+      "profile": "https://github.com/LetsGetStartedWithBub",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
