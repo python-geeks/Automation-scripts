@@ -1,29 +1,31 @@
 # Automation-scripts
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-91-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda
+**Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda**
 
-## Update 1 :
-**Thanks for all contributors my panda stopped cycling now 🛴** 
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/github/issues/python-geeks/Automation-scripts.svg?style=for-the-badge&logo=appveyor" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#"><img src="https://img.shields.io/github/forks/python-geeks/Automation-scripts.svg?style=for-the-badge&logo=appveyor" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#"><img src="https://img.shields.io/github/stars/python-geeks/Automation-scripts.svg?style=for-the-badge&logo=appveyor" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#"><img src="https://img.shields.io/github/license/python-geeks/Automation-scripts.svg?style=for-the-badge&logo=appveyor" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
 
-## Update 2 :
-**Cheers to all, our panda removed exercise from daily schedule 🤸‍♂️**
+<p align="center">
+  <a href="#"><img src="https://forthebadge.com/images/badges/built-with-love.svg" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#"><img src="https://forthebadge.com/images/badges/made-with-python.svg" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#"><img src="https://forthebadge.com/images/badges/built-by-developers.svg" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
 
-## Update 3 :
-**Moving forward we achieve our next goal, now our panda doesn't play any outdoor game anymore  🏌️‍♂️**
-
-## Update 4:
-**Goals of 2020 completed, Panda now hired a maid to clean his house :)**
+## Updates :
+1. **Thanks for all contributors my panda stopped cycling now 🛴** 
+2. **Cheers to all, our panda removed exercise from daily schedule 🤸‍♂️**
+3. **Moving forward we achieve our next goal, now our panda doesn't play any outdoor game anymore  🏌️‍♂️**
+4. **Goals of 2020 completed, Panda now hired a maid to clean his house :)**
 
 And it's okay if you're not aware of process. Kindly raise query by creating pull request (In query template). Here is the link for that how to create a pull request in other's Repo
 
 [How to create pull request](https://opensource.com/article/19/7/create-pull-request-github)
 
 ### These are my Lazy Panda Goals
-
-* Goal Achieved - 101/100
 
 * Goal 25 - Panda stopped Cycling (Completed)
 * Goal 50 - Panda stopped doing Exercise
@@ -34,11 +36,11 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 
 ## How to Contribute 🤔
 
-You can contribute by adding new scripts, improving current scripts or Documentation.Here are some Instructions
-before making a Pull Request
+You can contribute by adding new scripts, improving current scripts or Documentation. Here are some Instructions before making a Pull Request
 
 ### Here are the steps to Make contribute 👣
 
+- [x] Take a look at [Contributing Guide](https://github.com/python-geeks/Automation-scripts/blob/main/CONTRIBUTING.md) (Necessary)
 - [x] Create an issue for making any change to code. when issue will be approve you can make a change.
 - [x] Pull latest change from upstream branch before starting the changing code.
 - [x] Add your file in proper folder(lowercase) with README.md in it. Add requirements.txt if needed.
