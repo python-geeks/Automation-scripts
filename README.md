@@ -1,4 +1,4 @@
-# Automation-scripts
+<h1 align=center> Automation-scripts <h1>
 
 **Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda**
 
@@ -14,6 +14,12 @@
   <a href="#"><img src="https://forthebadge.com/images/badges/made-with-python.svg" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="#"><img src="https://forthebadge.com/images/badges/built-by-developers.svg" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
+
+## Hacktoberfest 2021 Update
+
+**See full details and guidelines on**
+  * [Hacktober cheasheat](https://github.com/python-geeks/Automation-scripts/blob/main/HACKTOBERFEST.md) 
+  * [Official website](https://hacktoberfest.digitalocean.com/resources)
 
 ## Updates :
 1. **Thanks for all contributors my panda stopped cycling now 🛴** 
@@ -34,20 +40,27 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 
 **Leave a star => Contribution in arranging Food for panda 😴**
 
-## How to Contribute 🤔
+<h1 align=center> How to Contribute 🤔 </h1>
 
 You can contribute by adding new scripts, improving current scripts or Documentation. Here are some Instructions before making a Pull Request
 
-### Here are the steps to Make contribute 👣
+## Here are the steps to Make contribute 👣
 
 - [x] Take a look at [Contributing Guide](https://github.com/python-geeks/Automation-scripts/blob/main/CONTRIBUTING.md) (Necessary)
 - [x] Create an issue for making any change to code. when issue will be approve you can make a change.
 - [x] Pull latest change from upstream branch before starting the changing code.
 - [x] Add your file in proper folder(lowercase) with README.md in it. Add requirements.txt if needed.
-- [x] Please use flake8 linting in your code
+- [x] Please use flake8 linting in your code (See below to check flake8 linting)
 
-#### Typo fixed/ minor change in docs not marked as contribution. If you're not aware of process kindly raise a query in formal manner :)
-## Contributors ✨
+### How to check flake8 linting
+
+* Option 1: Go to [PEP8 online](http://pep8online.com/) , paste your code and check the format it correctly
+* Option 2: How to set up locally, Download flake8 linter and check (as shown in figure below)
+![carbon (1)](https://user-images.githubusercontent.com/42181691/135052274-49d6f2be-04c0-4bf7-9c25-b734b8db6f3c.png)
+
+**Typo fixed/ minor change in docs not marked as contribution. If you're not aware of process kindly raise a query in formal manner :)**
+
+<h1 align=center> Wonderful Contributors ✨ </h1>
 
 Thanks goes to these wonderful people 😊
 
