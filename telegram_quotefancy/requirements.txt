@@ -1,0 +1,8 @@
+# To work with Telegram API
+requests==2.26.0
+
+# To get random Quotefancy Quotes
+quotefancy==1.0
+
+# To Schedule Task
+schedule==1.1.0
