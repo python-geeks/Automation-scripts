@@ -21,7 +21,7 @@ class Task:
                 try:           # line contains eol character(s)
                     n = int(line)
                     arr.append(n)
-                except Exception as e:
+                except Exception:
                     pass
         hour_string = str(arr[0]) + str(arr[1])
         int_hour = int(hour_string)

@@ -68,14 +68,17 @@ def main():
 
     # Call the Calendar API
     start_day = datetime.utcnow()
-    now = datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
-    last_monday = (datetime.utcnow()- timedelta(start_day.weekday())).isoformat() + 'Z' # 'Z' indicates UTC time
-    week_end_time = str(datetime.utcnow() + timedelta(days=7)) + 'Z'
+
+    # 'Z' indicates UTC time
+    now = datetime.utcnow().isoformat() + 'Z'
+    last_monday = (datetime.utcnow() - timedelta(start_day.weekday())).isoformat() + 'Z'
+
     print('Getting the upcoming 10 events')
     print('**************************************************************\n')
-    events_result = service.events().list(calendarId='primary', timeMin=last_monday, timeMax=now, 
-                                        maxResults=EVENTS_TO_LOOK_THROUGH, singleEvents=True,
-                                        orderBy='startTime').execute()
+
+    events_result = service.events().list(calendarId='primary', timeMin=last_monday, timeMax=now,
+                                          maxResults=EVENTS_TO_LOOK_THROUGH, singleEvents=True,
+                                          orderBy='startTime').execute()
     colors = service.colors().get(fields='event').execute()
     defaultColor = (service.calendarList().get(calendarId="primary").execute())['backgroundColor']
     events = events_result.get('items', [])
@@ -86,9 +89,9 @@ def main():
     for event in events:
         start_string = event['start'].get('dateTime', event['start'].get('date'))
         end_string = event['end'].get('dateTime', event['end'].get('date'))
-        
+
         name = event['summary']
-        try: 
+        try:
             color = colors['event'][event['colorId']]['background']
         except KeyError:
             color = defaultColor
@@ -96,10 +99,9 @@ def main():
         task.date = parse_time(start_string)
         task.get_time_of_task()
         tasks.append(task)
-    
-    total_tasks = []
+
     for color, category in categories.items():
-        if len(category) > 1: 
+        if len(category) > 1:
             total_time = timedelta(hours=0)
             for task in tasks:
                 if task.color == color:
@@ -107,8 +109,8 @@ def main():
             text = "For " + category + " you have planned to spend:"
             number_of_spaces = 15
             number_of_spaces -= len(category)
-            string_length=len(text)+number_of_spaces    # will be adding 10 extra spaces
-            string_revised=text.ljust(string_length)
+            string_length = len(text) + number_of_spaces    # will be adding 10 extra spaces
+            string_revised = text.ljust(string_length)
             print("\n-----------------------------------------------------------------")
             print(string_revised + format_timedelta(total_time) + "hrs this week")
     print("\n-----------------------------------------------------------------\n")
