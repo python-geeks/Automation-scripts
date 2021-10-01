@@ -1,4 +1,4 @@
-# Corona-Tracker
+# Corona Tracker and Visualizer
 ## Real time COVID-19 information tracker
 A real time **COVID-19 information tracker and visualizer** application using *Python*.
 This application will give every *detailed daily information of COVID-19 cases by Country*. User will be able to *see the graphical trend of Active cases, Recovery and Death of COVID-19 Cases by Country* entered.
