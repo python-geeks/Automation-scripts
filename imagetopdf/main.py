@@ -8,7 +8,7 @@ def converter():
     pdf = FPDF()
     for image in img_files:
         pdf.add_page()
-        pdf.image('images/'+image)
+        pdf.image('images/' + image)
     pdf.output('converted.pdf', 'F')
 
 
