@@ -2,6 +2,7 @@ import os
 import sys
 import getopt
 
+
 def rtcheck(seconds):
     try:
         seconds = int(seconds)
@@ -214,7 +215,7 @@ def main():
     if avg == 1:
         return 0
     elif os.path.exists("/var/log/cputemp.log") and avg == 0:
-        
+
         tod = datetime.datetime.now()
         templog = open("/var/log/cputemp.log", "a")
         templog.write("Session started at ")
