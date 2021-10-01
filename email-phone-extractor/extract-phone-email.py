@@ -47,10 +47,10 @@ if (len(phoneMatches) > 0 or len(emailMatches)):
     pyperclip.copy(matches)
     print('Copied to clipboard!')
     s = pyperclip.paste()
-    print("Phone Numbers - \n\t" +
-          '\n\t'.join(phoneMatches) +
-          "\nEmails - \n\t" +
-          '\n\t'.join(emailMatches))
+    print("Phone Numbers - \n\t"
+          + '\n\t'.join(phoneMatches)
+          + "\nEmails - \n\t"
+          + '\n\t'.join(emailMatches))
 
     with open('phones.csv', 'w') as f:
         # using csv.writer method from CSV package
