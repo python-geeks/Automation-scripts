@@ -41,7 +41,12 @@ Using the script you can validate the following things:
 ![1](../master/credit_card_validator/img_guide_help/1.png)
 
 
+.. image:: ./credit_card_validator/img_guide_help/1.png
+
+
 #### Following resources were referred to deploy this script:
 https://www.creditcardinsider.com/learn/anatomy-of-a-credit-card/#credit-card-number
 
 https://www.prepostseo.com/tool/credit-card-validator
+
+
