@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash, redirect, session
 from functools import wraps
-import config as config
+import setup.config as config
 from user import User
 
 app = Flask(__name__, template_folder="templates", static_folder='static')

@@ -7,7 +7,7 @@ Set up a virtual environment and install dependencies.
 ```
 pip install -r requirements.txt
 ```
-There are three different templates available for use. Set up the configurations in the `.env` file to decide the template, connection string for MongoDB and the secret key.<br>
+There are three different templates available for use. Set up the configurations in the `.env` file in the setup folder to decide the template, connection string for MongoDB and the secret key.<br>
 
 #### Run 
 ```

@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, session, request
 from forms import registerForm, loginForm
 from passlib.hash import sha256_crypt
-import config as config
+import setup.config as config
 import uuid
 
 
