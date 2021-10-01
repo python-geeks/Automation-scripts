@@ -50,28 +50,23 @@ def main(argv):
         toDisplay = str(value)
 
         if value > 0 and value < 50:
-            print('Air Quality Alert -> \nCurrent Value: Healthy - ' +
-                  toDisplay)
+            print('Air Quality Alert ->')
+            print('Current Value: Healthy - '+toDisplay)
         elif value > 50 and value < 100:
-
-            print('Air Quality Alert -> \nCurrent Value: Moderate - ' +
-                  toDisplay)
+            print('Air Quality Alert ->')
+            print('Current Value: Moderate - '+toDisplay)
         elif value > 100 and value < 150:
-
-            print ('Air Quality Alert -> \nCurrent Value: Sensitive - ' +
-                   toDisplay)
+            print('Air Quality Alert ->')
+            print('Current Value: Sensitive - '+toDisplay)
         elif value > 150 and value < 200:
-
-            print('Air Quality Alert -> \nCurrent Value: UnHealhty - ' +
-                  toDisplay)
+            print('Air Quality Alert ->')
+            print('Current Value: UnHealhty - '+toDisplay)
         elif value > 200 and value < 250:
-
-            print('Air Quality Alert -> \nCurrent Very Unhealhty - ' +
-                  toDisplay)
+            print('Air Quality Alert ->')
+            print('Current Value: UnHealthy - '+toDisplay)
         elif value > 250 and value > 300:
-
-            print('Air Quality Alert -> \nCurrent Value: Hazardous -  ' +
-                  toDisplay)
+            print('Air Quality Alert ->')
+            print('Current Value: Hazardous - '+toDisplay)
     else:
 
         print('Error: Unable to connect to server')
