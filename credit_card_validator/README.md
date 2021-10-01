@@ -34,6 +34,9 @@ Using the script you can validate the following things:
 
 ### Follow-up the images to explore more.
 
+[[Automation-scripts/credit_card_validator/img_guide_help/1.png|1]]
+
+
 
 
 #### Following resources were referred to deploy this script:
