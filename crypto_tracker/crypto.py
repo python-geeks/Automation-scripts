@@ -1,5 +1,4 @@
 import requests
-import os
 import sys
 
 
@@ -26,6 +25,7 @@ def get_prices():
             "change_hour": crypto_data[i]["USD"]["CHANGEPCTHOUR"]
         }
     return data
+
 
 if __name__ == "__main__":
     crypto_data = get_prices()
