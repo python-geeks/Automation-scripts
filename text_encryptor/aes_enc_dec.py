@@ -35,7 +35,7 @@ def AES_Encryption(cleartext):
         return
     AES_Encryptor = AES.new(KEY, AES.MODE_CBC, VECTOR_FOR_AES)
     cleartext_length = len(cleartext)
-    nearest_multiple_of_16 = 16 * math.ceil(cleartext_length/16)
+    nearest_multiple_of_16 = 16 * math.ceil(cleartext_length / 16)
     padded_cleartext = cleartext.rjust(nearest_multiple_of_16)
     raw_ciphertext = AES_Encryptor.encrypt(padded_cleartext)
     return base64.b64encode(raw_ciphertext).decode('utf-8')
@@ -61,7 +61,8 @@ if __name__ == "__main__":
             type = "S"
     GetKey()
     if(type == "e"):
-        print("NOTE: If you forget this password, you will not be able to decrypt text correctly. So, DO NOT FORGET PASSWORD!!")
+        print("NOTE: If you forget this password, you will not be able'\
+        ' to decrypt text correctly. So, DO NOT FORGET PASSWORD!!")
         message = input("Enter message in single line: ")
         ciphertext = AES_Encryption(message)
         print("Encrypted Message: %s" % ciphertext)
