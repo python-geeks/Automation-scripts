@@ -21,7 +21,7 @@ class User:
                     "name": reg_form.name.data,
                     "email": reg_form.email.data,
                     "username": reg_form.username.data,
-                    "password":  reg_form.password.data}
+                    "password": reg_form.password.data}
                 user['password'] = sha256_crypt.encrypt(user['password'])
                 if config.db.users.find_one({"email": user['email']}):
                     error = "Email already exists!"
