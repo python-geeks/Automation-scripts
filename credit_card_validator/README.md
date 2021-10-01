@@ -23,4 +23,14 @@ Supported Credit Cards:
 > Discover card
 ```
 
+Using the script you can validate the following things:
+
+```
+> Card number is valid or not
+> Card type
+> Major Industry Identifier
+> Card Account Number
+> Checksum
+```
+
 ### Follow the images to explore more.
