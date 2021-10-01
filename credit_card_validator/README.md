@@ -38,7 +38,7 @@ Using the script you can validate the following things:
 
 [[/Automation-scripts/credit_card_validator/img_guide_help/1.png]]
 
-
+![1](../master/credit_card_validator/img_guide_help/1.png)
 
 
 #### Following resources were referred to deploy this script:
