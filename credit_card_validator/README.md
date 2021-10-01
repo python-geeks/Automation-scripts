@@ -22,3 +22,5 @@ Supported Credit Cards:
 > Mastercard card
 > Discover card
 ```
+
+### Follow the images to explore more.
