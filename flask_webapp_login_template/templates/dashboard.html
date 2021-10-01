@@ -1,0 +1,14 @@
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style0.css') }}">  
+</head>
+<title>Dashboard</title>
+{% extends 'base.html' %}
+{% block body %}
+  
+  <div class="container">
+  <h2><b>DASHBOARD</b></h2>
+  <h3>Welcome {{session.user.username}} !</h3>
+  <br>
+  <a href = "/logout">Logout</a>
+</div>
+{% endblock %}
