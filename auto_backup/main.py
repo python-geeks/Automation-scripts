@@ -2,8 +2,8 @@ from datetime import datetime
 from pathlib import Path
 import zipfile
 
-source_folder = './source/'
-backup_folder = './backup'
+source_folder = './auto_backup/source/'  # Source directory to be backed up
+backup_folder = './auto_backup/backup'   # Directory to save backups
 backup_amount = 5
 
 source_folder_path = Path(source_folder)
