@@ -34,14 +34,11 @@ Using the script you can validate the following things:
 
 ### Follow-up the images to explore more.
 
-![Screenshot](./credit_card_validator/img_guide_help/1.png)
+![1]()
 
-[[/Automation-scripts/credit_card_validator/img_guide_help/1.png]]
-
-![1](../master/credit_card_validator/img_guide_help/1.png)
+![plot](./credit_card_validator/img_guide_help/1.png)
 
 
-.. image:: ./credit_card_validator/img_guide_help/1.png
 
 
 #### Following resources were referred to deploy this script:
