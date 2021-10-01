@@ -1,0 +1,12 @@
+baz:
+- qux
+- quxx
+corge: null
+emptyArray: []
+emptyObject: {}
+emptyString: ''
+foo: bar
+fred: undefined
+garply: true
+grault: 1
+waldo: 'false'
