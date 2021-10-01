@@ -34,7 +34,7 @@ Using the script you can validate the following things:
 
 ### Follow-up the images to explore more.
 
-![Screenshot](/Automation-scripts/credit_card_validator/img_guide_help/1.png)
+![Screenshot](credit_card_validator/img_guide_help/1.png)
 
 [[/Automation-scripts/credit_card_validator/img_guide_help/1.png]]
 
