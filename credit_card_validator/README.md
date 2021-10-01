@@ -10,3 +10,15 @@ It is important to keep in mind that whenever fraudulent cards are used, the mer
 However, the merchant generally stays away from the product or service provided, as well as the resources necessary to discover the fraud and fight against the credit card company. And if too many fraudulent transactions occur, you may incur higher processing fees, expensive chargebacks, or even losing your merchant account and your ability to do business.
 
 But you can mitigate these risks with the help of a little automation.
+
+
+```
+Credit Card Validator
+Supported Credit Cards:
+************************
+> Visa card
+> American Express card
+> Diners Club Carte Blanche
+> Mastercard card
+> Discover card
+```
