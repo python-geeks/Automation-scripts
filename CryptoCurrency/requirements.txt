@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+Scrapy
+DateTime
+selenium
+tkinter
