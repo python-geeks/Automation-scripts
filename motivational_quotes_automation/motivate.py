@@ -39,13 +39,18 @@ def create_notifier(data):
 
 
 def main_app():
+    try:
+        time_ = int(input('Repeat notification after (hours): '))
+    except:
+        print('''There was an error in the user input,
+         make sure that ur input is only numbers''')
+        sys.exit(0)
     while True:
-
         check_availability()
         data = get_quote()
         create_notifier(data)
         print('Sent notification.')
-        time.sleep(2 * 3600)
+        time.sleep(time_ * 3600)
 
 
 if __name__ == '__main__':
