@@ -38,7 +38,7 @@ if confirm == "y":
         exit(1)
     # headers for the webdriver
     headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko)"
         + " Chrome/84.0.4147.89 Safari/537.36"
     }
 
