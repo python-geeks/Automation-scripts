@@ -14,8 +14,9 @@ print("Processor: ", sys_info.processor)
 
 b = psutil.boot_time()
 bootTime = datetime.fromtimestamp(b)
-print("Booted On: ", bootTime.day, "/", bootTime.month, "/", bootTime.year, " ", bootTime.hour, ":", bootTime.minute, ":", bootTime.second)
-
+print("Booted On")
+print("Day:", bootTime.day, "/", bootTime.month, "/", bootTime.year)
+print("Time:", bootTime.hour, ":", bootTime.minute, ":", bootTime.second)
 
 print("+-------------------+")
 print("|  CPU Information  |")
@@ -27,4 +28,4 @@ print("Minimum Frequency: ", freq.min, "Mhz")
 
 print("CPU Usage Per Core: ")
 for c, p in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
-    print("Core ", c, ": ", p,"%")
+    print("Core ", c, ": ", p, "%")
