@@ -34,10 +34,9 @@ Using the script you can validate the following things:
 
 ### Follow-up the images to explore more.
 
-![1]()
 
-![plot](./credit_card_validator/img_guide_help/1.png)
 
+<img src="/credit_card_validator/img_guide_help/1.png" alt="My cool logo"/>
 
 
 
