@@ -1,16 +1,15 @@
 
 # Credit Card Validator: A powerful automated python script to validate credit card numbers 
 
+##### Note: This is single script ```cc_check.py``` code that can validate the cc without any use of modules and packages.
+
 Credit card numbers are generated according to certain rules. It gives merchants a way to verify the validity of a card number before accepting the customer's payment.
 
 ## The importance of credit card validation
 
-It is important to keep in mind that whenever fraudulent cards are used, the merchant loses. The customer of a stolen credit card is not hooked, and the credit card companies are generally not affected.
-
-However, the merchant generally stays away from the product or service provided, as well as the resources necessary to discover the fraud and fight against the credit card company. And if too many fraudulent transactions occur, you may incur higher processing fees, expensive chargebacks, or even losing your merchant account and your ability to do business.
+It is important to keep in mind that whenever fraudulent cards are used, the merchant loses if too many fraudulent transactions occur, you may incur higher processing fees, expensive chargebacks, or even losing your merchant account and your ability to do business.
 
 But you can mitigate these risks with the help of a little automation.
-
 
 ```
 Credit Card Validator
@@ -33,4 +32,10 @@ Using the script you can validate the following things:
 > Checksum
 ```
 
-### Follow the images to explore more.
+### Follow-up the images to explore more.
+
+
+
+#### Following resources were referred to deploy this script:
+https://www.creditcardinsider.com/learn/anatomy-of-a-credit-card/#credit-card-number
+https://www.prepostseo.com/tool/credit-card-validator
