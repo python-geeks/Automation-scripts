@@ -16,8 +16,8 @@ python app.py
 
 #### Templates Available
 
-![Template1](docs\template1.gif)
-![Template2](docs\template2.gif)
-![Template3](docs\template3.gif)
+![Template1](template1.gif)
+![Template2](template2.gif)
+![Template3](template3.gif)
 
 
