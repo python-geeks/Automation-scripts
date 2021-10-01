@@ -34,10 +34,15 @@ Using the script you can validate the following things:
 
 ### Follow-up the images to explore more.
 
+<img src="/credit_card_validator/img_guide_help/1.png" alt="slow_net_have_fast_internet_to_load_it_ok"/>
 
+# *******
 
-<img src="/credit_card_validator/img_guide_help/1.png" alt="My cool logo"/>
+<img src="/credit_card_validator/img_guide_help/2.png" alt="slow_net_have_fast_internet_to_load_it_ok"/>
 
+# *******
+
+<img src="/credit_card_validator/img_guide_help/3.png" alt="slow_net_have_fast_internet_to_load_it_ok"/>
 
 
 #### Following resources were referred to deploy this script:
