@@ -8,9 +8,6 @@ import winrt.windows.data.xml.dom as dom
 import winrt.windows.ui.notifications as notifications
 
 
-repeat_time = 2 #in hours
-
-
 def check_availability():
     # check if the running device is windows
     if os.name == 'nt':
@@ -39,7 +36,9 @@ def get_quote():
 def create_notifier(data):
     quote = data[0]['q']
     author = data[0]['a']
-    app = '{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\WindowsPowerShell\\v1.0\\powershell.exe'
+    app = '''
+    {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\WindowsPowerShell\\v1.0\\powershell.exe
+    '''
 
     nManager = notifications.ToastNotificationManager
     notifier = nManager.create_toast_notifier(app)
@@ -75,7 +74,7 @@ def main_app():
         data = get_quote()
         create_notifier(data)
         print('Sent notification.')
-        time.sleep(repeat_time * 3600)
+        time.sleep(2 * 3600)
 
 
 if __name__ == '__main__':
