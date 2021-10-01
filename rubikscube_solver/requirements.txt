@@ -1,0 +1,4 @@
+opencv-python==4.4.0
+kociemba==1.2.1
+numpy==1.19.5
+argparse=1.1

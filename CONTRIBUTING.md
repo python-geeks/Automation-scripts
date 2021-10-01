@@ -1,75 +1,78 @@
-# Contributing to Automation Scripts
+# Contributing Guidelines
 
-We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+This documentation contains a set of guidelines to help you during the contribution process. 
+We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project. Thank you for helping out and remember,
+**no contribution is too small.**
 
-- Reporting a bug
-- Discussing the current state of the code
-- Submitting a fix
-- Proposing new features
+# Submitting Contributions👩‍💻👨‍💻
+Below you will find the process and workflow used to review and merge your changes.
+## Step 1 : Find an issue
+- Take a look at the Existing Issues or create your **own** Issues!
+- Wait for the Issue to be assigned to you after which you can start working on it.
+- Note : Every change in this project should/must have an associated issue. 
 
+![Inkedissue_LI](https://user-images.githubusercontent.com/42181691/135037199-3f41b3b1-3a90-4723-9416-e7a472a38255.jpg)
 
-## Steps to contribute
+## Step 2 : Fork the Project
+- Fork this Repository. This will create a Local Copy of this Repository on your Github Profile. Keep a reference to the original project in `upstream` remote.
+```
+$ git clone https://github.com/<your-username>/Automation-scripts
+$ cd Automation-scripts
+$ git remote add upstream https://github.com/python-geeks/Automation-scripts
+```
 
-* Comment on the issue you want to work on. Make sure it's not assigned to someone else.
-
-## What to contribute
-
-* Any Pytorch real life implementation
-* Should add README.txt to execute, required environment and dataset link
-* Compatible old implementations with new fixes
-* Add REQUIREMENTS.txt with the your Jupyter notebook
-
-### Making a PR
-
-> - Make sure you have been assigned the issue to which you are making a PR.
-> - If you make PR before being assigned, It will be labeled `invalid` and closed without merging.
-
-* Fork the repo and clone it on your machine.
-* Add a upstream link to main branch in your cloned repo
-    ```
-    git remote add upstream https://github.com/python-geeks/Automation-scripts.git
-    ```
-* Keep your cloned repo up to date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)
-    ```
-    git pull upstream master
-    ```
-* Create your feature branch
-    ```
-    git checkout -b <feature-name>
-    ```
-* Commit all the changes
-    ```
-    git commit -am "Meaningful commit message"
-    ```
-* Push the changes for review
-    ```
-    git push origin <branch-name>
-    ```
-* Create a PR from our repo on Github.
-
-### Additional Notes
-
-* Code should be properly commented to ensure it's readability.
-* If you've added code that should be tested, add tests as comments.
-* Make sure your code properly formatted.
-* Issue that pull request!
-* use Flake8 for python code
-
-## Issue suggestions/Bug reporting
-
-When you are creating an issue, make sure it's not already present. Furthermore, provide a proper description of the changes. If you are suggesting any code improvements, provide through details about the improvements.
-
-**Great Issue suggestions** tend to have:
-
-- A quick summary of the changes.
-- In case of any bug provide steps to reproduce
-  - Be specific!
-  - Give sample code if you can.
-  - What you expected would happen
-  - What actually happens
-  - Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+![Inkedfork_LI](https://user-images.githubusercontent.com/42181691/135037282-28d32b80-0e20-456c-b6d0-d21e50bd8a26.jpg)
 
 
-## License
+- If you have already forked the project, update your copy before working.
+```
+$ git remote update
+$ git checkout <branch-name>
+$ git rebase upstream/<branch-name>
+```
+## Step 3 : Branch
+Create a new branch. Use its name to identify the issue your addressing.
+```
+# It will create a new branch with name Branch_Name and switch to that branch 
+$ git checkout -b branch_name
+```
+## Step 4 : Work on the issue assigned
+- Work on the issue(s) assigned to you. 
+- Add all the files/folders needed.
+- After you've made changes or made your contribution to the project add changes to the branch you've just created by:
+```
+# To add all new files to branch Branch_Name
+$ git add .
+```
+## Step 5 : Commit
+- To commit give a descriptive message for the convenience of reveiwer by:
+```
+# This message get associated with all files you have changed
+$ git commit -m "message"
+```
+- **NOTE**: A PR should have only one commit. Multiple commits should be squashed.
+## Step 6 : Work Remotely
+- Now you are ready to your work to the remote repository.
+- When your work is ready and complies with the project conventions, upload your changes to your fork:
 
-By contributing, you agree that your contributions will be licensed under its  [MIT License](http://choosealicense.com/licenses/mit/).
+```
+# To push your work to your remote repository
+$ git push -u origin Branch_Name
+```
+
+## Step 7 : Pull Request
+- Go to your repository in browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution.
+
+- Voila! Your Pull Request has been submitted and will be reviewed by the moderators and merged.🥳
+
+## Need more help?🤔
+You can refer to the following articles on basics of Git and Github and also contact the Project Mentors, in case you are stuck:
+- [Forking a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+- [Cloning a Repo](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request)
+- [How to create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
+- [Getting started with Git and GitHub](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
+- [Learn GitHub from Scratch](https://lab.github.com/githubtraining/introduction-to-github)
+
+
+## Tip from us😇
+It always takes time to understand and learn. So, do not worry at all. We know **you have got this**!💪

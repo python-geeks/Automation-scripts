@@ -1,0 +1,261 @@
+RT @pybamm_: We are very excited because in one hour we start the first session of the PyBaMM training workshop!
+
+Today's session: fundamen…
+===============================================================
+Cleared my laptop yesterday, and now my google drive is full.
+===============================================================
+https://t.co/zasgaFlXMd - the code
+===============================================================
+@battbot_ compare SPM and SPMe for a constant discharge of 1.25C at 290K with Chen2020 parameters #battbot
+===============================================================
+@lilasstwerks https://t.co/FgaHqsYXXu
+===============================================================
+Learned how to treat the logistic regression algorithm as a neural network, and honestly, the maths was so satisfying.
+===============================================================
+RT @withoutwaxaryan: My go to move when I'm overthinking a reply is to press 'Send' and say to myself "Whoops! Its done now, not in my hand…
+===============================================================
+RT @pybamm_: New release available! 📢🆕
+
+In PyBaMM 21.08 you will find:
+🔋 Sensitivity analysis of solutions
+🔋 Several new models
+🔋 Improveme…
+===============================================================
+RT @pybamm_: Sign up now for the PyBaMM workshop! 
+#battchat #batterytwitter
+===============================================================
+RT @digitalocean: 🗣️Our favorite October open-source celebration – @Hacktoberfest – is coming soon! Check out our teaser site to see how yo…
+===============================================================
+RT @harsh_casper: Debugging GitHub Actions workflows be like 🙃
+
+#GitHub #CI https://t.co/PdDJaXDxUq
+===============================================================
+@battbot_ can take simulation requests now! I'm just hoping that the Heroku deployment won't break 🥲 https://t.co/UN1uUmXq4T
+===============================================================
+@shivambzt @gsoc @pybamm_ @robertwtimms @tinosulzer @brosaplanella Sure @shivambzt! It would be tough to debug it here but I'll try, or if you think there is an issue/bug with the installation, you can create a new issue/discussion here - https://t.co/gdq9IhH1lI
+===============================================================
+Vacationing after 3 years!
+
+Second and the last week of "no-code".
+
+I spent the last week studying maths (linear algebra and multivariable calculus), but I realised, I was still using my laptop 24x7.
+
+This week no laptop, and no code. 
+
+I'll probably explore all the beaches 🤩 https://t.co/s8XXYbqgAX
+===============================================================
+Also, the final project (the bot) is available here - @battbot_ 🔋
+===============================================================
+@gsoc is finally over, and the summer went beyond my expectations🤖.
+I'll be working with @pybamm_ more, but after a short break🌴.
+Finally, a special thanks to my mentors, couldn't have done this without them - @robertwtimms, @tinosulzer, @brosaplanella😄
+https://t.co/oo0vfjnsYd
+===============================================================
+@battbot_ compare SPM and SPMe for a constant discharge of 1.1C at 285K with Chen2020 parameters #battbot.
+===============================================================
+@battbot_ compare SPM and SPMe for a constant discharge of 1.25C at 290K with Chen2020 parameters #battbot.
+===============================================================
+This will be fun! Hoping to get a lot of questions😄 https://t.co/SzDoIanyPj
+===============================================================
+@battbot_ Vary "Electrode height [m]" with the values [0.1, 0.3, 0.5] with Single Particle model using Chen2020 chemistry at a discharge of 0.9C at 290K #battbot
+===============================================================
+@battbot_ Vary "Electrode height [m]" with the values [0.1, 0.3, 0.5] with Single Particle model at a discharge of 0.9C at 290K #battbot
+===============================================================
+@battbot_ #battbot compare spm and spme with chen2020 parameters with the experiment - [("Discharge at C/10 for 10 hours or until 3.3 V","Rest for 1 hour","Charge at 1 A until 4.1 V","Hold at 4.1 V until 50 mA","Rest for 1 hour")] * 3 at 298K
+===============================================================
+@battbot_ can you compare SPM, SPMe, and DFN model with Marquis2019 chemistry with a discharge of 0.5C at um 280K #battbot
+===============================================================
+@battbot_ Compare SPM and SPMe with Chen2020 parameter sets with a 1C discharge at 298K #battbot
+===============================================================
+@KHaghverdi Hi! I’m probably not the best person to answer them, but I’ll be happy to help if I can:)
+===============================================================
+@gsoc @pybamm_ Also, thanks to the pandemic, my next semester will be starting from 16th (online again) 🥲
+===============================================================
+The last couple of weeks were very hectic but my freshman year is finally over! Also, I know I am late but the blog covering weeks 7 and 8 of @gsoc, working for @pybamm_, is up here - https://t.co/c1pRsnCL2S
+===============================================================
+RT @brosaplanella: Sounds about right...
+===============================================================
+@bcjanmay The GIFs are being create by compiling and processing 80 images, at different values of time, together. A single image or a single plot is created using @pybamm_. The code - https://t.co/URmbfVzww6
+===============================================================
+[('Discharge at 2 C until 3.2 V', 'Rest for 7 minutes', 'Charge at 3 C until 4.1 V', 'Hold at 4.1 V until 97 mA', 'Rest for 6 minutes')] * 3
+===============================================================
+Comparing Doyle-Fuller-Newman model and Single Particle Model with electrolyte with Chen2020 parameters for the following experiment 🔽 https://t.co/APGxLBkYKO https://t.co/kz1IT2rEwA
+===============================================================
+RT @astro_jaz: how often do you just go outside and stare at the Moon? 
+🌕 
+
+                                    🧍
+===============================================================
+@bcjanmay @robertwtimms @battbot_ @pybamm_ The bot, right now, is not tweeting any GIF with degradation mechanisms "on", as they are under active development. My account on the other hand is a testing area for these tweets so you might see some weird GIFs in the future too😅
+===============================================================
+Week 5 and 6 blog, covering the process of making the bot completely independent, is up! Also, check out @battbot_ for some fun tweets🔋🤖
+
+https://t.co/UnR6Q22mfr
+===============================================================
+The official bot is live🥳🔋 https://t.co/dqffXXpTxv
+===============================================================
+@bcjanmay Constant discharge (I hope I am not wrong, new to battery science), no idea about the step shaped plot😅, maybe @pybamm_ can help with that
+===============================================================
+Plotting Single Particle Model with Chen2020 parameters and reaction limited SEI, for experiment: [('Discharge at 3 C until 3.3 V', 'Charge at 3 C until 3.8 V', 'Hold at 3.8 V until 63 mA')] https://t.co/tTK5SgeRhE
+===============================================================
+It’s always so exciting to read about the groundbreaking discoveries in science, and using Open Source Softwares make them even more exciting!
+
+My favourite one will be the Nobel Prize use case (always been a fan of Physics, Astrophysics and Space).
+
+Also, @pybamm_ is there😄🥳 https://t.co/nAUoODagtG
+===============================================================
+My third blog, covering weeks 3 and 4 of the coding period of @gsoc (while working on the @pybamm_ bot) is up on my medium account, explore it here - 
+https://t.co/E8RHtGMQDh
+===============================================================
+Single Particle Model with electrolyte with Chen2020 parameters varying Negative electrode active material volume fraction for a 1.0 C discharge at 25.0°C https://t.co/HKNsOPM5P0
+===============================================================
+It took me some time, but I finally built python 3.8.6 from the source on my Windows Subsystem for Linux, adding all the missing modules after the installation and reconfiguring everything at the end.
+
+Being new to Linux, I suddenly feel powerful.
+===============================================================
+Time to vote! https://t.co/gyMNimI3Xd
+===============================================================
+Comparing Single Particle Model with electrolyte and Doyle-Fuller-Newman model with Marquis2019 parameters for a 1.0 C discharge at 25.0°C https://t.co/XNRjntS3NX
+===============================================================
+Around this time, back in 2020, I was capturing the solar eclipse using my telescope and mobile, and though the setup was quite unstable, I did manage to get some good photos and I remember how excited I was☀️
+
+Also, I really need a camera📷 and a camera mount for my telescope🔭 https://t.co/onZIzAS8Ws
+===============================================================
+My second @gsoc blog is up, check it out here - https://t.co/mdWtJR2jFo
+Also, get ready for some GIF tweets, the branch has been merged🥳
+===============================================================
+RT @sharmaadi570191: I enjoy getting stuck with new tech and then finding a way out on my own makes my day.
+
+Keep exploring. 💯
+===============================================================
+@codeforcauseIn Had a great time!
+===============================================================
+@kunalstwt @aravindputrevu Thanks!!😄
+===============================================================
+@jainaayush01 @codeforcauseIn @elastic Thanks!😁
+===============================================================
+@Sharma14Suraj @codeforcauseIn @elastic Thanks😄
+===============================================================
+@_aurohere_ @codeforcauseIn @elastic Thanks😁
+===============================================================
+@devshub21 @codeforcauseIn @elastic Thanks🎊
+===============================================================
+@Dev_Prathamtwt @codeforcauseIn @elastic Thanks🎊
+===============================================================
+@aravindputrevu @codeforcauseIn @elastic Yes that sounds fun, I will⚡😁
+===============================================================
+Also, a huge thanks to @kunalstwt and @aravindputrevu for organizing the sessions and the hackathon itself.😄
+===============================================================
+Received the hackathon prize and some (surprise) swags today. Thanks @codeforcauseIn and @elastic !!😍 https://t.co/ZUbxRlNZVo
+===============================================================
+I recently worked on a flutter document scanner android application named DocLense as a part of @MexiliOrg winter of code. It has now been published to the play store. Check it out here - https://t.co/p9hocLnSVt
+===============================================================
+RT @pybamm_: Our paper introducing PyBaMM is now available in @up_jors ! Give it a read if you haven't already
+
+https://t.co/MnQZDnEv15
+===============================================================
+@brosaplanella @tinosulzer https://t.co/9cqMPM3YOj
+===============================================================
+It has been an absolute delight to officially work with @pybamm_  for the last 2 weeks as a part of @gsoc. I have documented my journey in a blog linked below, give it a read!😄 https://t.co/bJE9zgaES8
+===============================================================
+@tinosulzer "Current function [A]", 2 of the curves are at the extreme positions
+===============================================================
+@priyanshuone6 @codeforcauseIn Thanks😄
+===============================================================
+RT @codeforcauseIn: Congratulations to the winners of Elastic Weekend + Hackathon! 🥳
+
+We saw some very innovative projects, presented extre…
+===============================================================
+RT @kaushikspace: Med reqd for critical Mucormycosis patient in Delhi
+Name: Dr Vasu Sharma, 52 Yrs 
+Diagnosed with black fungus in both eye…
+===============================================================
+RT @urlichsanais: It's so cute, we have a team chat on Slack and throughout the day people working in different time zones drop in to say g…
+===============================================================
+They're talking a lot about toasts😂😂
+===============================================================
+RT @lmoroney: Hey @GoogleQuantumAI -- How do I join that Quantum AI Lab in Santa Barbara? :) https://t.co/XfRYcXSmD5
+===============================================================
+Toasts, the bread and butter of the system UI of android.
+
+#GoogleIO #Android12
+===============================================================
+RT @lariki: Google IO 2021 keynote summary 
+
+#GoogleIO #GoogleIO2021 #sketchnotes #sketchnoting https://t.co/GyKTM5jfLu
+===============================================================
+RT @lmoroney: It's TPU time! :) 
+
+A single TPUv4 pod contains 4096 chips, with each having 10x bandwidth at scale. 
+
+1 exaflop per second.…
+===============================================================
+This was great😂😂😂
+#Marvel X #GoogleIO ?😂😂😂 https://t.co/FHPobE58rt
+===============================================================
+So great so far🤩 https://t.co/bwyYDmsrL3
+===============================================================
+GOOGLE I/O IS HERE🤩 https://t.co/AC2i6UUn07
+===============================================================
+RT @pybamm_: We are really excited that two students will be joining us this summer!🧑‍💻🔋
+
+Looking forward to working with @priyanshuone6 an…
+===============================================================
+RT @chiragsinghal_: git commit -m "fixed sleep schedule"
+===============================================================
+@KubeCon_'s surveys are hilarious XD https://t.co/2dVYKq3KVM
+===============================================================
+The only "Ops" I can do https://t.co/chLzihnoWT
+===============================================================
+RT @googledevs: 👋 Welcome to #GoogleIO -- online &amp; free for everyone!
+
+Get a first look at the latest developer products and tutorials. You…
+===============================================================
+@Saransh210 Here is your plot at time = 492 seconds https://t.co/FROow5lo0T
+===============================================================
+This organization introduced me to the open-source world, and I ranked 2 on their final leaderboard of contributions. I can't list all of my contributions here but I will link all of my commits🖥️ -&gt; https://t.co/p0GXpXw2Bj https://t.co/DCeuNKfX0c
+===============================================================
+Finally :") https://t.co/deRtJw4FXP
+===============================================================
+I am once again asking you to pass https://t.co/2d7fOcvx72
+===============================================================
+My first open source program🎁. Made some good contributions to the DocLense Project. The project -&gt; https://t.co/wptcWIi7eP. Also guess my rank👀 https://t.co/1EPVUtD85F
+===============================================================
+RT @pybamm_: New release available!📢🆕
+
+In PyBaMM 0.4.0 you will find:
+🔋The Newman-Tobias battery model
+🔋Reversible and irreversible plating…
+===============================================================
+RT @kunalstwt: Open source is for everyone ☀️
+===============================================================
+@Saransh210 Here is your plot at time = 878 seconds https://t.co/vllAuY5fxx
+===============================================================
+Welp, it is working now, get ready for some more battery modeling spams:)
+===============================================================
+Is Heroku down? I have been trying to log in and restart my dynos but no luck :")
+===============================================================
+@Saransh210 I'm sorry, could you be a bit more specific (remember this is only the testing phase)
+===============================================================
+@Saransh210 Here is your plot at time = 343 seconds https://t.co/ax7heSpaij
+===============================================================
+@Saransh210 Here is your plot at time = 1668 seconds https://t.co/pZbLsw1phM
+===============================================================
+@Saransh210 Here is your plot at time = 35 seconds https://t.co/KsiqrZxYHo
+===============================================================
+@Saransh210 Here is your plot at time = 996 seconds https://t.co/FCWnLZzFr3
+===============================================================
+@Saransh210 Hi there! What would you like to simulate today?
+===============================================================
+@Saransh210 Here is your plot at time = 37101 seconds https://t.co/0QjoUaxUrG
+===============================================================
+@Saransh210 Here is your plot at time = 27209 seconds https://t.co/uws7FZ4EK6
+===============================================================
+@Saransh210 Here is your plot at time = 10423 seconds https://t.co/6gzBE7tGQk
+===============================================================
+@Saransh210 Here is your plot at time = 69 seconds https://t.co/1K8QMZKvmj
+===============================================================
+@Saransh210 Here is your plot https://t.co/mL5Vtbql1x
+===============================================================
+@Saransh210 Hi there! What would you like to simulate today?
+===============================================================

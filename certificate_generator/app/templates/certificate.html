@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container w-50">
+    <form action="/render" method="post">
+        <div class="form-floating mb-3">
+            <input name="name" type="text" class="form-control" id="floatingInput" placeholder="Enter Name">
+            <label for="floatingInput">Enter Name</label>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">#</span>
+            <input name="pr_num" type="number" class="form-control" placeholder="PR number" aria-label="PR number"
+                aria-describedby="basic-addon1">
+        </div>
+        <div class="my-4">
+            <a href="/render">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
