@@ -1,0 +1,2 @@
+win10toast
+requests==2.25.1
