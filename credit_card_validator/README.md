@@ -1,7 +1,7 @@
 
 # Credit Card Validator: A powerful automated python script to validate credit card numbers 
 
-##### Note: This is single script ```cc_check.py``` code that can validate the cc without any use of modules and packages.
+##### Note: ```cc_check.py``` the cc without any use of modules and packages, moreover it is light-weight.
 
 Credit card numbers are generated according to certain rules. It gives merchants a way to verify the validity of a card number before accepting the customer's payment.
 
