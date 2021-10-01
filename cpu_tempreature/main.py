@@ -75,7 +75,7 @@ def getTemp(hardware):
     elif hardware == 5:
         temp = open(
             "/sys/bus/acpi/devices/LNXTHERM:00/thermal_zone/temp").read().strip().rstrip('000')
-        temp = str(float(temp)/10.0)
+        temp = str(float(temp) / 10.0)
     else:
         return 0
     return temp
@@ -92,7 +92,7 @@ def dispTemp(temp, degree, minutes, seconds):
 
 def convertDegree(degree, temp):
     if degree == "Fahrenheit":
-        temp = temp * 9/5.0 + 32
+        temp = temp * 9 / 5.0 + 32
         return temp
     if degree == "Kelvin":
         temp = temp + 273.15
