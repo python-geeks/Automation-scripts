@@ -1,4 +1,4 @@
-=========================================================================================
-#Credit Card Validator: A powerful automated pyhton script to validate credit card numbers 
-=========================================================================================
+
+# Credit Card Validator: A powerful automated pyhton script to validate credit card numbers 
+
 
