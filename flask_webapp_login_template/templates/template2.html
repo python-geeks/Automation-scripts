@@ -1,0 +1,78 @@
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">  
+  </head>
+  <title>Home</title>
+  {%extends 'base.html' %}
+  {% block body %}
+  <section class="forms-section">
+      
+      <div class="forms">
+        <div class="form-wrapper is-active">
+          <button type="button" class="switcher switcher-login">
+          <b>Login</b>  
+            <span class="underline"></span>
+          </button>
+          <div class="mssg">
+              {% from "includes/_formhelpers.html" import render_field %}
+          </div>  
+          <form class="form form-login" method="POST">
+                
+            <fieldset>
+              <div class="mssgs">
+                  {% include 'includes/_messages.html' %}
+              </div>
+              <div class="input-block">
+                  {{render_field(login_form.username, class_="form-control")}}
+              </div>
+  
+              <div class="input-block">
+                  {{render_field(login_form.password, class_="form-control")}}
+              </div>
+             
+                  <label for="submit2"></label>
+                  {{render_field(login_form.submit2)}}   
+             
+            </fieldset>
+         
+          </form>
+        </div>
+        
+        <div class="form-wrapper">
+          <button type="button" class="switcher switcher-signup">
+           <b>Sign Up</b> 
+            <span class="underline"></span>
+          </button>
+      
+          <form class="form form-signup" method="POST">
+            <fieldset>
+              <div class="mssg">
+                  {% from "includes/_formhelpers.html" import render_field %}
+              </div>  
+              <div class="input-block">
+                  {{render_field(reg_form.name, class_="form-control")}}
+              </div>
+              <div class="input-block">
+                  {{render_field(reg_form.email, class_="form-control")}}
+              </div>
+              <div class="input-block">
+                  {{render_field(reg_form.username, class_="form-control")}}
+              </div>
+              <div class="input-block">
+                  {{render_field(reg_form.password, class_="form-control")}}
+              </div>
+              <div class="input-block">
+                  {{render_field(reg_form.confirm, class_="form-control")}}
+              </div>
+            </fieldset>
+            
+              <label for="submit1"></label>
+              {{render_field(reg_form.submit1)}}
+          </form>
+        </div>
+      </div>
+    </section>
+     
+  
+  <script src = "static/js/script2.js"></script>
+  {% endblock %}
+  

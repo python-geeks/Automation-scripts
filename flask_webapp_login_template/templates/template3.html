@@ -1,0 +1,78 @@
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style3.css') }}">  
+  </head>
+  <title>Home</title>
+  {%extends 'base.html' %}
+  {% block body %}
+  <div class="container" id="container">
+    <div class="top" id = "top">
+        <div class="bottom">
+            <div class="signin" id ="signin">
+                 <h2>Sign In</h2> <br>
+                 <form class="form form-login" method="POST">
+              
+                  <fieldset>
+                    <div class="mssgs">
+                        {% from "includes/_formhelpers.html" import render_field %}
+                        {% include 'includes/_messages.html' %}
+                    </div>
+                    <div class="input-block">
+                        {{render_field(login_form.username, class_="form-control")}}
+                    </div>
+        
+                    <div class="input-block">
+                        {{render_field(login_form.password, class_="form-control")}}
+                    </div>
+                   
+                    <div class="login-btn">
+                        <label for="submit2"></label>
+                        {{render_field(login_form.submit2)}}   
+                      </div>
+                  </fieldset>
+               
+                </form>
+              
+              <button class="goto" id ="reg">
+                 Not a member yet? Click here to register!
+              </button>
+              <div class="line"></div>
+              
+            </div>
+
+            <div class="register" id ="signup">
+              <h2>Sign Up!</h2> <br>
+              <form class="form form-signup" method="POST">
+                <fieldset>
+                  <div class="mssg">
+                      {% from "includes/_formhelpers.html" import render_field %}
+                  </div>  
+                  <div class="input-block">
+                      {{render_field(reg_form.name, class_="form-control")}}
+                  </div>
+                  <div class="input-block">
+                      {{render_field(reg_form.email, class_="form-control")}}
+                  </div>
+                  <div class="input-block">
+                      {{render_field(reg_form.username, class_="form-control")}}
+                  </div>
+                  <div class="input-block">
+                      {{render_field(reg_form.password, class_="form-control")}}
+                  </div>
+                  <div class="input-block">
+                      {{render_field(reg_form.confirm, class_="form-control")}}
+                  </div>
+                </fieldset>
+                <div class="reg-btn">
+                  <label for="submit1"></label>
+                  {{render_field(reg_form.submit1)}}
+              </div>
+              </form>
+        </div>
+    </div>
+    
+  </div>
+     
+  
+  <script src = "static/js/script3.js"></script>
+  {% endblock %}
+  
