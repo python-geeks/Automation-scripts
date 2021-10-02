@@ -56,4 +56,4 @@ e.grid(row=5, column=3, columnspan=5, padx=10, pady=10)
 
 Label(master, text=" ").grid(row=10, sticky=W, rowspan=5)
 
-mainloop()
+tkinter.mainloop()
