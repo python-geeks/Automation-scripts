@@ -1,7 +1,10 @@
 import tweepy
 from time import sleep
 # Import your keys from keys.py present in the same folder
-from keys import *
+from keys import consumer_key
+from keys import consumer_secret
+from keys import access_token
+from keys import access_token_secret
 
 
 def retweet(hashtag, retweetNum):
