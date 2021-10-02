@@ -1,0 +1,2 @@
+sounddevice==0.4.2
+soundfile==0.10.3.post1
