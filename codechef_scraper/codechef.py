@@ -34,7 +34,7 @@ def get_problems(category, no_of_problems):
         # wait till the  first element is loaded
         wait.until(EC.element_to_be_clickable(
             (By.XPATH, "//*[@id='primary-content']/div/div[2]/div/div[2]/table/tbody/tr[1]/td[1]/div/a/b")))
-    except:
+    except TimeoutException as exception:  # noqa
         print("Couldn't fetch problem. Network issue or page slow to render. Try again")
         os._exit(-1)
 
