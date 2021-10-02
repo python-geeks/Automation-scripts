@@ -15,9 +15,8 @@ class Window(Frame):
     def openfile(self):
         filename = \
             filedialog.askopenfilename(filetypes=(('Markdown File',
-                                                   '*.md , *.mdown , *.markdown'),
-                                                  ('Text file', '*.txt'),
-                                                  ('All files', '*.*')))
+                                                   '*.md , *.mdown'),
+                                                  ('Text file', '*.txt')))
         if filename:
             try:
                 md2html = Markdown()
