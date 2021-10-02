@@ -219,7 +219,6 @@ def main():
     root = Tk()
     root.geometry('250x200')
     root.title("Expense Tracker")
-    tracker = ExpenseTracker(root)
     root.mainloop()
 
 
