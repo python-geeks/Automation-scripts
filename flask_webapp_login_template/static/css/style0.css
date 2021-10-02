@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Lora&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif !important;
+    border: 20px solid black;
+}
+.container{
+    margin-top: 5%;
+    padding: 20px;
+}
+
+a{
+    font-size: 20px;
+}
