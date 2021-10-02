@@ -1,6 +1,5 @@
 import tkinter
 import subprocess
-from tkinter import *
 
 
 def makenew():
