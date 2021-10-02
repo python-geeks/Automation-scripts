@@ -1,6 +1,5 @@
 import psutil
 from plyer import notification
-import time
 # From psutil we import sensors battery class which gives us battery percentage
 threshold = int(input('Enter the threshold: '))
 
