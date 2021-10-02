@@ -1,0 +1,13 @@
+certifi==2021.5.30
+charset-normalizer==2.0.6
+decorator==4.4.2
+idna==3.2
+imageio==2.9.0
+imageio-ffmpeg==0.4.5
+moviepy==1.0.3
+numpy==1.21.2
+Pillow==8.3.2
+proglog==0.1.9
+requests==2.26.0
+tqdm==4.62.3
+urllib3==1.26.7
