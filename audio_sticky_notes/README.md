@@ -9,7 +9,7 @@ You need the following modules to run the program
 
 
 ### Instructions
-The base window just consists of an option to create a new audio sticky note or to reset the sticky notes. You can click on `New+` to create a new audio sticky note and the `Reset-` to clear notes.
+The base window just consists of an option to create a new audio sticky note or to reset the sticky notes. You can click on `New+` to create a new audio sticky note and the `Reset-` to clear all notes, be sure to restart the program on reset!
 By creating a new note, you get the note's window with a few options. Under the `Record for: (secs)` section, you can choose how long do you want to record the note. Below that is the `Playback:` section where you can click the button to listen to the previously recorded audio note. For a more sticky note like experience you might want to add the program to your startup folder!
 
 ### Working Screenshots
