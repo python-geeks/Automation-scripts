@@ -1,0 +1,4 @@
+selenium >= 3.141.0
+pynput >= 1.7.3
+notify-run >= 0.0.14
+pause >= 0.3
