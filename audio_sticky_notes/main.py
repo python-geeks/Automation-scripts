@@ -21,6 +21,12 @@ def maintain():
     storage.close()
 
 
+def reset():
+    storage = open("assets\\storage", "w")
+    storage.write(str(0))
+    storage.close()
+
+
 try:
     getwin = open("assets\\storage", "r")
     win = getwin.readline()
@@ -38,6 +44,8 @@ while True:
     try:
         makeNewBtn = tkinter.Button(manager, text='New+', command=makenew)
         makeNewBtn.pack()
+        reset = tkinter.Button(manager, text='New+', command=reset)
+        reset.pack()
         mainloop()
     except TclError:
         break
