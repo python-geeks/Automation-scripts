@@ -1,5 +1,5 @@
 ## About
-This script allows you to delete multiple pages from a PDF of your choosing
+This script allows you to maintain voice note based desktop sticky notes.
 
 ### Setup Modules
 You need the following modules to run the program
@@ -10,7 +10,7 @@ You need the following modules to run the program
 
 ### Instructions
 The base window just consists of an option to create a new audio sticky note or to reset the sticky notes. You can click on `New+` to create a new audio sticky note and the `Reset-` to clear notes.
-By creating a new note, you get the note's window with a few options. Under the `Record for: (secs)` section, you can choose how long do you want to record the note. Below that is the `Playback:` section where you can click the button to listen to the previously recorded audio note.
+By creating a new note, you get the note's window with a few options. Under the `Record for: (secs)` section, you can choose how long do you want to record the note. Below that is the `Playback:` section where you can click the button to listen to the previously recorded audio note. For a more sticky note like experience you might want to add the program to your startup folder!
 
 ### Working Screenshots
 ![image](https://user-images.githubusercontent.com/12183499/135730272-503b3e29-31f9-498d-b554-f8ea7fe9c4a3.png)<br>
