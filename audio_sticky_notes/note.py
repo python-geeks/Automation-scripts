@@ -27,13 +27,10 @@ def rec(duration):
 
 
 def playback():
-    try:
-        filename = "assets\\recordings\\AudioNote{}.flac".format(str(sys.argv[1]))
-        data, fs = sf.read(filename, dtype='float32')
-        sd.play(data, fs)
-        sd.wait()
-    except:
-        pass
+    filename = "assets\\recordings\\AudioNote{}.flac".format(str(sys.argv[1]))
+    data, fs = sf.read(filename, dtype='float32')
+    sd.play(data, fs)
+    sd.wait()
 
 
 master = tkinter.Tk()
