@@ -36,5 +36,6 @@ def main():
     print("Retweet process started")
     retweet(hashtag, retweetNum)
 
+
 if __name__ == '__main__':
     main()
