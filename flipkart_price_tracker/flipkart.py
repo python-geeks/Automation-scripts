@@ -52,4 +52,4 @@ if (PRODUCT_URL == '' or MY_APP_PASSWORD == '' or MY_EMAIL == '' or RECEIVER_EMA
     exit()
 while(True):
     priceCheck()
-    time.sleep(CHECK_AGAIN*60)
+    time.sleep(CHECK_AGAIN * 60)
