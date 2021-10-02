@@ -36,7 +36,7 @@ def playback():
         pass
 
 
-master = Tk()
+master = tkinter.Tk()
 master.title("Audio Note {}".format(str(sys.argv[1])))
 
 tkinter.Label(master, text=" Record for: (sec) ").grid(row=0, sticky=tkinter.W, rowspan=5, padx=15)
