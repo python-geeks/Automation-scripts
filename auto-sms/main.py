@@ -1,7 +1,6 @@
 # Created by @advaitasaha
 # Imports
 import requests
-import json
 
 # Variables
 global apiKey
@@ -12,7 +11,10 @@ SID = ""  # enter your SID number
 senderID = ""  # enter the senderID registered
 
 # Functions for semding SMS
+
 def send_sms(number):
+
+
     headers_sms = {
         "api-key": apiKey,
     }
@@ -102,7 +104,7 @@ while True:
     elif userInput == 3:
         number = int(input("Enter the phone number to which you want to send: "))
         out = number_val(number)
-        if out[0] == True:
+        if out[0]:
             print("------------------------------------------------------------------")
             print("Valid Number, details below")
             print(out[1])
