@@ -1,13 +1,14 @@
-from tkinter import *
+import tkinter as tk
+from tkinter import Tk
 from tkinter import font, filedialog, messagebox as mbox
 from markdown2 import Markdown
 from tkhtmlview import HTMLLabel
 
 
-class Window(Frame):
+class Window(tk.Frame):
 
     def __init__(self, master=None):
-        Frame.__init__(self, master)
+        tk.Frame.__init__(self, master)
         self.master = master
         self.font = font.Font(family='Helvetica', size=14)
         self.init_window()
@@ -28,10 +29,10 @@ class Window(Frame):
 
     def init_window(self):
         self.master.title('Mardown Viewer')
-        self.pack(fill=BOTH, expand=1)
+        self.pack(fill=tk.BOTH, expand=1)
 
-        self.mainmenu = Menu(self)
-        self.filemenu = Menu(self.mainmenu)
+        self.mainmenu = tk.Menu(self)
+        self.filemenu = tk.Menu(self.mainmenu)
         self.filemenu.add_command(label='Open', command=self.openfile)
         self.filemenu.add_separator()
         self.filemenu.add_command(label='Exit', command=self.quit)
@@ -40,11 +41,11 @@ class Window(Frame):
 
         self.outputbox = HTMLLabel(self, width='1', background='white',
                                    html='<h1>Welcome</h1>')
-        self.outputbox.pack(fill=BOTH, expand=1, side=RIGHT)
+        self.outputbox.pack(fill=tk.BOTH, expand=1, side=tk.RIGHT)
         self.outputbox.fit_height()
 
 
 root = Tk()
 root.geometry('750x600')
-app = Window(root)
+app = Window(master=root)
 app.mainloop()
