@@ -1,7 +1,7 @@
 from selenium import webdriver
 import time
 import re
-from pynput.keyboard import Controller
+# from pynput.keyboard import Controller
 from notify_run import Notify
 
 
@@ -39,7 +39,7 @@ class AutoMeet():
         nextButton = self.browser.find_element_by_id('identifierNext')
         nextButton.click()
         time.sleep(15)  # 5
-        keyboard = Controller()
+        # keyboard = Controller()
         # keyboard.type(passwordStr)
         password = self.browser.find_element_by_xpath("//input[@class='whsOnd zHQkBf']")
         password.send_keys(self.passwordStr)
@@ -56,14 +56,14 @@ class AutoMeet():
             try:
                 self.browser.find_element_by_xpath("//span[@class='NPEfkd RveJvd snByac' and contains(text(), \
                                                     'Ask to join')]").click()
-            except:
+            except BaseException:
                 self.browser.find_element_by_xpath("//span[@class='NPEfkd RveJvd snByac' and contains(text(), \
                                                     'Join now')]").click()
-        except:
+        except BaseException:
             try:
                 self.browser.find_element_by_xpath("//span[@class='NPEfkd RveJvd snByac' and contains(text(), \
                                                     'Ask to join')]").click()
-            except:
+            except BaseException:
                 self.browser.find_element_by_xpath("//span[@class='NPEfkd RveJvd snByac' and contains(text(), \
                                                     'Join now')]").click()
         # time.sleep(15) # Wasnt here
@@ -94,16 +94,16 @@ class AutoMeet():
             # print(people_int[0])
             currentStudents = int(people_int[0])
             if currentStudents > greatestStudents:
-                    greatestStudents = currentStudents
+                greatestStudents = currentStudents
             else:
-                    if currentStudents < greatestStudents/2:
-                            self.browser.close()
-                            break
+                if currentStudents < greatestStudents / 2:
+                    self.browser.close()
+                    break
 
     def waiting_N_click(self, path):
         try:
             self.browser.find_element_by_xpath(path).click()
-        except:
+        except BaseException:
             # print("1")
             time.sleep(2)
             self.waiting_N_click(path)
