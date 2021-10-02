@@ -39,22 +39,22 @@ def playback():
 master = Tk()
 master.title("Audio Note {}".format(str(sys.argv[1])))
 
-Label(master, text=" Record for: (sec) ").grid(row=0, sticky=tkinter.W, rowspan=5, padx=15)
+tkinter.Label(master, text=" Record for: (sec) ").grid(row=0, sticky=W, rowspan=5, padx=15)
 
-b = Button(master, text="5", command=rec5s)
+b = tkinter.Button(master, text="5", command=rec5s)
 b.grid(row=0, column=2, columnspan=2, rowspan=2, padx=10, pady=10)
 
-c = Button(master, text="10", command=rec10s)
+c = tkinter.Button(master, text="10", command=rec10s)
 c.grid(row=0, column=4, columnspan=2, rowspan=2, padx=10, pady=10)
 
-d = Button(master, text="15", command=rec15s)
+d = tkinter.Button(master, text="15", command=rec15s)
 d.grid(row=0, column=6, columnspan=2, rowspan=2, padx=10, pady=10)
 
-Label(master, text=" Playback: ").grid(row=5, sticky=W, rowspan=5, padx=15)
+tkinter.Label(master, text=" Playback: ").grid(row=5, sticky=tkinter.W, rowspan=5, padx=15)
 
-e = Button(master, text="Listen to the note", command=playback)
+e = tkinter.Button(master, text="Listen to the note", command=playback)
 e.grid(row=5, column=3, columnspan=5, padx=10, pady=10)
 
-Label(master, text=" ").grid(row=10, sticky=tkinter.W, rowspan=5)
+tkinter.Label(master, text=" ").grid(row=10, sticky=tkinter.W, rowspan=5)
 
 tkinter.mainloop()
