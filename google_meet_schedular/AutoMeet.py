@@ -107,4 +107,3 @@ class AutoMeet():
             # print("1")
             time.sleep(2)
             self.waiting_N_click(path)
-            
