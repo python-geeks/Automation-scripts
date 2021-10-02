@@ -47,5 +47,5 @@ while True:
         reset = tkinter.Button(manager, text='Reset-', command=reset)
         reset.pack()
         mainloop()
-    except TclError:
+    except tkinter.TclError:
         break
