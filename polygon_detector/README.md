@@ -1,10 +1,15 @@
 
-# Polygon detector: A powerful automated python script to detect following properties of polygon from an input image
+# Polygon detector: A powerful automated python script to detect various polygon from an input image.
 
-```type```
-```color```
-```area```
-```location```
+
+Following listed properties are determined by the script
+```
+type
+color
+area
+location
+```
+_Note: Color will be classified as red or green or blue depending upon the dominant shade also note for the centroid location of each shape top left corner of the image is taken as origin._
 
 Supported Polygons
 ```
@@ -18,9 +23,6 @@ Supported Polygons
 >Hexagon
 >Circle
 ```
-
-_Note: Color will be classified as red or green or blue depending upon the dominant shade also note for the centroid location of each shape top left corner of the image is taken as origin._
-
 
 ### Sample Example
 
