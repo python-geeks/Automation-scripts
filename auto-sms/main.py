@@ -12,8 +12,8 @@ senderID = ""  # enter the senderID registered
 
 # Functions for semding SMS
 
-def send_sms(number):
 
+def send_sms(number):
 
     headers_sms = {
         "api-key": apiKey,
@@ -39,6 +39,7 @@ def send_sms(number):
 
 
 def number_val(number):
+
     headers = {
         "Content-Type": "json",
         "api-key": apiKey,
