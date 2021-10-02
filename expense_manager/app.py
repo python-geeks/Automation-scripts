@@ -1,11 +1,11 @@
 import db
-from tkinter import *
-from tkinter.ttk import *
+import tkinter as tk
+from tkinter.ttk import Button, Frame, Entry, Label
 
 LARGE_FONT = ("Verdana", 32)
 
 
-class ExpenseTracker:
+class ExpenseManager:
     def __init__(self, master):
         self.frame = Frame(master)
         self.frame.pack()
@@ -62,20 +62,20 @@ class ExpenseTracker:
 
     # INSERT VALUES
     def groceries(self):
-        top = Toplevel(self.frame)
+        top = tk.Toplevel(self.frame)
         top.title('Groceries expenses')
-        Label(top, text="Name of good").grid(row=1, column=0, sticky=W, pady=2)
-        Label(top, text="Price").grid(row=2, column=0, sticky=W, pady=2)
-        Label(top, text="Date of purchase").grid(row=3, column=0, sticky=W, pady=2)
+        Label(top, text="Name of good").grid(row=1, column=0, sticky=tk.W, pady=2)
+        Label(top, text="Price").grid(row=2, column=0, sticky=tk.W, pady=2)
+        Label(top, text="Date of purchase").grid(row=3, column=0, sticky=tk.W, pady=2)
 
         e1 = Entry(top)
-        e1.grid(row=1, column=1, sticky=W, pady=2)
+        e1.grid(row=1, column=1, sticky=tk.W, pady=2)
         e2 = Entry(top)
-        e2.grid(row=2, column=1, sticky=W, pady=2)
+        e2.grid(row=2, column=1, sticky=tk.W, pady=2)
         e3 = Entry(top)
-        e3.grid(row=3, column=1, sticky=W, pady=2)
+        e3.grid(row=3, column=1, sticky=tk.W, pady=2)
 
-        text = Text(top, width=40, height=10)
+        text = tk.Text(top, width=40, height=10)
         text.grid(row=5, column=1, columnspan=2)
 
         # BUTTONS
@@ -100,20 +100,20 @@ class ExpenseTracker:
         B5.grid(row=4, column=3)
 
     def household(self):
-        top = Toplevel(self.frame)
+        top = tk.Toplevel(self.frame)
         top.title('Household expenses')
-        Label(top, text="Name of good").grid(row=1, column=0, sticky=W, pady=2)
-        Label(top, text="Price").grid(row=2, column=0, sticky=W, pady=2)
-        Label(top, text="Date of purchase").grid(row=3, column=0, sticky=W, pady=2)
+        Label(top, text="Name of good").grid(row=1, column=0, sticky=tk.W, pady=2)
+        Label(top, text="Price").grid(row=2, column=0, sticky=tk.W, pady=2)
+        Label(top, text="Date of purchase").grid(row=3, column=0, sticky=tk.W, pady=2)
 
         e1 = Entry(top)
-        e1.grid(row=1, column=1, sticky=W, pady=2)
+        e1.grid(row=1, column=1, sticky=tk.W, pady=2)
         e2 = Entry(top)
-        e2.grid(row=2, column=1, sticky=W, pady=2)
+        e2.grid(row=2, column=1, sticky=tk.W, pady=2)
         e3 = Entry(top)
-        e3.grid(row=3, column=1, sticky=W, pady=2)
+        e3.grid(row=3, column=1, sticky=tk.W, pady=2)
 
-        text = Text(top, width=40, height=10)
+        text = tk.Text(top, width=40, height=10)
         text.grid(row=5, column=1, columnspan=2)
 
         # BUTTONS###
@@ -138,23 +138,23 @@ class ExpenseTracker:
         B5.grid(row=4, column=3)
 
     def entertainment(self):
-        top = Toplevel(self.frame)
+        top = tk.Toplevel(self.frame)
         top.title('Entertainment expenses')
-        Label(top, text="Name of good").grid(row=1, column=0, sticky=W, pady=2)
-        Label(top, text="Price").grid(row=2, column=0, sticky=W, pady=2)
-        Label(top, text="Date of purchase").grid(row=3, column=0, sticky=W, pady=2)
+        Label(top, text="Name of good").grid(row=1, column=0, sticky=tk.W, pady=2)
+        Label(top, text="Price").grid(row=2, column=0, sticky=tk.W, pady=2)
+        Label(top, text="Date of purchase").grid(row=3, column=0, sticky=tk.W, pady=2)
 
         e1 = Entry(top)
-        e1.grid(row=1, column=1, sticky=W, pady=2)
+        e1.grid(row=1, column=1, sticky=tk.W, pady=2)
         e2 = Entry(top)
-        e2.grid(row=2, column=1, sticky=W, pady=2)
+        e2.grid(row=2, column=1, sticky=tk.W, pady=2)
         e3 = Entry(top)
-        e3.grid(row=3, column=1, sticky=W, pady=2)
+        e3.grid(row=3, column=1, sticky=tk.W, pady=2)
 
-        text = Text(top, width=40, height=10)
+        text = tk.Text(top, width=40, height=10)
         text.grid(row=5, column=1, columnspan=2)
 
-        # BUTTONS###
+        # BUTTONS
 
         B1 = Button(top, text="Insert Values",
                     command=lambda: (self.insert(db.insert_entertrainment, e1, e2, e3), self.added(top)))
@@ -176,20 +176,20 @@ class ExpenseTracker:
         B5.grid(row=4, column=3)
 
     def other(self):
-        top = Toplevel(self.frame)
+        top = tk.Toplevel(self.frame)
         top.title('Entertainment expenses')
-        Label(top, text="Name of good").grid(row=1, column=0, sticky=W, pady=2)
-        Label(top, text="Price").grid(row=2, column=0, sticky=W, pady=2)
-        Label(top, text="Date of purchase").grid(row=3, column=0, sticky=W, pady=2)
+        Label(top, text="Name of good").grid(row=1, column=0, sticky=tk.W, pady=2)
+        Label(top, text="Price").grid(row=2, column=0, sticky=tk.W, pady=2)
+        Label(top, text="Date of purchase").grid(row=3, column=0, sticky=tk.W, pady=2)
 
         e1 = Entry(top)
-        e1.grid(row=1, column=1, sticky=W, pady=2)
+        e1.grid(row=1, column=1, sticky=tk.W, pady=2)
         e2 = Entry(top)
-        e2.grid(row=2, column=1, sticky=W, pady=2)
+        e2.grid(row=2, column=1, sticky=tk.W, pady=2)
         e3 = Entry(top)
-        e3.grid(row=3, column=1, sticky=W, pady=2)
+        e3.grid(row=3, column=1, sticky=tk.W, pady=2)
 
-        text = Text(top, width=40, height=10)
+        text = tk.Text(top, width=40, height=10)
         text.grid(row=5, column=1, columnspan=2)
 
         # BUTTONS###
@@ -216,10 +216,10 @@ class ExpenseTracker:
 
 def main():
     # db.create_tables(connection)
-    root = Tk()
-    root.geometry('250x200')
-    root.title("Expense Tracker")
-    ExpenseTracker(root)
+    root = tk.Tk()
+    root.geometry('600x500')
+    root.title("Expense Manager")
+    ExpenseManager(root)
     root.mainloop()
 
 
