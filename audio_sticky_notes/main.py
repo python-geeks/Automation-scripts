@@ -44,7 +44,7 @@ while True:
     try:
         makeNewBtn = tkinter.Button(manager, text='New+', command=makenew)
         makeNewBtn.pack()
-        reset = tkinter.Button(manager, text='New+', command=reset)
+        reset = tkinter.Button(manager, text='Reset-', command=reset)
         reset.pack()
         mainloop()
     except TclError:
