@@ -84,12 +84,12 @@ class ExpenseManager:
                     self.added(top)))
         B1.grid(row=1, column=2)
 
-        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, END),
-                    text.insert(END, self.display_all(db.select_all_groceries()))))
+        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, tk.END),
+                    text.insert(tk.END, self.display_all(db.select_all_groceries()))))
         B2.grid(row=2, column=2)
 
-        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, END),
-                    text.insert(END, self.find_expense(db.select_grocery, e1, e2))))
+        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, tk.END),
+                    text.insert(tk.END, self.find_expense(db.select_grocery, e1, e2))))
         B3.grid(row=2, column=3)
 
         B3 = Button(top, text="Delete expense", command=lambda: (self.delete_expense(db.delete_grocery, e1, e2),
@@ -122,12 +122,12 @@ class ExpenseManager:
                     command=lambda: (self.insert(db.insert_household, e1, e2, e3), self.added(top)))
         B1.grid(row=1, column=2)
 
-        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, END),
-                    text.insert(END, self.display_all(db.select_all_household()))))
+        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, tk.END),
+                    text.insert(tk.END, self.display_all(db.select_all_household()))))
         B2.grid(row=2, column=2)
 
-        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, END),
-                    text.insert(END, self.find_expense(db.select_household, e1, e2))))
+        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, tk.END),
+                    text.insert(tk.END, self.find_expense(db.select_household, e1, e2))))
         B3.grid(row=2, column=3)
 
         B3 = Button(top, text="Delete expense",
@@ -160,12 +160,12 @@ class ExpenseManager:
                     command=lambda: (self.insert(db.insert_entertrainment, e1, e2, e3), self.added(top)))
         B1.grid(row=1, column=2)
 
-        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, END),
-                    text.insert(END, self.display_all(db.select_all_entertrainment()))))
+        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, tk.END),
+                    text.insert(tk.END, self.display_all(db.select_all_entertrainment()))))
         B2.grid(row=2, column=2)
 
-        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, END),
-                    text.insert(END, self.find_expense(db.select_entertainment, e1, e2))))
+        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, tk.END),
+                    text.insert(tk.END, self.find_expense(db.select_entertainment, e1, e2))))
         B3.grid(row=2, column=3)
 
         B3 = Button(top, text="Delete expense",
@@ -199,11 +199,11 @@ class ExpenseManager:
         B1.grid(row=1, column=2)
 
         B2 = Button(top, text="Select All", command=lambda: (
-            text.delete(1.0, END), text.insert(END, self.display_all(db.select_all_other()))))
+            text.delete(1.0, tk.END), text.insert(tk.END, self.display_all(db.select_all_other()))))
         B2.grid(row=2, column=2)
 
         B3 = Button(top, text="Find value", command=lambda: (
-            text.delete(1.0, END), text.insert(END, self.find_expense(db.select_other, e1, e2))))
+            text.delete(1.0, tk.END), text.insert(tk.END, self.find_expense(db.select_other, e1, e2))))
         B3.grid(row=2, column=3)
 
         B3 = Button(top, text="Delete expense",
