@@ -39,7 +39,7 @@ def playback():
 master = Tk()
 master.title("Audio Note {}".format(str(sys.argv[1])))
 
-Label(master, text=" Record for: (sec) ").grid(row=0, sticky=W, rowspan=5, padx=15)
+Label(master, text=" Record for: (sec) ").grid(row=0, sticky=tkinter.W, rowspan=5, padx=15)
 
 b = Button(master, text="5", command=rec5s)
 b.grid(row=0, column=2, columnspan=2, rowspan=2, padx=10, pady=10)
@@ -55,6 +55,6 @@ Label(master, text=" Playback: ").grid(row=5, sticky=W, rowspan=5, padx=15)
 e = Button(master, text="Listen to the note", command=playback)
 e.grid(row=5, column=3, columnspan=5, padx=10, pady=10)
 
-Label(master, text=" ").grid(row=10, sticky=W, rowspan=5)
+Label(master, text=" ").grid(row=10, sticky=tkinter.W, rowspan=5)
 
 tkinter.mainloop()
