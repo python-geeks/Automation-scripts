@@ -18,7 +18,7 @@ auto = AutoMeet("email ID","password","link")
 auto.automeetG()
 ```
 - Replace email ID, password and link with your credentials and meeting link 
-## Bonus (for a fixed schedule)
+## Bonus1 (for a fixed schedule)
 ```
 from AutoMeet import AutoMeet
 import time
@@ -61,3 +61,9 @@ while True:
     print("HOLD")
     time.sleep(30)
 ```
+## Bonus2 (get notified)
+- Get notified of the url/links shared in your meet’s chatbox by opening terminal/CMD and enter :
+```
+$ notify-run register
+```
+- Scan the QR code in your phone and you will get the push notification
