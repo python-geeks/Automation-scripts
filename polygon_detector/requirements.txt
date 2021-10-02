@@ -1,3 +1,2 @@
-numpy
-cv2
-os
+numpy==1.19.1
+opencv==4.4.0
