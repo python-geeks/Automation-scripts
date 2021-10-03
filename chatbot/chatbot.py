@@ -22,7 +22,6 @@ def commands(voice_received):
         farewell()
 
 def hearing():
-    #voice_received = ''
     # obtain audio from the microphone
     r = sr.Recognizer()
     with sr.Microphone() as source:
