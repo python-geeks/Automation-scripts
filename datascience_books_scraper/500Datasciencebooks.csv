@@ -1,0 +1,500 @@
+Sr.No,Book name,Publisher,Author,Year
+1,"Numerical Python: Scientific Computing and Data Science Applications with Numpy, SciPy and Matplotlib",Apress,Robert Johansson,2019
+2,"Data Analytics: Practical Guide to Leveraging the Power of Algorithms, Data Science, Data Mining, Statistics, Big Data, and Predictive Analysis to Improve Business, Work, and Life",nan,Arthur Zhang,2017
+3,"Data Analysis From Scratch With Python: Beginner Guide using Python, Pandas, NumPy, Scikit-Learn, IPython, TensorFlow and Matplotlib",AI Sciences LLC,Peters Morgan,2018
+4,Python Data Science Handbook.  Essential Tools for Working with Data,O'Reilly Media,Jake VanderPlas,2016
+5,"R for Data Science: Import, Tidy, Transform, Visualize, and Model Data",O’Reilly Media,"Hadley Wickham, Garrett Grolemund",2017
+6,Data Science with R A Step By Step Guide With Visual Illustrations and Examples,Andrew Oleksy,Andrew Oleksy,2018
+7,Data Science for Business: What You Need to Know About Data Mining and Data-Analytic Thinking,O'Reilly Media,"Foster Provost, Tom Fawcett",2013
+8,The Art of Data Science: A Guide for Anyone Who Works with Data,nan,"Roger D. Peng, Elizabeth Matsui",2015
+9,"Introducing Data Science: Big Data, Machine Learning, and more, using Python tools",Manning Publications,"Davy Cielen, Arno Meysman, Mohamed Ali",2016
+10,Machine Learning: The Art and Science of Algorithms that Make Sense of Data,Cambridge University Press,Peter Flach,2012
+11,Data Science For Dummies,John Wiley & Sons,Lillian Pierson,2015
+12,"Python Data Science: The Ultimate Handbook for Beginners on How to Explore NumPy for Numerical Data, Pandas for Data Analysis, IPython, Scikit-Learn and Tensorflow for Machine Learning and Business",Steve Blair,Steve Blair,2019
+13,Practical Web Scraping for Data Science: Best Practices and Examples with Python,Apress,"Seppe vanden Broucke, Bart Baesens",2018
+14,Analytics in a Big Data World: The Essential Guide to Data Science and its Applications,Wiley,Bart Baesens,2014
+15,Statistics: The Art and Science of Learning from Data,Pearson,"Christine A. Franklin, Bernhard Klingenberg, Alan Agresti",2017
+16,Principles of Data Science,nan,Sinan Ozdemir,2016
+17,Data Science,The MIT Press,"John D. Kelleher, Brendan Tierney",2018
+18,The data science handbook,John Wiley & Sons,"Cady, Field",2017
+19,Applied Data Science with Python and Jupyter,Packt Publishing,Alex Galea,2018
+20,"Data Science and Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data",Wiley,EMC Education Services,2015
+21,"An Introduction to Data: Everything You Need to Know About AI, Big Data and Data Science",Springer International Publishing,Francesco Corea,2019
+22,Advanced Data Science and Analytics with Python,CRC Press,Jesús Rogel-Salazar,2020
+23,"AI in Marketing, Sales and Service: How Marketers without a Data Science Degree can use AI, Big Data and Bots",Palgrave Macmillan,Peter Gentsch,2018
+24,500 Most Important Data Science Interview Questions and Answers,Indian Wolf Publications,Vamsee Puligadda,2018
+25,Practical Data Science with R,Manning Publications,"Nina Zumel, John Mount",2014
+26,"Intro to Python forComputer Science and Data Science : Learning to Program with AI, Big Data and the Cloud",nan,Paul Deitel,2020
+27,Data Visualization and Exploration with R - A Practical Guide to Using R RStudio and Tidyverse for Data Visualization Exploration and Data Science Applications,Geospatial Training Services,Eric Pimpler,2017
+28,"Convolutional Neural Networks in Python: Master Data Science and Machine Learning with Modern Deep Learning in Python, Theano, and TensorFlow (Machine Learning in Python)",LazyProgrammer.me,LazyProgrammer,2016
+29,"Linux: This Book Includes 4 Manuscripts. The Underground Bible to the UNIX Operating System with Tools On Security and Kali Hacking to Understand Computer Programming, Data Science and Command Line",nan,"Growth, Darwin",2020
+30,120 real data science interview questions,nan,"Carl Shan, Max Song, Henry Wang, And  William Chen",2015
+31,Data Science from Scratch: First Principles with Python,nan,Joel Grus,nan
+32,Data Science Programming All-In-One For Dummies,John Wiley & Sons,"John Paul Mueller, Luca Massaron",2020
+33,"Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control",Cambridge University Press,"Steven L. Brunton, J. Nathan Kutz",2019
+34,"The Decision Maker’s Handbook To Data Science: A Guide For Non-Technical Executives, Managers, And Founders",Apress,Stylianos Kampakis,2020
+35,Probability and Statistics for Data Science: Math + R + Data,CRC Press,Norman S. Matloff,2020
+36,Machine Learning and Data Science Blueprints for Finance: From Building Trading Strategies to Robo-Advisors Using Python,O'Reilly Media,"Hariom Tatsat, Sahil Puri, Brad Lookabaugh",2020
+37,Big Data MBA Driving Business Strategies with Data Science,nan,Schmarzo B.,nan
+38,Data Structures and Algorithms with Python: Undergraduate Topics in Computer Science,Springer,"Kent Lee, Steve Hubbard",2015
+39,"Big Data, Cloud Computing, Data Science & Engineering",Springer International Publishing,Roger Lee,2019
+40,"Python for Data Science, 2nd Edition",Wiley,"John Paul Mueller, Luca Massaron",2019
+41,Build a Career in Data Science,Manning,"Emily Robinson, Jacqueline Nolis",2020
+42,Data Science from Scratch: First Principles with Python,O'Reilly Media,Joel Grus,2015
+43,"Business Intelligence, Analytics, and Data Science: A Managerial Perspective",Pearson,"Ramesh Sharda, Dursun Delen, Efraim Turban",2017
+44,Machine Learning: 2 Books in 1: An Introduction Math Guide for Beginners to Understand Data Science Through the Business Applications,nan,"Hack, Samuel",2020
+45,"Fraud analytics using descriptive, predictive, and social network techniques : a guide to data science for fraud detection",John Wiley & Sons,"Bart Baesens, Veronique Van Vlasselaer, Wouter Verbeke",2015
+46,Doing Data Science: Straight Talk from the Frontline,O'Reilly Media,"Rachel Schutt, Cathy O'Neil",2013
+47,The Enterprise Big Data Lake: Delivering the Promise of Big Data and Data Science,O’Reilly Media,Alex Gorelik,2019
+48,Data Science and Big Data Analytics,Springer Singapore,"Durgesh Kumar Mishra, Xin-She Yang, Aynur Unal",2019
+49,"Intro to Python for Computer Science and Data Science: Learning to Program with AI, Big Data and The Cloud",Pearson,"Paul J. Deitel, Harvey Deitel",2020
+50,"Natural Language Processing in Python: Master Data Science and Machine Learning for spam detection, sentiment analysis, latent semantic analysis, and article spinning (Machine Learning in Python)",LazyProgrammer,Unknown,2016
+51,Data Science from Scratch: First Principles with Python,O'Reilly Media,Joel Grus,2019
+52,A Hands-On Introduction to Data Science,Cambridge University Press,Chirag Shah,2020
+53,MALWARE DATA SCIENCE  Attack Detection and Attribution,No Starch Press,Joshua Saxe,2018
+54,Data Science Strategy For Dummies,Wiley,Ulrika Jägare,2019
+55,Data Science with Julia,CRC Press,"Paul D. McNicholas, Peter A. Tait",2019
+56,Practical Data Science With R,Manning Publications,"Nina Zumel, John Mount, Jeremy Howard, Rachel Thomas",2020
+57,"Parallel computing for data science : with examples in R, C++ and CUDA",CRC Press,"Matloff, Norman S.",2016
+58,"It's All Analytics!: The Foundations of AI, Big Data, and Data Science Landscape for Professionals in Healthcare, Business, and Government",CRC Press,"Scott Burk, Gary D. Miner",2020
+59,"PYTHON: Learn Coding Programs with Python Programming and Master Data Analysis & Analytics, Data Science and Machine Learning with the Complete Python for Beginners Crash Course - 4 Books in 1",nan,"Academy, Tech Ed",2020
+60,"Univariate, Bivariate, and Multivariate Statistics Using R: Quantitative Tools for Data Analysis and Data Science",Wiley,Daniel J. Denis,2020
+61,Data science : fondamentaux et études de cas : Machine learning avec Python et R,Eyrolles,"Eric Biernat, Michel Lutz, Yann LeCun",2015
+62,Docker for Data Science: Building Scalable and Extensible Data Infrastructure Around the Jupyter Notebook Server,Apress,Joshua Cook,2017
+63,Hands-on data science and Python machine learning : perform data mining and machine learning efficiently using Python and Spark,Packt Publishing - ebooks Account,Frank Kane,2017
+64,Foundations of Data Science,Cambridge University Press,"Avrim Blum, John Hopcroft, Ravindran Kannan",2020
+65,"Data science from scratch: the #1 data science guide for everything a data scientist needs to know: Python, linear algebra, statistics, coding, applications, neural networks, and decision trees",Steven Cooper;Data Science,"Cooper, Steven",2018
+66,"Detecting regime change in computational finance: data science, machine learning and algorithmic trading",CRC Press,"Chen, Jun, Tsang, Edward",2021
+67,Data Science in Production: Building Scalable Model Pipelines with Python,Independently published,Ben G Weber,2020
+68,Data Science do zero: Primeiras regras com o Python,Alta Books,Joel Grus,2016
+69,Hands-on Scikit-Learn for Machine Learning Applications: Data Science Fundamentals with Python,Apress,David Paper,2019
+70,Practical Data Science with Python 3,Apress,Ervin Varga,2019
+71,"Unsupervised Machine Learning in Python: Master Data Science and Machine Learning with Cluster Analysis, Gaussian Mixture Models, and Principal Components Analysis",LazyProgrammer,Lazy Programmer,2016
+72,"Python Programming: 3 BOOKS IN 1 Learn machine learning, data science and analysis with a crash course for beginners. Included coding exercises for artificial intelligence, Numpy, Pandas and Ipython.",nan,"Test, Jason",2020
+73,"Data Science for Beginners: 4 Books in 1: Python Programming, Data Analysis, Machine Learning. A Complete Overview to Master The Art of Data Science From Scratch Using Python for Business",nan,Andrew Park,2020
+74,A collection of Data Science Interview Questions Solved in Python and Spark: Hands-on Big Data and Machine Learning,CreateSpace Independent Publishing Platform,Antonio Gulli,2015
+75,Data Science on the Google Cloud Platform,O’Reilly Media,Valliappa Lakshmanan,2018
+76,Learning from Data Made Easy with R: A Gentle Introduction for Data Science,nan,Lewis N.D.,nan
+77,Charting the Next Pandemic: Modeling Infectious Disease Spreading in the Data Science Age,Springer,"Ana Pastore y Piontti, Nicola Perra, Luca Rossi, Nicole Samay, Alessandro Vespignani",2018
+78,Data Smart: Using Data Science to Transform Information into Insight,Wiley,John W. Foreman,2013
+79,"Programming Skills for Data Science: Start Writing Code to Wrangle, Analyze, and Visualize Data with R, First Edition",Addison-Wesley Professional,Michael Freeman & Joel Ross [Michael Freeman],2018
+80,Beginning Data Science with Python and Jupyter,Packt Publishing,Alex Galea,2018
+81,"Business Data Science: Combining Machine Learning and Economics to Optimize, Automate, and Accelerate Business Decisions",nan,Matt Taddy [Matt Taddy],2019
+82,JavaScript for Data Science,CRC Press,"Maya Gans, Toby Hodges, Greg Wilson",2020
+83,Think Like a Data Scientist: Tackle the Data Science Process Step-by-Step,Manning Publications,Brian Godsey,2017
+84,Practical DataOps: Delivering Agile Data Science At Scale,Apress,Harvinder Atwal,2020
+85,"Deep Learning in Python: Master Data Science and Machine Learning with Modern Neural Networks written in Python, Theano, and TensorFlow",LazyProgrammer,LazyProgrammer,2016
+86,Algorithms for Data Science,Springer,"Brian Steele, John Chandler, Swarna Reddy",2017
+87,"Learn RStudio IDE: Quick, Effective, and Productive Data Science",Apress,Matthew Campbell,2019
+88,Marketing Data Science: Modeling Techniques in Predictive Analytics with R and Python,PH Professional Business,Thomas W. Miller [Thomas W. Miller],2015
+89,Hands-On Data Science with Anaconda,Packt Publishing,"Yuxing Yan, James Yan",2018
+90,Data Science Fundamentals for Python and MongoDB,Apress,David Paper,2018
+91,Malware Data Science: Attack Detection And Attribution,No Starch Press,"Joshua Saxe, Hillary Sanders",2018
+92,"PYTHON FOR DATA SCIENCE: Guide to computer programming and web coding. Learn machine learning, artificial intelligence, NumPy and Pandas packages for data analysis. Step-by-step exercises included.",nan,Jason  Test,2020
+93,R Programming for Data Science,[Leanpub],Roger D. Peng,2015
+94,The Applied Data Science Workshop - Second Edition: Get started with the applications of data science and techniques to explore and assess data effectively,Packt Publishing - ebooks Account,Alex Galea,2020
+95,"Introduction to Data Science.  A Python Approach to Concepts, Techniques and Applications",Springer,"Laura Igual, Santi Segu",2017
+96,Practical Data Science with SAP: Machine Learning Techniques for Enterprise Data,O’Reilly Media,"Greg Foss, Paul Modderman",2019
+97,"Data Science For Dummies, 2nd Edition",John Wiley & Sons,Lillian Pierson,2017
+98,"Computer Age Statistical Inference: Algorithms, Evidence, and Data Science",Cambridge University Press,"Bradley Efron, Trevor Hastie",2016
+99,Data Science in Practice,Springer International Publishing,"Alan Said, Vicenç Torra",2019
+100,"Machine Learning: 2 Books in 1: Machine Learning for Beginners, Machine Learning Mathematics. An Introduction Guide to Understand Data Science Through the Business Application",nan,"Samuel Hack [Hack, Samuel]",2019
+101,Julia Quick Syntax Reference: A Pocket Guide for Data Science Programming,Apress,Antonello Lobianco,2019
+102,Machine Learning and Data Science: An Introduction to Statistical Learning Methods with R,Technics Publications,Daniel D. Gutierrez,2015
+103,"COMPUTER PROGRAMMING 4 Books In 1: Data Science, Hacking with Kali Linux, Computer Networking for Beginners, Python Programming",nan,Jason Callaway,2020
+104,Mathematical Problems in Data Science: Theoretical and Practical Methods,Springer,"Li M. Chen, Zhixun Su, Bo Jiang",2016
+105,Data science par la pratique,Eyrolles,Joël Grus,2017
+106,Getting Started with Data Science: Making Sense of Data with Analytics,IBM Press,Murtaza Haider,2015
+107,The Data Science Design Manual,Springer,Steven S. Skiena,2017
+108,Python for Data Analysis: Master Deep Learning with Python Language and Become Great at Programming Python for Beginners with Hands-on Project (Data Science),nan,"Scratch, Jason",2020
+109,"Assessing the Accuracy of Remotely Sensed Data: Principles and Practices, Second Edition (Mapping Science)",CRC Press,"Russell G. Congalton, Kass Green",2008
+110,Data Analysis and Presentation Skills. An Introduction for the Life and Medical Sciences,Wiley,Jackie Willis,2004
+111,Quantitative Data Analysis: Doing Social Research to Test Ideas (Research Methods for the Social Sciences),Jossey-Bass,Donald J. Treiman,2009
+112,Data Science Projects with Python,nan,Stephen Klosterman,2019
+113,Python Programming for Beginners: Basic Language from Absolute Beginners to Intermediate. Learn Easily and Fast Data Science and Web Development in a Simple and Practical Way Step-by-Step,nan,MARK CODING,2020
+114,"Data Science Projects with Python: A case study approach to gaining valuable insights from real data with machine learning, 2nd Edition",Packt Publishing,Stephen Klosterman,2021
+115,Beginning Data Science with R,Springer International Publishing,Manas A. Pathak (auth.),2014
+116,"Practical Data Science Cookbook: Data pre-processing, analysis and visualization using R and Python",Packt Publishing,"Prabhanjan Tattar, Tony Ojeda, Sean Patrick Murphy, Benjamin Bengfort, Abhijit Dasgupta",2017
+117,Practical Web Scraping for Data Science: Best Practices and Examples with Python,Apress,"Seppe vanden Broucke, Bart Baesens",2018
+118,Modern Data Mining Algorithms in C++ and CUDA C: Recent Developments in Feature Extraction and Selection Algorithms for Data Science,Apress,Timothy Masters,2020
+119,Python for Data Science,John Wiley & Sons,"Luca Massaron, John Paul Mueller",2019
+120,"Python for Data Analysis: A Basic Programming Crash Course to Learn Python Data Science Essential Tools, Pandas, and Numpy with Questions and Answer from Beginners to Advanced",nan,Oscar Scratch,2019
+121,Data Science: Concepts and Practice,Elsevier,"Vijay Kotu, Bala Deshpande",2018
+122,Statistical Inference via Data Science: A ModernDive into R and the Tidyverse,CRC Press,"Chester Ismay, Albert Y. Kim",2019
+123,Data Science and Machine Learning: Mathematical and Statistical Methods,CRC Press,"Dirk P. Kroese, Zdravko I. Botev, Thomas Taimre, Radislav Vaisman",2020
+124,"SQL for Data Science: Data Cleaning, Wrangling and Analytics with Relational Databases",Springer,Antonio Badia,2020
+125,Statistics for Data Science,Packt Publishing,James D. Miller,2017
+126,Data Science for Financial Econometrics,Springer,"Nguyen Ngoc Thach, Vladik Kreinovich, Nguyen Duc Trung",2021
+127,"Numerical Python: Scientific Computing and Data Science Applications with Numpy, SciPy and Matplotlib",Apress,Robert Johansson,2019
+128,"AI for Data Science: Artificial Intelligence Frameworks and Functionality for Deep Learning, Optimization, and Beyond",Technics Publications,"Zacharias Voulgaris PhD & Yunus Emrah Bulut [Voulgaris, Zacharias PhD & Bulut, Yunus Emrah]",2018
+129,Principles Of Managerial Statistics And Data Science,John Wiley & Sons,Roberto Rivera,2020
+130,Modern Data Science with R,CRC,"Benjamin Baumer, Daniel Kaplan, Nicholas Horton",2017
+131,Python Data Science Handbook:  Essential Tools for Working with Data,O’Reilly Media,Jake VanderPlas,2016
+132,Clean Data - Data Science Strategies for Tackling Dirty Data,Packt Publishing,Megan Squire,2015
+133,Data Science at the Command Line,O’Reilly,Jeroen Janssens,2015
+134,"Learning to Love Data Science: Explorations of Emerging Technologies and Platforms for Predictive Analytics, Machine Learning, Digital Manufacturing and Supply Chain Optimization",O'Reilly Media,Mike Barlow,2015
+135,"Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control",Cambridge University Press,"Steven L. Brunton, J. Nathan Kutz",2019
+136,"Python for Data Analysis: The Ultimate Beginner's Guide to Learn programming in Python for Data Science with Pandas and NumPy, Master Statistical Analysis, and Visualization",nan,"Foster, Matt",2020
+137,Analytical Skills for AI and Data Science: Building Skills for an AI-Driven Enterprise,O'Reilly Media,Daniel Vaughan,2020
+138,Machine Learning Algorithms - Popular algorithms for data science and machine learning,Packt Publishing,Giuseppe Bonaccorso,2018
+139,Data Science For Wind Energy,Chapman And Hall/CRC,Yu Ding,2020
+140,Modeling Techniques in Predictive Analytics with Python and R: A Guide to Data Science,PH Professional Business,Thomas W. Miller [Thomas W. Miller],2014
+141,Data Science para Negócios,Alta Books,"Tom Fawcett & Foster Provost [Fawcett, Tom]",2018
+142,Hands-on DevOps: Explore the concept of continuous delivery and integrate it with data science concepts,Packt Publishing,Sricharan Vadapalli,2017
+143,Data Science and Analytics with Python,Chapman and Hall/CRC,Jesus Rogel-Salazar,2017
+144,"Thoughtful Data Science: A Programmer’s Toolset for Data Analysis and Artificial Intelligence with Python, Jupyter Notebook, and PixieDust",Packt Publishing,David Taieb,2018
+145,Master Data Science and Data Analysis With Pandas,nan,Arun Kumar,2020
+146,"Cleaning Data for Effective Data Science: Doing the other 80% of the work with Python, R, and command-line tools",Packt Publishing - ebooks Account,David Mertz,2021
+147,An Introduction to Data Science,"SAGE Publications, Inc","Jeffrey S. Saltz, Jeffrey M. Stanton",2017
+148,Applied Data Science: Lessons Learned for the Data-Driven Business,Springer Nature Switzerland,"Martin Braschler, Thilo Stadelmann, Kurt Stockinger",2019
+149,A collection of Advanced Data Science and Machine Learning Interview Questions Solved in Python and Spark  (II): Hands-on Big Data and Machine ... Programming Interview Questions) (Volume 7),CreateSpace Independent Publishing Platform,Dr Antonio Gulli,2015
+150,"Managing Your Data Science Projects: Learn Salesmanship, Presentation, and Maintenance of Completed Models",Apress,Robert de Graaf,2019
+151,Data Science With Python And Dask,Manning Publications,Jesse C. Daniel,2019
+152,"Hands-On Data Analysis with Pandas: A Python data science handbook for data collection, wrangling, analysis, and visualization",Packt Publishing,Stefanie Molin,2021
+153,"Business intelligence, analytics, and data science a managerial perspective",Pearson,"Delen, Dursun, Sharda, Ramesh, Turban, Efraim",2018
+154,Introduction to Statistical Data Analysis for the Life Sciences,CRC Press,"Claus Thorn Ekstrøm, Helle Sørensen",2014
+155,"Python Data Science: Learn Python in a Week and Master It. An Hands-On Introduction to Big Data Analysis and Mining, a Project-Based Guide with Practical Exercises (7 Days Crash Course, Book 3)",nan,"Academy, Computer Programming",2020
+156,Data Science and Classification,Springer,"Vladimir Batagelj, Hans-Hermann Bock, Anuka Ferligoj, Ale iberna",2006
+157,Jupyter for Data Science,Packt Publishing,Dan Toomey,2017
+158,Statistics: The Art and Science of Learning From Data,Pearson,"Alan Agresti, Christine A. Franklin, Bernhard Klingenberg",2017
+159,"Intro to Python for Computer Science and Data Science: Learning to Program with AI, Big Data and The Cloud",Pearson,Paul J. Deitel & Harvey M. Deitel [Paul J. Deitel],2019
+160,"Python Data Analytics: Data Analysis and Science Using Pandas, matplotlib, and the Python Programming Language",Apress,Fabio Nelli (auth.),2015
+161,Data science for dummies,John Wiley and Sons,"Lillian Pierson, Jake Porway (foreword)",2015
+162,Python Data Science Handbook: Essential Tools for Working with Data,O’Reilly Media,Jake VanderPlas,2016
+163,Data science and complex networks : real cases studies with Python,Oxford University Press,"Caldarelli, Guido, Chessa, Alessandro",2016
+164,The Essentials of Data Science: Knowledge Discovery Using R,"Chapman and Hall/CRC;Chapman & Hall, Williams, Graham",Graham J. Williams,2017
+165,"Beginning Data Science in R: Data Analysis, Visualization, and Modelling for the Data Scientist",Apress,Thomas Mailund (auth.),2017
+166,Sports Analytics and Data Science: Winning the Game with Methods and Models,Pearson FT Press,Thomas W. Miller,2015
+167,Essential Statistics for Non-STEM Data Analysts: Get to Grips with the Statistics and Math Knowledge Needed to Enter the World of Data Science with Python,Packt,Rongpeng Li,2020
+168,Geographical Data Science and Spatial Data Analysis: An Introduction in R (Spatial Analytics and GIS) 1st Edition,nan,Lex Comber,2021
+169,Practical Data Science: A Guide to Building the Technology Stack for Turning Data Lakes into Business Assets,Apress,Andreas François Vermeulen,2018
+170,Data Science with SQL Server Quick Start Guide,Packt Publishing,Dejan Sarka [Dejan Sarka],2018
+171,Data Science for Business: What you need to know about data mining and data-analytic thinking,O'Reilly Media,"Foster Provost, Tom Fawcett",2013
+172,Data Science with Python and Dask,Manning Publications,Jesse C. Daniel,2019
+173,"Python Deep Learning: 7 Days To Master Machine Learning, Data Science and Artificial Intelligence: Data Science Degree",UNKNOWN,"Dwain Debrot [Debrot, Dwain]",2021
+174,Julia for Data Science,Technics Publications,Zacharias Voulgaris PhD [Zacharias Voulgaris PhD],2016
+175,A Tour Of Data Science: Learn R And Python In Parallel,CRC Press/Taylor & Francis Group,Nailong Zhang,2021
+176,"Functional Programming in R: Advanced Statistical Programming for Data Science, Analysis and Finance",Apress,Thomas Mailund (auth.),2017
+177,"Beginning Data Science With Python and Jupyter: Use Powerful Industry-Standard Tools Within Jupyter and the Python Ecosystem to Unlock New, Actionable Insights From Your Data",Packt Publishing,"Alex Galea [Galea, Alex]",2018
+178,Model-Based Clustering and Classification for Data Science: With Applications in R,Cambridge University Press,"Charles Bouveyron, Gilles Celeux, T. Brendan Murphy, Adrian E. Raftery",2019
+179,Data Science and Machine Learning Interview Questions Using Python: A Complete Question Bank to Crack Your Interview (English Edition),nan,Vishwanathan Narayanan,nan
+180,"Machine Learning for Signal Processing: Data Science, Algorithms, and Computational Statistics","Oxford University Press, USA",Max A. Little,2019
+181,Executive Data Science: A Guide To Training And Managing The Best Data Scientists,lulu.com,"Brian Caffo, Roger D. Peng, Jeffrey T. Leek",2018
+182,Statistical Foundations Of Data Science,Chapman&Hall/CRC /Taylor & Francis Group,"Jianqing Fan, Runze Li, Cun-Hui Zhang, Hui Zou",2020
+183,Data Science for Beginners: Comprehensive Guide to Most Important Basics in Data Science,nan,"Campbell, Alex",2021
+184,"Python For Data Analysis: The Ultimate and Definitive Manual to Learn Data Science and Coding With Python. Master The basics of Machine Learning, to Clean Code and Improve Artificial Intelligence",nan,"Algore, Matt",2021
+185,Managing Data Science: Effective Strategies To Manage Data Science Projects And Build A Sustainable Team,Packt Publishing,Kirill Dubovikov,2019
+186,Data Science Essentials in Python: Collect - Organize - Explore - Predict - Value,Pragmatic Bookshelf,Dmitry Zinoviev,2016
+187,Data Science for Healthcare: Methodologies and Applications,Springer International Publishing,"Sergio Consoli, Diego Reforgiato Recupero, Milan Petković",2019
+188,"Marketing Analytics: Optimize Your Business with Data Science in R, Python, and SQL",nan,"Jacobs, Dave",2016
+189,"Python Programming: 4 Books in 1 - The Complete Crash Course for Beginners to Mastering Python with Practical Applications to Data Analysis & Analytics, Machine Learning and Data Science Projects",nan,"Park, Andrew",2020
+190,Big Data Meets Survey Science: A Collection of Innovative Methods,Wiley,"Craig A. Hill (editor), Paul P. Biemer (editor), Trent D. Buskirk (editor), Lilli Japec (editor), Antje Kirchner (editor), Stas Kolenikov (editor), Lars E. Lyberg (editor)",2021
+191,"R for Data Science: Import, Tidy, Transform, Visualize, and Model Data",O’Reilly Media,"Hadley Wickham, Garrett Grolemund",2017
+192,"Python Data Science Essentials - Third Edition: A Beginner’s Guide Covering Essential Data Science Principles, Tools, and Techniques",Packt Publishing,Luca Massaron & Alberto Boschetti [Luca Massaron],2018
+193,Starting Out with Java: From Control Structures through Data Structures (What's New in Computer Science),Pearson,"Gaddis, Tony, Muganda, Godfrey",2018
+194,"Business Intelligence, Analytics, and Data Science: A Managerial Perspective",Pearson,"Ramesh Sharda, Dursun Delen, Efraim Turban",2017
+195,Experimental Methods For Science And Engineering Students: An Introduction To The Analysis And Presentation Of Data,Cambridge University Press,Les Kirkup,2019
+196,Statistical Inference for Data Science - A Companion to the Coursera Statistical Inference Course,nan,Brian Caffo,2015
+197,Data Science with Java: Practical Methods for Scientists and Engineers,O’Reilly Media,Michael R. Brzustowicz,2017
+198,Hands-On Data Science with R: Techniques to perform data manipulation and mining to build smart analytical models using R,Packt Publishing,"Vitor Bianchi Lanzetta, Nataraj DasGupta, Ricardo Anjoleto Farias",2018
+199,Data Science in Education Using R,Routledge,"Ryan A. Estrellado, Emily A. Freer",2021
+200,"Python Programming: The Complete Guide to Learn Python for Data Science, AI, Machine Learning, GUI and More With Practical Exercises and Interview Questions",nan,Nicholas Ayden,2019
+201,Supervised and Unsupervised Learning for Data Science,Springer International Publishing,"Michael W. Berry, Azlinah Mohamed, Bee Wah Yap",2020
+202,"Advanced Object-Oriented Programming in R: Statistical Programming for Data Science, Analysis and Finance",Apress,Thomas Mailund (auth.),2017
+203,Data Science from Scratch with Python: Step-by-Step Guide,nan,"Peter Morgan [Morgan, Peter]",2018
+204,Analytical Skills for AI and Data Science: Building Skills for an AI-Driven Enterprise,"O'Reilly Media, Inc, USA",Daniel Vaughan,2020
+205,Machine Learning with Python: A Step by Step Guide for Absolute Beginners to Program Artificial Intelligence with Python. Neural Networks and Data Science from Pre-Processing to Deep Learning,nan,"CODING, MARK",2020
+206,Agile Data Science 2.0: Building Full-Stack Data Analytics Applications with Spark,O’Reilly Media,Russell Jurney,2017
+207,Unsupervised Deep Learning in Python: Master Data Science and Machine Learning with Modern Neural Networks written in Python and Theano,LazyProgrammer,LazyProgrammer,2016
+208,Data Science and Predictive Analytics: Biomedical and Health Applications using R,Springer International Publishing,Ivo D. Dinov,2018
+209,Process Mining: Data Science in Action,Springer-Verlag Berlin Heidelberg,Wil van der Aalst (auth.),2016
+210,"Analytics, Data Science, & Artificial Intelligence: Systems for Decision Support (11th Edition)",Pearson,"Ramesh Sharda, Dursun Delen, Efraim Turban",2019
+211,Practical Data Science Cookbook: 89 hands-on recipes to help you complete real-world data science projects in R and Python,Packt Publishing,"Tony Ojeda, Sean Patrick Murphy, Benjamin Bengfort, Abhijit Dasgupta",2014
+212,Introduction to Quantitative Data Analysis in the Behavioral and Social Sciences,John Wiley & Sons,Michael J. Albers,2017
+213,"Beginning Mathematica and Wolfram for Data Science: Applications in Data Analysis, Machine Learning, and Neural Networks",Apress,Jalil Villalobos Alva,2021
+214,Introduction to Data Science Data Analysis and Prediction Algorithms with R,CRC Press,Rafael A. Irizarry,2019
+215,Data Science with Microsoft SQL Server 2016,Microsoft Press,"Buck Woody, Danielle Dean, Debraj GuhaThakurta, Gagan Bansal, Matt Conners and Wee-Hyong Tok",2016
+216,"Data Science mit Python: Das Handbuch für den Einsatz von IPython, Jupyter, NumPy, Pandas, Matplotlib und Scikit-Learn",MITP-Verlags,Jake VanderPlas,2017
+217,Data Science in the Cloud: with Microsoft Azure Machine Learning and R,O'Reilly Media,Stephen F. Elston,2015
+218,"Data, models, and decisions: the fundamentals of management science",South-Western College Pub.,"Dimitris Bertsimas, Robert Michael Freund",2000
+219,"Data Science Algorithms in a Week: Top 7 algorithms for computing, data analysis, and machine learning",Packt Publishing,David Natingga,2017
+220,Applied Data Science Using PySpark: Learn the End-to-End Predictive Model-Building Cycle,Apress,"Ramcharan Kakarla, Sundar Krishnan, Sridhar Alla",2021
+221,Data science and machine learning. Mathematical and statistical methods,Chapman & Hall/CRC,"Botev, Zdravko I., Kroese, Dirk P., Taimre, Thomas, Vaisman, Radislav",2020
+222,"Big Data, Cloud Computing, and Data Science Engineering",Springer International Publishing,Roger Lee,2020
+223,Data Reduction and Error Analysis for the Physical Sciences,McGraw-Hill Science/Engineering/Math,"Philip Bevington, D. Keith Robinson",2002
+224,"Data Science con Python - Dalle stringhe al machine learning, le tecniche essenziali per lavorare sui dati",Apogeo,Dmitry Zinoviev,2016
+225,Using R For Data Analysis In Social Sciences: A Research Project-oriented Approach,Oxford University Press,"Li, Quan",2019
+226,Financial Analytics with R. Building a Laptop Laboratory for Data Science,Cambridge,"Mark J. Bennett, Dirk L. Hugen",2016
+227,Data Science for Business and Decision Making,Academic Press,"Luiz Paulo Fávero, Patrícia Belfiore",2019
+228,"Python: 6 Books in 1:  The Ultimate Bible to Learn Python Programming for a Career in Machine Learning, Data Science &  Web Development.",nan,"Soranson, Oliver",2020
+229,Nature Inspired Computing for Data Science,Springer,"Minakhi Rout, Jitendra Kumar Rout, Himansu Das (Editors)",2020
+230,Journal of Financial Data Science,IPR Journals,Marco Lopez de Prado,2019
+231,"Python for Beginners: Start Right Now to Learn Computer Programming with the Best Crash Course. Improve your Skills with Machine Learning, Data Analysis and Data Science",nan,"Chan, Ben",2020
+232,Python for Beginners: The Crash Course to Learn Python Programming in 3-Days (or less). Master Artificial Intelligence for Data Science and Machine Learning + Practical Exercises,nan,"Khan, Aaron",2020
+233,Data analysis for the life sciences with R,Chapman and Hall/CRC,"Irizarry, Rafael A., Love, Michael I",2017
+234,"Data Science from Scratch: The #1 Data Science Guide for Everything A Data Scientist Needs to Know: Python, Linear Algebra, Statistics, Coding, Applications, Neural Networks, and Decision Tree",nan,Cooper Steven,2018
+235,"Machine Learning- The Mastery Bible: The definitive guide to Machine Learning, Data Science, Artificial Intelligence, Neural Networks, and Data Analytics.",nan,"Hanson, Bill",2020
+236,IPython Interactive Computing and Visualization Cookbook: Over 100 hands-on recipes to sharpen your skills in high-performance numerical computing and data science with Python,Packt Publishing,Cyrille Rossant,2014
+237,Build a Career in Data Science,Manning Publications,"Jacqueline Nolis, Emily Robinson",2020
+238,Apache Spark 2.x Cookbook: Cloud-ready recipes for analytics and data science,Packt Publishing,Rishi Yadav,2017
+239,Quantitative Economics With R: A Data Science Approach,Springer,Vikram Dayal,2020
+240,"Analytics, data science, & artificial intelligence : systems for decision support",nan,"Dursun Delen, Ramesh Sharda, Efraim Turban",2020
+241,Data Science do zero: Primeiras regras com o Python,Alta Books,Joel Grus,2016
+242,Основы Data Science и Big Data. Python и наука о данных,Питер,"Дэви Силен, Арно Мейсман",2017
+243,Data science using Python and R,John Wiley & Sons,"Larose, Chantal D., Larose, Daniel T",2019
+244,Machine Learning in Production: Developing and Optimizing Data Science Workflows and Applications,Addison-Wesley,"Andrew Kelleher, Adam Kelleher",2019
+245,Report Writing for Data Science in R,nan,Roger D. Peng,2015
+246,Data Science Foundations: Geometry and Topology of Complex Hierarchic Systems and Big Data Analytics,Chapman and Hall/CRC,Fionn Murtagh,2017
+247,Business Analytics: The Science of Data-driven Decision Making,nan,U. Dinesh Kumar,nan
+248,Python for R users : a data science approach,Wiley,"Ohri, Ajay",2018
+249,Deep Learning Made Easy with R: A Gentle Introduction For Data Science,CreateSpace Independent Publishing Platform,N.D Lewis,2016
+250,Network Science with Python and NetworkX Quick Start Guide: Explore and visualize network data effectively,Packt Publishing,Edward L. Platt,2019
+251,Python for Data Science For Dummies,Wiley,"John Paul Mueller, Luca Massaron",2015
+252,"Metaprogramming in R: Advanced Statistical Programming for Data Science, Analysis and Finance",Apress,Thomas Mailund (auth.),2017
+253,Advanced Binary for Programming and Computer Science Logical Bitwise and Arithmetic Operations and Data Encoding and Representation,Answers 2000 Limited,Sunil Tanna,2018
+254,"Data Science for Marketing Analytics: A practical guide to forming a killer marketing strategy through data analysis with Python, 2nd Edition",Packt Publishing,"Mirza Rahim Baig, Gururajan Govindan, Vishwesh Ravi Shrimali",2021
+255,"ProgrammerLazy. SQL for Marketers: Dominate data analytics, data science, and big data. Data Science and Machine Learning in Python",nan,,nan
+256,The Data Science Handbook,leanpub.com,"Carl Shan, Henry Wang, William Chen, Max Song",2015
+257,Data Science : Innovative Developments in Data Analysis and Clustering,Springer International Publishing,"Francesco Palumbo, Angela Montanari, Maurizio Vichi (eds.)",2017
+258,"Big Data: Concepts, Warehousing, and Analytics (River Publishers Series in Information Science and Technology)",River Publishers,"Maribel Yasmina Santos, Carlos Costa",2020
+259,Python Data Science: After work guide to start learning Data Science on your own. Avoid common beginners mistakes of coding. Approach Panda and NumPy to become a brilliant computer programmer.,nan,"HOOD, CODING, Kölling, Michail",2020
+260,Applied Missing Data Analysis (Methodology In The Social Sciences),nan,Craig K. Enders PhD,2010
+261,Geospatial Data Science Techniques and Applications,CRC Press,"Hassan A. Karimi, Bobak Karimi",2018
+262,PYTHON DATA SCIENCE Learn Python in a Week and Master it,nan,coll,2020
+263,Data Communications and Networking,McGraw-Hill Science/Engineering/Math,"Behrouz A Forouzan, Behrouz Forouzan",2003
+264,"JupyterLab Quick Start Guide: A beginner's guide to the next-gen, web-based interactive computing environment for data science",Packt Publishing,"Lindsay Richman, Melissa Ferrari, Joseph Oladokun, Wesley Banfield, Dan Toomey",2019
+265,Python for Data Science For Dummies,John Wiley & Sons,"John Paul Mueller, Luca Massaron",2015
+266,Data Science Solutions on Azure: Tools and Techniques Using Databricks and MLOps,Apress,"Julian Soh, Priyanshi Singh",2020
+267,Data Science,The MIT Press,"John D. Kelleher, Brendan Tierney",2018
+268,Machine Learning: The complete Math Guide to Master Data Science with Python and Developing Artificial Intelligence,nan,"Algore, Matt",2021
+269,Data Science In Cybersecurity And Cyberthreat Intelligence,Springer,"Leslie F. Sikos, Kim-Kwang Raymond Choo",2020
+270,"It's All Analytics!: The Foundations of Al, Big Data and Data Science Landscape for Professionals in Healthcare, Business, and Government",Productivity Press,"Scott Burk, Gary D. Miner",2020
+271,Fundamentals of Clinical Data Science,Springer Nature,"Pieter Kubben, Michel Dumontier, Andre Dekker",2019
+272,Improving Measurement of Productivity in Higher Education,National Academies Press,"Panel on Measuring Higher Education Productivity: Conceptual Framework and Data Needs, Committee on National Statistics, Board on Testing and Assessment, Division of Behavioral and Social Sciences and Education, National Research Council, Teresa A. Sulliv",2012
+273,Advanced Data Science and Analytics With Python,Taylor & Francis Ltd,Jesus Rogel-Salazar,2020
+274,"Python Programmieren 7 in 1: Der schnelle Einstieg (Grundlagen, Machine Learning, Neuronale Netze, Data Science, Computer Vision, Finanzen)",nan,Florian Dedov,nan
+275,Hands-on data science for marketing: improve your marketing strategies with machine learning using Python and R,Packt Publishing,"Hwang, Yoon Hyup",2019
+276,"ARTIFICIAL INTELLIGENCE BUSINESS APPLICATIONS: How to Learn Applied Artificial Intelligence and Use Data Science for Business. Includes Data Analytics, Machine Learning for Business and Python",nan,"FORD, WILLIAM J.",2020
+277,Introduction to HPC with MPI for Data Science,Springer International Publishing,Frank Nielsen (auth.),2016
+278,Principles of Data Science: Learn the techniques and math you need to start making sense of your data,Packt Publishing,Sinan Ozdemir,2016
+279,Longitudinal and Panel Data: Analysis and Applications in the Social Sciences,nan,Edward W. Frees,2004
+280,Big Data Science in Finance,nan,"Irene Aldridge, Marco Avellaneda",2021
+281,"Business Data Science: Combining Machine Learning and Economics to Optimize, Automate, and Accelerate Business Decisions",McGraw-Hill Education,Matt Taddy,2019
+282,Advances in Data Science: Methodologies and Applications,Springer Internationa,"Gloria Phillips-Wren, Anna Esposito, Lakhmi C. Jain",2021
+283,A Hands-On Introduction to Data Science,Cambridge University Press,Chirag Shah,2020
+284,Introduction to Machine Learning with Python: A Guide for Beginners in Data Science,AI Sciences LLC,"Daniel Nedal, Peters Morgan",2018
+285,The Art of Data Science: A Guide for Anyone Who Works with Data,nan,Roger D. Peng & Elizabeth Matsui,nan
+286,Statistical Analysis Of Empirical Data: Methods For Applied Sciences,Springer,Scott Pardo,2020
+287,Data Science Algorithms in a Week - Second Edition,Packt Publishing,David Natingga [David Natingga],2018
+288,Neural data science : a primer with MATLAB and Python,Academic Press,"Nylen, Erik Lee, Wallisch, Pascal",2017
+289,Introduction to Data Science: Essential Concepts,nan,"Peters Morgan [Morgan, Peters]",2018
+290,Data Science Fundamentals and Practical Approaches: Understand Why Data Science Is the Next,BPB Publications,"Dr. Gypsy Nandi, Dr. Rupam Kumar Sharma",2020
+291,"Big Data and Artificial Intelligence: Complete Guide to Data Science, AI, Big Data and Machine Learning.",nan,"Weber, Hans",2020
+292,"Python Machine Learning: The Ultimate Guide for Beginners to Machine Learning with Python, Programming and Deep Learning, Artificial Intelligence, Neural Networks, and Data Science",nan,"Moore, Richard, Moore, Richard",2019
+293,Data Science and Digital Transformation in the Fourth Industrial Revolution,Springer International Publishing,"Jongbae Kim, Roger Lee",2021
+294,Python: Real-World Data Science: A course in four modules,Packt Publishing,"Dusty Phillips, Fabrizio Romano, Phuong Vo.T.H, Martin Czygan, Robert Layton",2016
+295,"Python for Data Science: 2 Books in 1. A Practical Beginner’s Guide to learn Python Programming, introducing into Data Analytics, Machine Learning, Web Development, with Hands-on Projects",nan,"THOMPSON, ERICK",2020
+296,Data Science and Digital Business,Springer International Publishing,"Fausto Pedro García Márquez, Benjamin Lev",2019
+297,"Measurement and Data Analysis for Engineering and Science, Fourth Edition",CRC Press,"Patrick F Dunn, Michael P. Davis",2018
+298,"Data analysis and statistics for geography, environmental science, and engineering",CRC Press,"Acevedo, Miguel F",2013
+299,Big Data in Computational Social Science and Humanities,Springer,Shu-Heng Chen,2018
+300,Data Visualization Guide: Clear Guide to Data Science and Visualization,nan,"Campbell, Alex [Campbell, Alex]",2021
+301,Generalized Linear Models for Insurance Data (International Series on Actuarial Science),nan,"Piet de Jong, Gillian Z. Heller",2008
+302,"Data Analysis Methods in Physical Oceanography, Third Edition",Elsevier Science,"Richard E. Thomson, William J. Emery",2014
+303,"Machine Learning for Signal Processing: Data Science, Algorithms, and Computational Statistics","Oxford University Press, USA",Max A. Little,2019
+304,Mathematical Foundations of Data Science Using R,de Gruyter,"Frank Emmert-Streib, Salissou Moutari, Matthias Dehmer",2020
+305,Agile data science: building data analytics applications with Hadoop,O'Reilly Media,Russell Jurney,2013
+306,Data Science. Наука о данных с нуля,БХВ-Петербург,Грас Джоэл,2017
+307,Python: Real-World Data Science,Packt Publishing,Sebastian Raschka & Robert Layton & Martin Czygan & Phuong Vo.T.H & Fabrizio Romano & Dusty Phillips [Sebastian Raschka],2016
+308,Julia for Data Science,Packt Publishing,Anshul Joshi,2016
+309,"Data Science Revealed: With Feature Engineering, Data Visualization, Pipeline Development, and Hyperparameter Tuning",Apress,Tshepo Chris Nokeri,2021
+310,"Data Science Thinking: The Next Scientific, Technological and Economic Revolution",Springer International Publishing,Longbing Cao,2018
+311,Python Data Science Essentials,Packt Publishing,"Alberto Boschetti, Luca Massaron",2018
+312,XML and Web Technologies for Data Sciences with R,Springer-Verlag New York,"Deborah Nolan, Duncan Temple Lang (auth.)",2014
+313,"Data Science Projects with Python, Second Edition",nan,Stephen Klosterman,2021
+314,Advanced Multi-industry Applications of Big Data Clustering and Machine Learning,Engineering Science Reference,Fausto Pedro Garcia Marquez (editor),2020
+315,Data Science: Create Teams That Ask the Right Questions and Deliver Real Value,Apress,Doug Rose (auth.),2016
+316,Getting Started with Streamlit for Data Science: Create and deploy Streamlit web applications from scratch in Python,Packt Publishing,Tyler Richards,2021
+317,R for Data Science: Learn and explore the fundamentals of data science with R,Packt Publishing,Dan Toomey,2014
+318,Python Data Science: An Ultimate Guide for Beginners to Learn Fundamentals of Data Science Using Python,nan,Christopher  Wilkinson,2020
+319,Marketing Data Science: Modeling Techniques in Predictive Analytics with R and Python,Pearson Education,Thomas W. Miller,2015
+320,Quantitative Methods of Data Analysis for the Physical Sciences and Engineering,Cambridge University Press,Douglas G. Martinson,2018
+321,Basketball Data Science: With Applications in R,CRC Press,"Paola Zuccolotto, Marica Manisera",2020
+322,"Becoming a Data Head: How to Think, Speak, and Understand Data Science, Statistics, and Machine Learning",Wiley,"Alex J. Gutman, Jordan Goldmeier",2021
+323,Machine Learning in Business: An Introduction to the World of Data Science,nan,John Hull,2020
+324,Quantitative Analysis for System Applications: Data Science and Analytics Tools and Techniques,Technics Publications,Daniel A. McGrath Ph.D. [Daniel A. McGrath Ph.D.],2018
+325,"Python for Data Analysis: A Complete Guide for Beginners, Including Python Statistics and Big Data Analysis.",nan,Computer Science Academy,2020
+326,The Big R-Book: From Data Science to Learning Machines and Big Data,Wiley,Philippe J. S. De Brouwer,2020
+327,Simulation for Data Science with R,Packt,Matthias Templ,2016
+328,IPython Interactive Computing and Visualization Cookbook : Over 100 hands-on recipes to sharpen your skills in high-performance numerical computing and data science in the Jupyter Notebook,Packt Publishing Limited,Cyrille Rossant,2018
+329,Hands-on Scikit-Learn for Machine Learning Applications: Data Science Fundamentals with Python,Apress,David Paper,2019
+330,Chemometrics : data driven extraction for science,John Wiley & Sons,"Brereton, Richard G",2018
+331,Fundamentals of Well-Log Interpretation1. The Acquisition of Logging Data,Elsevier Science,O. Serra (Eds.),1984
+332,Data Science Design manual,Springer,Stevven S Skiena,2017
+333,"Data Science on AWS: Implementing End-to-End, Continuous AI and Machine Learning Pipelines",O'Reilly Media,"Chris Fregly, Antje Barth",2021
+334,Analytical Skills for AI and Data Science,O'Reilly Media,Daniel Vaughan,2020
+335,Python data science cookbook : over 60 practical recipes to help you explore Python and its robust data science capabilities,Packt Publishing,"Subramanian, Gopi",2015
+336,"Programming for Beginners: 3 Manuscripts: The Complete Guide to Learning Python Crash Course, Python Machine Learning and Python Data Science in a Week",nan,"Lee, Andrew",2021
+337,Statistical Inference via Data Science: A ModernDive into R and the Tidyverse (Chapman & Hall/CRC The R Series),Chapman and Hall/CRC,"Chester Ismay, Albert Y. Kim",2019
+338,Statistics: The Art and Science of Learning from Data,Pearson,"Alan Agresti, Christine Franklin",2012
+339,Data Science. Наука о данных с нуля,БХВ-Петербург,Джоэл Грас,2021
+340,Scala for Data Science,Packt Publishing,Pascal Bugnion,2016
+341,"Beginning Data Science, IoT, and AI on Single Board Computers: Core Skills and Real-World Application with the BBC micro:bit and XinaBox",Apress,"Philip Meitiner, Pradeeka Seneviratne",2020
+342,The Big Book of Data Science Use Cases,nan,Databricks,2020
+343,"Learn Computer Science with Swift: Computation Concepts, Programming Paradigms, Data Management, and Modern Component Architectures with Swift and Playgrounds",Apress,Jesse Feiler,2018
+344,"scikit-learn Cookbook: Over 50 recipes to incorporate scikit-learn into every step of the data science pipeline, from feature extraction to model building and model evaluation",Packt Publishing,Trent Hauck,2014
+345,Data science in R : a case studies approach to computational reasoning and problem solving,CRC Press,"Lang, Duncan Temple, Nolan, Deborah",2015
+346,Data Analysis in Forensic Science: A Bayesian Decision Perspective (Statistics in Practice),Wiley,"Franco Taroni, Silvia Bozza, Alex Biedermann, Paolo Garbolino, Colin Aitken",nan
+347,Fundamentals of Data Structures in C,Computer Science Press,"Ellis Horowitz, Sartaj Sahni, Susan Anderson-Freed",1993
+348,Mastering Python for Data Science,Packt Publishing,Samir Madhavan,2015
+349,Python vs. R for Data Science,"O’Reilly Media, Inc.",Michael Grogan,2018
+350,"Jupyter for Data Science: Exploratory analysis, statistical modeling, machine learning, and data visualization with Jupyter",Packt Publishing,Dan Toomey,2017
+351,Jupyter for Data Science,Packt Publishing,Dan Toomey,2017
+352,The Python Workshop: Learn to code in Python and kickstart your career in software development or data science,Packt Publishing,"Andrew Bird, Dr Lau Cher Han, Mario Corchero Jimenez, Graham Lee, Corey Wade",2019
+353,"Practical Data Science with Jupyter: Explore Data Cleaning, Pre-processing, Data Wrangling, Feature Engineering and Machine Learning using Python and Jupyter (English Edition)",BPB Publications,PRATEEK GUPTA,2021
+354,Mastering Data Analysis with R: Gain sharp insights into your data and solve real-world data science problems with R—from data munging to modeling and visualization,Packt Publishing,Gergely Daroczi,2015
+355,Text Mining for Qualitative Data Analysis in the Social Sciences: A Study on Democratic Discourse in Germany,Springer Fachmedien Wiesbaden,Gregor Wiedemann (auth.),2016
+356,"Statistics with Julia: Fundamentals for Data Science, Machine Learning and Artificial Intelligence (Springer Series in the Data Sciences)",Springer,"Yoni Nazarathy, Hayden Klok",2021
+357,Uncertainty Modelling in Data Science,Springer International Publishing,"Sébastien Destercke, Thierry Denoeux, María Ángeles Gil, Przemyslaw Grzegorzewski, Olgierd Hryniewicz",2019
+358,Big Data MBA: Driving Business Strategies with Data Science,Wiley,Bill Schmarzo,2015
+359,Docker for Data Science : Building Scalable and Extensible Data Infrastructure Around the Jupyter Notebook Server,Apress,"Cook, Joshua",2017
+360,"Exploratory Data Analysis with MATLAB, Second Edition (Chapman & Hall CRC Computer Science & Data Analysis)",CRC Press,"Wendy L. Martinez, Angel Martinez, Jeffrey Solka",2010
+361,Comparative Approaches to Using R and Python for Statistical Data Analysis,Information Science Reference,"Rui Sarmento, Vera Costa",2016
+362,Smarter Data Science: Succeeding with Enterprise-Grade Data and AI Projects,Wiley,"Neal Fishman, Cole Stryker",2020
+363,"Java Programming Box Set: Programming, Master's Handbook & Artificial Intelligence Made Easy; Code, Data Science, Automation, problem solving, Data Structures & Algorithms",nan,Code Well Academy.,nan
+364,"Python for Data Science: The Ultimate Step-by-Step Guide to Learn Python In 7 Days & NLP, Data Science from with Python (Master The basics of Data Science and Improve Artificial Intelligence)",nan,"Wilson, Richard",2021
+365,Data Science from Scratch: First Principles with Python,O'Reilly Media,Joel Grus,2015
+366,Data Science on AWS,"O'Reilly Media, Inc.",Chris Fregly & Antje Barth [Chris Fregly],2021
+367,Data Science – was ist das eigentlich?!: Algorithmen des maschinellen Lernens verständlich erklärt,Springer Berlin Heidelberg,"Annalyn Ng, Kenneth Soo",2018
+368,Beginning Java Data Structures and Algorithms: Sharpen your problem solving skills by learning core computer science concepts in a pain-free manner,Packt Publishing,James Cutajar,2018
+369,"Python project for beginners: Python at your fingertips! Learn, create, experiment, and don't miss the current programming language. Introduction to data science, coding, and analysis.",nan,"Chamberlin, Eric",2020
+370,The Enterprise Big Data Lake: Delivering the Promise of Big Data and Data Science,O'Reilly Media,Alex Gorelik,2019
+371,"Java Data Science Cookbook. Explore the power of MLlib, DL4j, Weka and more",Packt,Rushdi Shams,2017
+372,DATA SCIENCE FROM SCRATCH: From Data Visualization To Manipulation. It Is The Easy Way! All You Need For Business Using The Basic Principles Of Python And Beyond  [REVISED & EXPANDED EDITION],nan,WILLIAM GRAY,nan
+373,Introduction to Artificial Intelligence for Security Professionals,The Cylance Press,The Cylance Data Science Team,2017
+374,"PYTHON PROGRAMMING: 3 MANUSCRIPTS CRASH COURSE CODING WITH PYTHON DATA SCIENCE. THE STEP BY STEP GUIDE FOR BEGINNERS TO MASTER SOFTWARE PROJECTS, ALGORITHMS, TRICKS AND TIPS",nan,"Tacke, John, Matthes, Adrienne Hawkes",2020
+375,Introduction to Statistical and Machine Learning Methods for Data Science,SAS Institute,"Dr. Carlos Andre Reis Andre Reis Pinheiro, Mike Patetta",2021
+376,"Python Programming: The Crash Course for Python Projects – Learn the Secrets of Machine Learning, Data Science Analysis and Artificial Intelligence. Introduction to Deep Learning for Beginners",nan,Sivakumar  Munusami,2019
+377,Spatial Big Data Science: Classification Techniques for Earth Observation Imagery,Springer International Publishing,"Zhe Jiang, Shashi Shekhar (auth.)",2017
+378,Data structures and algorithms with C,Alpha Science International,"Pal, Debdutta, Halder, Suman",2018
+379,Python Data Science Essentials - Learn the fundamentals of Data Science with Python,Packt Publishing,"Alberto Boschetti, Luca Massaron",2015
+380,Scala: Guide for Data Science Professionals,Packt Publishing,"Pascal Bugnion, Arun Manivannan, Patrick R. Nicolas",2017
+381,Python Data Science Essentials - Second Edition,Packt Publishing - ebooks Account,"Alberto Boschetti, Luca Massaron",2016
+382,Getting Started with Data Science: Making Sense of Data with Analytics,IBM Press,Murtaza Haider [Murtaza Haider],2015
+383,Encyclopedia of Data Warehousing and Mining,Information Science Reference,John Wang,2008
+384,"Introducing Data Science: Big Data, Machine Learning, and more, using Python tools",Manning Publications,"Davy Cielen, Arno Meysman, Mohamed Ali",2016
+385,Mastering Java for Data Science,Packt Publishing,Alexey Grigorev [Alexey Grigorev],2017
+386,"Artificial Intelligence A-Z: Learn How To Build An AI: Combine the power of Data Science, Machine Learning and Deep Learning to create powerful AI for Real-World applications",nan,Nileriver Publications,2020
+387,"Data Science at the Command Line: Obtain, Scrub, Explore, and Model Data with Unix Power Tools",O'Reilly Media,Jeroen Janssens,2021
+388,Categorical Data Analysis for the Behavioral and Social Sciences,Routledge Academic,"Razia Azen, Cindy M. Walker",2010
+389,Audit Analytics: Data Science for the Accounting Profession,Springer International Publishing;Springer,J. Christopher Westland,2020
+390,"Introduction to error analysis : the science of measurements, uncertainties, and data analysis",nan,"Merrin, Jack",2017
+391,"Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control",Cambridge University Press,J. Nathan Kutz & Steven L. Brunton,2019
+392,Analytical Skills for AI and Data Science: Building Skills for an AI-Driven Enterprise,O'Reilly Media,Daniel Vaughan,2020
+393,"Big data: concepts, methodologies, tools, and applications","IGI Global,Information Science Reference",Khosrow-Pour M.  et al. (eds.),2016
+394,"Data Science and Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data",John Wiley & Sons,EMC Education Services [EMC Education Services],2015
+395,"Univariate, Bivariate, and Multivariate Statistics Using R: Quantitative Tools for Data Analysis and Data Science",Wiley,Daniel J. Denis,2020
+396,"Python for Beginners: Comprehensive Guide to the Basics of Programming, Machine Learning, Data Science and Analysis with Python.",nan,"Campbell, Alex",2021
+397,"Data Science for Dummies, 2nd Edition",Wiley,Lillian Pierson,2017
+398,Thoughtful Data Science,Packt Publishing,David Taieb,2018
+399,Research Data Access And Management In Modern Libraries,Information Science Reference/IGI Global,"Raj Kumar Bhardwaj, Paul Banks",2019
+400,Python Programming for Beginners: Basic Language from Absolute Beginners to Intermediate. Learn Easily and Fast Data Science and Web Development in a Simple and Practical Way Step-by-Step,nan,"CODING, MARK",2020
+401,"Python Machine Learning: The Crash Course for Beginners to Programming and Deep Learning, Artificial Intelligence, Neural Networks and Data Science. Scikit Learn, Tensorflow, Pandas and Numpy.",nan,"Smith, Django",2019
+402,"Building Data Science Applications with FastAPI: Develop, manage, and deploy efficient machine learning applications with Python",Packt Publishing,François Voron,2021
+403,Big Data and Social Science; A Practical Guide to Methods and Tools; Statistics in the Social and Behavioral Sciences Series – CRC,nan,"Foster I., Ghani R., Jarmin R.S., Kreuter F., Lane J., (Eds.), (2017)",nan
+404,"Python for Beginners: The Absolute Beginners Guide to Python Programming, Data Science and Predictive Model. A Practical Introduction to Object Oriented Programming Language. (Essentials Cookbook)",nan,"Smith, Django",2019
+405,Doing Data Science: Straight Talk from the Frontline,O'Reilly Media,"Rachel Schutt, Cathy O'Neil",2013
+406,Data Science and Analytics with Python,Chapman and Hall/CRC,Jesus Rogel-Salazar,2017
+407,Web and Network Data Science: Modeling Techniques in Predictive Analytics,PH Professional Business,Thomas W. Miller [Thomas W. Miller],2014
+408,30-Second Data Science,Ivy Press,Liberty Vittert,2020
+409,Chemometrics with R: Multivariate Data Analysis in the Natural Sciences and Life Sciences,Springer-Verlag Berlin Heidelberg,Ron Wehrens (auth.),2011
+410,"Architects' Data, Third Edition",Blackwell Science,"Ernst Neufert, Peter Neufert",2000
+411,Robust Quality: Powerful Integration of Data Science and Process Engineering,CRC Press,Rajesh Jugulum,2018
+412,"Building Data Science Teams: The Skills, Tools, and Perspectives Behind Great Data Science Groups",O'Reilly,DJ Patil,2011
+413,Data Science: From Research to Application,Springer,"Mahdi Bohlouli, Bahram Sadeghi Bigham, Zahra Narimani, Mahdi Vasighi, Ebrahim Ansari",2020
+414,Data Science Tools,nan,Christopher Greco,2020
+415,Be the Outlier : How to Ace Data Science Interviews,New Degree Press,Shrilata Murthy,2020
+416,"Computer Age Statistical Inference: Algorithms, Evidence, and Data Science",Cambridge University Press,"Bradley Efron, Trevor Hastie",2016
+417,"Practical Data Science Cookbook: Data pre-processing, analysis and visualization using R and Python. Code",Packt Publishing,"Prabhanjan Tattar, Tony Ojeda, Sean Patrick Murphy, Benjamin Bengfort, Abhijit Dasgupta",2017
+418,"The Data Science Workshop: A New, Interactive Approach to Learning Data Science",Packt Publishing,"Anthony So, Thomas V. Joseph, Robert Thas John, Andrew Worsley, Dr. Samuel Asare",2020
+419,Data Science for Mathematicians,CRC Press,Nathan Carter,2020
+420,"Big data in medical science and healthcare management : diagnosis, therapy, side effects",De Gruyter Oldenbourg,Peter Langkafel,nan
+421,Causation in Population Health Informatics and Data Science,Springer International Publishing,"Olaf Dammann, Benjamin Smart",2019
+422,Big Data Science and Analytics for Smart Sustainable Urbanism: Unprecedented Paradigmatic Shifts and Practical Advancements,Springer International Publishing,Simon Elias Bibri,2019
+423,Statistical Methods for Materials Science: The Data Science of Microstructure Characterization,CRC Press,"Jeffrey P. Simmons, Lawrence F. Drummy, Charles A. Bouman, Marc De Graef",2019
+424,Data Science for Transport: A Self-Study Guide with Computer Exercises,Springer International Publishing,Charles Fox (auth.),2018
+425,Principles of Data Science (Transactions on Computational Science and Computational Intelligence),Springer,"Hamid R. Arabnia (editor), Kevin Daimi (editor), Robert Stahlbock (editor), Cristina Soviany (editor), Leonard Heilig (editor), Kai Brüssau (editor)",2020
+426,"Bayesian Data Analysis, Second Edition (Chapman & Hall CRC Texts in Statistical Science)",Chapman and Hall/CRC,"Andrew Gelman, John B. Carlin, Hal S. Stern, Donald B. Rubin",2003
+427,Think Like a Data Scientist: Tackle the data science process step-by-step,Manning Publications,Brian Godsey [Brian Godsey],2017
+428,Data Analysis and Machine Learning with Kaggle: How to win competitions on Kaggle and build a successful career in data science,Packt Publishing - ebooks Account,Konrad Banachewicz,2021
+429,"Learn Python by building data science applications: a fun, project-based guide to learning Python 3 while building real-world apps",Packt Publishing,"Kats, Philipp, Katz, David",2019
+430,The 9 Pitfalls of Data Science,Oxford University Press,"Gary Smith, Jay Cordes",2019
+431,Advances in Data Science: Methodologies and Applications,Springer International Publishing;Springer,"Gloria Phillips-Wren, Anna Esposito, Lakhmi C. Jain",2021
+432,Algorithms and Data Structures: The Science of Computing,Charles River Media,"Douglas Baldwin, Greg W. Scragg",2004
+433,Frontiers in Data Science,CRC Press,"Matthias Dehmer, Frank Emmert-Streib",2018
+434,Data Analysis for the Life Sciences,Leanpub,"Rafael A Irizarry, Michael I Love",2015
+435,Thick Big Data; Doing Digital Social Sciences,Oxford University Press,Dariusz Jemielniak,2020
+436,Python: 3 books in 1 : Python basics for Beginners + Python Automation Techniques And Web Scraping + Python For Data Science And Machine Learning,nan,"Vickler, Andy",2021
+437,"Learn Rstudio Ide: Quick, Effective, and Productive Data Science",Apress,Matthew Campbell,2019
+438,"The Real Work Of Data Science: Turning Data Into Information, Better Decisions, And Stronger Organizations",Wiley,"Ron S. Kenett, Thomas C. Redman",2019
+439,Python Data Science Handbook: Essential Tools for Working With Data,O’Reilly Media,"Jake Vanderplas [Vanderplas, Jake]",2016
+440,"Python: 3 books in 1: Beginner’s guide, Data science and Machine learning. The easiest guide to start Python programming. Unlock your programmer potential and develop your project in just 30 days",nan,William Dimick,2020
+441,Big Data Science in Finance,John Wiley & Sons,Irene Aldridge and Marco Avellaneda,2020
+442,Data Mining Techniques for the Life Sciences,Humana Press,"Oliviero Carugo, Frank Eisenhaber (eds.)",2016
+443,Data Science for Business Professionals,BPB Publications,Probyto Data Science and Consulting Pvt. Ltd. [Probyto Data Science and Consulting Pvt. Ltd.],2020
+444,Data Smart: Using Data Science to Transform Information into Insight,Wiley,John W. Foreman,2013
+445,"Humanizing Big Data: Marketing at the Meeting of Data, Social Science and Consumer Insight",Kogan Page,Colin Strong,2015
+446,Introduction to Statistical and Machine Learning Methods for Data Science,SAS Institute,Carlos Reis Pinheiro & Mike Patetta,2021
+447,Data Science: guida ai principi e alle tecniche base della scienza dei dati,Apogeo,Sinan Ozdemir,2017
+448,Data Science and Machine Learning: Mathematical and Statistical Methods (Chapman & Hall/Crc Machine Learning & Pattern Recognition),Chapman and Hall/CRC,"Dirk P. Kroese, Zdravko Botev, Thomas Taimre, Radislav Vaisman",2019
+449,"Python Machine Learning for Beginners: Learning from scratch NumPy, Pandas, Matplotlib, Seaborn, Scikitlearn, and TensorFlow for Machine Learning and Data Science",AI Publishing LLC,"Publishing, AI",2020
+450,Mathematical methods for knowledge discovery and data mining,Information Science Reference,"Giovanni Felici, Giovanni Felici, Carlo Vercellis",2008
+451,"Data Science Projects with Python: A case study approach to successful data science projects using Python, pandas, and scikit-learn",nan,Stephen Klosterman,2019
+452,Python data science handbook: essential tools for working with data,O'Reilly Media,"VanderPlas, Jacob T",2017
+453,"Data Science at the Command Line: Obtain, Scrub, Explore, and Model Data with Unix Power Tools","O'Reilly Media, Inc, USA",Jeroen Janssens,2021
+454,Perspectives on Data Science for Software Engineering,Morgan Kaufmann,"Tim Menzies, Laurie Williams, Thomas Zimmermann",2016
+455,"Introducing Data Science: Big Data, Machine Learning and More, Using Python tools",Manning Publications,"Davy Cielen, Arno Meysman, Mohamed Ali",2016
+456,"Data Science at the Command Line, 2nd Edition","O'Reilly Media, Inc.",Jeroen Janssens [Jeroen Janssens],2021
+457,Fundamentals of Data Science,Chapman and Hall/CRC,"Sanjeev J. Wagh, Manisha S. Bhende, Anuradha D. Thakare",2021
+458,"Building Data Science Applications with FastAPI: Develop, manage, and deploy efficient machine learning applications with Python",Packt Publishing,François Voron,2021
+459,Data Science for  Business  Professionals,BPB Publications,Probyto Data Science and  Consulting Pvt. Ltd.,2020
+460,Mastering Python for data science : explore the world of data science through Python and learn how to make sense of data,Packt Publishing,Samir Madhavan,2015
+461,Java: Data Science Made Easy,Packt Publishing,Alexey Grigorev & Jennifer L. Reese & Richard M. Reese [Alexey Grigorev],2017
+462,GUIDE TO INTELLIGENT DATA SCIENCE : how to intelligently make use of.,SPRINGER NATURE,,2020
+463,"Haunted Data: Affect, Transmedia, Weird Science",Bloomsbury,Lisa Blackman,2019
+464,Regression Models for Data Science in R A companion book for the Coursera Regression Models class,Leanpub,Brian Caffo,2019
+465,"Essentials of Data Science and Analytics: Statistical Tools, Machine Learning, and R-Statistical Software Overview",Business Expert Press,Sahay. Amar (author),2021
+466,Hands-on Scikit-Learn for machine learning applications: data science fundamentals with Python,Apress,"Paper, David",2020
+467,R for Health Data Science,Taylor & Francis Limited,Ewen Harrison & Riinu Pius,2020
+468,"Data Science: The Ultimate Guide to Data Analytics, Data Mining, Data Warehousing, Data Visualization, Regression Analysis, Database Querying, Big Data for Business and Machine Learning for Beginners",nan,"Herbert Jones [Jones, Herbert]",2018
+469,"Machine Learning for Spatial Environmental Data: Theory, Applications, and Software (Environmental Sciences: Environmental Engineering)",EFPL Press,"Mikhail Kanevski, Vadim Timonin, Alexi Pozdnukhov",2009
+470,Machine Learning: The Art and Science of Algorithms that Make Sense of Data,Cambridge University Press,Peter Flach,2012
+471,Python for Data Science: Data analysis and Deep learning with Python coding and programming,nan,William Wizner,nan
+472,Cloud Computing for Data Analysis The missing semester of Data Science,Leanpub book,Noah Gift,2021
+473,"Statistics for data science: leverage the power of statistics for data analysis, classification, regression, machine learning, and neural networks",Packt,"Miller, James D",2017
+474,Data Science from Scratch: First Principles with Python,O'Reilly Media,Joel Grus,2015
+475,Bayesian Optimization and Data Science,Springer International Publishing,"Francesco Archetti, Antonio Candelieri",2019
+476,PYTHON PROGRAMMING: A Complete Overview to Master The Art of Data Science From Scratch Using Python for Business,nan,"Whistler, Mark",2020
+477,Mastering Data Mining: The Art and Science of Customer Relationship Management,Wiley,"Michael J. A. Berry, Gordon S. Linoff",1999
+478,"Mathematical Modeling of Biological Systems, Volume I: Cellular Biophysics, Regulatory Networks, Development, Biomedicine, and Data Analysis (Modeling ... in Science, Engineering and Technology)",BirkhГ¤user Boston,"Andreas Deutsch, Lutz Brusch, Helen Byrne, Gerda de Vries, Hanspeter Herzel",2007
+479,Foundations of Data Science,nan,"John Hopcroft, Ravindran Kannan",2014
+480,"Profit from Science: Solving Business Problems Using Data, Math, and the Scientific Process",Palgrave Macmillan US,George Danner (auth.),2015
+481,Neural Data Science. A Primer with MATLAB® and Python™,Academic Press,Erik Lee Nylen and Pascal Wallisch (Auth.),2017
+482,"Data Science on AWS: Implementing End-to-End, Continuous AI and Machine Learning Pipelines",O'Reilly Media,"Chris Fregly, Antje Barth",2021
+483,Python Crash Course: A Beginner’s Guide to Master the Basics of Python and Data Science. Learn Coding with This Machine Learning Tool. Discover the Endless Possibilities of Computers and Codes.,nan,"Wall, Eric",2020
+484,"The Python Bible 7 in 1: Volumes One To Seven (Beginner, Intermediate, Data Science, Machine Learning, Finance, Neural Networks, Computer Vision)",nan,"Dedov, Florian",2020
+485,Data Science for Fundraising: Build Data-Driven Solutions Using R,nan,Ashutosh Nandeshwar & Rodger Devine,2018
+486,"Data Science on AWS: Implementing End-to-End, Continuous AI and Machine Learning Pipelines",O'Reilly Media,"Chris Fregly, Antje Barth",2021
+487,Bayesian Logical Data Analysis for the Physical Sciences with Mathematica Support,Cambridge University Press,Phil Gregory,2010
+488,Targeted Learning in Data Science,Springer International Publishing,"Mark J. van der Laan, Sherri Rose",2018
+489,Statistics and Data Analysis for the Behavioral Sciences,McGraw-Hill Companies,"Dana S. Dunn, Suzanne Mannes",2001
+490,Data Science for Business: What you need to know about data mining and data-analytic thinking,O'Reilly Media,"Foster Provost, Tom Fawcett",2013
+491,DATA SCIENCE FROM SCRATCH: From Data Visualization To Manipulation. It Is The Easy Way! All You Need For Business Using The Basic Principles Of Python And Beyond  [REVISED & EXPANDED EDITION],nan,WILLIAM GRAY,2019
+492,Python Programming: Learn the Basics and get into Data Science,nan,T.L.John,2021
+493,Hands-On Data Science and Python Machine Learning,Packt Publishing,Frank Kane [Frank Kane],2017
+494,Data Structure Simplified: Implementation Using C++,ALPHA SCIENCE INTL,Jitendra Singh,2018
+495,PYTHON FOR DATA SCIENCE: The Ultimate Beginners’ Guide to Learning Python Data Science Step by Step,nan,Ethan Williams,nan
+496,"Python Highway: 2 Books in 1: The Fastest Way for Beginners to Learn Python Programming, Data Science and Machine Learning in 3 Days (or less) + Practical Exercises Included",nan,"Cox, Aaron",2020
+497,"SQL for Marketers: Dominate data analytics, data science, and big data",LazyProgrammer,LazyProgrammer,nan
+498,Advanced Statistical Methods in Data Science,Springer Singapore,"Ding-Geng Chen, Jiahua Chen, Xuewen Lu, Grace Y. Yi, Hao Yu (eds.)",2016
+499,Report writing for data science in R,Leanpub,Roger D. Peng,2016
