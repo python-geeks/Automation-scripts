@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Frame, Entry, Button, Listbox, Scrollbar
+from tkinter import Tk, Label, Frame, Entry, Button, Listbox, Scrollbar, TclError
 from tkinter.font import Font
 from tkinter import END, TOP, BOTTOM, ANCHOR, LEFT, BOTH, RIGHT, FLAT
 import ctypes
@@ -38,7 +38,7 @@ def delete_note():
             if notes_list.size() == 0:
                 start_msg.pack(before=notes_list)
         error.pack_forget()
-    except:
+    except TclError:
         err("Select a note to delete")
 
 
@@ -50,7 +50,7 @@ def check_note():
         )
         notes_list.selection_clear(0, END)
         error.pack_forget()
-    except:
+    except TclError:
         err("Please select a note first.")
 
 
@@ -62,7 +62,7 @@ def uncheck_note():
         )
         notes_list.selection_clear(0, END)
         error.pack_forget()
-    except:
+    except TclError:
         err("Please select checked note first.")
 
 
