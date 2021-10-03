@@ -1,8 +1,6 @@
-from tkinter import *
-from tkinter import Tk, Label, Frame, Entry, Button
+from tkinter import Tk, Label, Frame, Entry, Button, Listbox, Scrollbar
 from tkinter.font import Font
-import datetime
-from PIL import Image, ImageTk
+from tkinter import END, TOP, BOTTOM, ANCHOR, LEFT, BOTH, RIGHT, FLAT
 import ctypes
 
 ctypes.windll.shcore.SetProcessDpiAwareness(True)
