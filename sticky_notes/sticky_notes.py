@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import Tk, Label, Frame, Entry, Button
 from tkinter.font import Font
 import datetime
 from PIL import Image, ImageTk
