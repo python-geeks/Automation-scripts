@@ -5,7 +5,7 @@ file_name = input("Provide the CSV filename without extension>> ")
 
 try:
 
-    with open(file_name+'.csv') as f:
+    with open(file_name + '.csv') as f:
 
         reader = csv.reader(f, delimiter=',')
         titles = []
@@ -21,12 +21,12 @@ try:
             temp_data['{}'.format(current_row)] = {}
             for col in range(len(titles)):
                 temp_data[current_row][titles[col]] = row[col]
-            i+=1
+            i += 1
 
-    with open(file_name+'.json', 'w') as f_j:
-        json.dump(temp_data, f_j, indent=4)
+    with open(file_name + '.json', 'w') as f_j:
+        json.dump(temp_data, f_j, indent = 4)
 
-except:
+except e:
     print("Please provide correct filename")
 
-print("File converted successfully :)")
+print("File converted successfully :)\n")
