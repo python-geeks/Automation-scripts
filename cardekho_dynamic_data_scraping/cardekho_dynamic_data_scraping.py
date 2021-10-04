@@ -12,7 +12,7 @@ Define the browser/driver and open the desired webpage
 '''
 driver = webdriver.Chrome(
     'D:\\Softwares\\chromedriver_win32\\chromedriver.exe'
-    )
+)
 driver.get('https://www.cardekho.com/filter/new-cars')
 '''
 Keep scrolling automatically and extract the data from the webpage and store it
