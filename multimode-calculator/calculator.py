@@ -275,7 +275,7 @@ def equal():
             e2.insert(0, "sqrt(" + str(num) + ") = " + str(result))
 
         if sign == "inv":
-            result = 1/num
+            result = 1 / num
             e.insert(0, result)
             e2.delete(0, len(e2.get()))
             e2.insert(0, str(num) + "^(-1) = " + str(result))
@@ -321,7 +321,7 @@ def equal():
 def delete():
     current = e.get()
     # e.insert(0, current)
-    e.delete(len(current)-1, len(current))
+    e.delete(len(current) - 1, len(current))
 
 
 def clear():
@@ -715,17 +715,19 @@ if __name__ == "__main__":
         background="light gray",
         variable=mode,
         font=("Helvetica", 9, "bold"),
-        text="Scientific", value="s").grid(
-            row=0, column=0, padx=5, pady=5, ipadx=10
-        )
+        text="Scientific", value="s"
+    ).grid(
+        row=0, column=0, padx=5, pady=5, ipadx=10
+    )
     tk.Radiobutton(
         root,
         background="light gray",
         variable=mode,
         font=("Helvetica", 9, "bold"),
-        text="Simple", value="n").grid(
-            row=0, column=1, padx=5, pady=5, ipadx=10
-        )
+        text="Simple", value="n"
+    ).grid(
+        row=0, column=1, padx=5, pady=5, ipadx=10
+    )
 
     choose_btn = tk.Button(
         root, background="light gray",
