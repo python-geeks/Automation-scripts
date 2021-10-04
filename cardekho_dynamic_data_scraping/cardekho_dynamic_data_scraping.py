@@ -55,10 +55,12 @@ for i in containers:
         engines.append(e[0].text)
     else:
         engines.append(" ")
-df = pd.DataFrame({
+df = pd.DataFrame(
+    {
         'Car Name': cars,
         'Price': prices,
         'Engine': engines,
-        'Mileage': mileages}
+        'Mileage': mileages
+    }
 )
 df.to_csv('carScrap.csv', index=False, encoding='utf-8')
