@@ -10,7 +10,9 @@ from bs4 import BeautifulSoup as soup
 '''
 Define the browser/driver and open the desired webpage
 '''
-driver = webdriver.Chrome('D:\Softwares\chromedriver_win32\chromedriver.exe')
+driver = webdriver.Chrome(
+    'D:\\Softwares\\chromedriver_win32\\chromedriver.exe'
+    )
 driver.get('https://www.cardekho.com/filter/new-cars')
 '''
 Keep scrolling automatically and extract the data from the webpage and store it
@@ -53,12 +55,10 @@ for i in containers:
         engines.append(e[0].text)
     else:
         engines.append(" ")
-df = pd.DataFrame(
-    {
+df = pd.DataFrame({
         'Car Name': cars,
         'Price': prices,
         'Engine': engines,
-        'Mileage': mileages
-    }
+        'Mileage': mileages}
 )
 df.to_csv('carScrap.csv', index=False, encoding='utf-8')
