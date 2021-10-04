@@ -733,5 +733,4 @@ if __name__ == "__main__":
         text="Select", command=lambda: create_frame(mode.get())
     )
     choose_btn.grid(row=0, column=2, padx=5, pady=5)
-
     root.mainloop()
