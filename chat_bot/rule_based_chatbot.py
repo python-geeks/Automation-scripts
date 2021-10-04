@@ -1,38 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-#  pip install flake8
-
-# # Rule based chatbot
-
-# In[3]:
-
-
-conda install flake8
-
-
-# In[1]:
-
-
 import nltk
 from nltk.chat.util import Chat,reflections
 
-
-# In[2]:
-
-
 print(Chat)
 
-
-# In[3]:
-
-
 reflections
-
-
-# In[4]:
-
-
 set_pairs=[
     [
         r"my name is (.*)",
@@ -104,24 +75,13 @@ set_pairs=[
     ],
 ]
 
-
-# In[5]:
-
-
 def chatbot():
     print("Hi I am a rule-based chatbot ! what can i help you with?")
 chatbot()
 
 
-# In[6]:
-
-
 chat = Chat(set_pairs,reflections)
 print(chat)
-
-
-# In[7]:
-
 
 chat.converse()
 if __name__ == "__main__":
