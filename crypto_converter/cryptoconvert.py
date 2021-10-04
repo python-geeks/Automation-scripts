@@ -37,7 +37,7 @@ if the input is found valid, else returns "None".
     if current_price is None:
         print("\nNo Information Available. We're Sorry!")
         return
-    return float(current_price)*fvalue
+    return float(current_price) * fvalue
 
 
 def convert_crypto_to_fiat(cvalue, ctype, ftype):
@@ -60,7 +60,7 @@ and "ftype" to Fiat Money type --> all given by the user."""
     if current_price is None:
         print("\nNo Information Available. We're Sorry!")
         return
-    return float(current_price)*cvalue
+    return float(current_price) * cvalue
 
 
 def validity_of_currencytype(ctype, ftype):
