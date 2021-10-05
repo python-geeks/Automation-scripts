@@ -31,7 +31,7 @@ def main(args: argparse.Namespace) -> None:
             # informing the user
             print(f'\033[92m[+] Censored data written to {args.output}\033[0m')
 
-    # printing the content to the console 
+    # printing the content to the console
     print()
     print('\033[1mCENSORED DATA\033[0m')
     print()
