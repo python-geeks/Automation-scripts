@@ -1,0 +1,4 @@
+requests == 2.26.0
+bs4
+csv
+sys
