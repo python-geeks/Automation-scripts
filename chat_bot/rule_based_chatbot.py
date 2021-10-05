@@ -1,9 +1,4 @@
-import nltk
 from nltk.chat.util import Chat, reflections
-
-print(Chat)
-
-reflections
 
 Set_pairs = [
     [
