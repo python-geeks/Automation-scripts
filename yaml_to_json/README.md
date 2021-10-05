@@ -11,12 +11,11 @@ Run the script using
 python yaml_to_json.py
 ```
 Enter the name of your yaml file
-![image](https://user-images.githubusercontent.com/21291203/136046506-0375c7e7-6d63-4eae-984a-4bbb8bfd3bfa.png)
-
+![image](https://user-images.githubusercontent.com/21291203/136048355-dea118d2-183b-4f87-a8ae-bc11d63a54e1.png)
 
 Enter the name for the output json file
-![image](https://user-images.githubusercontent.com/21291203/136046533-0533237a-e942-41f5-9972-64fca2cfe61e.png)
+![image](https://user-images.githubusercontent.com/21291203/136048408-c2d1c8de-f4f0-493d-ba70-4d4855a5951b.png)
 
 And your yaml file will be converted to a json file
+![image](https://user-images.githubusercontent.com/21291203/136048462-a0553367-6a59-4bda-bafb-470bd60a5e33.png)
   
-![image](https://user-images.githubusercontent.com/21291203/136046808-a49f16a8-f8f4-4cb0-be89-d02b99579bdd.png)
