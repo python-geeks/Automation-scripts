@@ -10,8 +10,8 @@ def reset_entry():
 
 def calculate_bmi():
     kg = int(weight_tf.get())
-    m = int(height_tf.get())/100
-    bmi = kg/(m*m)
+    m = int(height_tf.get()) / 100
+    bmi = kg / (m * m)
     bmi = round(bmi, 1)
     bmi_index(bmi)
 
