@@ -1,5 +1,4 @@
 import ctypes
-import os
 import time
 from tkinter import Button, Entry, Frame, Label, Tk
 from tkinter.constants import BOTTOM, FLAT, LEFT
@@ -173,6 +172,5 @@ instruction_label = Label(
 instruction_label.pack()
 
 if __name__ == "__main__":
-    os.system('python -m flake8 .')
     threading.Thread(target=today).start()
     root.mainloop()
