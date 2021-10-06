@@ -1,5 +1,5 @@
 # Image Downloader
-A simple python script to download an image provided link to that image.
+A simple python script to download images by providing link to the images.
 
 ## Modules Used
 
