@@ -38,7 +38,7 @@ def takeCommand():
     return query  
 
   
-  def alarm(Timing):
+def alarm(Timing):
     
     altime = str(datetime.datetime.now().strptime(Timing,"%I:%M %p"))
 
@@ -68,6 +68,4 @@ tt = takeCommand()
 tt = tt.replace("set alarm to ","")
 tt = tt.replace(".","")
 tt = tt.upper()
-alarm(tt)            
-            
-            
+alarm(tt)    
