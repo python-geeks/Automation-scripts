@@ -17,3 +17,4 @@ def add_corners(im, rad):
 im = Image.open('Location_to_image/image.png')
 im = add_corners(im, 100)
 im.save('Location_to_store/img_rounded.png')
+
