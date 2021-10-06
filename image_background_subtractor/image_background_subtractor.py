@@ -6,8 +6,8 @@ from PIL import Image
 mp_drawing = mp.solutions.drawing_utils
 mp_selfie_segmentation = mp.solutions.selfie_segmentation
 
-IMAGE_FILES = ['location_to_image/image.jpg'] #You can use multiple Images for removal at a go by just specifying the name of the images in the list.
-BG_COLOR = (255,255,255) # White Background
+IMAGE_FILES = ['location_to_image/image.jpg']  #  You can use multiple Images for removal at a go by just specifying the name of the images in the list.
+BG_COLOR = (255,255,255)  #  White Background
 with mp_selfie_segmentation.SelfieSegmentation(model_selection=0) as selfie_segmentation:
     for idx, file in enumerate(IMAGE_FILES):
         image = cv2.imread(file, cv2.IMREAD_UNCHANGED)
@@ -18,7 +18,7 @@ with mp_selfie_segmentation.SelfieSegmentation(model_selection=0) as selfie_segm
         bg_image[:] = BG_COLOR    
         output_image = np.where(condition,image,bg_image)
         cv2.imwrite('./white_bg' + str(idx) + '.png', output_image)
-        #Converting the White Background to Transparent Background.
+        #  Converting the White Background to Transparent Background.
         img = Image.open("./white_bg"+str(idx)+".png")
         img = img.convert("RGBA")    
         datas = img.getdata()
