@@ -1,0 +1,3 @@
+pytesseract
+pillow
+pyttsx3
