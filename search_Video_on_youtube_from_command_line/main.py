@@ -23,8 +23,8 @@ for i in range(len(videos_identifiers)):
     videos_link.append(f"{standard_video_link}{videos_identifiers[i]}")
 
 
-print(f"status: Success\n"
-      f"result: {len(videos_link)}\n"
+print(f"status: Success,\n"
+      f"result: {len(videos_link)},\n"
       f"links:")
 for video in videos_link:
     print(video)
