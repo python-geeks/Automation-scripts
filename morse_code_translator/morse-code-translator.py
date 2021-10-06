@@ -37,9 +37,9 @@ def translate(text):
 
 if __name__ == "__main__":
     os.system('cls')
-    print("-"*50)
+    print("-" * 50)
     print("ENTER MORSE CODE SENTENCE TO DECODE AND NORMAL SENTENCE TO ENCODE")
-    print("-"*50)
+    print("-" * 50)
     quit = False
 
     while not quit:
