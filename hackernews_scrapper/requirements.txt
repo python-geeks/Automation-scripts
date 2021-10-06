@@ -1,4 +1,2 @@
 requests == 2.26.0
-bs4
-csv
-sys
+beautifulsoup4 == 4.10.0
