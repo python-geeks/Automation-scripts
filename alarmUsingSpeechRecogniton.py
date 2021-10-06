@@ -1,5 +1,5 @@
 import speech_recognition as sr
-import windsound
+import winsound
 import datetime
 import pyttsx3  
 
@@ -37,9 +37,9 @@ def takeCommand():
         return "None"
     return query  
 
-  
+
 def alarm(Timing):
-    
+
     altime = str(datetime.datetime.now().strptime(Timing,"%I:%M %p"))
 
 
@@ -59,9 +59,9 @@ def alarm(Timing):
 
         elif Mireal<datetime.datetime.now().minute:
             break 
-            
-            
-            
+
+
+
 speech("say set alarm for 5:30 am ")
 print("say set alarm for 5:30 am")
 tt = takeCommand()
