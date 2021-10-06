@@ -67,4 +67,3 @@ tt = tt.replace("set alarm to ", "")
 tt = tt.replace(".", "")
 tt = tt.upper()
 alarm(tt)
-
