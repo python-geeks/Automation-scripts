@@ -17,6 +17,9 @@ $ pip install mediapipe
 3) Python Numpy
 $ pip install numpy
 
+3) Python pillow
+$ pip install pillow
+
 How to run the script?
 
     Please the edit the script with the source file location and the destination file location of the photo to be used.
