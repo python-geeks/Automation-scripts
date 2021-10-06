@@ -9,7 +9,7 @@ engine = pyttsx3.init()
 
 def speech(audio):
     engine.setProperty('rate', 200)
-    voices = engine.getProperty('voices')       
+    voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[0].id)
     engine.say(audio)
     engine.runAndWait()
@@ -27,7 +27,7 @@ def takeCommand():
 
     try:
         print("Recognizing...")
-        print()    
+        print()
         query = r.recognize_google(audio, language='en-in')
         print(f"you said: {query}\n")
 
@@ -67,3 +67,4 @@ tt = tt.replace("set alarm to ", "")
 tt = tt.replace(".", "")
 tt = tt.upper()
 alarm(tt)
+
