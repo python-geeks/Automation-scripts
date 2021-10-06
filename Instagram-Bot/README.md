@@ -10,7 +10,9 @@ These type of instagram bots are used extensively by small businesses on Instagr
 
 ### How to Use
 instabot2.py uses Instapy module which is much faster then Selenium based bot
-**Kindly add your username and password in the code file .**
+
+
+***Kindly add your username and password in the code file .***
 
 ### Programming Language
 
