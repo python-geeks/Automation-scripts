@@ -1,0 +1,5 @@
+libraries used : tkinter
+		 messagebox
+		 PIL
+		 moviepy
+		 os
