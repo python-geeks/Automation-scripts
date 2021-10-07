@@ -54,9 +54,12 @@ You can contribute by adding new scripts, improving current scripts or Documenta
 
 ### How to check flake8 linting
 
-* Option 1: Go to [PEP8 online](http://pep8online.com/) , paste your code and check the format it correctly
-* Option 2: Set up locally, Download flake8 linter and check (as shown in figure below)
+
+* Option 1: Set up locally, Download flake8 linter and check (as shown in figure below)
 ![carbon (1)](https://user-images.githubusercontent.com/42181691/135052274-49d6f2be-04c0-4bf7-9c25-b734b8db6f3c.png)
+* Option 2: Go to [PEP8 online](http://pep8online.com/) , paste your code and check the format it correctly
+* 
+**It's better to go with option 2 always**
 
 **Typo fixed/ minor change in docs not marked as contribution. If you're not aware of process kindly raise a query in formal manner :)**
 
