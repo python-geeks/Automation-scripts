@@ -25,7 +25,7 @@ driver.get(url)
 try:
     # opens the nth video requested by the user
     xxpath = (driver.find_elements_by_xpath('//*[@id="video-title"]'))
-    xxpath[number-1].click()
+    xxpath[number - 1].click()
 
 except Exception as e:
     print("error : ")
