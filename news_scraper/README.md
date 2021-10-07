@@ -18,7 +18,7 @@ source .venv/bin/activate
 
 ## Sample Output
 
-- [Document](news_scraper/news.docx)
-- [Text](news_scraper/news.txt)
-- [CSV](news_scraper/news.csv)
+- [Document](https://github.com/pragyakhanna11/Automation-scripts/blob/main/news_scraper/news.docx)
+- [Text](https://github.com/pragyakhanna11/Automation-scripts/blob/main/news_scraper/news.txt)
+- [CSV](https://github.com/pragyakhanna11/Automation-scripts/blob/main/news_scraper/news.csv)
 
