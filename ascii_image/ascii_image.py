@@ -26,7 +26,7 @@ if args.colorInvert:
 img = Image.open(inputImagePath)
 
 wid, height = img.size
-img = img.resize((widd, int(widd * ((height * 9) / (wid *   20)))))
+img = img.resize((widd, int(widd * ((height * 9) / (wid * 20)))))
 wid, height = img.size
 
 img = img.convert("L")
