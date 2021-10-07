@@ -1,7 +1,5 @@
 # Alarm using speech recognition
 
-
-
 ## Steps to set an alarm : 
 1. run the script `AlarmClock.py` using python3.  
     On Unix based systems the command looks like : 
@@ -27,4 +25,3 @@
     Time to Wake up
    
     ```
-
