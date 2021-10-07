@@ -1,7 +1,7 @@
 # MP4 to MP3 Converter
 
 # imported necessary library
-from tkinter import *
+from tkinter import Tk, Button, Text, END
 import tkinter as tk
 from tkinter import filedialog
 import tkinter.messagebox as mbox
@@ -11,7 +11,7 @@ import moviepy.editor
 import os
 
 # created a main window
-window = tk()
+window = Tk()
 window.title('MP4 to MP3 Converter')
 window.geometry("1000x700")
 
