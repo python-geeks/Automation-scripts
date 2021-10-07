@@ -6,8 +6,6 @@ If your far from your pc and you want to shutdown your pc, you can automate it b
 ## How to install library
 pip install pywin32
 pip install SpeechRecognition
-pip install os
-pipi install time
 
 ## How to use
 1. You has to install all the library mentioned above.
@@ -16,4 +14,3 @@ pipi install time
 4. It will ask confirmation from you.
 5. Say "Yes".
 6. It will shoutdown your pc in 3 second.
-
