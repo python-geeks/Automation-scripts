@@ -53,7 +53,7 @@ def alarm(Timing):
 
     while True:
         if Horeal == datetime.datetime.now().hour and Mireal == datetime.datetime.now().minute:
-            print("alarm is running")
+            print("alarm is running please exit the program")
             winsound.PlaySound('abc', winsound.SND_LOOP)
 
         elif Mireal < datetime.datetime.now().minute:
