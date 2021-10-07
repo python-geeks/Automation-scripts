@@ -25,21 +25,21 @@ body = [pt.get_text() for pt in body_tags]
 
 final = []
 for i in range(len(body)):
-  news = {'Title': None,
-          'Author':None,
-          'Date':None,
-          'Time':None,
-          'Details':None }
-  news['Title'] = headlines[i]
-  news['Author'] = author[i]
-  news['Date'] = date[i]
-  news['Time'] = time[i]
-  news['Details'] = body[i]
-  final.append(news)
+    news = {'Title': None,
+            'Author': None,
+            'Date': None,
+            'Time': None,
+            'Details': None}
+    news['Title'] = headlines[i]
+    news['Author'] = author[i]
+    news['Date'] = date[i]
+    news['Time'] = time[i]
+    news['Details'] = body[i]
+    final.append(news)
 final
 
 textfile = open("news.txt", "w", encoding="utf-8")
-textfile.write("NEWS "+ str(today)+"\n")
+textfile.write("NEWS " + str(today) + "\n")
 for element in final:
     for key, value in element.items():
         textfile.write(f'{key}: {value}\n')
@@ -47,19 +47,19 @@ for element in final:
 textfile.close()
 
 document = Document()
-document.add_heading('NEWS '+str(today), 0)
+document.add_heading('NEWS ' + str(today), 0)
 for element in final:
     p = document.add_paragraph('')
     for key, value in element.items():
         p.add_run(f'{key}: {value}\n')
     p.add_run('\n')
-document.save('news.docx')
+document.save('D:/pythonProject2/news.docx')
 
 news_df = pd.DataFrame({
     "Title": headlines,
     "Author": author,
     "Date": date,
-    "Time":time,
-    "Details":body
+    "Time": time,
+    "Details": body
 })
 news_df.to_csv('news.csv')
