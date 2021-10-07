@@ -76,7 +76,7 @@ class Keypad(tk.Frame):
                       fg="blue",
                       borderwidth=3,
                       relief="raised")
-        x.grid(row=0, column=20, columnspan='3',  sticky='news')
+        x.grid(row=0, column=20, columnspan='3', sticky='news')
 
         x = tk.Button(self,
                       text='Hide',
@@ -147,8 +147,8 @@ class Keypad(tk.Frame):
 
 
 def print_output():
-    mbox.showinfo("Text Entered", "Text Entered :\n\n" +
-                  text_enter.get('1.0', END))
+    mbox.showinfo("Text Entered",
+                  "Text Entered :\n\n" + text_enter.get('1.0', END))
 
 # firstclick1 = True
 # def on_text_enter_click(event):
