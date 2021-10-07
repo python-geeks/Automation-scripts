@@ -53,7 +53,7 @@ for element in final:
     for key, value in element.items():
         p.add_run(f'{key}: {value}\n')
     p.add_run('\n')
-document.save('D:/pythonProject2/news.docx')
+document.save('news.docx')
 
 news_df = pd.DataFrame({
     "Title": headlines,
