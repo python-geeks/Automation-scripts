@@ -41,7 +41,7 @@ def drawRect(array, color):
         x1 = (i + 1) * x_width + x_left
         y1 = c_height
         canvas.create_rectangle(x0, y0, x1, y1, fill=color[i])
-        canvas.create_text(x0+2, y0, anchor=SW, text=str(array[i]))
+        canvas.create_text(x0 + 2, y0, anchor=SW, text=str(array[i]))
 
     root.update_idletasks()
 
@@ -72,12 +72,12 @@ def partition(array, left, right, drawRect):
     i = left + 1
     pivot = array[left]
 
-    for j in range(left+1, right+1):
+    for j in range(left + 1, right + 1):
         if array[j] < pivot:
             array[i], array[j] = array[j], array[i]
             i += 1
-    array[left], array[i-1] = array[i-1], array[left]
-    return i-1
+    array[left], array[i - 1] = array[i - 1], array[left]
+    return i - 1
 
 
 # quick sort function
@@ -85,7 +85,7 @@ def quickSort(array, left, right, drawRect):
     if left < right:
         pivot = partition(array, left, right, drawRect)
         quickSort(array, left, pivot, drawRect)
-        quickSort(array, pivot+1, right, drawRect)
+        quickSort(array, pivot + 1, right, drawRect)
         drawRect(array, [BLUE if x >= left and x < pivot
                          else YELLOW if x == pivot
                          else PURPLE if x > pivot and x <= right
@@ -98,7 +98,7 @@ def quickSort(array, left, right, drawRect):
 # actually perform quicksort
 def sort():
     try:
-        quickSort(array, 0, len(array)-1, drawRect)
+        quickSort(array, 0, len(array) - 1, drawRect)
         messagebox.showinfo('Succces', 'Array sorted!')
     except Exception:
         messagebox.showinfo('Error', 'Array could not be sorted')
