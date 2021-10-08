@@ -104,6 +104,11 @@ def sort():
         messagebox.showinfo('Error', 'Array could not be sorted')
 
 
+def exit_win():
+    if messagebox.askokcancel("Exit", "Do you want to exit?"):
+        root.destroy()
+
+
 # !--GUI code starts--!
 
 # main window
@@ -189,6 +194,9 @@ generate.grid(row=1, column=2, padx=15, pady=5, ipadx=20, ipady=5)
 
 Search = Button(entries, text="Sort", bg=LIGHT_GREY, command=sort)
 Search.grid(row=1, column=3, padx=15, pady=5, ipadx=20, ipady=5)
+
+Exitbtn = Button(entries, text="Exit", bg=LIGHT_GREY, command=exit_win)
+Exitbtn.grid(row=1, column=4, padx=15, pady=5, ipadx=20, ipady=5)
 
 root.mainloop()
 
