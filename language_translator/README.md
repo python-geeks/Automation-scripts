@@ -7,7 +7,7 @@ A python script based GUI interface to translate text from one language to anoth
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install packages.
 
 ```bash
-pip install googletrans
+pip install googletrans==3.1.0a0
 pip install Pillow
 ```
 
