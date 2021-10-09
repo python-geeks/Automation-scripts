@@ -13,7 +13,8 @@ class AlFileUnlatcher():
         root = Tk(className=" ALFILEUNLATCHER ")
         root.geometry("400x175+1500+840")
         root.resizable(0, 0)
-        root.iconbitmap(os.path.join(cwd+'\\UI\\icons', 'alfileunlatcher.ico'))
+        root.iconbitmap(os.path.join(cwd + '\\UI\\icons',
+                        'alfileunlatcher.ico'))
         root.config(bg="#ffe69b")
         root.overrideredirect(1)
         color = '#ffe69b'
@@ -41,7 +42,7 @@ class AlFileUnlatcher():
 
         def find():
             inputFile = fileText.get()
-            fileName = os.path.join(cwd+'/AlFileUnlatcher',
+            fileName = os.path.join(cwd + '/AlFileUnlatcher',
                                     'files_database.lst')
             if os.path.exists(fileName):
                 pass
@@ -64,8 +65,8 @@ class AlFileUnlatcher():
             lnfl = len(notFoundList)
             if (lfl == 0) or (lnfl != 0 and lfl == 0) or (lnfl != 0):
                 check = subprocess.check_output(f'python {cwd}/AlFileUnlatcher'
-                                                '/AlFileSearcher.py "' +
-                                                inputFile+'"')
+                                                '/AlFileSearcher.py "' + ''
+                                                inputFile + '"')
                 check = check.decode("utf-8").replace('\r\n', ',:;')
                 output = check.split(',:;')[:-1]
                 allFiles = [i + '\n' for i in output]
@@ -85,14 +86,14 @@ class AlFileUnlatcher():
                     filename = os.path.basename(file)
                     try:
                         text.delete(1.0, END)
-                        speak('Opening '+inputFile)
-                        text.insert(1.0, 'Opening '+inputFile)
+                        speak('Opening ' + inputFile)
+                        text.insert(1.0, 'Opening ' + inputFile)
                         os.startfile(os.path.join(directory, filename))
                     except Exception as e:
                         print(str(e))
-                        text.insert(1.0, 'Set a default application to open' /
-                                    'the input file')
-                        speak('Set a default application to open the input ' /
+                        text.insert(1.0, 'Set a default application to open'
+                                    ' the input file')
+                        speak('Set a default application to open the input '
                               'file')
 
         textHighlightFont = font.Font(family='OnePlus Sans Display', size=12)
@@ -100,7 +101,7 @@ class AlFileUnlatcher():
                                      weight='bold')
 
         titleBar = Frame(root, bg='#141414', relief=SUNKEN, bd=0)
-        icon = Image.open(os.path.join(cwd+'\\UI\\icons',
+        icon = Image.open(os.path.join(cwd + '\\UI\\icons',
                           'alfileunlatcher.ico'))
         icon = icon.resize((30, 30), Image.ANTIALIAS)
         icon = ImageTk.PhotoImage(icon)
@@ -138,7 +139,7 @@ class AlFileUnlatcher():
         find.config(bg=color, fg="#0078d7", font=appHighlightFont)
         find.pack(fill=X)
 
-        text = Text(root, font="sans-serif",  relief=SUNKEN,
+        text = Text(root, font="sans-serif", relief=SUNKEN,
                     highlightbackground=color, highlightcolor=color,
                     highlightthickness=5, bd=0)
         text.config(bg="#0078d7", fg='white', height=2, font=textHighlightFont)
