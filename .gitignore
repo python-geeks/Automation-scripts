@@ -34,6 +34,7 @@ var/
 *.spec
 
 # Installer logs
+test.py
 pip-log.txt
 pip-delete-this-directory.txt
 
