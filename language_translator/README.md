@@ -1,19 +1,20 @@
-## USER GUIDE
+# AlTranslator
 
-## Setup and activate virtual environment :
-For Unix based systems please execute the following command to create venv and install requirements.
-```
-make init
-source .venv/bin/activate
+A python script based GUI interface to translate text from one language to another.
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install packages.
+
+```bash
+pip install googletrans
+pip install Pillow
 ```
 
-### Pre-requisites
-```
-1) Googletrans python library
-$ pip install googletrans
-```
-### How to run the script?
-```
-$ python we-can-use-google-trans.py
-```
-Once done the script will prompt for input.
+## Usage
+
+![](Capture.PNG)
+
+1. First select both source and destination language.
+2. Enter text in the field.
+3. Click on Translate.
