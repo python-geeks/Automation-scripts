@@ -14,8 +14,8 @@ class AlPythonPackageInstaller():
         root = Tk(className=" ALPYTHONPACKAGEINSTALLER ")
         root.geometry("400x200+1500+815")
         root.resizable(0, 0)
-        root.iconbitmap(os.path.join(cwd +
-                        '\\UI\\icons', 'alpythonpackageinstaller.ico'))
+        root.iconbitmap(os.path.join(cwd + '\\UI\\icons',
+                        'alpythonpackageinstaller.ico'))
         root.config(bg="#0d4b98")
         root.overrideredirect(1)
         color = '#0d4b98'
@@ -71,7 +71,7 @@ class AlPythonPackageInstaller():
                                      weight='bold')
 
         titleBar = Frame(root, bg='#141414', relief=SUNKEN, bd=0)
-        icon = Image.open(os.path.join(cwd+'\\UI\\icons',
+        icon = Image.open(os.path.join(cwd + '\\UI\\icons',
                           'alpythonpackageinstaller.ico'))
         icon = icon.resize((30, 30), Image.ANTIALIAS)
         icon = ImageTk.PhotoImage(icon)
