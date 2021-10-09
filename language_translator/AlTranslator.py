@@ -36,7 +36,8 @@ class AlTranslator():
                                      weight='bold')
 
         titleBar = Frame(root, bg='#141414', relief=SUNKEN, bd=0)
-        icon = Image.open(os.path.join(cwd+'\\UI\\icons', 'altranslator.ico'))
+        icon = Image.open(os.path.join(cwd + '\\UI\\icons',
+                          'altranslator.ico'))
         icon = icon.resize((30, 30), Image.ANTIALIAS)
         icon = ImageTk.PhotoImage(icon)
         iconLabel = Label(titleBar, image=icon)
