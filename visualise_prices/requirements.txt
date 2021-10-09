@@ -1,0 +1,4 @@
+nsetools
+requests
+plotly==5.3.1
+pandas
