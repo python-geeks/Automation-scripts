@@ -66,7 +66,7 @@ class AlFileUnlatcher():
             if (lfl == 0) or (lnfl != 0 and lfl == 0) or (lnfl != 0):
                 check = subprocess.check_output(f'python {cwd}/AlFileUnlatcher'
                                                 '/AlFileSearcher.py "' + ''
-                                                inputFile + '"')
+                                                '' + inputFile + '"')
                 check = check.decode("utf-8").replace('\r\n', ',:;')
                 output = check.split(',:;')[:-1]
                 allFiles = [i + '\n' for i in output]
