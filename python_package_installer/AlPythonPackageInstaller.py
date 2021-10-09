@@ -1,6 +1,6 @@
 import subprocess
-from tkinter import *
-from tkinter import font
+from tkinter import Tk, END, Frame, SUNKEN, Button, X, Text
+from tkinter import font, Label, Entry, BOTH
 import pyttsx3
 from PIL import ImageTk, Image
 import os
@@ -52,16 +52,15 @@ class AlPythonPackageInstaller():
             errorInstalling = 'ERROR: Could not find a version that satisfies'\
                               'the requirement ' + package
             someError = 'ERROR: '
-
-            if nowInstalled in check.split('\n')[-1]:
-                text.insert(1.0, check.split('\n')[-1])
+            var = check.split('\n')
+            if nowInstalled in var[-1]:
+                text.insert(1.0, var[-1])
                 speak('Successfully installed ' + package)
-            elif len(check.split('\n')) >= 3 and nowInstalled in check.split('\
-                                                                       n')[-3]:
-                text.insert(1.0, check.split('\n')[-3])
+            elif len(var) >= 3 and nowInstalled in var[-3]:
+                text.insert(1.0, var[-3])
                 speak('Successfully installed ' + package)
-            elif alreadyInstalled in check.split('\n')[0]:
-                text.insert(1.0, check.split('\n')[0])
+            elif alreadyInstalled in var[0]:
+                text.insert(1.0, var[0])
                 speak(package + 'already installed')
             elif errorInstalling in check or someError in check:
                 text.insert(1.0, check)
