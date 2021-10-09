@@ -1,7 +1,7 @@
 import argparse
 from pytube import YouTube
-
-
+from colorama import Fore
+print(Fore.LIGHTYELLOW_EX)
 def cli_parse():
     cli = argparse.ArgumentParser(prog='ytdownloader',
                                   description='Basic automation script for downloading YouTube hosted videos')
@@ -11,7 +11,7 @@ def cli_parse():
                      help="Captions lang to download")
     cli.add_argument("-r", "--res", type=str, help="Resolution to download")
     cli.add_argument("-v", "--verbose", type=bool, default=False,
-                     help="Show information about script processing")
+                     help="Shows information about script processing")
     return cli.parse_args()
 
 
@@ -24,7 +24,7 @@ else:
     if not stream:
         stream = video.streams.get_highest_resolution()
         print(
-            f"Sorry, '{args.res}' resolution is not available for this video.\nDownloading highest resolution...")
+            f"Sorry, '{args.res}' resolution is not available for this video.\nDownloading highest available resolution...")
 
 
 if not args.path:
@@ -45,3 +45,4 @@ if args.captions:
 
 if args.verbose:
     print(f"Successfully downloaded video: {dest}")
+print(Fore.RESET)
