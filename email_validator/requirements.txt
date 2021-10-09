@@ -1,0 +1,2 @@
+quickemailverification==1.0.3
+openpyxl==2.6.2
