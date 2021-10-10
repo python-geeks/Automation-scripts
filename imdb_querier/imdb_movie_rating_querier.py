@@ -16,6 +16,7 @@ try:
     movie_rating_stats = vote_details["data"]["demographics"]["imdb users"]
     print("Rating: %s, based on %s votes" % (movie_rating_stats["rating"], movie_rating_stats["votes"]))
 
-except:
-    print("Movie data is not available")
+except KeyError:
+    print("Movie ratings data is not available")
     sys.exit()
+
