@@ -19,4 +19,3 @@ try:
 except KeyError:
     print("Movie ratings data is not available")
     sys.exit()
-
