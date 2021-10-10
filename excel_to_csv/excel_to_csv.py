@@ -11,4 +11,4 @@ sh = wb.active
 with open(csv_file, mode, newline="") as f:
     col = csv.writer(f)
     for row in sh.rows:
-        col.writerow([cell.value for cell in row ])
+        col.writerow([cell.value for cell in row])
