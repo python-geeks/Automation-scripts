@@ -3,7 +3,6 @@ import csv
 
 print("Enter Path of your Excel file")
 xls_file = input()
-#xls_file = "myexcelfile.xlsx"
 csv_file = 'mycsvfile.csv'
 mode = 'w'
 
