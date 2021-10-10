@@ -1,5 +1,4 @@
 # AlPythonPackageInstaller
-
 A python script based GUI interface to install python packages.
 
 ## Installation
