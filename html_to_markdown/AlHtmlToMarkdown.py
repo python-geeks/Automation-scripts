@@ -107,7 +107,7 @@ class AlHtmlToMarkdown():
         convertToMarkdown.config(bg=color, fg="white", font=appHighlightFont)
         convertToMarkdown.pack(fill=X)
 
-        text = Text(root, font="sans-serif",  relief=SUNKEN,
+        text = Text(root, font="sans-serif", relief=SUNKEN,
                     highlightbackground=color, highlightcolor=color,
                     highlightthickness=5, bd=0)
         text.config(bg="white", fg='#7a1da3', height=2, font=textHighlightFont)
