@@ -71,6 +71,7 @@
   * file_arranger: `https://github.com/python-geeks/Automation-scripts/tree/main/file_arranger`
   * file_encrypter: `https://github.com/python-geeks/Automation-scripts/tree/main/file_encrypter`
   * file_mover: `https://github.com/python-geeks/Automation-scripts/tree/main/file_mover`
+  * file_unlatcher: `https://github.com/python-geeks/Automation-scripts/tree/main/file_unlatcher`
   * flask_login_template: `https://github.com/python-geeks/Automation-scripts/tree/main/flask_login_template`
   * flipkart_price_tracker: `https://github.com/python-geeks/Automation-scripts/tree/main/flipkart_price_tracker`
   * fork_and_clone: `https://github.com/python-geeks/Automation-scripts/tree/main/fork_and_clone`
@@ -142,6 +143,7 @@
   * product_availability: `https://github.com/python-geeks/Automation-scripts/tree/main/product_availability`
   * profanity_filter: `https://github.com/python-geeks/Automation-scripts/tree/main/profanity_filter`
   * programming_quoter: `https://github.com/python-geeks/Automation-scripts/tree/main/programming_quoter`
+  * python_package_installer: `https://github.com/python-geeks/Automation-scripts/tree/main/python_package_installer`
   * qrcode_generator: `https://github.com/python-geeks/Automation-scripts/tree/main/qrcode_generator`
   * qrcode_scanner: `https://github.com/python-geeks/Automation-scripts/tree/main/qrcode_scanner`
   * quick_painter: `https://github.com/python-geeks/Automation-scripts/tree/main/quick_painter`
@@ -169,6 +171,7 @@
   * stop_watch: `https://github.com/python-geeks/Automation-scripts/tree/main/stop_watch`
   * straighten_image: `https://github.com/python-geeks/Automation-scripts/tree/main/straighten_image`
   * subtitle_creator: `https://github.com/python-geeks/Automation-scripts/tree/main/subtitle_creator`
+  * subtitle_downloader: `https://github.com/python-geeks/Automation-scripts/tree/main/subtitle_downloader`
   * sudoku_solver: `https://github.com/python-geeks/Automation-scripts/tree/main/sudoku_solver`
   * system_information: `https://github.com/python-geeks/Automation-scripts/tree/main/system_information`
   * telegram_backup: `https://github.com/python-geeks/Automation-scripts/tree/main/telegram_backup`
