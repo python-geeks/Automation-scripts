@@ -1,11 +1,11 @@
-# Automated Pixel-Sorting
+## Automated Pixel-Sorting :
 
 - This tool performs pixelsorting using the [Pixelsort](https://github.com/satyarth/pixelsort) library.
 - Running the code randomly generates 'N' number of images.
 - Everything, from count and choice of paramters to the values they hold, is randomly generated.
 
 
-## Setup and paramter instructions
+## Setup and paramter instructions :
 
 - Install the Pixelsort library using : ```pip install pixelsort```
 - The few paramters that are to be passed through the terminal are :
@@ -20,10 +20,6 @@
     - ```python autosort.py -i image.jpg -n 6```
     - ```python autosort.py -i image.png -n 10```
 
-## Output
+## Output :
 
 ![Sample Results](https://i.imgur.com/Bhxz1pX.png)
-
-## Author(s)
-
-- [Tanya Sabarwal](https://github.com/Tanya-18)
