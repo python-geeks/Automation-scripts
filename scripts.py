@@ -24,7 +24,7 @@ if(len(sys.argv) > 1):
         with open('SCRIPTS.json', 'w') as jsonfile:
             json.dump(repo_contents, jsonfile, indent=4)
 
-    except:
+    except:  # noqa
         print('Either wrong token entered or poor internet connection..!')
 
 
