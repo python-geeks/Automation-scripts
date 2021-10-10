@@ -38,6 +38,7 @@ test.py
 pip-log.txt
 pip-delete-this-directory.txt
 scripts.py
+md_guide.txt
 
 # Unit test / coverage reports
 htmlcov/
