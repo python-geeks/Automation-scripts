@@ -14,7 +14,7 @@ class AlCalendar():
         root = Tk(className=" ALCALENDAR ")
         root.geometry("400x250+1500+765")
         root.resizable(0, 0)
-        root.iconbitmap(os.path.join(cwd+'\\UI\\icons', 'alcalendar.ico'))
+        root.iconbitmap(os.path.join(cwd + '\\UI\\icons', 'alcalendar.ico'))
         root.config(bg="#222222")
         root.overrideredirect(1)
         color = '#222222'
@@ -38,7 +38,7 @@ class AlCalendar():
                                      weight='bold')
 
         titleBar = Frame(root, bg='#141414', relief=SUNKEN, bd=0)
-        icon = Image.open(os.path.join(cwd+'\\UI\\icons', 'alcalendar.ico'))
+        icon = Image.open(os.path.join(cwd + '\\UI\\icons', 'alcalendar.ico'))
         icon = icon.resize((30, 30), Image.ANTIALIAS)
         icon = ImageTk.PhotoImage(icon)
         iconLabel = Label(titleBar, image=icon)
