@@ -75,7 +75,7 @@ class AlDocSummarizer():
 
                     maxFreq = max(wordFreq.values())
                     for word in wordFreq.keys():
-                        wordFreq[word] = wordFreq[word]/maxFreq
+                        wordFreq[word] = wordFreq[word] / maxFreq
 
                     sentenceScores = {}
                     for sent in sentenceList:
@@ -164,7 +164,7 @@ class AlDocSummarizer():
         docSummary.config(bg=color, fg="white", font=appHighlightFont)
         docSummary.pack(fill=X)
 
-        text = Text(root, font="sans-serif",  relief=SUNKEN,
+        text = Text(root, font="sans-serif", relief=SUNKEN,
                     highlightbackground=color, highlightcolor=color,
                     highlightthickness=5, bd=0)
         text.config(bg="white", fg=color, height=2, font=textHighlightFont)
