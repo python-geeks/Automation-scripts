@@ -23,3 +23,6 @@
 ## Output :
 
 ![Sample Results](https://i.imgur.com/Bhxz1pX.png)
+
+## Author(s) :
+- [Tanya Sabarwal](https://github.com/Tanya-18)
