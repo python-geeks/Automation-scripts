@@ -28,3 +28,6 @@
 ## Sample Output
 
 ![](./images/markdown-sample.JPG)
+
+## Author(s)
+- [Piyush Mohan](https://github.com/piyushmohan01)
