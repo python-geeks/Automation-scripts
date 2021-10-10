@@ -19,3 +19,5 @@ pip install Pillow
 
 1. Provide the input as given in above image.
 2. Then, click on OPEN FILE button.
+
+**Note: Be patient whenever you are searching for any file first time. 2nd time when you search the same file it will open it instantly.**
