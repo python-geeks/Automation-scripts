@@ -76,6 +76,8 @@ class AlFileUnlatcher():
                 dFile.close()
                 uniqlines = set(open(fileName).readlines())
                 bar = open(fileName, 'w+').writelines(set(uniqlines))
+                if bar:
+                    bar.close()
                 for file in output:
                     filename = os.path.basename(file)
                     if filename == inputFile and file not in filesList:
