@@ -11,7 +11,7 @@ def print_help():
     print('[+] use --cm to get the time of common timezones around the world.')
     print('[+] use --cmp and pass two \'-\' seperated timezones to compare.')
     print('[+] use --help again if needed.')
-    print('\n' + '-'*50 + '\n')
+    print('\n' + '-' * 50 + '\n')
 
 
 # --- GET DATETIME OF PASSED TIMEZONE ---
@@ -24,14 +24,14 @@ def get_datetime(time_zone):
 # --- GET DATETIME OF CUSTOM TIMEZONE ---
 def get_custom_tz(time_zone):
     response = str(get_datetime(time_zone))
-    print(f'%20s' % 'Timezone' + '  :' + ' '*2 + time_zone)
+    print(f'%20s' % 'Timezone' + '  :' + ' ' * 2 + time_zone)  # noqa
     date, time = response.split(' ')
     hours, minutes, seconds = time.split(':')
-    print('%20s' % 'Hours' + '  :' + ' '*2 + hours)
-    print('%20s' % 'Minutes' + '  :' + ' '*2 + minutes)
-    print('%20s' % 'Seconds' + '  :' + ' '*2 + seconds)
-    print('%20s' % 'Date' + '  :' + ' '*2 + date)
-    print('\n' + '-'*50 + '\n')
+    print('%20s' % 'Hours' + '  :' + ' ' * 2 + hours)
+    print('%20s' % 'Minutes' + '  :' + ' ' * 2 + minutes)
+    print('%20s' % 'Seconds' + '  :' + ' ' * 2 + seconds)
+    print('%20s' % 'Date' + '  :' + ' ' * 2 + date)
+    print('\n' + '-' * 50 + '\n')
 
 
 # --- GET DATETIMES OF COMMON TIMEZONES ---
@@ -63,14 +63,14 @@ def get_comparisons(tz_1, tz_2):
     print('%25s' % 'Hours :', offset.hours)
     print('%25s' % 'Minutes :', offset.minutes)
     print('%25s' % 'Seconds :', offset.seconds)
-    print('\n' + '-'*50 + '\n')
+    print('\n' + '-' * 50 + '\n')
 
 
 # --- MAIN FUNCTION ---
 def Main():
-    print('\n' + '-'*50 + '\n')
-    print(' '*16 + 'TIMEZONE TOOL')
-    print('\n' + '-'*50 + '\n')
+    print('\n' + '-' * 50 + '\n')
+    print(' ' * 16 + 'TIMEZONE TOOL')
+    print('\n' + '-' * 50 + '\n')
 
     # --- SET DEFAULTS ---
     argument_list = sys.argv[1:]
@@ -92,11 +92,12 @@ def Main():
                 if len(timezones) == 2:
                     get_comparisons(timezones[0], timezones[1])
                 else:
-                    print(' '*5, '[+] Seperate the Timezones with \'-\'')
-                    print('\n' + '-'*50 + '\n')
+                    print(' ' * 5, '[+] Seperate the Timezones with \'-\'')
+                    print('\n' + '-' * 50 + '\n')
 
     except getopt.error as error:
         print(str(error))
+
 
 if __name__ == '__main__':
     Main()
