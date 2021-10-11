@@ -2,6 +2,8 @@
 
 **Do you know anything that can help all to easy our tough life than tell that secret to us and help us to become lazy like Panda**
 
+> **You can check current scripts of this REPO [here](https://github.com/python-geeks/Automation-scripts/blob/main/SCRIPTS.md)**
+
 <p align="center">
   <a href="https://github.com/python-geeks/Automation-scripts/issues"><img src="https://img.shields.io/github/issues/python-geeks/Automation-scripts.svg?style=for-the-badge&logo=appveyor" /></a>&nbsp;&nbsp;
   <a href="https://github.com/python-geeks/Automation-scripts/fork"><img src="https://img.shields.io/github/forks/python-geeks/Automation-scripts.svg?style=for-the-badge&logo=appveyor" /></a>&nbsp;&nbsp;
@@ -17,15 +19,20 @@
 
 ## Hacktoberfest 2021 Update
 
+- Scripts so far - `229`
+
 **See full details and guidelines on**
   * [Hacktober cheasheat](https://github.com/python-geeks/Automation-scripts/blob/main/HACKTOBERFEST.md) 
   * [Official website](https://hacktoberfest.digitalocean.com/resources)
 
-## Updates :
+
+## Updates 2020:
 1. **Thanks for all contributors my panda stopped cycling now 🛴** 
 2. **Cheers to all, our panda removed exercise from daily schedule 🤸‍♂️**
 3. **Moving forward we achieve our next goal, now our panda doesn't play any outdoor game anymore  🏌️‍♂️**
 4. **Goals of 2020 completed, Panda now hired a maid to clean his house :)**
+
+## Updates 2021
 
 And it's okay if you're not aware of process. Kindly raise query by creating pull request (In query template). Here is the link for that how to create a pull request in other's Repo
 
@@ -33,10 +40,16 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 
 ### These are my Lazy Panda Goals
 
-* Goal 25 - Panda stopped Cycling (Completed)
+* Goal 25 - Panda stopped Cycling
 * Goal 50 - Panda stopped doing Exercise
 * Goal 75 - Panda stopped Playing outdoor games
-* Goal 100 - Panda hire someone for cleaning house
+* Goal 100 - Panda hired someone for cleaning house
+
+* Goal 125 - Panda now have own vehicle to travel 
+* Goal 150 - Panda have enough support now, so he started eating food outside
+* Goal 175 - On the way, now Panda decide to bathe alternatively 😂 
+* Goal 200 - Moving ahead, Panda is now using online ecom platform to buy things
+* Goal 225 - Panda now lazy enough to order the food instead of going outside
 
 **Leave a star => Contribution in arranging Food for panda 😴**
 
