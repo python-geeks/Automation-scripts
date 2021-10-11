@@ -5,6 +5,7 @@ import random as r
 from PIL import Image
 from pixelsort import pixelsort
 
+
 def randomize_params():
     angle = r.randint(90, 359)
 
@@ -55,18 +56,20 @@ def randomize_params():
             args['lower_threshold'] -= 0.25
     return args
 
+
 def perform_sorting(args, img):
     # --- PERFORM PIXELSORT WITH RANDOMIZED PARAMS ---
     new_img = pixelsort(
-        image = img,
-        angle = args['angle'],
-        interval_function = args['interval_function'],
-        lower_threshold = args['lower_threshold'],
-        upper_threshold = args['upper_threshold'],
-        randomness = args['randomness'],
-        sorting_function = args['sorting_function']
+        image=img,
+        angle=args['angle'],
+        interval_function=args['interval_function'],
+        lower_threshold=args['lower_threshold'],
+        upper_threshold=args['upper_threshold'],
+        randomness=args['randomness'],
+        sorting_function=args['sorting_function']
     )
     return new_img
+
 
 def Main():
     # --- DEFINE ARGS AND SET DEFAULTS ---
