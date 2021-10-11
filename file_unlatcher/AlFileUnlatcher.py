@@ -2,7 +2,6 @@ import subprocess
 import os
 from tkinter import Tk, Label, END, Frame, SUNKEN
 from tkinter import font, Button, X, Entry, Text, BOTH
-import pyttsx3
 from PIL import ImageTk, Image
 
 cwd = os.path.dirname(os.path.realpath(__file__))
@@ -33,13 +32,6 @@ class AlFileUnlatcher():
             root.overrideredirect(0)
             root.iconify()
 
-        def speak(audio):
-            engine = pyttsx3.init('sapi5')
-            voices = engine.getProperty('voices')
-            engine.setProperty('voice', voices[0].id)
-            engine.say(audio)
-            engine.runAndWait()
-
         def find():
             inputFile = fileText.get()
             fileName = os.path.join(cwd + '/AlFileUnlatcher',
@@ -51,16 +43,25 @@ class AlFileUnlatcher():
                 dFile.close()
             filesList = []
             notFoundList = []
+            otherList = []
             dFile = open(fileName, "r")
-            for file in dFile:
+            files = dFile.readlines()
+            for file in files:
                 file = file.replace('\n', '')
                 if os.path.basename(file) == inputFile:
                     if os.path.isfile(file):
                         filesList.append(file)
                     else:
                         notFoundList.append(file)
-                        del(file)
+                else:
+                    otherList.append(file)
             dFile.close()
+            lines = filesList + otherList
+            nFile = open(fileName, "w+")
+            for line in lines:
+                line += '\n'
+                nFile.write(line)
+            nFile.close()
             lfl = len(filesList)
             lnfl = len(notFoundList)
             if (lfl == 0) or (lnfl != 0 and lfl == 0) or (lnfl != 0):
@@ -73,28 +74,29 @@ class AlFileUnlatcher():
                 dFile = open(fileName, 'a')
                 dFile.writelines(allFiles)
                 dFile.close()
+                uniqlines = set(open(fileName).readlines())
+                bar = open(fileName, 'w+').writelines(set(uniqlines))
+                if bar:
+                    bar.close()
                 for file in output:
-                    if os.path.basename(file) == inputFile:
+                    filename = os.path.basename(file)
+                    if filename == inputFile and file not in filesList:
                         filesList.append(file)
             if len(filesList) == 0:
                 text.delete(1.0, END)
                 text.insert(1.0, 'Invalid input file')
-                speak('Invalid input file')
             else:
                 for file in filesList:
                     directory = os.path.dirname(file)
                     filename = os.path.basename(file)
                     try:
                         text.delete(1.0, END)
-                        speak('Opening ' + inputFile)
                         text.insert(1.0, 'Opening ' + inputFile)
                         os.startfile(os.path.join(directory, filename))
                     except Exception as e:
                         print(str(e))
                         text.insert(1.0, 'Set a default application to open'
                                     ' the input file')
-                        speak('Set a default application to open the input '
-                              'file')
 
         textHighlightFont = font.Font(family='OnePlus Sans Display', size=12)
         appHighlightFont = font.Font(family='OnePlus Sans Display', size=12,
