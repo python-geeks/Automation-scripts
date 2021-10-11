@@ -84,19 +84,19 @@ def Main():
         args, _ = getopt.getopt(argument_list, options)
         for current_argument, current_value in args:
             if current_argument in ('-h'):
-                print('-'*30)
+                print('-' * 30)
                 print('-h : args description')
                 print('-i : pass location of input img-file')
                 print('-n : number of outputs required')
-                print('-'*30)
+                print('-' * 30)
             if current_argument in ('-i'):
-                print('-'*30)
+                print('-' * 30)
                 in_path += current_value
                 print(f'[+] Input-file: {in_path}')
             if current_argument in ('-n'):
                 count = int(current_value)
                 print(f'[+] Output-Count: {current_value}')
-                print('-'*30)
+                print('-' * 30)
 
     except getopt.error as error:
         print(str(error))
@@ -124,7 +124,8 @@ def Main():
         new_img = perform_sorting(args, img)
         # --- SAVE NEW FILE ---
         new_img.save(out_file)
-        print('-'*30)
+        print('-' * 30)
+
 
 if __name__ == "__main__":
     Main()
