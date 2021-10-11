@@ -4,6 +4,7 @@ from datetime import datetime
 from pytz import timezone
 from dateutil.relativedelta import relativedelta
 
+
 # --- INFO ON PARAMS ---
 def print_help():
     print('[+] use --cu and pass custom timezone to find time.')
@@ -12,11 +13,13 @@ def print_help():
     print('[+] use --help again if needed.')
     print('\n' + '-'*50 + '\n')
 
+
 # --- GET DATETIME OF PASSED TIMEZONE ---
 def get_datetime(time_zone):
     utcnow = timezone('utc').localize(datetime.utcnow())
     output_datetime = utcnow.astimezone(timezone(time_zone)).replace(tzinfo=None)
     return output_datetime
+
 
 # --- GET DATETIME OF CUSTOM TIMEZONE ---
 def get_custom_tz(time_zone):
@@ -29,6 +32,7 @@ def get_custom_tz(time_zone):
     print('%20s' % 'Seconds' + '  :' + ' '*2 + seconds)
     print('%20s' % 'Date' + '  :' + ' '*2 + date)
     print('\n' + '-'*50 + '\n')
+
 
 # --- GET DATETIMES OF COMMON TIMEZONES ---
 def get_common_tz():
@@ -45,9 +49,10 @@ def get_common_tz():
         'Australia/Melbourne',
     ]
     for item in common_tz_list:
-        print('%-20s'%item, end='')
-        print(':' + ' '*2 + str(get_datetime(item)))
-    print('\n' + '-'*50 + '\n')
+        print('%-20s' % item, end='')
+        print(':' + ' ' * 2 + str(get_datetime(item)))
+    print('\n' + '-' * 50 + '\n')
+
 
 # --- COMPARE DIFFERENCES BTW TWO TIMEZONES ---
 def get_comparisons(tz_1, tz_2):
@@ -59,6 +64,7 @@ def get_comparisons(tz_1, tz_2):
     print('%25s' % 'Minutes :', offset.minutes)
     print('%25s' % 'Seconds :', offset.seconds)
     print('\n' + '-'*50 + '\n')
+
 
 # --- MAIN FUNCTION ---
 def Main():
