@@ -35,3 +35,7 @@ The application displays the following information:
 - A brief description of the type of weather condition (more detail)
 
 All of the above information is from the free, open-source [Open Weather Map RapidAPI](https://rapidapi.com/community/api/open-weather-map/)
+
+## Author(s)
+
+Megan Dolan @mgndolan
