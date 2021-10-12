@@ -1,4 +1,5 @@
 import xmltodict
+import re
 import requests
 import datetime
 from datetime import datetime, timedelta
@@ -10,9 +11,7 @@ URL = 'https://%s:%s@mail.google.com/mail/u/0/feed/atom/all' % (username, passwo
 r = requests.get(URL)
 
 if r.status_code == 401:
-    print("login [%s] or password [%s] is incorrect\n%s" % (username, password,
-                                                            'Also try enable "Allow less secure apps" on https://myaccount.google.com/lesssecureapps and |Gmail Settings -> Forwarding and POP / IMAP -> IMAP Acess to Enable IMAP| '))
-    # https://stackoverflow.com/questions/33119667/reading-gmail-is-failing-with-imap/59922147#59922147
+    print("login [%s] or password [%s] is incorrect\n%s" % (username, password, 'Also try enable "Allow less secure apps" on https://myaccount.google.com/lesssecureapps and |Gmail Settings -> Forwarding and POP / IMAP -> IMAP Acess to Enable IMAP| '))
 elif r.status_code != 200:
     print("Requests error [%s] - %s" % (r.status_code, URL))
 elif r.status_code == 200:
@@ -20,12 +19,14 @@ elif r.status_code == 200:
     a = xmltodict.parse(contents)
     now_date=datetime.now()
     for k in range(len(a['feed']['entry'])):
-        issued_date = (datetime.strptime(a['feed']['entry'][k]['issued'], '%Y-%m-%dT%H:%M:%SZ') - timedelta(hours=-2, minutes=0))
-        timer = issued_date.strftime('%Y-%m-%d %H:%M:%S')
-        #print((now_date - issued_date) / timedelta(minutes=1))
-        if str(a['feed']['entry'][k]['author']['email']) == str(username) and ((now_date - issued_date) / timedelta(minutes=1))<15:
+        text = a['feed']['entry'][k]['summary']
+        key_words1 = re.findall('unsusbscribe', text)
+        key_words2 = re.findall('Stop these mails', text)
+        keys=key_words1+key_words2
+        urls = re.findall('(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-&?=%.]+', text)
+        if len(keys) > 0 and len(urls)> 0:
             print(a['feed']['entry'][k]['title'])
             print(a['feed']['entry'][k]['summary'][0:50])
-            print(timer)
             print(a['feed']['entry'][k]['author']['email'])
+            print(urls)
             print('----------')
