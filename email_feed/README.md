@@ -1,6 +1,8 @@
 # Email Feed
 
-Email Feed s Python Script which show the unread gmail feed list.
+A script to find the link to unsusbscribe from a mail in the unread email inbox
+It show unread gmail feed list that containt words like "unsusbscribe" , "Stop these mails" and contain urls.
+
 
 ## Dependencies
 
@@ -34,3 +36,10 @@ Run ```gmail_feed.py```
 ```
 
  
+##  Output
+
+It is a printable list
+
+
+## Author
+https://github.com/JoaquinMontesinos 
