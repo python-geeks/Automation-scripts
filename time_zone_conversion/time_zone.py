@@ -46,13 +46,13 @@ elif starting_zone == "PST":
     hours1 = hours1 + 8
 
 if hours1 > 12:
-    hours1 = hours1-12
+    hours1 = hours1 - 12
     if ampm == 'am':
         ampm = 'pm'
     elif ampm == 'pm':
         ampm = 'am'
 elif hours1 < 0:
-    hours1 = hours1+12
+    hours1 = hours1 + 12
     if ampm == 'am':
         ampm = 'pm'
     elif ampm == 'pm':
@@ -68,13 +68,13 @@ elif end_zone == "PST":
     hours1 = hours1 - 8
 
 if hours1 > 12:
-    hours1 = hours1-12
+    hours1 = hours1 - 12
     if ampm == 'am':
         ampm = 'pm'
     elif ampm == 'pm':
         ampm = 'am'
 elif hours1 < 0:
-    hours1 = hours1+12
+    hours1 = hours1 + 12
     if ampm == 'am':
         ampm = 'pm'
     elif ampm == 'pm':
