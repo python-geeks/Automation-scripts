@@ -40,9 +40,9 @@ def createTable(data, city):
 # Populate table with weather information for each new US city
 def NewEntry(data, city):
     try:
-        temp = data['list'][1]['main']['temp']
-        temp_min = data['list'][1]['main']['temp_min']
-        temp_max = data['list'][1]['main']['temp_max']
+        temp = str(round((((int(data['list'][1]['main']['temp']) - 273.15) * 1.8) + 32), 2))
+        temp_min = str(round((((int(data['list'][1]['main']['temp_min']) - 273.15) * 1.8) + 32), 2))
+        temp_max = str(round((((int(data['list'][1]['main']['temp_max']) - 273.15) * 1.8) + 32), 2))
         weather = data['list'][2]['weather'][0]['main']
         weather_desc = data['list'][2]['weather'][0]['description']
 
