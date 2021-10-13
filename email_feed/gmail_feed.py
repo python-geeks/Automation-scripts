@@ -9,7 +9,7 @@ URL = 'https://%s:%s@mail.google.com/mail/u/0/feed/atom/all' % (username, passwo
 r = requests.get(URL)
 
 if r.status_code == 401:
-    print("login [%s] or password [%s] is incorrect\n%s" % (username, password,  'Error'))
+    print("login [%s] or password [%s] is incorrect\n%s" % (username, password, 'Error'))
 elif r.status_code != 200:
     print("Requests error [%s] - %s" % (r.status_code, URL))
 elif r.status_code == 200:
@@ -21,7 +21,7 @@ elif r.status_code == 200:
         key_words2 = re.findall('Stop these mails', text)
         keys = key_words1 + key_words2
         urls = re.findall(r'''(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-&?=%.]+''', text)
-        if len(keys) > 0 and len(urls)> 0:
+        if len(keys) > 0 and len(urls) > 0:
             print(a['feed']['entry'][k]['title'])
             print(a['feed']['entry'][k]['summary'][0:50])
             print(a['feed']['entry'][k]['author']['email'])
