@@ -6,8 +6,8 @@ import requests
 url = "https://community-open-weather-map.p.rapidapi.com/forecast"
 
 headers = {
-            'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
-            'x-rapidapi-key': "8e9e50a21bmshda23fe83770e19ep14a949jsn482dfa5dc300"
+           'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+           'x-rapidapi-key': "8e9e50a21bmshda23fe83770e19ep14a949jsn482dfa5dc300"
           }
 
 # initialize tkinter GUI
