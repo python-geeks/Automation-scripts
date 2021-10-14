@@ -1,7 +1,7 @@
 # import libraries
-import os
 import glob
 import tqdm
+import os
 
 PATH="INPUT FOLDER"
 extension="pptx" # or ppt
