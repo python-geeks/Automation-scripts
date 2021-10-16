@@ -1,0 +1,12 @@
+Find My Tune is a GUI that helps you find and download your favorite songs.
+To search for your song, write the song name and artist name in the search bar and click on the search button (green button).
+Wait some time, since searching songs some takes time.
+Now select the song which you want to download.
+Now, below will be given a download button. Click it.
+If the window is frozen, wait a minute. Since downloading a file takes time.
+A pop-up will appear if the song is download or not. 
+Congrats, your favorite song is downloaded and safely saved inside the downloads folder.
+Use refresh button to refresh/clear the window.
+For better search results, enter the name of the song, then the name of the artist.
+If the application is frozen or not searching or not downloading after multiple attempts, kindly restart the application.
+This application works better for downloading songs that are of time 5 min or lesser.
