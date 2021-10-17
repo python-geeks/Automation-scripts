@@ -47,8 +47,8 @@ def findMySong(song_name):
                         cnt += 1
                 else:
                     break
-            except:
-                print("could not find any song")
+            except NoSuchElementException:
+                print("no files found")
                 continue
     except NoSuchElementException:
         print("big error")
