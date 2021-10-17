@@ -1,4 +1,6 @@
-from tkinter import *
+from tkinter import Tk, Button, Toplevel, Label, Frame, PhotoImage, Entry
+from tkinter import TOP, LEFT, RIGHT, NE, W, DISABLED, NORMAL, YES
+from tkinter import CENTER, BOTH
 from tkinter import ttk
 import tkinter.messagebox
 import os
@@ -204,10 +206,11 @@ class SongGUI:
         self.searchname.set('')
         try:
             self.result_frame. pack_forget()
-        except:
+        except AttributeError:
             tkinter.messagebox.showinfo(
-                    'Already Refreshed',
-                    "window already refreshed")
+                'Already Refreshed',
+                "window already refreshed")
+
 
 if(__name__ == "__main__"):
     root = Tk()
