@@ -94,13 +94,13 @@ class SongGUI:
         for i in range(1, 9):
             Label(self.help_window, wraplength=500,
                   justify="left", font=("", 12),
-                  text=str(i)+". "+lines[i]).pack(anchor=W, pady=2, padx=10)
+                  text=str(i) + ". " + lines[i]).pack(anchor=W, pady=2, padx=10)
         Label(self.help_window, font=("Helvetica 16 underline"),
               text="NOTE").pack(anchor=W, padx=10, pady=10)
         for i in range(8, 11):
             Label(self.help_window, wraplength=500,
                   justify="left", font=("", 12),
-                  text=str(i-7)+". "+lines[i]).pack(anchor=W, pady=2, padx=10)
+                  text=str(i - 7) + ". " + lines[i]).pack(anchor=W, pady=2, padx=10)
 
         self.help_window.protocol("WM_DELETE_WINDOW", self.close_window)
 
@@ -147,7 +147,7 @@ class SongGUI:
                 self.results.pack(pady=10, expand=1, fill=BOTH)
                 for i in range(len(self.songlist)):
                     self.results.insert(parent='', index='end', iid=i, text='',
-                                        values=(str(i+1),
+                                        values=(str(i + 1),
                                                 self.songlist[i]['title'],
                                                 self.songlist[i]['duration']))
 
@@ -181,7 +181,7 @@ class SongGUI:
             filename = [f for f in os.listdir() if f.endswith('.mp3')]
             if(filename):
                 # rename file and save in download folder
-                os.rename(filename[0], 'downloads/'+filename[0][:-14]+".mp3")
+                os.rename(filename[0], 'downloads/' + filename[0][:-14] + ".mp3")
                 tkinter.messagebox.showinfo(
                     'Song Downloaded Successfully',
                     "Your song is downloaded.")
