@@ -36,7 +36,7 @@ def findMySong(song_name):
                     details = details.split("\n")
                     link_sel_obj = song.find_element_by_tag_name("a")
                     link = link_sel_obj.get_attribute("href")
-                    link = link[:33]+"get"+link[37:]
+                    link = link[:33] + "get" + link[37:]
                     if(len(details) > 2):
                         vid_item = {
                             'title': details[0],
@@ -48,6 +48,7 @@ def findMySong(song_name):
                 else:
                     break
             except:
+                print("could not find any song")
                 continue
     except NoSuchElementException:
         print("big error")
