@@ -20,7 +20,7 @@ With time, number resaturants may increase, thus try increasing the number of it
 
 ## Output
 
-Display images/gifs/videos of output/result of your script so that users can visualize it
+![Sample](https://user-images.githubusercontent.com/43356237/137814799-c9180b73-0163-4f93-a230-b7fdb0a2b00a.png)
 
 ## Author(s)
 
