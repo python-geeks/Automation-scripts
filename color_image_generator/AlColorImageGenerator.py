@@ -13,7 +13,7 @@ class AlColorImageGenerator:
         root = Tk(className="ALCOLORIMAGENERATOR")
         root.geometry("400x150+1510+865")
         root.resizable(0, 0)
-        root.iconbitmap(os.path.join(cwd+'\\UI\\icons',
+        root.iconbitmap(os.path.join(cwd + '\\UI\\icons',
                         'alcolorimagegenerator.ico'))
         root.config(bg="#000000")
         root.overrideredirect(1)
@@ -48,8 +48,8 @@ class AlColorImageGenerator:
                                            't', cwd + '\\AlColorImageGenerator'
                                            '\\model\\colorization_release_v2.'
                                            'caffemodel')
-            pts = np.load(cwd+'\\AlColorImageGenerator\\model\\pts_in_hull.npy'
-                          )
+            pts = np.load(cwd + '\\AlColorImageGenerator\\model\\pts_in_hull.'
+                          'npy')
             class8 = net.getLayerId("class8_ab")
             conv8 = net.getLayerId("conv8_313_rh")
             pts = pts.transpose().reshape(2, 313, 1, 1)
@@ -61,7 +61,7 @@ class AlColorImageGenerator:
             nimg = os.path.basename(img)
             cimg = 'color_' + nimg
             image = cv2.imread(img)
-            scaled = image.astype("float32")/255.0
+            scaled = image.astype("float32") / 255.0
             lab = cv2.cvtColor(scaled, cv2.COLOR_BGR2LAB)
             resized = cv2.resize(lab, (224, 224))
             L = cv2.split(resized)[0]
@@ -74,7 +74,7 @@ class AlColorImageGenerator:
             colorized = cv2.cvtColor(colorized, cv2.COLOR_LAB2BGR)
             colorized = np.clip(colorized, 0, 1)
             colorized = (255 * colorized).astype("uint8")
-            cimg = os.path.join(cwd+'\\AlColorImageGenerator\\images\\color',
+            cimg = os.path.join(cwd + '\\AlColorImageGenerator\\images\\color',
                                 cimg)
             cv2.imwrite(cimg, colorized)
             cv2.imshow("Original", image)
@@ -86,7 +86,7 @@ class AlColorImageGenerator:
                                      weight='bold')
 
         titleBar = Frame(root, bg='#141414', relief=SUNKEN, bd=0)
-        icon = Image.open(os.path.join(cwd+'\\UI\\icons',
+        icon = Image.open(os.path.join(cwd + '\\UI\\icons',
                                        'alcolorimagegenerator.ico'))
         icon = icon.resize((30, 30), Image.ANTIALIAS)
         icon = ImageTk.PhotoImage(icon)
