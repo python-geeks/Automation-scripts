@@ -1,10 +1,8 @@
 import os
 import requests
 import json
-import nltk
 from dotenv import load_dotenv, find_dotenv
 from newspaper import Article
-from datetime import datetime
 from newspaper import Config
 from datetime import datetime
 
