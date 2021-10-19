@@ -1,10 +1,11 @@
 import os
 import requests
 import json
+import nltk
 from dotenv import load_dotenv, find_dotenv
 from newspaper import Article
-from newspaper import Config
 from datetime import datetime
+from newspaper import Config
 from datetime import datetime
 
 news_information = dict()
@@ -16,7 +17,7 @@ todays_date = now.strftime("%b %d, %Y")
 
 
 def get_top_news(news_information, todays_date):
-    load_dotenv(find_dotenv(r"path to environmental variable"))
+    load_dotenv(find_dotenv(r"path to env variable"))
     news_api_key = os.getenv("news_api")
     params = (
         ('country', 'us'),
@@ -51,6 +52,3 @@ def json_file(news_information, todays_date):
     with open(f"news_summary/news_summary {todays_date}.txt", "w") as outfile:
         outfile.write(json_file)
         outfile.close()
-
-
-
