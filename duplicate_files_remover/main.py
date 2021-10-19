@@ -1,7 +1,5 @@
 import os
 import sys
-from os import listdir
-from os.path import isfile, join
 import hashlib
 import pandas as pd
 
