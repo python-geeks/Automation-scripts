@@ -3,7 +3,7 @@ from comtypes.client import CreateObject, Constants
 
 
 # Function PPTtoPDF
-def PPTtoPDF(inputFileName, outputFileName, formatType = 32):
+def PPTtoPDF(inputFileName, outputFileName, formatType= 2):
     powerpoint = CreateObject('Powerpoint.Application')
     constants = Constants(powerpoint)
     powerpoint.Visible = 1
@@ -15,8 +15,9 @@ def PPTtoPDF(inputFileName, outputFileName, formatType = 32):
     deck.Close()
     powerpoint.Quit()
 
+    
 # Function PPTtoPDFNote
-def PPTtoPDFNote(inputFileName, outputFileName, formatType = 32):
+def PPTtoPDFNote(inputFileName, outputFileName, formatType=32):
     powerpoint = CreateObject('Powerpoint.Application')
     constants = Constants(powerpoint)
     powerpoint.Visible = 1
@@ -28,7 +29,7 @@ def PPTtoPDFNote(inputFileName, outputFileName, formatType = 32):
         outputFileName,
         constants.ppFixedFormatTypePDF,
         constants.ppFixedFormatIntentPrint,
-        False, # No frame
+        False,  # No frame
         constants.ppPrintHandoutHorizontalFirst,
         constants.ppPrintOutputNotesPages,
         constants.ppPrintAll
