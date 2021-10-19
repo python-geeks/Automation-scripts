@@ -34,12 +34,7 @@ def zomato(soup):
     cuisine = [i.text.strip() for i in soup.find_all('p', class_='sc-1hez2tp-0 sc-hENMEE ffqcCI')]
     area = [i.text.strip() for i in soup.find_all('p', class_='sc-1hez2tp-0 sc-dCaJBF jughZz')]
     rate = [i.text.strip() for i in soup.find_all('p', class_='sc-1hez2tp-0 sc-hENMEE crfqyB')]
-    return pd.DataFrame(
-                        {'Name': name,
-                         'Cuisine': cuisine,
-                         'Area': area,
-                         'Rate for Two': rate}
-                        )
+    return pd.DataFrame({'Name': name, 'Cuisine': cuisine, 'Area': area, 'Rate for Two': rate})
 
 
 # -- DISPLAYING AND EXPORTING RESULTS --
