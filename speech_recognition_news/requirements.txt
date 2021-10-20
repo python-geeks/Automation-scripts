@@ -1,0 +1,2 @@
+newsapi-python==0.2.6
+newspaper3k==0.2.8
