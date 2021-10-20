@@ -37,12 +37,8 @@ def get_top_news(news_information, todays_date):
         article.download()
         article.parse()
         article.nlp()
-        summary = article.summary
-        news_information[i["source"]["name"]] = {
-            """title": i["title"],
-            "summary":summary, "url":i["url"],
-                "date":f"{todays_date}"""
-                }
+        summary = article.summary  # noqa
+        news_information[i["source"]["name"]] = {"title": i["title"], "summary":summary, "url":i["url"], "date":f"{todays_date}"}  
 
 
 def json_file(news_information, todays_date):
