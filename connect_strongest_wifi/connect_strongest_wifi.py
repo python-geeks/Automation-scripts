@@ -46,7 +46,7 @@ def get_available_wifi():
 
     else:
         networks = []
-        for i in range(1, len(wifidata)-1):  # parsing SSIDs and signals
+        for i in range(1, len(wifidata) - 1):  # parsing SSIDs and signals
             temp = wifidata[i].split("\n")
             ssid = temp[0].rstrip().split(" : ")[-1]
             signal = int(temp[5].rstrip().split(" : ")[-1][:-1])
@@ -70,7 +70,7 @@ def main():
         print("Wrong Choice Entered. Exiting...")
         return False
 
-    ssid = networks[int(choice)-1][0]
+    ssid = networks[int(choice) - 1][0]
 
     #  check if the chosen SSID is already connected
     if ssid in subprocess.check_output("netsh wlan show interfaces").decode():
