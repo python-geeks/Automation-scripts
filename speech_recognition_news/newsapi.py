@@ -38,7 +38,7 @@ def get_top_news(news_information, todays_date):
         article.parse()
         article.nlp()
         summary = article.summary  # noqa
-        news_information[i["source"]["name"]] = {"title": i["title"], "summary":summary, "url":i["url"], "date":f"{todays_date}"}  
+        news_information[i["source"]["name"]] = {"title": i["title"], "summary": summary, "url": i["url"], "date": f"{todays_date}"}  # noqa
 
 
 def json_file(news_information, todays_date):
