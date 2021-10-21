@@ -1,0 +1,15 @@
+{
+    "python.pythonPath": "/Users/pblaas/.pyenv/versions/signalbot-3.6.10/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pydocstyleEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintArgs": [
+        "--max-line-length=120",
+        "--disable=E501"
+    ],
+    "python.linting.flake8Args": [
+        "--max-line-length=120",
+        "--ignore=E501",
+    ],
+}
