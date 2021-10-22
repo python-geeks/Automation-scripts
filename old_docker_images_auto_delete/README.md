@@ -5,17 +5,34 @@ During Containerized Deployment of applications, often some VMs are particularly
 Since the VMs have a fixed Disk Size, often storage issues arise, which lead to failure in the building of the containers leading to breakage in the CICD pipeline.
 
 Therefore it's necessary to remove older versions of the container images on a regular basis to avoid storage issues.
-A script has to be written, which would perform the clean-up process based on the image tags.
 
-It will preserve all the docker images containing the latest tag.
+**This script will preserve all the docker images containing the latest tag.
 For a particular repository, the tag with the highest number would be preserved.
-A provision is made to add exception images that would be never stopped.
+A provision is made to add exception images that would be never stopped.**
 
----
-<br>  
+## Setup instructions
 
-## Rules Implemented:
-   
-    1. All images with 'latest' tag would not be touched.
-    2. For a particular repository, the tag with the highest number would be preserved.
-    3. A provision is made to add exception images which would be never stopped.
+Make sure to have Docker Installed in your System.  
+Run the `main.py` file.  
+
+
+## Detailed explanation of script
+
+- All images with 'Alpine, Buster, Slim & Latest' tag would not be touched.  
+- For a particular repository, the tag with the highest number would be preserved.  
+- A provision is made to add exception images which would be never stopped.
+
+## Output
+
+```
+Deleting <Old Docker Image Name:Version>...
+```
+
+## Author(s)
+
+Avik Kundu
+
+## Disclaimer
+
+Be Careful Before Running this code.   
+Docker Image deletion cannot be reverted back.

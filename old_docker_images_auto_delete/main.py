@@ -1,121 +1,145 @@
 # Python Program to auto-delete old docker images
 """
     Rules:
-   
     1. All images with 'latest' tag would not be touched.
     2. For a particular repository, the tag with the highest number would be preserved.
     3. A provision is made to add exception images which would be never stopped.
-
 """
 
 import subprocess as sp
 import re
-import operator, itertools
+import operator
+import itertools
+
 
 class DeleteImage:
-    
+    """
+    Deleting Old Docker Images
+    """
     def __init__(self):
-        self.imgList = []
-        self.hashList = []
-        
+        self.img_list = []
+        self.hash_list = []
 
-# Storing All the Docker Image Details Found on the System to a File
-    def getAll(self):
-        file = open("temp.txt","r+")
+
+    def get_all(self):
+        """
+        Storing All the Docker Image Details Found on the System to a File
+        """
+        file = open("temp.txt","r+" , encoding='utf-8')
         file.truncate(0)
-        sp.run("sudo docker image list --format '{{.Repository}}~{{.Tag}}' >> temp.txt", shell=True , capture_output=True)
+        (sp.run("sudo docker image list --format '{{.Repository}}~{{.Tag}}' >> temp.txt",
+                 shell=True , capture_output=True, check=True))
         file.close()
-        
 
-#Add other exceptions here
-    def isExcluded(self , tag):              
-        
-        reg = r"alpine|buster|slim|latest"  #Excluding all the images with Alpine, Buster, Slim & Latest Tags
-        m = re.search(reg, tag)
-        if m != None:
-             return 0        
+
+
+    def is_excluded(self , tag):
+        """
+        Add other exceptions here
+        """
+        #Excluding all the images with Alpine, Buster, Slim & Latest Tags
+        reg = r"alpine|buster|slim|latest"
+        flag = re.search(reg, tag)
+        if flag is not None:
+            return 0
         return 1
-    
-# Loading data from the File to the Python program       
-    def loadAll(self):
-        f = open("temp.txt", "r")
-        
-        for line in f:
+
+
+    def load_all(self):
+        """
+        Loading data from the File to the Python program
+        """
+        file = open("temp.txt", "r" , encoding='utf-8')
+
+        for line in file:
             line = line.rstrip("\n")
             image = line.split('~')
-            if self.isExcluded(image[1]): 
-                
-                regex = r"^(((\d+\.)?(\d+\.)?(\*|\d+)))(\-(dev|stage|prod))*$"        
-                match = re.search(regex, image[1])
-                
-                imgDict = { 'Repository':image[0] , 'Tag': match.group(2) }
-                self.imgList.append(imgDict)      
-        f.close()
-        
-        
-    def manData(self):       
-        key = operator.itemgetter('Repository')
-        b = [{'Repository': x, 'Tag': [d['Tag'] for d in y]} 
-        for x, y in itertools.groupby(sorted(self.imgList, key=key), key=key)]
-        
-        self.imgList.clear()
-        self.imgList = b.copy()
+            if self.is_excluded(image[1]):
 
-        
-# Sorting Tags according to the Version Numbers    
-    def sortTag(self):
-                
-        for img in self.imgList:                
-            temp = img['Tag'].copy()            
-            
-            for n, i in enumerate(img['Tag']):
-                img['Tag'][n] = int(i.replace('.', ''))
-            
-            maxLen = len(str(max(abs(x) for x in img['Tag'])))            
-            templateString = '{:<0' + str(maxLen) + '}'            
-            finalList = []
-            
-            for n, i in enumerate(img['Tag']):
-                finalList.append(templateString.format(i))
-                
+                regex = r"^(((\d+\.)?(\d+\.)?(\*|\d+)))(\-(dev|stage|prod))*$"
+                match = re.search(regex, image[1])
+
+                img_dict = { 'Repository':image[0] , 'Tag': match.group(2) }
+                self.img_list.append(img_dict)
+        file.close()
+
+
+    def man_data(self):
+        """
+        Manipulating Data to perform the reqd operation
+        """
+        key = operator.itemgetter('Repository')
+        b_key = [{'Repository': x, 'Tag': [d['Tag'] for d in y]}
+        for x, y in itertools.groupby(sorted(self.img_list, key=key), key=key)]
+
+        self.img_list.clear()
+        self.img_list = b_key.copy()
+
+
+    def sort_tag(self):
+        """
+        Sorting Tags according to the Version Numbers
+        """
+
+        for img in self.img_list:
+            temp = img['Tag'].copy()
+
+            for new, i in enumerate(img['Tag']):
+                img['Tag'][new] = int(i.replace('.', ''))
+
+            max_len = len(str(max(abs(x) for x in img['Tag'])))
+            template_string = '{:<0' + str(max_len) + '}'
+            final_list = []
+
+            for new, i in enumerate(img['Tag']):
+                final_list.append(template_string.format(i))
+
             for i in range(0 , len(img['Tag'])):
-                hashMap = { 'TagsManipulated': finalList[i] , 'TagsOriginal': temp[i] }
-                self.hashList.append(hashMap)
-                
-            finalList.sort()
-                            
+                hash_map = { 'TagsManipulated': final_list[i] , 'TagsOriginal': temp[i] }
+                self.hash_list.append(hash_map)
+
+            final_list.sort()
+
             img['Tag'].clear()
-            img['Tag'].extend(finalList[:-1])            
-        
-        print(self.hashList)        
-        print (self.imgList)        
-        
-    
-    def hashFunc(self , tag):        
-        for hashMap in self.hashList:
-            if tag == hashMap['TagsManipulated']:
-                t = hashMap['TagsOriginal']
+            img['Tag'].extend(final_list[:-1])
+
+        print(self.hash_list)
+        print (self.img_list)
+
+
+    def hash_function(self , tag):
+        """
+        Hash Function for Error Detection
+        """
+        for hash_map in self.hash_list:
+            if tag == hash_map['TagsManipulated']:
+                temp = hash_map['TagsOriginal']
                 break
             else:
-                t = 'Error in Manipulation'            
-        return t
-    
-# Running the Docker RMI Command to Delete the Older Versions
-    def removeImage(self):        
-        for img in self.imgList:            
+                temp = 'Error in Manipulation'
+        return temp
+
+
+    def remove_image(self):
+        """
+        Running the Docker RMI Command to Delete the Older Versions
+        """
+        for img in self.img_list:
             if img['Tag']:
                 for tag in img['Tag']:
-                    val = self.hashFunc(tag)
-                    imageURL = img['Repository'] + ":" + val
-                    print ("Deleting Image : " + imageURL )
-                    sp.run("sudo docker rmi " + imageURL, shell=True , capture_output=True)
-            
+                    val = self.hash_function(tag)
+                    image_url = img['Repository'] + ":" + val
+                    print ("Deleting Image : " + image_url )
+                    (sp.run("sudo docker rmi " + image_url,
+                    shell=True,capture_output=True , check=True))
+
+
 # Main Function
 if __name__ == "__main__":
-    
+
     docker = DeleteImage()
-    docker.getAll()    
-    docker.loadAll()    
-    docker.manData()    
-    docker.sortTag()    
-    docker.removeImage()
+    docker.get_all()
+    docker.load_all()
+    docker.man_data()
+    docker.sort_tag()
+    docker.remove_image()
