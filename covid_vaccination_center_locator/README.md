@@ -8,6 +8,7 @@ The script store the real time information about the center into the json file a
 # Technology Used
 
 Restful APIs from api setu
+
 Request module
 
 
@@ -24,6 +25,31 @@ Run ```covid_vaccine_locator.py```
 
 This python script runs and output the json file and read it to the terminal.
 
+'''
+Center Name : NEW DELHI MEDICAL CENTRE
+Address : 1st Floor Hemkunt Tower Rajendra Place New Delhi, Central Delhi, Delhi
+
+Total Capacity : 700
+
+Dose1 : 300
+
+Dose2 : 400
+
+Price : 780
+
+Center Name : NEW DELHI MEDICAL CENTRE
+
+Address : 1st Floor Hemkunt Tower Rajendra Place New Delhi, Central Delhi, Delhi
+
+Total Capacity : 700
+
+Dose1 : 300
+
+Dose2 : 400
+
+Price : 780
+
+'''
 
 #Author
 https://github.com/das88768
