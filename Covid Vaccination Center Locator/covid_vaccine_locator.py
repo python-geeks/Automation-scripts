@@ -11,7 +11,7 @@ print(f"Status Code : {response.status_code}")
 response_dict = response.json()
 vacc_dicts = response_dict['sessions']
 
-filename = 'data/vaccine_info.json'
+filename = 'vaccine_info.json'
 with open(filename, 'w') as file:
     json.dump(response_dict, file, indent=4)
 
