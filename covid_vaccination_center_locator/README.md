@@ -21,11 +21,11 @@ Run ```covid_vaccine_locator.py```
 ```
 
 
-#Output
+# Output
 
 This python script runs and output the json file and read it to the terminal.
 
-'''
+## '''
 
 Center Name : NEW DELHI MEDICAL CENTRE
 Address : 1st Floor Hemkunt Tower Rajendra Place New Delhi, Central Delhi, Delhi
@@ -50,7 +50,7 @@ Dose2 : 400
 
 Price : 780
 
-'''
+## '''
 
-#Author
+# Author
 https://github.com/das88768
