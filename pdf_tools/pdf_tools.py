@@ -13,8 +13,7 @@ Created on Wed Oct 27 13:49:16 2021
 from PyPDF2 import PdfFileReader, PdfFileWriter, PdfFileMerger
 from pathlib import Path
 
-print("this script can print, edit, modify, rotate and add passwords to PDF doc
-      uments if used properly")
+print("this script can print, edit, modify, rotate and add passwords to PDF documents if used properly")
 pdf_path = (Path.home() / "myfile.pdf")
 pdf = PdfFileReader(str(pdf_path))
 print("to get info on your file type INFO")
@@ -31,7 +30,7 @@ if input() == "OUTPUT":
             print("text will be saved in a txt file")
             with open('fulltext.txt', 'w') as f:
                 f.write(page.extractText())
-    if input() = ="PAGE":
+    if input() =="PAGE":
         print("which page do you want?")
         n = int(input())
         page = pdf.getPage(n)
@@ -60,8 +59,7 @@ if input() == "ADD":
     output_path = Path.home() / "concatenated.pdf"
     with output_path.open(mode="wb") as output_file:
         pdf_merger.write(output_file)
-print("if you want to rotate all pages clockwise
-      write CW or write ACW for anticlockwise")
+print("if you want to rotate all pages clockwise write CW or write ACW for anticlockwise")
 if input() == "CW":
     pdf_reader = PdfFileReader(str(pdf_path))
     pdf_writer = PdfFileWriter()
