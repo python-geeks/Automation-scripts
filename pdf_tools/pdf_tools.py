@@ -15,7 +15,8 @@ from pathlib import Path
 
 print("this script can print, edit, modify, rotate and add passwords to PDF documents if used properly")
 
-pdf_path = (Path.home() / "myfile.pdf") // rename / edit address if different
+pdf_path = (Path.home() 
+            / "myfile.pdf") 
 pdf = PdfFileReader(str(pdf_path))
 
 
