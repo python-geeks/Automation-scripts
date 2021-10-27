@@ -1,1 +1,1 @@
-simple tools to play with PDFs
+PDF files and PyPDF2 module downloaded and installed
