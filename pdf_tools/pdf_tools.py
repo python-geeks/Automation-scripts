@@ -19,7 +19,7 @@ pdf = PdfFileReader(str(pdf_path))
 print("to get info on your file type INFO")
 if input() == "INFO":
     print("documeng title", pdf.documentInfo.title, "\n", "from page 0 to", int
-          (pdf.documentInfo.title)-1)
+          (pdf.documentInfo.title) - 1)
     print("number of pages:", pdf.getNumPages())
     print("more details:", pdf.documentInfo)
 print("to extract pages type OUTPUT")
@@ -30,7 +30,7 @@ if input() == "OUTPUT":
             print("text will be saved in a txt file")
             with open('fulltext.txt', 'w') as f:
                 f.write(page.extractText())
-    if input() =="PAGE":
+    if input() == "PAGE":
         print("which page do you want?")
         n = int(input())
         page = pdf.getPage(n)
@@ -64,14 +64,14 @@ if input() == "CW":
     pdf_reader = PdfFileReader(str(pdf_path))
     pdf_writer = PdfFileWriter()
     for page in pdf_reader.pages:
-            rotated_page = page.rotateClockwise(90)
-            pdf_writer.addPage(rotated_page)
+        rotated_page = page.rotateClockwise(90)
+        pdf_writer.addPage(rotated_page)
 if input == "ACW":
     pdf_reader = PdfFileReader(str(pdf_path))
     pdf_writer = PdfFileWriter()
     for page in pdf_reader.pages:
-            rotated_page = page.rotateCounterClockwise(90)
-            pdf_writer.addPage(rotated_page)
+        rotated_page = page.rotateCounterClockwise(90)
+        pdf_writer.addPage(rotated_page)
 print("if you want to add password to your file type PWD")
 if input() == "PWD":
     pdf_reader = PdfFileReader(str(pdf_path))
