@@ -2,7 +2,6 @@ import time
 import webbrowser
 import schedule
 import pyautogui
-from PIL import ImageGrab
 import pyperclip
 
 
@@ -29,7 +28,7 @@ def gMeet(url):
 
 
 def zMeet(url):
-    #copy link
+    # copy link
     pyperclip.copy(url)
 
     time.sleep(0.2)
@@ -38,36 +37,36 @@ def zMeet(url):
 
     time.sleep(0.3)
 
-    #open shart
+    # open shart
     pyautogui.press('win', interval=0.5)
-    #type zoom
+    # type zoom
     pyautogui.write('zoom')
     time.sleep(2)
-    #press enter
+    # press enter
     pyautogui.press('enter', interval=0.5)
 
     time.sleep(8)
 
-    #Click zoom button
+    # Click zoom button
     x, y = pyautogui.locateCenterOnScreen('zoom_btn.png')
     pyautogui.click(x, y)
 
     pyautogui.press('enter', interval=0.5)
 
-    #paste link
+    # paste link
     pyautogui.hotkey('ctrl', 'v')
 
-    #use tabs to move to next section
+    # use tabs to move to next section
     pyautogui.press('tab', interval=0.5)
     pyautogui.press('tab', interval=0.5)
     pyautogui.press('tab', interval=0.5)
-    pyautogui.press('enter', interval=0.5) #mute mic
+    pyautogui.press('enter', interval=0.5)  # mute mic
 
     pyautogui.press('tab', interval=0.5)
-    pyautogui.press('enter', interval=0.5) #turn off  camera
+    pyautogui.press('enter', interval=0.5)  # turn off  camera
 
     pyautogui.press('tab', interval=0.5)
-    pyautogui.press('enter', interval=3) #join zoom link
+    pyautogui.press('enter', interval=3)  # join zoom link
 
 
 if __name__ == "__main__":
