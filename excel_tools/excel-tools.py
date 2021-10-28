@@ -22,12 +22,12 @@ if input() == "OUT":
 
 print("if you want the entire excel file displayed type OUTX")
 if input() == "OUTX":
-        row = sheet_obj.max_row
-        column = sheet_obj.max_column
-        for i in range(1, row + 1):
-                for j in range(1, column + 1):
-                        cell_obj = sheet_obj.cell(row=i, column=j)
-                        print(cell_obj.value)
+    row = sheet_obj.max_row
+    column = sheet_obj.max_column
+    for i in range(1, row + 1):
+        for j in range(1, column + 1):
+            cell_obj = sheet_obj.cell(row=i, column=j)
+            print(cell_obj.value)
 print("if you want to create a new excel file, print NEW")
 if input() == "NEW":
     print("enter your workbook name eg name.xlsx")
@@ -73,13 +73,13 @@ print("if you want to create a bar chart type CHART")
 if input() == "CHART":
     from openpyxl.chart import BarChart3D, Reference
     print("how many columns do you want")
-    l = int(input())
-    print("enter", l, " values")
-    for i in range(l):
+    lel = int(input())
+    print("enter", lel, " values")
+    for i in range(lel):
         b = int(input())
         sheet.append([b])
     values = Reference(sheet, min_col=1, min_row=1,
-                       max_col=1, max_row=l)
+                       max_col=1, max_row=lel)
     chart = BarChart3D()
     chart.add_data(values)
     print("enter chart title")
