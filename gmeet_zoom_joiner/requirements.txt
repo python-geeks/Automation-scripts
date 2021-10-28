@@ -1,0 +1,4 @@
+Pillow==8.4.0
+PyAutoGUI==0.9.52
+pyperclip==1.8.2
+schedule==1.1.0
