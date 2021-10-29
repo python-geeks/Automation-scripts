@@ -1,5 +1,5 @@
 from telethon import TelegramClient, events
-from telethon.tl.functions.messages import ForwardMessagesRequest
+# from telethon.tl.functions.messages import ForwardMessagesRequest
 api_id = 111111
 # Replace 111111 with Your Telegram API ID
 api_hash = 'Your Telegram Hash ID'
