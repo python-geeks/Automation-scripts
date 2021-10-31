@@ -26,11 +26,11 @@ try :
             if 'href' in str(link):
                 templist = str(link).split("href")
                 index1 = templist[-1].index("\"")
-                index2 = templist[-1][index1 + 1 : ].index( "\"" )
+                index2 = templist[-1][index1 + 1 :].index( "\"" )
                 finalLinks.append(templist[-1][index1 : index2 + 3])
         print("Here are your final links")
         # printing the final completed list
-        for i in finalLinks:
+        for i in finalLinks : 
             print(i)
-except Exception as e:
-    print(str( e ))
+except Exception as e : 
+    print(str(e))
