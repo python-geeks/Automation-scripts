@@ -1,4 +1,4 @@
-This python script focuses on retreving all the webpages links from a giver Url
+This python script focuses on retrieving all the webpages links from a giver Url
 This link can also be present inside a button or an action
 
 First we need to install 3 packages and they are
