@@ -13,14 +13,14 @@ ctx.verify_mode = ssl.CERT_NONE
 Url = input("Enter your Urllink")
 try :
     # trying to access the page
-    page = Request(Url, headers={'User-Agent':'Mozilla/5.0'})
+    page = Request(Url, headers={'User-Agent': 'Mozilla/5.0'})
     page = urlopen(page, context=ctx).read()
     # Using beautifulsoup to read the contents of the page
     soup = BeautifulSoup(page, 'html.parser')
     # finding all the link headers
     links = soup.findAll('a')
     if(links is not None) :
-        finalLinks = [ ]
+        finalLinks = []
         # getting actual site links from the header a
         for link in links :
             if 'href' in str(link) :
