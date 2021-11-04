@@ -1,0 +1,2 @@
+This script pulls information from the Wallstreetbets subreddit and gets the top stock tickers.
+It then puts the stock data into a sql database so people may pull this information out in the future. Another script will need to be made to update the pricing in the sql database.
