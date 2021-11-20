@@ -1,4 +1,5 @@
 import speech_recognition as sr
+
 speech = sr.Recognizer()
 
 
@@ -16,3 +17,4 @@ def voice_to_text():
         except sr.WaitTimeoutError:
             pass
     return voice_input
+    # End of File.
