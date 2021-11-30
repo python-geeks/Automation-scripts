@@ -1,8 +1,9 @@
 # Importing Image class from PIL module
 from PIL import Image
 
+
 def crop():
-    # Taking the image path as an input 
+    # Taking the image path as an input
     file_path = str(input('Enter the image path (absolute path): '))
 
     # Opening image with an RGB mode, works only with jpeg/jpg formats
@@ -10,7 +11,7 @@ def crop():
 
     # Calculating size of the original image in pixels for reference
     width, height = img.size
-    print('the old width is: ' + str(width) + ' and the old height is: '+ str(height))
+    print('the old width is: ' + str(width) + ' and the old height is: ' + str(height))
 
     # Taking left, top, right, bottom points for the cropped image as input
     # Image pixels coorginate grid: X increases from left to right, Y increases from top to bottom
@@ -28,6 +29,7 @@ def crop():
 
     # Show the image in the image viewer
     cropped_img.show()
+
 
 if __name__ == '__main__':
     crop()
