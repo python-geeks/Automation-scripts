@@ -11,6 +11,7 @@ mainDict = {}
 def createStatement(line):
     return line.startswith('CREATE TABLE')
 
+
 # To detect fields, aka column names
 def fieldDef(line):
     return line.strip().startswith('`')
