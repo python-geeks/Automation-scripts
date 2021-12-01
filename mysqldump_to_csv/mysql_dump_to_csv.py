@@ -4,14 +4,14 @@ import os
 import sys
 import re
 
-#This will hold the table name as key, and columns as values.
+# This will hold the table name as key, and columns as values.
 mainDict = {}
 
 
 def createStatement(line):
     return line.startswith('CREATE TABLE')
 
-#to detect fields, aka column names
+# To detect fields, aka column names
 def fieldDef(line):
     return line.strip().startswith('`')
 
@@ -31,7 +31,7 @@ def getCleanedValue(line):
 
 def getValueTuple(line):
     values = line.partition(' VALUES ')[-1].strip().replace('NULL', "''")
-    #To exclude the ;
+    # To exclude the ;
     if values[-1] == ';':
         values = values[:-1]
 
@@ -39,7 +39,7 @@ def getValueTuple(line):
 
 
 def writeFile(outputDirectory, tableName, schema, values):
-    #File name that the current table will be assigned to
+    # File name that the current table will be assigned to
     fileName = os.path.join(outputDirectory, '%s.csv' % (tableName,))
     with open(fileName, 'w') as writeFile:
         writer = csv.DictWriter(writeFile, fieldnames=schema)
@@ -64,6 +64,7 @@ def parseFile(fileName, outputDirectory):
                 currentTable = mainDict[tableName]
                 values = getValueTuple(line)
                 writeFile(outputDirectory, tableName, currentTable, values)
+
 
 if __name__ == '__main__':
     parseFile(sys.argv[1], sys.argv[2])
