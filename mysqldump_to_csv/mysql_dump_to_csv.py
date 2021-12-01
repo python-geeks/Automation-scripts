@@ -4,7 +4,7 @@ import os
 import sys
 import re
 
-#This will hold the table name as key, and columns as values
+#This will hold the table name as key, and columns as values.
 mainDict = {}
 
 
