@@ -50,4 +50,3 @@ while (val):
         val = ''
     else:
         val = input("Wrong Input. Try Again: ")
-        
