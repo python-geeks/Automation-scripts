@@ -17,6 +17,12 @@
   <a href="#"><img src="https://forthebadge.com/images/badges/built-by-developers.svg" /></a>&nbsp;&nbsp;
 </p>
 
+# How to start
+
+* Well it's quite simple just thought of any Idea that can be automated
+* Equip your weapon, I mean Python and required libraries 😂 (**[Refer here](https://pyarmy.com/tag/python/)** for some basic guides to enhance Python language)
+* That's all you need 😋
+
 ## Hacktoberfest 2021 Update
 
 - Scripts so far - `229`
