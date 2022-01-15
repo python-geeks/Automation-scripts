@@ -1,0 +1,12 @@
+We need to install 3 libraries in order for this file to work
+the 1st is ssl
+This can be install by using pip install ssl 
+and this library helps to us to tackle website certification issues
+
+the 2nd is urrlib
+This can be install by using pip install urrlib
+and this library helps us to acces the url
+
+the 3rd is bs4 which is beautifulsoup
+This can be installed by using BeautifulSoup4
+This helps us to read the url and acces information
