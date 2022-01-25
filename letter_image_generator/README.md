@@ -25,3 +25,6 @@ Here are some pictures of the image results.
 
 ![A.png](images/A.png) 
 ![R.png](images/R.png)
+
+## Author
+@IsharMhzn
