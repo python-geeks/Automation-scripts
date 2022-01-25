@@ -15,9 +15,9 @@ def letter_image_generator(letter: str, width: int = 480,
                     color=random_color_generator())
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(os.path.join("fonts", "OpenSans-Bold.ttf"),
-                              size=height//2)
+                              size=height // 2)
     w, h = draw.textsize(letter, font=font)
-    draw.text(((width-w) / 2, (height-h) / 4), letter,
+    draw.text(((width - w) / 2, (height - h) / 4), letter,
               (255, 255, 255,), font=font)
     return img
 
