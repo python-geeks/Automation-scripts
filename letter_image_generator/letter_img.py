@@ -39,5 +39,5 @@ draw.text(((width-w)/2, (height-h)/2), str(sys.argv[2]), font=font)
 
 image.save(str(sys.argv[1]) + '.png' , "PNG")
 
-
+#
 print('Successfully ' + state + ' file.')
