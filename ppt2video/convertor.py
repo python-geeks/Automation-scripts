@@ -3,7 +3,8 @@ import os
 import sys
 
 # PpSaveAsFileType enumeration (PowerPoint)
-ppSaveAsMP4	 = 39
+ppSaveAsMP4 = 39
+
 
 def ppt2video(pptx, video, timing, duration, resolution, frames, quality):
 
@@ -26,12 +27,14 @@ def ppt2video(pptx, video, timing, duration, resolution, frames, quality):
 
     # Presentation.CreateVideo method (PowerPoint)
     # https://docs.microsoft.com/en-us/office/vba/api/powerpoint.presentation.createvideo
-    presentation.CreateVideo(video_path, timing, duration, resolution, frames, quality)
+    presentation.CreateVideo(video_path, timing, duration,
+                             resolution, frames, quality)
     while True:
         try:
             # Update the video file, if already exists.
             os.rename(video_path, video_path)
-            print(f'The video from PowerPoint Presentation {pptx} has been created.')
+            print(f'The video from PowerPoint Presentation \
+                    {pptx} has been created.')
             break
         except Exception:
             pass
@@ -39,14 +42,17 @@ def ppt2video(pptx, video, timing, duration, resolution, frames, quality):
     ppt.Quit()
     pass
 
+
 if __name__ == '__main__':
-    file_name = "test.pptx" # PPT file expected to be in the root folder
-    video_name = "test_video" # Video will be created in the root folder
-    UseTimingsAndNarrations =  False # Boolean value
-    DefaultSlideDuration = 2  # Int
-    VertResolution =  480 # Int
-    FramesPerSecond =  24 # Int
-    Quality = 60
+    file_name = ""  # e.g.:test.pptx, file expected to be in the root folder
+    video_name = ""  # e.g.: test_video, will be created in the root folder
+    UseTimingsAndNarrations = False  # Boolean value
+    DefaultSlideDuration = 2   # Int
+    VertResolution = 480  # Int
+    FramesPerSecond = 24  # Int
+    Quality = 60  # Int
 
     ppt2video(f"./{file_name}", f"./{video_name}.mp4",
-              UseTimingsAndNarrations, DefaultSlideDuration, VertResolution, FramesPerSecond, Quality)
+              UseTimingsAndNarrations,
+              DefaultSlideDuration, VertResolution,
+              FramesPerSecond, Quality)
