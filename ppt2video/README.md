@@ -31,7 +31,7 @@ VertResolution<br>
 FramesPerSecond<br>
 Quality variables**
 
-with desired values and run the script:
+with desired values in convertor.py, more instructions are in the script, and run it:
 ```
 python3 convertor.py
 ```
