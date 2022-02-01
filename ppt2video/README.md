@@ -22,14 +22,13 @@ pip install -r requirements.txt
 ```
 
 ## To run the script
-Fill in
-
-**file_name, <br>
-video_name,<br>
-UseTimingsAndNarrations,<br>
-DefaultSlideDuration,<br>
-VertResolution,<br>
-FramesPerSecond,<br>
+Fill in:<br>
+**file_name <br>
+video_name<br>
+UseTimingsAndNarrations<br>
+DefaultSlideDuration<br>
+VertResolution<br>
+FramesPerSecond<br>
 Quality variables**
 
 with desired values and run the script:
