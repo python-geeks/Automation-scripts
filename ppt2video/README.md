@@ -7,14 +7,6 @@ For other systems it would require to use Python2.7 version to be able to instal
 
 You can create <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">virtual environment</a> to install the dependencies in a separate environment not to interfere with other packages on your machine.
 
-### If you are using Python2.7 version
-You can install the package with:
-```
-python -m pip install pywin32
-# or
-pip install -U pypiwin32
-```
-To develop this application I am using Python 3.10.2 through bash console.
 
 ## To install dependencies
 ```
