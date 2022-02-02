@@ -59,8 +59,7 @@ def ppt2video(pptx, video, timing, duration,
         try:
             # Update the video file, if already exists.
             os.rename(video_path, video_path)
-            print(f'The video from PowerPoint Presentation {pptx} \
-                    has been created.')
+            print(f'The video from {pptx} has been created.')
             break
         except Exception:
             pass
