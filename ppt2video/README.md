@@ -1,6 +1,7 @@
 # PPT TO VIDEO CONVERTOR
 This automated script can be used on Windows to convert Power Point
 Presentation slides into mp4 video format using win32com.client.
+A user can add custom text slides before each presentation slide to be included in the video.
 For other systems it would require to use Python2.7 version to be able to install pypiwin32/pywin32 cause of the syntax incompatibility with Python3.
 
 ## Virtual environment
@@ -21,7 +22,8 @@ UseTimingsAndNarrations<br>
 DefaultSlideDuration<br>
 VertResolution<br>
 FramesPerSecond<br>
-Quality variables**
+Quality variables<br>
+user_input_list**
 
 with desired values in convertor.py, more instructions are in the script, and run it:
 ```
