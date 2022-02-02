@@ -1,4 +1,3 @@
-from operator import index
 import win32com.client
 import os
 import sys
