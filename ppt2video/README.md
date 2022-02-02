@@ -8,7 +8,6 @@ For other systems it would require to use Python2.7 version to be able to instal
 
 You can create <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">virtual environment</a> to install the dependencies in a separate environment not to interfere with other packages on your machine.
 
-
 ## To install dependencies
 ```
 pip install -r requirements.txt
