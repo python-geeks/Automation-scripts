@@ -85,3 +85,4 @@ if __name__ == '__main__':
               UseTimingsAndNarrations,
               DefaultSlideDuration, VertResolution,
               FramesPerSecond, Quality, user_input_list)
+
