@@ -1,7 +1,6 @@
 import win32com.client
 import os
 import sys
-from more_itertools import value_chain
 
 # PpSaveAsFileType enumeration (PowerPoint)
 ppSaveAsMP4 = 39
@@ -18,7 +17,7 @@ def ppt2video(pptx, video, timing, duration,
     if sys.platform == "win32":
         pass
     else:
-        print ("Sorry, this script can be run only on Windows.")
+        print("Sorry, this script can be run only on Windows.")
 
     # Create files pathes for the ppt and video files.
     ppt_path = os.path.abspath(pptx)
@@ -63,7 +62,7 @@ def ppt2video(pptx, video, timing, duration,
     # Presentation.CreateVideo method (PowerPoint)
     # https://docs.microsoft.com/en-us/office/vba/api/powerpoint.presentation.createvideo
     new_presentation.CreateVideo(video_path, timing, duration,
-                             resolution, frames, quality)
+                                 resolution, frames, quality)
     while True:
         try:
             # Update the video file, if already exists.
@@ -79,8 +78,10 @@ def ppt2video(pptx, video, timing, duration,
 
 
 if __name__ == '__main__':
-    file_name = "presentation.pptx"  # e.g.:test.pptx, file expected to be in the root folder
-    video_name = "presentation_video"  # e.g.: test_video, will be created in the root folder
+    # e.g.:test.pptx, file expected to be in the root folder
+    file_name = "presentation.pptx"
+    # e.g.: test_video, will be created in the root folder
+    video_name = "video"
     UseTimingsAndNarrations = False  # Boolean value
     DefaultSlideDuration = 2  # Int
     VertResolution = 720  # Int
@@ -95,9 +96,7 @@ if __name__ == '__main__':
     #  "4":"input before slide number 4, the forth slide"}
     # You can choose to what slides to add precending text and what slides
     # to leave without additional input.
-    input_dict = { "1":"input index 1",
-                  "2":"input index 2", "4":"input index 4", "5":"input index 5",
-                  "10":"input index 10"}
+    input_dict = {}
 
     ppt2video(f"./{file_name}", f"./{video_name}.mp4",
               UseTimingsAndNarrations,
