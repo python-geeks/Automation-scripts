@@ -69,8 +69,8 @@ def ppt2video(pptx, video, timing, duration,
 
 
 if __name__ == '__main__':
-    file_name = ""  # e.g.:test.pptx, file expected to be in the root folder
-    video_name = ""  # e.g.: test_video, will be created in the root folder
+    file_name = "presentation.pptx"  # e.g.:test.pptx, file expected to be in the root folder
+    video_name = "presentation_video"  # e.g.: test_video, will be created in the root folder
     UseTimingsAndNarrations = False  # Boolean value
     DefaultSlideDuration = 2  # Int
     VertResolution = 720  # Int
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     # A list of user input text to insert before slides, starts with
     # the first slide. You can leave it blank and no additional
     # slides will be inserted in the video.
-    user_input_list = ["1", "2", "3", "4", "5"]
+    user_input_list = []
 
     ppt2video(f"./{file_name}", f"./{video_name}.mp4",
               UseTimingsAndNarrations,
