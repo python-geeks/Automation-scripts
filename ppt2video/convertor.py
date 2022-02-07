@@ -40,104 +40,31 @@ def ppt2video(pptx, video, timing, duration,
     # graphSlideID = gslides.Add(2, ppLayoutChart).SlideID
     # slides.FindBySlideID(graphSlideID)
 
-
     # Slides indexes start with 1
     for slide in presentation.Slides:
-        # print(e.SlideIndex, e.SlideNumber, e.SlideID)
         for key, value in dict.items():
-            # print(slide.SlideIndex, key)
-            # print(len(new_presentation.Slides))
             if slide.SlideIndex == int(key) and value != "":
                 len_new_ppt = len(new_presentation.Slides)
 
-                print(" slide.SlideIndex == key", slide.SlideIndex)
+                # print(" slide.SlideIndex == key", slide.SlideIndex)
 
-                new_slide = new_presentation.Slides.Add(len_new_ppt+1, ppLayoutText)
+                new_slide = new_presentation.Slides.Add(
+                            len_new_ppt+1, ppLayoutText)
                 new_slide.Shapes.addShape(
                     msoShapeRectangle, 150, 150, 250, 250). \
                     TextFrame.TextRange.Text = value
+                # print("added new slide at position", len_new_ppt+1)
                 slide.Copy()
-                new_presentation.Slides.Paste(len_new_ppt+2)
+                new_presentation.Slides.Paste(len_new_ppt+1)
+                # print("copied old slide, at position", slide.SlideIndex,
+                #     len_new_ppt+2)
             # else:
-            #     print("slide.SlideIndex != key", slide.SlideIndex, key)
+            #     slide.Copy()
+            #     new_presentation.Slides.Paste(len_new_ppt+1)
+            #     print("copied old slide, at position", slide.SlideIndex,
+            #         len_new_ppt+2)
 
-
-            # if e.SlideIndex == key:
-            #     print(" e.SlideIndex == key", e.SlideIndex )
-            # else:
-            #     print("e.SlideIndex != key", e.SlideIndex, key)
-            # if not presentation.Slides[int(key)]:
-            #     # e.Copy()
-            #     # new_presentation.Slides.Paste(length_new_presentation)
-            #     # length_new_presentation += 1
-            #     print("no index in dict", e.SlideIndex, e.SlideNumber, e.SlideID)
-            # else:
-            #    if presentation.Slides[int(key)] and value != "":
-            #     #   slide = new_presentation.Slides.Add(length_new_presentation+1, ppLayoutText)
-            #     #   slide.Shapes.addShape(
-            #     #       msoShapeRectangle, 150, 150, 250, 250). \
-            #     #       TextFrame.TextRange.Text = value
-            #     #   e.Copy()
-            #     #   new_presentation.Slides.Paste(length_new_presentation+2)
-            #     #   length_new_presentation += 1
-            #         print("index in both", e.SlideIndex, e.SlideNumber, e.SlideID)
-
-
-    # for key, value in dict.items():
-    #     if presentation.Slides[int(key)] and value != "":
-    #         slide = new_presentation.Slides.Add(int(key)+1, ppLayoutText)
-    #         slide.Shapes.addShape(
-    #             msoShapeRectangle, 150, 150, 250, 250). \
-    #             TextFrame.TextRange.Text = value
-    #         presentation.Slides[int(key)].Copy()
-    #         new_presentation.Slides.Paste(int(key)+2)
-
-    # list_slides = [e for e in presentation.Slides]
-    # # for each in presentation.Slides:
-    # for key, value in dict.items():
-    #     if presentation.Slides[int(key)] and value != "":
-    #         slide = new_presentation.Slides.Add(int(key)+1, ppLayoutText)
-    #         slide.Shapes.addShape(
-    #                 msoShapeRectangle, 150, 150, 250, 250). \
-    #                 TextFrame.TextRange.Text = value
-    #         # print(presentation.Slides[int(key)], key, value)
-    #     else:
-    #         print("NO value", presentation.Slides[int(key)], key, value)
-        # if presentation.Slides[int(key)]:
-                # slide = new_presentation.Slides.Add(int(key), ppLayoutText)
-                # slide.Shapes.addShape(
-                #         msoShapeRectangle, 150, 150, 250, 250). \
-                #         TextFrame.TextRange.Text = value
-    # for key, value in dict.items():
-    #     print("key for dict", key)
-
-    # Unpack the dict keys and values
-    # for key, value in dict.items():
-    #     old_slides = [each for each in presentation.Slides]
-    #     if presentation.Slides[int(key)]:
-    #         slide = new_presentation.Slides.Add(int(key), ppLayoutText)
-    #         slide.Shapes.addShape(
-    #                 msoShapeRectangle, 150, 150, 250, 250). \
-    #                 TextFrame.TextRange.Text = value
-    #         new_presentation.Slides.Add(int(key), old_slides[int(key)+1])
-
-        # if old_slides[int(key)]:
-        #     slide = presentation.Slides.Add(int(key), ppLayoutText)
-        #     slide.Shapes.addShape(
-        #         msoShapeRectangle, 150, 150, 250, 250). \
-        #         TextFrame.TextRange.Text = value
-
-
-    # for key, value in dict.items():
-    #         if value =="":
-    #             print("No value given", key)
-    #         n = key # slide number to be created,
-    #         x = value
-    #         slide = presentation.Slides.Add(n, ppLayoutText)
-    #         slide.Shapes.addShape(
-    #             msoShapeRectangle, 150, 150, 250, 250). \
-    #             TextFrame.TextRange.Text = x
-    # slides_len = len(presentation.Slides)
+    print("new presentation", len(new_presentation.Slides))
 
     # while input_list:
     #     if len(input_list) == slides_len:
