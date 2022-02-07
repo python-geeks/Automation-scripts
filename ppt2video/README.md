@@ -22,9 +22,13 @@ DefaultSlideDuration<br>
 VertResolution<br>
 FramesPerSecond<br>
 Quality variables<br>
-user_input_list**
+input_dict**
 
 with desired values in convertor.py, more instructions are in the script, and run it:
 ```
 python3 convertor.py
 ```
+
+## Adding slides
+A user can add text slides before the desired slides by adding the slide number and the text as
+keys and values to the input dictionary or leave it blank.
