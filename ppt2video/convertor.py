@@ -33,7 +33,65 @@ def ppt2video(pptx, video, timing, duration,
     # slides_len = len(presentation.Slides)
 
     # powerpoint = win32com.client.Dispatch('PowerPoint.Application')
-    # new_presentation = ppt.Presentations.Add(WithWindow=False)
+    new_presentation = ppt.Presentations.Add(WithWindow=False)
+    # slides = new_presentation.Slides
+    # presentation.Slides[1].Copy()
+    # new_presentation.Slides.Paste(1)
+    # graphSlideID = gslides.Add(2, ppLayoutChart).SlideID
+    # slides.FindBySlideID(graphSlideID)
+
+
+    # Slides indexes start with 1
+    for slide in presentation.Slides:
+        # print(e.SlideIndex, e.SlideNumber, e.SlideID)
+        for key, value in dict.items():
+            # print(slide.SlideIndex, key)
+            # print(len(new_presentation.Slides))
+            if slide.SlideIndex == int(key) and value != "":
+                len_new_ppt = len(new_presentation.Slides)
+
+                print(" slide.SlideIndex == key", slide.SlideIndex)
+
+                new_slide = new_presentation.Slides.Add(len_new_ppt+1, ppLayoutText)
+                new_slide.Shapes.addShape(
+                    msoShapeRectangle, 150, 150, 250, 250). \
+                    TextFrame.TextRange.Text = value
+                slide.Copy()
+                new_presentation.Slides.Paste(len_new_ppt+2)
+            # else:
+            #     print("slide.SlideIndex != key", slide.SlideIndex, key)
+
+
+            # if e.SlideIndex == key:
+            #     print(" e.SlideIndex == key", e.SlideIndex )
+            # else:
+            #     print("e.SlideIndex != key", e.SlideIndex, key)
+            # if not presentation.Slides[int(key)]:
+            #     # e.Copy()
+            #     # new_presentation.Slides.Paste(length_new_presentation)
+            #     # length_new_presentation += 1
+            #     print("no index in dict", e.SlideIndex, e.SlideNumber, e.SlideID)
+            # else:
+            #    if presentation.Slides[int(key)] and value != "":
+            #     #   slide = new_presentation.Slides.Add(length_new_presentation+1, ppLayoutText)
+            #     #   slide.Shapes.addShape(
+            #     #       msoShapeRectangle, 150, 150, 250, 250). \
+            #     #       TextFrame.TextRange.Text = value
+            #     #   e.Copy()
+            #     #   new_presentation.Slides.Paste(length_new_presentation+2)
+            #     #   length_new_presentation += 1
+            #         print("index in both", e.SlideIndex, e.SlideNumber, e.SlideID)
+
+
+    # for key, value in dict.items():
+    #     if presentation.Slides[int(key)] and value != "":
+    #         slide = new_presentation.Slides.Add(int(key)+1, ppLayoutText)
+    #         slide.Shapes.addShape(
+    #             msoShapeRectangle, 150, 150, 250, 250). \
+    #             TextFrame.TextRange.Text = value
+    #         presentation.Slides[int(key)].Copy()
+    #         new_presentation.Slides.Paste(int(key)+2)
+
     # list_slides = [e for e in presentation.Slides]
     # # for each in presentation.Slides:
     # for key, value in dict.items():
@@ -102,7 +160,7 @@ def ppt2video(pptx, video, timing, duration,
 
     # Presentation.CreateVideo method (PowerPoint)
     # https://docs.microsoft.com/en-us/office/vba/api/powerpoint.presentation.createvideo
-    presentation.CreateVideo(video_path, timing, duration,
+    new_presentation.CreateVideo(video_path, timing, duration,
                              resolution, frames, quality)
     while True:
         try:
@@ -112,6 +170,7 @@ def ppt2video(pptx, video, timing, duration,
             break
         except Exception:
             pass
+    new_presentation.Close()
     presentation.Close()
     ppt.Quit()
     pass
@@ -129,7 +188,11 @@ if __name__ == '__main__':
     # the first slide. You can leave it blank and no additional
     # slides will be inserted in the video.
     user_input_list = []
-    input_dict = {"0":"0", "1":"1", "2":"2","3":"3","4":"4","5":"","6":"","7":"","8":"","9":""}
+    # key in the dict represents the index of the slides in the presentation
+    # to be converted into video. Slides indexes start with 1, "first slide".
+    input_dict = { "1":"input index 1",
+                  "2":"input index 2", "4":"input index 4", "5":"input index 5",
+                  "10":"input index 10",}
 
     ppt2video(f"./{file_name}", f"./{video_name}.mp4",
               UseTimingsAndNarrations,
