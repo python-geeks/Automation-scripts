@@ -12,7 +12,7 @@ msoShapeRectangle = 1
 
 
 def ppt2video(pptx, video, timing, duration,
-              resolution, frames, quality, input_list, dict):
+              resolution, frames, quality, dict):
 
     # Check if system requirements are met.
     if sys.platform == "win32":
@@ -31,16 +31,9 @@ def ppt2video(pptx, video, timing, duration,
     # Open presentation
     presentation = ppt.Presentations.Open(ppt_path, WithWindow=False)
 
-    # slides_len = len(presentation.Slides)
-
-    # powerpoint = win32com.client.Dispatch('PowerPoint.Application')
     new_presentation = ppt.Presentations.Add(WithWindow=False)
-    # slides = new_presentation.Slides
-    # presentation.Slides[1].Copy()
-    # new_presentation.Slides.Paste(1)
-    # graphSlideID = gslides.Add(2, ppLayoutChart).SlideID
-    # slides.FindBySlideID(graphSlideID)
 
+    # Compare input and slides by indexes, creating lists and comparing them
     keys = [int(key) for key, value in dict.items()]
     slides = [slide.SlideIndex for slide in presentation.Slides]
     # List of indexes with user input texts.
@@ -48,60 +41,24 @@ def ppt2video(pptx, video, timing, duration,
 
     # Slides indexes start with 1
     for slide in presentation.Slides:
+        # Checking if user provided input
         if slide.SlideIndex in list:
-            # print(slide.SlideIndex)
-            # print(dict.get(str(slide.SlideIndex)))
+            # Create new slide with new text
             len_new_ppt = len(new_presentation.Slides)
             new_slide = new_presentation.Slides.Add(
                         len_new_ppt+1, ppLayoutText)
             new_slide.Shapes.addShape(
                 msoShapeRectangle, 150, 150, 250, 250). \
                 TextFrame.TextRange.Text = dict.get(str(slide.SlideIndex))
+            # Copying slide from original presentation and adding it new one.
             slide.Copy()
             len_new_ppt = len(new_presentation.Slides)
             new_presentation.Slides.Paste(len_new_ppt+1)
         else:
-            # print("no input", slide.SlideIndex)
+            # Adding slide to new presentation without user provided text
             slide.Copy()
             len_new_ppt = len(new_presentation.Slides)
             new_presentation.Slides.Paste(len_new_ppt+1)
-
-
-        # for key, value in dict.items():
-        #     if slide.SlideIndex == int(key) and value != "":
-        #         len_new_ppt = len(new_presentation.Slides)
-        #         new_slide = new_presentation.Slides.Add(
-        #                     len_new_ppt+1, ppLayoutText)
-        #         new_slide.Shapes.addShape(
-        #             msoShapeRectangle, 150, 150, 250, 250). \
-        #             TextFrame.TextRange.Text = value
-        #         slide.Copy()
-        #         len_new_ppt = len(new_presentation.Slides)
-        #         new_presentation.Slides.Paste(len_new_ppt+1)
-            # else:
-            #    print(slide.SlideIndex)
-
-            # print(slide.SlideIndex)
-    print("new presentation", len(new_presentation.Slides))
-
-    # while input_list:
-    #     if len(input_list) == slides_len:
-    #         n = 1  # To track the slide number to be created
-    #         x = 0  # Index in the user input list
-    #         while x < slides_len:
-    #             # Create slide and insert it at n position with
-    #             # input_list[x] text
-    #             slide = presentation.Slides.Add(n, ppLayoutText)
-    #             slide.Shapes.addShape(
-    #                 msoShapeRectangle, 150, 150, 250, 250). \
-    #                 TextFrame.TextRange.Text = input_list[x]
-    #             n += 2
-    #             x += 1
-    #         break
-    #     else:
-    #         print("The length of input data should be equal to the \
-    #             slides count")
-    #         break
 
     # Presentation.CreateVideo method (PowerPoint)
     # https://docs.microsoft.com/en-us/office/vba/api/powerpoint.presentation.createvideo
@@ -129,17 +86,20 @@ if __name__ == '__main__':
     VertResolution = 720  # Int
     FramesPerSecond = 24  # Int
     Quality = 60  # Int
-    # A list of user input text to insert before slides, starts with
-    # the first slide. You can leave it blank and no additional
-    # slides will be inserted in the video.
-    user_input_list = []
-    # key in the dict represents the index of the slides in the presentation
-    # to be converted into video. Slides indexes start with 1, "first slide".
+
+    # User Input is in dictionary format. The keys in the dict represent the
+    # number of the slides in the presentation.
+    # Slides indexes, and input_dict as well, start with 1, "first slide", e.g.
+    # {"1":"input before slide number 1, the first slide",
+    #  "2":"input before slide number 2, the second slide",
+    #  "4":"input before slide number 4, the forth slide"}
+    # You can choose to what slides to add precending text and what slides
+    # to leave without additional input.
     input_dict = { "1":"input index 1",
                   "2":"input index 2", "4":"input index 4", "5":"input index 5",
-                  "10":"input index 10",}
+                  "10":"input index 10"}
 
     ppt2video(f"./{file_name}", f"./{video_name}.mp4",
               UseTimingsAndNarrations,
               DefaultSlideDuration, VertResolution,
-              FramesPerSecond, Quality, user_input_list, input_dict)
+              FramesPerSecond, Quality, input_dict)
