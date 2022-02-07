@@ -46,23 +46,27 @@ def ppt2video(pptx, video, timing, duration,
             if slide.SlideIndex == int(key) and value != "":
                 len_new_ppt = len(new_presentation.Slides)
 
-                # print(" slide.SlideIndex == key", slide.SlideIndex)
 
                 new_slide = new_presentation.Slides.Add(
                             len_new_ppt+1, ppLayoutText)
                 new_slide.Shapes.addShape(
                     msoShapeRectangle, 150, 150, 250, 250). \
                     TextFrame.TextRange.Text = value
-                # print("added new slide at position", len_new_ppt+1)
+                # Paste
                 slide.Copy()
-                new_presentation.Slides.Paste(len_new_ppt+1)
+                new_presentation.Slides.Paste(len_new_ppt+2)
+                # print("added new slide at position", len_new_ppt+2)
+
                 # print("copied old slide, at position", slide.SlideIndex,
                 #     len_new_ppt+2)
             # else:
-            #     slide.Copy()
-            #     new_presentation.Slides.Paste(len_new_ppt+1)
-            #     print("copied old slide, at position", slide.SlideIndex,
-            #         len_new_ppt+2)
+                # print(slide.SlideID)
+                # if new_presentation.Slides.FindBySlideID(slide.SlideID):
+                #     print("witout input", slide.SlideID)
+                # slide.Copy()
+                # new_presentation.Slides.Paste(len_new_ppt+1)
+                # print("copied old slide, at position", slide.SlideIndex,
+                #     len_new_ppt+1)
 
     print("new presentation", len(new_presentation.Slides))
 
