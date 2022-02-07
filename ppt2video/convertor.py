@@ -79,9 +79,9 @@ def ppt2video(pptx, video, timing, duration,
 
 if __name__ == '__main__':
     # e.g.:test.pptx, file expected to be in the root folder
-    file_name = "presentation.pptx"
+    file_name = ""
     # e.g.: test_video, will be created in the root folder
-    video_name = "video"
+    video_name = ""
     UseTimingsAndNarrations = False  # Boolean value
     DefaultSlideDuration = 2  # Int
     VertResolution = 720  # Int
