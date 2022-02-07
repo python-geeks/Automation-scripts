@@ -44,20 +44,20 @@ def ppt2video(pptx, video, timing, duration,
         if slide.SlideIndex in list:
             # Create new slide with new text
             len_new_ppt = len(new_presentation.Slides)
-            new_slide = new_presentation.Slides.Add(
-                        len_new_ppt+1, ppLayoutText)
+            new_slide = new_presentation.Slides.Add(len_new_ppt + 1,
+                                                    ppLayoutText)
             new_slide.Shapes.addShape(
                 msoShapeRectangle, 150, 150, 250, 250). \
                 TextFrame.TextRange.Text = dict.get(str(slide.SlideIndex))
             # Copying slide from original presentation and adding it new one.
             slide.Copy()
             len_new_ppt = len(new_presentation.Slides)
-            new_presentation.Slides.Paste(len_new_ppt+1)
+            new_presentation.Slides.Paste(len_new_ppt + 1)
         else:
             # Adding slide to new presentation without user provided text
             slide.Copy()
             len_new_ppt = len(new_presentation.Slides)
-            new_presentation.Slides.Paste(len_new_ppt+1)
+            new_presentation.Slides.Paste(len_new_ppt + 1)
 
     # Presentation.CreateVideo method (PowerPoint)
     # https://docs.microsoft.com/en-us/office/vba/api/powerpoint.presentation.createvideo
