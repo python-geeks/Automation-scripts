@@ -1,6 +1,7 @@
 import win32com.client
 import os
 import sys
+from more_itertools import value_chain
 
 # PpSaveAsFileType enumeration (PowerPoint)
 ppSaveAsMP4 = 39
@@ -40,21 +41,45 @@ def ppt2video(pptx, video, timing, duration,
     # graphSlideID = gslides.Add(2, ppLayoutChart).SlideID
     # slides.FindBySlideID(graphSlideID)
 
+    keys = [int(key) for key, value in dict.items()]
+    slides = [slide.SlideIndex for slide in presentation.Slides]
+    # List of indexes with user input texts.
+    list = [key for key in keys if key in slides]
+
     # Slides indexes start with 1
     for slide in presentation.Slides:
-        for key, value in dict.items():
-            if slide.SlideIndex == int(key) and value != "":
-                len_new_ppt = len(new_presentation.Slides)
-                # print("print(len_new_ppt) before new slide", len_new_ppt)
-                new_slide = new_presentation.Slides.Add(
-                            len_new_ppt+1, ppLayoutText)
-                new_slide.Shapes.addShape(
-                    msoShapeRectangle, 150, 150, 250, 250). \
-                    TextFrame.TextRange.Text = value
-                slide.Copy()
-                len_new_ppt = len(new_presentation.Slides)
-                # print("print(len_new_ppt) before paste", len_new_ppt)
-                new_presentation.Slides.Paste(len_new_ppt+1)
+        if slide.SlideIndex in list:
+            # print(slide.SlideIndex)
+            # print(dict.get(str(slide.SlideIndex)))
+            len_new_ppt = len(new_presentation.Slides)
+            new_slide = new_presentation.Slides.Add(
+                        len_new_ppt+1, ppLayoutText)
+            new_slide.Shapes.addShape(
+                msoShapeRectangle, 150, 150, 250, 250). \
+                TextFrame.TextRange.Text = dict.get(str(slide.SlideIndex))
+            slide.Copy()
+            len_new_ppt = len(new_presentation.Slides)
+            new_presentation.Slides.Paste(len_new_ppt+1)
+        else:
+            # print("no input", slide.SlideIndex)
+            slide.Copy()
+            len_new_ppt = len(new_presentation.Slides)
+            new_presentation.Slides.Paste(len_new_ppt+1)
+
+
+        # for key, value in dict.items():
+        #     if slide.SlideIndex == int(key) and value != "":
+        #         len_new_ppt = len(new_presentation.Slides)
+        #         new_slide = new_presentation.Slides.Add(
+        #                     len_new_ppt+1, ppLayoutText)
+        #         new_slide.Shapes.addShape(
+        #             msoShapeRectangle, 150, 150, 250, 250). \
+        #             TextFrame.TextRange.Text = value
+        #         slide.Copy()
+        #         len_new_ppt = len(new_presentation.Slides)
+        #         new_presentation.Slides.Paste(len_new_ppt+1)
+            # else:
+            #    print(slide.SlideIndex)
 
             # print(slide.SlideIndex)
     print("new presentation", len(new_presentation.Slides))
