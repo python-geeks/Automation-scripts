@@ -51,16 +51,18 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 
 ### These are my Lazy Panda Goals
 
-* Goal 25 - Panda stopped Cycling
-* Goal 50 - Panda stopped doing Exercise
-* Goal 75 - Panda stopped Playing outdoor games
-* Goal 100 - Panda hired someone for cleaning house
-
-* Goal 125 - Panda have it's own vehicle to travel 
-* Goal 150 - Panda have enough support now, so he started eating food outside
-* Goal 175 - On the way, Panda decide to bathe alternatively 😂 
-* Goal 200 - Moving ahead, Panda is now using online ecom platform to buy things
-* Goal 225 - Panda now lazy enough to order the food instead of going outside
+<ul>
+<li>Goal 25 - Panda stopped Cycling</li>
+<li>Goal 50 - Panda stopped doing Exercise</li>
+<li>Goal 75 - Panda stopped Playing outdoor games</li>
+<li>Goal 100 - Panda hired someone for cleaning house</li>
+<br></br>
+<li>Goal 125 - Panda have it's own vehicle to travel </li>
+<li>Goal 150 - Panda have enough support now, so he started eating food outside</li>
+<li>Goal 175 - On the way, Panda decide to bathe alternatively 😂 </li>
+<li>Goal 200 - Moving ahead, Panda is now using online ecom platform to buy things</li>
+<li>Goal 225 - Panda now lazy enough to order the food instead of going outside</li>
+</ul>
 
 **Leave a star => Contribution in arranging Food for panda 😴**
 
@@ -82,7 +84,7 @@ You can contribute by adding new scripts, improving current scripts or Documenta
 * Option 1: Set up locally, Download flake8 linter and check (as shown in figure below)
 ![carbon (1)](https://user-images.githubusercontent.com/42181691/135052274-49d6f2be-04c0-4bf7-9c25-b734b8db6f3c.png)
 * Option 2: Go to [PEP8 online](http://pep8online.com/) , paste your code and check the format it correctly
-* 
+
 **It's better to go with option 2 always**
 
 **Typo fixed/ minor change in docs not marked as contribution. If you're not aware of process kindly raise a query in formal manner :)**
