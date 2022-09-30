@@ -29,7 +29,7 @@
 
 **See full details and guidelines on**
   * [Hacktober cheasheat](https://github.com/python-geeks/Automation-scripts/blob/main/HACKTOBERFEST.md) 
-  * [Official website](https://hacktoberfest.com/s)
+  * [Official website](https://hacktoberfest.com)
 
 
 ## Updates 2020:
