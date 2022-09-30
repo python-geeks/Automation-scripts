@@ -20,7 +20,7 @@
 # How to start
 
 * Well it's quite simple just thought of any Idea that can be automated
-* Equip your weapon, I mean Python and required libraries 😂 (**[Refer here](https://pyarmy.com/tag/python/)** for some basic guides to enhance Python language)
+* Equip your weapon, I mean Python and required libraries 😂
 * That's all you need 😋
 
 ## Hacktoberfest 2021 Update
@@ -29,7 +29,7 @@
 
 **See full details and guidelines on**
   * [Hacktober cheasheat](https://github.com/python-geeks/Automation-scripts/blob/main/HACKTOBERFEST.md) 
-  * [Official website](https://hacktoberfest.digitalocean.com/resources)
+  * [Official website](https://hacktoberfest.com/s)
 
 
 ## Updates 2020:
@@ -39,6 +39,11 @@
 4. **Goals of 2020 completed, Panda now hired a maid to clean his house :)**
 
 ## Updates 2021
+1. **Thanks to all of you peeps, panda have it's own bike 😎**
+2. **Panda is using Amazon to buy almost every thing**
+3. **The food is now delivered to the panda's desk, cheers**
+
+## Updates 2022
 
 And it's okay if you're not aware of process. Kindly raise query by creating pull request (In query template). Here is the link for that how to create a pull request in other's Repo
 
@@ -51,9 +56,9 @@ And it's okay if you're not aware of process. Kindly raise query by creating pul
 * Goal 75 - Panda stopped Playing outdoor games
 * Goal 100 - Panda hired someone for cleaning house
 
-* Goal 125 - Panda now have own vehicle to travel 
+* Goal 125 - Panda have it's own vehicle to travel 
 * Goal 150 - Panda have enough support now, so he started eating food outside
-* Goal 175 - On the way, now Panda decide to bathe alternatively 😂 
+* Goal 175 - On the way, Panda decide to bathe alternatively 😂 
 * Goal 200 - Moving ahead, Panda is now using online ecom platform to buy things
 * Goal 225 - Panda now lazy enough to order the food instead of going outside
 
