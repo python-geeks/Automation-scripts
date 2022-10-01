@@ -28,7 +28,7 @@ class App():
 
     def startrecording(self):
 
-        if(self.state == ""):
+        if (self.state == ""):
             self.p = pyaudio.PyAudio()
             self.stream = self.p.open(format=self.sample_format, channels=self.channels,
                                       rate=self.fs, frames_per_buffer=self.chunk, input=True)
@@ -40,7 +40,7 @@ class App():
 
     def stoprecording(self):
 
-        if(self.state == ""):
+        if (self.state == ""):
             print("Empty Recording Cannot be saved")
         else:
             main.destroy()
@@ -58,14 +58,14 @@ class App():
 
     def pause(self):
 
-        if(self.state == "R" or self.state == "Res"):
+        if (self.state == "R" or self.state == "Res"):
             self.isrecording = False
             print("Recording Paused")
             self.state = "P"
 
     def resume(self):
 
-        if(self.state == "P"):
+        if (self.state == "P"):
             self.isrecording = True
             self.state = "Res"
             print("Recording Resumed")

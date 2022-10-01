@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     products = createTuple(urls, limits)
     while True:
-        if(len(products) == 0):
+        if (len(products) == 0):
             break
         print('Number of products left whose price is Not Dropped yet',
               len(products))
@@ -84,6 +84,6 @@ if __name__ == '__main__':
                 message += f"{url}\n\n"
                 foundData.append((url, limit))
 
-            if(send_email(message)):
+            if (send_email(message)):
                 for found in foundData:
                     products.remove(found)

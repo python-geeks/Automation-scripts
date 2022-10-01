@@ -34,7 +34,7 @@ part2 = ""
 
 t = len(problem)
 for i in range(t):
-    if(not problem[i].isdigit()):
+    if (not problem[i].isdigit()):
         break
     else:
         part1 = part1 + problem[i]

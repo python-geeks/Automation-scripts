@@ -30,14 +30,14 @@ def findMySong(song_name):
         cnt = 0
         for song in songs:
             try:
-                if(cnt < 10):
+                if (cnt < 10):
                     details = song.find_element_by_class_name(
                         "mp3list-play").text
                     details = details.split("\n")
                     link_sel_obj = song.find_element_by_tag_name("a")
                     link = link_sel_obj.get_attribute("href")
                     link = link[:33] + "get" + link[37:]
-                    if(len(details) > 2):
+                    if (len(details) > 2):
                         vid_item = {
                             'title': details[0],
                             "duration": details[-1],
@@ -53,7 +53,7 @@ def findMySong(song_name):
     except NoSuchElementException:
         print("big error")
     driver.close()
-    return(song_list)
+    return (song_list)
 
 
 def downloadMySong(url):

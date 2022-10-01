@@ -136,7 +136,7 @@ if __name__ == "__main__":
     n_seq = int(input("Enter number of more words to generate: "))
 
     if len(input_text.split()) < 8:
-        raise("""Please enter an 8 word sentence
+        raise ("""Please enter an 8 word sentence
               to start with or choose from defaults!!!""")
 
     out = " ".join(generate_text_ngram(model, input_text, word_ixs, n_seq)[0])

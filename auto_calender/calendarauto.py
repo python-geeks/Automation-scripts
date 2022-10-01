@@ -130,7 +130,7 @@ def parse_time(timestamp):
 def format_timedelta(timedelta):
     # Takes a timedelta and returns a string
     hours = timedelta.total_seconds() / 3600
-    return("%.2f" % hours)
+    return ("%.2f" % hours)
 
 
 if __name__ == '__main__':

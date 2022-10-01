@@ -73,7 +73,7 @@ def separate(y_kmeans, file_names):
     n_clusters = CLUSTER
     cluster_path = OUTPUT
     path_to_files = PATH_TO_FILES
-    if(not os.path.exists(cluster_path)):
+    if (not os.path.exists(cluster_path)):
         os.mkdir(cluster_path)
     for c in range(0, n_clusters):
         if not os.path.exists(cluster_path + 'cluster_' + str(c)):

@@ -17,7 +17,7 @@ def match_info(mid):
     print(" Match No  : " + minfo["mnum"])
     print(" Match Between : " + minfo["team1"]["name"] + " v/s " + minfo["team2"]["name"])
 
-    if(minfo["toss"] == ""):
+    if (minfo["toss"] == ""):
         print(" Toss is yet to happen")
     else:
         print(" Toss : " + minfo["toss"])
@@ -47,7 +47,7 @@ def live_score(mid):
 
 
 for i in matches:
-    if(i["srs"] == srs_to_watch):
+    if (i["srs"] == srs_to_watch):
         match_id.append(i["id"])
 
 print("Match Details Available : ")

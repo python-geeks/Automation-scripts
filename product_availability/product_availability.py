@@ -40,7 +40,7 @@ if __name__ == '__main__':
             text += "Your tracked products are Available Now!\n\n"
             text += f"{title}\n"
             text += f"{url}\n\n"
-            if(send_email(text)):
+            if (send_email(text)):
                 break
         else:
             print("Not Available")
