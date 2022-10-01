@@ -60,9 +60,9 @@ def get_password(length: int) -> str:
 def shuffle(password: list):
     # n used to determine range of loop
     n = len(password)
-    for x in range(n-1, 0, -1):
+    for x in range(n - 1, 0, -1):
         # set new variable y to random int within needed index
-        y = secrets.choice(range(0, x+1))
+        y = secrets.choice(range(0, x + 1))
         # swap elements at index x and index y
         password[x], password[y] = password[y], password[x]
     # return concatenated password
@@ -113,4 +113,3 @@ if __name__ == '__main__':
 
     # calling the main method with the args
     main(args)
-    
