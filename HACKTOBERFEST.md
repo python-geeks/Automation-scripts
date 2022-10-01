@@ -1,6 +1,6 @@
-<h1 align="center"> 🎃 HacktoberFest-2021 🎃</h1>
+<h1 align="center"> 🎃 HacktoberFest-2022 🎃</h1>
 
-![Opensource](https://img.shields.io/badge/openSource-%E2%9D%A4-blue) ![PR](https://img.shields.io/badge/PRs-welcome-green) ![hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2021-red) ![friendly](https://img.shields.io/badge/beginner-friendly-l)
+![Opensource](https://img.shields.io/badge/openSource-%E2%9D%A4-blue) ![PR](https://img.shields.io/badge/PRs-welcome-green) ![hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2022-red) ![friendly](https://img.shields.io/badge/beginner-friendly-l)
 
 # What is HacktoberFest?
 
@@ -21,7 +21,6 @@ You can sign up anytime between October 1 and October 31. Just be sure to sign u
 * If a maintainer reports your pull request as spam, it will not be counted toward your participation in Hacktoberfest.
 * If a maintainer reports behavior that’s not in line with the project’s code of conduct, you will be ineligible to participate.
 * To get a shirt, you must make four approved pull requests (PRs) on opted-in projects between October 1-31 in any time zone.
-* This year, the first 55,000 participants can earn a T-shirt.
 
 # Quality Guidelines
 
