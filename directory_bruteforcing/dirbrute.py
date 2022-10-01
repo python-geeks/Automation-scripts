@@ -2,7 +2,7 @@
 import requests
                                     
 # enter your ip or domain which youre gonna search for
-url = input("Enter domain or IP :")
+url = input("Enter domain or IP with / at end:")
 
 # path for the wordlists
 path = input("Enter Wordlist path :")
