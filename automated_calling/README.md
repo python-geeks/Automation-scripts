@@ -15,3 +15,11 @@ requirement :
 twilio client
 
 installation :  pip install twilio
+
+client.calls.create will be responsible for the call process 
+also here url is the reponse urls , i.e whatever you want to
+give as a response to the reciever you can give by simply creating your
+own at twilio.com, since it is a trail we have used trail response     
+'to' attribute specifies whom you want to dial
+'from' attribute specifies from which number the receiver will receive the call
+**note that number will be auto genrated in the trail process
