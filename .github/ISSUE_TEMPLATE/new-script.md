@@ -2,7 +2,7 @@
 name: 🚀 Create a new script
 about: I wanna add new script to project
 title: ''
-labels: good first issue, up-for-grabs, beginner-friendly, help wanted
+labels: good first issue, up-for-grabs, beginner-friendly, hacktoberfest
 assignees: ''
 
 ---
