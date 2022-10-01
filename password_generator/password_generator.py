@@ -55,12 +55,11 @@ def get_password(length: int) -> str:
     return password
 
 
-# shuffle function based on Fisher–Yates shuffle using secrets.choice
+# shuffle function based on Fisher–Yates shuffle using secrets.choice()
 # as the integer selector
 def shuffle(password: list):
     # n used to determine range of loop
     n = len(password)
-    # Fisher
     for x in range(n-1, 0, -1):
         # set new variable y to random int within needed index
         y = secrets.choice(range(0, x+1))
