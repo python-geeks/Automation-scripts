@@ -2,7 +2,7 @@
 
 # usage:
 
--> python <code>brute.py</code>
+-> python <code>dirbrute.py</code>
   
   
 -> Enter the url or IP of the site to be searched:
