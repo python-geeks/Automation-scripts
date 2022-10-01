@@ -29,7 +29,7 @@ def TakeCommand():
     return Query
 
 
-while(True):
+while (True):
     if __name__ == '__main__':
         Query = TakeCommand().lower()
 

@@ -66,7 +66,7 @@ def main():
         print(f"\t[{key+1}] {network[0]}, Signal: {network[1]}%")
 
     choice = input("\nPlease enter your choice : \n\t>> ").strip()
-    if not(choice.isdigit() and 1 <= int(choice) <= len(networks)):
+    if not (choice.isdigit() and 1 <= int(choice) <= len(networks)):
         print("Wrong Choice Entered. Exiting...")
         return False
 

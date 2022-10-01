@@ -14,7 +14,7 @@ def speech_rec_for_linux():
     medicines = {}
 
     with sr.Microphone() as source:
-        while(True):
+        while (True):
             medicine_dict = {}
             count += 1
 
@@ -82,7 +82,7 @@ def speech_rec_for_windows():
     medicines = {}
 
     with sr.Microphone() as source:
-        while(True):
+        while (True):
             medicine_dict = {}
             count += 1
 

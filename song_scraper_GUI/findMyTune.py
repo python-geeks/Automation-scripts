@@ -115,7 +115,7 @@ class SongGUI:
         self.searchname.set('')
 
         # if the search box is not empty
-        if(self.songname):
+        if (self.songname):
 
             self.songlist = findMySong(self.songname)
             self.search_button['state'] = DISABLED
@@ -125,7 +125,7 @@ class SongGUI:
             self.results = ttk.Treeview(self.result_frame)
 
             # if search is not empty
-            if(self.songlist):
+            if (self.songlist):
 
                 # creates four cols, 1 phantom columns
                 self.results['columns'] = ('S.NO', 'Name', 'Duration')
@@ -175,11 +175,11 @@ class SongGUI:
         songNumber = self.results.focus()
 
         # if option is selected
-        if(songNumber):
+        if (songNumber):
             songNumber = int(songNumber)
             downloadMySong(self.songlist[songNumber]['download-link'])
             filename = [f for f in os.listdir() if f.endswith('.mp3')]
-            if(filename):
+            if (filename):
                 # rename file and save in download folder
                 os.rename(filename[0], 'downloads/' + filename[0][:-14] + ".mp3")
                 tkinter.messagebox.showinfo(
@@ -191,7 +191,7 @@ class SongGUI:
                     "Could'nt download your song, please try again later.")
                 filename = [f for f in os.listdir(
                 ) if f.endswith('.crdownload')]
-                if(filename):
+                if (filename):
                     for file in filename:
                         os.remove(file)
         else:
@@ -212,7 +212,7 @@ class SongGUI:
                 "window already refreshed")
 
 
-if(__name__ == "__main__"):
+if (__name__ == "__main__"):
     root = Tk()
     SongGUI(root)
     root.mainloop()

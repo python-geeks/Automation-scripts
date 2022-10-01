@@ -19,7 +19,7 @@ try :
     soup = BeautifulSoup(page, 'html.parser')
     # finding all the link headers
     links = soup.findAll('a')
-    if(links is not None) :
+    if (links is not None) :
         finalLinks = []
         # getting actual site links from the header a
         for link in links :

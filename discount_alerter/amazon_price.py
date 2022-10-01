@@ -59,7 +59,7 @@ def check_price(URL, desired_price):
         raise TypeError('Desired Price should be Int or Double decimal')
     else:
         current_price = (get_price(getenv("URL")))
-        if(desired_price < current_price):
+        if (desired_price < current_price):
             # TODO: Sends email
             pass
         if (desired_price >= current_price):
