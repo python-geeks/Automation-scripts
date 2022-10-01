@@ -1,5 +1,7 @@
 # directory bruteforcing
 
+# requirements:
+-> <code>pip install -r requirements.txt</code>
 # usage:
 
 -> python <code>dirbrute.py</code>
