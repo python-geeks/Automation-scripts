@@ -1,3 +1,2 @@
-opencv-python
-glob
-pyzbar
+opencv-python==4.6.0.66
+pyzbar==0.1.9
