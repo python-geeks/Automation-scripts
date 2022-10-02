@@ -2,15 +2,12 @@ from pyzbar.pyzbar import decode
 from glob import glob
 import cv2
 
-
 def barcode(decoded, image):
     imge = cv2.rectangle(image, (decoded.rect.left,
-                                  decoded.rect.top), (decoded.rect.left + decoded.rect.width,
-                                                      decoded.rect.top +
- decoded.rect.height),
-    color=(0, 255, 0), thickness=5)
+           decoded.rect.top), (decoded.rect.left + decoded.rect.width,
+           decoded.rect.top + decoded.rect.height),
+           color=(0, 255, 0), thickness=5)
     return imge
-
 
 def scan(image):
     dcode = decode(image)
@@ -23,9 +20,9 @@ def scan(image):
     return image
 
 
-dat = input("Enter the path of the barcode")
-data = glob(dat)
-for code in data:
+data = input("Enter the path of the barcode")
+dat = glob(data)
+for code in dat:
     img = cv2.imread(code)
     img = scan(img)
     cv2.imshow("img", img)
