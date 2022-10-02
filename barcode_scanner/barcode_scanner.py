@@ -15,11 +15,11 @@ def barcode(decoded, image):
 def scan(image):
     dcode = decode(image)
     for obj in dcode:
-        print ('Given barcode:', obj)
+        print('Given barcode:', obj)
         image = barcode(obj, image)
-        print ('Barcode Type:', obj.type)
-        print ('Scanned Data:', obj.data)
-        print ()
+        print('Barcode Type:', obj.type)
+        print('Scanned Data:', obj.data)
+        print()
     return image
 
 
