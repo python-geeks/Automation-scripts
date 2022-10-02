@@ -1,18 +1,17 @@
 # directory bruteforcing
+A simple tool for bruteforcing directories in a webserver used in initial stage of recon in penetration testing
 
-# requirements:
--> <code>pip install -r requirements.txt</code>
-# usage:
+## requirements:
+* <code>pip install -r requirements.txt</code>
 
--> python <code>dirbrute.py</code>
+## usage:
+* python <code>dirbrute.py</code>
   
-  
--> Enter the url or IP of the site to be searched:
+* Enter the url or IP of the site to be searched:
 
--> Enter the path for the wordlists file
+* Enter the path for the wordlists file
 
-# Suggested Wordlists:
-
+## Suggested Wordlists:
 https://github.com/3ndG4me/KaliLists/tree/master/dirbuster
 
-Credits: Dirbuster
+Credits: **Dirbuster**
