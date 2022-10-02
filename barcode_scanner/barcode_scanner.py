@@ -5,8 +5,10 @@ import cv2
 
 def barcode(decoded, image):
     imge = cv2.rectangle(image, (decoded.rect.left,
-                                 decoded.rect.top), (decoded.rect.left + decoded.rect.width,
-                                                      decoded.rect.top + decoded.rect.height), color=(0, 255, 0), thickness=5)
+                                  decoded.rect.top), (decoded.rect.left + decoded.rect.width,
+                                                      decoded.rect.top +
+ decoded.rect.height),
+    color=(0, 255, 0), thickness=5)
     return imge
 
 
