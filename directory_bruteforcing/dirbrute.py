@@ -1,4 +1,4 @@
-# importing requests python module1
+# importing requests python module
 import requests
                                     
 # enter your ip or domain which youre gonna search for
