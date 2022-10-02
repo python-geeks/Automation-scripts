@@ -4,8 +4,9 @@ import cv2
 
 
 def barcode(decoded, image):
-    imge = cv2.rectangle(image, (decoded.rect.left, decoded.rect.top),(decoded.rect.left + decoded.rect.width, decoded.rect.top + decoded.rect.height),color=(0, 255, 0),thickness=5)
+    imge = cv2.rectangle(image, (decoded.rect.left, decoded.rect.top), (decoded.rect.left + decoded.rect.width, decoded.rect.top + decoded.rect.height), color=(0, 255, 0), thickness=5)
     return imge
+
 
 def scan(image):
     dcode = decode(image)
@@ -16,6 +17,7 @@ def scan(image):
         print("Scanned Data:", obj.data)
         print()
     return image
+
 
 dat = input("Enter the path of the barcode")
 data = glob(dat)
