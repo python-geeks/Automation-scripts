@@ -67,7 +67,7 @@ def check_price():
         try:
             lprice = float(cryptoname["lastPrice"])
             print(lprice)
-        except:
+        except ValueError:
             print("This Exchange is not available.")
         
         if lprice >= trig_point and cpolarity == 1:
