@@ -11,7 +11,7 @@ for i in range(len(file)):
 
 if stats == 200:
     print("_" * 50)
-    print("Path :"+url + wls, (stats))
+    print("Path :" + url + wls, (stats))
     print("_" * 50)
 elif stats == 404:
     print("_" * 50)
