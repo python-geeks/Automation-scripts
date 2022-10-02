@@ -1,6 +1,7 @@
 # Eterm
 
 Send or view emails through the terminal with style.
+https://github.com/brist0l/eterm
 
 ## Installation
 
