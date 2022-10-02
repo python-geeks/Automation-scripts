@@ -32,20 +32,20 @@ def check_price():
         trig_point = float(input("Input the trigger price(dollar) above at which you want to recieve mail alert: "))
     else:
         trig_point = float(input("Input the trigger price(dollar) below at which you want to recieve mail alert: "))
-    
-    def send_mail():    
+
+    def send_mail():
         server = smtplib.SMTP(mail_server, mail_port)
         server.ehlo()
         server.starttls()
         server.ehlo()
         server.login(from_email, from_email_password)
         subject = f"{spot_name.upper()} EXCHANGE RATE"
-        
+
         if cpolarity == 1:
             body = f"{spot_name.upper()} Exchange is now above ${trig_point}: Current Exchange Rate: ${lprice}."
         else:
             body = f"{spot_name.upper()} Exchange is now below ${trig_point}: Current Exchange Rate: ${lprice}."
- 
+
         msg = f'''Subject: {subject}\n
         To: {"".join(to_email)}\n
         {body}'''
@@ -65,11 +65,11 @@ def check_price():
             if json_list[i]["symbol"] == spot_name.upper():
                 cryptoname = json_list[i]
         try:
-            lprice = float(cryptoname["lastPrice"])
+            lprice = float(cryptoname["lastPrice"][4:6])
             print(lprice)
         except ValueError:
             print("This Exchange is not available.")
-        
+
         if lprice >= trig_point and cpolarity == 1:
             send_mail()
             exit()
