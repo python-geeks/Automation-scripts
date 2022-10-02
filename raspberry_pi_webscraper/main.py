@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def scrape_adafruit():
     url = "https://www.adafruit.com/product/4295"
     response = requests.get(url)
