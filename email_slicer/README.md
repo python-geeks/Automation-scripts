@@ -22,3 +22,7 @@ Should display the username followed by the domain, in the following format:
 username: {username}
 domain: {domain}
 ```
+
+## Author(s)
+
+Aarjav Patni - @aarjavpatni
