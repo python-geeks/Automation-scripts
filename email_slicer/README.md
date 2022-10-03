@@ -14,3 +14,11 @@ Asks for user input in the form of an email address and separates the username f
 
 - Utilises the `split` method to generate a list of strings separated by the @ symbol.
 - The first element of the list is the username and the second is the domain.
+
+## Output
+
+Should display the username followed by the domain, in the following format:
+```
+username: {username}
+domain: {domain}
+```
