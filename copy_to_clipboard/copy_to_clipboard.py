@@ -22,3 +22,4 @@ elif whatos == "Windows":
     print("success: copied to clipboard")
 else:
     print("failed: clipboard not supported")
+    
