@@ -18,18 +18,18 @@ VECTOR_FOR_AES = "SUDESH1611GITHUB"
 def GetKey():
     global KEY
     tempKey = input("Enter password(min length: 8, max length: 32)")
-    while(len(tempKey.strip()) < 8 or len(tempKey.strip()) > 32 or ' ' in tempKey):
-        if(' ' in tempKey):
+    while (len(tempKey.strip()) < 8 or len(tempKey.strip()) > 32 or ' ' in tempKey):
+        if (' ' in tempKey):
             print("White spaces are not allowed!")
         else:
             print("Password must be at least 8 characters long and at max 32 characters long. Try Again!")
-    while(len(tempKey) % 8 != 0):
+    while (len(tempKey) % 8 != 0):
         tempKey = tempKey + PADDING_CHARACTER
     KEY = tempKey
 
 
 def AES_Encryption(cleartext):
-    if(len(KEY) < 8 or len(KEY) % 8 != 0):
+    if (len(KEY) < 8 or len(KEY) % 8 != 0):
         print("Password is corrupted. Exiting!")
         sys.exit()
         return
@@ -42,7 +42,7 @@ def AES_Encryption(cleartext):
 
 
 def AES_Decryption(ciphertext):
-    if(len(KEY) < 8 or len(KEY) % 8 != 0):
+    if (len(KEY) < 8 or len(KEY) % 8 != 0):
         print("Password is corrupted. Exiting!")
         sys.exit()
         return
@@ -54,13 +54,13 @@ def AES_Decryption(ciphertext):
 
 if __name__ == "__main__":
     type = "S"
-    while(type not in "ed"):
+    while (type not in "ed"):
         type = input("Encrypt or Decrypt the text(e/d): ")
         type = type.strip().lower()
-        if(len(type) != 1):
+        if (len(type) != 1):
             type = "S"
     GetKey()
-    if(type == "e"):
+    if (type == "e"):
         print("NOTE: If you forget this password, you will not be able'\
         ' to decrypt text correctly. So, DO NOT FORGET PASSWORD!!")
         message = input("Enter message in single line: ")

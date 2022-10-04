@@ -20,7 +20,7 @@ def find_broken_links(domainToSearch, URL, parentURL):
         try:
             requestObj = requests.get(URL)
             searched_links.append(URL)
-            if(requestObj.status_code == 404):
+            if (requestObj.status_code == 404):
                 broken_links.append("BROKEN: link " + URL + " from " + parentURL)
                 print(broken_links[-1])
             else:

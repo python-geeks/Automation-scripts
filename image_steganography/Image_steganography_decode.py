@@ -106,7 +106,7 @@ def image_steg_decode(orimg, gr, key):
     ed, _ = codecs.escape_decode(ascii_string, 'hex')
     print(ed)
     ans = decrypt(ed, key)
-    return(ans)
+    return (ans)
 
 
 image = cv2.imread("original image")
