@@ -180,7 +180,7 @@ class EmailSender:
         self.msg['subject'] = self.get_subject()
         self.msg['from'] = self.from_email
         self.msg['to'] = self.to_email
-        text = MIMEText(self.getbody() if self.args.body else "",'plain')
+        text = MIMEText(self.getbody() if self.args.body else "", 'plain')
         self.msg.attach(text)
         if self.args.file:
             for file in self.args.file:
