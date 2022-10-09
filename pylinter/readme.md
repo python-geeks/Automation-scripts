@@ -45,7 +45,8 @@ sh ./init.sh
 
 ## Output
 
-output.png
+![image](https://user-images.githubusercontent.com/15235122/194733562-68167398-238d-49eb-a310-29812427c01d.png)
+
 
 ## Author(s)
 
