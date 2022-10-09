@@ -1,4 +1,4 @@
-import ast, sys
+import ast
 import mccabe
 from .utils import collect_sources
 
