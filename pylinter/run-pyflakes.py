@@ -1,3 +1,4 @@
+import sys
 import subprocess
 
 from .utils import collect_sources
@@ -15,7 +16,7 @@ def ignore(p):
 
 def run_pyflakes():
     cmd = ["pyflakes"]
-    cmd.extend(collect_sources(ignore_func = ignore))
+    cmd.extend(collect_sources(ignore_func=ignore))
     return subprocess.call(cmd)
 
 

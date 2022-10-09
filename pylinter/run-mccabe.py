@@ -1,4 +1,5 @@
 import ast
+import sys
 import mccabe
 from .utils import collect_sources
 
@@ -28,4 +29,4 @@ def main():
 
 
 if __name__ == "__main__":
-        main()
+    main()
