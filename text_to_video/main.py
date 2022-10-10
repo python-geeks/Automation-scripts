@@ -5,9 +5,9 @@ import cv2
 from PIL import Image, ImageDraw, ImageFont
 
 
-def create_image(text, font, index=0, image_size=(1920, 1080), 
-                bg_color=(255, 255, 255), font_color=(0, 0, 0), 
-                save_location="./resource/tmp"):
+def create_image(text, font, index=0, image_size=(1920, 1080),
+                 bg_color=(255, 255, 255), font_color=(0, 0, 0),
+                 save_location="./resource/tmp"):
     font_size = font.size
     # text treatment
     text = textwrap.wrap(text, width=font_size)
@@ -16,7 +16,7 @@ def create_image(text, font, index=0, image_size=(1920, 1080),
     img = Image.new('RGB', image_size, bg_color)
     draw = ImageDraw.Draw(img)
     # drawing lines in text with padding
-    current_h, pad = MAX_H/2 - ((len(text)*font_size/2)), 10
+    current_h, pad = MAX_H / 2 - ((len(text) * font_size / 2)), 10
     for line in text:
         w, h = draw.textsize(line, font=font)
         draw.text(((MAX_W - w) / 2, current_h),
@@ -41,7 +41,7 @@ def create_frames(images, fps=10, duration_per_frame=3):
     img_array = []
     for filename in images:
         img = cv2.imread(filename)
-        for i in range(fps*duration_per_frame):
+        for i in range(fps * duration_per_frame):
             img_array.append(img)
     return img_array
 
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     images = []
     for idx, sentence in enumerate(sentences):
         imagePath = create_image(
-            sentence, font, idx+1, image_size=dimensions)
+            sentence, font, idx + 1, image_size=dimensions)
         images.append(imagePath)
     # read all images
     frames = create_frames(images, fps=fps, duration_per_frame=1)
