@@ -1,0 +1,2 @@
+colorama==0.4.4
+readline==6.2.4.1
