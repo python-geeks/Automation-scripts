@@ -1,25 +1,29 @@
+from unicodedata import category
 from bsedata.bse import BSE
 
 b = BSE(update_codes = True)
 tg = b.topGainers()
-print("Top Gainers - Now")
+print("\nTOP GAINERS - Now\n")
 for i in tg:
-    print(i)
+    for j in i:
+        print(j, i[j])
 
 print('\n-------------------------\n')
 
 tl = b.topLosers()
-print("Top Losers - Now")
+print("\nTOP LOSERS - Now\n")
 for j in tl:
-    print(j)
+    for j in i:
+        print(f"{j}: {i[j]}")
 
 # indices catagory parameter
-'''
-market_cap/broad, sector_and_industry, thematics, strategy
-sustainability, volatility, composite, government, corporate, money_market
-'''
-indices = b.getIndices(category='government')
-print(indices)
+category = ["market_cap/broad", "sector_and_industry", "thematics", "strategy", 
+            "sustainability", "volatility", "composite", "government", "corporate", "money_market"]
+
+for i in category:
+    indices = b.getIndices(category=i)
+    print(f"\nIndices based on {i}")
+    print(indices)
 
 # Updates scrip code and updates library cache
 b.updateScripCodes()
