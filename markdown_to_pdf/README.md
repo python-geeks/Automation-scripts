@@ -7,7 +7,9 @@ Convert markdown file or files to pdfs
 python -r requirements.txt
 ```
 - call the script and pass the name or names of the markdown files
-
+```
+python markdown_to_pdf.py sample1.md sample2.md sample3.md
+```
 ## Output
 
 will create equivalent pdf files of the markdown files
