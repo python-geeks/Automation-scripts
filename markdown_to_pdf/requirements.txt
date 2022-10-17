@@ -1,0 +1,2 @@
+Markdown==3.4.1
+pdfkit==1.0.0
