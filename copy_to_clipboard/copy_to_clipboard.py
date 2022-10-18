@@ -14,11 +14,20 @@ else:
 
 whatos = platform.system()
 
-if whatos == "Darwin":
-    subprocess.run("pbcopy", universal_newlines=True, input=f_contents)
-    print("success: copied to clipboard")
+if whatos == "Linux":
+    if os.environ["XDG_SESSION_TYPE"] == "x11":
+        subprocess.run(['xclip', '-sel', 'clip'], universal_newlines=True, input=f_contents)
+        print("success: copied to clipboard")
+    elif os.environ["XDG_SESSION_TYPE"] == "wayland":
+        subprocess.run(['wl-copy'], universal_newlines=True, input=f_contents)
+        print("success: copied to clipboard")
+    else:
+        print("failed: clipboard not supported")
 elif whatos == "Windows":
     subprocess.run("clip", universal_newlines=True, input=f_contents)
+    print("success: copied to clipboard")
+elif whatos == "Darwin":
+    subprocess.run("pbcopy", universal_newlines=True, input=f_contents)
     print("success: copied to clipboard")
 else:
     print("failed: clipboard not supported")
