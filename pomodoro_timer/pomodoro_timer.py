@@ -4,9 +4,14 @@ from tkinter import Button, Entry, Frame, Label, Tk
 from tkinter.constants import BOTTOM, FLAT, LEFT
 from tkinter.font import BOLD
 import threading
-import winsound
+import os
 
-ctypes.windll.shcore.SetProcessDpiAwareness(True)
+try:
+    import winsound
+    ctypes.windll.shcore.SetProcessDpiAwareness(True)
+except:
+    pass
+
 
 root = Tk()
 root.config(bg="Salmon")
@@ -68,8 +73,14 @@ def start_timer(options, cycle_limit=5):
             root.update_idletasks()
             time.sleep(1)
             temp_work -= 1
-        winsound.Beep(323, 250)
-        winsound.Beep(583, 250)
+        
+        try:
+            winsound.Beep(323, 250)
+            winsound.Beep(583, 250)
+        except:
+            os.system('beep -f %s -l %s' % (323,250))
+            os.system('beep -f %s -l %s' % (583,250))
+
         while temp_break:
             title_label.config(text="You should be taking a break now.")
             minutes, seconds = divmod(temp_break, 60)
@@ -77,8 +88,12 @@ def start_timer(options, cycle_limit=5):
             root.update_idletasks()
             time.sleep(1)
             temp_break -= 1
-        winsound.Beep(523, 250)
-        winsound.Beep(783, 250)
+        try:
+            winsound.Beep(523, 250)
+            winsound.Beep(783, 250)
+        except:
+            os.system('beep -f %s -l %s' % (323,250))
+            os.system('beep -f %s -l %s' % (583,250))
         cycles += 1
 
     reset()
