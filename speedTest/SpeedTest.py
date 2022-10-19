@@ -3,7 +3,7 @@ import speedtest
 
 st = speedtest.Speedtest(secure=True)
 
-#information about server for the ping test
+# information about server for the ping test
 names = st.get_servers()
 
 download = st.download() / 1048576
