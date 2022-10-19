@@ -9,9 +9,8 @@ import os
 try:
     import winsound
     ctypes.windll.shcore.SetProcessDpiAwareness(True)
-except:
+except Exception:
     pass
-
 
 root = Tk()
 root.config(bg="Salmon")
@@ -73,11 +72,10 @@ def start_timer(options, cycle_limit=5):
             root.update_idletasks()
             time.sleep(1)
             temp_work -= 1
-        
         try:
             winsound.Beep(323, 250)
             winsound.Beep(583, 250)
-        except:
+        except Exception:
             os.system('tput bel')
 
         while temp_break:
@@ -90,7 +88,7 @@ def start_timer(options, cycle_limit=5):
         try:
             winsound.Beep(523, 250)
             winsound.Beep(783, 250)
-        except:
+        except Exception:
             os.system('tput bel')
         cycles += 1
 
