@@ -78,8 +78,7 @@ def start_timer(options, cycle_limit=5):
             winsound.Beep(323, 250)
             winsound.Beep(583, 250)
         except:
-            os.system('beep -f %s -l %s' % (323,250))
-            os.system('beep -f %s -l %s' % (583,250))
+            os.system('tput bel')
 
         while temp_break:
             title_label.config(text="You should be taking a break now.")
@@ -92,8 +91,7 @@ def start_timer(options, cycle_limit=5):
             winsound.Beep(523, 250)
             winsound.Beep(783, 250)
         except:
-            os.system('beep -f %s -l %s' % (323,250))
-            os.system('beep -f %s -l %s' % (583,250))
+            os.system('tput bel')
         cycles += 1
 
     reset()
