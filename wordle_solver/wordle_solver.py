@@ -1,10 +1,5 @@
 # https://github.com/dwyl/english-words for the list of words
 
-from audioop import add
-from operator import contains
-from re import L
-import string
-from typing import Set
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service as FirefoxService
@@ -88,7 +83,8 @@ def check_match(finder_word_letter, possible_word_letter):
 
 # From the basic list of words, return all the words with 5 characters.
 def get_list_of_words():
-    list_of_words = open("words_alpha.txt", "r").read().strip().splitlines()
+    # list_of_words = open("words_alpha.txt", "r").read().strip().splitlines()
+    list_of_words = open("words_alpha_2.txt", "r").read().strip().splitlines()
     list_of_words = list(filter(check_word_length, list_of_words))
 
     return list_of_words
