@@ -43,6 +43,19 @@ def enter_word(word):
     time.sleep(2)
 
 
+def create_regex(solving_string, present_letters):
+    regex = ""
+    for letter in range(len(solving_string)):
+        if solving_string[letter] == "*":
+            regex += "[a-z]"
+        elif solving_string[letter] == "_":
+            regex += \
+                "[^" + str(list(present_letters)).replace("'", "").replace(",", "").replace("[", "").replace(" ", "")
+        else:
+            regex += "[" + solving_string[letter] + "]"
+    return regex
+
+
 # Check word length
 def check_word_length(word):
     if len(word) != 5:
@@ -77,52 +90,58 @@ def get_list_of_words():
 # letters_not_in_response, is a list which keeps track of the allowed letters
 # letter_not_in_position, is a list which keeps track of the letters in bad position
 # For exemple, "A_A_*A", letters_not_in_response = ['B'], letter_not_in_position = ['K'].
-def solving_algorithm(word, res):
+def solving_algorithm(word, res, list_of_words, present_letters, absent_letters):
     print("solving_algorithm start")
 
-    list_of_words = get_list_of_words()
-    absent_letters = set([])
-    present_letters = set([])
-
-    solution = "tbest"  # developpement solution
     solving_string = "*****"
 
     for letter in range(len(word)):
         print("letter : ", word[letter])
         if res[letter] == 1:  # Case when the status of the letter is "correct"
-            print("letters in the right position : ", solution[letter])
-            print("GREATOOOOO")
+            print("the letter is correct")
             solving_string = solving_string[:letter] + word[letter] + solving_string[letter + 1:]
-        elif res[letter] == 0:  # status is present
+            if word[letter] in present_letters:
+                present_letters.remove(word[letter])
+        elif res[letter] == 0:  # Case when the status of the letter is "present" (present but at the wrong position)
             print("the letter is present")
             solving_string = solving_string[:letter] + "_" + solving_string[letter + 1:]
             present_letters.add(word[letter])
-        else:  # status is absent
+        else:  # Case when the status of the letter is "absent"
             print("the letter is absent")
-            absent_letters.add(word[letter])  # Case when the status of the letter is 'absent'
-            solving_string = solving_string[:letter] + "*" + solving_string[letter + 1:]
+            if word[letter] not in present_letters:
+                absent_letters.add(word[letter])
+                solving_string = solving_string[:letter] + "*" + solving_string[letter + 1:]
 
-    print("Update list of word")
+    print("Update list of words")
     print("length of list", len(list_of_words))
 
     # Update list of words
-    buffer_list = []
-
     for absent in absent_letters:
         print(absent)
-        list_of_words = list(filter(check_letter_in_word(absent), list_of_words))
+        list_of_words = list(filter(lambda x_word: not check_letter_in_word(absent, x_word), list_of_words))
+    for present in present_letters:
+        print(present)
+        list_of_words = list(filter(lambda x_word: check_letter_in_word(present, x_word), list_of_words))
 
     print("letter not in the right position : ", present_letters)
+    print(create_regex(solving_string, present_letters))
     print("Letters with absent status", absent_letters)
     print("solving string :", solving_string)
-    # print(list_of_words)
+    print("list of words : ", list_of_words)
     print("length of list", len(list_of_words))
+
+    return list_of_words
 
 
 def main():
     # Start the browser
     browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
     browser.get("https://www.nytimes.com/games/wordle/index.html")
+
+    list_of_words = get_list_of_words()
+    absent_letters = set([])
+    present_letters = set([])
+    guesses_left = 2
 
     # Wait for start
     with keyboard.Listener(on_release=on_release, suppress=True) as listener:
@@ -139,13 +158,16 @@ def main():
     first_string = "tests"
     enter_word(first_string)
     res = get_row_results(game_rows[0])
-    # solving_algorithm(first_string, res)
+    list_of_words = solving_algorithm(first_string, res, list_of_words, present_letters, absent_letters)
+    guesses_left -= 1
 
     time.sleep(1)
 
-    second_string = "trees"
-    enter_word(second_string)
-    get_row_results(game_rows[1])
+    for i in range(guesses_left, 0, -1):
+        enter_word(list_of_words[0])
+        res = get_row_results(game_rows[i])
+        solving_algorithm(list_of_words[0], res, list_of_words, present_letters, absent_letters)
+        time.sleep(1)
 
 
 if __name__ == "__main__":
