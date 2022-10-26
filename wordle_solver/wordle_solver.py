@@ -13,6 +13,14 @@ from pynput import keyboard
 import time
 
 
+class Finder:
+    def __init__(self):
+        self.possible_words = get_list_of_words()
+        self.absent_letters = set([])
+        self.present_letters = set([])
+        self.word = [''] * 5
+
+
 def on_release(key):
     # Start button
     if key == keyboard.Key.esc:
@@ -21,8 +29,8 @@ def on_release(key):
 
 def get_row_results(game_row):
     tiles = game_row.find_elements(By.CLASS_NAME, "Tile-module_tile__3ayIZ")
-    evaluation = []
-    eval_to_int = {
+    row_results = []
+    res_to_int = {
         "correct": 1,
         "present": 0,
         "absent": -1,
@@ -30,10 +38,10 @@ def get_row_results(game_row):
         "tbd": -3
     }
     for tile in tiles:
-        evaluation.append(eval_to_int[tile.get_attribute("data-state")])
-    print(evaluation)
+        row_results.append(res_to_int[tile.get_attribute("data-state")])
+    print(row_results)
 
-    return tuple(evaluation)
+    return tuple(row_results)
 
 
 def enter_word(word):
@@ -71,6 +79,13 @@ def check_letter_in_word(letter, word):
         return False
 
 
+def check_match(finder_word_letter, possible_word_letter):
+    if finder_word_letter == possible_word_letter:
+        return True
+    else:
+        return False
+
+
 # From the basic list of words, return all the words with 5 characters.
 def get_list_of_words():
     list_of_words = open("words_alpha.txt", "r").read().strip().splitlines()
@@ -90,7 +105,7 @@ def get_list_of_words():
 # letters_not_in_response, is a list which keeps track of the allowed letters
 # letter_not_in_position, is a list which keeps track of the letters in bad position
 # For exemple, "A_A_*A", letters_not_in_response = ['B'], letter_not_in_position = ['K'].
-def solving_algorithm(word, res, list_of_words, present_letters, absent_letters):
+def solving_algorithm(word, res, finder):
     print("solving_algorithm start")
 
     solving_string = "*****"
@@ -100,37 +115,42 @@ def solving_algorithm(word, res, list_of_words, present_letters, absent_letters)
         if res[letter] == 1:  # Case when the status of the letter is "correct"
             print("the letter is correct")
             solving_string = solving_string[:letter] + word[letter] + solving_string[letter + 1:]
-            if word[letter] in present_letters:
-                present_letters.remove(word[letter])
+            finder.word[letter] = word[letter]
+            print(finder.word)
         elif res[letter] == 0:  # Case when the status of the letter is "present" (present but at the wrong position)
             print("the letter is present")
+            finder.present_letters.add(word[letter])
             solving_string = solving_string[:letter] + "_" + solving_string[letter + 1:]
-            present_letters.add(word[letter])
         else:  # Case when the status of the letter is "absent"
             print("the letter is absent")
-            if word[letter] not in present_letters:
-                absent_letters.add(word[letter])
+            if word[letter] not in finder.present_letters:
+                finder.absent_letters.add(word[letter])
                 solving_string = solving_string[:letter] + "*" + solving_string[letter + 1:]
 
     print("Update list of words")
-    print("length of list", len(list_of_words))
+    print("length of list", len(finder.possible_words))
 
     # Update list of words
-    for absent in absent_letters:
-        print(absent)
-        list_of_words = list(filter(lambda x_word: not check_letter_in_word(absent, x_word), list_of_words))
-    for present in present_letters:
-        print(present)
-        list_of_words = list(filter(lambda x_word: check_letter_in_word(present, x_word), list_of_words))
+    for absent in finder.absent_letters:
+        finder.possible_words = list(
+            filter(lambda x_word: not check_letter_in_word(absent, x_word), finder.possible_words))
+    for present in finder.present_letters:
+        finder.possible_words = list(
+            filter(lambda x_word: check_letter_in_word(present, x_word), finder.possible_words))
+    for i in range(len(finder.word)):
+        if finder.word[i] != "":
+            finder.possible_words = list(
+                filter(lambda x_word: check_match(x_word[i], finder.word[i]), finder.possible_words))
 
-    print("letter not in the right position : ", present_letters)
-    print(create_regex(solving_string, present_letters))
-    print("Letters with absent status", absent_letters)
-    print("solving string :", solving_string)
-    print("list of words : ", list_of_words)
-    print("length of list", len(list_of_words))
+    print("letter not in the right position : ", finder.present_letters)
+    print("Letters with absent status", finder.absent_letters)
+    print("list of words : ", finder.possible_words)
+    print("length of list", len(finder.possible_words))
 
-    return list_of_words
+    regex = create_regex(solving_string, finder.present_letters)  # Create the regex
+    print(create_regex(solving_string, finder.present_letters))
+
+    # print("solving string :", solving_string)
 
 
 def main():
@@ -138,10 +158,8 @@ def main():
     browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
     browser.get("https://www.nytimes.com/games/wordle/index.html")
 
-    list_of_words = get_list_of_words()
-    absent_letters = set([])
-    present_letters = set([])
-    guesses_left = 2
+    finder = Finder()
+    guesses_left = 6
 
     # Wait for start
     with keyboard.Listener(on_release=on_release, suppress=True) as listener:
@@ -155,18 +173,18 @@ def main():
     # Get the game rows
     game_rows = browser.find_elements(By.CLASS_NAME, 'Row-module_row__dEHfN')
 
-    first_string = "tests"
+    first_string = "slate"
     enter_word(first_string)
     res = get_row_results(game_rows[0])
-    list_of_words = solving_algorithm(first_string, res, list_of_words, present_letters, absent_letters)
+    solving_algorithm(first_string, res, finder)
     guesses_left -= 1
 
     time.sleep(1)
 
     for i in range(guesses_left, 0, -1):
-        enter_word(list_of_words[0])
-        res = get_row_results(game_rows[i])
-        solving_algorithm(list_of_words[0], res, list_of_words, present_letters, absent_letters)
+        enter_word(finder.possible_words[0])
+        res = get_row_results(game_rows[guesses_left + 1 - i])
+        solving_algorithm(finder.possible_words[0], res, finder)
         time.sleep(1)
 
 
