@@ -110,17 +110,13 @@ def solving_algorithm(word, res):
 
     for absent in absent_letters:
         print(absent)
-        list_of_words = list(filter(check_letter_in_word(absent, list_of_words), list_of_words))
-
-    list_of_words = buffer_list
-
-
+        list_of_words = list(filter(check_letter_in_word(absent), list_of_words))
 
     print("letter not in the right position : ", present_letters)
     print("Letters with absent status", absent_letters)
     print("solving string :", solving_string)
     # print(list_of_words)
-    print("lenght of list", len(buffer_list))
+    print("length of list", len(list_of_words))
 
 
 def main():
@@ -129,9 +125,13 @@ def main():
     browser.get("https://www.nytimes.com/games/wordle/index.html")
 
     # Wait for start
-    with keyboard.Listener(on_release=on_release) as listener:
+    with keyboard.Listener(on_release=on_release, suppress=True) as listener:
+        print("Starting")
         listener.join()
-    print("Starting")
+
+    # With "suppress=True", duplicate key presses are not sent to the application
+    # but for some reason I need to add a delay for the first input to be sent.
+    time.sleep(1)
 
     # Get the game rows
     game_rows = browser.find_elements(By.CLASS_NAME, 'Row-module_row__dEHfN')
@@ -139,7 +139,7 @@ def main():
     first_string = "tests"
     enter_word(first_string)
     res = get_row_results(game_rows[0])
-    solving_algorithm(first_string, res)
+    # solving_algorithm(first_string, res)
 
     time.sleep(1)
 
