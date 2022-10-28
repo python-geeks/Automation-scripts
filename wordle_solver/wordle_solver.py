@@ -169,6 +169,7 @@ def main():
         res = get_row_results(game_rows[guesses_left + 1 - i])
         solving_algorithm(finder.possible_words[0], res, finder)
         if len(finder.possible_words) == 1:
+            enter_word(finder.possible_words[0])
             print(f"The word is : {finder.possible_words[0]}\n")
             break
         time.sleep(1)
