@@ -13,6 +13,7 @@ import time
 # - the letters that are present but not in the right position
 # - the letters that are absent
 # - the letters that are correct and their position in a list
+# - the word that is currently being tested
 
 class Finder:
     def __init__(self):
@@ -20,6 +21,7 @@ class Finder:
         self.present_letters = set([])
         self.absent_letters = set([])
         self.word = [''] * 5
+        self.word_to_try = "slate"  # Creators recommend “Slate” as starting word
 
 
 # Function that is called by the KeyboardListener
@@ -90,8 +92,9 @@ def get_list_of_words():
 
 
 # Algorithm that solve the wordle
-def solving_algorithm(word, res, finder):
+def solving_algorithm(res, finder):
     print("Starting solving algorithm")
+    word = finder.word_to_try
 
     # Compare the word with the results of the wordle
     for letter in range(len(word)):
@@ -99,9 +102,14 @@ def solving_algorithm(word, res, finder):
             print(f"Letter {word[letter]} is correct")
             finder.word[letter] = word[letter]
             print(finder.word)
+
         elif res[letter] == 0:  # Case when the status of the letter is "present" (present but at the wrong position)
             print(f"Letter {word[letter]} is present")
             finder.present_letters.add(word[letter])
+            # We keep all the words that don't match the pattern of the word entered
+            finder.possible_words = list(
+                filter(lambda x_word: not check_match(word[letter], x_word[letter]), finder.possible_words))
+
         else:  # Case when the status of the letter is "absent"
             print(f"Letter {word[letter]} is absent")
             if word[letter] not in finder.present_letters:
@@ -121,6 +129,9 @@ def solving_algorithm(word, res, finder):
         if finder.word[i] != "":
             finder.possible_words = list(
                 filter(lambda x_word: check_match(x_word[i], finder.word[i]), finder.possible_words))
+
+    # Update the next word to try
+    finder.word_to_try = finder.possible_words[0]
 
     print("List of possible words updated !\n")
 
@@ -152,25 +163,14 @@ def main():
     # Get the game rows
     game_rows = browser.find_elements(By.CLASS_NAME, 'Row-module_row__dEHfN')
 
-    # Creators recommend “Slate” as starting word
-    first_string = "slate"
-
-    # Enter the first word
-    enter_word(first_string)
-    res = get_row_results(game_rows[0])
-    solving_algorithm(first_string, res, finder)
-    guesses_left -= 1
-
-    time.sleep(1)
-
-    # Enter the next words
+    # Enter words until the game is over or the wordle is solved
     for i in range(guesses_left, 0, -1):
-        enter_word(finder.possible_words[0])
-        res = get_row_results(game_rows[guesses_left + 1 - i])
-        solving_algorithm(finder.possible_words[0], res, finder)
+        enter_word(finder.word_to_try)
+        res = get_row_results(game_rows[guesses_left - i])
+        solving_algorithm(res, finder)
         if len(finder.possible_words) == 1:
-            enter_word(finder.possible_words[0])
-            print(f"The word is : {finder.possible_words[0]}\n")
+            enter_word(finder.word_to_try)
+            print(f"The word is : {finder.word_to_try}\n")
             break
         time.sleep(1)
 
