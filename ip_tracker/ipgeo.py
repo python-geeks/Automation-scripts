@@ -1,16 +1,21 @@
-import requests
+import http.client
+import json
 import sys
 
 
 def main():
-    url = "http://ip-api.com/json/"
+    url = "ip-api.com"
+    address = ""
     if len(sys.argv) > 1:
         # getting address from command line.
         address = ''.join(sys.argv[1:])
-        url += address
-
-    response = requests.request("GET", url)
-    response = response.json()
+    
+    conn = http.client.HTTPConnection(url)
+    conn.request("GET", f"/json/{address}")
+    res = conn.getresponse()
+    data = res.read().decode("utf-8")
+    # final response in JSON format
+    response = json.loads(data)
 
     if response['status'] == 'fail':
         sys.exit(f'''
