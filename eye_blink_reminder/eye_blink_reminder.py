@@ -6,7 +6,7 @@ import multiprocessing
 
 def remind():
     while True:
-        sleep(20*60)
+        sleep(20 * 60)
         os.popen('osascript -e "set Volume 6"')
         p = multiprocessing.Process(
             target=playsound.playsound, args=("danger.mp3",))
