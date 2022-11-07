@@ -114,6 +114,10 @@ def solving_algorithm(res, finder):
             print(f"Letter {word[letter]} is absent")
             if word[letter] not in finder.present_letters:
                 finder.absent_letters.add(word[letter])
+            else:
+                # We keep all the words that don't match the pattern of the word entered
+                finder.possible_words = list(
+                        filter(lambda x_word: not check_match(word[letter], x_word[letter]), finder.possible_words))
 
     print("\n")
     print("Updating list of possible words ...")
