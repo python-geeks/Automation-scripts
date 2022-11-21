@@ -9,7 +9,7 @@ def main():
     if len(sys.argv) > 1:
         # getting address from command line.
         address = ''.join(sys.argv[1:])
-    
+
     conn = http.client.HTTPConnection(url)
     conn.request("GET", f"/json/{address}")
     res = conn.getresponse()
