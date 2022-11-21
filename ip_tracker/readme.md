@@ -11,7 +11,6 @@ IPGeo is a Python Scrpit for Fast, accurate IP Geolocation search.
    $python3 ipgeo.py                # uses current ip address
 ```
     
-### Library required
-`requests`
+
 ### API used
 https://ip-api.com/  free API, no API key required.
