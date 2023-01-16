@@ -33,7 +33,7 @@ def on_release(key):
 
 # Get the status of the letters in the wordle
 def get_row_results(game_row):
-    tiles = game_row.find_elements(By.CLASS_NAME, "Tile-module_tile__3ayIZ")
+    tiles = game_row.find_elements(By.CLASS_NAME, "Tile-module_tile__UWEHN")
     row_results = []
     res_to_int = {
         "correct": 1,
@@ -102,6 +102,8 @@ def solving_algorithm(res, finder):
             print(f"Letter {word[letter]} is correct")
             finder.word[letter] = word[letter]
             print(finder.word)
+            if word[letter] in finder.absent_letters:
+                finder.absent_letters.remove(word[letter])
 
         elif res[letter] == 0:  # Case when the status of the letter is "present" (present but at the wrong position)
             print(f"Letter {word[letter]} is present")
@@ -114,10 +116,10 @@ def solving_algorithm(res, finder):
             print(f"Letter {word[letter]} is absent")
             if word[letter] not in finder.present_letters:
                 finder.absent_letters.add(word[letter])
-            else:
-                # We keep all the words that don't match the pattern of the word entered
-                finder.possible_words = list(
-                        filter(lambda x_word: not check_match(word[letter], x_word[letter]), finder.possible_words))
+
+            # We keep all the words that don't match the pattern of the word entered
+            finder.possible_words = list(
+                filter(lambda x_word: not check_match(word[letter], x_word[letter]), finder.possible_words))
 
     print("\n")
     print("Updating list of possible words ...")
@@ -139,10 +141,10 @@ def solving_algorithm(res, finder):
 
     print("List of possible words updated !\n")
 
-    print("letter not in the right position : ", finder.present_letters)
-    print("Letters with absent status", finder.absent_letters)
-    print("list of words : ", finder.possible_words)
-    print("length of list", len(finder.possible_words))
+    print("Letter not in the right position : ", finder.present_letters)
+    print("Letters with absent status : ", finder.absent_letters)
+    print("List of words : ", finder.possible_words)
+    print("Length of list", len(finder.possible_words))
 
 
 def main():
@@ -165,7 +167,7 @@ def main():
     time.sleep(1)
 
     # Get the game rows
-    game_rows = browser.find_elements(By.CLASS_NAME, 'Row-module_row__dEHfN')
+    game_rows = browser.find_elements(By.CLASS_NAME, 'Row-module_row__pwpBq')
 
     # Enter words until the game is over or the wordle is solved
     for i in range(guesses_left, 0, -1):
