@@ -33,7 +33,7 @@ def on_release(key):
 
 # Get the status of the letters in the wordle
 def get_row_results(game_row):
-    tiles = game_row.find_elements(By.CLASS_NAME, "Tile-module_tile__UWEHN")
+    tiles = game_row.find_elements(By.XPATH, ".//*[contains(@class, 'Tile-module_tile__')]")
     row_results = []
     res_to_int = {
         "correct": 1,
@@ -167,7 +167,7 @@ def main():
     time.sleep(1)
 
     # Get the game rows
-    game_rows = browser.find_elements(By.CLASS_NAME, 'Row-module_row__pwpBq')
+    game_rows = browser.find_elements(By.XPATH, "//*[contains(@class, 'Row-module_row__')]")
 
     # Enter words until the game is over or the wordle is solved
     for i in range(guesses_left, 0, -1):
