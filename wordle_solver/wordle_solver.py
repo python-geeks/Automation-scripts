@@ -1,4 +1,5 @@
-# https://www.wordunscrambler.net/word-list/wordle-word-list for the list of words
+# https://www.wordunscrambler.net/word-list/wordle-word-list
+# for the list of words
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -21,7 +22,9 @@ class Finder:
         self.present_letters = set([])
         self.absent_letters = set([])
         self.word = [''] * 5
-        self.word_to_try = "slate"  # Creators recommend “Slate” as starting word
+
+        # Creators recommend “Slate” as starting word
+        self.word_to_try = "slate"
 
 
 # Function that is called by the KeyboardListener
@@ -33,7 +36,8 @@ def on_release(key):
 
 # Get the status of the letters in the wordle
 def get_row_results(game_row):
-    tiles = game_row.find_elements(By.XPATH, ".//*[contains(@class, 'Tile-module_tile__')]")
+    tiles = game_row.find_elements(
+        By.XPATH, ".//*[contains(@class, 'Tile-module_tile__')]")
     row_results = []
     res_to_int = {
         "correct": 1,
@@ -57,7 +61,8 @@ def enter_word(word):
     time.sleep(2)
 
 
-# Check word length, used in get_list_of_words() if the source list contains words with different length
+# Check word length, used in get_list_of_words()
+# if the source list contains words with different length
 def check_word_length(word):
     if len(word) != 5:
         return False
@@ -73,7 +78,8 @@ def check_letter_in_word(letter, word):
         return False
 
 
-# Check if the letter in the finder object is the same as the letter in the possible answer
+# Check if the letter in the finder object
+# is the same as the letter in the possible answer
 def check_match(finder_word_letter, possible_word_letter):
     if finder_word_letter == possible_word_letter:
         return True
@@ -98,28 +104,37 @@ def solving_algorithm(res, finder):
 
     # Compare the word with the results of the wordle
     for letter in range(len(word)):
-        if res[letter] == 1:  # Case when the status of the letter is "correct"
+        # Case when the status of the letter is "correct"
+        if res[letter] == 1:
             print(f"Letter {word[letter]} is correct")
             finder.word[letter] = word[letter]
             print(finder.word)
             if word[letter] in finder.absent_letters:
                 finder.absent_letters.remove(word[letter])
 
-        elif res[letter] == 0:  # Case when the status of the letter is "present" (present but at the wrong position)
+        # Case when the status of the letter is "present"
+        # (present but at the wrong position)
+        elif res[letter] == 0:
             print(f"Letter {word[letter]} is present")
             finder.present_letters.add(word[letter])
-            # We keep all the words that don't match the pattern of the word entered
+            # We keep all the words that don't match
+            # the pattern of the word entered
             finder.possible_words = list(
-                filter(lambda x_word: not check_match(word[letter], x_word[letter]), finder.possible_words))
+                filter(lambda x_word:
+                       not check_match(word[letter], x_word[letter]),
+                       finder.possible_words))
 
         else:  # Case when the status of the letter is "absent"
             print(f"Letter {word[letter]} is absent")
             if word[letter] not in finder.present_letters:
                 finder.absent_letters.add(word[letter])
 
-            # We keep all the words that don't match the pattern of the word entered
+            # We keep all the words that don't match
+            # the pattern of the word entered
             finder.possible_words = list(
-                filter(lambda x_word: not check_match(word[letter], x_word[letter]), finder.possible_words))
+                filter(lambda x_word:
+                       not check_match(word[letter], x_word[letter]),
+                       finder.possible_words))
 
     print("\n")
     print("Updating list of possible words ...")
@@ -127,14 +142,20 @@ def solving_algorithm(res, finder):
     # Update list of words
     for absent in finder.absent_letters:
         finder.possible_words = list(
-            filter(lambda x_word: not check_letter_in_word(absent, x_word), finder.possible_words))
+            filter(lambda x_word:
+                   not check_letter_in_word(absent, x_word),
+                   finder.possible_words))
     for present in finder.present_letters:
         finder.possible_words = list(
-            filter(lambda x_word: check_letter_in_word(present, x_word), finder.possible_words))
+            filter(lambda x_word:
+                   check_letter_in_word(present, x_word),
+                   finder.possible_words))
     for i in range(len(finder.word)):
         if finder.word[i] != "":
             finder.possible_words = list(
-                filter(lambda x_word: check_match(x_word[i], finder.word[i]), finder.possible_words))
+                filter(lambda x_word:
+                       check_match(x_word[i], finder.word[i]),
+                       finder.possible_words))
 
     # Update the next word to try
     finder.word_to_try = finder.possible_words[0]
@@ -149,7 +170,8 @@ def solving_algorithm(res, finder):
 
 def main():
     # Start the browser
-    browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+    browser = webdriver.Firefox(
+        service=FirefoxService(GeckoDriverManager().install()))
     browser.get("https://www.nytimes.com/games/wordle/index.html")
 
     # Create the finder object (cf. class Finder)
@@ -162,12 +184,14 @@ def main():
         print("Starting program\n")
         listener.join()
 
-    # With "suppress=True", duplicate key presses are not sent to the application
-    # but for some reason I need to add a delay for the first input to be sent.
+    # With "suppress=True", duplicate key presses are not sent
+    # to the application but for some reason I need to add a delay
+    # for the first input to be sent.
     time.sleep(1)
 
     # Get the game rows
-    game_rows = browser.find_elements(By.XPATH, "//*[contains(@class, 'Row-module_row__')]")
+    game_rows = browser.find_elements(
+        By.XPATH, "//*[contains(@class, 'Row-module_row__')]")
 
     # Enter words until the game is over or the wordle is solved
     for i in range(guesses_left, 0, -1):
