@@ -16,4 +16,4 @@ python wordle_solver.py
 
 2. When you are on the Wordle web page, close all the pop-ups and press "ESC" to launch the script.
 
-3. The wordle will solve automatically !
+3. The Wordle will solve automatically !
