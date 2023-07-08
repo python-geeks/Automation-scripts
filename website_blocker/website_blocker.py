@@ -1,13 +1,14 @@
 import ctypes
-import sys
-from sys import platform
 import os
+import sys
 from os import system
+from sys import platform
+
 from elevate import elevate
 
 
 class Blocker:
-    hosts_path = ''
+    hosts_path = ""
     redirect = "127.0.0.1"
     website_list = []
     os_number = 0
@@ -32,13 +33,13 @@ class Blocker:
             print("Type 'exit' to stop the blocker")
             user_input = input("Enter here: ")
 
-            if user_input == '+':
+            if user_input == "+":
                 self.add_websites()
 
                 print("Blocked Websites (^v^)")
                 for website in self.website_list:
                     print("# " + website)
-            elif user_input == 'exit':
+            elif user_input == "exit":
                 print("Restoring Every change.....")
                 self.restore_host_file()
                 print("Thanks you using")
@@ -47,7 +48,7 @@ class Blocker:
                 print("Invalid Input Try Again")
 
     def restore_host_file(self):
-        with open(self.hosts_path, 'r+') as file:
+        with open(self.hosts_path, "r+") as file:
             content = file.readlines()
             file.seek(0)
             for line in content:
@@ -65,16 +66,16 @@ class Blocker:
         print("Enter a website url to add like 'www.facebook.com or facebook.com'")
         user_input = input("Enter URL Here: ")
         self.website_list.append(user_input)
-        with open(self.hosts_path, 'r+') as file:
+        with open(self.hosts_path, "r+") as file:
             file.write(self.redirect + " " + user_input + "\n")
 
         file.close()
 
     def clear_console(self):
         if self.os_number == 2:
-            _ = system('cls')
+            _ = system("cls")
         else:
-            _ = system('clear')
+            _ = system("clear")
 
 
 def get_os():
@@ -92,7 +93,9 @@ def get_os():
 def driver():
     if get_os() == 2:
         if ctypes.windll.shell32.IsUserAnAdmin() == 0:
-            ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+            ctypes.windll.shell32.ShellExecuteW(
+                None, "runas", sys.executable, __file__, None, 1
+            )
     else:
         if os.getuid() == 0:
             elevate(graphical=False)

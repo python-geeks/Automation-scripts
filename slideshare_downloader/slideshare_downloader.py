@@ -9,16 +9,17 @@ Steps to proceed ->
 """
 import io
 import os
+
 import requests
 from bs4 import BeautifulSoup
 from pptx import Presentation
 
-url = 'https://www.slideshare.net/Slideshare/get-started-with-slide-share'
+url = "https://www.slideshare.net/Slideshare/get-started-with-slide-share"
 
 data = requests.get(url)
 
-html = BeautifulSoup(data.text, 'html.parser')
-links = html.select('img.slide_image')
+html = BeautifulSoup(data.text, "html.parser")
+links = html.select("img.slide_image")
 prs = Presentation()
 for link in links:
     image = link["data-full"]

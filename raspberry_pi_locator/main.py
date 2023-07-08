@@ -71,9 +71,7 @@ def scrape_chicago_electronics():
 
 
 def scrape_okdo():
-    urls = {
-        "2gb": "https://www.okdo.com/us/p/raspberry-pi-4-model-b-2gb-2/"
-    }
+    urls = {"2gb": "https://www.okdo.com/us/p/raspberry-pi-4-model-b-2gb-2/"}
     print("--- OKdo ---")
     for ram_size, url in urls.items():
         response = requests.get(url)

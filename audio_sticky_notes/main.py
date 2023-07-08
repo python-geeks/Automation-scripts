@@ -1,5 +1,5 @@
-import tkinter
 import subprocess
+import tkinter
 
 
 def makenew():
@@ -41,9 +41,9 @@ manager.title("Audio Notes - Master")
 
 while True:
     try:
-        makeNewBtn = tkinter.Button(manager, text='New+', command=makenew)
+        makeNewBtn = tkinter.Button(manager, text="New+", command=makenew)
         makeNewBtn.pack()
-        reset = tkinter.Button(manager, text='Reset-', command=reset)
+        reset = tkinter.Button(manager, text="Reset-", command=reset)
         reset.pack()
         tkinter.mainloop()
     except tkinter.TclError:

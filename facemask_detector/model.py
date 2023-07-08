@@ -3,11 +3,10 @@
 # IMPORTS
 # ======================================================================
 
+import pkbar
 import torch
 import torchvision
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
-
-import pkbar
 
 # =====================================================================
 # PyTorch class for the model
@@ -25,10 +24,7 @@ class FaceMaskDetector(object):
             pretrained=self.pretrained
         )
         in_features = model.roi_heads.box_predictor.cls_score.in_features
-        model.roi_heads.box_predictor = FastRCNNPredictor(
-            in_features,
-            n_classes + 1
-        )
+        model.roi_heads.box_predictor = FastRCNNPredictor(in_features, n_classes + 1)
 
         self.model = model
 
@@ -58,10 +54,7 @@ class FaceMaskDetector(object):
             for i, (images, annotations) in enumerate(self.data_loader):
                 images = list(image.to(self.device) for image in images)
                 annotations = [
-                    {
-                        k: v.to(self.device)
-                        for k, v in t.items()
-                    } for t in annotations
+                    {k: v.to(self.device) for k, v in t.items()} for t in annotations
                 ]
 
                 losses = self.model([images[0]], [annotations[0]])

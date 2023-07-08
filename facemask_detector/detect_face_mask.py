@@ -3,14 +3,13 @@
 # IMPORTS
 # ======================================================================
 
-import torch
-from torchvision import transforms
-
 import os
 import sys
-from PIL import Image
 
+import torch
 from model import FaceMaskDetector
+from PIL import Image
+from torchvision import transforms
 from train import plot_result
 
 # =====================================================================

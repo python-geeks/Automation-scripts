@@ -1,4 +1,3 @@
-
 # conn = sqlite3.connect("books.db")
 
 # c = conn.cursor()
@@ -16,20 +15,22 @@
 
 def add_book(conn, book):
     c = conn.cursor()
-    c.execute("INSERT INTO books VALUES (?, ?, ?, ?)",
-              (book.name, book.path, book.notes, book.tags))
+    c.execute(
+        "INSERT INTO books VALUES (?, ?, ?, ?)",
+        (book.name, book.path, book.notes, book.tags),
+    )
     conn.commit()
 
 
 def delete_book(conn, path):
     c = conn.cursor()
-    c.execute("DELETE FROM books WHERE path = ? ", (path, ))
+    c.execute("DELETE FROM books WHERE path = ? ", (path,))
     conn.commit()
 
 
 def edit_book(conn, prop, value, name):
     c = conn.cursor()
-    if prop in ['name', 'notes', 'tags', 'path']:
+    if prop in ["name", "notes", "tags", "path"]:
         c.execute(f"UPDATE books SET {prop} = ? WHERE path = ?", (value, name))
         conn.commit()
 
@@ -40,15 +41,16 @@ def show_books(conn):
     finresults = []
     results = c.fetchall()
     for i in results:
-        finresults.append([i[0], i[1], i[2].split(', '), i[3]])
+        finresults.append([i[0], i[1], i[2].split(", "), i[3]])
     return finresults
 
 
 def search_book(conn, prop, value):
     c = conn.cursor()
-    if prop in ['name', 'notes', 'tags', 'path']:
-        c.execute(f"SELECT * FROM books where {prop} = ?", (value, ))
+    if prop in ["name", "notes", "tags", "path"]:
+        c.execute(f"SELECT * FROM books where {prop} = ?", (value,))
         conn.commit()
+
 
 # print("Welcome to BookMan")
 # while True:

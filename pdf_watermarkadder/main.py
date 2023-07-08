@@ -1,9 +1,8 @@
-from reportlab.pdfgen import canvas
-from reportlab.lib.units import inch
+from PyPDF2 import PdfFileReader, PdfFileWriter
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
-from PyPDF2 import PdfFileReader, PdfFileWriter
-
+from reportlab.lib.units import inch
+from reportlab.pdfgen import canvas
 
 print("Enter file names with its extenstion!")
 
@@ -21,10 +20,9 @@ def makeWatermark():
 
 def makepdf():
     pdf_file = input("PDF file: ")
-    watermark = 'watermark.pdf'
+    watermark = "watermark.pdf"
     merged = "finalDraft.pdf"
-    with open(pdf_file, "rb") as input_file,\
-            open(watermark, "rb") as watermark_file:
+    with open(pdf_file, "rb") as input_file, open(watermark, "rb") as watermark_file:
         input_pdf = PdfFileReader(input_file)
         watermark_pdf = PdfFileReader(watermark_file)
         watermark_page = watermark_pdf.getPage(0)

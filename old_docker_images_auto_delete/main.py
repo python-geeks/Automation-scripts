@@ -8,16 +8,17 @@
          which would be never stopped.
 """
 
-import subprocess as sp
-import re
-import operator
 import itertools
+import operator
+import re
+import subprocess as sp
 
 
 class DeleteImage:
     """
     Deleting Old Docker Images
     """
+
     def __init__(self):
         self.img_list = []
         self.hash_list = []
@@ -26,9 +27,14 @@ class DeleteImage:
         """
         Storing All the Docker Image Details Found on the System to a File
         """
-        file = open("temp.txt", "r+", encoding='utf-8')
+        file = open("temp.txt", "r+", encoding="utf-8")
         file.truncate(0)
-        sp.run("sudo docker image list --format '{{.Repository}}~{{.Tag}}' >> temp.txt",shell=True , capture_output=True, check=True) # noqa
+        sp.run(
+            "sudo docker image list --format '{{.Repository}}~{{.Tag}}' >> temp.txt",
+            shell=True,
+            capture_output=True,
+            check=True,
+        )  # noqa
         file.close()
 
     def is_excluded(self, tag):
@@ -46,17 +52,17 @@ class DeleteImage:
         """
         Loading data from the File to the Python program
         """
-        file = open("temp.txt", "r", encoding='utf-8')
+        file = open("temp.txt", "r", encoding="utf-8")
 
         for line in file:
             line = line.rstrip("\n")
-            image = line.split('~')
+            image = line.split("~")
             if self.is_excluded(image[1]):
 
                 regex = r"^(((\d+\.)?(\d+\.)?(\*|\d+)))(\-(dev|stage|prod))*$"
                 match = re.search(regex, image[1])
 
-                img_dict = {'Repository': image[0], 'Tag': match.group(2)}
+                img_dict = {"Repository": image[0], "Tag": match.group(2)}
                 self.img_list.append(img_dict)
         file.close()
 
@@ -64,9 +70,11 @@ class DeleteImage:
         """
         Manipulating Data to perform the reqd operation
         """
-        key = operator.itemgetter('Repository')
-        b_key = [{'Repository': x, 'Tag': [d['Tag'] for d in y]}
-        for x, y in itertools.groupby(sorted(self.img_list, key=key), key=key)] # noqa
+        key = operator.itemgetter("Repository")
+        b_key = [
+            {"Repository": x, "Tag": [d["Tag"] for d in y]}
+            for x, y in itertools.groupby(sorted(self.img_list, key=key), key=key)
+        ]  # noqa
 
         self.img_list.clear()
         self.img_list = b_key.copy()
@@ -77,26 +85,29 @@ class DeleteImage:
         """
 
         for img in self.img_list:
-            temp = img['Tag'].copy()
+            temp = img["Tag"].copy()
 
-            for new, i in enumerate(img['Tag']):
-                img['Tag'][new] = int(i.replace('.', ''))
+            for new, i in enumerate(img["Tag"]):
+                img["Tag"][new] = int(i.replace(".", ""))
 
-            max_len = len(str(max(abs(x) for x in img['Tag'])))
-            template_string = '{:<0' + str(max_len) + '}'
+            max_len = len(str(max(abs(x) for x in img["Tag"])))
+            template_string = "{:<0" + str(max_len) + "}"
             final_list = []
 
-            for new, i in enumerate(img['Tag']):
+            for new, i in enumerate(img["Tag"]):
                 final_list.append(template_string.format(i))
 
-            for i in range(0, len(img['Tag'])):
-                hash_map = {'TagsManipulated': final_list[i], 'TagsOriginal': temp[i]}  # noqa
+            for i in range(0, len(img["Tag"])):
+                hash_map = {
+                    "TagsManipulated": final_list[i],
+                    "TagsOriginal": temp[i],
+                }  # noqa
                 self.hash_list.append(hash_map)
 
             final_list.sort()
 
-            img['Tag'].clear()
-            img['Tag'].extend(final_list[:-1])
+            img["Tag"].clear()
+            img["Tag"].extend(final_list[:-1])
 
         print(self.hash_list)
         print(self.img_list)
@@ -106,11 +117,11 @@ class DeleteImage:
         Hash Function for Error Detection
         """
         for hash_map in self.hash_list:
-            if tag == hash_map['TagsManipulated']:
-                temp = hash_map['TagsOriginal']
+            if tag == hash_map["TagsManipulated"]:
+                temp = hash_map["TagsOriginal"]
                 break
             else:
-                temp = 'Error in Manipulation'
+                temp = "Error in Manipulation"
         return temp
 
     def remove_image(self):
@@ -118,12 +129,17 @@ class DeleteImage:
         Running the Docker RMI Command to Delete the Older Versions
         """
         for img in self.img_list:
-            if img['Tag']:
-                for tag in img['Tag']:
+            if img["Tag"]:
+                for tag in img["Tag"]:
                     val = self.hash_function(tag)
-                    image_url = img['Repository'] + ":" + val
+                    image_url = img["Repository"] + ":" + val
                     print("Deleting Image : " + image_url)
-                    sp.run("sudo docker rmi " + image_url,shell=True,capture_output=True , check=True) # noqa
+                    sp.run(
+                        "sudo docker rmi " + image_url,
+                        shell=True,
+                        capture_output=True,
+                        check=True,
+                    )  # noqa
 
 
 # Main Function

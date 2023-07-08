@@ -1,6 +1,7 @@
+import sys
+
 import markdown
 import pdfkit
-import sys
 
 args = sys.argv[1:]  # get command line *args
 assert args, "No file/dir was provided"  # raise error is no arg is passed
@@ -16,9 +17,10 @@ for arg in args:
 
 # configuring pdfkit to point to our installation of wkhtmltopdf
 config = pdfkit.configuration(
-    wkhtmltopdf=r"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    wkhtmltopdf=r"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe"
+)
 
 for html_text in enumerate(html_texts):
     print(html_text[0])
-    filename = args[html_text[0]].split('.')[0]
-    pdfkit.from_string(html_text[1], f'{filename}.pdf', configuration=config)
+    filename = args[html_text[0]].split(".")[0]
+    pdfkit.from_string(html_text[1], f"{filename}.pdf", configuration=config)

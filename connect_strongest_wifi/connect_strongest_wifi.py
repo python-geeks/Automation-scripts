@@ -1,9 +1,8 @@
-import subprocess
 import getpass
+import subprocess
 import time
-from pywifi import PyWiFi
-from pywifi import const
-from pywifi import Profile
+
+from pywifi import Profile, PyWiFi, const
 
 
 def connect_wifi(ssid, password):
@@ -36,9 +35,10 @@ def get_available_wifi():
 
     try:
 
-        cmd = ['netsh', 'wlan', 'show', 'network', 'mode=Bssid']
-        wifidata = subprocess.check_output(cmd).decode(
-            'ascii').replace("\r", "").split("\n\n")
+        cmd = ["netsh", "wlan", "show", "network", "mode=Bssid"]
+        wifidata = (
+            subprocess.check_output(cmd).decode("ascii").replace("\r", "").split("\n\n")
+        )
 
     except subprocess.CalledProcessError:
         print("\nWhoops! Your Wi-Fi seems to be powered off.")
@@ -53,7 +53,7 @@ def get_available_wifi():
             networks.append((ssid, signal))
 
         networks = sorted(networks, reverse=True, key=lambda x: x[1])
-        return (networks)
+        return networks
 
 
 def main():

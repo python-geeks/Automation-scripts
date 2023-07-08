@@ -1,4 +1,5 @@
-from tkinter import messagebox, Tk, Label, Text, Button, END
+from tkinter import END, Button, Label, Text, Tk, messagebox
+
 import sender
 
 
@@ -7,7 +8,7 @@ def run():
 
     window.title("Send Something Cool!")
 
-    window.geometry('420x200')
+    window.geometry("420x200")
 
     lbl = Label(window)
 
@@ -18,14 +19,20 @@ def run():
     txt.grid(column=2, row=2)
 
     def clicked():
-        message = (txt.get("1.0", END))
+        message = txt.get("1.0", END)
         sender.send(message)
         txt.delete("1.0", END)
 
-        messagebox.showinfo("Information",
-                            "Your message sent successfully to all linked Devices!")
+        messagebox.showinfo(
+            "Information", "Your message sent successfully to all linked Devices!"
+        )
 
-    btn = Button(window, text="Send", command=clicked, bg="lightgreen", )
+    btn = Button(
+        window,
+        text="Send",
+        command=clicked,
+        bg="lightgreen",
+    )
 
     btn.grid(column=2, row=4, ipadx=30, ipady=5, pady=10)
 

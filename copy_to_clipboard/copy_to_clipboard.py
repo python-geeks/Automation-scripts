@@ -1,7 +1,7 @@
 import os
-import sys
 import platform
 import subprocess
+import sys
 
 # Seeing if the file exists
 if os.path.exists(sys.argv[1]):

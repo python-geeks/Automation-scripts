@@ -1,5 +1,5 @@
-import tarfile
 import os
+import tarfile
 
 
 def list_tar(archive, verbosity):
@@ -44,14 +44,14 @@ def create_tar(archive, folder_name, compression=None):
 
 def get_tar_mode(compression):
     """Determine tarfile open mode according to the given compression."""
-    if compression == 'gzip':
-        return 'w:gz'
-    if compression == 'bzip2':
-        return 'w:bz2'
-    if compression == 'lzma':
-        return 'w:xz'
+    if compression == "gzip":
+        return "w:gz"
+    if compression == "bzip2":
+        return "w:bz2"
+    if compression == "lzma":
+        return "w:xz"
     if compression:
-        msg = 'pytarfile does not support %s for tar compression'
+        msg = "pytarfile does not support %s for tar compression"
         print(msg)
     # no compression
-    return 'w'
+    return "w"

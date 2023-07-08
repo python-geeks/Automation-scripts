@@ -1,6 +1,7 @@
 # flake8: noqa
 import os
 from pathlib import Path
+
 from constants import Constants
 
 res_path = Path(os.getcwd()) / Constants.stats_dir

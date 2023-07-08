@@ -1,6 +1,7 @@
-from PIL import Image
 from os.path import getsize
 from tkinter.filedialog import askopenfilename, asksaveasfilename
+
+from PIL import Image
 
 
 def compress():
@@ -19,5 +20,5 @@ def compress():
     print(f"New size of image is       : {getsize(save_path)} Bytes")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     compress()

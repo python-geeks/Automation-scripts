@@ -12,9 +12,9 @@ class Combine:
         :param sides: dictionary with all the sides
         :returns: string
         """
-        combined = ''
-        for face in 'URFDLB':
-            combined += ''.join(sides[face])
+        combined = ""
+        for face in "URFDLB":
+            combined += "".join(sides[face])
         return combined
 
 

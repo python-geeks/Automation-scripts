@@ -1,13 +1,15 @@
 import tkinter as tk
 import tkinter.ttk as ttk
+
 import requests
 
 # Free Open Weather API (https://rapidapi.com/community/api/open-weather-map/)
 url = "https://community-open-weather-map.p.rapidapi.com/forecast"
 
-headers = {'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
-           'x-rapidapi-key':
-           "8e9e50a21bmshda23fe83770e19ep14a949jsn482dfa5dc300"}
+headers = {
+    "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+    "x-rapidapi-key": "8e9e50a21bmshda23fe83770e19ep14a949jsn482dfa5dc300",
+}
 
 # initialize tkinter GUI
 root = tk.Tk()
@@ -18,9 +20,14 @@ weather_view = ttk.Treeview(weather_frame)
 
 # Initialize table for US city weather information
 def createTable(data, city):
-    weather_view['columns'] = ('city', 'temperature',
-                               'minTemp', 'maxTemp',
-                               'condition', 'description')
+    weather_view["columns"] = (
+        "city",
+        "temperature",
+        "minTemp",
+        "maxTemp",
+        "condition",
+        "description",
+    )
     weather_view.column("#0", width=0, stretch=tk.NO)
     weather_view.column("city", anchor=tk.CENTER, width=85)
     weather_view.column("temperature", anchor=tk.CENTER, width=95)
@@ -31,8 +38,7 @@ def createTable(data, city):
 
     weather_view.heading("#0", text="", anchor=tk.CENTER)
     weather_view.heading("city", text="City Name", anchor=tk.CENTER)
-    weather_view.heading("temperature", text="Temperature (F)",
-                         anchor=tk.CENTER)
+    weather_view.heading("temperature", text="Temperature (F)", anchor=tk.CENTER)
     weather_view.heading("minTemp", text="Min Temp", anchor=tk.CENTER)
     weather_view.heading("maxTemp", text="Max Temp", anchor=tk.CENTER)
     weather_view.heading("condition", text="Condition", anchor=tk.CENTER)
@@ -43,21 +49,33 @@ def createTable(data, city):
 # Populate table with weather information for each new US city
 def NewEntry(data, city):
     try:
-        temp = str(round((((int(data['list'][1]['main']['temp'])
-                            - 273.15) * 1.8) + 32), 2))
-        temp_min = str(round((((int(data['list'][1]['main']['temp_min'])
-                                - 273.15) * 1.8) + 32), 2))
-        temp_max = str(round((((int(data['list'][1]['main']['temp_max'])
-                                - 273.15) * 1.8) + 32), 2))
-        weather = data['list'][2]['weather'][0]['main']
-        weather_desc = data['list'][2]['weather'][0]['description']
-        weather_view.insert(parent='', index='end', iid=None, text='',
-                            values=(city, temp, temp_min, temp_max,
-                                    weather, weather_desc))
+        temp = str(
+            round((((int(data["list"][1]["main"]["temp"]) - 273.15) * 1.8) + 32), 2)
+        )
+        temp_min = str(
+            round((((int(data["list"][1]["main"]["temp_min"]) - 273.15) * 1.8) + 32), 2)
+        )
+        temp_max = str(
+            round((((int(data["list"][1]["main"]["temp_max"]) - 273.15) * 1.8) + 32), 2)
+        )
+        weather = data["list"][2]["weather"][0]["main"]
+        weather_desc = data["list"][2]["weather"][0]["description"]
+        weather_view.insert(
+            parent="",
+            index="end",
+            iid=None,
+            text="",
+            values=(city, temp, temp_min, temp_max, weather, weather_desc),
+        )
         weather_view.grid(columnspan=3, row=3)
     except Exception:
-        weather_view.insert(parent='', index='end', iid=None, text='',
-                            values=(city, None, None, None, None, None))
+        weather_view.insert(
+            parent="",
+            index="end",
+            iid=None,
+            text="",
+            values=(city, None, None, None, None, None),
+        )
         weather_view.grid(columnspan=3, row=3)
 
 
@@ -69,7 +87,7 @@ canvas.grid(columnspan=3, rowspan=5)
 # Weather Tracker application - title
 label = tk.Label(root, text="US Weather Tracker")
 label.grid(columnspan=3, row=0, pady=30)
-label.configure(font=("Courier", 25, "bold"), fg='#092653')
+label.configure(font=("Courier", 25, "bold"), fg="#092653")
 
 # Weather Tracker application - title
 desc = tk.Label(root, text="Provide a US city name below...")
@@ -97,8 +115,7 @@ def addWeather():
         city = cityEntry.get()
         location = city + ",us"
         querystring = {"q": location}
-        response = requests.request("GET", url, headers=headers,
-                                    params=querystring)
+        response = requests.request("GET", url, headers=headers, params=querystring)
         createTable(response.json(), city)
         button_text.set("Add New City")
         newTable = False
@@ -106,17 +123,20 @@ def addWeather():
         city = cityEntry.get()
         location = city + ",us"
         querystring = {"q": location}
-        response = requests.request("GET", url, headers=headers,
-                                    params=querystring)
+        response = requests.request("GET", url, headers=headers, params=querystring)
         NewEntry(response.json(), city)
 
 
 # Button to add cities to weather forecast table
-getCityWeather = tk.Button(root, textvariable=button_text,
-                           command=addWeather, width=30,
-                           font=("Courier", 15),
-                           bg='#092653',
-                           fg="white").grid(columnspan=3, row=4, pady=10)
+getCityWeather = tk.Button(
+    root,
+    textvariable=button_text,
+    command=addWeather,
+    width=30,
+    font=("Courier", 15),
+    bg="#092653",
+    fg="white",
+).grid(columnspan=3, row=4, pady=10)
 
 
 root.mainloop()

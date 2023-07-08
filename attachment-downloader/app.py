@@ -1,5 +1,5 @@
-import imaplib
 import email
+import imaplib
 import os
 
 USEREMAIL = "example@mail.com"

@@ -1,7 +1,8 @@
 # ----- imports -----
 import time
-import schedule
+
 import requests
+import schedule
 from quotefancy import get_quote
 
 # Some Required Vars

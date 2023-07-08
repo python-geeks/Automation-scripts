@@ -6,12 +6,12 @@
 
 # Python program to detect and translate with the help of speech recognition
 
-import speech_recognition as sr
-from langdetect import detect
-from google_trans_new import google_translator
 import pyttsx3
+import speech_recognition as sr
+from google_trans_new import google_translator
+from langdetect import detect
 
-'''
+"""
 Supported Languages:
 {'af': 'afrikaans', 'sq': 'albanian', 'am': 'amharic', 'ar': 'arabic',
 'hy': 'armenian', 'az': 'azerbaijani', 'eu': 'basque', 'be': 'belarusian',
@@ -41,7 +41,7 @@ Supported Languages:
 'cy': 'welsh', 'xh': 'xhosa', 'yi': 'yiddish', 'yo': 'yoruba',
 'zu': 'zulu', 'fil': 'Filipino', 'he': 'Hebrew'}
 
-'''
+"""
 
 r = sr.Recognizer()
 translator = google_translator()
@@ -61,18 +61,17 @@ def trans(x, d):
 
 
 print("Start speaking.....(To terminate the program say 'Stop!')")
-while (1):
+while 1:
     try:
         with sr.Microphone() as source2:
             r.adjust_for_ambient_noise(source2, duration=0.2)
             audio2 = r.listen(source2)
             MyText = r.recognize_google(audio2)
             MyText.lower()
-            if MyText == 'stop':
+            if MyText == "stop":
                 break
             print("Did you say " + MyText)
-            d = input(
-                'Enter the language you need the text to be translated into:')
+            d = input("Enter the language you need the text to be translated into:")
             translated = trans(MyText, d)
             print(translated)
             SpeakText(MyText)

@@ -3,18 +3,15 @@
 # IMPORTS
 # ======================================================================
 
-import torch
-from torchvision import transforms
-
 import os
+import warnings
 
+import matplotlib.patches as patches
+import matplotlib.pyplot as plt
+import torch
 from dataset import FaceMaskDataset
 from model import FaceMaskDetector
-
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-
-import warnings
+from torchvision import transforms
 
 warnings.filterwarnings("ignore")
 
@@ -85,11 +82,7 @@ if __name__ == "__main__":
     # ======================================================================
     # Training the Faster-RCNN model
     # ======================================================================
-    model = FaceMaskDetector(
-        data_loader=data_loader,
-        device=device,
-        pretrained=True
-    )
+    model = FaceMaskDetector(data_loader=data_loader, device=device, pretrained=True)
 
     model.build_model(n_classes=3)
 
@@ -116,10 +109,7 @@ if __name__ == "__main__":
         if i > iters - 1:
             break
         imgs = list(img.to(device) for img in imgs)
-        annotations = [
-            {k: v.to(device) for k, v in t.items()}
-            for t in annotations
-        ]
+        annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
 
         pred = model.predict(imgs)
 

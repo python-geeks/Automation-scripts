@@ -1,10 +1,10 @@
-import os
-import requests
 import json
-from dotenv import load_dotenv, find_dotenv
-from newspaper import Article
-from newspaper import Config
+import os
 from datetime import datetime
+
+import requests
+from dotenv import find_dotenv, load_dotenv
+from newspaper import Article, Config
 
 news_information = dict()
 
@@ -18,13 +18,11 @@ def get_top_news(news_information, todays_date):
     load_dotenv(find_dotenv(r"path to env variable"))
     news_api_key = os.getenv("news_api")
     params = (
-        ('country', 'us'),
-        ('apiKey', f'{news_api_key}'),
+        ("country", "us"),
+        ("apiKey", f"{news_api_key}"),
     )
-    response = requests.get(
-        """https://newsapi.org/v2/top-headlines""",
-        params=params)
-    news_articles = response.json()['articles']
+    response = requests.get("""https://newsapi.org/v2/top-headlines""", params=params)
+    news_articles = response.json()["articles"]
     for i in news_articles:
         user_agent = """Mozilla/5.0 (Macintosh;
         Intel Mac OS X 10.15; rv:78.0)
@@ -32,13 +30,18 @@ def get_top_news(news_information, todays_date):
         config = Config()
         config.browser_user_agent = user_agent
         config.request_timeout = 10
-        article = Article(i['url'], config=config)
+        article = Article(i["url"], config=config)
         print(i["url"])
         article.download()
         article.parse()
         article.nlp()
         summary = article.summary  # noqa
-        news_information[i["source"]["name"]] = {"title": i["title"], "summary": summary, "url": i["url"], "date": f"{todays_date}"}  # noqa
+        news_information[i["source"]["name"]] = {
+            "title": i["title"],
+            "summary": summary,
+            "url": i["url"],
+            "date": f"{todays_date}",
+        }  # noqa
 
 
 def json_file(news_information, todays_date):

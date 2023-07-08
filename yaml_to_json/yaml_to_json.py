@@ -1,6 +1,7 @@
-from ruyaml import YAML
 import argparse
 import json
+
+from ruyaml import YAML
 
 
 def get_yaml_data(yaml_name=None):
@@ -29,10 +30,10 @@ def convert_to_json(yaml_data, json_name=None, intent=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Convert YAML file to JSON')
-    parser.add_argument('--yaml', type=str, help='YAML filename')
-    parser.add_argument('--json', type=str, help='JSON filename')
-    parser.add_argument('--intent', type=int, help="intent value for JSON")
+    parser = argparse.ArgumentParser(description="Convert YAML file to JSON")
+    parser.add_argument("--yaml", type=str, help="YAML filename")
+    parser.add_argument("--json", type=str, help="JSON filename")
+    parser.add_argument("--intent", type=int, help="intent value for JSON")
     args = parser.parse_args()
 
     yaml_name = args.yaml

@@ -6,7 +6,7 @@ import click
 
 
 def extract_zip(zip_file: ZipFile, password_file: Path):
-    with open(password_file, 'r') as passwords:
+    with open(password_file, "r") as passwords:
         for password in passwords.readlines():
             try:
                 zip_file.extractall(pwd=password.strip().encode())
@@ -18,12 +18,12 @@ def extract_zip(zip_file: ZipFile, password_file: Path):
             print("Password not found")
 
 
-@click.command(context_settings={'help_option_names': ['-h', '--help']})
-@click.option('--zip', help='Set path to zip file')
+@click.command(context_settings={"help_option_names": ["-h", "--help"]})
+@click.option("--zip", help="Set path to zip file")
 @click.option(
-    '--passwords',
-    default=Path().cwd() / 'passwords.txt',
-    help='Set path to file with passwords',
+    "--passwords",
+    default=Path().cwd() / "passwords.txt",
+    help="Set path to file with passwords",
 )
 def main(zip, passwords):
     """Simple program that greets NAME for a total of COUNT times."""
@@ -31,5 +31,5 @@ def main(zip, passwords):
     extract_zip(zip_file, passwords)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

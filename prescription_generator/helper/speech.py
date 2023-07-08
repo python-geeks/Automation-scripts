@@ -3,6 +3,7 @@ import speech_recognition as sr
 
 def speech_rec_for_linux():
     import espeak
+
     espeak.init()
     speaker = espeak.Espeak()
     # import pyttsx3
@@ -14,7 +15,7 @@ def speech_rec_for_linux():
     medicines = {}
 
     with sr.Microphone() as source:
-        while (True):
+        while True:
             medicine_dict = {}
             count += 1
 
@@ -31,11 +32,8 @@ def speech_rec_for_linux():
             print("Done")
 
             try:
-                text = r.recognize_google(
-                    recorded_audio,
-                    language="en-US"
-                )
-                if 'exit' in str(text).lower():
+                text = r.recognize_google(recorded_audio, language="en-US")
+                if "exit" in str(text).lower():
                     print("Thanks for using our service!")
                     break
 
@@ -55,10 +53,7 @@ def speech_rec_for_linux():
             print("Done")
 
             try:
-                text = r.recognize_google(
-                    recorded_audio,
-                    language="en-US"
-                )
+                text = r.recognize_google(recorded_audio, language="en-US")
                 medicine_dict["Instruction"] = str(text)
                 print("Decoded Text : {}".format(text))
 
@@ -72,6 +67,7 @@ def speech_rec_for_linux():
 
 def speech_rec_for_windows():
     import pyttsx3
+
     speaker = pyttsx3.init()
     # from win32com.client import Dispatch
     # speak = Dispatch("SAPI.SpVoice").Speak
@@ -82,7 +78,7 @@ def speech_rec_for_windows():
     medicines = {}
 
     with sr.Microphone() as source:
-        while (True):
+        while True:
             medicine_dict = {}
             count += 1
 
@@ -99,11 +95,8 @@ def speech_rec_for_windows():
             print("Done")
 
             try:
-                text = r.recognize_google(
-                    recorded_audio,
-                    language="en-US"
-                )
-                if 'exit' in str(text).lower():
+                text = r.recognize_google(recorded_audio, language="en-US")
+                if "exit" in str(text).lower():
                     print("Thanks for using our service!")
                     break
 
@@ -124,10 +117,7 @@ def speech_rec_for_windows():
             print("Done")
 
             try:
-                text = r.recognize_google(
-                    recorded_audio,
-                    language="en-US"
-                )
+                text = r.recognize_google(recorded_audio, language="en-US")
                 medicine_dict["Instruction"] = str(text)
                 print("Decoded Text : {}".format(text))
 

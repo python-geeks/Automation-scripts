@@ -1,7 +1,8 @@
 # Title :- URL Shortener
 # The URL shortener is application which takes url input from user and shorts it
-import pyshorteners
 import sys
+
+import pyshorteners
 
 
 # url converter function
@@ -16,5 +17,5 @@ def main():
         print(cooked_url)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

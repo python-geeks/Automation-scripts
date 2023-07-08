@@ -1,8 +1,9 @@
 import os
-from time import sleep
 import tkinter as tk
-from PIL import Image, ImageTk
 from threading import Thread
+from time import sleep
+
+from PIL import Image, ImageTk
 
 # initialize tkinter GUI
 root = tk.Tk()
@@ -19,7 +20,7 @@ label = tk.Label(root, text="YouTube Downloader")
 label.grid(columnspan=3, row=0, pady=30)
 label.configure(font=("Courier", 28, "bold"))
 
-img = Image.open('images/youtube-logo.png')
+img = Image.open("images/youtube-logo.png")
 img = ImageTk.PhotoImage(img)
 img_label = tk.Label(image=img)
 img_label.image = img
@@ -84,9 +85,14 @@ def downloadVideo():
     second().start()
 
 
-getVideo = tk.Button(root, textvariable=downloadButton,
-                     fg="red", command=downloadVideo,
-                     font=("Courier", 15), height=2)
+getVideo = tk.Button(
+    root,
+    textvariable=downloadButton,
+    fg="red",
+    command=downloadVideo,
+    font=("Courier", 15),
+    height=2,
+)
 getVideo.grid(columnspan=3, row=6, pady=10)
 
 

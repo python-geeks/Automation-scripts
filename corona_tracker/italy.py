@@ -7,10 +7,11 @@ Created on Tue Mar 10 18:27:37 2020
 https://edoardoottavianelli.it
 """
 import csv
-import requests
-import socket
 import getopt
+import socket
 import sys
+
+import requests
 
 CSV_URL = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/\
 dpc-covid19-ita-andamento-nazionale.csv"

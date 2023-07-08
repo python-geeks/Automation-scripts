@@ -1,6 +1,7 @@
-import pyAesCrypt
-import sys
 import re
+import sys
+
+import pyAesCrypt
 
 bufferSize = 64 * 1024
 
@@ -9,7 +10,7 @@ def check_password(password):
     """
     function to check the strength of password
     """
-    regex = re.compile('[@_!#$%^&*()<>?/\\|}{~:]')
+    regex = re.compile("[@_!#$%^&*()<>?/\\|}{~:]")
 
     t1 = len(password) >= 8
     t2 = not (regex.search(password) is None)

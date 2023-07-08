@@ -3,11 +3,11 @@
 # IMPORTS
 # ======================================================================
 
-import torch
-
 import os
-from PIL import Image
+
+import torch
 from bs4 import BeautifulSoup
+from PIL import Image
 
 ######################################################################
 # Data source - https://www.kaggle.com/andrewmvd/face-mask-detection

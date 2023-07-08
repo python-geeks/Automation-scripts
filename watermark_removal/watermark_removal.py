@@ -1,6 +1,7 @@
-import numpy as np
 import glob
+
 import cv2
+import numpy as np
 from pdf2image import convert_from_path
 
 
@@ -11,7 +12,7 @@ def pdf_to_jpg(path_to_folder, output_path):
         i = 0
 
         for page in pages:
-            page.save(output_path + "/image%04i.jpg" % i, 'JPEG')
+            page.save(output_path + "/image%04i.jpg" % i, "JPEG")
             i += 1
 
 

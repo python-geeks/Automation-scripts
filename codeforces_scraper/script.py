@@ -1,7 +1,8 @@
-import requests
 import json
-import bs4
 import re
+
+import bs4
+import requests
 
 CLEANR = re.compile("<.*?>")
 

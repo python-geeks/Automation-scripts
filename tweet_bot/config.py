@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-import tweepy
 import logging
 import os
+
+import tweepy
 
 logger = logging.getLogger()
 

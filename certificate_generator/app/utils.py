@@ -1,25 +1,24 @@
 # External Imports
-from PIL import Image, ImageFont, ImageDraw
 import os
 
 # Internal Imports
 from app import app
+from PIL import Image, ImageDraw, ImageFont
 
 
 def generate_certificate(name, pr_num):
-    '''generate_certificate Generates certificate using base template
+    """generate_certificate Generates certificate using base template
 
     Args:
         name (string): Name to be displayed on certificate
         pr_num (integer): PR number to be displayed on certificate
-    '''
+    """
     # Path to template certificate
     template_dir = os.path.join(app.root_path, "static/certificates/template")
     template_filename = "template.png"
 
     # Path to save the certificate
-    output_dir = os.path.join(app.root_path, "static",
-                              "certificates/generated/")
+    output_dir = os.path.join(app.root_path, "static", "certificates/generated/")
     output_filename = f"{name}.png"
 
     # Load the template file
@@ -33,10 +32,10 @@ def generate_certificate(name, pr_num):
 contribution in #{pr_num} at {contributed_at}.
 """
     # Load fonts
-    name_font = ImageFont.truetype(os.path.join(
-        template_dir, "Sanchez-Regular.ttf"), 150)
-    msg_font = ImageFont.truetype(os.path.join(
-        template_dir, "Sanchez-Regular.ttf"), 70)
+    name_font = ImageFont.truetype(
+        os.path.join(template_dir, "Sanchez-Regular.ttf"), 150
+    )
+    msg_font = ImageFont.truetype(os.path.join(template_dir, "Sanchez-Regular.ttf"), 70)
 
     # Insert text (Name)
     draw.text((1000, 1390), name, (51, 213, 172), font=name_font)

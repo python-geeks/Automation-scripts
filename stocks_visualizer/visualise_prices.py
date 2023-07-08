@@ -1,8 +1,10 @@
-from nsetools import Nse
-import requests
-from datetime import datetime as dt, timedelta
-import plotly.graph_objects as go
+from datetime import datetime as dt
+from datetime import timedelta
+
 import pandas as pd
+import plotly.graph_objects as go
+import requests
+from nsetools import Nse
 
 nse = Nse()
 headers = {

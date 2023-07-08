@@ -19,11 +19,11 @@ class Normalizer:
         :param alg: The algorithm itself
         :returns: list
         """
-        with open('solve-manual.json') as f:
+        with open("solve-manual.json") as f:
             manual = json.load(f)
 
         solution = []
-        for notation in alg.split(' '):
+        for notation in alg.split(" "):
             solution.append(manual[language][notation])
         return solution
 

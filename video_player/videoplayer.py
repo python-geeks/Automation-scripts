@@ -1,14 +1,15 @@
-import cv2
 import sys
+
+import cv2
 
 
 def play_video(cap):
     is_paused = False
-    while (cap.isOpened()):
+    while cap.isOpened():
         if not is_paused:
             ret, frame = cap.read()
         if ret:
-            cv2.imshow('Frame', frame)
+            cv2.imshow("Frame", frame)
             key = cv2.waitKey(25)
             if key == 113:
                 break
@@ -33,5 +34,5 @@ def cap_check(path):
         return cap
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cleanup(play_video(cap_check(sys.argv[1])))

@@ -1,6 +1,7 @@
-import requests
 import csv
 import sys
+
+import requests
 from bs4 import BeautifulSoup as bs
 
 
@@ -10,9 +11,12 @@ def main():
 
     # Number of articles requested by the user
     try:
-        number_of_articles = int(input(
-            '''Enter the number of articles you want from the hackernews website.
-(1-30) : '''))
+        number_of_articles = int(
+            input(
+                """Enter the number of articles you want from the hackernews website.
+(1-30) : """
+            )
+        )
     except ValueError:
         print("\nYou did not enter a number. Try again.\n")
         sys.exit(1)
@@ -24,10 +28,10 @@ def main():
     response = requests.get(baseurl)
 
     # soup object for easy scrapping
-    soup = bs(response.content, 'html.parser')
+    soup = bs(response.content, "html.parser")
 
     # Finding all the a tags with the class storylink
-    latest = soup.find_all('a', attrs={'class': 'storylink'})
+    latest = soup.find_all("a", attrs={"class": "storylink"})
 
     # list to track the links of the articles
     links = []
@@ -38,13 +42,12 @@ def main():
     # Fetching the links and names from the soup object
     # storing them in respective lists
     for article in latest:
-        links.append(article['href'])
+        links.append(article["href"])
         titles.append(article.text)
 
     result = []
 
-    for title, link in zip(titles[:number_of_articles],
-                           links[:number_of_articles]):
+    for title, link in zip(titles[:number_of_articles], links[:number_of_articles]):
         d = {}
         d["News Title"] = title
         d["Link to the News"] = link

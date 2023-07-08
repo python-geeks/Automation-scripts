@@ -1,11 +1,11 @@
-from selenium import webdriver
-from bs4 import BeautifulSoup
-import urllib.request
-import time
 import argparse
 import os
+import time
+import urllib.request
 
 import geckodriver_autoinstaller
+from bs4 import BeautifulSoup
+from selenium import webdriver
 
 
 def driver_download():

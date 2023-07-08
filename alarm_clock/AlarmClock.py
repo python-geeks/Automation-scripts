@@ -1,5 +1,6 @@
-import time
 import datetime
+import time
+
 import simpleaudio
 
 t = int()
@@ -7,9 +8,9 @@ t = int()
 
 def snooze(t):
     global set_time
-    HH_MM = set_time.split(':')
+    HH_MM = set_time.split(":")
     HH_MM[1] = str(int(HH_MM[1]) + t)
-    set_time = ':'.join(HH_MM)
+    set_time = ":".join(HH_MM)
 
 
 set_time = input("please enter the time in HH:MM format to set an alarm : ")
@@ -34,7 +35,7 @@ def alarm(set_time):
 while True:
     alarm(set_time)
     x = input("Press y if you want the alarm to snooze: ")
-    if x == 'y':
+    if x == "y":
         t = int(input("Snooze time: "))
         snooze(t)
         print(f"The alarm will ring again in {t} min")

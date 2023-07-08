@@ -1,22 +1,24 @@
-import pyttsx3
-import PyPDF2
-from gtts import gTTS
-from tkinter.filedialog import askopenfilename
 from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+
+import PyPDF2
+import pyttsx3
+from gtts import gTTS
+
 Tk().withdraw()
 filelocation = askopenfilename()  # open the dialog GUI
 
 
-book = open(filelocation, 'rb')
+book = open(filelocation, "rb")
 
 pdfReader = PyPDF2.PdfFileReader(book)
 pages = pdfReader.numPages
 print("No. of pages: ", pages)
 speaker = pyttsx3.init()
-whole_text = ''
-choice = input('choice? ')
+whole_text = ""
+choice = input("choice? ")
 
-if choice == '1':
+if choice == "1":
 
     for num in range(0, pages):
         page = pdfReader.getPage(num)
@@ -27,5 +29,5 @@ if choice == '1':
         speaker.runAndWait()
 
 
-final_file = gTTS(text=whole_text, lang='en')  # store file in variable
+final_file = gTTS(text=whole_text, lang="en")  # store file in variable
 final_file.save("Output Audio.mp3")  # Saving audio file

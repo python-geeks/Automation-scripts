@@ -1,6 +1,7 @@
-import pytesseract
-import sys
 import os
+import sys
+
+import pytesseract
 from PIL import Image
 
 # Set Tesseract location

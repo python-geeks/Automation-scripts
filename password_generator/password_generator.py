@@ -1,18 +1,18 @@
 import argparse  # to work with the arguments
-import string
 import secrets
+import string
 
 
 # function to generate the password
 def get_password(length: int) -> str:
     # creating data
-    symbols = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+']
+    symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+"]
     numbers = [str(a) for a in range(10)]
     lowercase_characters = string.ascii_lowercase
     uppercase_characters = string.ascii_uppercase
 
     # variable to hold the password
-    password = ''
+    password = ""
 
     # adding one symbol
     password += secrets.choice(symbols)
@@ -66,7 +66,8 @@ def shuffle(password: list):
         # swap elements at index x and index y
         password[x], password[y] = password[y], password[x]
     # return concatenated password
-    return ''.join(password)
+    return "".join(password)
+
 
 # main method
 
@@ -84,28 +85,29 @@ def main(args: argparse.Namespace) -> None:
     password = get_password(length)
 
     # printing the password to the user
-    print(f'PASSWORD: {password}')
+    print(f"PASSWORD: {password}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # creating the argparse object
     parser = argparse.ArgumentParser()
 
     # adding the length argument
     parser.add_argument(
-        '-l', '--length',
-        help='Length of the password. [MIN=6], [MAX=20], [DEFAULT = 6]',
-        metavar='',
+        "-l",
+        "--length",
+        help="Length of the password. [MIN=6], [MAX=20], [DEFAULT = 6]",
+        metavar="",
         default=6,
-        type=int
+        type=int,
     )
 
     # adding the exclude duplicates argument
     parser.add_argument(
-        '-ed',
-        '--excludeduplicates',
-        action='store_true',
-        help='Exculdes duplicate characters from the password'
+        "-ed",
+        "--excludeduplicates",
+        action="store_true",
+        help="Exculdes duplicate characters from the password",
     )
 
     # parsing the argument

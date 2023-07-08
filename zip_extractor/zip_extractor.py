@@ -1,6 +1,8 @@
-from zipfile import ZipFile
-import easygui
 import time
+from zipfile import ZipFile
+
+import easygui
+
 # import the required libraries
 print("Select the path of zip file...")
 # a function in easygui that opens
@@ -12,7 +14,7 @@ time.sleep(2)
 
 # opening the zip file selected
 # in read mode
-with ZipFile(path, 'r') as zip:
+with ZipFile(path, "r") as zip:
     # prints the contents in the zip folder
     zip.printdir()
     print("Select the destination directory to extract!!")

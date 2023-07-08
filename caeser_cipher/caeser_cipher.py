@@ -1,7 +1,8 @@
 from __future__ import print_function
+
+import argparse
 import os
 import string
-import argparse
 
 try:
     maketrans = string.maketrans  # python2
@@ -29,14 +30,12 @@ def caeser_cipher(string_: str, offset: int, decode: bool, file_: string):
     lower_offset_alphabet = (
         string.ascii_lowercase[offset:] + string.ascii_lowercase[:offset]
     )
-    lower_translation_table = maketrans(
-        string.ascii_lowercase, lower_offset_alphabet)
+    lower_translation_table = maketrans(string.ascii_lowercase, lower_offset_alphabet)
 
     upper_offset_alphabet = (
         string.ascii_uppercase[offset:] + string.ascii_uppercase[:offset]
     )
-    upper_translation_table = maketrans(
-        string.ascii_uppercase, upper_offset_alphabet)
+    upper_translation_table = maketrans(string.ascii_uppercase, upper_offset_alphabet)
 
     lower_converted = string_.translate(lower_translation_table)
     final_converted = lower_converted.translate(upper_translation_table)
@@ -57,8 +56,7 @@ def check_offset_range(value: int) -> int:
     """
     value = int(value)
     if value < -25 or value > 25:
-        raise argparse.ArgumentTypeError(
-            "{} is an invalid offset".format(value))
+        raise argparse.ArgumentTypeError("{} is an invalid offset".format(value))
     return value
 
 
@@ -85,8 +83,7 @@ if __name__ == "__main__":
     )
 
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("-f", "--file", dest="file",
-                       help="file to encode", default=None)
+    group.add_argument("-f", "--file", dest="file", help="file to encode", default=None)
     group.add_argument(
         "-s", "--string", dest="string", help="string to encode", default=None
     )

@@ -1,9 +1,11 @@
-import face_recognition as fr
 import os
+import time
+
 import cv2
 import numpy as np
-import time
 from VideoCapture import Device
+
+import face_recognition as fr
 
 
 def get_encoded_faces():
@@ -34,7 +36,7 @@ def classify_face(im):
     faces_encoded = list(faces.values())
     known_face_names = list(faces.keys())
     cam = Device()
-    cam.saveSnapshot('~/faces/image.jpg')
+    cam.saveSnapshot("~/faces/image.jpg")
     time.sleep(5)
     img = cv2.imread(im, 1)
     # img = cv2.resize(img, (0, 0), fx=0.5, fy=0.5)
@@ -59,19 +61,26 @@ def classify_face(im):
 
         for (top, right, bottom, left), name in zip(face_locations, face_names):
             # Draw a box around the face
-            cv2.rectangle(img, (left - 20, top - 20),
-                          (right + 20, bottom + 20), (255, 0, 0), 2)
+            cv2.rectangle(
+                img, (left - 20, top - 20), (right + 20, bottom + 20), (255, 0, 0), 2
+            )
 
             # Draw a label with a name below the face
-            cv2.rectangle(img, (left - 20, bottom - 15),
-                          (right + 20, bottom + 20), (255, 0, 0), cv2.FILLED)
+            cv2.rectangle(
+                img,
+                (left - 20, bottom - 15),
+                (right + 20, bottom + 20),
+                (255, 0, 0),
+                cv2.FILLED,
+            )
             font = cv2.FONT_HERSHEY_DUPLEX
-            cv2.putText(img, name, (left - 20, bottom + 15),
-                        font, 1.0, (255, 255, 255), 2)
+            cv2.putText(
+                img, name, (left - 20, bottom + 15), font, 1.0, (255, 255, 255), 2
+            )
 
     # Display the resulting image
     img1 = cv2.resize(img, (960, 540))
-    cv2.imshow('Result', img1)
+    cv2.imshow("Result", img1)
     cv2.waitKey(0)
     return face_names
 

@@ -1,6 +1,8 @@
 import ast
 import sys
+
 import mccabe
+
 from .utils import collect_sources
 
 
@@ -12,8 +14,9 @@ def process(py_source, max_complexity):
     for graph in visitor.graphs.values():
         if graph.complexity() > max_complexity:
             text = "{}:{}:{} {} {}"
-            return text.format(py_source, graph.lineno, graph.column, graph.entity,
-                               graph.complexity())
+            return text.format(
+                py_source, graph.lineno, graph.column, graph.entity, graph.complexity()
+            )
 
 
 def main():

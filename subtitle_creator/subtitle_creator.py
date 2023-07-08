@@ -1,9 +1,10 @@
+import contextlib
+import sys
+import wave
+
 import moviepy.editor as mp
 import speech_recognition as sr
-import wave
-import contextlib
-from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
-import sys
+from moviepy.editor import CompositeVideoClip, TextClip, VideoFileClip
 
 
 def get_audio(filename):
@@ -12,7 +13,7 @@ def get_audio(filename):
 
 
 def get_file_length(audiofile):
-    with contextlib.closing(wave.open(audiofile, 'r')) as f:
+    with contextlib.closing(wave.open(audiofile, "r")) as f:
         frames = f.getnframes()
         rate = f.getframerate()
         duration = frames / float(rate)
@@ -36,10 +37,12 @@ def get_text(audiofile="audio.wav"):
 def write_text(text_chunks, original_video, output, font_size=15):
     txt_clips = []
     for i in range(len(text_chunks)):
-        txt_clips.append(TextClip(text_chunks[i], fontsize=font_size, color="yellow")
-                         .set_position('bottom')
-                         .set_duration(3)
-                         .set_start(i * 3))
+        txt_clips.append(
+            TextClip(text_chunks[i], fontsize=font_size, color="yellow")
+            .set_position("bottom")
+            .set_duration(3)
+            .set_start(i * 3)
+        )
     clips = [original_video]
     clips.extend(txt_clips)
     result = CompositeVideoClip(clips)

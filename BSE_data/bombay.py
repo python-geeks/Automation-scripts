@@ -7,7 +7,7 @@ for i in tg:
     for j in i:
         print(j, i[j])
 
-print('\n-------------------------\n')
+print("\n-------------------------\n")
 
 tl = b.topLosers()
 print("\nTOP LOSERS - Now\n")
@@ -16,9 +16,18 @@ for j in tl:
         print(f"{j}: {i[j]}")
 
 # indices catagory parameter
-category = ["market_cap/broad", "sector_and_industry", "thematics",
-            "strategy", "sustainability", "volatility", "composite",
-            "government", "corporate", "money_market"]
+category = [
+    "market_cap/broad",
+    "sector_and_industry",
+    "thematics",
+    "strategy",
+    "sustainability",
+    "volatility",
+    "composite",
+    "government",
+    "corporate",
+    "money_market",
+]
 
 for i in category:
     indices = b.getIndices(category=i)

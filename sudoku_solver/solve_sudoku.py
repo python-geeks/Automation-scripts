@@ -1,6 +1,6 @@
 def is_number_valid(row, col, num):
     # function to find if the number is valid or not in the respective space
-    global grid   # making grid as global variable
+    global grid  # making grid as global variable
     for i in range(0, 9):
         # for loop to find if the number is present in the row or not
         if grid[row][i] == num:
@@ -17,11 +17,11 @@ def is_number_valid(row, col, num):
         for j in range(0, 3):
             if grid[row_subset + i][col_subset + j] == num:
                 return False
-    return True   # if not preent in the all the possibilities returns True
+    return True  # if not preent in the all the possibilities returns True
 
 
 def print_board():  # function to print the puzzle after solving
-    global grid   # global variables
+    global grid  # global variables
     for i in range(len(grid)):  # for loop to print the board
         if i % 3 == 0 and i != 0:
             print("- - - - - - - - - - - - - ")
@@ -56,9 +56,11 @@ def solve_sudoku():
                         grid[row][col] = 0
                 return
     print("\nSoltion is:")
-    print_board()    # calls the print_board function
+    print_board()  # calls the print_board function
     # if user presses enter then function is called again
     input("Check for more solution?")
+
+
 # takes each line of the sudoku as input with spaces between two numbers
 
 

@@ -1,11 +1,12 @@
 # import required libraries
+import csv
+import time
+from tkinter import filedialog
+
 import requests
 from bs4 import BeautifulSoup, NavigableString
 from scrapy import Selector
-import time
-import csv
 from selenium import webdriver
-from tkinter import filedialog
 
 print("For executing this program, you need a webdriver for your browser.....")
 print(

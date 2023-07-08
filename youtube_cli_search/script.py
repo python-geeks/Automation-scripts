@@ -1,5 +1,5 @@
-import urllib.request
 import re
+import urllib.request
 
 # Prepare the request link
 search = input("Search For: ")
@@ -23,8 +23,6 @@ for i in range(len(videos_identifiers)):
     videos_link.append(f"{standard_video_link}{videos_identifiers[i]}")
 
 
-print(f"status: Success,\n"
-      f"result: {len(videos_link)},\n"
-      f"links:")
+print(f"status: Success,\n" f"result: {len(videos_link)},\n" f"links:")
 for video in videos_link:
     print(video)

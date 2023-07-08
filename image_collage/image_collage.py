@@ -1,7 +1,8 @@
+from io import BytesIO
+
+import numpy as np
 import requests
 from PIL import Image
-from io import BytesIO
-import numpy as np
 
 lst = []
 for i in range(0, 4):

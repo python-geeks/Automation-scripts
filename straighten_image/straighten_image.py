@@ -1,8 +1,8 @@
-import cv2
 import math
+
+import cv2
 import numpy as np
 from scipy import ndimage
-
 
 path = "test.jpg"
 image = cv2.imread(path)

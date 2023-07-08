@@ -1,6 +1,6 @@
+import math
 import tkinter as tk
 from tkinter import messagebox
-import math
 
 e = None
 e2 = None
@@ -251,10 +251,7 @@ def equal():
             result = float(f_num) ** int(second_num)
             e.insert(0, result)
             e2.delete(0, len(e2.get()))
-            e2.insert(
-                0,
-                str(f_num) + " ^ " + str(second_num) + " = " + str(result)
-            )
+            e2.insert(0, str(f_num) + " ^ " + str(second_num) + " = " + str(result))
 
         if sign == "exp":
             result = math.exp(num)
@@ -284,10 +281,7 @@ def equal():
             result = f_num % int(second_num)
             e.insert(0, result)
             e2.delete(0, len(e2.get()))
-            e2.insert(
-                0,
-                str(f_num) + " % " + str(second_num) + " = " + str(result)
-            )
+            e2.insert(0, str(f_num) + " % " + str(second_num) + " = " + str(result))
 
         if sign == "sin_inv":
             result = math.degrees(math.asin(num))
@@ -343,116 +337,187 @@ def create_frame(mode):
 
     global e
     global e2
-    e2 = tk.Entry(
-        frame, font=("Helvetica", 9), width=40, borderwidth=2
-    )
+    e2 = tk.Entry(frame, font=("Helvetica", 9), width=40, borderwidth=2)
     e2.grid(row=0, column=0, columnspan=3, padx=10, pady=10, ipady=3)
 
-    e = tk.Entry(
-        frame, font=("Helvetica", 9, "bold"), width=40, borderwidth=5
-    )
+    e = tk.Entry(frame, font=("Helvetica", 9, "bold"), width=40, borderwidth=5)
     e.grid(row=1, column=0, columnspan=3, padx=10, pady=10, ipady=8)
 
     e.focus()
 
-    if mode == 'n':
+    if mode == "n":
         button_1 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="1", padx=35, pady=5, command=lambda: show(1)
+            text="1",
+            padx=35,
+            pady=5,
+            command=lambda: show(1),
         )
         button_2 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="2", padx=35, pady=5, command=lambda: show(2)
+            text="2",
+            padx=35,
+            pady=5,
+            command=lambda: show(2),
         )
         button_3 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="3", padx=35, pady=5, command=lambda: show(3)
+            text="3",
+            padx=35,
+            pady=5,
+            command=lambda: show(3),
         )
         button_4 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="4", padx=35, pady=5, command=lambda: show(4)
+            text="4",
+            padx=35,
+            pady=5,
+            command=lambda: show(4),
         )
         button_5 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="5", padx=35, pady=5, command=lambda: show(5)
+            text="5",
+            padx=35,
+            pady=5,
+            command=lambda: show(5),
         )
         button_6 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="6", padx=35, pady=5, command=lambda: show(6)
+            text="6",
+            padx=35,
+            pady=5,
+            command=lambda: show(6),
         )
         button_7 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="7", padx=35, pady=5, command=lambda: show(7)
+            text="7",
+            padx=35,
+            pady=5,
+            command=lambda: show(7),
         )
         button_8 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="8", padx=35, pady=5, command=lambda: show(8)
+            text="8",
+            padx=35,
+            pady=5,
+            command=lambda: show(8),
         )
         button_9 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="9", padx=35, pady=5, command=lambda: show(9)
+            text="9",
+            padx=35,
+            pady=5,
+            command=lambda: show(9),
         )
         button_0 = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="0", padx=35, pady=5, command=lambda: show(0)
+            text="0",
+            padx=35,
+            pady=5,
+            command=lambda: show(0),
         )
         button_del = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="<--", padx=31, pady=5, command=delete
+            text="<--",
+            padx=31,
+            pady=5,
+            command=delete,
         )
 
         button_add = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="+", padx=35, pady=5, command=addition
+            text="+",
+            padx=35,
+            pady=5,
+            command=addition,
         )
         button_clear = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="Clear", padx=77, pady=5, command=clear
+            text="Clear",
+            padx=77,
+            pady=5,
+            command=clear,
         )
         button_equal = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="=", padx=89, pady=5, command=equal
+            text="=",
+            padx=89,
+            pady=5,
+            command=equal,
         )
         button_dot = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text=".", padx=37, pady=5, command=lambda: show(".")
+            text=".",
+            padx=37,
+            pady=5,
+            command=lambda: show("."),
         )
 
         button_sqrt = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="sqrt", padx=27, pady=5, command=sqrt
+            text="sqrt",
+            padx=27,
+            pady=5,
+            command=sqrt,
         )
         button_sub = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="-", padx=37, pady=5, command=subtraction
+            text="-",
+            padx=37,
+            pady=5,
+            command=subtraction,
         )
         button_mul = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="*", padx=37, pady=5, command=multiplication
+            text="*",
+            padx=37,
+            pady=5,
+            command=multiplication,
         )
         button_div = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="/", padx=37, pady=5, command=division
+            text="/",
+            padx=37,
+            pady=5,
+            command=division,
         )
 
         button_1.grid(row=2, column=0, pady=5)
@@ -483,182 +548,283 @@ def create_frame(mode):
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="1", padx=35, pady=5, command=lambda: show(1)
+            text="1",
+            padx=35,
+            pady=5,
+            command=lambda: show(1),
         )
         button_2 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="2", padx=36, pady=5, command=lambda: show(2)
+            text="2",
+            padx=36,
+            pady=5,
+            command=lambda: show(2),
         )
         button_3 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="3", padx=35, pady=5, command=lambda: show(3)
+            text="3",
+            padx=35,
+            pady=5,
+            command=lambda: show(3),
         )
         button_4 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="4", padx=35, pady=5, command=lambda: show(4)
+            text="4",
+            padx=35,
+            pady=5,
+            command=lambda: show(4),
         )
         button_5 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="5", padx=36, pady=5, command=lambda: show(5)
+            text="5",
+            padx=36,
+            pady=5,
+            command=lambda: show(5),
         )
         button_6 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="6", padx=35, pady=5, command=lambda: show(6)
+            text="6",
+            padx=35,
+            pady=5,
+            command=lambda: show(6),
         )
         button_7 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="7", padx=35, pady=5, command=lambda: show(7)
+            text="7",
+            padx=35,
+            pady=5,
+            command=lambda: show(7),
         )
         button_8 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="8", padx=36, pady=5, command=lambda: show(8)
+            text="8",
+            padx=36,
+            pady=5,
+            command=lambda: show(8),
         )
         button_9 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="9", padx=35, pady=5, command=lambda: show(9)
+            text="9",
+            padx=35,
+            pady=5,
+            command=lambda: show(9),
         )
         button_0 = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="0", padx=35, pady=5, command=lambda: show(0)
+            text="0",
+            padx=35,
+            pady=5,
+            command=lambda: show(0),
         )
 
         button_add = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="+", padx=35, pady=5, command=addition)
+            text="+",
+            padx=35,
+            pady=5,
+            command=addition,
+        )
         button_clear = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="<--", padx=31, pady=5, command=delete)
+            text="<--",
+            padx=31,
+            pady=5,
+            command=delete,
+        )
         button_dot = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text=".", padx=37, pady=5, command=lambda: show("."))
+            text=".",
+            padx=37,
+            pady=5,
+            command=lambda: show("."),
+        )
         button_equal = tk.Button(
-            frame, background="light gray",
+            frame,
+            background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="=", padx=89, pady=5, command=equal)
+            text="=",
+            padx=89,
+            pady=5,
+            command=equal,
+        )
 
         button_sin = tk.Button(
             frame,
             background="light gray",
-            padx=29, pady=5,
-            font=("Helvetica", 9, "bold"), text="sin", command=sin
+            padx=29,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="sin",
+            command=sin,
         )
         button_cos = tk.Button(
             frame,
             background="light gray",
-            padx=30, pady=5,
-            font=("Helvetica", 9, "bold"), text="cos", command=cos
+            padx=30,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="cos",
+            command=cos,
         )
         button_tan = tk.Button(
             frame,
             background="light gray",
-            padx=31, pady=5,
-            font=("Helvetica", 9, "bold"), text="tan", command=tan
+            padx=31,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="tan",
+            command=tan,
         )
         button_cot = tk.Button(
             frame,
             background="light gray",
-            padx=20, pady=5,
-            font=("Helvetica", 9, "bold"), text="sin^-1", command=sin_inv
+            padx=20,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="sin^-1",
+            command=sin_inv,
         )
         button_cosec = tk.Button(
             frame,
             background="light gray",
-            padx=21, pady=5,
-            font=("Helvetica", 9, "bold"), text="cos^-1", command=cos_inv
+            padx=21,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="cos^-1",
+            command=cos_inv,
         )
         button_sec = tk.Button(
             frame,
             background="light gray",
-            padx=22, pady=5,
-            font=("Helvetica", 9, "bold"), text="tan^-1", command=tan_inv
+            padx=22,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="tan^-1",
+            command=tan_inv,
         )
         button_fact = tk.Button(
             frame,
             background="light gray",
-            padx=35, pady=5,
-            font=("Helvetica", 9, "bold"), text="X!", command=fact
+            padx=35,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="X!",
+            command=fact,
         )
         button_sqrt = tk.Button(
             frame,
             background="light gray",
-            padx=26, pady=5,
-            font=("Helvetica", 9, "bold"), text="sqrt", command=sqrt
+            padx=26,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="sqrt",
+            command=sqrt,
         )
         button_exp = tk.Button(
             frame,
             background="light gray",
-            padx=30, pady=5,
-            font=("Helvetica", 9, "bold"), text="exp", command=exp
+            padx=30,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="exp",
+            command=exp,
         )
         button_cube = tk.Button(
             frame,
             background="light gray",
-            padx=27, pady=5,
-            font=("Helvetica", 9, "bold"), text="X^3", command=cube
+            padx=27,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="X^3",
+            command=cube,
         )
         button_n_pow = tk.Button(
             frame,
             background="light gray",
-            padx=30, pady=5,
-            font=("Helvetica", 9, "bold"), text="X^n", command=n_pow
+            padx=30,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="X^n",
+            command=n_pow,
         )
         button_inv = tk.Button(
             frame,
             background="light gray",
-            padx=27, pady=5,
-            font=("Helvetica", 9, "bold"), text="X^-1", command=inv
+            padx=27,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="X^-1",
+            command=inv,
         )
         button_rem = tk.Button(
             frame,
             background="light gray",
-            padx=26, pady=5,
-            font=("Helvetica", 9, "bold"), text="X%n", command=rem
+            padx=26,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="X%n",
+            command=rem,
         )
         button_e = tk.Button(
             frame,
             background="light gray",
-            padx=78, pady=5,
-            font=("Helvetica", 9, "bold"), text="Clear", command=clear
+            padx=78,
+            pady=5,
+            font=("Helvetica", 9, "bold"),
+            text="Clear",
+            command=clear,
         )
 
         button_sub = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="-", padx=37, pady=5, command=subtraction
+            text="-",
+            padx=37,
+            pady=5,
+            command=subtraction,
         )
         button_mul = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="*", padx=37, pady=5, command=multiplication
+            text="*",
+            padx=37,
+            pady=5,
+            command=multiplication,
         )
         button_div = tk.Button(
             frame,
             background="light gray",
             font=("Helvetica", 9, "bold"),
-            text="/", padx=37, pady=5, command=division
+            text="/",
+            padx=37,
+            pady=5,
+            command=division,
         )
 
         button_1.grid(row=7, column=0, pady=5)
@@ -715,24 +881,25 @@ if __name__ == "__main__":
         background="light gray",
         variable=mode,
         font=("Helvetica", 9, "bold"),
-        text="Scientific", value="s"
-    ).grid(
-        row=0, column=0, padx=5, pady=5, ipadx=10
-    )
+        text="Scientific",
+        value="s",
+    ).grid(row=0, column=0, padx=5, pady=5, ipadx=10)
     tk.Radiobutton(
         root,
         background="light gray",
         variable=mode,
         font=("Helvetica", 9, "bold"),
-        text="Simple", value="n"
-    ).grid(
-        row=0, column=1, padx=5, pady=5, ipadx=10
-    )
+        text="Simple",
+        value="n",
+    ).grid(row=0, column=1, padx=5, pady=5, ipadx=10)
 
     choose_btn = tk.Button(
-        root, background="light gray",
-        width=10, font=("Helvetica", 9, "bold"),
-        text="Select", command=lambda: create_frame(mode.get())
+        root,
+        background="light gray",
+        width=10,
+        font=("Helvetica", 9, "bold"),
+        text="Select",
+        command=lambda: create_frame(mode.get()),
     )
     choose_btn.grid(row=0, column=2, padx=5, pady=5)
     root.mainloop()

@@ -1,18 +1,29 @@
 # Made by Maxim Iliouchenko (https://github.com/maxily1)
 
 # Importing Libraries
-import instaloader
 import argparse
+
+import instaloader
 
 # Get instance
 L = instaloader.Instaloader()
 
 # Creating an argument parser
-parser = argparse.ArgumentParser(description='Process log-in data')
+parser = argparse.ArgumentParser(description="Process log-in data")
 
 # Adding arguments
-parser.add_argument('-u', type=str, required=True, help="Enter a username which will be used in the app.")
-parser.add_argument('-p', type=str, required=True, help="Enter a password which will be used in the app.")
+parser.add_argument(
+    "-u",
+    type=str,
+    required=True,
+    help="Enter a username which will be used in the app.",
+)
+parser.add_argument(
+    "-p",
+    type=str,
+    required=True,
+    help="Enter a password which will be used in the app.",
+)
 
 # Parsing the args
 args = parser.parse_args()
@@ -47,7 +58,9 @@ for following in following_list:
 
 print(not_following_back)
 
-choice = input("Would you like to save the people who don't follow you as a file? (y/n): ")
+choice = input(
+    "Would you like to save the people who don't follow you as a file? (y/n): "
+)
 if choice == "y":
     f = open("dont_follow_back.txt", "w")
     for person in not_following_back:

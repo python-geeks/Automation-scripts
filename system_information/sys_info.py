@@ -1,6 +1,7 @@
-import psutil
 import platform
 from datetime import datetime
+
+import psutil
 
 print("+----------------------+")
 print("|  System Information  |")

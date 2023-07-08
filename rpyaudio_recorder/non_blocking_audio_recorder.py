@@ -1,11 +1,12 @@
-from recorder import Recorder  # custom recorder script
-from gpiozero import Button  # for button interface
-from datetime import datetime
-import signal    # Using this library to catch keyboard interrupts
 import os
+import signal  # Using this library to catch keyboard interrupts
 import sys
+from datetime import datetime
 
-ROOT_PATH = os.path.realpath(os.path.join(__file__, '..'))
+from gpiozero import Button  # for button interface
+from recorder import Recorder  # custom recorder script
+
+ROOT_PATH = os.path.realpath(os.path.join(__file__, ".."))
 
 
 def signal_handler(signal, frame):
@@ -16,7 +17,7 @@ def signal_handler(signal, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 
-class ButtonRecorder():
+class ButtonRecorder:
     def __init__(self):
         """
         Initialize button and recorder
@@ -72,7 +73,7 @@ class ButtonRecorder():
         print("In recordTag")
         self.button.when_released = self.released
         print("Saving with timestamp audio recording to loaction : {}".format(name))
-        self.recfile = self.recorderHandler.open(name, 'wb')
+        self.recfile = self.recorderHandler.open(name, "wb")
         self.recfile.start_recording()
         print("Recording Started")
 

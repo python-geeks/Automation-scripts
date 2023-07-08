@@ -1,9 +1,10 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
 
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
 name = ["Bot"]
-driver = webdriver.Chrome(executable_path='chromedriver.exe')
+driver = webdriver.Chrome(executable_path="chromedriver.exe")
 driver.get("https:// web.whatsapp.com/ ")
 bot = "Hi"
 time.sleep(8)

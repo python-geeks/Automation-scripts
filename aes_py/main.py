@@ -1,10 +1,12 @@
 import argparse
 from getpass import getpass
+
 import aes_tool
 
-
-parser = argparse.ArgumentParser(description="Aes \
- encryption and decryption command")
+parser = argparse.ArgumentParser(
+    description="Aes \
+ encryption and decryption command"
+)
 
 parser.add_argument("--text", help=argparse.SUPPRESS)
 parser.add_argument(

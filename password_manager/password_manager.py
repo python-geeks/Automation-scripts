@@ -9,15 +9,16 @@ based on https://github.com/python-geeks/Automation-scripts/issues/111
 """
 
 import argparse
-import sys
-import os
-import sqlite3
 import base64
+import os
 import signal
+import sqlite3
+import sys
 from getpass import getpass
+
+from Crypto import Random
 from Crypto.Cipher import AES
 from Crypto.Hash import SHA256
-from Crypto import Random
 
 # The program data file.
 FILENAME = ".pass.db"
@@ -41,7 +42,7 @@ def main():
         print(f"[{RED_COLOR}-{NO_COLOR}] Error in database connection...")
         sys.exit(1)
 
-    if args.password == '' or args.password is None:
+    if args.password == "" or args.password is None:
 
         # User didn't enter the password (argument)
         if is_first:
@@ -55,7 +56,7 @@ def main():
                 print(f"[{RED_COLOR}-{NO_COLOR}] Didn't match...")
                 sys.exit(1)
 
-            if new(user_password, COOKIE, '-', 0) != 0:
+            if new(user_password, COOKIE, "-", 0) != 0:
                 # ERROR (Cookie didn't set)
                 print(f"[{RED_COLOR}-{NO_COLOR}] Error in saving...")
                 os.remove(FILENAME)
@@ -125,13 +126,11 @@ def check_password(user_password):
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
             # Fetches the cookie (canary) value
-            row = cursor.execute(
-                "SELECT * FROM passwords WHERE id=0;"
-            ).fetchone()
+            row = cursor.execute("SELECT * FROM passwords WHERE id=0;").fetchone()
 
-            bin_user_password = str(user_password).encode('utf-8')
+            bin_user_password = str(user_password).encode("utf-8")
 
-            if decrypt(bin_user_password, row[1]).decode('utf-8') == COOKIE:
+            if decrypt(bin_user_password, row[1]).decode("utf-8") == COOKIE:
                 # The password is correct
                 # because it can decrypt the encrypted cookie value
                 return 0
@@ -157,7 +156,7 @@ def prompt(user_password):
         print("\nBye...")
         sys.exit(0)
 
-    if cmd.lower() == 'new':
+    if cmd.lower() == "new":
 
         name = input("Where did you use this password for> ")
         password = input("Enter the new password to save> ")
@@ -171,17 +170,15 @@ def prompt(user_password):
         else:
 
             # ERROR
-            print(
-                f"[{RED_COLOR}-{NO_COLOR}] Error while writing the password..."
-            )
+            print(f"[{RED_COLOR}-{NO_COLOR}] Error while writing the password...")
             prompt(user_password)
 
-    elif cmd.lower() == 'delete':
+    elif cmd.lower() == "delete":
 
         id_num = input("Which id? > ")
         confirm = input("Are you sure [Y/n]> ")
 
-        if confirm.lower() == 'y':
+        if confirm.lower() == "y":
 
             if delete(id_num) == 0:
                 # Row deleted
@@ -192,7 +189,7 @@ def prompt(user_password):
 
         prompt(user_password)
 
-    elif cmd.lower() == 'show':
+    elif cmd.lower() == "show":
 
         result = select_data(user_password)
 
@@ -204,7 +201,7 @@ def prompt(user_password):
 
         prompt(user_password)
 
-    elif cmd.lower() == 'exit':
+    elif cmd.lower() == "exit":
 
         print("Bye...")
         sys.exit(0)
@@ -242,14 +239,14 @@ def new(user_password, name, password, id_num=-1):
                         );""",
                     [
                         encrypt(
-                            str(user_password).encode('utf-8'),
-                            str(name).encode('utf-8')
+                            str(user_password).encode("utf-8"),
+                            str(name).encode("utf-8"),
                         ),
                         encrypt(
-                            str(user_password).encode('utf-8'),
-                            str(password).encode('utf-8')
-                        )
-                    ]
+                            str(user_password).encode("utf-8"),
+                            str(password).encode("utf-8"),
+                        ),
+                    ],
                 )
 
             else:
@@ -262,14 +259,14 @@ def new(user_password, name, password, id_num=-1):
                     [
                         id_num,
                         encrypt(
-                            str(user_password).encode('utf-8'),
-                            str(name).encode('utf-8')
+                            str(user_password).encode("utf-8"),
+                            str(name).encode("utf-8"),
                         ),
                         encrypt(
-                            str(user_password).encode('utf-8'),
-                            str(password).encode('utf-8')
-                        )
-                    ]
+                            str(user_password).encode("utf-8"),
+                            str(password).encode("utf-8"),
+                        ),
+                    ],
                 )
 
         return 0
@@ -289,8 +286,7 @@ def delete(id_num):
         with sqlite3.connect(FILENAME) as conn:
             cursor = conn.cursor()
             cursor.execute(
-                "DELETE FROM passwords WHERE id = ? AND name != ?;",
-                [id_num, COOKIE]
+                "DELETE FROM passwords WHERE id = ? AND name != ?;", [id_num, COOKIE]
             )
 
         return 0
@@ -319,12 +315,12 @@ def select_data(user_password):
                 result.append(
                     (
                         id_num,
-                        decrypt(
-                            str(user_password).encode('utf-8'), name
-                        ).decode('utf-8'),
-                        decrypt(
-                            str(user_password).encode('utf-8'), password
-                        ).decode('utf-8')
+                        decrypt(str(user_password).encode("utf-8"), name).decode(
+                            "utf-8"
+                        ),
+                        decrypt(str(user_password).encode("utf-8"), password).decode(
+                            "utf-8"
+                        ),
                     )
                 )
 
@@ -386,11 +382,11 @@ def decrypt(key, source, decode=True):
     key = SHA256.new(key).digest()
 
     # extract the IV from the beginning
-    IV = source[:AES.block_size]
+    IV = source[: AES.block_size]
     decryptor = AES.new(key, AES.MODE_CBC, IV)
 
     # decrypt
-    data = decryptor.decrypt(source[AES.block_size:])
+    data = decryptor.decrypt(source[AES.block_size :])
 
     # pick the padding value from the end; Python 2.x: ord(data[-1])
     padding = data[-1]
@@ -409,18 +405,18 @@ def exit_program(sig, frame):
     sys.exit(0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     global args  # The program arguments
 
     parser = argparse.ArgumentParser(description="Password Manager CLI")
     # -p | --password PASSWORD
     parser.add_argument(
-        '-p',
-        '--password',
-        metavar='password',
+        "-p",
+        "--password",
+        metavar="password",
         type=str,
-        default='',
-        help='the program password'
+        default="",
+        help="the program password",
     )
     args = parser.parse_args()
 

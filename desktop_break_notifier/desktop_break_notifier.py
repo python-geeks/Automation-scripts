@@ -1,12 +1,13 @@
-from plyer import notification
-from time import sleep
 import argparse
+from time import sleep
+
+from plyer import notification
 
 
 # the main function
 def main(args: argparse.Namespace) -> None:
     # creating a title
-    title = 'Time for a break!'
+    title = "Time for a break!"
 
     # fetching the message
     message = args.message
@@ -17,7 +18,7 @@ def main(args: argparse.Namespace) -> None:
     # if delay is less than 60 then set the delay to 60 and inform the user
     if delay < 1:
         delay = 1
-        print('Warning: Set delay = 1 minute(s) as passed delay < 1 minute(s)')
+        print("Warning: Set delay = 1 minute(s) as passed delay < 1 minute(s)")
 
     # loop to show the messages as long as the user doesn't explicitly stop the script
     while True:
@@ -31,26 +32,28 @@ def main(args: argparse.Namespace) -> None:
         )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # instantiating argparse
     parser = argparse.ArgumentParser()
 
     # adding argument for delay seconds
     parser.add_argument(
-        '-d', '--delay',
-        metavar='',
-        help='Specify delay time in minutes. [DEFAULT=20]',
+        "-d",
+        "--delay",
+        metavar="",
+        help="Specify delay time in minutes. [DEFAULT=20]",
         type=int,
-        default=20
+        default=20,
     )
 
     # adding argument for custom message
     parser.add_argument(
-        '-m', '--message',
-        metavar='',
-        help='Specify a message for the notification',
+        "-m",
+        "--message",
+        metavar="",
+        help="Specify a message for the notification",
         type=str,
-        default='You have been working continuously. Consider taking a break.'
+        default="You have been working continuously. Consider taking a break.",
     )
 
     # parsing the args

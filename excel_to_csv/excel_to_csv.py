@@ -1,10 +1,11 @@
-import openpyxl
 import csv
+
+import openpyxl
 
 print("Enter Path of your Excel file")
 xls_file = input()
-csv_file = 'mycsvfile.csv'
-mode = 'w'
+csv_file = "mycsvfile.csv"
+mode = "w"
 
 wb = openpyxl.load_workbook(xls_file)
 sh = wb.active

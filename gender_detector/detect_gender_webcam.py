@@ -1,14 +1,20 @@
-from keras.preprocessing.image import img_to_array
-from keras.models import load_model
 import os
-from keras.utils import get_file
-import numpy as np
+
 import cv2
 import cvlib as cv
+import numpy as np
+from keras.models import load_model
+from keras.preprocessing.image import img_to_array
+from keras.utils import get_file
 
 # load model
 dwnld_link = "https://github.com/arunponnusamy/cvlib/releases/download/v0.2.0/gender_detection.model"
-model_path = get_file("gender_detection.model", dwnld_link, cache_subdir="pre-trained", cache_dir=os.getcwd())
+model_path = get_file(
+    "gender_detection.model",
+    dwnld_link,
+    cache_subdir="pre-trained",
+    cache_dir=os.getcwd(),
+)
 
 model = load_model(model_path)
 # open_webcam
@@ -18,7 +24,7 @@ if not webcam.isOpened():
     print("Could not open webcam")
     exit()
 
-classes = ['man' , 'woman']
+classes = ["man", "woman"]
 
 # loop through frames
 while webcam.isOpened():
@@ -66,11 +72,13 @@ while webcam.isOpened():
         label = "{}: {:.2f}%".format(label, conf[idx] * 100)
         Y = startY - 10 if startY - 10 > 10 else startY + 10
         # write label and confidence above face rectangle
-        cv2.putText(frame, label, (startX, Y), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+        cv2.putText(
+            frame, label, (startX, Y), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2
+        )
     # display output
     cv2.imshow("gender detection", frame)
     # press "Q" to stop
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 # release resources
 webcam.release()

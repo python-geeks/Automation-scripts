@@ -1,16 +1,16 @@
-import speech_recognition as sr
-import winsound
 import datetime
-import pyttsx3
+import winsound
 
+import pyttsx3
+import speech_recognition as sr
 
 engine = pyttsx3.init()
 
 
 def speech(audio):
-    engine.setProperty('rate', 200)
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[0].id)
+    engine.setProperty("rate", 200)
+    voices = engine.getProperty("voices")
+    engine.setProperty("voice", voices[0].id)
     engine.say(audio)
     engine.runAndWait()
 
@@ -28,7 +28,7 @@ def takeCommand():
     try:
         print("Recognizing...")
         print()
-        query = r.recognize_google(audio, language='en-in')
+        query = r.recognize_google(audio, language="en-in")
         print(f"you said: {query}\n")
 
     except Exception as e:
@@ -52,9 +52,12 @@ def alarm(Timing):
     print(f"Done, alarm is set for {Timing}")
 
     while True:
-        if Horeal == datetime.datetime.now().hour and Mireal == datetime.datetime.now().minute:
+        if (
+            Horeal == datetime.datetime.now().hour
+            and Mireal == datetime.datetime.now().minute
+        ):
             print("alarm is running please exit the program")
-            winsound.PlaySound('abc', winsound.SND_LOOP)
+            winsound.PlaySound("abc", winsound.SND_LOOP)
 
         elif Mireal < datetime.datetime.now().minute:
             break

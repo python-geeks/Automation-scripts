@@ -1,6 +1,7 @@
-import pandas as pd
-import sys
 import os
+import sys
+
+import pandas as pd
 
 args = sys.argv[1:]  # get command line *args
 assert args, "No file/dir was provided"  # raise error is no arg is passed
