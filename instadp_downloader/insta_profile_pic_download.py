@@ -18,10 +18,10 @@ s = BeautifulSoup(r.text, "html.parser")
 # finding the image in the url
 # using html parser
 u = s.find("meta", property="og:image")
-url = u.attrs['content']
+url = u.attrs["content"]
 
 # saving the image the folder
 # where this file is saved
-with open(username + '.jpg', 'wb') as pic:
+with open(username + ".jpg", "wb") as pic:
     binary = requests.get(url).content
     pic.write(binary)

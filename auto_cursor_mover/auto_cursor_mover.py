@@ -1,5 +1,6 @@
-import pyautogui
 import time
+
+import pyautogui
 
 while True:
     pyautogui.moveRel(0, 8)

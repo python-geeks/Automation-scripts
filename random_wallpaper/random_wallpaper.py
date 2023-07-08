@@ -1,6 +1,6 @@
 import ctypes
-import random
 import os
+import random
 
 PATH = "C:\\Users\\your\\path\\to\\wallpaper"
 SPI_SETDESKWALLPAPER = 20  # 0x0014
@@ -11,8 +11,5 @@ pic = random.choice(os.listdir(PATH))
 new_wallpaper = PATH + "\\" + pic
 
 ctypes.windll.user32.SystemParametersInfoW(
-    SPI_SETDESKWALLPAPER,
-    0,
-    new_wallpaper,
-    SPIF_SENDCHANGE
+    SPI_SETDESKWALLPAPER, 0, new_wallpaper, SPIF_SENDCHANGE
 )

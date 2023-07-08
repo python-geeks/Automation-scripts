@@ -4,7 +4,7 @@ from pynput.keyboard import Key, Listener
 #  ======== Controls ========
 start_or_pause_key = Key.f1
 exit_key = Key.esc
-delay = 1   # seconds
+delay = 1  # seconds
 
 # ==== global variables ====
 pause = True

@@ -7,12 +7,13 @@ import os
 import subprocess
 import sys
 from pathlib import Path
-import pandas as pd
 
-from solver import solver, metrics_dict, models_dict
+import pandas as pd
 from constants import Constants
+from solver import metrics_dict, models_dict, solver
 
 logger = logging.getLogger(__name__)
+
 
 class CLI:
 
@@ -217,9 +218,7 @@ Note: You can run the commands without providing additional arguments, in that c
             )
             d["model_type"] = model_type
             model_name = (
-                input(
-                    f"enter algorithm you want to use: [NeuralNetwork]        "
-                )
+                input(f"enter algorithm you want to use: [NeuralNetwork]        ")
                 or "NeuralNetwork"
             )
             d["model_name"] = model_name
@@ -253,9 +252,7 @@ Note: You can run the commands without providing additional arguments, in that c
         self.dict_args["data_path"] = data_path
         if yaml_needed:
             yaml_path = (
-                input(
-                    f"enter path to your yaml file: [{default_yaml_path}]        "
-                )
+                input(f"enter path to your yaml file: [{default_yaml_path}]        ")
                 or default_yaml_path
             )
             self.dict_args["yaml_path"] = yaml_path
@@ -378,9 +375,7 @@ Note: You can run the commands without providing additional arguments, in that c
         """
         print(f"\nML_solver's supported metrics overview: \n")
         reg_metrics = [func.__name__ for func in metrics_dict.get("regression")]
-        clf_metrics = [
-            func.__name__ for func in metrics_dict.get("classification")
-        ]
+        clf_metrics = [func.__name__ for func in metrics_dict.get("classification")]
 
         df_metrics = (
             pd.DataFrame.from_dict(
@@ -417,27 +412,19 @@ Note: You can run the commands without providing additional arguments, in that c
                 f"Therefore, you will need to provide few information before proceeding.\n"
             )
             train_data_path = (
-                input(
-                    f"enter path to your data: [{default_train_data_path}]        "
-                )
+                input(f"enter path to your data: [{default_train_data_path}]        ")
                 or default_train_data_path
             )
             eval_data_path = (
-                input(
-                    f"enter path to your data: [{default_eval_data_path}]        "
-                )
+                input(f"enter path to your data: [{default_eval_data_path}]        ")
                 or default_eval_data_path
             )
             test_data_path = (
-                input(
-                    f"enter path to your data: [{default_test_data_path}]        "
-                )
+                input(f"enter path to your data: [{default_test_data_path}]        ")
                 or default_test_data_path
             )
             yaml_path = (
-                input(
-                    f"enter path to your yaml file: [{default_yaml_path}]        "
-                )
+                input(f"enter path to your yaml file: [{default_yaml_path}]        ")
                 or default_yaml_path
             )
 
@@ -471,8 +458,6 @@ Note: You can run the commands without providing additional arguments, in that c
         solver(**eval_args)
         solver(**pred_args)
 
-
-
     def _tableize(self, df):
         """
         pretty-print a dataframe as table
@@ -482,9 +467,7 @@ Note: You can run the commands without providing additional arguments, in that c
         df_columns = df.columns.tolist()
         max_len_in_lst = lambda lst: len(sorted(lst, reverse=True, key=len)[0])
         align_center = (
-            lambda st, sz: "{0}{1}{0}".format(
-                " " * (1 + (sz - len(st)) // 2), st
-            )[:sz]
+            lambda st, sz: "{0}{1}{0}".format(" " * (1 + (sz - len(st)) // 2), st)[:sz]
             if len(st) < sz
             else st
         )
@@ -502,14 +485,11 @@ Note: You can run the commands without providing additional arguments, in that c
             col: 2 + max(max_val_len_for_col.get(col, 0), max_col_len)
             for col in df_columns
         }
-        build_hline = lambda row: "+".join(
-            ["-" * col_sizes[col] for col in row]
-        ).join(["+", "+"])
+        build_hline = lambda row: "+".join(["-" * col_sizes[col] for col in row]).join(
+            ["+", "+"]
+        )
         build_data = lambda row, align: "|".join(
-            [
-                align(str(val), col_sizes[df_columns[idx]])
-                for idx, val in enumerate(row)
-            ]
+            [align(str(val), col_sizes[df_columns[idx]]) for idx, val in enumerate(row)]
         ).join(["|", "|"])
         hline = build_hline(df_columns)
         out = [hline, build_data(df_columns, align_center), hline]
@@ -517,7 +497,6 @@ Note: You can run the commands without providing additional arguments, in that c
             out.append(build_data(row.tolist(), align_right))
         out.append(hline)
         return "\n".join(out)
-
 
     def info(self):
         print(
@@ -535,6 +514,7 @@ Note: You can run the commands without providing additional arguments, in that c
 
 def main():
     CLI()
+
 
 if __name__ == "__main__":
     main()

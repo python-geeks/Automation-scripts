@@ -1,5 +1,5 @@
-import webbrowser
 import time
+import webbrowser
 
 total_breaks = int(3)
 break_count = int(0)

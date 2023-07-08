@@ -73,9 +73,7 @@ def load_trained_model(f: str = ""):
     try:
         if not f:
             logger.info(f"result path: {configs.get('results_path')} ")
-            logger.info(
-                f"loading model form {configs.get('default_model_path')} "
-            )
+            logger.info(f"loading model form {configs.get('default_model_path')} ")
             with open(configs.get("default_model_path"), "rb") as _model:
                 model = joblib.load(_model)
         else:

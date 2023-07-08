@@ -1,6 +1,7 @@
-from tkinter import Label, StringVar, Button, END, Entry, Tk
-from geopy.geocoders import ArcGIS
+from tkinter import END, Button, Entry, Label, StringVar, Tk
+
 import clipboard
+from geopy.geocoders import ArcGIS
 
 
 def f():

@@ -1,11 +1,13 @@
-import cv2
-
-from imutils import paths
 import argparse
+
+import cv2
+from imutils import paths
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--path", required=True, help="path to input directory")
-ap.add_argument("-o", "--output_video", type=str, required=True, help="output video name")
+ap.add_argument(
+    "-o", "--output_video", type=str, required=True, help="output video name"
+)
 args = vars(ap.parse_args())
 
 out = None
@@ -23,7 +25,9 @@ for filename in imagePaths:
     img_array.append(img)
 
 if out is None:
-    out = cv2.VideoWriter(args["output_video"], cv2.VideoWriter_fourcc(*'DIVX'), 1, (w, h), True)
+    out = cv2.VideoWriter(
+        args["output_video"], cv2.VideoWriter_fourcc(*"DIVX"), 1, (w, h), True
+    )
 
 for i in range(len(img_array)):
     out.write(img_array[i])

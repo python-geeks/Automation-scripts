@@ -1,5 +1,6 @@
 # Importing necessary modules
 import sys
+
 from youtube_transcript_api import YouTubeTranscriptApi
 
 if len(sys.argv) != 2:

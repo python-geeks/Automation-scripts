@@ -1,7 +1,8 @@
-import speedtest
-import subprocess
 import platform
 import re
+import subprocess
+
+import speedtest
 
 
 def ping_google():
@@ -9,8 +10,7 @@ def ping_google():
         system = platform.system().lower()
         option = "n" if system == "windows" else "c"
         res = subprocess.check_output(
-            f"ping -{option} 10 google.com",
-            shell=True, universal_newlines=True
+            f"ping -{option} 10 google.com", shell=True, universal_newlines=True
         )
         if "unreachable" in res:
             return False

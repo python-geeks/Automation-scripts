@@ -2,21 +2,21 @@ import argparse
 import os
 
 import cv2
-
-from keras.applications.vgg16 import VGG16, preprocess_input
-
 import numpy as np
-
+from keras.applications.vgg16 import VGG16, preprocess_input
 from sklearn.cluster import KMeans
-
 from tensorflow.keras.models import Model
 
-
-parser = argparse.ArgumentParser(description='Summarize the given text')
-parser.add_argument('-p', '--path', help="Path to the directory", type=str)
-parser.add_argument('-c', '--cluster', help="Number of cluster", type=int)
-parser.add_argument('-o', '--output', help="output location (default: OUTPUT)",
-                    type=str, default="./OUTPUT/")
+parser = argparse.ArgumentParser(description="Summarize the given text")
+parser.add_argument("-p", "--path", help="Path to the directory", type=str)
+parser.add_argument("-c", "--cluster", help="Number of cluster", type=int)
+parser.add_argument(
+    "-o",
+    "--output",
+    help="output location (default: OUTPUT)",
+    type=str,
+    default="./OUTPUT/",
+)
 args = parser.parse_args()
 
 if not (args.path):
@@ -30,9 +30,8 @@ OUTPUT = args.output
 
 
 def get_model():
-    base_model = VGG16(weights='imagenet', include_top=True)
-    model = Model(inputs=base_model.input,
-                  outputs=base_model.layers[-2].output)
+    base_model = VGG16(weights="imagenet", include_top=True)
+    model = Model(inputs=base_model.input, outputs=base_model.layers[-2].output)
     return model
 
 
@@ -62,7 +61,7 @@ def feature_vectors(imgs_dict, model):
 
 def clustering(img_feature_vector):
     images = list(img_feature_vector.values())
-    kmeans = KMeans(n_clusters=CLUSTER, init='k-means++')
+    kmeans = KMeans(n_clusters=CLUSTER, init="k-means++")
     kmeans.fit(images)
     y_kmeans = kmeans.predict(images)
     file_names = list(imgs_dict.keys())
@@ -73,17 +72,17 @@ def separate(y_kmeans, file_names):
     n_clusters = CLUSTER
     cluster_path = OUTPUT
     path_to_files = PATH_TO_FILES
-    if (not os.path.exists(cluster_path)):
+    if not os.path.exists(cluster_path):
         os.mkdir(cluster_path)
     for c in range(0, n_clusters):
-        if not os.path.exists(cluster_path + 'cluster_' + str(c)):
-            os.mkdir(cluster_path + 'cluster_' + str(c))
+        if not os.path.exists(cluster_path + "cluster_" + str(c)):
+            os.mkdir(cluster_path + "cluster_" + str(c))
     for fn, cluster in zip(file_names, y_kmeans):
         image = cv2.imread(os.path.join(path_to_files, fn))
-        cv2.imwrite(cluster_path + 'cluster_' + str(cluster) + '/' + fn, image)
+        cv2.imwrite(cluster_path + "cluster_" + str(cluster) + "/" + fn, image)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     imgs_dict = get_files(path_to_files=PATH_TO_FILES, size=(224, 224))
     model = get_model()

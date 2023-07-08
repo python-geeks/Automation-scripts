@@ -1,8 +1,9 @@
 import random
 import string
+
 import progressbar
 
-''' Ask user for total number of emails required'''
+""" Ask user for total number of emails required"""
 
 
 def getcount():
@@ -15,21 +16,30 @@ def getcount():
         return getcount()
 
 
-'''Below function creates a random length of email
+"""Below function creates a random length of email
 between 1-20 characters length and adds domain and
 extension to give the resulting
-email'''
+email"""
 
 
 def make_email():
-    extensions = ['com', 'net', 'org', 'gov']
-    domains = ['gmail', 'yahoo', 'comcast', 'verizon', 'charter',
-               'hotmail', 'outlook', 'frontier']
+    extensions = ["com", "net", "org", "gov"]
+    domains = [
+        "gmail",
+        "yahoo",
+        "comcast",
+        "verizon",
+        "charter",
+        "hotmail",
+        "outlook",
+        "frontier",
+    ]
     finalext = extensions[random.randint(0, len(extensions) - 1)]
     finaldom = domains[random.randint(0, len(domains) - 1)]
     accountlen = random.randint(1, 20)
-    finalacc = ''.join(random.choice(string.ascii_lowercase + string.digits)
-                       for _ in range(accountlen))
+    finalacc = "".join(
+        random.choice(string.ascii_lowercase + string.digits) for _ in range(accountlen)
+    )
     finale = finalacc + "@" + finaldom + "." + finalext
     return finale
 

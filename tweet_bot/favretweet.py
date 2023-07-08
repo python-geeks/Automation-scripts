@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-import tweepy
 import logging
-from config import create_api
 
+import tweepy
+from config import create_api
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()

@@ -1,19 +1,19 @@
-import os
-import playsound
-from time import sleep
 import multiprocessing
+import os
+from time import sleep
+
+import playsound
 
 
 def remind():
     while True:
         sleep(20 * 60)
         os.popen('osascript -e "set Volume 6"')
-        p = multiprocessing.Process(
-            target=playsound.playsound, args=("danger.mp3",))
+        p = multiprocessing.Process(target=playsound.playsound, args=("danger.mp3",))
         p.start()
-        inp = input('Dismiss? y|n')
+        inp = input("Dismiss? y|n")
 
-        if inp == 'y':
+        if inp == "y":
             print("yes")
             p.terminate()
             continue

@@ -1,6 +1,6 @@
-from sympy.core.sympify import kernS
 import PySimpleGUIQt as sg
 import sympy as sy
+from sympy.core.sympify import kernS
 
 
 class AlgebraSolver:
@@ -27,8 +27,9 @@ class AlgebraSolver:
         return sy.solveset(sy.Eq(sy_exp, req))
 
     def render(self):
-        window = sg.Window("Algebra Solver", resizable=True,
-                           size=(800, 100)).Layout(self.layout)
+        window = sg.Window("Algebra Solver", resizable=True, size=(800, 100)).Layout(
+            self.layout
+        )
 
         while True:
             event, values = window.Read()

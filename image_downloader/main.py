@@ -1,7 +1,8 @@
+import os
+from io import BytesIO
+
 import requests
 from PIL import Image
-from io import BytesIO
-import os
 
 download_path = os.path.dirname(os.path.abspath(__file__))
 count = 1

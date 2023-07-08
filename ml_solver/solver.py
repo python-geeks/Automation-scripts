@@ -4,6 +4,7 @@ import json
 import logging
 import os
 import warnings
+
 import joblib
 import numpy as np
 import pandas as pd
@@ -12,20 +13,10 @@ try:
     from configs import configs
     from data import evaluate_model, metrics_dict, models_dict
     from hyperparams import hyperparameter_search
-    from preprocessing import (
-        encode,
-        handle_missing_values,
-        normalize,
-        read_data_to_df,
-        update_dataset_props,
-    )
-    from utils import (
-        _reshape,
-        create_yaml,
-        extract_params,
-        read_json,
-        read_yaml,
-    )
+    from preprocessing import (encode, handle_missing_values, normalize,
+                               read_data_to_df, update_dataset_props)
+    from utils import (_reshape, create_yaml, extract_params, read_json,
+                       read_yaml)
 except ImportError:
     from utils import (
         read_yaml,
@@ -68,12 +59,8 @@ class solver:
     description_file = configs.get(
         "description_file"
     )  # path to the description.json file
-    evaluation_file = configs.get(
-        "evaluation_file"
-    )  # path to the evaluation.json file
-    prediction_file = configs.get(
-        "prediction_file"
-    )  # path to the predictions.csv
+    evaluation_file = configs.get("evaluation_file")  # path to the evaluation.json file
+    prediction_file = configs.get("prediction_file")  # path to the predictions.csv
     default_dataset_props = configs.get(
         "dataset_props"
     )  # dataset props that can be changed from the yaml file
@@ -86,9 +73,7 @@ class solver:
     def __init__(self, **cli_args):
         logger.info(f"Entered CLI args: {cli_args}")
         logger.info(f"Executing command: {cli_args.get('cmd')} ...")
-        self.data_path: str = str(
-            cli_args.get("data_path")
-        )  # path to the dataset
+        self.data_path: str = str(cli_args.get("data_path"))  # path to the dataset
         logger.info(f"reading data from {self.data_path}")
 
         self.command = cli_args.get("cmd", None)
@@ -146,14 +131,10 @@ class solver:
 
         # if entered command is evaluate or predict, then the pre-fitted model needs to be loaded and used
         else:
-            self.model_path = cli_args.get(
-                "model_path", self.default_model_path
-            )
+            self.model_path = cli_args.get("model_path", self.default_model_path)
             logger.info(f"path of the pre-fitted model => {self.model_path}")
 
-            self.prediction_file = cli_args.get(
-                "prediction_file", self.prediction_file
-            )
+            self.prediction_file = cli_args.get("prediction_file", self.prediction_file)
 
             # set description.json if provided:
             self.description_file = cli_args.get(
@@ -163,9 +144,7 @@ class solver:
             # load description file to read stored training parameters
             with open(self.description_file) as f:
                 dic = json.load(f)
-                self.target: list = dic.get(
-                    "target"
-                )  # target to predict as a list
+                self.target: list = dic.get("target")  # target to predict as a list
                 self.model_type: str = dic.get(
                     "type"
                 )  # type of the model -> regression, classification or clustering
@@ -192,9 +171,7 @@ class solver:
         model = algorithms.get(
             model_algorithm
         )  # extract model class depending on the algorithm
-        logger.info(
-            f"Solving a {model_type} problem using ===> {model_algorithm}"
-        )
+        logger.info(f"Solving a {model_type} problem using ===> {model_algorithm}")
         if not model:
             raise Exception("Model not found in the algorithms list")
         else:
@@ -217,13 +194,9 @@ class solver:
                     )
             else:
                 model_class = model.get("class")
-            logger.info(
-                f"model arguments: \n" f"{self.model_props.get('arguments')}"
-            )
+            logger.info(f"model arguments: \n" f"{self.model_props.get('arguments')}")
             model = (
-                model_class(**kwargs)
-                if not model_args
-                else model_class(**model_args)
+                model_class(**kwargs) if not model_args else model_class(**model_args)
             )
             return model, model_args
 
@@ -248,13 +221,9 @@ class solver:
                 )
 
         except OSError:
-            logger.exception(
-                f"Creating the directory {self.results_path} failed "
-            )
+            logger.exception(f"Creating the directory {self.results_path} failed ")
         else:
-            logger.info(
-                f"Successfully created the directory in {self.results_path} "
-            )
+            logger.info(f"Successfully created the directory in {self.results_path} ")
             joblib.dump(model, open(self.default_model_path, "wb"))
             return True
 
@@ -292,15 +261,11 @@ class solver:
             assert isinstance(
                 self.target, list
             ), "provide target(s) as a list in the yaml file"
-            assert (
-                len(self.target) > 0
-            ), "please provide at least a target to predict"
+            assert len(self.target) > 0, "please provide at least a target to predict"
 
         try:
             read_data_options = self.dataset_props.get("read_data_options", {})
-            dataset = read_data_to_df(
-                data_path=self.data_path, **read_data_options
-            )
+            dataset = read_data_to_df(data_path=self.data_path, **read_data_options)
             logger.info(f"dataset shape: {dataset.shape}")
             attributes = list(dataset.columns)
             logger.info(f"dataset attributes: {attributes}")
@@ -320,9 +285,7 @@ class solver:
                             column=column,
                         )
                         if classes_map:
-                            self.dataset_props[
-                                "label_encoding_classes"
-                            ] = classes_map
+                            self.dataset_props["label_encoding_classes"] = classes_map
                             logger.info(
                                 f"adding classes_map to dataset props: \n{classes_map}"
                             )
@@ -350,9 +313,7 @@ class solver:
                     return normalize(x, method=scaling_method)
 
             if any(col not in attributes for col in self.target):
-                raise Exception(
-                    "chosen target(s) to predict must exist in the dataset"
-                )
+                raise Exception("chosen target(s) to predict must exist in the dataset")
 
             y = pd.concat([dataset.pop(x) for x in self.target], axis=1)
             x = _reshape(dataset.to_numpy())
@@ -476,21 +437,15 @@ class solver:
                 cv_results = cross_validate(
                     estimator=self.model, X=x_train, y=y_train, **cv_params
                 )
-            hyperparams_props = self.model_props.get(
-                "hyperparameter_search", None
-            )
+            hyperparams_props = self.model_props.get("hyperparameter_search", None)
             if hyperparams_props:
 
                 # perform hyperparameter search
                 method = hyperparams_props.get("method", None)
                 grid_params = hyperparams_props.get("parameter_grid", None)
                 hp_args = hyperparams_props.get("arguments", None)
-                logger.info(
-                    f"Performing hyperparameter search using -> {method}"
-                )
-                logger.info(
-                    f"Grid parameters entered by the user: {grid_params}"
-                )
+                logger.info(f"Performing hyperparameter search using -> {method}")
+                logger.info(f"Grid parameters entered by the user: {grid_params}")
                 logger.info(f"Additional hyperparameter arguments: {hp_args}")
                 best_estimator, best_params, best_score = hyperparameter_search(
                     model=self.model,
@@ -577,9 +532,7 @@ class solver:
             with open(self.description_file, "w", encoding="utf-8") as f:
                 json.dump(fit_description, f, ensure_ascii=False, indent=4)
         except Exception as e:
-            logger.exception(
-                f"Error while storing the fit description file: {e}"
-            )
+            logger.exception(f"Error while storing the fit description file: {e}")
 
     def evaluate(self, **kwargs):
         """
@@ -621,9 +574,7 @@ class solver:
         """
         try:
             model = self._load_model(f=self.model_path)
-            x_val = (
-                self._prepare_predict_data()
-            )  # the same is used for clustering
+            x_val = self._prepare_predict_data()  # the same is used for clustering
             y_pred = model.predict(x_val)
             y_pred = _reshape(y_pred)
             logger.info(
@@ -634,9 +585,7 @@ class solver:
                 self.target = ["result"]
             df_pred = pd.DataFrame.from_dict(
                 {
-                    self.target[i]: y_pred[:, i]
-                    if len(y_pred.shape) > 1
-                    else y_pred
+                    self.target[i]: y_pred[:, i] if len(y_pred.shape) > 1 else y_pred
                     for i in range(len(self.target))
                 }
             )
@@ -687,6 +636,4 @@ class solver:
                 f"you just need to overwrite the values to meet your expectations"
             )
         else:
-            logger.warning(
-                f"something went wrong while initializing a default file"
-            )
+            logger.warning(f"something went wrong while initializing a default file")

@@ -1,10 +1,12 @@
 class InvalidHours(Exception):
     """Invalid"""
+
     pass
 
 
 class InvalidMins(Exception):
     """Invalid"""
+
     pass
 
 
@@ -47,16 +49,16 @@ elif starting_zone == "PST":
 
 if hours1 > 12:
     hours1 = hours1 - 12
-    if ampm == 'am':
-        ampm = 'pm'
-    elif ampm == 'pm':
-        ampm = 'am'
+    if ampm == "am":
+        ampm = "pm"
+    elif ampm == "pm":
+        ampm = "am"
 elif hours1 < 0:
     hours1 = hours1 + 12
-    if ampm == 'am':
-        ampm = 'pm'
-    elif ampm == 'pm':
-        ampm = 'am'
+    if ampm == "am":
+        ampm = "pm"
+    elif ampm == "pm":
+        ampm = "am"
 
 if end_zone == "CST":
     hours1 = hours1 - 6
@@ -69,16 +71,16 @@ elif end_zone == "PST":
 
 if hours1 > 12:
     hours1 = hours1 - 12
-    if ampm == 'am':
-        ampm = 'pm'
-    elif ampm == 'pm':
-        ampm = 'am'
+    if ampm == "am":
+        ampm = "pm"
+    elif ampm == "pm":
+        ampm = "am"
 elif hours1 < 0:
     hours1 = hours1 + 12
-    if ampm == 'am':
-        ampm = 'pm'
-    elif ampm == 'pm':
-        ampm = 'am'
+    if ampm == "am":
+        ampm = "pm"
+    elif ampm == "pm":
+        ampm = "am"
 
 # Result
-print('Time: ' + str(hours1) + ":" + str(mins1) + ampm)
+print("Time: " + str(hours1) + ":" + str(mins1) + ampm)

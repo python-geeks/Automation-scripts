@@ -13,16 +13,23 @@ def match_info(mid):
     c = Cricbuzz()
     minfo = c.matchinfo(mid)
 
-    print('------------------------------------------')
+    print("------------------------------------------")
     print(" Match No  : " + minfo["mnum"])
-    print(" Match Between : " + minfo["team1"]["name"] + " v/s " + minfo["team2"]["name"])
+    print(
+        " Match Between : " + minfo["team1"]["name"] + " v/s " + minfo["team2"]["name"]
+    )
 
-    if (minfo["toss"] == ""):
+    if minfo["toss"] == "":
         print(" Toss is yet to happen")
     else:
         print(" Toss : " + minfo["toss"])
 
-    print(" Match Location : " + minfo["venue_name"] + " located at " + minfo["venue_location"])
+    print(
+        " Match Location : "
+        + minfo["venue_name"]
+        + " located at "
+        + minfo["venue_location"]
+    )
     print(" Match Status : " + minfo["status"])
 
 
@@ -36,18 +43,33 @@ def live_score(mid):
     else:
         print("-------------------------------------------")
         print("Innings No : " + lscore["batting"]["score"][0]["inning_num"])
-        print(lscore["batting"]["team"] + " : " + lscore["batting"]["score"][0]["runs"] + "/"
-              + lscore["batting"]["score"][0]["wickets"] + " in " + lscore["batting"]["score"][0]["overs"] + " overs")
+        print(
+            lscore["batting"]["team"]
+            + " : "
+            + lscore["batting"]["score"][0]["runs"]
+            + "/"
+            + lscore["batting"]["score"][0]["wickets"]
+            + " in "
+            + lscore["batting"]["score"][0]["overs"]
+            + " overs"
+        )
 
-        message = (lscore["batting"]["team"] + " : " + lscore["batting"]["score"][0]["runs"] + "/"
-                   + lscore["batting"]["score"][0]["wickets"] + " in " + lscore["batting"]["score"][0]["overs"]
-                   + " overs")
+        message = (
+            lscore["batting"]["team"]
+            + " : "
+            + lscore["batting"]["score"][0]["runs"]
+            + "/"
+            + lscore["batting"]["score"][0]["wickets"]
+            + " in "
+            + lscore["batting"]["score"][0]["overs"]
+            + " overs"
+        )
 
         n.show_toast("LIVE MATCH SCORE", message, duration=10)
 
 
 for i in matches:
-    if (i["srs"] == srs_to_watch):
+    if i["srs"] == srs_to_watch:
         match_id.append(i["id"])
 
 print("Match Details Available : ")
@@ -63,7 +85,7 @@ while True:
     message = input("Do you want to refresh the score ? [Y/N]")
 
     if message == "Y":
-        print('------------------------------------------')
+        print("------------------------------------------")
     elif message == "N":
         break
     else:

@@ -1,14 +1,15 @@
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import time
+
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 def findMySong(song_name):
-    '''
-        function which accepts string and returns list of 10 available songs
-    '''
+    """
+    function which accepts string and returns list of 10 available songs
+    """
     options = Options()
     options.headless = True
 
@@ -25,23 +26,22 @@ def findMySong(song_name):
     time.sleep(10)
 
     try:
-        songs = driver.find_elements_by_class_name('mp3list-table')
+        songs = driver.find_elements_by_class_name("mp3list-table")
         song_list = []
         cnt = 0
         for song in songs:
             try:
-                if (cnt < 10):
-                    details = song.find_element_by_class_name(
-                        "mp3list-play").text
+                if cnt < 10:
+                    details = song.find_element_by_class_name("mp3list-play").text
                     details = details.split("\n")
                     link_sel_obj = song.find_element_by_tag_name("a")
                     link = link_sel_obj.get_attribute("href")
                     link = link[:33] + "get" + link[37:]
-                    if (len(details) > 2):
+                    if len(details) > 2:
                         vid_item = {
-                            'title': details[0],
+                            "title": details[0],
                             "duration": details[-1],
-                            "download-link": link
+                            "download-link": link,
                         }
                         song_list.append(vid_item)
                         cnt += 1
@@ -53,20 +53,19 @@ def findMySong(song_name):
     except NoSuchElementException:
         print("big error")
     driver.close()
-    return (song_list)
+    return song_list
 
 
 def downloadMySong(url):
-    '''
-        function which accepts url,
-        and download's and save song in current directory
-    '''
+    """
+    function which accepts url,
+    and download's and save song in current directory
+    """
     try:
         options = Options()
         options.headless = True
 
-        driver = webdriver.Chrome(
-            ChromeDriverManager().install(), options=options)
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         driver.set_page_load_timeout(20)
 
         driver.get(url)

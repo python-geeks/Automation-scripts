@@ -1,13 +1,14 @@
+from datetime import datetime
+
+import PySimpleGUI as sg
 from selenium import webdriver
-from selenium.webdriver.support import ui
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-import PySimpleGUI as sg
+from selenium.webdriver.support import ui
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from selenium.common.exceptions import NoSuchElementException
-from datetime import datetime
 
 
 class Zoom:
@@ -34,8 +35,7 @@ class Zoom:
         self.wait = ui.WebDriverWait(self.driver, 30)
         self.zoom_join_meeting = self.driver.get("https://zoom.us/join")
         ui.WebDriverWait(self.driver, 100).until(
-            EC.presence_of_element_located((By.XPATH,
-                                           '//*[@id="join-confno"]'))
+            EC.presence_of_element_located((By.XPATH, '//*[@id="join-confno"]'))
         )
         enter_pid = self.driver.find_element_by_xpath('//*[@id="join-confno"]')
         enter_pid.send_keys(self.meeting_personal_id)
@@ -60,8 +60,7 @@ class Zoom:
         )
         join_from_browser.click()
         self.wait.until(
-            lambda field:
-            self.driver.find_element_by_xpath('//*[@id="inputname"]')
+            lambda field: self.driver.find_element_by_xpath('//*[@id="inputname"]')
         )
         name_field = self.driver.find_element_by_xpath('//*[@id="inputname"]')
         name_field.send_keys(self.username)
@@ -70,8 +69,7 @@ class Zoom:
         )
         join_button.click()
         passcode = ui.WebDriverWait(self.driver, 300).until(
-            EC.presence_of_element_located((By.XPATH,
-                                           '//*[@id="inputpasscode"]'))
+            EC.presence_of_element_located((By.XPATH, '//*[@id="inputpasscode"]'))
         )
         passcode.send_keys(self.meeting_password)
         join_button = ui.WebDriverWait(self.driver, 300).until(
@@ -91,7 +89,7 @@ class Zoom:
                 (
                     By.XPATH,
                     '//*[@id="wc-container-left"]/div[3]/div/'
-                    'div[2]/div/div/div[1]/div',
+                    "div[2]/div/div/div[1]/div",
                 )
             )
         )
@@ -104,7 +102,7 @@ class Zoom:
             while True:
                 elem = self.driver.find_element_by_xpath(
                     f'//*[@id="wc-container-left"]/div[3]/div/div[2]'
-                    f'/div/div/div[1]/div[{i}]/div'
+                    f"/div/div/div[1]/div[{i}]/div"
                 )
                 i += 1
                 attendees.append(elem.text)
@@ -112,7 +110,7 @@ class Zoom:
             pass
         print(attendees)
         with open("attended.csv", "w+") as fp:
-            fp.write(datetime.now().isoformat(' '))
+            fp.write(datetime.now().isoformat(" "))
             fp.writelines(",".join(attendees))
 
 
@@ -121,8 +119,7 @@ class GUI:
         self.drivers = ["Chrome", "FireFox(Gecko)", "Edge"]
         self.layout = [
             [sg.Text("Meeting ID: "), sg.Input(key="meetingID")],
-            [sg.Text("Meeting Password"),
-             sg.Input(password_char="*", key="password")],
+            [sg.Text("Meeting Password"), sg.Input(password_char="*", key="password")],
             [sg.Text("Name"), sg.Input(key="name")],
             [
                 sg.Listbox(
@@ -150,8 +147,7 @@ if __name__ == "__main__":
     gui = GUI()
     values = gui.create()
     zoom_client = Zoom(
-        values["Driver"][0], values["meetingID"],
-        values["name"], values["password"]
+        values["Driver"][0], values["meetingID"], values["name"], values["password"]
     )
     zoom_client.setup_driver()
     zoom_client.join()

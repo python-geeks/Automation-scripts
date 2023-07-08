@@ -1,14 +1,14 @@
 # Note that comtypes is only available for Windows.
-from comtypes.client import CreateObject, Constants
+from comtypes.client import Constants, CreateObject
 
 
 # Function PPTtoPDF
 def PPTtoPDF(inputFileName, outputFileName, formatType=2):
-    powerpoint = CreateObject('Powerpoint.Application')
+    powerpoint = CreateObject("Powerpoint.Application")
     constants = Constants(powerpoint)
     powerpoint.Visible = 1
 
-    if outputFileName[-3:] != 'pdf':
+    if outputFileName[-3:] != "pdf":
         outputFileName = outputFileName + ".pdf"
     deck = powerpoint.Presentations.Open(inputFileName)
     deck.SaveAs(outputFileName, constants.PpSaveAsPDF)
@@ -18,11 +18,11 @@ def PPTtoPDF(inputFileName, outputFileName, formatType=2):
 
 # Function PPTtoPDFNote
 def PPTtoPDFNote(inputFileName, outputFileName, formatType=32):
-    powerpoint = CreateObject('Powerpoint.Application')
+    powerpoint = CreateObject("Powerpoint.Application")
     constants = Constants(powerpoint)
     powerpoint.Visible = 1
 
-    if outputFileName[-3:] != 'pdf':
+    if outputFileName[-3:] != "pdf":
         outputFileName = outputFileName + ".pdf"
     deck = powerpoint.Presentations.Open(inputFileName)
     deck.ExportAsFixedFormat(
@@ -32,7 +32,7 @@ def PPTtoPDFNote(inputFileName, outputFileName, formatType=32):
         False,  # No frame
         constants.ppPrintHandoutHorizontalFirst,
         constants.ppPrintOutputNotesPages,
-        constants.ppPrintAll
+        constants.ppPrintAll,
     )
     deck.Close()
     powerpoint.Quit()

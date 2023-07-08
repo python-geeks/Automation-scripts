@@ -1,27 +1,28 @@
-'''
+"""
 Import the necessary libraries
-'''
-# !pip install selenium
-from selenium import webdriver
+"""
 import time
+
 import pandas as pd
 from bs4 import BeautifulSoup as soup
+# !pip install selenium
+from selenium import webdriver
 
-'''
+"""
 Define the browser/driver and open the desired webpage
-'''
-driver = webdriver.Chrome(
-    'D:\\Softwares\\chromedriver_win32\\chromedriver.exe'
-)
-driver.get('https://www.cardekho.com/filter/new-cars')
-'''
+"""
+driver = webdriver.Chrome("D:\\Softwares\\chromedriver_win32\\chromedriver.exe")
+driver.get("https://www.cardekho.com/filter/new-cars")
+"""
 Keep scrolling automatically and extract the data from the webpage and store it
-'''
+"""
 for i in range(0, 20):
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
     time.sleep(1)
-    driver.execute_script("window.scrollTo(0, \
-    (document.body.scrollHeight)*0.73)")
+    driver.execute_script(
+        "window.scrollTo(0, \
+    (document.body.scrollHeight)*0.73)"
+    )
     time.sleep(1)
 res = driver.execute_script("return document.documentElement.outerHTML")
 driver.quit()
@@ -56,11 +57,6 @@ for i in containers:
     else:
         engines.append(" ")
 df = pd.DataFrame(
-    {
-        'Car Name': cars,
-        'Price': prices,
-        'Engine': engines,
-        'Mileage': mileages
-    }
+    {"Car Name": cars, "Price": prices, "Engine": engines, "Mileage": mileages}
 )
-df.to_csv('carScrap.csv', index=False, encoding='utf-8')
+df.to_csv("carScrap.csv", index=False, encoding="utf-8")

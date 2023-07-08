@@ -36,48 +36,74 @@ cam = cv2.VideoCapture(cam_port)
     These are the coordinates of each sticker for each set. Feel free to play
     with these values if you don't like the sticker placement.
 """
-detector_stickers = [[200, 120], [300, 120], [400, 120],
-                     [200, 220], [300, 220], [400, 220],
-                     [200, 320], [300, 320], [400, 320]]
+detector_stickers = [
+    [200, 120],
+    [300, 120],
+    [400, 120],
+    [200, 220],
+    [300, 220],
+    [400, 220],
+    [200, 320],
+    [300, 320],
+    [400, 320],
+]
 
-current_stickers = [[20, 20], [54, 20], [88, 20],
-                    [20, 54], [54, 54], [88, 54],
-                    [20, 88], [54, 88], [88, 88]]
+current_stickers = [
+    [20, 20],
+    [54, 20],
+    [88, 20],
+    [20, 54],
+    [54, 54],
+    [88, 54],
+    [20, 88],
+    [54, 88],
+    [88, 88],
+]
 
-recorded_stickers = [[20, 130], [54, 130], [88, 130],
-                     [20, 164], [54, 164], [88, 164],
-                     [20, 198], [54, 198], [88, 198]]
+recorded_stickers = [
+    [20, 130],
+    [54, 130],
+    [88, 130],
+    [20, 164],
+    [54, 164],
+    [88, 164],
+    [20, 198],
+    [54, 198],
+    [88, 198],
+]
 
 
 def draw_detector_stickers(frame):
     """Draws the 9 static stickers in the frame."""
-    for (x, y) in (detector_stickers):
+    for (x, y) in detector_stickers:
         cv2.rectangle(frame, (x, y), (x + 50, y + 50), (255, 255, 255), 1)
 
 
 def draw_current_stickers(frame, state):
     """Draws the 9 detected stickers in the frame."""
     for index, (x, y) in enumerate(current_stickers):
-        cv2.rectangle(frame, (x, y), (x + 32, y + 32),
-                      ColorDetector.name_to_rgb(state[index]), -1)
+        cv2.rectangle(
+            frame, (x, y), (x + 32, y + 32), ColorDetector.name_to_rgb(state[index]), -1
+        )
 
 
 def draw_recorded_stickers(frame, state):
     """Draws the 9 Recorded stickers in the frame."""
     for index, (x, y) in enumerate(recorded_stickers):
-        cv2.rectangle(frame, (x, y), (x + 32, y + 32),
-                      ColorDetector.name_to_rgb(state[index]), -1)
+        cv2.rectangle(
+            frame, (x, y), (x + 32, y + 32), ColorDetector.name_to_rgb(state[index]), -1
+        )
 
 
 def color_to_notation(color):
     """Help function for converting colors to notation used by solver."""
     notation = {
-        'green': 'F',
-        'white': 'U',
-        'blue': 'B',
-        'red': 'R',
-        'orange': 'L',
-        'yellow': 'D'
+        "green": "F",
+        "white": "U",
+        "blue": "B",
+        "red": "R",
+        "orange": "L",
+        "yellow": "D",
     }
     return notation[color]
 
@@ -104,54 +130,89 @@ def scan():
     # collection of scanned sides
     sides = {}
     # default starting preview sticker colors
-    preview = ['white', 'white', 'white',
-               'white', 'white', 'white',
-               'white', 'white', 'white']
-    state = [0, 0, 0,  # current sticker colors
-             0, 0, 0,
-             0, 0, 0]
+    preview = [
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+    ]
+    state = [0, 0, 0, 0, 0, 0, 0, 0, 0]  # current sticker colors
 
     defaultcal = {  # default color calibration
-        'white': [[179, 67, 255], [0, 0, 0]],
-        'green': [[72, 255, 218], [47, 61, 21]],
-        'red': [[179, 255, 240], [6, 0, 102]],
-        'orange': [[179, 255, 255], [17, 147, 207]],
-        'yellow': [[49, 242, 255], [18, 61, 211]],
-        'blue': [[127, 255, 212], [82, 72, 51]]
+        "white": [[179, 67, 255], [0, 0, 0]],
+        "green": [[72, 255, 218], [47, 61, 21]],
+        "red": [[179, 255, 240], [6, 0, 102]],
+        "orange": [[179, 255, 255], [17, 147, 207]],
+        "yellow": [[49, 242, 255], [18, 61, 211]],
+        "blue": [[127, 255, 212], [82, 72, 51]],
     }
 
     colorcal = {}  # color calibration dictionary
-    color = ['white', 'green', 'red', 'orange',
-             'yellow', 'blue']  # list of valid colors
+    color = [
+        "white",
+        "green",
+        "red",
+        "orange",
+        "yellow",
+        "blue",
+    ]  # list of valid colors
 
-    cv2.namedWindow('default', 0)
+    cv2.namedWindow("default", 0)
     # create trackbars here
-    cv2.createTrackbar('H Upper', 'default',
-                       defaultcal[color[len(colorcal)]][0][0],
-                       179, empty_callback)
-    cv2.createTrackbar('S Upper', 'default',
-                       defaultcal[color[len(colorcal)]][0][1], 255,
-                       empty_callback)
-    cv2.createTrackbar('V Upper', 'default',
-                       defaultcal[color[len(colorcal)]][0][2], 255,
-                       empty_callback)
-    cv2.createTrackbar('H Lower', 'default',
-                       defaultcal[color[len(colorcal)]][1][0], 179,
-                       empty_callback)
-    cv2.createTrackbar('S Lower', 'default',
-                       defaultcal[color[len(colorcal)]][1][1], 255,
-                       empty_callback)
-    cv2.createTrackbar('V Lower', 'default',
-                       defaultcal[color[len(colorcal)]][1][2], 255,
-                       empty_callback)
+    cv2.createTrackbar(
+        "H Upper",
+        "default",
+        defaultcal[color[len(colorcal)]][0][0],
+        179,
+        empty_callback,
+    )
+    cv2.createTrackbar(
+        "S Upper",
+        "default",
+        defaultcal[color[len(colorcal)]][0][1],
+        255,
+        empty_callback,
+    )
+    cv2.createTrackbar(
+        "V Upper",
+        "default",
+        defaultcal[color[len(colorcal)]][0][2],
+        255,
+        empty_callback,
+    )
+    cv2.createTrackbar(
+        "H Lower",
+        "default",
+        defaultcal[color[len(colorcal)]][1][0],
+        179,
+        empty_callback,
+    )
+    cv2.createTrackbar(
+        "S Lower",
+        "default",
+        defaultcal[color[len(colorcal)]][1][1],
+        255,
+        empty_callback,
+    )
+    cv2.createTrackbar(
+        "V Lower",
+        "default",
+        defaultcal[color[len(colorcal)]][1][2],
+        255,
+        empty_callback,
+    )
 
     # Remember that the range for S and V are not 0 to 179
 
     colorcal = defaultcal
 
     # Creates a window named 'my_window_name'
-    cv2.createTrackbar('My track bar', 'my_window_name',
-                       125, 255, empty_callback)
+    cv2.createTrackbar("My track bar", "my_window_name", 125, 255, empty_callback)
 
     while cameratesting:
         # --------------- Used for Testing ------------------------
@@ -184,9 +245,9 @@ def scan():
         # (xbot_right,ybot_right), (r,g,b), borderwidth)
 
         # Displays the frame on the window we made
-        value = cv2.getTrackbarPos('My track bar', 'my_window_name')
+        value = cv2.getTrackbarPos("My track bar", "my_window_name")
         print(value)
-        cv2.imshow('my_window_name', frame)
+        cv2.imshow("my_window_name", frame)
 
         # Sets the amount of time to display a frame in milliseconds
         key = cv2.waitKey(10)
@@ -203,11 +264,12 @@ def scan():
 
         for index, (x, y) in enumerate(detector_stickers):
             # extracts hsv values within sticker
-            roi = hsv[y:y + 32, x:x + 32]
+            roi = hsv[y : y + 32, x : x + 32]
             # filters the hsv values into one hsv
             avg_hsv = ColorDetector.median_hsv(roi)
             color_name = ColorDetector.get_color_name(
-                avg_hsv, colorcal)  # extracts the color based on hsv
+                avg_hsv, colorcal
+            )  # extracts the color based on hsv
             state[index] = color_name  # stores the color
 
             # update when space bar is pressed.
@@ -228,39 +290,81 @@ def scan():
         draw_current_stickers(frame, state)
 
         # append amount of scanned sides
-        text = 'scanned sides: {}/6'.format(len(sides))
-        cv2.putText(frame, text, (20, 460), cv2.FONT_HERSHEY_TRIPLEX,
-                    0.5, (255, 255, 0), 1, cv2.LINE_AA)
+        text = "scanned sides: {}/6".format(len(sides))
+        cv2.putText(
+            frame,
+            text,
+            (20, 460),
+            cv2.FONT_HERSHEY_TRIPLEX,
+            0.5,
+            (255, 255, 0),
+            1,
+            cv2.LINE_AA,
+        )
 
         # indicate the scanning instruction
-        textInstruction = 'scan and rotate the cube with white on the top' \
-                          ' and green on the front (towards camera)'
-        textInstruction2 = 'the color of center brick is used as the side' \
-                           ' identifier (since the center brick does not ' \
-                           'move) '
-        textInstruction3 = 'you can scan as many times as you want'
-        textInstruction4 = 'the program will overwrite the old scan ' \
-                           'when same side is detected,' \
-                           ' press esc key get the solution '
-        cv2.putText(frame, textInstruction, (20, 600),
-                    cv2.FONT_HERSHEY_TRIPLEX, 0.5,
-                    (255, 255, 0), 1, cv2.LINE_AA)
-        cv2.putText(frame, textInstruction2, (20, 620),
-                    cv2.FONT_HERSHEY_TRIPLEX, 0.5,
-                    (255, 255, 0), 1, cv2.LINE_AA)
-        cv2.putText(frame, textInstruction3, (20, 640),
-                    cv2.FONT_HERSHEY_TRIPLEX, 0.5,
-                    (255, 255, 0), 1, cv2.LINE_AA)
-        cv2.putText(frame, textInstruction4, (20, 660),
-                    cv2.FONT_HERSHEY_TRIPLEX, 0.5,
-                    (255, 255, 0), 1, cv2.LINE_AA)
+        textInstruction = (
+            "scan and rotate the cube with white on the top"
+            " and green on the front (towards camera)"
+        )
+        textInstruction2 = (
+            "the color of center brick is used as the side"
+            " identifier (since the center brick does not "
+            "move) "
+        )
+        textInstruction3 = "you can scan as many times as you want"
+        textInstruction4 = (
+            "the program will overwrite the old scan "
+            "when same side is detected,"
+            " press esc key get the solution "
+        )
+        cv2.putText(
+            frame,
+            textInstruction,
+            (20, 600),
+            cv2.FONT_HERSHEY_TRIPLEX,
+            0.5,
+            (255, 255, 0),
+            1,
+            cv2.LINE_AA,
+        )
+        cv2.putText(
+            frame,
+            textInstruction2,
+            (20, 620),
+            cv2.FONT_HERSHEY_TRIPLEX,
+            0.5,
+            (255, 255, 0),
+            1,
+            cv2.LINE_AA,
+        )
+        cv2.putText(
+            frame,
+            textInstruction3,
+            (20, 640),
+            cv2.FONT_HERSHEY_TRIPLEX,
+            0.5,
+            (255, 255, 0),
+            1,
+            cv2.LINE_AA,
+        )
+        cv2.putText(
+            frame,
+            textInstruction4,
+            (20, 660),
+            cv2.FONT_HERSHEY_TRIPLEX,
+            0.5,
+            (255, 255, 0),
+            1,
+            cv2.LINE_AA,
+        )
 
         # quit on escape.
         if key == 27:
             break
 
         # show result
-        cv2.imshow('default', frame)
+        cv2.imshow("default", frame)
 
         if key == 99:
             colorcal = {}
@@ -268,26 +372,25 @@ def scan():
                 _, frame = cam.read()
 
                 hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-                key = cv2.waitKey(10) & 0xff
+                key = cv2.waitKey(10) & 0xFF
 
                 # hue upper lower
-                hu = cv2.getTrackbarPos('H Upper', 'default')
-                hl = cv2.getTrackbarPos('H Lower', 'default')
+                hu = cv2.getTrackbarPos("H Upper", "default")
+                hl = cv2.getTrackbarPos("H Lower", "default")
                 # saturation upper lower
-                su = cv2.getTrackbarPos('S Upper', 'default')
-                sl = cv2.getTrackbarPos('S Lower', 'default')
+                su = cv2.getTrackbarPos("S Upper", "default")
+                sl = cv2.getTrackbarPos("S Lower", "default")
                 # value upper lower
-                vu = cv2.getTrackbarPos('V Upper', 'default')
-                vl = cv2.getTrackbarPos('V Lower', 'default')
-                print('H upper', hu)
-                print('H Lower', hl)
-                print('S upper', su)
-                print('S Lower', sl)
-                print('V upper', vu)
-                print('V Lower', vl)
+                vu = cv2.getTrackbarPos("V Upper", "default")
+                vl = cv2.getTrackbarPos("V Lower", "default")
+                print("H upper", hu)
+                print("H Lower", hl)
+                print("S upper", su)
+                print("S Lower", sl)
+                print("V upper", vu)
+                print("V Lower", vl)
 
-                if color[len(colorcal)] == 'red'\
-                        or color[len(colorcal)] == 'orange':
+                if color[len(colorcal)] == "red" or color[len(colorcal)] == "orange":
                     lower_hsv = np.array([0, sl, vl])
                     upper_hsv = np.array([hl, su, vu])
                     mask1 = cv2.inRange(hsv, lower_hsv, upper_hsv)
@@ -311,29 +414,37 @@ def scan():
 
                     if len(colorcal) < 6:
                         cv2.setTrackbarPos(
-                            'H Upper', 'default',
-                            defaultcal[color[len(colorcal)]][0][0])
+                            "H Upper", "default", defaultcal[color[len(colorcal)]][0][0]
+                        )
                         cv2.setTrackbarPos(
-                            'S Upper', 'default',
-                            defaultcal[color[len(colorcal)]][0][1])
+                            "S Upper", "default", defaultcal[color[len(colorcal)]][0][1]
+                        )
                         cv2.setTrackbarPos(
-                            'V Upper', 'default',
-                            defaultcal[color[len(colorcal)]][0][2])
+                            "V Upper", "default", defaultcal[color[len(colorcal)]][0][2]
+                        )
                         cv2.setTrackbarPos(
-                            'H Lower', 'default',
-                            defaultcal[color[len(colorcal)]][1][0])
+                            "H Lower", "default", defaultcal[color[len(colorcal)]][1][0]
+                        )
                         cv2.setTrackbarPos(
-                            'S Lower', 'default',
-                            defaultcal[color[len(colorcal)]][1][1])
+                            "S Lower", "default", defaultcal[color[len(colorcal)]][1][1]
+                        )
                         cv2.setTrackbarPos(
-                            'V Lower', 'default',
-                            defaultcal[color[len(colorcal)]][1][2])
+                            "V Lower", "default", defaultcal[color[len(colorcal)]][1][2]
+                        )
 
                 if len(colorcal) < 6:
-                    text = 'calibrating {}'.format(color[len(colorcal)])
-                cv2.putText(res, text, (20, 460), cv2.FONT_HERSHEY_TRIPLEX,
-                            0.5, (255, 255, 255), 1, cv2.LINE_AA)
-                cv2.imshow('default', res)
+                    text = "calibrating {}".format(color[len(colorcal)])
+                cv2.putText(
+                    res,
+                    text,
+                    (20, 460),
+                    cv2.FONT_HERSHEY_TRIPLEX,
+                    0.5,
+                    (255, 255, 255),
+                    1,
+                    cv2.LINE_AA,
+                )
+                cv2.imshow("default", res)
                 # quit on escape key
                 if key == 27:
                     break

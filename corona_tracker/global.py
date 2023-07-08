@@ -6,8 +6,9 @@ Created on Fri Apr 10 10:46:47 2020
 @author: edoardottt
 """
 
-import requests
 import time
+
+import requests
 from bs4 import BeautifulSoup
 
 url = "https://worldometers.info/coronavirus/"

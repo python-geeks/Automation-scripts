@@ -1,6 +1,7 @@
-import db
 import tkinter as tk
-from tkinter.ttk import Button, Frame, Entry, Label
+from tkinter.ttk import Button, Entry, Frame, Label
+
+import db
 
 LARGE_FONT = ("Verdana", 32)
 
@@ -51,7 +52,9 @@ class ExpenseManager:
         button2 = Button(self.frame, text="Household expenses", command=self.household)
         button2.pack()
 
-        button3 = Button(self.frame, text="Entertainment expenses", command=self.entertainment)
+        button3 = Button(
+            self.frame, text="Entertainment expenses", command=self.entertainment
+        )
         button3.pack()
 
         button4 = Button(self.frame, text="Other expenses", command=self.other)
@@ -63,7 +66,7 @@ class ExpenseManager:
     # INSERT VALUES
     def groceries(self):
         top = tk.Toplevel(self.frame)
-        top.title('Groceries expenses')
+        top.title("Groceries expenses")
         Label(top, text="Name of good").grid(row=1, column=0, sticky=tk.W, pady=2)
         Label(top, text="Price").grid(row=2, column=0, sticky=tk.W, pady=2)
         Label(top, text="Date of purchase").grid(row=3, column=0, sticky=tk.W, pady=2)
@@ -80,20 +83,44 @@ class ExpenseManager:
 
         # BUTTONS
 
-        B1 = Button(top, text="Insert Values", command=lambda: (self.insert(db.insert_groceries, e1, e2, e3),
-                    self.added(top)))
+        B1 = Button(
+            top,
+            text="Insert Values",
+            command=lambda: (
+                self.insert(db.insert_groceries, e1, e2, e3),
+                self.added(top),
+            ),
+        )
         B1.grid(row=1, column=2)
 
-        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, tk.END),
-                    text.insert(tk.END, self.display_all(db.select_all_groceries()))))
+        B2 = Button(
+            top,
+            text="Select All",
+            command=lambda: (
+                text.delete(1.0, tk.END),
+                text.insert(tk.END, self.display_all(db.select_all_groceries())),
+            ),
+        )
         B2.grid(row=2, column=2)
 
-        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, tk.END),
-                    text.insert(tk.END, self.find_expense(db.select_grocery, e1, e2))))
+        B3 = Button(
+            top,
+            text="Find value",
+            command=lambda: (
+                text.delete(1.0, tk.END),
+                text.insert(tk.END, self.find_expense(db.select_grocery, e1, e2)),
+            ),
+        )
         B3.grid(row=2, column=3)
 
-        B3 = Button(top, text="Delete expense", command=lambda: (self.delete_expense(db.delete_grocery, e1, e2),
-                                                                 self.delete(top)))
+        B3 = Button(
+            top,
+            text="Delete expense",
+            command=lambda: (
+                self.delete_expense(db.delete_grocery, e1, e2),
+                self.delete(top),
+            ),
+        )
         B3.grid(row=4, column=2)
 
         B5 = Button(top, text="Exit", command=exit)
@@ -101,7 +128,7 @@ class ExpenseManager:
 
     def household(self):
         top = tk.Toplevel(self.frame)
-        top.title('Household expenses')
+        top.title("Household expenses")
         Label(top, text="Name of good").grid(row=1, column=0, sticky=tk.W, pady=2)
         Label(top, text="Price").grid(row=2, column=0, sticky=tk.W, pady=2)
         Label(top, text="Date of purchase").grid(row=3, column=0, sticky=tk.W, pady=2)
@@ -118,20 +145,44 @@ class ExpenseManager:
 
         # BUTTONS###
 
-        B1 = Button(top, text="Insert Values",
-                    command=lambda: (self.insert(db.insert_household, e1, e2, e3), self.added(top)))
+        B1 = Button(
+            top,
+            text="Insert Values",
+            command=lambda: (
+                self.insert(db.insert_household, e1, e2, e3),
+                self.added(top),
+            ),
+        )
         B1.grid(row=1, column=2)
 
-        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, tk.END),
-                    text.insert(tk.END, self.display_all(db.select_all_household()))))
+        B2 = Button(
+            top,
+            text="Select All",
+            command=lambda: (
+                text.delete(1.0, tk.END),
+                text.insert(tk.END, self.display_all(db.select_all_household())),
+            ),
+        )
         B2.grid(row=2, column=2)
 
-        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, tk.END),
-                    text.insert(tk.END, self.find_expense(db.select_household, e1, e2))))
+        B3 = Button(
+            top,
+            text="Find value",
+            command=lambda: (
+                text.delete(1.0, tk.END),
+                text.insert(tk.END, self.find_expense(db.select_household, e1, e2)),
+            ),
+        )
         B3.grid(row=2, column=3)
 
-        B3 = Button(top, text="Delete expense",
-                    command=lambda: (self.delete_expense(db.delete_household, e1, e2), self.delete(top)))
+        B3 = Button(
+            top,
+            text="Delete expense",
+            command=lambda: (
+                self.delete_expense(db.delete_household, e1, e2),
+                self.delete(top),
+            ),
+        )
         B3.grid(row=4, column=2)
 
         B5 = Button(top, text="Exit", command=exit)
@@ -139,7 +190,7 @@ class ExpenseManager:
 
     def entertainment(self):
         top = tk.Toplevel(self.frame)
-        top.title('Entertainment expenses')
+        top.title("Entertainment expenses")
         Label(top, text="Name of good").grid(row=1, column=0, sticky=tk.W, pady=2)
         Label(top, text="Price").grid(row=2, column=0, sticky=tk.W, pady=2)
         Label(top, text="Date of purchase").grid(row=3, column=0, sticky=tk.W, pady=2)
@@ -156,20 +207,44 @@ class ExpenseManager:
 
         # BUTTONS
 
-        B1 = Button(top, text="Insert Values",
-                    command=lambda: (self.insert(db.insert_entertrainment, e1, e2, e3), self.added(top)))
+        B1 = Button(
+            top,
+            text="Insert Values",
+            command=lambda: (
+                self.insert(db.insert_entertrainment, e1, e2, e3),
+                self.added(top),
+            ),
+        )
         B1.grid(row=1, column=2)
 
-        B2 = Button(top, text="Select All", command=lambda: (text.delete(1.0, tk.END),
-                    text.insert(tk.END, self.display_all(db.select_all_entertrainment()))))
+        B2 = Button(
+            top,
+            text="Select All",
+            command=lambda: (
+                text.delete(1.0, tk.END),
+                text.insert(tk.END, self.display_all(db.select_all_entertrainment())),
+            ),
+        )
         B2.grid(row=2, column=2)
 
-        B3 = Button(top, text="Find value", command=lambda: (text.delete(1.0, tk.END),
-                    text.insert(tk.END, self.find_expense(db.select_entertainment, e1, e2))))
+        B3 = Button(
+            top,
+            text="Find value",
+            command=lambda: (
+                text.delete(1.0, tk.END),
+                text.insert(tk.END, self.find_expense(db.select_entertainment, e1, e2)),
+            ),
+        )
         B3.grid(row=2, column=3)
 
-        B3 = Button(top, text="Delete expense",
-                    command=lambda: (self.delete_expense(db.delete_entertainment, e1, e2), self.delete(top)))
+        B3 = Button(
+            top,
+            text="Delete expense",
+            command=lambda: (
+                self.delete_expense(db.delete_entertainment, e1, e2),
+                self.delete(top),
+            ),
+        )
         B3.grid(row=4, column=2)
 
         B5 = Button(top, text="Exit", command=exit)
@@ -177,7 +252,7 @@ class ExpenseManager:
 
     def other(self):
         top = tk.Toplevel(self.frame)
-        top.title('Entertainment expenses')
+        top.title("Entertainment expenses")
         Label(top, text="Name of good").grid(row=1, column=0, sticky=tk.W, pady=2)
         Label(top, text="Price").grid(row=2, column=0, sticky=tk.W, pady=2)
         Label(top, text="Date of purchase").grid(row=3, column=0, sticky=tk.W, pady=2)
@@ -194,20 +269,41 @@ class ExpenseManager:
 
         # BUTTONS###
 
-        B1 = Button(top, text="Insert Values",
-                    command=lambda: (self.insert(db.insert_other, e1, e2, e3), self.added(top)))
+        B1 = Button(
+            top,
+            text="Insert Values",
+            command=lambda: (self.insert(db.insert_other, e1, e2, e3), self.added(top)),
+        )
         B1.grid(row=1, column=2)
 
-        B2 = Button(top, text="Select All", command=lambda: (
-            text.delete(1.0, tk.END), text.insert(tk.END, self.display_all(db.select_all_other()))))
+        B2 = Button(
+            top,
+            text="Select All",
+            command=lambda: (
+                text.delete(1.0, tk.END),
+                text.insert(tk.END, self.display_all(db.select_all_other())),
+            ),
+        )
         B2.grid(row=2, column=2)
 
-        B3 = Button(top, text="Find value", command=lambda: (
-            text.delete(1.0, tk.END), text.insert(tk.END, self.find_expense(db.select_other, e1, e2))))
+        B3 = Button(
+            top,
+            text="Find value",
+            command=lambda: (
+                text.delete(1.0, tk.END),
+                text.insert(tk.END, self.find_expense(db.select_other, e1, e2)),
+            ),
+        )
         B3.grid(row=2, column=3)
 
-        B3 = Button(top, text="Delete expense",
-                    command=lambda: (self.delete_expense(db.delete_other, e1, e2), self.delete(top)))
+        B3 = Button(
+            top,
+            text="Delete expense",
+            command=lambda: (
+                self.delete_expense(db.delete_other, e1, e2),
+                self.delete(top),
+            ),
+        )
         B3.grid(row=4, column=2)
 
         B5 = Button(top, text="Exit", command=exit)
@@ -217,7 +313,7 @@ class ExpenseManager:
 def main():
     # db.create_tables(connection)
     root = tk.Tk()
-    root.geometry('600x500')
+    root.geometry("600x500")
     root.title("Expense Manager")
     ExpenseManager(root)
     root.mainloop()

@@ -4,7 +4,7 @@ try:
 except ImportError:  # pragma: no cover
     from importlib_metadata import PackageNotFoundError, version
 
-from .solver import solver, metrics_dict, models_dict
+from .solver import metrics_dict, models_dict, solver
 
 try:
     __version__ = version(__name__)

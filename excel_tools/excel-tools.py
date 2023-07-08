@@ -5,6 +5,7 @@
 
 # download and install openpyxl
 import openpyxl
+
 print("enter the name of the excel file")
 path = input()
 wb_obj = openpyxl.load_workbook(path)
@@ -33,6 +34,7 @@ if input() == "NEW":
     print("enter your workbook name eg name.xlsx")
     s = input()
     from openpyxl import Workbook
+
     wbk = Workbook()
     wbk.save(filename=s)
     sheet = wbk.active
@@ -72,14 +74,14 @@ if input() == "COPY":
 print("if you want to create a bar chart type CHART")
 if input() == "CHART":
     from openpyxl.chart import BarChart3D, Reference
+
     print("how many columns do you want")
     lel = int(input())
     print("enter", lel, " values")
     for i in range(lel):
         b = int(input())
         sheet.append([b])
-    values = Reference(sheet, min_col=1, min_row=1,
-                       max_col=1, max_row=lel)
+    values = Reference(sheet, min_col=1, min_row=1, max_col=1, max_row=lel)
     chart = BarChart3D()
     chart.add_data(values)
     print("enter chart title")

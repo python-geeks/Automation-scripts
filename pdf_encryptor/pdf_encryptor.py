@@ -1,20 +1,33 @@
 import argparse
 import getpass
-import pyAesCrypt
 import os
 import sys
 
+import pyAesCrypt
 
 BUFFERSIZE = 64 * 1024
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Encrypt "
-                                     "and decrypt PDF files")
-    parser.add_argument('-e', '--encrypt', dest='encrypt', type=str,
-                        nargs=1, metavar='filename', help='Encrypt')
-    parser.add_argument('-d', '--decrypt', dest='decrypt', type=str,
-                        nargs=1, metavar='filename', help='Decrypt')
+    parser = argparse.ArgumentParser(description="Encrypt " "and decrypt PDF files")
+    parser.add_argument(
+        "-e",
+        "--encrypt",
+        dest="encrypt",
+        type=str,
+        nargs=1,
+        metavar="filename",
+        help="Encrypt",
+    )
+    parser.add_argument(
+        "-d",
+        "--decrypt",
+        dest="decrypt",
+        type=str,
+        nargs=1,
+        metavar="filename",
+        help="Decrypt",
+    )
     args = parser.parse_args()
 
     if len(sys.argv) == 1:
@@ -52,19 +65,21 @@ def decrypt(filename, password):
         sys.exit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     args = parse_args()
     if args.encrypt:
         encrypt_file = args.encrypt[0]
         file_exist(encrypt_file)
-        password = getpass.getpass("Please provide the password to "
-                                   "encrypt the file with: ")
+        password = getpass.getpass(
+            "Please provide the password to " "encrypt the file with: "
+        )
         encrypt(encrypt_file, password)
         print("{} has been successfully encrypted.".format(encrypt_file))
     else:
         decrypt_file = args.decrypt[0]
         file_exist(decrypt_file)
-        password = getpass.getpass("Please provide the password to "
-                                   "decrypt the file with: ")
+        password = getpass.getpass(
+            "Please provide the password to " "decrypt the file with: "
+        )
         decrypt(decrypt_file, password)
         print("{} has been successfully decrypted.".format(decrypt_file))

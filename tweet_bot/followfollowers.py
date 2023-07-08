@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 
-import tweepy
 import logging
-from config import create_api
 import time
+
+import tweepy
+from config import create_api
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
-'''
+"""
 A lot of Twitter API endpoints use pagination to return their results.
 Tweepy cursors take away part of the complexity of working with paginated results.
 The Cursor object is iterable and takes care of fetching the various result pages transparently.
-'''
+"""
 
 
 def follow_followers(api):

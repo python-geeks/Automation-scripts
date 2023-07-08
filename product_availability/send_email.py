@@ -13,7 +13,7 @@ def send_email(message):
         try:
             server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, message)
-            print('sent!!!')
+            print("sent!!!")
             return True
         except Exception as e:
             print(e)

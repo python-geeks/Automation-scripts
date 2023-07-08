@@ -1,44 +1,45 @@
 from __future__ import print_function
-import pickle
-import os.path
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
-from task import Task
-from datetime import timedelta, datetime
 
+import os.path
+import pickle
+from datetime import datetime, timedelta
+
+from google.auth.transport.requests import Request
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from task import Task
 
 categories = {
     # Lavender
-    '#a4bdfc': '',
+    "#a4bdfc": "",
     # Blueberry
-    '#5484ed': '',
+    "#5484ed": "",
     # Peacock
-    '#46d6db': 'Exercise',
+    "#46d6db": "Exercise",
     # Sage
-    '#7ae7bf': 'My Apps',
+    "#7ae7bf": "My Apps",
     # Basil
-    '#51b749': 'App',
+    "#51b749": "App",
     # Tangerine
-    '#ffb878': '',
+    "#ffb878": "",
     # Banana
-    '#fbd75b': '',
+    "#fbd75b": "",
     # Flamingo
-    '#ff887c': '',
+    "#ff887c": "",
     # Tomato
-    '#dc2127': 'YouTube',
+    "#dc2127": "YouTube",
     # Mandarine
-    '#fa573c': '',
+    "#fa573c": "",
     # Grape
-    '#dbadff': 'Work',
+    "#dbadff": "Work",
     # Graphite
-    '#e1e1e1': 'School'
+    "#e1e1e1": "School",
 }
 
 
 EVENTS_TO_LOOK_THROUGH = 60
 # If modifying these scopes, delete the file token.pickle.
-SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"]
 
 
 def main():
@@ -49,50 +50,60 @@ def main():
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists("token.pickle"):
+        with open("token.pickle", "rb") as token:
             creds = pickle.load(token)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
             creds = flow.run_local_server()
         # Save the credentials for the next run
-        with open('token.pickle', 'wb') as token:
+        with open("token.pickle", "wb") as token:
             pickle.dump(creds, token)
 
-    service = build('calendar', 'v3', credentials=creds)
+    service = build("calendar", "v3", credentials=creds)
 
     # Call the Calendar API
     start_day = datetime.utcnow()
 
     # 'Z' indicates UTC time
-    now = datetime.utcnow().isoformat() + 'Z'
-    last_monday = (datetime.utcnow() - timedelta(start_day.weekday())).isoformat() + 'Z'
+    now = datetime.utcnow().isoformat() + "Z"
+    last_monday = (datetime.utcnow() - timedelta(start_day.weekday())).isoformat() + "Z"
 
-    print('Getting the upcoming 10 events')
-    print('**************************************************************\n')
+    print("Getting the upcoming 10 events")
+    print("**************************************************************\n")
 
-    events_result = service.events().list(calendarId='primary', timeMin=last_monday, timeMax=now,
-                                          maxResults=EVENTS_TO_LOOK_THROUGH, singleEvents=True,
-                                          orderBy='startTime').execute()
-    colors = service.colors().get(fields='event').execute()
-    defaultColor = (service.calendarList().get(calendarId="primary").execute())['backgroundColor']
-    events = events_result.get('items', [])
+    events_result = (
+        service.events()
+        .list(
+            calendarId="primary",
+            timeMin=last_monday,
+            timeMax=now,
+            maxResults=EVENTS_TO_LOOK_THROUGH,
+            singleEvents=True,
+            orderBy="startTime",
+        )
+        .execute()
+    )
+    colors = service.colors().get(fields="event").execute()
+    defaultColor = (service.calendarList().get(calendarId="primary").execute())[
+        "backgroundColor"
+    ]
+    events = events_result.get("items", [])
     tasks = []
 
     if not events:
-        print('No upcoming events found.')
+        print("No upcoming events found.")
     for event in events:
-        start_string = event['start'].get('dateTime', event['start'].get('date'))
-        end_string = event['end'].get('dateTime', event['end'].get('date'))
+        start_string = event["start"].get("dateTime", event["start"].get("date"))
+        end_string = event["end"].get("dateTime", event["end"].get("date"))
 
-        name = event['summary']
+        name = event["summary"]
         try:
-            color = colors['event'][event['colorId']]['background']
+            color = colors["event"][event["colorId"]]["background"]
         except KeyError:
             color = defaultColor
         task = Task(name, parse_time(start_string), parse_time(end_string), color)
@@ -109,7 +120,9 @@ def main():
             text = "For " + category + " you have planned to spend:"
             number_of_spaces = 15
             number_of_spaces -= len(category)
-            string_length = len(text) + number_of_spaces    # will be adding 10 extra spaces
+            string_length = (
+                len(text) + number_of_spaces
+            )  # will be adding 10 extra spaces
             string_revised = text.ljust(string_length)
             print("\n-----------------------------------------------------------------")
             print(string_revised + format_timedelta(total_time) + "hrs this week")
@@ -130,8 +143,8 @@ def parse_time(timestamp):
 def format_timedelta(timedelta):
     # Takes a timedelta and returns a string
     hours = timedelta.total_seconds() / 3600
-    return ("%.2f" % hours)
+    return "%.2f" % hours
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,8 +1,8 @@
 import os
+
 import tweepy
 
-
-username = "saranshchopra7"    # edit the username here
+username = "saranshchopra7"  # edit the username here
 number_of_tweets = 100  # max can be 200
 
 # API keys

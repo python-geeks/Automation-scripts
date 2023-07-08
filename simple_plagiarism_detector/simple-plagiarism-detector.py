@@ -4,15 +4,15 @@
 
 import math
 import re
-from collections import Counter
 import sys
+from collections import Counter
 
 WORD = re.compile(r"[A-Za-z0-9]")
 SPECIAL_CHARS = re.compile(r"[^A-Za-z0-9]")
 
 
 def get_cosine(vec1, vec2):
-    """ Function to compute Cosine Similarity between two word vectors"""
+    """Function to compute Cosine Similarity between two word vectors"""
     intersection = set(vec1.keys()) & set(vec2.keys())
     numerator = sum([vec1[x] * vec2[x] for x in intersection])
 
@@ -43,8 +43,8 @@ if __name__ == "__main__":
 
     if len(text1) == 0 and len(text2) == 0:
         print("given text files were empty, imputing '1' as place holder")
-        text1 = '' + '1'
-        text2 = '' + '1'
+        text1 = "" + "1"
+        text2 = "" + "1"
 
     vector1 = text_to_vector(text1)
     vector2 = text_to_vector(text2)

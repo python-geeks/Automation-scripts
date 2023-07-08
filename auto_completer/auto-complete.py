@@ -1,8 +1,8 @@
+import re
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-import re
 
 device = torch.device("cpu")
 
@@ -96,7 +96,7 @@ if __name__ == "__main__":
 
     # Making ngrams is also easy, you should be using (n-1) in slicing
     def make_n_grams(text, n):
-        return [(text[i: i + n], text[i + n]) for i in range(len(text) - n)]
+        return [(text[i : i + n], text[i + n]) for i in range(len(text) - n)]
 
     # Define hyperparameters
     N = 8
@@ -130,16 +130,22 @@ if __name__ == "__main__":
         choice = int(input("Enter your choice (1-4): ")) - 1
         input_text = d_sents[choice]
     else:
-        input_text = input("""Please enter an 8 word sentence
-                            (Since loaded model uses 8-gram):""")
+        input_text = input(
+            """Please enter an 8 word sentence
+                            (Since loaded model uses 8-gram):"""
+        )
 
     n_seq = int(input("Enter number of more words to generate: "))
 
     if len(input_text.split()) < 8:
-        raise ("""Please enter an 8 word sentence
-              to start with or choose from defaults!!!""")
+        raise (
+            """Please enter an 8 word sentence
+              to start with or choose from defaults!!!"""
+        )
 
     out = " ".join(generate_text_ngram(model, input_text, word_ixs, n_seq)[0])
 
-    print(f"""\n\nThe Generated Text is: \n============================\n{out}
-          \n============================""")
+    print(
+        f"""\n\nThe Generated Text is: \n============================\n{out}
+          \n============================"""
+    )

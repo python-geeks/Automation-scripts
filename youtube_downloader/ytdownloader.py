@@ -1,17 +1,24 @@
 import argparse
+
 from pytube import YouTube
 
 
 def cli_parse():
-    cli = argparse.ArgumentParser(prog='ytdownloader',
-                                  description='Basic automation script for downloading YouTube hosted videos')
-    cli.add_argument("url", metavar='URL', type=str, help="Youtube video URL")
+    cli = argparse.ArgumentParser(
+        prog="ytdownloader",
+        description="Basic automation script for downloading YouTube hosted videos",
+    )
+    cli.add_argument("url", metavar="URL", type=str, help="Youtube video URL")
     cli.add_argument("-p", "--path", type=str, help="Destination file path")
-    cli.add_argument("-c", "--captions", type=str,
-                     help="Captions lang to download")
+    cli.add_argument("-c", "--captions", type=str, help="Captions lang to download")
     cli.add_argument("-r", "--res", type=str, help="Resolution to download")
-    cli.add_argument("-v", "--verbose", type=bool, default=False,
-                     help="Show information about script processing")
+    cli.add_argument(
+        "-v",
+        "--verbose",
+        type=bool,
+        default=False,
+        help="Show information about script processing",
+    )
     return cli.parse_args()
 
 
@@ -24,7 +31,8 @@ else:
     if not stream:
         stream = video.streams.get_highest_resolution()
         print(
-            f"Sorry, '{args.res}' resolution is not available for this video.\nDownloading highest resolution...")
+            f"Sorry, '{args.res}' resolution is not available for this video.\nDownloading highest resolution..."
+        )
 
 
 if not args.path:
@@ -40,8 +48,7 @@ if args.captions:
         file.write(caps)
         file.close()
     except KeyError:
-        print(
-            f"Sorry, '{args.captions}' captions are not available for this video.")
+        print(f"Sorry, '{args.captions}' captions are not available for this video.")
 
 if args.verbose:
     print(f"Successfully downloaded video: {dest}")

@@ -1,10 +1,14 @@
 import os
 import sys
-from PyPDF2 import PdfFileMerger
-from pdf2image import convert_from_path
 
-sys.path.insert(1, '''B:/Production_Programs/Github/
-        Automation-scripts/Pdf_to_image/sample_files''')
+from pdf2image import convert_from_path
+from PyPDF2 import PdfFileMerger
+
+sys.path.insert(
+    1,
+    """B:/Production_Programs/Github/
+        Automation-scripts/Pdf_to_image/sample_files""",
+)
 
 fileName = "myfile.pdf"
 if os.path.exists(fileName):
@@ -14,7 +18,7 @@ if os.path.exists(fileName):
 x = [a for a in os.listdir() if a.endswith(".pdf")]
 merger = PdfFileMerger()
 for pdf in x:
-    merger.append(open(pdf, 'rb'))
+    merger.append(open(pdf, "rb"))
 
 with open(fileName, "wb") as fout:
     merger.write(fout)
@@ -23,7 +27,7 @@ with open(fileName, "wb") as fout:
 images = convert_from_path(fileName)
 
 for i, image in enumerate(images):
-    fname = 'image' + str(i) + '.png'
+    fname = "image" + str(i) + ".png"
     image.save(fname, "PNG")
 
 print("all file converted")

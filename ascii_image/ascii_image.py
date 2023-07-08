@@ -1,15 +1,18 @@
-from PIL import Image
-import numpy as np
 import argparse
+
+import numpy as np
+from PIL import Image
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('inputImage', help='Enter the path to image')
-parser.add_argument('outputFile', help='Enter the path to output File')
+parser.add_argument("inputImage", help="Enter the path to image")
+parser.add_argument("outputFile", help="Enter the path to output File")
 parser.add_argument(
-    '-w', '--width', help='Enter width of output image', type=int, default=75)
-parser.add_argument('-c', '--colorInvert',
-                    help='Enter to invert color of image', action='store_true')
+    "-w", "--width", help="Enter width of output image", type=int, default=75
+)
+parser.add_argument(
+    "-c", "--colorInvert", help="Enter to invert color of image", action="store_true"
+)
 args = parser.parse_args()
 
 
@@ -20,7 +23,7 @@ widd = args.width
 asci = r"@%#*+=-:. "[::1]
 
 if args.colorInvert:
-    asci = r"@%#*+=-:. "[:: - 1]
+    asci = r"@%#*+=-:. "[::-1]
 
 # input image
 img = Image.open(inputImagePath)
@@ -33,7 +36,7 @@ img = img.convert("L")
 
 
 def avg(imggg):
-    return (np.average(np.array(imggg)))
+    return np.average(np.array(imggg))
 
 
 # opening file

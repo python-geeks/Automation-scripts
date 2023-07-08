@@ -1,11 +1,11 @@
 import os
 import re
-import win32api
 import sys
 
+import win32api
 
-class AlFileSearcher():
 
+class AlFileSearcher:
     def __init__(self, fileName):
         super().__init__()
         self.findFileInAllDrives(fileName)
@@ -19,9 +19,9 @@ class AlFileSearcher():
 
     def findFileInAllDrives(self, fileName):
         rex = re.compile(fileName)
-        for drive in win32api.GetLogicalDriveStrings().split('\000')[:-1]:
+        for drive in win32api.GetLogicalDriveStrings().split("\000")[:-1]:
             self.findFile(drive, rex)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     AlFileSearcher(sys.argv[1])

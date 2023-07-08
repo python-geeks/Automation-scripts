@@ -1,5 +1,7 @@
-from selenium import webdriver
 import argparse
+
+from selenium import webdriver
+
 links = []
 path_to_gekoDriver = ""  # enter the path here
 
@@ -7,10 +9,10 @@ path_to_gekoDriver = ""  # enter the path here
 parser = argparse.ArgumentParser()
 
 # adding arguments
-parser.add_argument('query', help='Enter the query to search video on youtube')
+parser.add_argument("query", help="Enter the query to search video on youtube")
 parser.add_argument(
-    '-n', '--number', help='Video number which is to be opened',
-    type=int, default=1)
+    "-n", "--number", help="Video number which is to be opened", type=int, default=1
+)
 args = parser.parse_args()
 
 
@@ -24,7 +26,7 @@ driver.get(url)
 
 try:
     # opens the nth video requested by the user
-    xxpath = (driver.find_elements_by_xpath('//*[@id="video-title"]'))
+    xxpath = driver.find_elements_by_xpath('//*[@id="video-title"]')
     xxpath[number - 1].click()
 
 except Exception as e:

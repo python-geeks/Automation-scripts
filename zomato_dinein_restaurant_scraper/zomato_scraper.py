@@ -1,16 +1,16 @@
 # -- IMPORTING LIBRARIES --
-import pandas as pd
-from selenium import webdriver
-from bs4 import BeautifulSoup
 import time
 
+import pandas as pd
+from bs4 import BeautifulSoup
+from selenium import webdriver
 
 # -- STARTING CHROME WITH WEBDRIVER --
 browser = webdriver.Chrome()
 
 
 # -- OPENING URL IN BROWSER --
-url = 'https://www.zomato.com/indore/dine-out'
+url = "https://www.zomato.com/indore/dine-out"
 browser.get(url)
 
 
@@ -25,19 +25,33 @@ for i in range(0, 25):
 html = browser.page_source
 
 # -- CREATING BeautifulSoup OBJECT --
-soup = BeautifulSoup(html, 'html.parser')
+soup = BeautifulSoup(html, "html.parser")
 
 
 # -- DEFINING FUNCTION FOR EXTRACTING RESATURANT DETAILS --
 def zomato(soup):
-    name = [i.text.strip() for i in soup.find_all('h4', class_='sc-1hp8d8a-0 sc-dpiBDp iFpvOr')]
-    cuisine = [i.text.strip() for i in soup.find_all('p', class_='sc-1hez2tp-0 sc-hENMEE ffqcCI')]
-    area = [i.text.strip() for i in soup.find_all('p', class_='sc-1hez2tp-0 sc-dCaJBF jughZz')]
-    rate = [i.text.strip() for i in soup.find_all('p', class_='sc-1hez2tp-0 sc-hENMEE crfqyB')]
-    return pd.DataFrame({'Name': name, 'Cuisine': cuisine, 'Area': area, 'Rate for Two': rate})
+    name = [
+        i.text.strip()
+        for i in soup.find_all("h4", class_="sc-1hp8d8a-0 sc-dpiBDp iFpvOr")
+    ]
+    cuisine = [
+        i.text.strip()
+        for i in soup.find_all("p", class_="sc-1hez2tp-0 sc-hENMEE ffqcCI")
+    ]
+    area = [
+        i.text.strip()
+        for i in soup.find_all("p", class_="sc-1hez2tp-0 sc-dCaJBF jughZz")
+    ]
+    rate = [
+        i.text.strip()
+        for i in soup.find_all("p", class_="sc-1hez2tp-0 sc-hENMEE crfqyB")
+    ]
+    return pd.DataFrame(
+        {"Name": name, "Cuisine": cuisine, "Area": area, "Rate for Two": rate}
+    )
 
 
 # -- DISPLAYING AND EXPORTING RESULTS --
 df = zomato(soup)
 print(df.head())
-df.to_csv('Zomato Restaurants.csv')
+df.to_csv("Zomato Restaurants.csv")

@@ -1,6 +1,7 @@
-import win32com.client
 import os
 import sys
+
+import win32com.client
 
 # PpSaveAsFileType enumeration (PowerPoint)
 ppSaveAsMP4 = 39
@@ -10,8 +11,7 @@ ppLayoutText = 6
 msoShapeRectangle = 1
 
 
-def ppt2video(pptx, video, timing, duration,
-              resolution, frames, quality, dict):
+def ppt2video(pptx, video, timing, duration, resolution, frames, quality, dict):
 
     # Check if system requirements are met.
     if sys.platform == "win32":
@@ -44,11 +44,10 @@ def ppt2video(pptx, video, timing, duration,
         if slide.SlideIndex in list:
             # Create new slide with new text
             len_new_ppt = len(new_presentation.Slides)
-            new_slide = new_presentation.Slides.Add(len_new_ppt + 1,
-                                                    ppLayoutText)
+            new_slide = new_presentation.Slides.Add(len_new_ppt + 1, ppLayoutText)
             new_slide.Shapes.addShape(
-                msoShapeRectangle, 150, 150, 250, 250). \
-                TextFrame.TextRange.Text = dict.get(str(slide.SlideIndex))
+                msoShapeRectangle, 150, 150, 250, 250
+            ).TextFrame.TextRange.Text = dict.get(str(slide.SlideIndex))
             # Copying slide from original presentation and adding it new one.
             slide.Copy()
             len_new_ppt = len(new_presentation.Slides)
@@ -61,13 +60,14 @@ def ppt2video(pptx, video, timing, duration,
 
     # Presentation.CreateVideo method (PowerPoint)
     # https://docs.microsoft.com/en-us/office/vba/api/powerpoint.presentation.createvideo
-    new_presentation.CreateVideo(video_path, timing, duration,
-                                 resolution, frames, quality)
+    new_presentation.CreateVideo(
+        video_path, timing, duration, resolution, frames, quality
+    )
     while True:
         try:
             # Update the video file, if already exists.
             os.rename(video_path, video_path)
-            print(f'The video from {pptx} has been created.')
+            print(f"The video from {pptx} has been created.")
             break
         except Exception:
             pass
@@ -77,7 +77,7 @@ def ppt2video(pptx, video, timing, duration,
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # e.g.:test.pptx, file expected to be in the root folder
     file_name = ""
     # e.g.: test_video, will be created in the root folder
@@ -98,7 +98,13 @@ if __name__ == '__main__':
     # to leave without additional input.
     input_dict = {}
 
-    ppt2video(f"./{file_name}", f"./{video_name}.mp4",
-              UseTimingsAndNarrations,
-              DefaultSlideDuration, VertResolution,
-              FramesPerSecond, Quality, input_dict)
+    ppt2video(
+        f"./{file_name}",
+        f"./{video_name}.mp4",
+        UseTimingsAndNarrations,
+        DefaultSlideDuration,
+        VertResolution,
+        FramesPerSecond,
+        Quality,
+        input_dict,
+    )

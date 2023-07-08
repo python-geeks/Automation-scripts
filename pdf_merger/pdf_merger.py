@@ -1,7 +1,9 @@
 import os
+
 from PyPDF2 import PdfFileMerger
 
-print("""
+print(
+    """
 __________________  ___  ___
 | ___ \\  _  \\  ___| |  \\/  |
 | |_/ / | | | |_    | .  . | ___ _ __ __ _  ___ _ __
@@ -9,13 +11,20 @@ __________________  ___  ___
 | |   | |/ /| |     | |  | |  __/ | | (_| |  __/ |
 \\_|   |___/ \\_|     \\_|  |_/\\___|_|  \\__, |\\___|_|
                                       __/ |
-                                     |___/           """)
+                                     |___/           """
+)
 print("📚  Step 1: put the PDFs you want to merge in a folder!")
-print("✏️  Step 2: name your files in the order you want to merge!\
- (like 'file1.pdf', 'file2.pdf'...)")
+print(
+    "✏️  Step 2: name your files in the order you want to merge!\
+ (like 'file1.pdf', 'file2.pdf'...)"
+)
 
-path = os.path.abspath(input("📬 Step 3: Type the path of the folder\
- containing the PDFs you want to merge (relative path): "))
+path = os.path.abspath(
+    input(
+        "📬 Step 3: Type the path of the folder\
+ containing the PDFs you want to merge (relative path): "
+    )
+)
 os.chdir(path)
 
 output_file = input("💌 Step 4 (required): Name your output file: ") + ".pdf"

@@ -1,13 +1,14 @@
 from datetime import datetime, timedelta
-from dateutil import tz
+
 import requests
+from dateutil import tz
 
 
 def get_datetime(utc_time):
     """
     Convert date string to datetime object
     """
-    utc = datetime.strptime(utc_time, '%Y-%m-%dT%H:%M:%S.%fZ')
+    utc = datetime.strptime(utc_time, "%Y-%m-%dT%H:%M:%S.%fZ")
     return utc
 
 
@@ -21,7 +22,7 @@ def get_local_timestamp(utc, from_zone=None):
     to_zone = tz.tzlocal()  # Auto-detect zone
 
     utc = utc.replace(tzinfo=from_zone)
-    local_time = utc.astimezone(to_zone)    # Convert time zone
+    local_time = utc.astimezone(to_zone)  # Convert time zone
 
     return local_time
 
@@ -39,29 +40,27 @@ def getContests(today=False):
     Returns fetched contests in desired day-wise format
     """
     TOMORROW = get_local_timestamp(
-        (datetime.today() + timedelta(days=1))
-        .replace(hour=0, minute=0, second=0, microsecond=0),
-        from_zone=tz.tzlocal()
+        (datetime.today() + timedelta(days=1)).replace(
+            hour=0, minute=0, second=0, microsecond=0
+        ),
+        from_zone=tz.tzlocal(),
     )
     contests = fetchContests()
     calendar = {}
 
     for contest in contests:
-        local_start_time = get_local_timestamp(
-            get_datetime(contest["start_time"]))
+        local_start_time = get_local_timestamp(get_datetime(contest["start_time"]))
         local_end_time = get_local_timestamp(get_datetime(contest["end_time"]))
 
-        contest["start_time"] = local_start_time.strftime(
-            "%I:%M %p, %d %b '%y")
-        contest["end_time"] = local_end_time.strftime(
-            "%I:%M %p, %d %b '%y")
+        contest["start_time"] = local_start_time.strftime("%I:%M %p, %d %b '%y")
+        contest["end_time"] = local_end_time.strftime("%I:%M %p, %d %b '%y")
 
         if local_end_time <= TOMORROW:  # If contest has already ended, skip
             continue
         elif local_start_time <= TOMORROW and local_end_time > TOMORROW:
             # If contest is open today
             key = "Today ({})".format(datetime.today().strftime("%d %b '%y"))
-        else:   # Future contests
+        else:  # Future contests
             if today:
                 return calendar
             key = local_start_time.strftime("%d %B, %Y")

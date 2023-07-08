@@ -1,5 +1,7 @@
-import pyAesCrypt
 import sys
+
+import pyAesCrypt
+
 bufferSize = 64 * 1024
 password = input("password for decrypting : ")
 opname = sys.argv[1].replace(".aes", "")

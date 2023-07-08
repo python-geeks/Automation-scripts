@@ -1,15 +1,15 @@
-import sys
 import subprocess
+import sys
 
 from .utils import collect_sources
 
 
 def ignore(p):
-    """ Ignore hidden and test files """
+    """Ignore hidden and test files"""
     parts = p.splitall()
     if any(x.startswith(".") for x in parts):
         return True
-    if 'test' in parts:
+    if "test" in parts:
         return True
     return False
 

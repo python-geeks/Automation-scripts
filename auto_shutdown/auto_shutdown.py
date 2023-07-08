@@ -13,9 +13,9 @@ set_time = int(set_time)
 
 sec = 60
 
-print('Computer Will Now Shutdown in ' + str(set_time) + ' Minutes')
+print("Computer Will Now Shutdown in " + str(set_time) + " Minutes")
 time.sleep(set_time * sec)
-print('\n')
-print('Computer Will Now Shutdown!')
+print("\n")
+print("Computer Will Now Shutdown!")
 time.sleep(3)
 shutdown()

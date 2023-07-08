@@ -14,6 +14,7 @@ class HighestQuality(ConversionQuality):
     """
     Requires imageio module
     """
+
     def __init__(self):
         ConversionQuality.__init__(self, 1.0, 12, "imageio")
 
@@ -37,7 +38,7 @@ def convert2gif(path, quality=MediumQuality(), out_filename=None):
         return out_filename
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     file = input("Write the file name: ")
     result = convert2gif(file)
     print("Generated GIF at " + result)

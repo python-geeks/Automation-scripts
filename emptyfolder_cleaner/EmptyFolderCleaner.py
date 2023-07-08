@@ -8,8 +8,11 @@ def get_subdirectories(path):
     :param path: the path to check
     :return: a list with the direct subdirectories names
     """
-    return [os.path.join(path, o) for o in os.listdir(path)
-            if os.path.isdir(os.path.join(path, o))]
+    return [
+        os.path.join(path, o)
+        for o in os.listdir(path)
+        if os.path.isdir(os.path.join(path, o))
+    ]
 
 
 def clean_empty_folders(path, removeRoot=True, verbose=False):
@@ -40,7 +43,7 @@ def clean_empty_folders(path, removeRoot=True, verbose=False):
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     selected_path = input("Write the desired path: ")
     remove_root = None
     while remove_root is None:

@@ -1,10 +1,9 @@
-import tweepy
 from time import sleep
+
+import tweepy
 # Import your keys from keys.py present in the same folder
-from keys import consumer_key
-from keys import consumer_secret
-from keys import access_token
-from keys import access_token_secret
+from keys import (access_token, access_token_secret, consumer_key,
+                  consumer_secret)
 
 
 def retweet(hashtag, retweetNum):
@@ -16,15 +15,15 @@ def retweet(hashtag, retweetNum):
     # Input number of retweets during main function call
     for tweet in tweepy.Cursor(api.search, q=hashtag).items(retweetNum):
         try:
-            print('\nTweet found by @' + tweet.user.screen_name)
-            print('Attempting to retweet')
+            print("\nTweet found by @" + tweet.user.screen_name)
+            print("Attempting to retweet")
             tweet.retweet()
-            print('Retweet published successfully.')
+            print("Retweet published successfully.")
             # Change time for sleep accordingly.
             sleep(10)
         # Reasons why your retweet failed
         except tweepy.TweepError as error:
-            print('\nError. Retweet not successful. Reason: ')
+            print("\nError. Retweet not successful. Reason: ")
             print(error.reason)
         except StopIteration:
             break
@@ -33,12 +32,12 @@ def retweet(hashtag, retweetNum):
 def main():
     print("Tell me a hashtag to retweet: ")
     hashtag = input()
-    hashtag = '#' + hashtag
+    hashtag = "#" + hashtag
     print("Tell me how many times do I retweet: ")
     retweetNum = int(input())
     print("Retweet process started")
     retweet(hashtag, retweetNum)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

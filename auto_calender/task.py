@@ -18,7 +18,7 @@ class Task:
         arr = []
         for line in time:
             if line.strip():
-                try:           # line contains eol character(s)
+                try:  # line contains eol character(s)
                     n = int(line)
                     arr.append(n)
                 except Exception:

@@ -1,8 +1,8 @@
-import sys
 import re
+import sys
 
 password = sys.argv[1]
-regex = re.compile('[@_!#$%^&*()<>?/|}{~:]')
+regex = re.compile("[@_!#$%^&*()<>?/|}{~:]")
 
 t1 = len(password) >= 8
 t2 = not (regex.search(password) is None)

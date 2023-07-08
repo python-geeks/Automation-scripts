@@ -1,4 +1,4 @@
-from PyPDF2 import PdfFileWriter, PdfFileReader
+from PyPDF2 import PdfFileReader, PdfFileWriter
 
 print("What is the file that you would like to modify?\n[Provide file address]")
 file = str(input())
@@ -8,7 +8,9 @@ pagesToDelete = []
 print("How many pages do you need to delete?")
 n = int(input())
 
-print("Enter the page numbers of the files you want to delete:\n[Enter page numbers followed by pressing 'Enter']")
+print(
+    "Enter the page numbers of the files you want to delete:\n[Enter page numbers followed by pressing 'Enter']"
+)
 for i in range(0, n):
     givenPage = int(input()) - 1
     pagesToDelete.append(givenPage)
@@ -21,7 +23,7 @@ for i in range(inputFile.getNumPages()):
         p = inputFile.getPage(i)
         output.addPage(p)
 
-with open('output.pdf', 'wb') as f:
+with open("output.pdf", "wb") as f:
     output.write(f)
 
 print("Done!")

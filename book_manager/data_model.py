@@ -1,5 +1,5 @@
 class Book:
-    """ The Class for Book Record Details """
+    """The Class for Book Record Details"""
 
     def __init__(self, name, path, tags, notes):
         self.name = name

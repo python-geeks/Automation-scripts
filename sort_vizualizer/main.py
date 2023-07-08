@@ -1,24 +1,23 @@
 # quick sort visualizer
 
 # import tkinter as tk
-from tkinter import Tk, Label, Button, Frame, Canvas, Entry, SW, W
-from tkinter import messagebox
 import random
-import time
 import sys
+import time
+from tkinter import SW, Button, Canvas, Entry, Frame, Label, Tk, W, messagebox
 
 sys.setrecursionlimit(10**6)
 
 # colours
-DARK_GREY = '#73C6B6'
-LIGHT_GREY = '#B2BABB'
-WHITE = '#F0F3F4'
-GREEN = '#82E0AA'
-GREEN_2 = '#76D7C4'
-BLUE = '#85C1E9'
-PURPLE = '#BB8FCE'
-RED = '#F5B7B1'
-YELLOW = '#F7E806'
+DARK_GREY = "#73C6B6"
+LIGHT_GREY = "#B2BABB"
+WHITE = "#F0F3F4"
+GREEN = "#82E0AA"
+GREEN_2 = "#76D7C4"
+BLUE = "#85C1E9"
+PURPLE = "#BB8FCE"
+RED = "#F5B7B1"
+YELLOW = "#F7E806"
 
 # array of elements / rectangle heights
 array = []
@@ -86,10 +85,19 @@ def quickSort(array, left, right, drawRect):
         pivot = partition(array, left, right, drawRect)
         quickSort(array, left, pivot, drawRect)
         quickSort(array, pivot + 1, right, drawRect)
-        drawRect(array, [BLUE if x >= left and x < pivot
-                         else YELLOW if x == pivot
-                         else PURPLE if x > pivot and x <= right
-                         else RED for x in range(len(array))])
+        drawRect(
+            array,
+            [
+                BLUE
+                if x >= left and x < pivot
+                else YELLOW
+                if x == pivot
+                else PURPLE
+                if x > pivot and x <= right
+                else RED
+                for x in range(len(array))
+            ],
+        )
 
         time.sleep(0.5)
     drawRect(array, [GREEN for x in range(len(array))])
@@ -99,9 +107,9 @@ def quickSort(array, left, right, drawRect):
 def sort():
     try:
         quickSort(array, 0, len(array) - 1, drawRect)
-        messagebox.showinfo('Succces', 'Array sorted!')
+        messagebox.showinfo("Succces", "Array sorted!")
     except Exception:
-        messagebox.showinfo('Error', 'Array could not be sorted')
+        messagebox.showinfo("Error", "Array could not be sorted")
 
 
 def exit_win():
@@ -113,7 +121,7 @@ def exit_win():
 
 # main window
 root = Tk()
-root.title('Quick Sort Visualizer')
+root.title("Quick Sort Visualizer")
 # background color
 root.config(bg=LIGHT_GREY)
 # disabling resizing of window
@@ -121,69 +129,43 @@ root.resizable(0, 0)
 
 # ---adding frames---
 # top name frame
-top = Frame(root,
-            width=1300,
-            height=200,
-            bg=GREEN_2,
-            bd=8,
-            relief="groove")
+top = Frame(root, width=1300, height=200, bg=GREEN_2, bd=8, relief="groove")
 top.grid(row=0, column=0, padx=10, pady=5)
 
 # frame for canvas
-canvas = Canvas(root,
-                width=1000,
-                height=380,
-                bg=WHITE)
+canvas = Canvas(root, width=1000, height=380, bg=WHITE)
 canvas.grid(row=1, column=0, padx=10, pady=5)
 
 # frame for user entries
-entries = Frame(root,
-                width=1300,
-                height=300,
-                bg=GREEN_2,
-                bd=8,
-                relief="groove")
+entries = Frame(root, width=1300, height=300, bg=GREEN_2, bd=8, relief="groove")
 entries.grid(row=2, column=0, padx=10, pady=5)
 
 
 # ---adding widgets---
 # top label
-greeting = Label(top,
-                 text="Quick Sort Visualizer",
-                 width=62,
-                 font=("Courier New", 20, "bold"),
-                 background=GREEN_2)
+greeting = Label(
+    top,
+    text="Quick Sort Visualizer",
+    width=62,
+    font=("Courier New", 20, "bold"),
+    background=GREEN_2,
+)
 greeting.grid(row=0, column=1, pady=5)
 
 
 # user entries and buttons
 # row 0
-Size = Label(entries,
-             text="Size of array : ",
-             bg=LIGHT_GREY,
-             relief="groove")
-Size.grid(row=0,
-          column=0,
-          padx=15,
-          pady=5,
-          sticky=W,
-          ipadx=20,
-          ipady=5)
+Size = Label(entries, text="Size of array : ", bg=LIGHT_GREY, relief="groove")
+Size.grid(row=0, column=0, padx=15, pady=5, sticky=W, ipadx=20, ipady=5)
 sizeEntry = Entry(entries, justify="center")
 sizeEntry.grid(row=0, column=1, padx=15, pady=5, sticky=W, ipady=5)
 
-minn = Label(entries,
-             text="Minimum element : ",
-             bg=LIGHT_GREY,
-             relief="groove")
+minn = Label(entries, text="Minimum element : ", bg=LIGHT_GREY, relief="groove")
 minn.grid(row=0, column=2, padx=15, pady=5, sticky=W, ipadx=20, ipady=5)
 minEntry = Entry(entries, justify="center")
 minEntry.grid(row=0, column=3, padx=15, pady=5, sticky=W, ipady=5)
 
-maxx = Label(entries,
-             text="Maximum element : ",
-             bg=LIGHT_GREY,
-             relief="groove")
+maxx = Label(entries, text="Maximum element : ", bg=LIGHT_GREY, relief="groove")
 maxx.grid(row=0, column=4, padx=15, pady=5, sticky=W, ipadx=20, ipady=5)
 maxEntry = Entry(entries, justify="center")
 maxEntry.grid(row=0, column=5, padx=15, pady=5, sticky=W, ipady=5)

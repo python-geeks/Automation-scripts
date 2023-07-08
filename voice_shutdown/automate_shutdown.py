@@ -1,7 +1,8 @@
-from win32com.client import Dispatch
-import speech_recognition as sr
 import os
 import time
+
+import speech_recognition as sr
+from win32com.client import Dispatch
 
 
 def speak(audio):
@@ -21,7 +22,7 @@ def TakeCommand():
         audio = r.listen(source)
         try:
             print("Recognizing...")
-            Query = r.recognize_google(audio, language='en-in')
+            Query = r.recognize_google(audio, language="en-in")
 
         except Exception:
             speak("Say that again please")
@@ -29,8 +30,8 @@ def TakeCommand():
     return Query
 
 
-while (True):
-    if __name__ == '__main__':
+while True:
+    if __name__ == "__main__":
         Query = TakeCommand().lower()
 
     if "shut down" or "shutdown" in Query:

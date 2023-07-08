@@ -10,16 +10,24 @@ Created on Wed Oct 27 13:49:16 2021
 # IMPORTANT::keep your pdf file in the SAME file or add path/rename MANUALLY
 
 
-from PyPDF2 import PdfFileReader, PdfFileWriter, PdfFileMerger
 from pathlib import Path
 
-print("this script can print, edit, modify, rotate and add passwords to PDF documents if used properly")
-pdf_path = (Path.home() / "myfile.pdf")
+from PyPDF2 import PdfFileMerger, PdfFileReader, PdfFileWriter
+
+print(
+    "this script can print, edit, modify, rotate and add passwords to PDF documents if used properly"
+)
+pdf_path = Path.home() / "myfile.pdf"
 pdf = PdfFileReader(str(pdf_path))
 print("to get info on your file type INFO")
 if input() == "INFO":
-    print("documeng title", pdf.documentInfo.title, "\n", "from page 0 to", int
-          (pdf.documentInfo.title) - 1)
+    print(
+        "documeng title",
+        pdf.documentInfo.title,
+        "\n",
+        "from page 0 to",
+        int(pdf.documentInfo.title) - 1,
+    )
     print("number of pages:", pdf.getNumPages())
     print("more details:", pdf.documentInfo)
 print("to extract pages type OUTPUT")
@@ -28,7 +36,7 @@ if input() == "OUTPUT":
     if input() == "FULL":
         for page in pdf.pages:
             print("text will be saved in a txt file")
-            with open('fulltext.txt', 'w') as f:
+            with open("fulltext.txt", "w") as f:
                 f.write(page.extractText())
     if input() == "PAGE":
         print("which page do you want?")
@@ -48,7 +56,7 @@ if input() == "PDF":
         print("add more pages (YES/NO)")
 print("if you want to concatenate two PDF docs, type ADD")
 if input() == "ADD":
-    BASE_PATH = (Path.home())
+    BASE_PATH = Path.home()
     print("name the two files eg file1.pdf, file2.pdf one by one")
     m = input()
     n = input()
@@ -59,7 +67,9 @@ if input() == "ADD":
     output_path = Path.home() / "concatenated.pdf"
     with output_path.open(mode="wb") as output_file:
         pdf_merger.write(output_file)
-print("if you want to rotate all pages clockwise write CW or write ACW for anticlockwise")
+print(
+    "if you want to rotate all pages clockwise write CW or write ACW for anticlockwise"
+)
 if input() == "CW":
     pdf_reader = PdfFileReader(str(pdf_path))
     pdf_writer = PdfFileWriter()

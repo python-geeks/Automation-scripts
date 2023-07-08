@@ -1,13 +1,13 @@
 # https://www.wordunscrambler.net/word-list/wordle-word-list
 # for the list of words
 
+import time
+
+from pynput import keyboard
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
-from pynput import keyboard
-import time
-
 
 # This class is used to store data about the wordle such as :
 # - the list of possible words
@@ -16,12 +16,13 @@ import time
 # - the letters that are correct and their position in a list
 # - the word that is currently being tested
 
+
 class Finder:
     def __init__(self):
         self.possible_words = get_list_of_words()
         self.present_letters = set([])
         self.absent_letters = set([])
-        self.word = [''] * 5
+        self.word = [""] * 5
 
         # Creators recommend “Slate” as starting word
         self.word_to_try = "slate"
@@ -37,15 +38,10 @@ def on_release(key):
 # Get the status of the letters in the wordle
 def get_row_results(game_row):
     tiles = game_row.find_elements(
-        By.XPATH, ".//*[contains(@class, 'Tile-module_tile__')]")
+        By.XPATH, ".//*[contains(@class, 'Tile-module_tile__')]"
+    )
     row_results = []
-    res_to_int = {
-        "correct": 1,
-        "present": 0,
-        "absent": -1,
-        "empty": -2,
-        "tbd": -3
-    }
+    res_to_int = {"correct": 1, "present": 0, "absent": -1, "empty": -2, "tbd": -3}
     for tile in tiles:
         row_results.append(res_to_int[tile.get_attribute("data-state")])
     print(f"Row results : {row_results}")
@@ -120,9 +116,11 @@ def solving_algorithm(res, finder):
             # We keep all the words that don't match
             # the pattern of the word entered
             finder.possible_words = list(
-                filter(lambda x_word:
-                       not check_match(word[letter], x_word[letter]),
-                       finder.possible_words))
+                filter(
+                    lambda x_word: not check_match(word[letter], x_word[letter]),
+                    finder.possible_words,
+                )
+            )
 
         else:  # Case when the status of the letter is "absent"
             print(f"Letter {word[letter]} is absent")
@@ -132,9 +130,11 @@ def solving_algorithm(res, finder):
             # We keep all the words that don't match
             # the pattern of the word entered
             finder.possible_words = list(
-                filter(lambda x_word:
-                       not check_match(word[letter], x_word[letter]),
-                       finder.possible_words))
+                filter(
+                    lambda x_word: not check_match(word[letter], x_word[letter]),
+                    finder.possible_words,
+                )
+            )
 
     print("\n")
     print("Updating list of possible words ...")
@@ -142,20 +142,26 @@ def solving_algorithm(res, finder):
     # Update list of words
     for absent in finder.absent_letters:
         finder.possible_words = list(
-            filter(lambda x_word:
-                   not check_letter_in_word(absent, x_word),
-                   finder.possible_words))
+            filter(
+                lambda x_word: not check_letter_in_word(absent, x_word),
+                finder.possible_words,
+            )
+        )
     for present in finder.present_letters:
         finder.possible_words = list(
-            filter(lambda x_word:
-                   check_letter_in_word(present, x_word),
-                   finder.possible_words))
+            filter(
+                lambda x_word: check_letter_in_word(present, x_word),
+                finder.possible_words,
+            )
+        )
     for i in range(len(finder.word)):
         if finder.word[i] != "":
             finder.possible_words = list(
-                filter(lambda x_word:
-                       check_match(x_word[i], finder.word[i]),
-                       finder.possible_words))
+                filter(
+                    lambda x_word: check_match(x_word[i], finder.word[i]),
+                    finder.possible_words,
+                )
+            )
 
     # Update the next word to try
     finder.word_to_try = finder.possible_words[0]
@@ -170,8 +176,7 @@ def solving_algorithm(res, finder):
 
 def main():
     # Start the browser
-    browser = webdriver.Firefox(
-        service=FirefoxService(GeckoDriverManager().install()))
+    browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
     browser.get("https://www.nytimes.com/games/wordle/index.html")
 
     # Create the finder object (cf. class Finder)
@@ -191,7 +196,8 @@ def main():
 
     # Get the game rows
     game_rows = browser.find_elements(
-        By.XPATH, "//*[contains(@class, 'Row-module_row__')]")
+        By.XPATH, "//*[contains(@class, 'Row-module_row__')]"
+    )
 
     # Enter words until the game is over or the wordle is solved
     for i in range(guesses_left, 0, -1):

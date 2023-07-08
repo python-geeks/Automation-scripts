@@ -1,21 +1,25 @@
-import os
-import sys
 import csv
-import pyperclip
+import os
 import re
+import sys
+
+import pyperclip
 
 # Create phone regex.
 phoneRegex = re.compile(
-    r'''(\(?([\d]{3})\)?[\.|\s|\-]*([\d]{3})[\.|\s|\-]*([\d]{4}))''',
-    re.VERBOSE)
+    r"""(\(?([\d]{3})\)?[\.|\s|\-]*([\d]{3})[\.|\s|\-]*([\d]{4}))""", re.VERBOSE
+)
 
 # Create email regex.
-emailRegex = re.compile(r'''(
+emailRegex = re.compile(
+    r"""(
     [a-zA-Z0-9._%+-] + #username
     @                   # @symbole
     [a-zA-Z0-9.-] +     # domain
     (\.[a-zA-Z]{2,4})   # dot-something
-    )''', re.VERBOSE)
+    )""",
+    re.VERBOSE,
+)
 
 text = ""
 
@@ -37,31 +41,33 @@ else:
 phoneMatches = []
 emailMatches = []
 for groups in phoneRegex.findall(text):
-    phoneNum = '-'.join([groups[1], groups[2], groups[3]])
+    phoneNum = "-".join([groups[1], groups[2], groups[3]])
     phoneMatches.append(phoneNum)
 for groups in emailRegex.findall(text):
     emailMatches.append(groups[0])
 
-if (len(phoneMatches) > 0 or len(emailMatches)):
-    matches = '\n'.join(phoneMatches) + '\n' + '\n'.join(emailMatches)
+if len(phoneMatches) > 0 or len(emailMatches):
+    matches = "\n".join(phoneMatches) + "\n" + "\n".join(emailMatches)
     pyperclip.copy(matches)
-    print('Copied to clipboard!')
+    print("Copied to clipboard!")
     s = pyperclip.paste()
-    print("Phone Numbers - \n\t"
-          + '\n\t'.join(phoneMatches)
-          + "\nEmails - \n\t"
-          + '\n\t'.join(emailMatches))
+    print(
+        "Phone Numbers - \n\t"
+        + "\n\t".join(phoneMatches)
+        + "\nEmails - \n\t"
+        + "\n\t".join(emailMatches)
+    )
 
-    with open('phones.csv', 'w') as f:
+    with open("phones.csv", "w") as f:
         # using csv.writer method from CSV package
         write = csv.writer(f)
         write.writerows([phoneMatches])
         print("Phone numbers saved to phones.csv")
 
-    with open('emails.csv', 'w') as f:
+    with open("emails.csv", "w") as f:
         # using csv.writer method from CSV package
         write = csv.writer(f)
         write.writerows([emailMatches])
         print("Phone numbers saved to emails.csv")
 else:
-    print('No phone numbers or email addresses found.')
+    print("No phone numbers or email addresses found.")

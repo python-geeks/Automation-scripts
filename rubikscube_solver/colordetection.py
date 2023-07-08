@@ -17,19 +17,21 @@ class ColorDetection:
         """Get the name of the color based on the hue. :returns: string."""
         (h, s, v) = hsv
         for color in cal:
-            if color == 'red' or color == 'orange':
-                if (h < cal[color][1][0] or h > cal[color][0][0])\
-                        and s in range(cal[color][1][1], cal[color][0][1])\
-                        and v in range(
-                        cal[color][1][2], cal[color][0][2]):
+            if color == "red" or color == "orange":
+                if (
+                    (h < cal[color][1][0] or h > cal[color][0][0])
+                    and s in range(cal[color][1][1], cal[color][0][1])
+                    and v in range(cal[color][1][2], cal[color][0][2])
+                ):
                     return color
-            elif h in range(cal[color][1][0], cal[color][0][0])\
-                    and s in range(cal[color][1][1], cal[color][0][1])\
-                    and v in range(
-                    cal[color][1][2], cal[color][0][2]):
+            elif (
+                h in range(cal[color][1][0], cal[color][0][0])
+                and s in range(cal[color][1][1], cal[color][0][1])
+                and v in range(cal[color][1][2], cal[color][0][2])
+            ):
                 return color
 
-        return 'white'
+        return "white"
 
     def name_to_rgb(self, name):
         """Get the main RGB color for a name.
@@ -38,12 +40,12 @@ class ColorDetection:
         :returns: tuple.
         """
         color = {
-            'red': (0, 0, 255),
-            'orange': (0, 165, 255),
-            'blue': (255, 0, 0),
-            'green': (0, 255, 0),
-            'white': (255, 255, 255),
-            'yellow': (0, 255, 255)
+            "red": (0, 0, 255),
+            "orange": (0, 165, 255),
+            "blue": (255, 0, 0),
+            "green": (0, 255, 0),
+            "white": (255, 255, 255),
+            "yellow": (0, 255, 255),
         }
         return color[name]
 

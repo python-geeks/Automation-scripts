@@ -4,12 +4,8 @@ import logging
 import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import (
-    LabelEncoder,
-    MinMaxScaler,
-    OneHotEncoder,
-    StandardScaler,
-)
+from sklearn.preprocessing import (LabelEncoder, MinMaxScaler, OneHotEncoder,
+                                   StandardScaler)
 
 logging.basicConfig(format="%(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -51,9 +47,7 @@ def update_dataset_props(dataset_props: dict, default_dataset_props: dict):
         if key1 in dataset_props.keys():
             for key2 in default_dataset_props[key1].keys():
                 if key2 in dataset_props[key1].keys():
-                    default_dataset_props[key1][key2] = dataset_props[key1][
-                        key2
-                    ]
+                    default_dataset_props[key1][key2] = dataset_props[key1][key2]
 
     return default_dataset_props
 
@@ -76,9 +70,7 @@ def handle_missing_values(df, fill_value=np.nan, strategy="mean"):
 
 def encode(df, encoding_type="onehotencoding", column=None):
     if not encoding_type:
-        raise Exception(
-            f"encoding type should be -> oneHotEncoding or labelEncoding"
-        )
+        raise Exception(f"encoding type should be -> oneHotEncoding or labelEncoding")
 
     if encoding_type == "onehotencoding":
         logger.info(f"performing a one hot encoding ...")
@@ -95,9 +87,7 @@ def encode(df, encoding_type="onehotencoding", column=None):
         encoder.fit(df[column])
         classes_map = {
             cls: int(lbl)
-            for (cls, lbl) in zip(
-                encoder.classes_, encoder.transform(encoder.classes_)
-            )
+            for (cls, lbl) in zip(encoder.classes_, encoder.transform(encoder.classes_))
         }
         logger.info(f"label encoding classes => {encoder.classes_}")
         logger.info(f"classes map => {classes_map}")
@@ -105,9 +95,7 @@ def encode(df, encoding_type="onehotencoding", column=None):
         return df, classes_map
 
     else:
-        raise Exception(
-            f"encoding type should be -> oneHotEncoding or labelEncoding"
-        )
+        raise Exception(f"encoding type should be -> oneHotEncoding or labelEncoding")
 
 
 def normalize(x, y=None, method="standard"):

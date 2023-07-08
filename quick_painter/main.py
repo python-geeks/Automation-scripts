@@ -1,6 +1,5 @@
-from tkinter import Tk, Button, Canvas
-from tkinter import colorchooser
-from tkinter import filedialog
+from tkinter import Button, Canvas, Tk, colorchooser, filedialog
+
 from PIL import Image, ImageDraw
 
 width = 1280
@@ -55,7 +54,9 @@ cursor_ = None
 def cursor(event):
     global cursor_
     if cursor_ not in canvas.find_all():
-        cursor_ = canvas.create_oval(event.x - 10, event.y - 10, event.x + 10, event.y + 10, width=0, fill='cyan')
+        cursor_ = canvas.create_oval(
+            event.x - 10, event.y - 10, event.x + 10, event.y + 10, width=0, fill="cyan"
+        )
     canvas.coords(cursor_, event.x - 10, event.y - 10, event.x + 10, event.y + 10)
     canvas.update_idletasks()
 
@@ -66,7 +67,9 @@ def paint(event):
     x1, y1 = (event.x - 10), (event.y - 10)
     x2, y2 = (event.x + 10), (event.y + 10)
     canvas.create_oval(x1, y1, x2, y2, width=0, fill=color)
-    draw.ellipse([(event.x - 10, event.y - 10), (event.x + 10, event.y + 10)], fill=color)
+    draw.ellipse(
+        [(event.x - 10, event.y - 10), (event.x + 10, event.y + 10)], fill=color
+    )
     canvas.update_idletasks()
 
 
@@ -75,7 +78,7 @@ def erase(event):
 
     item = canvas.find_closest(event.x, event.y)
     coords = canvas.coords(item)
-    if (abs(event.x - (coords[0] + 10)) < 35 and abs(event.y - (coords[1] + 10)) < 35):
+    if abs(event.x - (coords[0] + 10)) < 35 and abs(event.y - (coords[1] + 10)) < 35:
         canvas.delete(item)
         draw.ellipse([(coords[0], coords[1]), (coords[2], coords[3])], fill=background)
 

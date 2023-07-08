@@ -1,27 +1,30 @@
-from typing import Optional
-import requests
 import time
 import uuid
+from typing import Optional
+
+import requests
 
 
 class Maildrop(object):
     _apikey = "QM8VTHrLR2JloKTJMZ3N6Qa93FVsx8LapKCzEjui"
     _inbox = "https://api.maildrop.cc/v2/mailbox"
-    _search_fields = ("sender", "subject", "body",)
+    _search_fields = (
+        "sender",
+        "subject",
+        "body",
+    )
 
     def __init__(
-        self,
-        address: Optional[str] = None,
-        message_filter: Optional[str] = None
+        self, address: Optional[str] = None, message_filter: Optional[str] = None
     ) -> None:
         """Create an instance of the Maildrop.cc client.
 
-            :param address: Optional address to monitor on maildrop.
-                Can be a full email with or without domain.
-                Defaults to a random uuid.
-                Note the address if you plan to re-use it in the future.
-            :param message_filter: Optional text to search for in
-                sender, subject, and body fields.
+        :param address: Optional address to monitor on maildrop.
+            Can be a full email with or without domain.
+            Defaults to a random uuid.
+            Note the address if you plan to re-use it in the future.
+        :param message_filter: Optional text to search for in
+            sender, subject, and body fields.
         """
         if address and "@" in address:
             # drop the domain from the email address
@@ -37,10 +40,9 @@ class Maildrop(object):
         self._seen = set()
         self._emails = list()
         self._client = requests.Session()
-        self._client.headers.update({
-            "Content-Type": "application/json",
-            "x-api-key": self._apikey
-        })
+        self._client.headers.update(
+            {"Content-Type": "application/json", "x-api-key": self._apikey}
+        )
         print(f"maildrop address set to {self._address}@maildrop.cc")
 
     @property
@@ -56,9 +58,9 @@ class Maildrop(object):
     def _get_body(self, email_id: str) -> str:
         """Retrieves the body of an email.
 
-            :param email_id: The unique identifier of the email to retrieve.
-            :returns: The body of the requested email.
-            :rtype: str
+        :param email_id: The unique identifier of the email to retrieve.
+        :returns: The body of the requested email.
+        :rtype: str
         """
         resp = self._client.get(f"{self._inbox}/{self._address}/{email_id}")
         if not resp.ok:
@@ -81,10 +83,12 @@ class Maildrop(object):
             self._seen.add(email_id)
             email["body"] = self._get_body(email_id)
             if self._filter:
-                if any([
-                    self._filter in email.get(field, "")
-                    for field in self._search_fields
-                ]):
+                if any(
+                    [
+                        self._filter in email.get(field, "")
+                        for field in self._search_fields
+                    ]
+                ):
                     new_emails.append(email)
             else:
                 new_emails.append(email)
@@ -94,9 +98,9 @@ class Maildrop(object):
     def monitor_inbox(self, interval: int = 5) -> None:
         """Check for unseen emails at an interval until told to stop.
 
-            :param interval: Optional number of seconds to wait
-                before re-checking for unseen emails.
-                Defaults to 5 seconds.
+        :param interval: Optional number of seconds to wait
+            before re-checking for unseen emails.
+            Defaults to 5 seconds.
         """
         print(f"checking inbox every {interval} seconds")
         print("to stop monitoring loop, press & hold ctrl+c")
@@ -119,6 +123,7 @@ class Maildrop(object):
 
 if __name__ == "__main__":
     import argparse
+
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-a",
@@ -127,7 +132,7 @@ if __name__ == "__main__":
             "A specific maildrop.cc email address to monitor. "
             "If omitted, a randomly-generated UUID4 is used."
         ),
-        default=None
+        default=None,
     )
     parser.add_argument(
         "-f",
@@ -136,7 +141,7 @@ if __name__ == "__main__":
             "A string to search for in new emails. "
             "If omitted, all new emails are returned."
         ),
-        default=None
+        default=None,
     )
     args = parser.parse_args()
     md = Maildrop(address=args.address, message_filter=args.filter)

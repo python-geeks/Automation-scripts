@@ -1,7 +1,6 @@
 import cv2
 import pytesseract
 
-
 tesseract_path = r"D:\Saransh\Softwares\Tesseract-OCR\tesseract.exe"
 image_path = "test.png"
 file_path = "output.txt"

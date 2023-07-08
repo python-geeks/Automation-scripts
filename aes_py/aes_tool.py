@@ -1,6 +1,7 @@
 import base64
-from Crypto.Cipher import AES
+
 from Crypto import Random
+from Crypto.Cipher import AES
 from Crypto.Protocol.KDF import PBKDF2
 
 BLOCK_SIZE = 16
@@ -13,7 +14,7 @@ def pad(s):
 
 
 def unpad(s):
-    return s[: -ord(s[len(s) - 1:])]
+    return s[: -ord(s[len(s) - 1 :])]
 
 
 def get_private_key(password):

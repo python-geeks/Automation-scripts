@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+
 import yaml
 
 # Checking there is a file name passed

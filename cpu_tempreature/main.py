@@ -1,6 +1,6 @@
+import getopt
 import os
 import sys
-import getopt
 
 
 def rtcheck(seconds):
@@ -14,8 +14,7 @@ def rtcheck(seconds):
 def usageinfo(check, run, exitmsg):
     print("Usage information:\n")
     print("-h / --help\t\tDisplay this usage info.")
-    print(
-        "-s / --seconds [seconds]\tRun cputemp for specified number of seconds")
+    print("-s / --seconds [seconds]\tRun cputemp for specified number of seconds")
     print("-C / --celsius\t\tDisplay temperature in Celsius")
     print("-F / --fahrenheit\t\tDisplay temperature in Fahrenheit")
     print("-K / --kelvin\t\tDisplay temperature in Kelvin")
@@ -27,7 +26,9 @@ def usageinfo(check, run, exitmsg):
 
 
 def hwcheck():
-    if os.path.exists("/sys/devices/LNXSYSTM:00/LNXTHERM:00/LNXTHERM:01/thermal_zone/temp"):
+    if os.path.exists(
+        "/sys/devices/LNXSYSTM:00/LNXTHERM:00/LNXTHERM:01/thermal_zone/temp"
+    ):
         return 4
 
     elif os.path.exists("/sys/bus/acpi/devices/LNXTHERM:00/thermal_zone/temp"):
@@ -61,20 +62,43 @@ def getDegree():
 
 def getTemp(hardware):
     if hardware == 1:
-        temp = open("/proc/acpi/thermal_zone/THM0/temperature").read(
-        ).strip().lstrip('temperature :').rstrip(' C')
+        temp = (
+            open("/proc/acpi/thermal_zone/THM0/temperature")
+            .read()
+            .strip()
+            .lstrip("temperature :")
+            .rstrip(" C")
+        )
     elif hardware == 2:
-        temp = open("/proc/acpi/thermal_zone/THRM/temperature").read(
-        ).strip().lstrip('temperature :').rstrip(' C')
+        temp = (
+            open("/proc/acpi/thermal_zone/THRM/temperature")
+            .read()
+            .strip()
+            .lstrip("temperature :")
+            .rstrip(" C")
+        )
     elif hardware == 3:
-        temp = open("/proc/acpi/thermal_zone/THR1/temperature").read(
-        ).strip().lstrip('temperature :').rstrip(' C')
+        temp = (
+            open("/proc/acpi/thermal_zone/THR1/temperature")
+            .read()
+            .strip()
+            .lstrip("temperature :")
+            .rstrip(" C")
+        )
     elif hardware == 4:
-        temp = open(
-            "/sys/devices/LNXSYSTM:00/LNXTHERM:00/LNXTHERM:01/thermal_zone/temp").read().strip().rstrip('000')
+        temp = (
+            open("/sys/devices/LNXSYSTM:00/LNXTHERM:00/LNXTHERM:01/thermal_zone/temp")
+            .read()
+            .strip()
+            .rstrip("000")
+        )
     elif hardware == 5:
-        temp = open(
-            "/sys/bus/acpi/devices/LNXTHERM:00/thermal_zone/temp").read().strip().rstrip('000')
+        temp = (
+            open("/sys/bus/acpi/devices/LNXTHERM:00/thermal_zone/temp")
+            .read()
+            .strip()
+            .rstrip("000")
+        )
         temp = str(float(temp) / 10.0)
     else:
         return 0
@@ -82,12 +106,12 @@ def getTemp(hardware):
 
 
 def dispTemp(temp, degree, minutes, seconds):
-    print("\rCPU Temperature: ", temp, degree, end=' ')
-    print("(Time Running: ", minutes, ":", end=' ')
+    print("\rCPU Temperature: ", temp, degree, end=" ")
+    print("(Time Running: ", minutes, ":", end=" ")
     if seconds < 10:
-        print("0" + str(seconds), ")", end=' ')
+        print("0" + str(seconds), ")", end=" ")
     else:
-        print(seconds, ")", end=' ')
+        print(seconds, ")", end=" ")
 
 
 def convertDegree(degree, temp):
@@ -117,8 +141,19 @@ def main():
     ticker = 0
     exitmsg = ""
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "aCFKs:hV", [
-                                   "average", "celsius", "kelvin", "fahrenheit", "seconds=", "help", "version"])
+        opts, args = getopt.getopt(
+            sys.argv[1:],
+            "aCFKs:hV",
+            [
+                "average",
+                "celsius",
+                "kelvin",
+                "fahrenheit",
+                "seconds=",
+                "help",
+                "version",
+            ],
+        )
     except getopt.GetoptError:
         help = 1
         check = 1
@@ -163,6 +198,7 @@ def main():
         degree = getDegree()
     import datetime
     import time
+
     prevtemp = 21
     tmax = 0
     tmin = 1000
@@ -206,12 +242,12 @@ def main():
     tavg = tsum / ticker
     tavg = round(tavg, 1)
     if avg == 0:
-        print("\n\nHighest recorded temperature was",
-              tmax, "degrees", degree, ".")
+        print("\n\nHighest recorded temperature was", tmax, "degrees", degree, ".")
         print("Lowest recorded temperature was", tmin, "degrees", degree, ".")
     print("Average temperature was", tavg, "degrees", degree, ".\n")
 
     import os
+
     if avg == 1:
         return 0
     elif os.path.exists("/var/log/cputemp.log") and avg == 0:
@@ -251,5 +287,5 @@ def main():
         return 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

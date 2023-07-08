@@ -1,6 +1,7 @@
 import os
-from pytube import YouTube
+
 import moviepy.editor as mp
+from pytube import YouTube
 
 SAVE_PATH = r"C:\Users\Downloads"
 link = input("Paste the link")
@@ -13,7 +14,7 @@ video.streams.get_by_itag(k).download(SAVE_PATH)
 m = video.title
 print(m + "is downloaded in .mp4 audio format")
 
-text_files = [f for f in os.listdir(SAVE_PATH) if f.endswith('.mp4')]
+text_files = [f for f in os.listdir(SAVE_PATH) if f.endswith(".mp4")]
 print(text_files)
 s = input("Kindly paste the title you want in .mp3 from above list")
 
