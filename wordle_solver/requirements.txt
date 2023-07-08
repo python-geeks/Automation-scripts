@@ -1,0 +1,3 @@
+selenium
+webdriver_manager
+pynput
