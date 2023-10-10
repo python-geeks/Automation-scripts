@@ -1,8 +1,8 @@
 import subprocess
 import os
 
-src = './src'
-dst = './mp4'
+src = input("Enter the source file path: ")
+dst = imput("Enter the destination file path: ")
 
 for root, dirs, filenames in os.walk(src, topdown=False):
     #print(filenames)
