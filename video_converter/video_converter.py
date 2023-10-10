@@ -7,7 +7,7 @@ if __name__ == '__main__':
     # set up the arguments to be parsed
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-i', '--input', type=str, help='the file to crop')
+    parser.add_argument('-i', '--input', type=str, help='the file to convert')
 
     args = parser.parse_args()
 
@@ -17,6 +17,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     try:
+        # get the file name
         base_name = os.path.splitext(os.path.basename(args.input))[0]
         output_file = f"{base_name}.mp4"
 
