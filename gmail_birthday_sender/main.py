@@ -5,9 +5,9 @@ import time
 import os
 from typing import Optional
 
+# Input your information by chnaging string part from here---------------------
 # used for email body (e.g. sincerely <myname>)
 your_name = "your_real_name"
-# Input your information by chnaging string part from here---------------------
 your_email = "your_account@gmail.com"
 # Your application password can be used only after 2-step verification
 password = "your_gmailpassword"
