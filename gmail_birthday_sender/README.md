@@ -3,8 +3,8 @@
 This script automatically sends birthday wishes via Gmail.
 You just need to enter your information at beginning.
 
->[!WARNING]
->This script lacks strong security for your email
+> [!WARNING]
+> This script lacks strong security for your email
 
 ## Requirements
 
@@ -53,6 +53,19 @@ If you don't need, write `None` instead
 
 ```py
         "attachment": None
+```
+
+- If you want to change the subject and body of email, modify below string
+
+```py
+        subject = f"Happy birthday {name}!"
+        body = f"""Dear {name},
+
+        Wishing you a very happy birthday filled with love, laughter, and joy!
+        May all your dreams and aspirations come true.
+        Looking forward to seeing you soon! Have a fantastic birthday!
+
+        Best wishes, {self.your_name}"""
 ```
 
 ### Run the script
