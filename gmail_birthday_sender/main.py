@@ -90,6 +90,11 @@ if __name__ == "__main__":
 
     schedule.every().day.at("07:00").do(birthday_sender.run)
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    try:
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("Birthday sending stopped")
+    except Exception as e:
+        print(f"An error: {e}")
