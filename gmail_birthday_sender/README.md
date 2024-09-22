@@ -3,9 +3,6 @@
 This script automatically sends birthday wishes via Gmail.
 You just need to enter your information at beginning.
 
-> [!WARNING]
-> This script lacks strong security for your email
-
 ## Requirements
 
 - Python 3
@@ -87,3 +84,15 @@ or
 ```bash
 python3 dictionary.py
 ```
+
+> [!IMPORTANT]
+> Script should be run anytime to send birthday wishes automatically
+
+## Output
+
+![Example of output](example_of_birthday_sender.png)
+
+## Disclaimers, if any
+
+> [!WARNING]
+> This script lacks strong security for your email
