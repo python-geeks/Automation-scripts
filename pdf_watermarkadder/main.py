@@ -23,7 +23,7 @@ def makepdf():
     pdf_file = input("PDF file: ")
     watermark = 'watermark.pdf'
     merged = "finalDraft.pdf"
-    with open(pdf_file, "rb") as input_file,\
+    with open(pdf_file, "rb") as input_file, \
             open(watermark, "rb") as watermark_file:
         input_pdf = PdfFileReader(input_file)
         watermark_pdf = PdfFileReader(watermark_file)

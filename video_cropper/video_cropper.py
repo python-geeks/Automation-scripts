@@ -11,7 +11,8 @@ def to_int(a, rel_to):
     If string contains "%" it converts it to a float and multiplies by rel_to
     EG: 50% -> 0.5*rel_to
     '''
-    if type(a) == int:
+
+    if isinstance(a):
         return a
     else:
         if '%' in a:
@@ -25,13 +26,41 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-i', '--input', type=str, help='the file to crop')
-    parser.add_argument('-c', '--crop', type=str, help='the amount to crop in the format "TOP,BOTTOM,LEFT,RIGHT"')
-    parser.add_argument('-t', '--top', type=str, help='the amount to crop off the top of the video')
-    parser.add_argument('-b', '--bottom', type=str, help='the amount to crop off the bottom of the video')
-    parser.add_argument('-l', '--left', type=str, help='the amount to crop off the left of the video')
-    parser.add_argument('-r', '--right', type=str, help='the amount to crop off the right of the video')
-    parser.add_argument('-o', '--output', type=str, help='the file to output to (cannot be the same as input file)')
-    parser.add_argument('-y', '--yes', action='store_true', help='skip the prompt to confirm overwriting a file')
+    parser.add_argument(
+        '-c',
+        '--crop',
+        type=str,
+        help='the amount to crop in the format "TOP,BOTTOM,LEFT,RIGHT"')
+    parser.add_argument(
+        '-t',
+        '--top',
+        type=str,
+        help='the amount to crop off the top of the video')
+    parser.add_argument(
+        '-b',
+        '--bottom',
+        type=str,
+        help='the amount to crop off the bottom of the video')
+    parser.add_argument(
+        '-l',
+        '--left',
+        type=str,
+        help='the amount to crop off the left of the video')
+    parser.add_argument(
+        '-r',
+        '--right',
+        type=str,
+        help='the amount to crop off the right of the video')
+    parser.add_argument(
+        '-o',
+        '--output',
+        type=str,
+        help='the file to output to (cannot be the same as input file)')
+    parser.add_argument(
+        '-y',
+        '--yes',
+        action='store_true',
+        help='skip the prompt to confirm overwriting a file')
 
     args = parser.parse_args()
 
@@ -107,7 +136,11 @@ if __name__ == '__main__':
         sys.exit(1)
 
     # call ffmpeg with the required args
-    cmd = 'ffmpeg -hide_banner -loglevel error -i "{}" -c:a copy -filter:v "crop={}:{}:{}:{}" {}{}'
+    cmd = (
+        'ffmpeg -hide_banner -loglevel error -i "{}" -c:a copy '
+        '-filter:v "crop={}:{}:{}:{}" {}{}'
+    )
+
     cmd = cmd.format(
         args.input,
         width,
