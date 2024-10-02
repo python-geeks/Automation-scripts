@@ -47,8 +47,7 @@ def get_weather(lat, long):
                 "Wind Speed": data['wind']['speed'],
                 "Wind Degree": data['wind']['deg'],
                 "Weather": data['weather'][0]['description'].capitalize(),
-                "Clouds": f"{
-                    data['clouds']['all']}%",
+                "Clouds": f"{data['clouds']['all']}%",
                 "Visibility": data.get(
                     'visibility',
                     "N/A"),
