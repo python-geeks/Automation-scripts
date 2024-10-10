@@ -1,7 +1,11 @@
-# ISS Tracker 🛰️
-Real-Time International Space Station (ISS) Tracker with Python
-
+# ISS Tracker
 A Python script to fetch TLE data of the ISS (ZARYA) satellite, calculate its position, predict its orbit and visualize its trajectory on an interactive map. Thanks to [Celestrak](https://celestrak.org/) We can access to the TLE data of satellites, including International Space Station.
+
+## How to Run
+- Install required modules
+`pip install -r requirements.txt`
+- Run the script and wait for the map to launch
+`python3 tracker.py`
 
 ## Key Concepts
 ### What is a TLE?
@@ -16,22 +20,5 @@ In Astronomy, the subpoint position (or subsatellite point) of a satellite refer
 ### What is International Date Line (IDL)?
 The International Date Line is an imaginary line that runs from the North Pole to the South Pole, primarily along the 180th meridian in the Pacific Ocean. It serves as the boundary between two consecutive calendar dates, meaning when you cross it, you either gain or lose a day depending on the direction you are traveling (Source: ["The international date line, explained"](https://www.livescience.com/44292-international-date-line-explained.html) and ["International Date Line"](https://www.britannica.com/topic/International-Date-Line)).
 
-### Why IDL matter?
-When tracking a satellite's position over time, you may encounter situations where the longitude values can "jump" significantly due to the way longitude is measured. Longitude is expressed in degrees, ranging from -180 to +180 or 0 to 360. The International Date Line (IDL) is located at approximately 180 degrees longitude. Crossing this line can cause a sudden change in the longitude value, which can be problematic for visualizing paths on a map. In general, handling the IDL problem matters in terms of:
-- Visualization: If you don't adjust for these jumps, the path drawn on a map could appear discontinuous or erratic, making it difficult to understand the satellite's actual trajectory.
-- Data Integrity: Ensuring that longitude values are consistent helps maintain data integrity, especially when plotting or analyzing satellite paths.
-
-## Libraries
-Required libraries:
-- `Skyfield` ([Documentation](https://rhodesmill.org/skyfield/))
-- `Folium` ([Documentation](https://python-visualization.github.io/folium/latest/index.html))
-- `Selenium` ([Documentation](https://www.selenium.dev/documentation/))
-- `Datetime` ([Documentation](https://docs.python.org/3/library/datetime.html))
-- `Time` ([Documentation](https://docs.python.org/3/library/time.html))
-- `OS` ([Documentation](https://docs.python.org/3/library/os.html))
-
-## Running the Script
-- Install required modules
-`pip install -r requirements.txt`
-- Run the script and wait for the map to launch
-`python3 tracker.py`
+## Author
+Mohammad Bazargan ([BazarganDev](https://github.com/BazarganDev))
