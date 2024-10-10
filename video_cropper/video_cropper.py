@@ -12,7 +12,7 @@ def to_int(a, rel_to):
     EG: 50% -> 0.5*rel_to
     '''
 
-    if isinstance(a):
+    if isinstance(a,int):
         return a
     else:
         if '%' in a:
