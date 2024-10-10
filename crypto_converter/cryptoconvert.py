@@ -108,9 +108,9 @@ until given a bad input or "Q/q". """
                 return
             elif result == 1:
                 continue
-            print(f"""\n{'-'*42}
+            print(f"""\n{'-' * 42}
 {crypto_value} {crypto_type.upper()} in {fiat_type.upper()} is  -->  {result}
-{'-'*42}""")
+{'-' * 42}""")
 
         elif user_inp == "2":
             fiat_type = input("\nEnter the Fiat Money Type  :  ")
@@ -134,9 +134,9 @@ until given a bad input or "Q/q". """
                 return
             elif result == 1:
                 continue
-            print(f"""\n{'-'*42}
+            print(f"""\n{'-' * 42}
 {fiat_value} {fiat_type.upper()} in {crypto_type.upper()} is  -->  {result}
-{'-'*42}""")
+{'-' * 42}""")
 
         elif user_inp == "Q" or user_inp == "q":
             return
