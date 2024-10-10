@@ -63,7 +63,7 @@ def main():
 
     print(f"\nYour {len(networks)} Strongest Networks are :")
     for key, network in enumerate(networks):
-        print(f"\t[{key+1}] {network[0]}, Signal: {network[1]}%")
+        print(f"\t[{key + 1}] {network[0]}, Signal: {network[1]}%")
 
     choice = input("\nPlease enter your choice : \n\t>> ").strip()
     if not (choice.isdigit() and 1 <= int(choice) <= len(networks)):
