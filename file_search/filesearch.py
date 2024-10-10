@@ -83,10 +83,10 @@ class FileSearch:
 
         if not is_folder:
             print(
-                f"\n\n[INFO] Searched {self.file_count:,} files in {(end_time - start_time).total_seconds()} seconds")
+                f"\n\n[INFO] Searched {self.file_count:,} files in {(end_time - start_time).total_seconds()} sec")
         else:
             print(
-                f"\n\n[INFO] Searched {self.file_count:,} folders in {(end_time - start_time).total_seconds()} seconds")
+                f"\n\n[INFO] Searched {self.file_count:,} folders in {(end_time - start_time).total_seconds()} sec")
 
         return result
 
