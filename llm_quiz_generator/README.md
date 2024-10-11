@@ -62,7 +62,7 @@ GROQ_API_KEY=your_groq_api_key_here
 
 #### **Option 2: Paste the API Key Directly into the Script**
 
-1. Open the `quiz_generator.py` file in your code editor.
+1. Open the `main.py` file in your code editor.
 2. Find the following line in the script (around line 38):
     ```python
     API_KEY = os.environ["GROQ_API_KEY"]
@@ -92,7 +92,7 @@ pip install -r requirements.txt
 ### Step 5: Run the Script
 1. To generate the quiz, open a terminal or command prompt in the folder where the script is located and run the following command:
 ```
-python quiz_generator.py
+python main.py
 ```
 This will extract the text from the PDFs, generate multiple-choice questions (MCQs) using the language model, and save the output the folder named `Source`.
 
