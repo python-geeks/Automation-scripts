@@ -9,7 +9,7 @@ ________________________________________________________________________________
 |      - Add your API key directly to line 38: API_KEY = "your_groq_api_key_here", or                                                             |
 |      - Create a .env file in the same directory, and add GROQ_API_KEY=your_groq_api_key_here.                                                   |
 |                                                                                                                                                 |
-|   3. Place all your PDFs in a folder named ''Source'' in the same directory as this script.                                                      |
+|   3. Place all your PDFs in a folder named 'Source' in the same directory as this script.                                                       |
 |                                                                                                                                                 |
 |   4. Run the script:                                                                                                                            |
 |      python quiz_generator.py                                                                                                                   |
@@ -21,7 +21,6 @@ ________________________________________________________________________________
 
 # Change this if you want to set the number of MCQ's
 num_questions = 5
-
 
 
 import os
@@ -40,11 +39,11 @@ API_KEY = os.environ["GROQ_API_KEY"]
 
 
 def extract_text_from_pdfs():
-    print(f"Extracting text from PDF files in the folder: '{'Source'}'...")
+    print(f"Extracting text from PDF files in the folder: 'Source'...")
     all_text = []
     
-    if len(os.listdir('Source')) == 0:
-        print("Source Folder Empty!")
+    if not os.path.exists('Source') or not os.listdir('Source'):
+        print("Folder 'Source' is empty or not found!")
         print("Process exiting...")
         exit(0)
     
@@ -57,8 +56,6 @@ def extract_text_from_pdfs():
                 all_text.append(page.extract_text())
     print("Text extraction completed.")
     return " ".join(all_text)
-
-
 
 def generate_unique_mcq(text, num_questions=5):
     print(f"Splitting text into chunks and creating embeddings for LLM processing...")
@@ -95,8 +92,6 @@ def generate_unique_mcq(text, num_questions=5):
     print("MCQ generation completed.")
     return quiz
 
-
-
 def save_mcq_to_file(quiz, file_name="generated_mcq_quiz.txt"):
     output_folder = "Generated_Quizes"
     
@@ -115,13 +110,11 @@ def save_mcq_to_file(quiz, file_name="generated_mcq_quiz.txt"):
     
     print(f"MCQ Quiz saved to {file_path}")
 
-
-
 if __name__ == "__main__":
     if not os.path.exists('Source'):
-        print(f"Folder '{'Source'}' not found.")
+        print(f"Folder 'Source' not found.")
     else:
-        print(f"Folder '{'Source'}' found. Starting process...")
+        print(f"Folder 'Source' found. Starting process...")
         text = extract_text_from_pdfs()
         print("Text extracted from PDFs.")
         
