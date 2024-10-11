@@ -26,6 +26,7 @@ num_questions = 5
 
 import os
 from PyPDF2 import PdfReader
+from datetime import datetime
 from langchain_groq import ChatGroq
 from langchain.chains import RetrievalQA
 from dotenv import load_dotenv, find_dotenv
@@ -41,6 +42,12 @@ API_KEY = os.environ["GROQ_API_KEY"]
 def extract_text_from_pdfs():
     print(f"Extracting text from PDF files in the folder: '{'Source'}'...")
     all_text = []
+    
+    if len(os.listdir('Source')) == 0:
+        print("Source Folder Empty!")
+        print("Process exiting...")
+        exit(0)
+    
     for file_name in os.listdir('Source'):
         if file_name.endswith(".pdf"):
             file_path = os.path.join('Source', file_name)
@@ -97,6 +104,8 @@ def save_mcq_to_file(quiz, file_name="generated_mcq_quiz.txt"):
         os.makedirs(output_folder)
         print(f"Folder '{output_folder}' created.")
     
+    current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    file_name = f"generated_mcq_quiz_{current_time}.txt"
     file_path = os.path.join(output_folder, file_name)
     
     print(f"Saving the generated MCQs to file: '{file_path}'...")
