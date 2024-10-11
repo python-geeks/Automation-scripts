@@ -96,3 +96,7 @@ python main.py
 ```
 This will extract the text from the PDFs, generate multiple-choice questions (MCQs) using the language model, and save the output the folder named `Source`.
 
+---
+
+## Rate Limits and Troubleshooting
+Please note that the free tier of Groq API has rate limits, which may cause errors if too many requests are made in a short period of time. If you encounter a rate limit error, try reducing the number of PDFs in the 'Source' folder or lower the number of questions being generated. This should help avoid hitting the rate limits. For more information on the exact rate limits, please refer to the [Groq API documentation](https://console.groq.com/settings/limits).
