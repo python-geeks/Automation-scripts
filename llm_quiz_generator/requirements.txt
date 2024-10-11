@@ -1,0 +1,6 @@
+PyPDF2
+langchain
+langchain_groq
+langchain_community
+langchain_huggingface
+faiss-cpu
