@@ -75,8 +75,8 @@ GROQ_API_KEY=your_groq_api_key_here
 ---
 
 ### Step 3: Prepare the PDF files
-1. Create a folder (if not present) called Sources in the same directory as your Python script.
-2. Place all the PDF files that you want to generate quizzes from inside the Sources folder.
+1. Create a folder (if not present) called `Source` in the same directory as your Python script.
+2. Place all the PDF files that you want to generate quizzes from inside the `Source` folder.
 
 ---
 
@@ -94,5 +94,5 @@ pip install -r requirements.txt
 ```
 python quiz_generator.py
 ```
-This will extract the text from the PDFs, generate multiple-choice questions (MCQs) using the language model, and save the output in a text file named `generated_mcq_quiz.txt`.
+This will extract the text from the PDFs, generate multiple-choice questions (MCQs) using the language model, and save the output the folder named `Source`.
 
