@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
 import random
 
+
 app = Flask(__name__)
+
 
 # Function to generate random color palette
 def generate_color_palette(num_colors=5):
@@ -10,6 +12,7 @@ def generate_color_palette(num_colors=5):
         color = "#{:06x}".format(random.randint(0, 0xFFFFFF))  # Generate a random hex color
         colors.append(color)
     return colors
+
 
 # Home route to display the color palette generator
 @app.route('/', methods=['GET', 'POST'])
@@ -21,5 +24,7 @@ def home():
         color_palette = generate_color_palette()  # Default palette with 5 colors
     return render_template('index.html', color_palette=color_palette)
 
+
 if __name__ == '__main__':
     app.run(debug=True)
+
