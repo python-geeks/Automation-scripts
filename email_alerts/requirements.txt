@@ -1,0 +1,5 @@
+smtplib==1.0.0
+email==6.0.0
+requests==2.25.1
+logging==0.5.1.2
+pandas==1.2.0
