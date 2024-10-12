@@ -1,0 +1,4 @@
+folium==0.17.0
+selenium==4.25.0
+skyfield==1.49
+
