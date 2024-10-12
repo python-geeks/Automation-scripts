@@ -1,0 +1,6 @@
+PyPDF2==3.0.1
+langchain==0.3.3
+langchain_groq==0.2.0
+langchain_community==0.3.2
+langchain_huggingface==0.1.0
+faiss-cpu==1.9.0

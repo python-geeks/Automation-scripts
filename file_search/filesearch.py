@@ -24,12 +24,12 @@ class FileSearch:
                 self.file_count += len(files)
 
     def __perform_search(
-        self,
-        search_term,
-        start_dir,
-        is_folder,
-        disable_case,
-        show_bar
+            self,
+            search_term,
+            start_dir,
+            is_folder,
+            disable_case,
+            show_bar
     ):
         results = []
         for root, dirs, files in os.walk(start_dir):
@@ -57,12 +57,12 @@ class FileSearch:
         return results
 
     def search(
-        self,
-        search_term,
-        start_dir,
-        is_folder=False,
-        disable_case=False,
-        show_bar=True
+            self,
+            search_term,
+            start_dir,
+            is_folder=False,
+            disable_case=False,
+            show_bar=True
     ):
         self.file_count = 0
         self.get_file_count(start_dir, is_folder)
@@ -83,10 +83,10 @@ class FileSearch:
 
         if not is_folder:
             print(
-                f"\n\n[INFO] Searched {self.file_count:,} files in {(end_time-start_time).total_seconds()} seconds")
+                f"\n\n[INFO] Searched {self.file_count:,} files in {(end_time - start_time).total_seconds()} sec")
         else:
             print(
-                f"\n\n[INFO] Searched {self.file_count:,} folders in {(end_time-start_time).total_seconds()} seconds")
+                f"\n\n[INFO] Searched {self.file_count:,} folders in {(end_time - start_time).total_seconds()} sec")
 
         return result
 

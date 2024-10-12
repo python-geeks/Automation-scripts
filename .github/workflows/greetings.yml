@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Hey soon we'll review your Issue, stay tuned 😊"
+        pr-message: "Congratulations!! 🎉 @${{ github.actor }} for making your first PR. We will review the changes soon and merge finally.😊 Do give a star ⭐ meanwhile if you like this project."
