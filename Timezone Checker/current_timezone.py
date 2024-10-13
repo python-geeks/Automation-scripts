@@ -18,5 +18,4 @@ if __name__=="__main__":
     inputs.add_argument('-t','--time',type=str, help='Timezone', required=True)
     value=inputs.parse_args().time
     timezone(value)
-    
-    
+  
