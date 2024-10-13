@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .palette {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Color Palette Generator</h1>
+    <form method="POST">
+        <label for="num_colors">Number of Colors:</label>
+        <input type="number" id="num_colors" name="num_colors" min="1" max="10" value="5">
+        <button type="submit">Generate Palette</button>
+    </form>
+
+    <div class="palette">
+        {% for color in color_palette %}
+        <div class="color-box" style="background-color: {{ color }};" title="{{ color }}"></div>
+        {% endfor %}
+    </div>
+</body>
+</html>
