@@ -68,8 +68,7 @@ The script sends email notifications to the specified recipients. Below is a sam
 *Replace `link_to_your_image.png` with the actual image URL showing the email notification.*
 
 ## Author(s)
-- Your Name
-- Contributor Name(s)
+- @aashiq-q
 
 ## Disclaimers
 - Ensure that you comply with your email provider's sending limits and policies to avoid being blocked.
