@@ -3,9 +3,9 @@ from datetime import datetime
 import pytz
 
 def timezone(timezone_1):
-    zones = pytz.all_timezones
-    
 
+
+    zones = pytz.all_timezones
     if timezone_1 in zones :
         timezone = pytz.timezone(timezone_1)
         time = datetime.now(timezone)
@@ -14,6 +14,8 @@ def timezone(timezone_1):
         print("The zone provided is not correct")
 
 if __name__=="__main__":
+
+
     inputs=argparse.ArgumentParser()
     inputs.add_argument('-t','--time',type=str, help='Timezone', required=True)
     value=inputs.parse_args().time
