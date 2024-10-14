@@ -1,39 +1,19 @@
-import schedule
 import time
-import logging
+import schedule
 
-# Set up logging
-logging.basicConfig(
-    filename='task_scheduler.log',
-    level=logging.INFO,
-    format='%(asctime)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
+def task():
+    print("Task is being executed")
 
-# Example task 1: Function to be scheduled
-def task_one():
-    logging.info("Task 1 is running")
+def task2():
+    print("Another task is being executed")
 
-# Example task 2: Another task to be scheduled
-def task_two():
-    logging.info("Task 2 is running")
+def run_tasks():
+    schedule.every(1).minutes.do(task)
+    schedule.every(2).minutes.do(task2)
 
-# Schedule tasks
-def setup_schedule():
-    # Schedule task_one every 10 minutes
-    schedule.every(10).minutes.do(task_one)
-    
-    # Schedule task_two every hour
-    schedule.every().hour.do(task_two)
-    
-    # Add more tasks here as needed
-
-# Main loop to keep the scheduler running
-def run_scheduler():
-    setup_schedule()
     while True:
         schedule.run_pending()
         time.sleep(1)
 
 if __name__ == "__main__":
-    run_scheduler()
+    run_tasks()
