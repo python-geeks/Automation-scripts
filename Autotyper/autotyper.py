@@ -1,6 +1,10 @@
 import pyautogui
 import time
+
+# Wait for 5 seconds before starting
 time.sleep(5)
-#paste code in the text file-CV
-for line in open("text.txt", "r",encoding="utf-8"):
-    pyautogui.typewrite(line)
+
+# Paste code from the text file - CV
+with open("text.txt", "r", encoding="utf-8") as file:
+    for line in file:
+        pyautogui.typewrite(line)
