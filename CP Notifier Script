@@ -1,0 +1,63 @@
+import time
+import smtplib
+from plyer import notification
+from twilio.rest import Client
+import requests
+
+NOTIFICATION_METHODS = {
+    'desktop': True,
+    'email': True,
+    'sms': True
+}
+EMAIL_ADDRESS = 'your_email@gmail.com'
+EMAIL_PASSWORD = 'your_email_password'
+TO_EMAIL = 'recipient_email@gmail.com'
+TWILIO_SID = 'your_twilio_sid'
+TWILIO_AUTH_TOKEN = 'your_twilio_auth_token'
+TWILIO_PHONE_NUMBER = 'your_twilio_phone_number'
+TO_PHONE_NUMBER = 'recipient_phone_number'
+
+def check_competitions():
+    # Replace with your actual logic to fetch competitions
+    competitions = [
+        {"name": "Codeforces Round", "date": "2024-10-28", "url": "https://codeforces.com"},
+        {"name": "AtCoder Beginner Contest", "date": "2024-10-29", "url": "https://atcoder.jp"},
+    ]
+    return competitions
+def notify_desktop(competition):
+    notification.notify(
+        title=f"Upcoming Competition: {competition['name']}",
+        message=f"Date: {competition['date']}\nURL: {competition['url']}",
+        app_name='CP Notifier',
+        timeout=10
+    )
+def notify_email(competition):
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        server.starttls()
+        server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+        subject = f"Upcoming Competition: {competition['name']}"
+        body = f"Date: {competition['date']}\nURL: {competition['url']}"
+        message = f'Subject: {subject}\n\n{body}'
+        server.sendmail(EMAIL_ADDRESS, TO_EMAIL, message)
+
+def notify_sms(competition):
+    client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
+    message = client.messages.create(
+        body=f"Upcoming Competition: {competition['name']}\nDate: {competition['date']}\nURL: {competition['url']}",
+        from_=TWILIO_PHONE_NUMBER,
+        to=TO_PHONE_NUMBER
+    )
+def run_notifier():
+    while True:
+        competitions = check_competitions()
+        for competition in competitions:
+            if NOTIFICATION_METHODS['desktop']:
+                notify_desktop(competition)
+            if NOTIFICATION_METHODS['email']:
+                notify_email(competition)
+            if NOTIFICATION_METHODS['sms']:
+                notify_sms(competition)
+        time.sleep(86400) 
+
+if __name__ == "__main__":
+    run_notifier()
