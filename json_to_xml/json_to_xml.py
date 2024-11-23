@@ -1,5 +1,5 @@
 import json
-import xml.etree.ElementTree as ET
+
 
 def json_to_xml(json_obj, line_padding=""):
     """
@@ -30,6 +30,9 @@ def save_xml_file(xml_str, output_file):
 
 
 def main():
+    """
+    Main function to convert a JSON file to an XML file.
+    """
     # Input JSON file
     input_json_file = "test-input.json"
     # Output XML file
@@ -44,7 +47,9 @@ def main():
         xml_data = json_to_xml(json_data)
 
         # Add XML header
-        xml_data_with_header = f"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n{xml_data}"
+        xml_data_with_header = (
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xml_data
+        )
 
         # Save to XML file
         save_xml_file(xml_data_with_header, output_xml_file)
