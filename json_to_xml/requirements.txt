@@ -1,0 +1,1 @@
+jsonschema==4.19.0  # Optional for JSON schema validation (if needed)
