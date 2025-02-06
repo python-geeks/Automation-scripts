@@ -1,0 +1,2 @@
+Pillow==4.3.0
+PyUPC-EAN==2.7.14
