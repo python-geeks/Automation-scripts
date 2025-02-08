@@ -9,7 +9,7 @@ def reset_entry():
 
 
 def calculate_bmi():
-    kg = int(weight_tf.get())
+    kg = float(weight_tf.get())
     m = int(height_tf.get()) / 100
     bmi = kg / (m * m)
     bmi = round(bmi, 1)
@@ -19,11 +19,11 @@ def calculate_bmi():
 def bmi_index(bmi):
     if bmi < 18.5:
         messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is Underweight')
-    elif (bmi > 18.5) and (bmi < 24.9):
+    elif (bmi >= 18.5) and (bmi <= 24.9):
         messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is Normal')
-    elif (bmi > 24.9) and (bmi < 29.9):
+    elif (bmi >= 25) and (bmi <= 29.9):
         messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is Overweight')
-    elif (bmi > 29.9):
+    elif (bmi >= 30):
         messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is Obesity')
     else:
         messagebox.showerror('bmi-pythonguides', 'something went wrong!')
