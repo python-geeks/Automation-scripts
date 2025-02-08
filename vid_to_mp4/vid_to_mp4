@@ -1,0 +1,25 @@
+import subprocess
+import os
+
+src = input("Enter the source file path: ")
+dst = input("Enter the destination file path: ")
+
+for root, dirs, filenames in os.walk(src, topdown=False):
+    # Print the filename
+    for filename in filenames:
+        print('[INFO] 1', filename)
+        try:
+            # These are valid video formats that can be converted to .mp4 file
+            valid_formats = [".flv", ".mp4", ".avi", ".mov"]
+            _format = ''
+            dot = filename.index('.')
+            _format = filename[dot:]
+            if _format in valid_formats:
+                inputfile = os.path.join(root, filename)
+                print('[INFO] 1', inputfile)
+                new_file = filename.lower().replace(_format, ".mp4")
+                outputfile = os.path.join(dst, )
+                caller = ['ffmpeg', '-i', inputfile, outputfile]
+                subprocess.call(caller, new_file)
+        except Exception:
+            print("An exception occurred")
