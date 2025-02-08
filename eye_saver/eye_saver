@@ -1,0 +1,15 @@
+# Eye Saver
+from plyer import notification    # pip install pyler
+import time
+
+# It is recommended to follow the 20-20 rule
+# i.e. taking a 20 second break after 20 minutes of looking at a screen
+# this reduces the strain on your eyes
+
+time.sleep(1200)
+notification.notify(
+        app_name="Eye Saver",
+        title='Its been 20 minutes',
+        message='Close your eyes or look away for 20 seconds',
+        timeout=20
+    )
