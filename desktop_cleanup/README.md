@@ -1,4 +1,4 @@
-# Script to automatically deletes/ lists all files recursively in desktop which havent been modified
+
 
 Script expect the user to pass limit in days beyond which the file if not modified would be listed/ deleted 
 depending on the arguments provided to the scipts

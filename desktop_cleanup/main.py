@@ -11,15 +11,22 @@ class DesktopCleaner:
         self._args = self.cli_parse()
         self._desktop_path = self.get_desktop_path()
         self.logger = logging.getLogger(__name__)
-        logging.basicConfig(filename='Log.log', filemode='w', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+        logging.basicConfig(filename='Log.log', filemode='w',
+                            level=logging.INFO,
+                            format='%(asctime)s - %(levelname)s - %(message)s')
         self._files_paths = []
 
     @staticmethod
     def cli_parse():
-        arg_parser = argparse.ArgumentParser(prog='Desktop cleanup', description='Automation script to  \
-                                                                     clean up old desktop files')
-        arg_parser.add_argument("--delete", type=int, required=False, help='Flag to delete the files')
-        arg_parser.add_argument("--limit", type=int, required=True, help='No of days to check for')
+        arg_parser = argparse.ArgumentParser(prog='Desktop cleanup',
+                                             description='Automation script to clean up old desktop files')
+        arg_parser.add_argument("--delete", type=int,
+                                required=False,
+                                help='Flag to delete the files')
+
+        arg_parser.add_argument("--limit", type=int,
+                                required=True,
+                                help='No of days to check for')
         return arg_parser.parse_args()
 
     @staticmethod
@@ -34,7 +41,7 @@ class DesktopCleaner:
         return _username_path
 
     def delete_files(self):
-        self.logger.info(f"Deleting all the files \n")
+        self.logger.info("Deleting all the files \n")
         for file_path in self._files_paths:
             try:
                 os.remove(file_path)
@@ -48,8 +55,7 @@ class DesktopCleaner:
 
     def scan_desktop(self):
 
-
-        for dirpath,_,files in os.walk(self._desktop_path):
+        for dirpath, _, files in os.walk(self._desktop_path):
             self.logger.info("Walking through all files in desktop\n")
             for file in files:
                 file_path = str(os.path.join(dirpath, file))
@@ -65,18 +71,15 @@ class DesktopCleaner:
                     self.logger.info(f"{file_path} is exceeding threshold - last modified {delta_days.days} ago\n")
                     self._files_paths.append(file_path)
 
-        if self._args.delete and len(self._files_paths)>0:
+        if self._args.delete and len(self._files_paths) > 0:
             self.delete_files()
         elif len(self._files_paths) > 0:
-            self.logger.info(f"Delete option not selected - so only logging file names\n")
+            self.logger.info("Delete option not selected - so only logging file names\n")
         else:
-            self.logger.info(f"No files exceeding the limit\n")
+            self.logger.info("No files exceeding the limit\n")
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
 
     desktop_cleaner = DesktopCleaner()
     desktop_cleaner.scan_desktop()
-
-
-
-
