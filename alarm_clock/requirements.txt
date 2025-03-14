@@ -1,1 +1,1 @@
-simpleaudio
+simpleaudio==1.0.4
