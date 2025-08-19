@@ -1,0 +1,23 @@
+logindetails:
+    username: ['username'] #Your Username that you use in Teams
+    password: ['password'] #Password
+
+monday:
+  starttimings: ["08:00", "11:00", "14:00", "15:51"]
+  endtimings: ["08:50", "11:50", "15:40", "16:40"]
+
+tuesday:
+  starttimings: ["08:00", "10:00", "14:00"]
+  endtimings: ["08:50", "10:50", "15:40"]
+
+wednesday:
+  starttimings: ["09:00", "14:00", "16:41"]
+  endtimings: ["09:50", "15:40", "17:30"]
+
+thursday:
+  starttimings: ["09:00", "11:00", "14:00", "15:51", "17:40"]
+  endtimings: ["09:50", "11:50", "14:50", "17:30", "19:20"]
+
+friday:
+  starttimings: ["08:00", "12:00"]
+  endtimings: ["08:50", "12:50"]
