@@ -40,6 +40,21 @@ def render_certificate():
         return render_template('download.html', file_name=file_name)
 
 
+def is_valid_filename(filename):
+    """
+    Check if the filename is valid
+    - Prevents directory traversal attacks (with / or ..)
+    - Only allows alphanumeric characters and dots
+
+    Args:
+    filename: str
+
+    Returns:
+    bool - whether the filename is valid (True = valid, False = invalid)
+    """
+    return filename.isalnum() or filename .replace('.', '').isalnum()
+
+
 @app.route('/download_certificate', methods=['GET'])
 def download():
     """
@@ -47,6 +62,10 @@ def download():
     """
     if request.method == "GET":
         filename = request.args.get("filename")
+        if not filename or '..' in filename or not is_valid_filename(filename):
+            return "Invalid filename", 400
         filepath = os.path.join("static/certificates/generated", filename)
+        if not os.path.isfile(filepath):
+            return "File not found", 404
         return send_file(filepath, as_attachment=True, cache_timeout=0,
                          attachment_filename=filename)
