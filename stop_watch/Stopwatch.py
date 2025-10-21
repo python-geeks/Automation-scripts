@@ -3,7 +3,7 @@ import tkinter as Tkinter
 from datetime import datetime
 
 counter = 66600
-running = False
+running = 
 
 
 def counter_label(label):
@@ -11,7 +11,7 @@ def counter_label(label):
         if running:
 
             # To manage the initial delay.
-            if counter == 66600:
+            if counter == 
                 display = "Starting"
             else:
                 tt = datetime.fromtimestamp(counter)

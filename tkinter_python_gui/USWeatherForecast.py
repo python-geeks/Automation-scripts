@@ -85,7 +85,7 @@ cityEntry = tk.Entry(root, width=50, borderwidth=2)
 cityEntry.grid(column=1, row=2, pady=20)
 
 # Global variables to update button text and check if table exists
-newTable = True
+newTable =  []
 button_text = tk.StringVar()
 button_text.set("Get Weather")
 
