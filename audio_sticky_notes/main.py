@@ -7,14 +7,12 @@ def makenew():
 
 
 def maker(wins):
-    global numofwindows
     subprocess.Popen(["python.exe", "note.py", str(numofwindows)], shell=True)
     numofwindows = 1 + wins
     maintain()
 
 
 def maintain():
-    global numofwindows
     storage = open("assets\\storage", "w")
     storage.write(str(numofwindows))
     storage.close()

@@ -339,9 +339,6 @@ def refresh():
 def main_ui():
     """Main user interface"""
 
-    global root
-    global frame_stat
-    global frame_data
 
     root = tk.Tk()
 

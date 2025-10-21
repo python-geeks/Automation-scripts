@@ -11,8 +11,6 @@ num = None
 
 
 def sin():
-    global sign
-    global num
     sign = "sin"
     num = float(e.get())
     e.delete(0, len(e.get()))
@@ -22,8 +20,6 @@ def sin():
 
 
 def cos():
-    global sign
-    global num
     sign = "cos"
     num = float(e.get())
     e.delete(0, len(e.get()))
@@ -33,8 +29,6 @@ def cos():
 
 
 def tan():
-    global sign
-    global num
     sign = "tan"
     num = float(e.get())
     e2.delete(0, len(e2.get()))
@@ -44,8 +38,6 @@ def tan():
 
 
 def tan_inv():
-    global sign
-    global num
     sign = "tan_inv"
     num = float(e.get())
     e.delete(0, len(e.get()))
@@ -55,8 +47,6 @@ def tan_inv():
 
 
 def cos_inv():
-    global sign
-    global num
     sign = "cos_inv"
     num = float(e.get())
     e.delete(0, len(e.get()))
@@ -66,8 +56,6 @@ def cos_inv():
 
 
 def sin_inv():
-    global sign
-    global num
     sign = "sin_inv"
     num = float(e.get())
     e.delete(0, len(e.get()))
@@ -77,9 +65,7 @@ def sin_inv():
 
 
 def exp():
-    global num
     num = e.get()
-    global sign
     sign = "exp"
     e.delete(0, len(e.get()))
     e2.delete(0, len(e2.get()))
@@ -88,8 +74,6 @@ def exp():
 
 
 def fact():
-    global num
-    global sign
     num = int(e.get())
     sign = "fact"
     e2.insert(len(e.get()), "!")
@@ -97,9 +81,7 @@ def fact():
 
 
 def sqrt():
-    global num
     num = float(e.get())
-    global sign
     sign = "sqrt"
     e2.delete(0, len(e2.get()))
     e2.insert(0, "sqrt(" + str(num) + ")")
@@ -108,9 +90,7 @@ def sqrt():
 
 
 def cube():
-    global num
     num = float(e.get())
-    global sign
     sign = "cube"
     e2.delete(0, len(e2.get()))
     e2.insert(len(e.get()), str(num) + "^3")
@@ -119,9 +99,7 @@ def cube():
 
 
 def n_pow():
-    global f_num
     f_num = e.get()
-    global sign
     sign = "n_pow"
     e2.delete(0, len(e2.get()))
     e.delete(0, len(e.get()))
@@ -129,8 +107,6 @@ def n_pow():
 
 
 def inv():
-    global num
-    global sign
     sign = "inv"
     num = float(e.get())
     e2.insert(len(e2.get()), "^(-1)")
@@ -138,10 +114,8 @@ def inv():
 
 
 def rem():
-    global f_num
     e2.delete(0, len(e2.get()))
     f_num = float(e.get())
-    global sign
     sign = "rem"
     e2.insert(0, str(f_num) + " % ")
     e.delete(0, len(e.get()))
@@ -159,9 +133,7 @@ def show(number):
 def addition():
     first_num = e.get()
     e2.delete(0, len(e2.get()))
-    global sign
     sign = "addition"
-    global f_num
     f_num = float(first_num)
     e2.insert(0, str(f_num) + " + ")
     e.delete(0, len(e.get()))
@@ -170,9 +142,7 @@ def addition():
 def subtraction():
     first_num = e.get()
     e2.delete(0, len(e2.get()))
-    global sign
     sign = "subtraction"
-    global f_num
     f_num = float(first_num)
     e2.insert(0, str(f_num) + " - ")
     e.delete(0, len(e.get()))
@@ -181,9 +151,7 @@ def subtraction():
 def multiplication():
     first_num = e.get()
     e2.delete(0, len(e2.get()))
-    global sign
     sign = "multiplication"
-    global f_num
     f_num = float(first_num)
     e2.insert(0, str(f_num) + " * ")
     e.delete(0, len(e.get()))
@@ -192,9 +160,7 @@ def multiplication():
 def division():
     first_num = e.get()
     e2.delete(0, len(e2.get()))
-    global sign
     sign = "division"
-    global f_num
     f_num = float(first_num)
     e2.insert(0, str(f_num) + " / ")
     e.delete(0, len(e.get()))
@@ -330,7 +296,6 @@ def clear():
 
 
 def create_frame(mode):
-    global frame
 
     try:
         frame.destroy()
@@ -341,8 +306,6 @@ def create_frame(mode):
     frame = tk.Label(root, background="sky blue")
     frame.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
-    global e
-    global e2
     e2 = tk.Entry(
         frame, font=("Helvetica", 9), width=40, borderwidth=2
     )
@@ -704,7 +667,6 @@ if __name__ == "__main__":
     root.configure(background="sky blue")
 
     """
-    global frame
     frame = tk.Label(root)
     frame.grid(row=1, column=0, columnspan=2)
     """

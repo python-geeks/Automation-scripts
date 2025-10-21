@@ -92,7 +92,6 @@ button_text.set("Get Weather")
 
 # Function to add a new city to the list of weather forecasts
 def addWeather():
-    global newTable
     if newTable:
         city = cityEntry.get()
         location = city + ",us"

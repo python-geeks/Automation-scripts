@@ -16,7 +16,6 @@ VECTOR_FOR_AES = "SUDESH1611GITHUB"
 
 
 def GetKey():
-    global KEY
     tempKey = input("Enter password(min length: 8, max length: 32)")
     while (len(tempKey.strip()) < 8 or len(tempKey.strip()) > 32 or ' ' in tempKey):
         if (' ' in tempKey):

@@ -34,7 +34,6 @@ main.pack(padx=10, pady=10)
 
 # Function to clear screen
 def clear():
-    global main, root
     main.destroy()
     main = tkinter.Frame(root, padx=10, pady=10)
     main.pack(padx=10, pady=10)
@@ -49,7 +48,6 @@ text_intro.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
 # Function to open File explorer to upload file
 def openFE():
-    global my_image
     root.filename = filedialog.askopenfilename(
         initialdir='/home',
         title="Select file",

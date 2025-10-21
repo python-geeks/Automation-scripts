@@ -410,7 +410,6 @@ def exit_program(sig, frame):
 
 
 if __name__ == '__main__':
-    global args  # The program arguments
 
     parser = argparse.ArgumentParser(description="Password Manager CLI")
     # -p | --password PASSWORD

@@ -11,7 +11,6 @@ root.geometry("600x400")
 
 
 def open():
-    global my_image
     root.filename = filedialog.askopenfilename(
         initialdir='/home',
         title="Select file",

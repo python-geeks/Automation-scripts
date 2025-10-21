@@ -19,7 +19,6 @@ color = "#ffffff"
 
 
 def ButtonColor():
-    global color
     colortemp = (colorchooser.askcolor(title="Choose Color"))[1]
     color = colortemp
 
@@ -53,7 +52,6 @@ cursor_ = None
 
 
 def cursor(event):
-    global cursor_
     if cursor_ not in canvas.find_all():
         cursor_ = canvas.create_oval(event.x - 10, event.y - 10, event.x + 10, event.y + 10, width=0, fill='cyan')
     canvas.coords(cursor_, event.x - 10, event.y - 10, event.x + 10, event.y + 10)

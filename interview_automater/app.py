@@ -15,7 +15,6 @@ server = app.server
 
 
 # Defining global variables
-global name, score
 score = 0
 
 
@@ -81,7 +80,6 @@ def update_name(name, n_clicks):
     [Input('a1', 'value')]
 )
 def q1(a1):
-    global score
     if a1 is None:
         raise PreventUpdate
     else:
@@ -107,7 +105,6 @@ def q1(a1):
     [Input('a2', 'value')]
 )
 def q2(a2):
-    global score
     if a2 is None:
         raise PreventUpdate
     else:
@@ -135,7 +132,6 @@ def q2(a2):
     [Input('a3', 'value')]
 )
 def q3(a3):
-    global score
     if a3 is None:
         raise PreventUpdate
     else:
@@ -177,7 +173,6 @@ def q3(a3):
     [Input('a4', 'value')]
 )
 def q4(a4):
-    global score
     if a4 is None:
         raise PreventUpdate
     else:
@@ -210,7 +205,6 @@ def q4(a4):
     [Input('a5', 'value')]
 )
 def q5(a5):
-    global score
     if a5 is None:
         raise PreventUpdate
     else:
@@ -235,7 +229,6 @@ def q5(a5):
     [Input('a6', 'value')]
 )
 def q6(a6):
-    global score
     if a6 is None:
         raise PreventUpdate
     else:
@@ -263,7 +256,6 @@ def q6(a6):
     [Input('a7', 'value')]
 )
 def q7(a7):
-    global score
     if a7 is None:
         raise PreventUpdate
     else:
@@ -291,7 +283,6 @@ def q7(a7):
     [Input('a8', 'value')]
 )
 def q8(a8):
-    global score
     if a8 is None:
         raise PreventUpdate
     else:
@@ -321,7 +312,6 @@ def q8(a8):
     [Input('a9', 'value')]
 )
 def q9(a9):
-    global score
     if a9 is None:
         raise PreventUpdate
     else:
@@ -357,7 +347,6 @@ def q9(a9):
     [Input('a10', 'value')]
 )
 def q10(a10):
-    global score
     if a10 is None:
         raise PreventUpdate
     else:

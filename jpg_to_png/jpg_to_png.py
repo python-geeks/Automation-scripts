@@ -23,7 +23,6 @@ root.title('JPG to PNG and ViceVersa')
 # function to convert file from jpg to png
 
 def jpg_to_png():
-    global im1
     import_filename = fd.askopenfilename()
 
     if import_filename.endswith('.jpg'):
@@ -42,7 +41,6 @@ def jpg_to_png():
 # function to convert png file to jpg
 
 def png_to_jpg():
-    global im1
     import_filename = fd.askopenfilename()
 
     if import_filename.endswith('.png'):

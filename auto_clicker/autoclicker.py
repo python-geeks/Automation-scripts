@@ -27,7 +27,6 @@ def choose_delay():
 
 
 def key_press(key):
-    global running, pause
 
     if key == start_or_pause_key:
         pause = not pause

@@ -3,9 +3,6 @@
 import requests
 
 # Variables
-global apiKey
-global SID
-global senderID
 apiKey = ""  # enter your api key
 SID = ""  # enter your SID number
 senderID = ""  # enter the senderID registered
