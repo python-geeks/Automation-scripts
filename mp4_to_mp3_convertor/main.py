@@ -33,7 +33,6 @@ panel.place(x=170, y=120)
 
 
 def mp4_choose():
-    global filename, onlyfilename
     filename = filedialog.askopenfilename(initialdir="/",
                                           title="Choose MP4",
                                           filetypes=(("Text files", "*.Mp4*"),

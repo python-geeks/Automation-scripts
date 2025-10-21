@@ -6,7 +6,6 @@ t = int()
 
 
 def snooze(t):
-    global set_time
     HH_MM = set_time.split(':')
     HH_MM[1] = str(int(HH_MM[1]) + t)
     set_time = ':'.join(HH_MM)

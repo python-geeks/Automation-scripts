@@ -68,13 +68,11 @@ def build_value_chain(key, value, depth):
 
 def add_header(value, depth):
     chain = build_header_chain(depth)
-    global markdown
     markdown += chain.replace('value', value.title())
 
 
 def add_value(key, value, depth):
     chain = build_value_chain(key, value, depth)
-    global markdown
     markdown += chain
 
 
@@ -87,7 +85,6 @@ def convert(input_file, output_file, options):
     json_data = load_json(input_file)
     depth = 0
     parse_json(json_data, depth, options)
-    global markdown
     markdown = markdown.replace('#######', '######')
     write_out(markdown, output_file)
 

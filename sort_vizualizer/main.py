@@ -49,7 +49,6 @@ def drawRect(array, color):
 # generate random elements for the array and
 # draw their rectangles on the canvas
 def Generate():
-    global array
     try:
         minVal = int(minEntry.get())
         maxVal = int(maxEntry.get())

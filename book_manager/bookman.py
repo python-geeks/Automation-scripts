@@ -20,7 +20,6 @@ books = []
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        global books
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1037, 622)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -133,7 +132,6 @@ class Ui_MainWindow(object):
 
     def show_all(self):
         self.list_1.clear()
-        global books
         # print(books)
         for item in books:
             newitem = QtWidgets.QListWidgetItem(
@@ -147,7 +145,6 @@ class Ui_MainWindow(object):
         self.lineEdit.clear()
 
     def search_books(self):
-        global books
         results = []
         searchtext = self.lineEdit.text()
         field = [self.radioButton_1.isChecked(), self.radioButton_2.isChecked(
@@ -167,7 +164,6 @@ class Ui_MainWindow(object):
             self.list_1.addItem(newitem)
 
     def add_books(self):
-        global books
         res = self.open_dialog_box()
         name = res[0].split('/')[-1]
         Dialog2 = QtWidgets.QDialog()
@@ -196,7 +192,6 @@ class Ui_MainWindow(object):
         # print(filename)
 
     def open_properties(self, item):
-        global books
         lines = item.text().split('\n')
         final = []
         for index, i in enumerate(lines):

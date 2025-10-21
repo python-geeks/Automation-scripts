@@ -26,7 +26,6 @@ def get_github_notifications():
 # Notification Sender function
 async def send_notification(context):
     # Check if channel is present in guild
-    global already_sent
     channel = discord_get(
         context.guild.text_channels,
         name=config.DISCORD_CHANNEL,

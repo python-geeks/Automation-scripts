@@ -14,7 +14,6 @@ label_text.set("")
 
 
 def pick_music():
-    global music_path, label_text
     # Get chosen files path
     music_path = filedialog.askopenfilename(
         filetypes=(("mp3 files", "*.mp3"), ("waw files", "*.waw")))
@@ -27,7 +26,6 @@ def pick_music():
 
 
 def play_music():
-    global p
     # If song playing try to stop
     try:
         p.stop()

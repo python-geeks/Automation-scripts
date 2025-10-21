@@ -9,7 +9,6 @@ shapes = {}
 
 def scan_image(img_file_path):
 
-    global shapes
     img = cv2.imread(img_file_path)
 
     gimg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
