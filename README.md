@@ -94,5 +94,44 @@ You can contribute by adding new scripts, improving current scripts or Documenta
 Thanks goes to these wonderful people 😊
 
 <a href="https://github.com/python-geeks/Automation-scripts/graphs/contributors">
+
+## Installation and Setup
+
+### Prerequisites
+- Python 3.7 or higher
+- pip (Python package manager)
+- Git
+
+### Installation Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/python-geeks/Automation-scripts.git
+   cd Automation-scripts
+   ```
+
+2. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run a script:
+   ```bash
+   python script_name.py
+   ```
+
+## Documentation
+
+For detailed documentation on each script, check the README files in the respective folders:
+- Each folder contains a README.md with specific usage instructions
+- Comments in the code explain complex logic
+- Examples are provided in the comments
+
+## Troubleshooting
+
+If you encounter any issues:
+1. Check the issue tracker to see if your problem has been reported
+2. Read the CONTRIBUTING.md file for contribution guidelines
+3. Open a new issue with detailed information about your problem
   <img src="https://contrib.rocks/image?repo=python-geeks/Automation-scripts" />
 </a>
